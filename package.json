@@ -1,0 +1,43 @@
+{
+  "name": "any-ui",
+  "version": "0.0.1",
+  "description": "ui components",
+  "scripts": {
+    "start": "storybook dev -p 6008",
+    "storybook-build": "rm -rf storybook-static && storybook build",
+    "build": "rm -rf build && vite build && tsc --emitDeclarationOnly && tsc-alias -p tsconfig.json",
+    "clear": "rm -rf .yarn* yarn.lock .pnp* node_modules"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@emotion/react": "^11.11.0",
+    "@storybook/addon-actions": "^7.0.11",
+    "@storybook/addon-backgrounds": "^7.0.12",
+    "@storybook/addon-controls": "^7.0.11",
+    "@storybook/addon-docs": "^7.0.11",
+    "@storybook/addons": "^7.0.11",
+    "@storybook/builder-vite": "^7.0.11",
+    "@storybook/react": "^7.0.11",
+    "@storybook/react-vite": "^7.0.11",
+    "@storybook/theming": "^7.0.11",
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4",
+    "@vitejs/plugin-react": "^4.0.0",
+    "classnames": "^2.3.2",
+    "prettier": "^2.8.8",
+    "sass": "^1.62.1",
+    "storybook": "^7.0.11",
+    "storybook-dark-mode": "^3.0.0",
+    "tsc-alias": "^1.8.6",
+    "typescript": "^5.0.4",
+    "vite": "^4.3.5"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "packageManager": "yarn@3.5.1"
+}
