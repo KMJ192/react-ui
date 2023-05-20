@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import HamburgerMenu from './HamburgerMenu';
-import type { HamburgerBaseProps } from './HamburgerMenu';
+import HamburgerMenu from '@src/components/atoms/HamburgerMenu/HamburgerMenu';
 
 export default {
   title: 'UI/Atom/HamburgerMenu',

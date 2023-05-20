@@ -1477,6 +1477,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emotion/css@npm:^11.11.0":
+  version: 11.11.0
+  resolution: "@emotion/css@npm:11.11.0"
+  dependencies:
+    "@emotion/babel-plugin": ^11.11.0
+    "@emotion/cache": ^11.11.0
+    "@emotion/serialize": ^1.1.2
+    "@emotion/sheet": ^1.2.2
+    "@emotion/utils": ^1.2.1
+  checksum: 34e1f9a85a056b77a46462bd760ef614c0b6015b8ae1aaac5efbdc92067a7849e3bf4329430d46c72d7c3426ccc79d2f1052aa6ab73b5a2791954393bd779437
+  languageName: node
+  linkType: hard
+
 "@emotion/hash@npm:^0.9.1":
   version: 0.9.1
   resolution: "@emotion/hash@npm:0.9.1"
@@ -1488,27 +1501,6 @@ __metadata:
   version: 0.8.1
   resolution: "@emotion/memoize@npm:0.8.1"
   checksum: a19cc01a29fcc97514948eaab4dc34d8272e934466ed87c07f157887406bc318000c69ae6f813a9001c6a225364df04249842a50e692ef7a9873335fbcc141b0
-  languageName: node
-  linkType: hard
-
-"@emotion/react@npm:^11.11.0":
-  version: 11.11.0
-  resolution: "@emotion/react@npm:11.11.0"
-  dependencies:
-    "@babel/runtime": ^7.18.3
-    "@emotion/babel-plugin": ^11.11.0
-    "@emotion/cache": ^11.11.0
-    "@emotion/serialize": ^1.1.2
-    "@emotion/use-insertion-effect-with-fallbacks": ^1.0.1
-    "@emotion/utils": ^1.2.1
-    "@emotion/weak-memoize": ^0.3.1
-    hoist-non-react-statics: ^3.3.1
-  peerDependencies:
-    react: ">=16.8.0"
-  peerDependenciesMeta:
-    "@types/react":
-      optional: true
-  checksum: 2653e7c3de7b6fd5b0e18dea15621a9886104cc7c8cd5522ca69e52bd547ef6f13644193f8e0a906eea1e29a4f1d8167cdfa4667572fb7fafe0c62ab30fbaab6
   languageName: node
   linkType: hard
 
@@ -1539,7 +1531,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/use-insertion-effect-with-fallbacks@npm:^1.0.0, @emotion/use-insertion-effect-with-fallbacks@npm:^1.0.1":
+"@emotion/use-insertion-effect-with-fallbacks@npm:^1.0.0":
   version: 1.0.1
   resolution: "@emotion/use-insertion-effect-with-fallbacks@npm:1.0.1"
   peerDependencies:
@@ -3038,7 +3030,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4.14.167":
+"@types/lodash@npm:^4, @types/lodash@npm:^4.14.167":
   version: 4.14.194
   resolution: "@types/lodash@npm:4.14.194"
   checksum: 113f34831c461469d91feca2dde737f88487732898b4d25e9eb23b087bb193985f864d1e1e0f3b777edc5022e460443588b6000a3b2348c966f72d17eedc35ea
@@ -3410,7 +3402,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "any-ui@workspace:."
   dependencies:
-    "@emotion/react": ^11.11.0
+    "@emotion/css": ^11.11.0
     "@storybook/addon-actions": ^7.0.11
     "@storybook/addon-backgrounds": ^7.0.12
     "@storybook/addon-controls": ^7.0.11
@@ -3420,11 +3412,13 @@ __metadata:
     "@storybook/react": ^7.0.11
     "@storybook/react-vite": ^7.0.11
     "@storybook/theming": ^7.0.11
+    "@types/lodash": ^4
     "@types/node": ^18.11.18
     "@types/react": ^18.2.6
     "@types/react-dom": ^18.2.4
     "@vitejs/plugin-react": ^4.0.0
     classnames: ^2.3.2
+    lodash: ^4.17.21
     prettier: ^2.8.8
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -5412,15 +5406,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hoist-non-react-statics@npm:^3.3.1":
-  version: 3.3.2
-  resolution: "hoist-non-react-statics@npm:3.3.2"
-  dependencies:
-    react-is: ^16.7.0
-  checksum: b1538270429b13901ee586aa44f4cc3ecd8831c061d06cb8322e50ea17b3f5ce4d0e2e66394761e6c8e152cd8c34fb3b4b690116c6ce2bd45b18c746516cb9e8
-  languageName: node
-  linkType: hard
-
 "hosted-git-info@npm:^2.1.4":
   version: 2.8.9
   resolution: "hosted-git-info@npm:2.8.9"
@@ -7327,7 +7312,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-is@npm:^16.13.1, react-is@npm:^16.7.0":
+"react-is@npm:^16.13.1":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: f7a19ac3496de32ca9ae12aa030f00f14a3d45374f1ceca0af707c831b2a6098ef0d6bdae51bd437b0a306d7f01d4677fcc8de7c0d331eb47ad0f46130e53c5f

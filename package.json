@@ -4,15 +4,15 @@
   "description": "ui components",
   "scripts": {
     "start": "storybook dev -p 6008",
-    "storybook-build": "rm -rf storybook-static && storybook build",
-    "build": "rm -rf build && vite build && tsc --emitDeclarationOnly && tsc-alias -p tsconfig.json",
+    "build:story": "rm -rf storybook-static && storybook build",
+    "build:lib": "rm -rf build && vite build && tsc --emitDeclarationOnly && tsc-alias -p tsconfig.json",
     "clear": "rm -rf .yarn* yarn.lock .pnp* node_modules"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@emotion/react": "^11.11.0",
+    "@emotion/css": "^11.11.0",
     "@storybook/addon-actions": "^7.0.11",
     "@storybook/addon-backgrounds": "^7.0.12",
     "@storybook/addon-controls": "^7.0.11",
@@ -22,6 +22,7 @@
     "@storybook/react": "^7.0.11",
     "@storybook/react-vite": "^7.0.11",
     "@storybook/theming": "^7.0.11",
+    "@types/lodash": "^4",
     "@types/node": "^18.11.18",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
@@ -36,6 +37,7 @@
     "vite": "^4.3.5"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
