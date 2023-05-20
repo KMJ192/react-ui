@@ -13,6 +13,4 @@ type OVER_RIDABLE_PROPS<T extends ElementType, K = unknown> = {
   as?: T;
 } & COMBINE_ELEMENT_PROPS<T, K>;
 
-type Theme = 'dark' | 'light';
-
-export type { OVER_RIDABLE_PROPS, COMBINE_ELEMENT_PROPS, COMBINE, Theme };
+export type { OVER_RIDABLE_PROPS, COMBINE_ELEMENT_PROPS, COMBINE };

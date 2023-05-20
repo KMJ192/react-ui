@@ -1,0 +1,27 @@
+@import '@src/styles/color.module.scss';
+
+$button-primary-background: var(--button-primary-background, $light-primary000);
+$button-primary-background-hover: var(
+  --button-primary-background-hover,
+  $light-primary100
+);
+
+@mixin default {
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+@mixin primary {
+  background: $button-primary-background;
+  &:hover {
+    background: $button-primary-background-hover;
+  }
+}
+
+.button {
+  @include default;
+  @include primary;
+}
