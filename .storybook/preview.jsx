@@ -4,14 +4,14 @@ import './storybook.css';
 
 export const parameters = {
   backgrounds: {
-    default: 'black',
+    default: 'dark',
     values: [
       {
-        name: 'white',
+        name: 'light',
         value: '#FFFFFF',
       },
       {
-        name: 'black',
+        name: 'dark',
         value: '#000000',
       },
     ],
