@@ -2,7 +2,6 @@ import { themes } from '@storybook/theming';
 import { RecoilRoot, useRecoilState } from 'recoil';
 
 import UIProvider from '../src/store/Provider';
-// import useUIState from '../src/store/hooks/useUIState';
 import { globalAtom } from '../src/recoilStore/global';
 
 import { INIT_STATE } from '../src/store/Context';
