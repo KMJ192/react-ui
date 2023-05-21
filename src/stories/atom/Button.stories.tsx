@@ -14,9 +14,21 @@ const meta: Meta<typeof Button> = {
   },
   argTypes: {
     variant: {
-      options: ['primary', 'secondary'],
+      options: ['primary', 'loading'],
       control: {
         type: 'select',
+      },
+    },
+    disabled: {
+      options: [true, false],
+      control: {
+        type: 'radio',
+      },
+    },
+    loading: {
+      options: [true, false],
+      control: {
+        type: 'radio',
       },
     },
   },
@@ -32,12 +44,7 @@ export const Primary: StoryFn<ButtonProps> = Template.bind({});
 Primary.args = {
   children: 'Primary',
   variant: 'primary',
-};
-
-export const Secondary: StoryFn<ButtonProps> = Template.bind({});
-Secondary.args = {
-  children: 'Secondary',
-  variant: 'secondary',
+  loading: false,
 };
 
 export default meta;

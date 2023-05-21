@@ -1,0 +1,19 @@
+@import '@src/styles/color.module.scss';
+
+@mixin button-light {
+  --button-background: #{$light-primary100};
+  --button-background-hover: #{$light-primary001};
+  --button-background-disabled: #{$light-primary200};
+  --button-text: #{$light-primary700};
+  --button-text-disabled: #{$light-primary301};
+  --button-background-click: rgba(0, 0, 0, 0.6);
+}
+
+@mixin button-dark {
+  --button-background: #{$dark-primary200};
+  --button-background-hover: #{$dark-primary300};
+  --button-background-disabled: #{$dark-primary200};
+  --button-text: #{$dark-blue700};
+  --button-text-disabled: #{$dark-primary300};
+  --button-background-click: rgba(255, 255, 255, 0.6);
+}

@@ -1,6 +1,21 @@
 @import '@src/styles/color.module.scss';
 @import '@src/styles/transition.scss';
 
+$button-background: var(--button-background, $light-primary000);
+$button-background-hover: var(--button-background-hover, $light-primary001);
+$button-background-disabled: var(
+  --button-background-disabled,
+  $light-primary200
+);
+$button-background-click: var(
+  --button-background-click,
+  rgba(255, 255, 255, 0.6)
+);
+
+$button-text: var(--button-text, $light-primary700);
+$button-text-hover: var(--button-text-hover, $light-primary700);
+$button-text-disabled: var(--button-text-disabled, $light-primary301);
+
 @mixin default {
   padding: 8px 16px;
   font-size: 16px;
@@ -8,25 +23,15 @@
   border: none;
   overflow: hidden;
   cursor: pointer;
-}
 
-@mixin light {
-  $button-background: var(--button-background, $light-primary000);
-  $button-background-hover: var(--button-background-hover, $light-primary100);
-
+  color: $button-text;
   background: $button-background;
   &:hover {
     background: $button-background-hover;
   }
-}
-
-@mixin dark {
-  $button-background: var(--button-background, $black);
-  $button-background-hover: var(--button-background-hover, $white);
-
-  background: $button-background;
-  &:hover {
-    background: $button-background-hover;
+  &:disabled {
+    color: $button-text-disabled;
+    background: $button-background-disabled;
   }
 }
 
@@ -40,7 +45,7 @@
     left: 50%;
     width: 4px;
     height: 4px;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.6);
     opacity: 0;
     border-radius: 100%;
     transform: scale(1, 1) translate(-50%);
@@ -54,11 +59,7 @@
 
 .button {
   @include default;
-  @include light;
   @include ripple-animation;
-  &.dark {
-    @include dark;
-  }
 }
 
 @keyframes ripple {
