@@ -13,6 +13,26 @@
 - organisms
 - template
 
+##### Project start
+
+- dev start
+
+```
+yarn start
+```
+
+- storybook build
+
+```
+yarn build:story
+```
+
+- library build
+
+```
+yarn build:lib
+```
+
 ##### dev
 
 - Storybook v7
