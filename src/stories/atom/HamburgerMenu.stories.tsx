@@ -2,7 +2,7 @@ import { useState } from 'react';
 import HamburgerMenu from '@src/components/atoms/HamburgerMenu/HamburgerMenu';
 
 export default {
-  title: 'UI/Atom/HamburgerMenu',
+  title: 'UI/Atoms/HamburgerMenu',
   component: HamburgerMenu,
   parameters: {
     componentSubtitle: 'HamburgerMenu',

@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import classNames from 'classnames/bind';
-import style from './HamburgerMenu.module.scss';
+import style from './style.module.scss';
 const cx = classNames.bind(style);
 
 type BaseProps = {
