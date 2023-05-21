@@ -1,0 +1,15 @@
+@import './theme/light.scss';
+
+.storybook {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  &.light {
+    @include button-light;
+  }
+  &.dark {
+    @include button-dark;
+  }
+}

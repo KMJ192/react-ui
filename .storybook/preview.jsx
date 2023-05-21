@@ -1,8 +1,14 @@
 import { themes } from '@storybook/theming';
-import UIProvider from '../src/store/Provider';
+import { RecoilRoot, useRecoilState } from 'recoil';
 
-import './storybook.scss';
+import UIProvider from '../src/store/Provider';
+// import useUIState from '../src/store/hooks/useUIState';
+import { globalAtom } from '../src/recoilStore/global';
+
 import { INIT_STATE } from '../src/store/Context';
+import Button from '@src/components/atoms/Button/Button';
+
+import './index.scss';
 
 export const parameters = {
   backgrounds: {
@@ -33,12 +39,35 @@ export const parameters = {
   },
 };
 
+function GlobalStory({ children }) {
+  const [state, setState] = useRecoilState(globalAtom);
+  const { theme } = state;
+
+  return (
+    <main className={`storybook ${theme}`}>
+      <Button
+        onClick={() => {
+          const isLight = theme === 'light';
+          setState({
+            theme: isLight ? 'dark' : 'light',
+          });
+        }}
+      >
+        {theme}
+      </Button>
+      <section>{children}</section>
+    </main>
+  );
+}
+
 export const decorators = [
   (Story) => (
-    <UIProvider value={INIT_STATE}>
-      <main className='storybook'>
-        <Story />
-      </main>
-    </UIProvider>
+    <RecoilRoot>
+      <UIProvider value={INIT_STATE}>
+        <GlobalStory>
+          <Story />
+        </GlobalStory>
+      </UIProvider>
+    </RecoilRoot>
   ),
 ];
