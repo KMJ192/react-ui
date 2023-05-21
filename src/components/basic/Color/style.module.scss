@@ -1,0 +1,31 @@
+@import '@src/styles/color.module.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  .title {
+    color: $light-blue000;
+    font-size: 32px;
+  }
+  .contents {
+    color: $light-blue000;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(6%, auto));
+    column-gap: 36px;
+    row-gap: 24px;
+    .color {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      row-gap: 8px;
+      .preview {
+        width: 50px;
+        aspect-ratio: 1;
+        border-radius: 8px;
+        // place-content: center;
+      }
+    }
+  }
+}
