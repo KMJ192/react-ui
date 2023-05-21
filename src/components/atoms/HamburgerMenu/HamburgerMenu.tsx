@@ -52,5 +52,5 @@ function HamburgerMenu<
   );
 }
 
-export type { BaseProps as HamburgerBaseProps };
+export type { BaseProps as HamburgerProps };
 export default React.forwardRef(HamburgerMenu) as typeof HamburgerMenu;

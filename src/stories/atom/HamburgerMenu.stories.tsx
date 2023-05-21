@@ -1,5 +1,8 @@
 import { useState } from 'react';
-import HamburgerMenu from '@src/components/atoms/HamburgerMenu/HamburgerMenu';
+import HamburgerMenu, {
+  HamburgerProps,
+} from '@src/components/atoms/HamburgerMenu/HamburgerMenu';
+import { StoryFn } from '@storybook/react';
 
 export default {
   title: 'UI/Atoms/HamburgerMenu',
@@ -7,14 +10,24 @@ export default {
   parameters: {
     componentSubtitle: 'HamburgerMenu',
   },
+  argTypes: {
+    type: {
+      options: ['type-1', 'type-2', 'type-3', 'type-4'],
+      control: {
+        type: 'select',
+      },
+    },
+  },
 };
 
-export const hamburgerMenu = (): JSX.Element => {
-  const [active, setActive] = useState(false);
+const hamburgerMenu = (args: HamburgerProps): JSX.Element => {
+  return <HamburgerMenu {...args} />;
+};
 
-  const onClick = () => {
-    setActive(!active);
-  };
-
-  return <HamburgerMenu onClick={onClick} active={active} type='type-1' />;
+export const HamburgerMenuStory: StoryFn<HamburgerProps> = hamburgerMenu.bind(
+  {},
+);
+HamburgerMenuStory.args = {
+  active: false,
+  type: 'type-1',
 };
