@@ -2,6 +2,7 @@ import { themes } from '@storybook/theming';
 import UIProvider from '../src/store/Provider';
 
 import './storybook.scss';
+import { INIT_STATE } from '../src/store/Context';
 
 export const parameters = {
   backgrounds: {
@@ -34,7 +35,7 @@ export const parameters = {
 
 export const decorators = [
   (Story) => (
-    <UIProvider value={{}}>
+    <UIProvider value={INIT_STATE}>
       <main className='storybook'>
         <Story />
       </main>
