@@ -3,7 +3,9 @@ import _ from 'lodash';
 
 import type { ContextState, ContextDispatch } from './types';
 
-const INIT_STATE: ContextState = {};
+const INIT_STATE: ContextState = {
+  theme: 'light',
+};
 
 const INIT_CONTEXT: ContextDispatch = [
   _.cloneDeep(INIT_STATE),

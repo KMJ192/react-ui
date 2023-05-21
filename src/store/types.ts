@@ -1,4 +1,8 @@
-type ContextState = {};
+import { Theme } from '@src/types/types';
+
+type ContextState = {
+  theme: Theme;
+};
 
 type ContextDispatch = [
   ContextState,
