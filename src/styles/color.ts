@@ -7,11 +7,9 @@ const COLOR: {
 } = {
   light: {
     primary000: color.light_primary000,
-    primary001: color.light_primary001,
     primary100: color.light_primary100,
     primary200: color.light_primary200,
     primary300: color.light_primary300,
-    primary301: color.light_primary301,
     primary400: color.light_primary400,
     primary500: color.light_primary500,
     primary600: color.light_primary600,

@@ -20,25 +20,25 @@ const button: {
   light: {
     background: {
       default: COLOR.light.primary000,
-      hover: COLOR.light.primary001,
+      hover: COLOR.light.primary100,
       disabled: COLOR.light.primary200,
     },
     text: {
       default: COLOR.light.primary700,
       hover: COLOR.light.primary700,
-      disabled: COLOR.light.primary301,
+      disabled: COLOR.light.primary300,
     },
   },
   dark: {
     background: {
       default: COLOR.dark.primary000,
-      hover: COLOR.dark.primary001,
+      hover: COLOR.dark.primary100,
       disabled: COLOR.dark.primary200,
     },
     text: {
       default: COLOR.dark.primary700,
       hover: COLOR.dark.primary700,
-      disabled: COLOR.dark.primary301,
+      disabled: COLOR.dark.primary300,
     },
   },
 };
