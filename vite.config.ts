@@ -10,6 +10,14 @@ export default defineConfig({
         find: '@src',
         replacement: './src',
       },
+      {
+        find: '@styles',
+        replacement: './src/styles',
+      },
+      {
+        find: '@icons',
+        replacement: './src/static/icons',
+      },
     ],
   },
   build: {
