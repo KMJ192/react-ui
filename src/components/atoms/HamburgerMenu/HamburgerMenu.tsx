@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
@@ -22,22 +22,6 @@ function HamburgerMenu<
   ref: React.Ref<any>,
 ) {
   const Element = as ?? DEFAULT_COMPONENT_ELEMENT;
-  const pres = useRef(active);
-  const bar1Ref = useRef<HTMLSpanElement>(null);
-  const bar2Ref = useRef<HTMLSpanElement>(null);
-  const bar3Ref = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    const bar1 = bar1Ref.current;
-    const bar2 = bar2Ref.current;
-    const bar3 = bar3Ref.current;
-    if (bar1 && bar2 && bar3 && pres.current !== active) {
-      bar1.className = '';
-      bar2.className = '';
-      bar3.className = '';
-      pres.current = active;
-    }
-  }, [active]);
 
   return (
     <Element
@@ -45,9 +29,9 @@ function HamburgerMenu<
       className={cx('hamburger', active && 'active', type)}
       {...props}
     >
-      <span ref={bar1Ref} className={cx('pause')}></span>
-      <span ref={bar2Ref} className={cx('pause')}></span>
-      <span ref={bar3Ref} className={cx('pause')}></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </Element>
   );
 }
