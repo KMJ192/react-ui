@@ -1,8 +1,9 @@
 import { themes } from '@storybook/theming';
-import { RecoilRoot, useRecoilState } from 'recoil';
+import { RecoilRoot } from 'recoil';
+import cloneDeep from 'lodash/cloneDeep';
 
 import UIProvider from '../src/store/Provider';
-import { globalAtom } from '../src/recoilStore/global';
+import useUIState from '../src/store/hooks/useUIState';
 
 import { INIT_STATE } from '../src/store/Context';
 import Button from '@src/components/atoms/Button/Button';
@@ -39,14 +40,16 @@ export const parameters = {
 };
 
 function GlobalStory({ children }) {
-  const [state, setState] = useRecoilState(globalAtom);
-  const { theme } = state;
+  const [ui, setUI] = useUIState();
+  const { theme } = ui;
 
   return (
     <main className={`storybook ${theme}`}>
       <Button
         onClick={() => {
-          setState({ theme: theme === 'light' ? 'dark' : 'light' });
+          const newState = cloneDeep(ui);
+          newState.theme = theme === 'light' ? 'dark' : 'light';
+          setUI(newState);
         }}
       >
         {theme}
@@ -59,7 +62,7 @@ function GlobalStory({ children }) {
 export const decorators = [
   (Story) => (
     <RecoilRoot>
-      <UIProvider value={INIT_STATE}>
+      <UIProvider>
         <GlobalStory>
           <Story />
         </GlobalStory>

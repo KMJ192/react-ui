@@ -1,15 +1,31 @@
-import { ReactNode, useState } from 'react';
-import { ContextState } from './types';
-import Context from './Context';
-import _ from 'lodash';
+import { ReactNode, useEffect, useState } from 'react';
+import cloneDeep from 'lodash/cloneDeep';
+
+import Context, { INIT_STATE } from './Context';
+
+import type { ContextState } from './types';
 
 type Props = {
-  value: ContextState;
   children: ReactNode;
+  value?: ContextState;
 };
 
 function Provider({ value, children }: Props) {
-  const contextState = useState<ContextState>(_.cloneDeep(value));
+  const contextState = useState<ContextState>(
+    value ? cloneDeep(value) : cloneDeep(INIT_STATE),
+  );
+
+  const { theme } = contextState[0];
+
+  useEffect(() => {
+    if (!window.localStorage.getItem('theme')) {
+      window.localStorage.setItem('theme', 'light');
+    }
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem('theme', theme);
+  }, [theme]);
 
   return <Context.Provider value={contextState}>{children}</Context.Provider>;
 }

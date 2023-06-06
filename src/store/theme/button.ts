@@ -31,12 +31,12 @@ const button: {
   },
   dark: {
     background: {
-      default: COLOR.dark.primary000,
-      hover: COLOR.dark.primary100,
+      default: COLOR.dark.primary200,
+      hover: COLOR.dark.primary300,
       disabled: COLOR.dark.primary200,
     },
     text: {
-      default: COLOR.dark.primary700,
+      default: COLOR.dark.primary600,
       hover: COLOR.dark.primary700,
       disabled: COLOR.dark.primary300,
     },
