@@ -12,3 +12,6 @@ export { default as UIProvider } from '@src/store/Provider';
 export { default as useSetUIState } from '@src/store/hooks/useSetUIState';
 export { default as useUIState } from '@src/store/hooks/useUIState';
 export { default as useValueUIState } from '@src/store/hooks/useValueUIState';
+
+// Color
+export { COLOR } from '@src/styles/color';
