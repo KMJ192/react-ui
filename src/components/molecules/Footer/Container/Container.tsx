@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import type { ReactNode, ElementType, Ref } from 'react';
 
-import type { OVER_RIDABLE_PROPS } from '@lib/ui/types/types';
+import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import classNames from 'classnames/bind';
 import style from './Container.module.scss';
