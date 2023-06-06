@@ -1,11 +1,9 @@
 import React from 'react';
-import styled from '@emotion/styled';
+
+import Styled from './styled';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
-
-import classNames from 'classnames/bind';
-import style from './style.module.scss';
-const cx = classNames.bind(style);
+import useTheme from './hooks/useTheme';
 
 type BaseProps = {
   children?: React.ReactNode;
@@ -13,34 +11,26 @@ type BaseProps = {
   loading?: boolean;
 };
 
-const DEFAULT_COMPONENT_ELEMENT = 'button';
+const ELEMENT = 'button';
 
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-const Btn = styled.button`
-  background-color: red;
-`;
-
-function Button<T extends React.ElementType = typeof DEFAULT_COMPONENT_ELEMENT>(
-  {
-    children,
-    as,
-    variant = 'primary',
-    loading = false,
-    className,
-    ...props
-  }: Props<T>,
+function B<T extends React.ElementType = typeof ELEMENT>(
+  { variant = 'primary', loading = false, children, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
-  const Element = as ?? DEFAULT_COMPONENT_ELEMENT;
+  const colorSet = useTheme();
 
   return (
-    <Btn>{children}</Btn>
-    // <Element {...props} ref={ref} className={cx('button', variant)}>
-    //   {children}
-    // </Element>
+    <Styled.Button {...props} ref={ref} colorSet={colorSet}>
+      {children}
+    </Styled.Button>
   );
 }
 
+const Button = Object.assign(React.forwardRef(B) as typeof B, {
+  useTheme,
+});
+
 export type { BaseProps as ButtonProps };
-export default React.forwardRef(Button) as typeof Button;
+export default Button;
