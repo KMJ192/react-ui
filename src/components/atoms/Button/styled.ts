@@ -3,6 +3,8 @@ import styled from '@emotion/styled';
 
 import type { ButtonTheme } from '@src/store/theme';
 
+const ELEMENT: 'button' = 'button';
+
 type Props = {
   colorSet: ButtonTheme;
 };
@@ -63,6 +65,7 @@ const ButtonStyled = styled(theme)<Props>`
   border: none;
   overflow: hidden;
   cursor: pointer;
+  user-select: none;
   &:disabled {
     cursor: not-allowed;
   }
@@ -72,4 +75,5 @@ const Styled = {
   Button: ButtonStyled,
 };
 
+export { ELEMENT };
 export default Styled;

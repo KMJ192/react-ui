@@ -1,17 +1,15 @@
 import React from 'react';
 
-import Styled from './styled';
+import Styled, { ELEMENT } from './styled';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 import useTheme from './hooks/useTheme';
 
 type BaseProps = {
   children?: React.ReactNode;
-  variant?: 'primary' | 'loading';
+  variant?: 'primary' | 'secondary';
   loading?: boolean;
 };
-
-const ELEMENT = 'button';
 
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
