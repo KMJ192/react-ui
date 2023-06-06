@@ -15,7 +15,7 @@ const ELEMENT = 'button';
 
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function B<T extends React.ElementType = typeof ELEMENT>(
+function Button<T extends React.ElementType = typeof ELEMENT>(
   { variant = 'primary', loading = false, children, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
@@ -28,9 +28,5 @@ function B<T extends React.ElementType = typeof ELEMENT>(
   );
 }
 
-const Button = Object.assign(React.forwardRef(B) as typeof B, {
-  useTheme,
-});
-
 export type { BaseProps as ButtonProps };
-export default Button;
+export default React.forwardRef(Button) as typeof Button;
