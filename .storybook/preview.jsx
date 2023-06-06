@@ -46,10 +46,7 @@ function GlobalStory({ children }) {
     <main className={`storybook ${theme}`}>
       <Button
         onClick={() => {
-          const isLight = theme === 'light';
-          setState({
-            theme: isLight ? 'dark' : 'light',
-          });
+          setState({ theme: theme === 'light' ? 'dark' : 'light' });
         }}
       >
         {theme}

@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from '@emotion/styled';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
@@ -16,6 +17,10 @@ const DEFAULT_COMPONENT_ELEMENT = 'button';
 
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
+const Btn = styled.button`
+  background-color: red;
+`;
+
 function Button<T extends React.ElementType = typeof DEFAULT_COMPONENT_ELEMENT>(
   {
     children,
@@ -30,9 +35,10 @@ function Button<T extends React.ElementType = typeof DEFAULT_COMPONENT_ELEMENT>(
   const Element = as ?? DEFAULT_COMPONENT_ELEMENT;
 
   return (
-    <Element {...props} ref={ref} className={cx('button', variant)}>
-      {children}
-    </Element>
+    <Btn>{children}</Btn>
+    // <Element {...props} ref={ref} className={cx('button', variant)}>
+    //   {children}
+    // </Element>
   );
 }
 
