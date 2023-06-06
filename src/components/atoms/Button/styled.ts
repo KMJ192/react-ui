@@ -5,8 +5,11 @@ import type { ButtonTheme } from '@src/store/theme';
 
 const ELEMENT: 'button' = 'button';
 
+type Variant = 'primary' | 'secondary';
+
 type Props = {
   colorSet: ButtonTheme;
+  variant: Variant;
 };
 
 const ripple = keyframes`
@@ -75,5 +78,6 @@ const Styled = {
   Button: ButtonStyled,
 };
 
+export type { Variant };
 export { ELEMENT };
 export default Styled;

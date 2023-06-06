@@ -1,13 +1,14 @@
 import React from 'react';
 
 import Styled, { ELEMENT } from './styled';
+import type { Variant } from './styled';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 import useTheme from './hooks/useTheme';
 
 type BaseProps = {
   children?: React.ReactNode;
-  variant?: 'primary' | 'secondary';
+  variant?: Variant;
   loading?: boolean;
 };
 
@@ -20,7 +21,7 @@ function Button<T extends React.ElementType = typeof ELEMENT>(
   const { colorSet } = useTheme();
 
   return (
-    <Styled.Button {...props} ref={ref} colorSet={colorSet}>
+    <Styled.Button {...props} ref={ref} colorSet={colorSet} variant={variant}>
       {children}
     </Styled.Button>
   );
