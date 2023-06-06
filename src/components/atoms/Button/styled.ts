@@ -63,6 +63,9 @@ const ButtonStyled = styled(theme)<Props>`
   border: none;
   overflow: hidden;
   cursor: pointer;
+  &:disabled {
+    cursor: not-allowed;
+  }
 `;
 
 const Styled = {

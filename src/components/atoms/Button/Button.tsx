@@ -19,7 +19,7 @@ function Button<T extends React.ElementType = typeof ELEMENT>(
   { variant = 'primary', loading = false, children, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
-  const colorSet = useTheme();
+  const { colorSet } = useTheme();
 
   return (
     <Styled.Button {...props} ref={ref} colorSet={colorSet}>
