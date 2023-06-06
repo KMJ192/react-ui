@@ -1,14 +1,26 @@
 import { createContext } from 'react';
-import _ from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
 
 import type { ContextState, ContextDispatch } from './types';
 
-const INIT_STATE: ContextState = {};
+import Theme from './theme';
+
+const INIT_STATE: ContextState = {
+  theme: 'light',
+  themeSet: {
+    light: {
+      button: Theme.button.light,
+    },
+    dark: {
+      button: Theme.button.dark,
+    },
+  },
+};
 
 const INIT_CONTEXT: ContextDispatch = [
-  _.cloneDeep(INIT_STATE),
+  cloneDeep(INIT_STATE),
   () => {
-    return _.cloneDeep(INIT_STATE);
+    return cloneDeep(INIT_STATE);
   },
 ];
 

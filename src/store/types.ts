@@ -1,6 +1,18 @@
-import { Theme } from '@src/types/types';
+import type { Theme } from '@src/types/types';
+import type { ButtonTheme } from './theme';
 
-type ContextState = {};
+type Components = {
+  button: ButtonTheme;
+};
+
+type ContextState = {
+  theme: Theme;
+  themeSet: {
+    light: Components;
+    dark: Components;
+    [custom: string]: Components;
+  };
+};
 
 type ContextDispatch = [
   ContextState,
