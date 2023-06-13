@@ -1,10 +1,14 @@
 import React from 'react';
 
-import Styled, { ELEMENT } from './styled';
-import type { Variant } from './styled';
-
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
-import useTheme from './hooks/useTheme';
+
+import useTheme from '@src/hooks/useTheme';
+
+import type { Variant } from './types';
+
+import classNames from 'classnames/bind';
+import style from './style.module.scss';
+const cx = classNames.bind(style);
 
 type BaseProps = {
   children?: React.ReactNode;
@@ -12,18 +16,20 @@ type BaseProps = {
   loading?: boolean;
 };
 
+const ELEMENT = 'button';
+
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
 function Button<T extends React.ElementType = typeof ELEMENT>(
   { variant = 'primary', loading = false, children, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
-  const { colorSet } = useTheme();
+  const { theme } = useTheme();
 
   return (
-    <Styled.Button {...props} ref={ref} colorSet={colorSet} variant={variant}>
+    <ELEMENT {...props} ref={ref} className={cx('button', variant, theme)}>
       {children}
-    </Styled.Button>
+    </ELEMENT>
   );
 }
 

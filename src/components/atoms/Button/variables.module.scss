@@ -1,0 +1,46 @@
+@import '@styles/color.module.scss';
+
+$button-background: (
+  'light': var(--l-button-background, $light-primary000),
+  'dark': var(--d-button-background, $dark-primary200),
+  'custom': var(--c-button-background),
+);
+$button-background-hover: (
+  'light': var(--l-button-background-hover, $light-primary100),
+  'dark': var(--d-button-background-hover, $dark-primary300),
+  'custom': var(--c-button-background-hover),
+);
+$button-background-disabled: (
+  'light': var(--l-button-background-disabled, $light-primary200),
+  'dark': var(--d-button-background-disabled, $dark-primary100),
+  'custom': var(--c-button-background-disabled),
+);
+
+$button-background-active: (
+  'light': var(--l-button-background-active, rgba(255, 255, 255, 0.6)),
+  'dark': var(--d-button-background-active, rgba(76, 76, 76, 0.6)),
+  'custom': var(--c-button-background-active),
+);
+
+$button-text: (
+  'light': var(--l-button-text, $light-primary700),
+  'dark': var(--d-button-text, $dark-primary600),
+  'custom': var(--d-button-text),
+);
+
+$button-text-hover: (
+  'light': var(--l-button-text-hover, $light-primary700),
+  'dark': var(--d-button-text-hover, $dark-primary600),
+  'custom': var(--d-button-test-hover),
+);
+$button-text-disabled: (
+  'light': var(--l-button-text-disabled, $light-primary300),
+  'dark': var(--d-button-text-disabled, $dark-primary300),
+  'custom': var(--c-button-text-disabled),
+);
+
+$button-text-active: (
+  'light': var(--l-button-text-active, $light-primary700),
+  'dark': var(--d-button-text-active, $dark-primary700),
+  'custom': var(--c-button-text-active),
+);

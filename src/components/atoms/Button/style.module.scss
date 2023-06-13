@@ -1,0 +1,74 @@
+@import '@styles/transition.scss';
+@import './variables.module.scss';
+
+@mixin default {
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+@mixin theme($theme-name) {
+  &.#{$theme-name} {
+    background: map-get($button-background, $theme-name);
+    color: map-get($button-text, $theme-name);
+    &:hover {
+      background: map-get($button-background-hover, $theme-name);
+      color: map-get($button-text-hover, $theme-name);
+    }
+    &:disabled {
+      background: map-get($button-background-disabled, $theme-name);
+      color: map-get($button-text-disabled, $theme-name);
+    }
+    &:active {
+      background: map-get($button-background-active, $theme-name);
+      color: map-get($button-text-active, $theme-name);
+    }
+  }
+}
+
+@mixin ripple-animation {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.6);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+  }
+
+  &:focus:not(:active)::after {
+    animation: ripple 0.5s ease-out;
+  }
+}
+
+.button {
+  @include default;
+  @include ripple-animation;
+  @include theme(light);
+  @include theme(dark);
+  @include theme(custom);
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(25, 25);
+  }
+  100% {
+    transform: scale(40, 40);
+    opacity: 0;
+  }
+}
