@@ -1,4 +1,4 @@
-@import '@src/styles/color.module.scss';
+@import './variables/variables.module.scss';
 
 @import './type1.module.scss';
 @import './type2.module.scss';
@@ -37,7 +37,6 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: $light-blue300;
     border-radius: 4px;
   }
   & > span:nth-of-type(1) {
@@ -66,8 +65,19 @@
   }
 }
 
+@mixin theme($theme-name) {
+  &.#{$theme-name} {
+    & > span {
+      background: map-get($hamburger-menu-bar-background, $theme-name);
+    }
+  }
+}
+
 .hamburger {
   @include hamburger;
   @include bar;
   @include types(8px);
+  @include theme(light);
+  @include theme(dark);
+  @include theme(custom);
 }

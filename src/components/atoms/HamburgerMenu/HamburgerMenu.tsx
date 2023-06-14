@@ -4,6 +4,7 @@ import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
+import useTheme from '@src/hooks/useTheme';
 const cx = classNames.bind(style);
 
 type BaseProps = {
@@ -23,10 +24,12 @@ function HamburgerMenu<
 ) {
   const Element = as ?? DEFAULT_COMPONENT_ELEMENT;
 
+  const { theme } = useTheme();
+
   return (
     <Element
       ref={ref}
-      className={cx('hamburger', active && 'active', type)}
+      className={cx('hamburger', active && 'active', type, theme)}
       {...props}
     >
       <span></span>
