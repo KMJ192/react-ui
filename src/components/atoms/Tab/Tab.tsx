@@ -1,16 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
 
+import useTheme from '@src/hooks/useTheme';
+
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+
+import type { Option, Direction } from './types';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
 const cx = classNames.bind(style);
 
 type BaseProps = {
-  options?: Array<{
-    contents?: React.ReactNode;
-  }>;
-  direction?: 'vertical' | 'horizontal';
+  options?: Array<Option>;
+  direction?: Direction;
   select?: number;
   onSelect?: (idx: number) => void;
 };
@@ -31,8 +33,12 @@ function Tab<T extends React.ElementType = typeof DEFAULT_COMPONENT_ELEMENT>(
   }: Props<T>,
   ref: React.Ref<any>,
 ) {
+  const { theme } = useTheme();
+
   const Element = as ?? DEFAULT_COMPONENT_ELEMENT;
+
   const optionsRef = useRef<HTMLDivElement>(null);
+
   const [sizeInfo, setSizeInfo] = useState<{
     optionsInfo: {
       width: number;
@@ -42,6 +48,7 @@ function Tab<T extends React.ElementType = typeof DEFAULT_COMPONENT_ELEMENT>(
       width: number;
       height: number;
       left: number;
+      top: number;
     }>;
   }>({
     optionsInfo: {
@@ -50,10 +57,12 @@ function Tab<T extends React.ElementType = typeof DEFAULT_COMPONENT_ELEMENT>(
     },
     optionInfo: [],
   });
-  const [tabLineStyle, setTabLineStyle] = useState({
-    left: '0',
-    width: '0',
-  });
+  const [tabLineStyle, setTabLineStyle] = useState<{
+    width?: string;
+    height?: string;
+    top?: string;
+    left?: string;
+  }>({});
 
   useEffect(() => {
     if (optionsRef.current) {
@@ -63,6 +72,7 @@ function Tab<T extends React.ElementType = typeof DEFAULT_COMPONENT_ELEMENT>(
       const { width: totalWidth, height: totalHeight } =
         options.getBoundingClientRect();
       let left = 0;
+      let top = 0;
       for (let i = 0; i < len; i++) {
         const option = options.children[i];
         const { width, height } = option.getBoundingClientRect();
@@ -70,8 +80,10 @@ function Tab<T extends React.ElementType = typeof DEFAULT_COMPONENT_ELEMENT>(
           width,
           height,
           left,
+          top,
         };
         left += width;
+        top += height;
       }
 
       setSizeInfo({
@@ -86,26 +98,36 @@ function Tab<T extends React.ElementType = typeof DEFAULT_COMPONENT_ELEMENT>(
 
   useEffect(() => {
     if (sizeInfo.optionInfo.length > 0) {
-      const left = `${sizeInfo.optionInfo[select].left}px`;
-      const width = `${sizeInfo.optionInfo[select].width}px`;
-      setTabLineStyle({
-        left,
-        width,
-      });
+      if (direction === 'horizontal') {
+        const left = `${sizeInfo.optionInfo[select].left}px`;
+        const width = `${sizeInfo.optionInfo[select].width}px`;
+        setTabLineStyle({
+          left,
+          width,
+        });
+      } else if (direction === 'vertical') {
+        const top = `${sizeInfo.optionInfo[select].top}px`;
+        const height = `${sizeInfo.optionInfo[select].height}px`;
+        setTabLineStyle({
+          top,
+          height,
+        });
+      }
     }
   }, [sizeInfo, select]);
 
   return (
-    <Element {...props} ref={ref} className={cx('tab', direction, className)}>
+    <Element {...props} ref={ref} className={cx('tab', theme, className)}>
       <div
         className={cx(
           'tab-line',
+          direction,
           select === 0 && 'first',
           select === options.length - 1 && 'last',
         )}
         style={tabLineStyle}
       ></div>
-      <div className={cx('options')} ref={optionsRef}>
+      <div className={cx('options', direction)} ref={optionsRef}>
         {options.map(({ contents }, idx: number) => {
           return (
             <span
@@ -124,4 +146,5 @@ function Tab<T extends React.ElementType = typeof DEFAULT_COMPONENT_ELEMENT>(
   );
 }
 
+export type { BaseProps as TabProps };
 export default React.forwardRef(Tab) as typeof Tab;
