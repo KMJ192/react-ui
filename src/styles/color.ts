@@ -38,6 +38,7 @@ const COLOR: {
     red500: color.light_red500,
     red600: color.light_red600,
     red700: color.light_red700,
+    background: color.light_background,
   },
   dark: {
     primary000: color.dark_primary000,
@@ -72,6 +73,7 @@ const COLOR: {
     red500: color.dark_red500,
     red600: color.dark_red600,
     red700: color.dark_red700,
+    background: color.dark_background,
   },
   solid: {
     white: color.white,
