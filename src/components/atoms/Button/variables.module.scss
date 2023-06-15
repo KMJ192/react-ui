@@ -6,7 +6,7 @@ $button-background: (
   'custom': var(--c-button-background),
 );
 $button-background-hover: (
-  'light': var(--l-button-background-hover, $light-primary100),
+  'light': var(--l-button-background-hover, $light-blue000),
   'dark': var(--d-button-background-hover, $dark-primary300),
   'custom': var(--c-button-background-hover),
 );

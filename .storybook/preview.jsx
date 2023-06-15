@@ -5,7 +5,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import UIProvider from '../src/store/Provider';
 import useUIState from '../src/store/hooks/useUIState';
 
-import { INIT_STATE } from '../src/store/Context';
+import { COLOR } from '@styles/color';
 import Button from '@src/components/atoms/Button/Button';
 
 import './index.scss';
@@ -16,11 +16,11 @@ export const parameters = {
     values: [
       {
         name: 'dark',
-        value: '#1d1d1d',
+        value: COLOR.dark.background,
       },
       {
         name: 'light',
-        value: '#ffffff',
+        value: COLOR.light.background,
       },
     ],
   },
@@ -44,8 +44,9 @@ function GlobalStory({ children }) {
   const { theme } = ui;
 
   return (
-    <main className={`storybook ${theme}`}>
+    <main className='storybook'>
       <Button
+        className='theme-btn'
         onClick={() => {
           const newState = cloneDeep(ui);
           newState.theme = theme === 'light' ? 'dark' : 'light';
