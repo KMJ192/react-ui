@@ -19,11 +19,17 @@ const ELEMENT = 'button';
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
 function Button<T extends React.ElementType = typeof ELEMENT>(
-  { variant = 'primary', loading = false, children, ...props }: Props<T>,
+  {
+    children,
+    variant = 'primary',
+    loading = false,
+    className,
+    ...props
+  }: Props<T>,
   ref: React.Ref<any>,
 ) {
   return (
-    <ELEMENT {...props} ref={ref} className={cx('button', variant)}>
+    <ELEMENT {...props} ref={ref} className={cx('button', variant, className)}>
       {children}
     </ELEMENT>
   );
