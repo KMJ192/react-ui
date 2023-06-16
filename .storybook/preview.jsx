@@ -6,7 +6,7 @@ import UIProvider from '../src/store/Provider';
 import useUIState from '../src/store/hooks/useUIState';
 
 import { COLOR } from '@styles/color';
-import Button from '@src/components/atoms/Button/Button';
+import Floating from '@src/components/molecules/Floating/Floating';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
@@ -47,16 +47,17 @@ function GlobalStory({ children }) {
 
   return (
     <main className={cx('storybook', theme)}>
-      <Button
-        className={cx('theme-btn')}
-        onClick={() => {
-          const newState = cloneDeep(ui);
-          newState.theme = theme === 'light' ? 'dark' : 'light';
-          setUI(newState);
-        }}
-      >
-        {theme}
-      </Button>
+      <Floating>
+        <Floating.Button
+          onClick={() => {
+            const newState = cloneDeep(ui);
+            newState.theme = theme === 'light' ? 'dark' : 'light';
+            setUI(newState);
+          }}
+        >
+          {theme}
+        </Floating.Button>
+      </Floating>
       <section>{children}</section>
     </main>
   );
