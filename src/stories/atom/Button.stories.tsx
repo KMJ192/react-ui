@@ -37,11 +37,7 @@ const meta: Meta<typeof Button> = {
 const Template = (args: ButtonProps) => {
   const { children, ...arg } = args;
 
-  return (
-    <Button {...arg} className={cx('test')}>
-      {children}
-    </Button>
-  );
+  return <Button {...arg}>{children}</Button>;
 };
 
 export const Primary: StoryFn<ButtonProps> = Template.bind({});
