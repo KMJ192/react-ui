@@ -1,0 +1,19 @@
+.floating {
+  position: fixed;
+  &.tr {
+    top: 24px;
+    right: 24px;
+  }
+  &.tl {
+    top: 24px;
+    left: 24px;
+  }
+  &.br {
+    bottom: 24px;
+    right: 24px;
+  }
+  &.bl {
+    bottom: 24px;
+    left: 24px;
+  }
+}
