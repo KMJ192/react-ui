@@ -12,7 +12,6 @@ type COMBINE_ELEMENT_PROPS<T extends ElementType, K = unknown> = COMBINE<
 
 // 자동으로 as 타입 추가
 type OVER_RIDABLE_PROPS<T extends ElementType, K = unknown> = {
-  as?: T;
   theme?: Theme;
 } & COMBINE_ELEMENT_PROPS<T, K>;
 
