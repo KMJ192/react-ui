@@ -10,22 +10,20 @@
   cursor: pointer;
 }
 
-@mixin theme($theme-name) {
-  &.#{$theme-name} {
-    background: map-get($button-background, $theme-name);
-    color: map-get($button-text, $theme-name);
-    &:hover {
-      background: map-get($button-background-hover, $theme-name);
-      color: map-get($button-text-hover, $theme-name);
-    }
-    &:disabled {
-      background: map-get($button-background-disabled, $theme-name);
-      color: map-get($button-text-disabled, $theme-name);
-    }
-    &:active {
-      background: map-get($button-background-active, $theme-name);
-      color: map-get($button-text-active, $theme-name);
-    }
+@mixin color-set {
+  background: $button-background;
+  color: $button-text;
+  &:hover {
+    background: $button-background-hover;
+    color: $button-text-hover;
+  }
+  &:disabled {
+    background: $button-background-disabled;
+    color: $button-text-disabled;
+  }
+  &:active {
+    background: $button-background-active;
+    color: $button-text-active;
   }
 }
 
@@ -54,9 +52,7 @@
 .button {
   @include default;
   @include ripple-animation;
-  @include theme(light);
-  @include theme(dark);
-  @include theme(custom);
+  @include color-set;
 }
 
 @keyframes ripple {

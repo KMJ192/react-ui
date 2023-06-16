@@ -1,7 +1,6 @@
 @import '@src/styles/color.module.scss';
 
-$hamburger-menu-bar-background: (
-  'light': var(--l-hamburger-menu-bar-background, $light-blue100),
-  'dark': var(--d-hamburger-menu-bar-background, $dark-blue600),
-  'custom': var(--c-hamburger-menu-bar-background),
+$hamburger-menu-bar-background: var(
+  --hamburger-menu-bar-background,
+  $light-blue100
 );

@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import useTheme from '@src/hooks/useTheme';
-
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import type { Option, Direction } from './types';
@@ -33,8 +31,6 @@ function Tab<T extends React.ElementType = typeof DEFAULT_COMPONENT_ELEMENT>(
   }: Props<T>,
   ref: React.Ref<any>,
 ) {
-  const { theme } = useTheme();
-
   const Element = as ?? DEFAULT_COMPONENT_ELEMENT;
 
   const optionsRef = useRef<HTMLDivElement>(null);
@@ -117,7 +113,7 @@ function Tab<T extends React.ElementType = typeof DEFAULT_COMPONENT_ELEMENT>(
   }, [sizeInfo, select]);
 
   return (
-    <Element {...props} ref={ref} className={cx('tab', theme, className)}>
+    <Element {...props} ref={ref} className={cx('tab', className)}>
       <div
         className={cx(
           'tab-line',

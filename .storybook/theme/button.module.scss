@@ -1,0 +1,25 @@
+@import '@styles/color.module.scss';
+
+@mixin button-light {
+  --button-background: #{$light-primary000};
+  --button-background-hover: #{$light-blue000};
+  --button-background-disabled: #{$light-primary200};
+  --button-background-active: rgba(255, 255, 255, 0.6);
+
+  --button-text: #{$light-primary700};
+  --button-text-hover: #{$light-primary700};
+  --button-text-disabled: #{$light-primary300};
+  --button-text-active: #{$light-primary700};
+}
+
+@mixin button-dark {
+  --button-background: #{$dark-primary200};
+  --button-background-hover: #{$dark-primary300};
+  --button-background-disabled: #{$dark-primary100};
+  --button-background-active: rgba(76, 76, 76, 0.6);
+
+  --button-text: #{$dark-primary600};
+  --button-text-hover: #{$dark-primary600};
+  --button-text-disabled: #{$dark-primary300};
+  --button-text-active: #{$dark-primary700};
+}

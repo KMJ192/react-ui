@@ -8,7 +8,9 @@ import useUIState from '../src/store/hooks/useUIState';
 import { COLOR } from '@styles/color';
 import Button from '@src/components/atoms/Button/Button';
 
-import './index.scss';
+import classNames from 'classnames/bind';
+import style from './style.module.scss';
+const cx = classNames.bind(style);
 
 export const parameters = {
   backgrounds: {
@@ -44,9 +46,9 @@ function GlobalStory({ children }) {
   const { theme } = ui;
 
   return (
-    <main className='storybook'>
+    <main className={cx('storybook', theme)}>
       <Button
-        className='theme-btn'
+        className={cx('theme-btn')}
         onClick={() => {
           const newState = cloneDeep(ui);
           newState.theme = theme === 'light' ? 'dark' : 'light';

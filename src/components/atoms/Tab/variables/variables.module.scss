@@ -1,31 +1,9 @@
 @import '@src/styles/color.module.scss';
 
-$tab-background: (
-  'light': var(--l-tab-background, $light-primary000),
-  'dark': var(--d-tab-background, $dark-primary200),
-  'custom': var(--c-tab-background),
-);
+$tab-background: var(--tab-background, $light-primary000);
+$tab-background-hover: var(--tab-background-hover, $light-blue000);
 
-$tab-background-hover: (
-  'light': var(--l-tab-background-hover, $light-blue000),
-  'dark': var(--d-tab-background-hover, $dark-primary300),
-  'custom': var(--c-tab-background-hover),
-);
+$tab-select-line: var(--tab-select-line, $light-blue100);
 
-$tab-select-line: (
-  'light': var(--l-tab-select-line, $light-blue100),
-  'dark': var(--d-tab-select-line, $dark-blue300),
-  'custom': var(--c-tab-select-line),
-);
-
-$tab-text: (
-  'light': var(--l-tab-text, $light-primary700),
-  'dark': var(--d-tab-text, $dark-primary600),
-  'custom': var(--c-tab-text),
-);
-
-$tab-text-hover: (
-  'light': var(--l-tab-text-hover, $light-primary400),
-  'dark': var(--d-tab-text-hover, $dark-primary700),
-  'custom': var(--c-tab-text-hover),
-);
+$tab-text: var(--tab-text, $light-primary700);
+$tab-text-hover: var(--tab-text-hover, $light-primary400);

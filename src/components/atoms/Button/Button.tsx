@@ -2,8 +2,6 @@ import React from 'react';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
-import useTheme from '@src/hooks/useTheme';
-
 import type { Variant } from './types';
 
 import classNames from 'classnames/bind';
@@ -24,10 +22,8 @@ function Button<T extends React.ElementType = typeof ELEMENT>(
   { variant = 'primary', loading = false, children, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
-  const { theme } = useTheme();
-
   return (
-    <ELEMENT {...props} ref={ref} className={cx('button', variant, theme)}>
+    <ELEMENT {...props} ref={ref} className={cx('button', variant)}>
       {children}
     </ELEMENT>
   );

@@ -63,19 +63,17 @@
   }
 }
 
-@mixin theme($theme) {
-  &.#{$theme} {
-    background: map-get($tab-background, $theme);
-    .option {
-      color: map-get($tab-text, $theme);
-      &:hover {
-        color: map-get($tab-text-hover, $theme);
-        background: map-get($tab-background-hover, $theme);
-      }
+@mixin color-set {
+  background: $tab-background;
+  .option {
+    color: $tab-text;
+    &:hover {
+      color: $tab-text-hover;
+      background: $tab-background-hover;
     }
-    .tab-line {
-      background: map-get($tab-select-line, $theme);
-    }
+  }
+  .tab-line {
+    background: $tab-select-line;
   }
 }
 
@@ -84,7 +82,5 @@
   @include options;
   @include option;
   @include tab-line;
-  @include theme(light);
-  @include theme(dark);
-  @include theme(custom);
+  @include color-set;
 }
