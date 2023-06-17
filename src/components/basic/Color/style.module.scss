@@ -4,12 +4,19 @@
   display: flex;
   flex-direction: column;
   row-gap: 24px;
-  .title {
+  font-size: 18px;
+  font-weight: 700;
+  &.light {
+    color: $light-primary700;
+  }
+  &.dark {
     color: $light-blue000;
+  }
+  .title {
     font-size: 32px;
+    font-weight: 900;
   }
   .contents {
-    color: $light-blue000;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(6%, auto));
     column-gap: 36px;

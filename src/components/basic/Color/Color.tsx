@@ -11,7 +11,7 @@ type Props = {
 
 function Color({ theme = 'light' }: Props) {
   return (
-    <div className={cx('container')}>
+    <div className={cx('container', theme)}>
       <div className={cx('title')}>{theme} Theme</div>
       <div className={cx('contents')}>
         {theme === 'light' &&
