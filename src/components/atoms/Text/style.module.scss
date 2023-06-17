@@ -22,7 +22,7 @@
   font-size: 16px;
   font-weight: 500;
 }
-@mixin subtitle1 {
+@mixin subtitle2 {
   font-size: 14px;
   font-weight: 500;
 }
@@ -89,17 +89,5 @@
   }
   &.ellipsis {
     @include ellipsis;
-  }
-  &.bold {
-    font-weight: 700;
-  }
-  &.semi-bold {
-    font-weight: 600;
-  }
-  &.medium {
-    font-weight: 500;
-  }
-  &.regular {
-    font-weight: 400;
   }
 }

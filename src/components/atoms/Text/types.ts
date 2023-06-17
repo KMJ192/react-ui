@@ -21,11 +21,11 @@ type Typo =
   | Body2
   | Caption;
 
-type Bold = 'bold';
-type SemiBold = 'semi-bold';
-type Medium = 'medium';
-type Regular = 'regular';
+// type Bold = 'bold';
+// type SemiBold = 'semi-bold';
+// type Medium = 'medium';
+// type Regular = 'regular';
 
-type FontWeight = Bold | SemiBold | Medium | Regular;
+// type FontWeight = Bold | SemiBold | Medium | Regular;
 
-export type { Typo, FontWeight };
+export type { Typo };
