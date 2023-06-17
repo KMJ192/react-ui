@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  row-gap: 16px;
+  .typo {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .info {
+      display: flex;
+      column-gap: 16px;
+    }
+  }
+}

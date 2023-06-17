@@ -1,8 +1,9 @@
 import { COLOR } from '@src/styles/color';
 
+import { Theme } from '@src/types/types';
+
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
-import { Theme } from '@src/types/types';
 const cx = classNames.bind(style);
 
 type Props = {
