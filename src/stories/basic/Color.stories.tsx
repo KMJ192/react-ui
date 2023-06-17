@@ -1,12 +1,10 @@
-import type { StoryFn, Meta } from '@storybook/react';
+import type { Meta } from '@storybook/react';
 
 import Color from '@src/components/basic/Color/Color';
-import { useState } from 'react';
-import { Theme } from '@src/types/types';
 import useValueUIState from '@src/store/hooks/useValueUIState';
 
 const meta: Meta<typeof Color> = {
-  title: 'UI/Atoms/Basic/Color',
+  title: 'UI/Basic/Color',
   component: Color,
   parameters: {
     componentSubtitle: 'Color',
