@@ -14,6 +14,8 @@ const COLOR: {
     primary500: color.light_primary500,
     primary600: color.light_primary600,
     primary700: color.light_primary700,
+    primary800: color.light_primary800,
+    primary900: color.light_primary900,
     blue000: color.light_blue000,
     blue100: color.light_blue100,
     blue200: color.light_blue200,

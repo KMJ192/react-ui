@@ -7,7 +7,7 @@
   font-size: 18px;
   font-weight: 700;
   &.light {
-    color: $light-primary700;
+    color: $light-primary900;
   }
   &.dark {
     color: $light-blue000;
@@ -31,6 +31,7 @@
         width: 50px;
         aspect-ratio: 1;
         border-radius: 8px;
+        box-shadow: 0px 3px 6px rgba(100, 10, 50, 0.1);
         // place-content: center;
       }
     }

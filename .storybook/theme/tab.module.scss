@@ -2,12 +2,12 @@
 
 @mixin tab-light {
   --tab-background: #{$light-primary000};
-  --tab-background-hover: #{$light-blue000};
+  --tab-background-hover: #{$light-blue100};
 
   --tab-select-line: #{$light-blue200};
 
-  --tab-text: #{$light-primary700};
-  --tab-text-hover: #{$light-primary400};
+  --tab-text: #{$light-primary900};
+  --tab-text-hover: #{$light-primary700};
 }
 
 @mixin tab-dark {
