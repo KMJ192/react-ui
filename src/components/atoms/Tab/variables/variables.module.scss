@@ -1,9 +1,9 @@
 @import '@src/styles/color.module.scss';
 
 $tab-background: var(--tab-background, $light-primary000);
-$tab-background-hover: var(--tab-background-hover, $light-blue000);
+$tab-background-hover: var(--tab-background-hover, $light-blue100);
 
-$tab-select-line: var(--tab-select-line, $light-blue100);
+$tab-select-line: var(--tab-select-line, $light-blue200);
 
-$tab-text: var(--tab-text, $light-primary700);
-$tab-text-hover: var(--tab-text-hover, $light-primary400);
+$tab-text: var(--tab-text, $light-primary900);
+$tab-text-hover: var(--tab-text-hover, $light-primary800);
