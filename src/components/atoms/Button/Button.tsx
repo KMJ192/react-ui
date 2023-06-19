@@ -12,6 +12,8 @@ type BaseProps = {
   children?: React.ReactNode;
   variant?: Variant;
   loading?: boolean;
+  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
 };
 
 const ELEMENT = 'button';
@@ -24,13 +26,17 @@ function Button<T extends React.ElementType = typeof ELEMENT>(
     variant = 'primary',
     loading = false,
     className,
+    leftIcon,
+    rightIcon,
     ...props
   }: Props<T>,
   ref: React.Ref<any>,
 ) {
   return (
     <ELEMENT {...props} ref={ref} className={cx('button', variant, className)}>
+      {leftIcon && <div className={cx('icon')}>{leftIcon}</div>}
       {children}
+      {rightIcon && <div className={cx('icon')}>{rightIcon}</div>}
     </ELEMENT>
   );
 }

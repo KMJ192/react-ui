@@ -6,13 +6,14 @@ $button-background-disabled: var(
   --button-background-disabled,
   $light-primary200
 );
-$button-background-active: var(
-  --button-background-active,
+$button-background-active: var(--button-background-active, $light-primary100);
+$button-background-ripple: var(
+  --button-background-ripple,
   rgba(255, 255, 255, 0.6)
 );
 
 $button-text: var(--button-text, $light-primary900);
-$button-text-hover: var(--button-text-hover, $light-primary700);
+$button-text-hover: var(--button-text-hover, $light-primary900);
 $button-text-disabled: var(--button-text-disabled, $light-primary500);
 $button-text-active: var(--button-text-active, $light-primary700);
 

@@ -2,11 +2,15 @@
 @import './variables.module.scss';
 
 @mixin default {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 8px 16px;
   font-size: 16px;
   border-radius: 4px;
   border: none;
   overflow: hidden;
+  column-gap: 8px;
   cursor: pointer;
   &:disabled {
     cursor: not-allowed;
@@ -46,7 +50,7 @@
     left: 50%;
     width: 4px;
     height: 4px;
-    background: rgba(255, 255, 255, 0.6);
+    background: $button-background-ripple;
     opacity: 0;
     border-radius: 100%;
     transform: scale(1, 1) translate(-50%);
@@ -58,10 +62,20 @@
   }
 }
 
+@mixin icon {
+  display: flex;
+  width: 24px;
+  aspect-ratio: 1;
+  place-content: center;
+}
+
 .button {
   @include default;
   @include ripple-animation;
   @include color-set;
+  .icon {
+    @include icon;
+  }
 }
 
 @keyframes ripple {
