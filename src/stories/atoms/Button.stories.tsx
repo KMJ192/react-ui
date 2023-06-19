@@ -2,9 +2,11 @@ import type { StoryFn, Meta } from '@storybook/react';
 
 import Button, { ButtonProps } from '@src/components/atoms/Button/Button';
 
-import classNames from 'classnames/bind';
-import style from './Test.module.scss';
-const cx = classNames.bind(style);
+import downloadIcon from '@icons/download_icon.svg';
+
+// import classNames from 'classnames/bind';
+// import style from './Test.module.scss';
+// const cx = classNames.bind(style);
 
 const meta: Meta<typeof Button> = {
   title: 'UI/Atoms/Button',
@@ -31,6 +33,16 @@ const meta: Meta<typeof Button> = {
         type: 'radio',
       },
     },
+    leftIcon: {
+      control: {
+        disable: true,
+      },
+    },
+    rightIcon: {
+      control: {
+        disable: true,
+      },
+    },
   },
 };
 
@@ -45,6 +57,47 @@ Primary.args = {
   children: 'Primary',
   variant: 'primary',
   loading: false,
+  leftIcon: (
+    <img
+      src={downloadIcon}
+      alt='downIcon'
+      style={{
+        padding: '0',
+      }}
+    />
+  ),
+};
+
+export const LeftIcon: StoryFn<ButtonProps> = Template.bind({});
+LeftIcon.args = {
+  children: 'LeftIcon',
+  variant: 'primary',
+  loading: false,
+  leftIcon: (
+    <img
+      src={downloadIcon}
+      alt='downIcon'
+      style={{
+        padding: '0',
+      }}
+    />
+  ),
+};
+
+export const RightIcon: StoryFn<ButtonProps> = Template.bind({});
+RightIcon.args = {
+  children: 'RightIcon',
+  variant: 'primary',
+  loading: false,
+  rightIcon: (
+    <img
+      src={downloadIcon}
+      alt='downIcon'
+      style={{
+        padding: '0',
+      }}
+    />
+  ),
 };
 
 export default meta;
