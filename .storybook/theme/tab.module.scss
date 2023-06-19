@@ -7,15 +7,15 @@
   --tab-select-line: #{$light-blue200};
 
   --tab-text: #{$light-primary900};
-  --tab-text-hover: #{$light-primary700};
+  --tab-text-hover: #{$light-primary800};
 }
 
 @mixin tab-dark {
   --tab-background: #{$dark-primary200};
   --tab-background-hover: #{$dark-primary300};
 
-  --tab-select-line: #{$dark-blue300};
+  --tab-select-line: #{$dark-blue400};
 
-  --tab-text: #{$dark-primary600};
-  --tab-text-hover: #{$dark-primary700};
+  --tab-text: #{$dark-primary900};
+  --tab-text-hover: #{$dark-primary800};
 }
