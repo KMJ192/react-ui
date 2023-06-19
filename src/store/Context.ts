@@ -3,11 +3,8 @@ import cloneDeep from 'lodash/cloneDeep';
 
 import type { ContextState, ContextDispatch } from './types';
 
-import type { Theme as GlobalTheme } from '@src/types/types';
-
 const INIT_STATE: ContextState = {
-  theme:
-    (window.localStorage.getItem('theme') as unknown as GlobalTheme) ?? 'light',
+  theme: window.localStorage.getItem('theme'),
 };
 
 const INIT_CONTEXT: ContextDispatch = [

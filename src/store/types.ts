@@ -1,7 +1,5 @@
-import type { Theme } from '@src/types/types';
-
 type ContextState = {
-  theme: Theme;
+  theme: string | null;
 };
 
 type ContextDispatch = [

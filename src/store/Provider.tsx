@@ -18,13 +18,9 @@ function Provider({ value, children }: Props) {
   const { theme } = contextState[0];
 
   useEffect(() => {
-    if (!window.localStorage.getItem('theme')) {
-      window.localStorage.setItem('theme', 'light');
+    if (theme) {
+      window.localStorage.setItem('theme', theme);
     }
-  }, []);
-
-  useEffect(() => {
-    window.localStorage.setItem('theme', theme);
   }, [theme]);
 
   return <Context.Provider value={contextState}>{children}</Context.Provider>;
