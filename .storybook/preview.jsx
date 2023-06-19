@@ -18,11 +18,11 @@ export const parameters = {
     values: [
       {
         name: 'dark',
-        value: COLOR.dark.background,
+        value: COLOR.dark.background.global,
       },
       {
         name: 'light',
-        value: COLOR.light.background,
+        value: COLOR.light.background.global,
       },
     ],
   },
