@@ -8,11 +8,15 @@
   border: none;
   overflow: hidden;
   cursor: pointer;
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
 
 @mixin color-set {
   background: $button-background;
   color: $button-text;
+  box-shadow: $button-box-shadow;
   &:hover {
     background: $button-background-hover;
     color: $button-text-hover;
@@ -20,6 +24,11 @@
   &:disabled {
     background: $button-background-disabled;
     color: $button-text-disabled;
+    &:active,
+    &:hover {
+      background: $button-background-disabled;
+      color: $button-text-disabled;
+    }
   }
   &:active {
     background: $button-background-active;
