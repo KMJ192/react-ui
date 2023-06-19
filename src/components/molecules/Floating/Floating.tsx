@@ -21,8 +21,6 @@ function F<T extends React.ElementType = typeof ELEMENT>(
   { children, position = 'br', ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
-  console.log(position);
-
   return (
     <ELEMENT {...props} ref={ref} className={cx('floating', position)}>
       {children}
