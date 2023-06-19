@@ -21,18 +21,18 @@ function HamburgerMenu<
   { type = 'type-1', active = false, as, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
-  const Element = as ?? DEFAULT_COMPONENT_ELEMENT;
+  const ELEMENT = DEFAULT_COMPONENT_ELEMENT;
 
   return (
-    <Element
+    <ELEMENT
+      {...props}
       ref={ref}
       className={cx('hamburger', active && 'active', type)}
-      {...props}
     >
       <span></span>
       <span></span>
       <span></span>
-    </Element>
+    </ELEMENT>
   );
 }
 

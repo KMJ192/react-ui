@@ -31,7 +31,7 @@ function Tab<T extends React.ElementType = typeof DEFAULT_COMPONENT_ELEMENT>(
   }: Props<T>,
   ref: React.Ref<any>,
 ) {
-  const Element = as ?? DEFAULT_COMPONENT_ELEMENT;
+  const ELEMENT = DEFAULT_COMPONENT_ELEMENT;
 
   const optionsRef = useRef<HTMLDivElement>(null);
 
@@ -113,7 +113,7 @@ function Tab<T extends React.ElementType = typeof DEFAULT_COMPONENT_ELEMENT>(
   }, [sizeInfo, select]);
 
   return (
-    <Element {...props} ref={ref} className={cx('tab', className)}>
+    <ELEMENT {...props} ref={ref} className={cx('tab', className)}>
       <div
         className={cx(
           'tab-line',
@@ -138,7 +138,7 @@ function Tab<T extends React.ElementType = typeof DEFAULT_COMPONENT_ELEMENT>(
           );
         })}
       </div>
-    </Element>
+    </ELEMENT>
   );
 }
 
