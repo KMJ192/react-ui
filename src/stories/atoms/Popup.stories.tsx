@@ -29,7 +29,7 @@ export const PrimaryPopup: StoryFn<PopupProps> = Template.bind({});
 PrimaryPopup.args = {
   children: 'Popup',
   animation: 'fade',
-  visible: false,
+  visible: true,
   style: {
     padding: '30px',
   },
