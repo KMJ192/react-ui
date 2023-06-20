@@ -4,7 +4,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import type { ContextState, ContextDispatch } from './types';
 
 const INIT_STATE: ContextState = {
-  theme: window.localStorage.getItem('theme'),
+  theme: null,
 };
 
 const INIT_CONTEXT: ContextDispatch = [
@@ -16,5 +16,4 @@ const INIT_CONTEXT: ContextDispatch = [
 
 const Context = createContext(INIT_CONTEXT);
 
-export { INIT_STATE };
 export default Context;
