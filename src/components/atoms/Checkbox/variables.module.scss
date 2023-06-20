@@ -1,0 +1,5 @@
+@import '@styles/color.module.scss';
+
+$checkbox-border: var(--checkbox-border, $light-primary400);
+
+$checkbox-border-disabled: var(--checkbox-border-disabled, $light-primary200);
