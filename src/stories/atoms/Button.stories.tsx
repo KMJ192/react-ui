@@ -56,23 +56,12 @@ export const Primary: StoryFn<ButtonProps> = Template.bind({});
 Primary.args = {
   children: 'Primary',
   variant: 'primary',
-  loading: false,
-  leftIcon: (
-    <img
-      src={downloadIcon}
-      alt='downIcon'
-      style={{
-        padding: '0',
-      }}
-    />
-  ),
 };
 
 export const LeftIcon: StoryFn<ButtonProps> = Template.bind({});
 LeftIcon.args = {
   children: 'LeftIcon',
   variant: 'primary',
-  loading: false,
   leftIcon: (
     <img
       src={downloadIcon}
@@ -88,7 +77,6 @@ export const RightIcon: StoryFn<ButtonProps> = Template.bind({});
 RightIcon.args = {
   children: 'RightIcon',
   variant: 'primary',
-  loading: false,
   rightIcon: (
     <img
       src={downloadIcon}
