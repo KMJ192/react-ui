@@ -1,8 +1,6 @@
 @import './variables.module.scss';
 
-.popup {
-  box-shadow: $popup-box-shadow;
-  background-color: $popup-background;
+@mixin default {
   border-radius: 4px;
   visibility: hidden;
   opacity: 0;
@@ -10,7 +8,22 @@
     visibility: visible;
     opacity: 1;
   }
+}
+
+@mixin color-set {
+  box-shadow: $popup-box-shadow;
+  background-color: $popup-background;
+  color: $popup-text;
+}
+
+@mixin animation {
   &.fade {
     transition: visibility 0.2s ease-out, opacity 0.2s ease-out;
   }
+}
+
+.popup {
+  @include default;
+  @include color-set;
+  @include animation;
 }
