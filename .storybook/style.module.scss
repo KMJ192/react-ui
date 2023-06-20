@@ -7,6 +7,7 @@
     @include tab-light;
     @include spinner-light;
     @include text-light;
+    @include popup-light;
   }
   &.dark {
     @include button-dark;
@@ -14,6 +15,7 @@
     @include tab-dark;
     @include spinner-dark;
     @include text-dark;
+    @include popup-dark;
   }
 }
 
