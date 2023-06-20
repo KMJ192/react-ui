@@ -9,19 +9,30 @@ const meta: Meta<typeof Popup> = {
   parameters: {
     componentSubtitle: 'Popup',
   },
-  argTypes: {},
+  argTypes: {
+    animation: {
+      options: ['fade', 'none'],
+      control: {
+        type: 'radio',
+      },
+    },
+  },
 };
 
-const Template = (args: PopupProps) => {
+const Template = (args: PopupProps<'div'>) => {
   const { children, ...arg } = args;
 
   return <Popup {...arg}>{children}</Popup>;
 };
 
-export const Test: StoryFn<PopupProps> = Template.bind({});
+export const Test: StoryFn<PopupProps<'div'>> = Template.bind({});
 Test.args = {
   children: 'Popup',
-  type: 'fade',
+  animation: 'fade',
+  visible: false,
+  style: {
+    padding: '30px',
+  },
 };
 
 export default meta;

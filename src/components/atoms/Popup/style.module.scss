@@ -1,2 +1,16 @@
+@import './variables.module.scss';
+
 .popup {
+  box-shadow: $popup-box-shadow;
+  background-color: $popup-background;
+  border-radius: 4px;
+  visibility: hidden;
+  opacity: 0;
+  &.visible {
+    visibility: visible;
+    opacity: 1;
+  }
+  &.fade {
+    transition: visibility 0.2s ease-out, opacity 0.2s ease-out;
+  }
 }

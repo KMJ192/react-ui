@@ -8,7 +8,8 @@ const cx = classNames.bind(style);
 
 type BaseProps = {
   children?: React.ReactNode;
-  type?: 'fade';
+  animation?: 'fade' | 'none';
+  visible?: boolean;
 };
 
 const ELEMENT = 'div';
@@ -16,15 +17,25 @@ const ELEMENT = 'div';
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
 function Popup<T extends React.ElementType = typeof ELEMENT>(
-  { children, type, className, ...props }: Props<T>,
+  {
+    children,
+    animation = 'fade',
+    visible = false,
+    className,
+    ...props
+  }: Props<T>,
   ref: React.Ref<any>,
 ) {
   return (
-    <ELEMENT {...props} ref={ref} className={cx('popup', className)}>
+    <ELEMENT
+      {...props}
+      ref={ref}
+      className={cx('popup', animation, visible && 'visible', className)}
+    >
       {children}
     </ELEMENT>
   );
 }
 
-export type { BaseProps as PopupProps };
+export type { Props as PopupProps };
 export default React.forwardRef(Popup) as typeof Popup;
