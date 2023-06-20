@@ -39,6 +39,15 @@
     background: $button-background-active;
     color: $button-text-active;
   }
+  &.outlined {
+    background: none;
+    box-shadow: none;
+    outline: 1px solid $button-outline;
+  }
+  &.clear {
+    background: none;
+    box-shadow: none;
+  }
 }
 
 @mixin ripple-animation {

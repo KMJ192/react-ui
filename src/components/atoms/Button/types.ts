@@ -1,3 +1,3 @@
-type Variant = 'primary' | 'secondary';
+type Variant = 'primary' | 'outlined' | 'clear';
 
 export type { Variant };
