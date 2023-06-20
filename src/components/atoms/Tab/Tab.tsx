@@ -124,13 +124,15 @@ function Tab<T extends React.ElementType = typeof DEFAULT_COMPONENT_ELEMENT>(
         style={tabLineStyle}
       ></div>
       <div className={cx('options', direction)} ref={optionsRef}>
-        {options.map(({ contents }, idx: number) => {
+        {options.map(({ contents, disabled }, idx: number) => {
           return (
             <span
-              className={cx('option')}
+              className={cx('option', disabled && 'disabled')}
               key={idx}
               onClick={() => {
-                onSelect(idx);
+                if (!disabled) {
+                  onSelect(idx);
+                }
               }}
             >
               {contents}

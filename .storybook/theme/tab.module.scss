@@ -3,19 +3,23 @@
 @mixin tab-light {
   --tab-background: #{$light-primary000};
   --tab-background-hover: #{$light-blue100};
+  --tab-background-disabled: #{$light-primary100};
 
   --tab-select-line: #{$light-blue200};
 
   --tab-text: #{$light-primary900};
   --tab-text-hover: #{$light-primary800};
+  --tab-text-disabled: #{$light-primary500};
 }
 
 @mixin tab-dark {
   --tab-background: #{$dark-primary200};
   --tab-background-hover: #{$dark-primary300};
+  --tab-background-disabled: #{$dark-primary100};
 
   --tab-select-line: #{$dark-blue400};
 
   --tab-text: #{$dark-primary900};
   --tab-text-hover: #{$dark-primary800};
+  --tab-text-disabled: #{$dark-primary300};
 }
