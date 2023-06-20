@@ -1,0 +1,11 @@
+@import '@styles/color.module.scss';
+
+@mixin spinner-light {
+  --spinner-color: #{$light-primary400};
+  --spinner-color2: #{$light-primary500};
+}
+
+@mixin spinner-dark {
+  --spinner-color: #{$dark-primary300};
+  --spinner-color2: #{$dark-primary600};
+}
