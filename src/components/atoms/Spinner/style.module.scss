@@ -4,6 +4,9 @@
 @import './type4.module.scss';
 
 .spinner {
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
   &.type-1 {
     @include type-1;
   }

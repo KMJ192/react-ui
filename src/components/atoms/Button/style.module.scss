@@ -3,6 +3,7 @@
 
 @mixin default {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   padding: 8px 16px;
@@ -69,12 +70,22 @@
   place-content: center;
 }
 
+@mixin spinner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+}
+
 .button {
   @include default;
   @include ripple-animation;
   @include color-set;
   .icon {
     @include icon;
+  }
+  .btn-spinner {
+    @include spinner;
   }
 }
 
