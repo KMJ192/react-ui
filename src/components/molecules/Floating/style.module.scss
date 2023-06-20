@@ -1,5 +1,6 @@
 .floating {
   position: fixed;
+  z-index: 9999;
   &.tr {
     top: 24px;
     right: 24px;
