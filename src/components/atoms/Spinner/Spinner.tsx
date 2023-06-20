@@ -27,5 +27,5 @@ function Spinner<T extends React.ElementType = typeof ELEMENT>(
   );
 }
 
-export type { BaseProps as SpinnerProps };
+export type SpinnerProps = Props<typeof ELEMENT>;
 export default React.forwardRef(Spinner) as typeof Spinner;

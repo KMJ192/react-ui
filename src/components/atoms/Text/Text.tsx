@@ -32,5 +32,5 @@ function Text<T extends React.ElementType = typeof ELEMENT>(
   );
 }
 
-export type { BaseProps as TextProps };
+export type TextProps = Props<typeof ELEMENT>;
 export default React.forwardRef(Text) as typeof Text;

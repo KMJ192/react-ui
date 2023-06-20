@@ -61,5 +61,5 @@ function Button<T extends React.ElementType = typeof ELEMENT>(
   );
 }
 
-export type { BaseProps as ButtonProps };
+export type ButtonProps = Props<typeof ELEMENT>;
 export default React.forwardRef(Button) as typeof Button;

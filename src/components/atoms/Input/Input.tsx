@@ -21,5 +21,5 @@ function Input<T extends React.ElementType = typeof ELEMENT>(
   );
 }
 
-export type { BaseProps as InputProps };
+export type InputProps = Props<typeof ELEMENT>;
 export default React.forwardRef(Input) as typeof Input;

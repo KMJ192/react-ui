@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
@@ -34,5 +34,5 @@ const Floating = Object.assign(React.forwardRef(F) as typeof F, {
   Button,
 });
 
-export type { BaseProps as FloatingProps };
+export type FloatingProps = Props<typeof ELEMENT>;
 export default Floating;

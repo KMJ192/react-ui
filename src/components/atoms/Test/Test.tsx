@@ -25,5 +25,5 @@ function Test<T extends React.ElementType = typeof ELEMENT>(
   );
 }
 
-export type { BaseProps as TestProps };
+export type TestProps = Props<typeof ELEMENT>;
 export default React.forwardRef(Test) as typeof Test;

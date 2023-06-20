@@ -19,14 +19,14 @@ const meta: Meta<typeof Popup> = {
   },
 };
 
-const Template = (args: PopupProps<'div'>) => {
+const Template = (args: PopupProps) => {
   const { children, ...arg } = args;
 
   return <Popup {...arg}>{children}</Popup>;
 };
 
-export const Test: StoryFn<PopupProps<'div'>> = Template.bind({});
-Test.args = {
+export const PrimaryPopup: StoryFn<PopupProps> = Template.bind({});
+PrimaryPopup.args = {
   children: 'Popup',
   animation: 'fade',
   visible: false,

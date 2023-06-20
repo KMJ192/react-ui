@@ -15,24 +15,21 @@ type BaseProps = {
   onSelect?: (idx: number) => void;
 };
 
-const DEFAULT_COMPONENT_ELEMENT = 'div';
+const ELEMENT = 'div';
 
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function Tab<T extends React.ElementType = typeof DEFAULT_COMPONENT_ELEMENT>(
+function Tab<T extends React.ElementType = typeof ELEMENT>(
   {
     select = 0,
     options = [],
     direction = 'horizontal',
-    as,
     className,
     onSelect = () => {},
     ...props
   }: Props<T>,
   ref: React.Ref<any>,
 ) {
-  const ELEMENT = DEFAULT_COMPONENT_ELEMENT;
-
   const optionsRef = useRef<HTMLDivElement>(null);
 
   const [sizeInfo, setSizeInfo] = useState<{
@@ -144,5 +141,5 @@ function Tab<T extends React.ElementType = typeof DEFAULT_COMPONENT_ELEMENT>(
   );
 }
 
-export type { BaseProps as TabProps };
+export type TabProps = Props<typeof ELEMENT>;
 export default React.forwardRef(Tab) as typeof Tab;

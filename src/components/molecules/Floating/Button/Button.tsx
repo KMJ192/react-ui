@@ -29,5 +29,5 @@ function B<T extends React.ElementType = typeof ELEMENT>(
   );
 }
 
-export type { BaseProps as ButtonProps };
+export type FloatingButtonProps = Props<typeof ELEMENT>;
 export default React.forwardRef(B) as typeof B;

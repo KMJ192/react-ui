@@ -11,18 +11,14 @@ type BaseProps = {
   active?: boolean;
 };
 
-const DEFAULT_COMPONENT_ELEMENT = 'div';
+const ELEMENT = 'div';
 
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function HamburgerMenu<
-  T extends React.ElementType = typeof DEFAULT_COMPONENT_ELEMENT,
->(
-  { type = 'type-1', active = false, as, ...props }: Props<T>,
+function HamburgerMenu<T extends React.ElementType = typeof ELEMENT>(
+  { type = 'type-1', active = false, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
-  const ELEMENT = DEFAULT_COMPONENT_ELEMENT;
-
   return (
     <ELEMENT
       {...props}
@@ -36,5 +32,5 @@ function HamburgerMenu<
   );
 }
 
-export type { BaseProps as HamburgerProps };
+export type HamburgerProps = Props<typeof ELEMENT>;
 export default React.forwardRef(HamburgerMenu) as typeof HamburgerMenu;

@@ -37,5 +37,5 @@ function Popup<T extends React.ElementType = typeof ELEMENT>(
   );
 }
 
-export type { Props as PopupProps };
+export type PopupProps = Props<typeof ELEMENT>;
 export default React.forwardRef(Popup) as typeof Popup;
