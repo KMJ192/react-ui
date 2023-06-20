@@ -1,3 +1,5 @@
+@import './variables.module.scss';
+
 @mixin header1 {
   font-size: 64px;
   font-weight: 700;
@@ -47,6 +49,7 @@
 }
 
 .typo {
+  color: $text-color;
   &.h1,
   &.header1 {
     @include header1;

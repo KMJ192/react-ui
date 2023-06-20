@@ -6,12 +6,14 @@
     @include h-menu-light;
     @include tab-light;
     @include spinner-light;
+    @include text-light;
   }
   &.dark {
     @include button-dark;
     @include h-menu-dark;
     @include tab-dark;
     @include spinner-dark;
+    @include text-dark;
   }
 }
 
