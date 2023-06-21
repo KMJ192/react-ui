@@ -15,7 +15,6 @@ $checkbox-border-disabled: var(--checkbox-border-disabled, $light-primary300);
 $checkbox-border-hover: var(--checkbox-border-hover, $light-blue500);
 
 // background
-$checkbox-background: var(--checkbox-background, $light-primary000);
 $checkbox-background-checked: var(
   --checkbox-background-checked,
   $light-blue400
@@ -25,20 +24,15 @@ $checkbox-background-checked-disabled: var(
   $light-primary400
 );
 $checkbox-background-checked-hover: var(
-  --checkbox-background-hover,
+  --checkbox-background-checked-hover,
   $light-blue500
 );
 $checkbox-background-disabled: var(
   --checkbox-background-disabled,
   $light-primary200
 );
-$checkbox-background-hover: var(
-  checkbox-background-disabled-hover,
-  $light-primary000
-);
 
 // mark
-$checkbox-mark: var(--checkbox-mark, $light-primary000);
 $checkbox-mark-checked: var(--checkbox-mark-checked, $light-primary000);
 $checkbox-mark-checked-disabled: var(
   --checkbox-mark-checked-disabled,

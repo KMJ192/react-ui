@@ -1,0 +1,37 @@
+@import '@styles/color.module.scss';
+
+@mixin checkbox-light {
+  --checkbox-border: #{$light-primary300};
+  --checkbox-border-checked: #{$light-blue400};
+  --checkbox-border-checked-disabled: #{$light-primary400};
+  --checkbox-border-checked-hover: #{$light-blue500};
+  --checkbox-border-disabled: #{$light-primary300};
+  --checkbox-border-hover: #{$light-blue500};
+
+  --checkbox-background-checked: #{$light-blue400};
+  --checkbox-background-checked-disabled: #{$light-primary400};
+  --checkbox-background-checked-hover: #{$light-blue500};
+  --checkbox-background-disabled: #{$light-primary200};
+
+  --checkbox-mark-checked: #{$light-primary000};
+  --checkbox-mark-checked-disabled: #{$light-primary200};
+  --checkbox-mark-checked-hover: #{$light-primary000};
+}
+
+@mixin checkbox-dark {
+  --checkbox-border: #{$dark-primary300};
+  --checkbox-border-checked: #{$dark-blue200};
+  --checkbox-border-checked-disabled: #{$dark-primary400};
+  --checkbox-border-checked-hover: #{$dark-blue100};
+  --checkbox-border-disabled: #{$dark-primary600};
+  --checkbox-border-hover: #{$dark-blue100};
+
+  --checkbox-background-checked: #{$dark-blue200};
+  --checkbox-background-checked-disabled: #{$dark-primary400};
+  --checkbox-background-checked-hover: #{$dark-blue100};
+  --checkbox-background-disabled: #{$dark-primary200};
+
+  --checkbox-mark-checked: #{$dark-primary800};
+  --checkbox-mark-checked-disabled: #{$dark-primary600};
+  --checkbox-mark-checked-hover: #{$dark-primary800};
+}

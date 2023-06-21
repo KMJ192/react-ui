@@ -8,6 +8,7 @@
     @include spinner-light;
     @include text-light;
     @include popup-light;
+    @include checkbox-light;
   }
   &.dark {
     @include button-dark;
@@ -16,6 +17,7 @@
     @include spinner-dark;
     @include text-dark;
     @include popup-dark;
+    @include checkbox-dark;
   }
 }
 

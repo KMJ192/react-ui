@@ -21,10 +21,10 @@
 
 @mixin color-set {
   border: 2px solid $checkbox-border;
-  .mark > svg {
-    color: $checkbox-mark;
-    background: $checkbox-background;
-  }
+  // .mark > svg {
+  //   color: $checkbox-mark;
+  //   background: $checkbox-background;
+  // }
 
   &.checked {
     border-color: $checkbox-border-checked;
