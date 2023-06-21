@@ -9,7 +9,17 @@ const meta: Meta<typeof Checkbox> = {
   parameters: {
     componentSubtitle: 'Checkbox',
   },
-  argTypes: {},
+  argTypes: {
+    checked: {
+      option: ['true', 'false'],
+    },
+    disabled: {
+      option: ['true', 'false'],
+    },
+    multiple: {
+      option: ['true', 'false'],
+    },
+  },
 };
 
 const Template = (args: CheckboxProps) => {
@@ -21,8 +31,9 @@ const Template = (args: CheckboxProps) => {
 export const PrimaryCheckbox: StoryFn<CheckboxProps> = Template.bind({});
 PrimaryCheckbox.args = {
   children: 'Checkbox',
-  checked: false,
+  checked: true,
   disabled: false,
+  multiple: false,
 };
 
 export default meta;

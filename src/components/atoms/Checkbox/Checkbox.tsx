@@ -34,7 +34,7 @@ function Checkbox<T extends React.ElementType = typeof ELEMENT>(
     <ELEMENT
       {...props}
       ref={ref}
-      className={cx('checkbox', disabled && 'disabled', className)}
+      className={cx('checkbox', { checked }, { disabled }, className)}
     >
       <Mark multiple={multiple} />
       {children}

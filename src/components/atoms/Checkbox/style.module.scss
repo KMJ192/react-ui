@@ -1,37 +1,83 @@
 @import './variables.module.scss';
 
+@mixin mark {
+  transition: border-color 150ms;
+  .mark {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    & > svg {
+      transition: all 150ms cubic-bezier(0.4, 0, 1, 1) 0ms;
+      visibility: hidden;
+    }
+  }
+  &.checked {
+    .mark > svg {
+      visibility: visible;
+    }
+  }
+}
+
+@mixin color-set {
+  border: 2px solid $checkbox-border;
+  .mark > svg {
+    color: $checkbox-mark;
+    background: $checkbox-background;
+  }
+
+  &.checked {
+    border-color: $checkbox-border-checked;
+    .mark > svg {
+      color: $checkbox-mark-checked;
+      background: $checkbox-background-checked;
+    }
+    &.disabled {
+      border-color: $checkbox-border-checked-disabled;
+      .mark > svg {
+        background: $checkbox-background-checked-disabled;
+        color: $checkbox-mark-checked-disabled;
+      }
+    }
+    &:not(.disabled):hover {
+      border-color: $checkbox-border-checked-hover;
+      .mark > svg {
+        background: $checkbox-background-checked-hover;
+        color: $checkbox-mark-checked-hover;
+      }
+    }
+  }
+
+  &.disabled {
+    border-color: $checkbox-border-disabled;
+    .mark > svg {
+      visibility: visible;
+      background: $checkbox-background-disabled;
+      color: $checkbox-background-disabled;
+    }
+  }
+
+  &:not(.disabled):hover {
+    border-color: $checkbox-border-hover;
+  }
+}
+
 @mixin default {
   width: 16px;
   height: 16px;
-  border: 2px solid $checkbox-border;
   border-radius: 2px;
   cursor: pointer;
 }
 
 @mixin disabled {
   &.disabled {
-    border-color: $checkbox-border-disabled;
     cursor: not-allowed;
-  }
-}
-
-@mixin mark {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: center;
-  transition: all 150ms cubic-bezier(0.4, 0, 1, 1) 0ms;
-
-  & > svg {
-    visibility: hidden;
   }
 }
 
 .checkbox {
   @include default;
   @include disabled;
-}
-
-.mark {
+  @include color-set;
   @include mark;
 }

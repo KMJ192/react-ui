@@ -1,5 +1,50 @@
 @import '@styles/color.module.scss';
 
-$checkbox-border: var(--checkbox-border, $light-primary400);
+// border
+$checkbox-border: var(--checkbox-border, $light-primary300);
+$checkbox-border-checked: var(--checkbox-border-checked, $light-blue400);
+$checkbox-border-checked-disabled: var(
+  --checkbox-border-checked-disabled,
+  $light-primary400
+);
+$checkbox-border-checked-hover: var(
+  --checkbox-border-checked-hover,
+  $light-blue500
+);
+$checkbox-border-disabled: var(--checkbox-border-disabled, $light-primary300);
+$checkbox-border-hover: var(--checkbox-border-hover, $light-blue500);
 
-$checkbox-border-disabled: var(--checkbox-border-disabled, $light-primary200);
+// background
+$checkbox-background: var(--checkbox-background, $light-primary000);
+$checkbox-background-checked: var(
+  --checkbox-background-checked,
+  $light-blue400
+);
+$checkbox-background-checked-disabled: var(
+  --checkbox-background-checked-disabled,
+  $light-primary400
+);
+$checkbox-background-checked-hover: var(
+  --checkbox-background-hover,
+  $light-blue500
+);
+$checkbox-background-disabled: var(
+  --checkbox-background-disabled,
+  $light-primary200
+);
+$checkbox-background-hover: var(
+  checkbox-background-disabled-hover,
+  $light-primary000
+);
+
+// mark
+$checkbox-mark: var(--checkbox-mark, $light-primary000);
+$checkbox-mark-checked: var(--checkbox-mark-checked, $light-primary000);
+$checkbox-mark-checked-disabled: var(
+  --checkbox-mark-checked-disabled,
+  $light-primary200
+);
+$checkbox-mark-checked-hover: var(
+  --checkbox-mark-checked-hover,
+  $light-primary000
+);
