@@ -20,11 +20,7 @@ function HamburgerMenu<T extends React.ElementType = typeof ELEMENT>(
   ref: React.Ref<any>,
 ) {
   return (
-    <ELEMENT
-      {...props}
-      ref={ref}
-      className={cx('hamburger', active && 'active', type)}
-    >
+    <ELEMENT {...props} ref={ref} className={cx('hamburger', { active }, type)}>
       <span></span>
       <span></span>
       <span></span>

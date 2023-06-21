@@ -30,7 +30,7 @@ function Popup<T extends React.ElementType = typeof ELEMENT>(
     <ELEMENT
       {...props}
       ref={ref}
-      className={cx('popup', animation, visible && 'visible', className)}
+      className={cx('popup', animation, { visible }, className)}
     >
       {children}
     </ELEMENT>
