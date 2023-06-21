@@ -1,0 +1,11 @@
+@import '@styles/color.module.scss';
+
+$radio-border: var(--radio-border, $light-primary300);
+$radio-border-checked: var(--radio-border-checked, $light-blue400);
+$radio-border-checked-disabled: var(
+  --radio-border-checked-disabled,
+  $light-primary400
+);
+$radio-border-checked-hover: var(--radio-border-checked-hover, $light-blue500);
+$radio-border-disabled: var(--radio-border-disabled, $light-primary300);
+$radio-border-hover: var(--radio-border-hover, $light-blue500);

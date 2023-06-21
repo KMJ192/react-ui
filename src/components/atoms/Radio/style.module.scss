@@ -1,0 +1,51 @@
+@import './variables.module.scss';
+
+@mixin pupil {
+  &.pupil > svg {
+    visibility: hidden;
+    &.checked {
+      visibility: visible;
+      background-color: red;
+    }
+  }
+}
+
+@mixin color-set {
+  border: 2px solid $radio-border;
+  &.checked {
+    border-color: $radio-border-checked;
+    &.disabled {
+      border-color: $radio-border-checked-disabled;
+    }
+    &:not(.disabled):hover {
+      border-color: $radio-border-hover;
+    }
+  }
+  &.disabled {
+    border-color: $radio-border-disabled;
+  }
+
+  &:not(.disabled):hover {
+    border-color: $radio-border-hover;
+  }
+}
+
+@mixin default {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@mixin disabled {
+  &.disabled {
+    cursor: not-allowed;
+  }
+}
+
+.radio {
+  @include default;
+  @include disabled;
+  @include color-set;
+  @include pupil;
+}

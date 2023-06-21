@@ -8,6 +8,8 @@ const cx = classNames.bind(style);
 
 type BaseProps = {
   children?: React.ReactNode;
+  checked?: boolean;
+  disabled?: boolean;
 };
 
 const ELEMENT = 'div';
@@ -15,11 +17,21 @@ const ELEMENT = 'div';
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
 function Radio<T extends React.ElementType = typeof ELEMENT>(
-  { children, className, ...props }: Props<T>,
+  {
+    children,
+    checked = false,
+    disabled = false,
+    className,
+    ...props
+  }: Props<T>,
   ref: React.Ref<any>,
 ) {
   return (
-    <ELEMENT {...props} ref={ref} className={cx(className)}>
+    <ELEMENT
+      {...props}
+      ref={ref}
+      className={cx('radio', { checked }, { disabled }, className)}
+    >
       {children}
     </ELEMENT>
   );

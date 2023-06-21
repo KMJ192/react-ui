@@ -20,7 +20,9 @@ const Template = (args: RadioProps) => {
 
 export const PrimaryRadio: StoryFn<RadioProps> = Template.bind({});
 PrimaryRadio.args = {
-  children: 'Radio',
+  // children: 'Radio',
+  checked: false,
+  disabled: false,
 };
 
 export default meta;
