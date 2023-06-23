@@ -1,42 +1,55 @@
 @import './variables.module.scss';
 
 @mixin color-set {
-  border-color: $radio-border;
-  background: $radio-background;
-  &.checked {
-    border-color: $radio-border-checked;
-    background: $radio-background-checked;
-    &.disabled {
-      border-color: $radio-border-checked-disabled;
-      background: $radio-background-checked-disabled;
+  .mark {
+    border-color: $radio-border;
+    background: $radio-background;
+    &.checked {
+      border-color: $radio-border-checked;
+      background: $radio-background-checked;
+      &.disabled {
+        border-color: $radio-border-checked-disabled;
+        background: $radio-background-checked-disabled;
+      }
+      &:not(.disabled):hover {
+        border-color: $radio-border-checked-hover;
+        background: $radio-background-checked-hover;
+      }
     }
-    &:not(.disabled):hover {
-      border-color: $radio-border-checked-hover;
-      background: $radio-background-checked-hover;
-    }
-  }
 
-  .pupil {
-    background: $radio-pupil;
-    &.disabled {
-      background: $radio-pupil-disabled;
-    }
-  }
-
-  &.disabled {
-    border-color: $radio-border-disabled;
-    background: $radio-background-disabled;
     .pupil {
-      background: $radio-pupil-disabled;
+      background: $radio-pupil;
+      &.disabled {
+        background: $radio-pupil-disabled;
+      }
+    }
+
+    &.disabled {
+      border-color: $radio-border-disabled;
+      background: $radio-background-disabled;
+      .pupil {
+        background: $radio-pupil-disabled;
+      }
     }
   }
   &:hover {
-    border-color: $radio-border-hover;
-    background: $radio-background-hover;
-    .pupil {
-      &:not(.disabled) {
-        background: $radio-pupil-hover;
+    .mark {
+      border-color: $radio-border-hover;
+      background: $radio-background-hover;
+      .pupil {
+        &:not(.disabled) {
+          background: $radio-pupil-hover;
+        }
       }
+    }
+    .children {
+      color: $radio-text-hover;
+    }
+  }
+  .children {
+    color: $radio-text;
+    &.disabled {
+      color: $radio-text-disabled;
     }
   }
 }
@@ -48,14 +61,14 @@
     border-radius: 50%;
     place-content: center;
     transform: scale(0);
-    transition: transform 0.2s ease;
+    transition: transform 0.1s ease, background-color 0.1s ease;
     &.checked {
       transform: scale(1);
     }
   }
 }
 
-@mixin default {
+@mixin mark {
   border: 2px solid;
   width: 16px;
   aspect-ratio: 1;
@@ -64,14 +77,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: border-color 0.1s ease;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
   cursor: pointer;
   &.disabled {
     cursor: not-allowed;
   }
-}
-
-.radio {
-  @include default;
-  @include pupil;
+  .mark {
+    @include mark;
+    @include pupil;
+  }
   @include color-set;
+  .children {
+    transition: color 0.1s ease;
+  }
 }

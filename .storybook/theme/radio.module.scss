@@ -11,6 +11,10 @@
   --radio-background-checked-disabled: #{$light-primary300};
   --radio-background-disabled: #{$light-primary200};
 
+  --radio-text: #{$light-primary900};
+  --radio-text-hover: #{$light-blue600};
+  --radio-text-disabled: #{$light-primary300};
+
   --radio-pupil: #{$light-blue400};
   --radio-pupil-disabled: #{$light-primary500};
   --radio-pupil-hover: #{$light-blue500};
@@ -20,12 +24,16 @@
   --radio-border: #{$dark-primary300};
   --radio-border-checked: #{$dark-blue300};
   --radio-border-checked-disabled: #{$dark-primary400};
-  --radio-border-checked-hover: #{dark-blue100};
+  --radio-border-checked-hover: #{$dark-blue100};
   --radio-border-disabled: #{$dark-primary600};
   --radio-border-hover: #{$dark-blue100};
 
   --radio-background-checked-disabled: #{$dark-primary400};
   --radio-background-disabled: #{$dark-primary300};
+
+  --radio-text: #{$dark-primary900};
+  --radio-text-hover: #{$dark-blue200};
+  --radio-text-disabled: #{$dark-primary600};
 
   --radio-pupil: #{$dark-blue300};
   --radio-pupil-disabled: #{$dark-primary600};

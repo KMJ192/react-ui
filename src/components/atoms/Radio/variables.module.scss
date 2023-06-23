@@ -20,6 +20,10 @@ $radio-background-checked-disabled: var(
 $radio-background-disabled: var(--radio-background-disabled, $light-primary200);
 $radio-background-hover: var(--radio-background-hover);
 
+$radio-text: var(--radio-text, $light-primary900);
+$radio-text-hover: var(--radio-text-hover, $light-blue600);
+$radio-text-disabled: var(--radio-text-disabled, $light-primary300);
+
 $radio-pupil: var(--radio-pupil, $radio-border-checked);
 $radio-pupil-disabled: var(--radio-pupil-disabled, $light-primary500);
 $radio-pupil-hover: var(--radio-pupil-hover, $radio-border-hover);
