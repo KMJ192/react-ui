@@ -1,4 +1,5 @@
 import Input from '@src/components/atoms/Input/Input';
+import type { InputProps } from '@src/components/atoms/Input/Input';
 import type { Meta, StoryFn } from '@storybook/react';
 
 const meta: Meta<typeof Input> = {
@@ -10,14 +11,18 @@ const meta: Meta<typeof Input> = {
   argTypes: {},
 };
 
-const inputTemplate = () => {
-  return <Input />;
+const inputTemplate = (args: InputProps) => {
+  return <Input {...args} />;
 };
 
-export const InputText: StoryFn = inputTemplate.bind({});
-InputText.args = {};
+export const InputText: StoryFn<InputProps> = inputTemplate.bind({});
+InputText.args = {
+  type: 'text',
+};
 
-export const InputPassword: StoryFn = inputTemplate.bind({});
-InputPassword.args = {};
+export const InputPassword: StoryFn<InputProps> = inputTemplate.bind({});
+InputPassword.args = {
+  type: 'password',
+};
 
 export default meta;
