@@ -32,6 +32,16 @@ $checkbox-background-disabled: var(
   $light-primary200
 );
 
+$checkbox-text: var(--checkbox-text, $light-primary900);
+$checkbox-text-hover: var(
+  --checkbox-text-hover,
+  $checkbox-border-checked-hover
+);
+$checkbox-text-disabled: var(
+  --checkbox-text-disabled,
+  $checkbox-border-disabled
+);
+
 // mark
 $checkbox-mark-checked: var(--checkbox-mark-checked, $light-primary000);
 $checkbox-mark-checked-disabled: var(

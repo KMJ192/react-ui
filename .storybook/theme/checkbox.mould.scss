@@ -13,6 +13,10 @@
   --checkbox-background-checked-hover: #{$light-blue500};
   --checkbox-background-disabled: #{$light-primary200};
 
+  --checkbox-text: #{$light-primary900};
+  --checkbox-text-hover: #{$light-blue500};
+  --checkbox-text-disabled: #{$light-primary300};
+
   --checkbox-mark-checked: #{$light-primary000};
   --checkbox-mark-checked-disabled: #{$light-primary200};
   --checkbox-mark-checked-hover: #{$light-primary000};
@@ -30,6 +34,10 @@
   --checkbox-background-checked-disabled: #{$dark-primary400};
   --checkbox-background-checked-hover: #{$dark-blue100};
   --checkbox-background-disabled: #{$dark-primary200};
+
+  --checkbox-text: #{$dark-primary900};
+  --checkbox-text-hover: #{$dark-blue200};
+  --checkbox-text-disabled: #{$dark-primary200};
 
   --checkbox-mark-checked: #{$dark-primary800};
   --checkbox-mark-checked-disabled: #{$dark-primary600};
