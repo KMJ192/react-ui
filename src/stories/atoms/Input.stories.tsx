@@ -8,7 +8,14 @@ const meta: Meta<typeof Input> = {
   parameters: {
     componentSubtitle: 'Input',
   },
-  argTypes: {},
+  argTypes: {
+    size: {
+      options: ['xs', 'sm', 'md', 'lg'],
+      control: {
+        type: 'select',
+      },
+    },
+  },
 };
 
 const inputTemplate = (args: InputProps) => {
@@ -18,11 +25,13 @@ const inputTemplate = (args: InputProps) => {
 export const InputText: StoryFn<InputProps> = inputTemplate.bind({});
 InputText.args = {
   type: 'text',
+  size: 'md',
 };
 
 export const InputPassword: StoryFn<InputProps> = inputTemplate.bind({});
 InputPassword.args = {
   type: 'password',
+  size: 'md',
 };
 
 export default meta;

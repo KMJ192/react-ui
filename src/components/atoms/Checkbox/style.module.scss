@@ -1,4 +1,4 @@
-@import './variables.module.scss';
+@import './variable/variable.module.scss';
 
 @mixin mark {
   transition: border-color 0.1s, color 0.1s;

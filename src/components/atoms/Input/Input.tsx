@@ -23,13 +23,17 @@ function Input<T extends React.ElementType = typeof ELEMENT>(
 ) {
   return (
     <div className={cx('container')}>
-      <When condition={leftIcon !== undefined}>{leftIcon}</When>
+      <When condition={leftIcon !== undefined}>
+        <div className={cx('icon', 'left')}>{leftIcon}</div>
+      </When>
       <ELEMENT
         {...props}
         ref={ref}
         className={cx('input', size, className)}
       ></ELEMENT>
-      <When condition={rightIcon !== undefined}>{rightIcon}</When>
+      <When condition={rightIcon !== undefined}>
+        <div className={cx('icon', 'right')}>{rightIcon}</div>
+      </When>
     </div>
   );
 }

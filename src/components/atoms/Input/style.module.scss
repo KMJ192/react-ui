@@ -4,28 +4,38 @@
 
 @mixin size {
   &.xs {
+    padding: 4px;
+    font-size: 12px;
   }
   &.sm {
+    padding: 8px;
+    font-size: 14px;
   }
   &.md {
+    padding: 10px;
+    font-size: 16px;
   }
   &.lg {
+    padding: 12px;
+    font-size: 20px;
   }
 }
 
 @mixin default {
-  padding: 8px;
   width: 100%;
   border: 1px solid;
   border-radius: 2px;
+
   &:focus {
     outline: none;
   }
 }
 
 .container {
+  position: relative;
   .input {
     @include default;
     @include color-set;
+    @include size;
   }
 }
