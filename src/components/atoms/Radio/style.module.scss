@@ -1,43 +1,70 @@
 @import './variables.module.scss';
 
-@mixin pupil {
-  &.pupil > svg {
-    visibility: hidden;
-    &.checked {
-      visibility: visible;
-      background-color: red;
+@mixin color-set {
+  border-color: $radio-border;
+  background: $radio-background;
+  &.checked {
+    border-color: $radio-border-checked;
+    background: $radio-background-checked;
+    &.disabled {
+      border-color: $radio-border-checked-disabled;
+      background: $radio-background-checked-disabled;
+    }
+    &:not(.disabled):hover {
+      border-color: $radio-border-checked-hover;
+      background: $radio-background-checked-hover;
+    }
+  }
+
+  .pupil {
+    background: $radio-pupil;
+    &.disabled {
+      background: $radio-pupil-disabled;
+    }
+  }
+
+  &.disabled {
+    border-color: $radio-border-disabled;
+    background: $radio-background-disabled;
+    .pupil {
+      background: $radio-pupil-disabled;
+    }
+  }
+  &:hover {
+    border-color: $radio-border-hover;
+    background: $radio-background-hover;
+    .pupil {
+      &:not(.disabled) {
+        background: $radio-pupil-hover;
+      }
     }
   }
 }
 
-@mixin color-set {
-  border: 2px solid $radio-border;
-  &.checked {
-    border-color: $radio-border-checked;
-    &.disabled {
-      border-color: $radio-border-checked-disabled;
+@mixin pupil {
+  .pupil {
+    width: 10px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    place-content: center;
+    transform: scale(0);
+    transition: transform 0.2s ease;
+    &.checked {
+      transform: scale(1);
     }
-    &:not(.disabled):hover {
-      border-color: $radio-border-hover;
-    }
-  }
-  &.disabled {
-    border-color: $radio-border-disabled;
-  }
-
-  &:not(.disabled):hover {
-    border-color: $radio-border-hover;
   }
 }
 
 @mixin default {
+  border: 2px solid;
   width: 16px;
-  height: 16px;
+  aspect-ratio: 1;
+  place-content: center;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-}
-
-@mixin disabled {
   &.disabled {
     cursor: not-allowed;
   }
@@ -45,7 +72,6 @@
 
 .radio {
   @include default;
-  @include disabled;
-  @include color-set;
   @include pupil;
+  @include color-set;
 }

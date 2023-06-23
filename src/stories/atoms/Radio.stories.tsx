@@ -9,7 +9,14 @@ const meta: Meta<typeof Radio> = {
   parameters: {
     componentSubtitle: 'Radio',
   },
-  argTypes: {},
+  argTypes: {
+    checked: {
+      option: ['true', 'false'],
+    },
+    disabled: {
+      option: ['true', 'false'],
+    },
+  },
 };
 
 const Template = (args: RadioProps) => {

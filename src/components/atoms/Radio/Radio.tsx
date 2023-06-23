@@ -32,6 +32,7 @@ function Radio<T extends React.ElementType = typeof ELEMENT>(
       ref={ref}
       className={cx('radio', { checked }, { disabled }, className)}
     >
+      <span className={cx('pupil', { checked }, { disabled })}></span>
       {children}
     </ELEMENT>
   );

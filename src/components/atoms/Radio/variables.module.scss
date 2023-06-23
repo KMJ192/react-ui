@@ -9,3 +9,17 @@ $radio-border-checked-disabled: var(
 $radio-border-checked-hover: var(--radio-border-checked-hover, $light-blue500);
 $radio-border-disabled: var(--radio-border-disabled, $light-primary300);
 $radio-border-hover: var(--radio-border-hover, $light-blue500);
+
+$radio-background: var(--radio-background);
+$radio-background-checked: var(--radio-background-checked);
+$radio-background-checked-hover: var(--radio-background-checked-hover);
+$radio-background-checked-disabled: var(
+  --radio-background-checked-disabled,
+  $light-primary300
+);
+$radio-background-disabled: var(--radio-background-disabled, $light-primary200);
+$radio-background-hover: var(--radio-background-hover);
+
+$radio-pupil: var(--radio-pupil, $radio-border-checked);
+$radio-pupil-disabled: var(--radio-pupil-disabled, $light-primary500);
+$radio-pupil-hover: var(--radio-pupil-hover, $radio-border-hover);
