@@ -24,7 +24,7 @@ function Input<T extends React.ElementType = typeof ELEMENT>(
   return (
     <div className={cx('container')}>
       <When condition={leftIcon !== undefined}>
-        <div className={cx('icon', 'left')}>{leftIcon}</div>
+        <div className={cx('icon', 'left', size)}>{leftIcon}</div>
       </When>
       <ELEMENT
         {...props}
@@ -38,7 +38,7 @@ function Input<T extends React.ElementType = typeof ELEMENT>(
         )}
       ></ELEMENT>
       <When condition={rightIcon !== undefined}>
-        <div className={cx('icon', 'right')}>{rightIcon}</div>
+        <div className={cx('icon', 'right', size)}>{rightIcon}</div>
       </When>
     </div>
   );

@@ -11,44 +11,91 @@
   }
 }
 
+@mixin icon {
+  position: absolute;
+  aspect-ratio: 1;
+  &.xs {
+    width: 12px;
+    &.left {
+      left: 6px;
+    }
+    &.right {
+      right: 6px;
+    }
+  }
+  &.sm {
+    width: 16px;
+    &.left {
+      left: 8px;
+    }
+    &.right {
+      right: 8px;
+    }
+  }
+  &.md {
+    width: 20px;
+    &.left {
+      left: 12px;
+    }
+    &.right {
+      right: 12px;
+    }
+  }
+  &.lg {
+    width: 24px;
+    &.left {
+      left: 12px;
+    }
+    &.right {
+      right: 14px;
+    }
+  }
+}
+
 @mixin size {
   &.xs {
     padding: 4px;
     font-size: 12px;
     &.left-icon {
+      padding-left: 20px;
     }
     &.right-icon {
+      padding-right: 20px;
     }
   }
   &.sm {
     padding: 8px;
     font-size: 14px;
     &.left-icon {
+      padding-left: 26px;
     }
     &.right-icon {
+      padding-right: 26px;
     }
   }
   &.md {
     padding: 10px;
     font-size: 16px;
     &.left-icon {
-      padding-left: 24px;
+      padding-left: 32px;
     }
     &.right-icon {
-      padding-right: 24px;
+      padding-right: 36px;
     }
   }
   &.lg {
     padding: 12px;
     font-size: 20px;
     &.left-icon {
+      padding-left: 40px;
     }
     &.right-icon {
+      padding-right: 44px;
     }
   }
 }
 
-@mixin default {
+@mixin input {
   width: 100%;
   border: 1px solid;
   border-radius: 4px;
@@ -60,9 +107,14 @@
 
 .container {
   position: relative;
+  display: flex;
+  align-items: center;
   .input {
-    @include default;
+    @include input;
     @include color-set;
     @include size;
+  }
+  .icon {
+    @include icon;
   }
 }
