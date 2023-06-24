@@ -17,6 +17,7 @@
   - ProgressBar (예정)
   - Switch (예정)
   - Slider (예정)
+  - Toast (예정)
 - molecules
   - Floating (진행 중)
   - Select (예정)
@@ -33,6 +34,7 @@
   - Modal (예정)
   - Table (예정)
 - template
+  - PageTemplate (예정)
 
 ##### Project start
 
