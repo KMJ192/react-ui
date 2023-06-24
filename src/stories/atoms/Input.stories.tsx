@@ -29,14 +29,18 @@ export const InputText: StoryFn<InputProps> = inputTemplate.bind({});
 InputText.args = {
   type: 'text',
   size: 'md',
-  leftIcon: <img src={keyIcon} alt='key' />,
-  rightIcon: <img src={showIcon} alt='lock' />,
+  error: false,
+  placeholder: 'input-text',
 };
 
 export const InputPassword: StoryFn<InputProps> = inputTemplate.bind({});
 InputPassword.args = {
   type: 'password',
   size: 'md',
+  error: false,
+  placeholder: 'input-password',
+  leftIcon: <img src={keyIcon} alt='key' />,
+  rightIcon: <img src={showIcon} alt='lock' />,
 };
 
 export default meta;

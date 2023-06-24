@@ -9,6 +9,7 @@ const cx = classNames.bind(style);
 
 type BaseProps = {
   size?: 'xs' | 'sm' | 'md' | 'lg';
+  error?: boolean;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
 };
@@ -18,7 +19,7 @@ const ELEMENT = 'input';
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
 function Input<T extends React.ElementType = typeof ELEMENT>(
-  { size = 'md', leftIcon, rightIcon, className, ...props }: Props<T>,
+  { size = 'md', leftIcon, rightIcon, error, className, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
   return (
@@ -34,6 +35,7 @@ function Input<T extends React.ElementType = typeof ELEMENT>(
           size,
           leftIcon !== undefined && 'left-icon',
           rightIcon !== undefined && 'right-icon',
+          { error },
           className,
         )}
       ></ELEMENT>

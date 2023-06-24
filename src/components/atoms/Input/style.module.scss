@@ -4,9 +4,16 @@
   border-color: $input-border;
   background: $input-background;
   color: $input-text;
+  &::placeholder {
+    color: $input-placeholder;
+  }
 
-  &:focus {
-    border: 1px solid $input-border-focus;
+  &.error {
+    border-color: $input-border-error;
+  }
+
+  &:not(.error):focus {
+    border-color: $input-border-focus;
     box-shadow: $input-box-shadow;
   }
 }
@@ -16,6 +23,7 @@
   aspect-ratio: 1;
   &.xs {
     width: 12px;
+    height: 12px;
     &.left {
       left: 6px;
     }
@@ -25,6 +33,7 @@
   }
   &.sm {
     width: 16px;
+    height: 16px;
     &.left {
       left: 8px;
     }
@@ -34,20 +43,22 @@
   }
   &.md {
     width: 20px;
+    height: 20px;
     &.left {
-      left: 12px;
+      left: 10px;
     }
     &.right {
-      right: 12px;
+      right: 10px;
     }
   }
   &.lg {
     width: 24px;
+    height: 24px;
     &.left {
-      left: 12px;
+      left: 10px;
     }
     &.right {
-      right: 14px;
+      right: 12px;
     }
   }
 }
@@ -109,6 +120,7 @@
   position: relative;
   display: flex;
   align-items: center;
+
   .input {
     @include input;
     @include color-set;
