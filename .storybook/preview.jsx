@@ -8,6 +8,8 @@ import useUIState from '../src/store/hooks/useUIState';
 import { COLOR } from '@styles/color';
 import Floating from '@src/components/molecules/Floating/Floating';
 
+import './index.css';
+
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
 const cx = classNames.bind(style);
