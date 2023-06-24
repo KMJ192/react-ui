@@ -10,6 +10,7 @@
     @include popup-light;
     @include checkbox-light;
     @include radio-light;
+    @include input-light;
   }
   &.dark {
     @include button-dark;
@@ -20,6 +21,7 @@
     @include popup-dark;
     @include checkbox-dark;
     @include radio-dark;
+    @include input-dark;
   }
 }
 
