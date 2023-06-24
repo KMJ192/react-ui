@@ -61,6 +61,8 @@ const COLOR: {
       ['500']: color.light_red500,
       ['600']: color.light_red600,
       ['700']: color.light_red700,
+      ['800']: color.light_red800,
+      ['900']: color.light_red900,
     },
     background: {
       global: color.light_background,
