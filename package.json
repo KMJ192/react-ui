@@ -1,5 +1,5 @@
 {
-  "name": "any-ui",
+  "name": "@kmj/react-ui",
   "version": "0.0.1",
   "description": "ui components",
   "scripts": {
@@ -9,7 +9,10 @@
     "clear": "rm -rf .yarn* yarn.lock .pnp* node_modules"
   },
   "keywords": [],
-  "author": "",
+  "author": {
+    "name": "MyeongJunKim",
+    "email": "myeongjun222@gmail.com"
+  },
   "license": "ISC",
   "devDependencies": {
     "@storybook/addon-actions": "^7.0.11",
