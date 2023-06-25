@@ -28,5 +28,5 @@ function HamburgerMenu<T extends React.ElementType = typeof ELEMENT>(
   );
 }
 
-export type HamburgerProps = Props<typeof ELEMENT>;
+export type HamburgerMenuProps = Props<typeof ELEMENT>;
 export default React.forwardRef(HamburgerMenu) as typeof HamburgerMenu;
