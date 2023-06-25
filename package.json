@@ -5,7 +5,7 @@
   "scripts": {
     "start": "storybook dev -p 6006",
     "build:story": "rm -rf storybook-static && storybook build",
-    "build:lib": "rm -rf build && vite build && tsc --emitDeclarationOnly && tsc-alias -p tsconfig.json",
+    "build:lib": "rm -rf build && vite build && tsc -p tsconfig.build.json && tsc-alias",
     "clear": "rm -rf .yarn* yarn.lock .pnp* node_modules"
   },
   "keywords": [],

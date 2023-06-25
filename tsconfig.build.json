@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "outDir": "build",
+    "noEmit": false,
+    "emitDeclarationOnly": true
+  },
+  "include": [
+    "./src/components/**/*.tsx",
+    "./src/components/**/*.ts",
+    "./types/*",
+    "./typings/*",
+    "./styles/*"
+  ]
+}

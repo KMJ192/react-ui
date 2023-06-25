@@ -8,15 +8,15 @@ export default defineConfig({
     alias: [
       {
         find: '@src',
-        replacement: './src',
+        replacement: '/src',
       },
       {
         find: '@styles',
-        replacement: './src/styles',
+        replacement: '/src/styles',
       },
       {
         find: '@icons',
-        replacement: './src/static/icons',
+        replacement: '/src/static/icons',
       },
     ],
   },
@@ -26,9 +26,9 @@ export default defineConfig({
     minify: true,
     lib: {
       entry: resolve(__dirname, 'index.ts'),
-      name: 'JonathanUi',
-      formats: ['cjs', 'es', 'umd', 'iife'],
-      fileName: (format) => `jonathan-ui.${format}.js`,
+      name: 'react-ui',
+      formats: ['cjs', 'es', 'umd'],
+      fileName: (format) => `react-ui.${format}.js`,
     },
     rollupOptions: {
       external: ['react', 'react-dom'],

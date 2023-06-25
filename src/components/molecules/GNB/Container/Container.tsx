@@ -11,20 +11,18 @@ type BaseProps = {
   children?: ReactNode;
 };
 
-const DEFAULT_COMPONENT_ELEMENT = 'div';
+const ELEMENT = 'div';
 
 type Props<T extends ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function Container<T extends ElementType = typeof DEFAULT_COMPONENT_ELEMENT>(
-  { children, as, className, ...props }: Props<T>,
+function Container<T extends ElementType = typeof ELEMENT>(
+  { children, className, ...props }: Props<T>,
   ref: Ref<any>,
 ) {
-  const Element = as ?? DEFAULT_COMPONENT_ELEMENT;
-
   return (
-    <Element {...props} ref={ref} className={cx('container', className)}>
+    <ELEMENT {...props} ref={ref} className={cx('container', className)}>
       {children}
-    </Element>
+    </ELEMENT>
   );
 }
 

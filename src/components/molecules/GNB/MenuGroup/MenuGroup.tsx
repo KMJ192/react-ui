@@ -13,26 +13,16 @@ type BaseProps = {
   children?: ReactNode;
 };
 
-const DEFAULT_COMPONENT_ELEMENT = 'div';
+const ELEMENT = 'div';
 
 type Props<T extends ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function MenuGroup<T extends ElementType = typeof DEFAULT_COMPONENT_ELEMENT>(
-  {
-    show = false,
-    depth = 0,
-    children,
-    as,
-    className,
-    style,
-    ...props
-  }: Props<T>,
+function MenuGroup<T extends ElementType = typeof ELEMENT>(
+  { show = false, depth = 0, children, className, style, ...props }: Props<T>,
   ref: Ref<any>,
 ) {
-  const Element = as ?? DEFAULT_COMPONENT_ELEMENT;
-
   return (
-    <Element
+    <ELEMENT
       {...props}
       ref={ref}
       className={cx('menu-group', show ? 'show' : 'collapse', className)}
@@ -42,7 +32,7 @@ function MenuGroup<T extends ElementType = typeof DEFAULT_COMPONENT_ELEMENT>(
       }}
     >
       {children}
-    </Element>
+    </ELEMENT>
   );
 }
 

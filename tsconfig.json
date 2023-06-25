@@ -7,7 +7,7 @@
       "@icons/*": ["src/static/icons/*"]
     },
     "declaration": true,
-    "declarationDir": "build",
+    "declarationDir": "./build",
     "outDir": "build",
     "jsx": "react-jsx",
     "target": "ESNext",
