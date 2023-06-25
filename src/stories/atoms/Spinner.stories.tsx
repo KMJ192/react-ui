@@ -14,6 +14,12 @@ const meta: Meta<typeof Spinner> = {
         disable: true,
       },
     },
+    size: {
+      options: ['xs', 'sm', 'md', 'lg'],
+      control: {
+        type: 'select',
+      },
+    },
   },
 };
 
@@ -24,21 +30,19 @@ const Template = (args: SpinnerProps) => {
 export const SpinnerType1: StoryFn<SpinnerProps> = Template.bind({});
 SpinnerType1.args = {
   type: 'type-1',
+  size: 'md',
 };
 
 export const SpinnerType2: StoryFn<SpinnerProps> = Template.bind({});
 SpinnerType2.args = {
   type: 'type-2',
+  size: 'md',
 };
 
 export const SpinnerType3: StoryFn<SpinnerProps> = Template.bind({});
 SpinnerType3.args = {
   type: 'type-3',
-};
-
-export const SpinnerType4: StoryFn<SpinnerProps> = Template.bind({});
-SpinnerType4.args = {
-  type: 'type-4',
+  size: 'md',
 };
 
 export default meta;

@@ -9,11 +9,39 @@
   }
 }
 
+@mixin type2-size {
+  &.xs {
+    width: 16px;
+    height: 16px;
+    border: 2px solid $spinner-color;
+    border-bottom-color: $spinner-color2;
+  }
+  &.sm {
+    width: 20px;
+    height: 20px;
+    border: 3px solid $spinner-color;
+    border-bottom-color: $spinner-color2;
+  }
+  &.md {
+    width: 24px;
+    height: 24px;
+    border: 4px solid $spinner-color;
+    border-bottom-color: $spinner-color2;
+  }
+  &.lg {
+    width: 32px;
+    height: 32px;
+    border: 6px solid $spinner-color;
+    border-bottom-color: $spinner-color2;
+  }
+}
+
 @mixin type-2 {
-  border: 4px solid $spinner-color;
-  border-bottom-color: $spinner-color2;
-  border-radius: 50%;
-  display: inline-block;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
+  &.type-2 {
+    @include type2-size;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
 }
