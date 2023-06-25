@@ -12,3 +12,5 @@ build
 storybook-static
 
 .vscode
+
+.DS_Store
