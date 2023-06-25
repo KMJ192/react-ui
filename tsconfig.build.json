@@ -9,8 +9,10 @@
   "include": [
     "./src/components/**/*.tsx",
     "./src/components/**/*.ts",
+    "./src/store/*",
     "./types/*",
     "./typings/*",
-    "./styles/*"
+    "./styles/*",
+    "./index.ts"
   ]
 }
