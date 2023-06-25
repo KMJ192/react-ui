@@ -35,11 +35,11 @@ $checkbox-background-disabled: var(
 $checkbox-text: var(--checkbox-text, $light-primary900);
 $checkbox-text-hover: var(
   --checkbox-text-hover,
-  $checkbox-border-checked-hover
+  $light-blue500
 );
 $checkbox-text-disabled: var(
   --checkbox-text-disabled,
-  $checkbox-border-disabled
+  $light-primary300
 );
 
 // mark
