@@ -11,7 +11,7 @@ const cx = classNames.bind(style);
 type BaseProps = {
   options?: Array<Option>;
   direction?: Direction;
-  select?: number;
+  selected?: number;
   onSelect?: (idx: number) => void;
 };
 
@@ -21,7 +21,7 @@ type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
 function Tab<T extends React.ElementType = typeof ELEMENT>(
   {
-    select = 0,
+    selected = 0,
     options = [],
     direction = 'horizontal',
     className,
@@ -92,22 +92,22 @@ function Tab<T extends React.ElementType = typeof ELEMENT>(
   useEffect(() => {
     if (sizeInfo.optionInfo.length > 0) {
       if (direction === 'horizontal') {
-        const left = `${sizeInfo.optionInfo[select].left}px`;
-        const width = `${sizeInfo.optionInfo[select].width}px`;
+        const left = `${sizeInfo.optionInfo[selected].left}px`;
+        const width = `${sizeInfo.optionInfo[selected].width}px`;
         setTabLineStyle({
           left,
           width,
         });
       } else if (direction === 'vertical') {
-        const top = `${sizeInfo.optionInfo[select].top}px`;
-        const height = `${sizeInfo.optionInfo[select].height}px`;
+        const top = `${sizeInfo.optionInfo[selected].top}px`;
+        const height = `${sizeInfo.optionInfo[selected].height}px`;
         setTabLineStyle({
           top,
           height,
         });
       }
     }
-  }, [sizeInfo, select]);
+  }, [sizeInfo, selected]);
 
   return (
     <ELEMENT {...props} ref={ref} className={cx('tab', className)}>
@@ -115,8 +115,8 @@ function Tab<T extends React.ElementType = typeof ELEMENT>(
         className={cx(
           'tab-line',
           direction,
-          select === 0 && 'first',
-          select === options.length - 1 && 'last',
+          selected === 0 && 'first',
+          selected === options.length - 1 && 'last',
         )}
         style={tabLineStyle}
       ></div>

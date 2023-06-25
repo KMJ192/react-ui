@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import Tab, { TabProps } from '@src/components/atoms/Tab/Tab';
 import type { StoryFn } from '@storybook/react';
@@ -26,7 +26,7 @@ const tabTemplate = (args: TabProps): JSX.Element => {
     setSelect(idx);
   };
 
-  return <Tab {...args} onSelect={onSelect} select={select} />;
+  return <Tab {...args} onSelect={onSelect} selected={select} />;
 };
 
 export const HorizontalTab: StoryFn<TabProps> = tabTemplate.bind({});
