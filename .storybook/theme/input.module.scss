@@ -1,15 +1,19 @@
 @import '@styles/color.module.scss';
 
 @mixin input-light {
-  --input-border: #{$light-primary900};
+  --input-border: #{$light-primary400};
   --input-border-focus: #{$light-blue500};
   --input-border-error: #{$light-red900};
+  --input-border-disabled: #{$light-primary300};
 
   --input-background: #{$light-primary000};
+  --input-background-disabled: #{$light-primary100};
 
   --input-text: #{$light-primary900};
+  --input-text-disabled: #{$light-primary400};
 
   --input-placeholder: #{$light-primary400};
+  --input-placeholder-disabled: #{$light-primary300};
 
   --input-box-shadow: 0px 3px 6px rgba(62, 62, 62, 0.1);
 }
@@ -18,12 +22,16 @@
   --input-border: #{$dark-primary300};
   --input-border-focus: #{$dark-blue500};
   --input-border-error: #{$dark-red000};
+  --input-border-disabled: #{$dark-primary100};
 
   --input-background: #{$dark-primary100};
+  --input-background-disabled: #{$dark-primary200};
 
   --input-text: #{$dark-primary800};
+  --input-text-disabled: #{$dark-primary000};
 
   --input-placeholder: #{$dark-primary300};
+  --input-placeholder-disabled: #{$dark-primary100};
 
   --input-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
 }

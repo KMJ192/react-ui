@@ -8,6 +8,15 @@
     color: $input-placeholder;
   }
 
+  &:disabled {
+    border-color: $input-border-disabled;
+    background: $input-background-disabled;
+    color: $input-text-disabled;
+    &::placeholder {
+      color: $input-placeholder-disabled;
+    }
+  }
+
   &.error {
     border-color: $input-border-error;
   }
@@ -125,6 +134,9 @@
     @include input;
     @include color-set;
     @include size;
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
   .icon {
     @include icon;

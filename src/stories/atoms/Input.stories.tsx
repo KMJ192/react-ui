@@ -31,6 +31,7 @@ InputText.args = {
   size: 'md',
   error: false,
   placeholder: 'input-text',
+  disabled: false,
 };
 
 export const InputPassword: StoryFn<InputProps> = inputTemplate.bind({});
@@ -41,6 +42,7 @@ InputPassword.args = {
   placeholder: 'input-password',
   leftIcon: <img src={keyIcon} alt='key' />,
   rightIcon: <img src={showIcon} alt='lock' />,
+  disabled: false,
 };
 
 export default meta;
