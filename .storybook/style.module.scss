@@ -11,6 +11,7 @@
     @include checkbox-light;
     @include radio-light;
     @include input-light;
+    @include switch-light;
   }
   &.dark {
     @include button-dark;
@@ -22,6 +23,7 @@
     @include checkbox-dark;
     @include radio-dark;
     @include input-dark;
+    @include switch-dark;
   }
 }
 
