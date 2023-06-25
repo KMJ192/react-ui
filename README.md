@@ -17,12 +17,11 @@
   - Spinner
   - Text
   - Input
+  - Switch
   - ProgressBar (예정)
-  - Switch (진행중)
-  - Slider (예정)
   - Toast (예정)
   - Row (예정)
-  - Column (예정)
+  - Slider (예정)
 - molecules
   - Floating (진행 중)
     - 일반 타입, 확장 타입, 드래그 타입
