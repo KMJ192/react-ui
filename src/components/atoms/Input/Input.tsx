@@ -1,14 +1,15 @@
 import React from 'react';
 
-import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+import { When } from '@src/components/IfComponents/WhenUnless';
+
+import type { OVER_RIDABLE_PROPS, SIZE } from '@src/types/types';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
-import { When } from '@src/components/IfComponents/WhenUnless';
 const cx = classNames.bind(style);
 
 type BaseProps = {
-  size?: 'xs' | 'sm' | 'md' | 'lg';
+  size?: SIZE;
   error?: boolean;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
