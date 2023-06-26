@@ -19,6 +19,12 @@ const meta: Meta<typeof Checkbox> = {
     multiple: {
       option: ['true', 'false'],
     },
+    size: {
+      options: ['xs', 'sm', 'md', 'lg'],
+      control: {
+        type: 'select',
+      },
+    },
   },
 };
 
@@ -34,6 +40,7 @@ PrimaryCheckbox.args = {
   checked: true,
   disabled: false,
   multiple: false,
+  size: 'md',
 };
 
 export default meta;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+import type { OVER_RIDABLE_PROPS, SIZE } from '@src/types/types';
 
 import Mark from './Mark';
 
@@ -13,6 +13,7 @@ type BaseProps = {
   checked?: boolean;
   multiple?: boolean;
   disabled?: boolean;
+  size?: SIZE;
 };
 
 const ELEMENT = 'div';
@@ -25,6 +26,7 @@ function Checkbox<T extends React.ElementType = typeof ELEMENT>(
     checked = false,
     multiple = false,
     disabled = false,
+    size = 'md',
     className,
     ...props
   }: Props<T>,
@@ -34,7 +36,7 @@ function Checkbox<T extends React.ElementType = typeof ELEMENT>(
     <ELEMENT
       {...props}
       ref={ref}
-      className={cx('checkbox', { checked }, { disabled }, className)}
+      className={cx('checkbox', { checked }, { disabled }, size, className)}
     >
       <Mark multiple={multiple} />
       {children}

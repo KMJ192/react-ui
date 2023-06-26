@@ -65,13 +65,48 @@
   }
 }
 
+@mixin size {
+  &.xs {
+    width: 12px;
+    height: 12px;
+    font-size: 12px;
+    .mark {
+      font-size: 12px;
+    }
+  }
+  &.sm {
+    width: 14px;
+    height: 14px;
+    font-size: 14px;
+    .mark {
+      font-size: 14px;
+    }
+  }
+  &.md {
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    .mark {
+      font-size: 16px;
+    }
+  }
+  &.lg {
+    width: 24px;
+    height: 24px;
+    font-size: 20px;
+    .mark {
+      font-size: 24px;
+    }
+  }
+}
+
 @mixin default {
-  width: 16px;
-  height: 16px;
   border-radius: 2px;
   cursor: pointer;
   display: flex;
   column-gap: 8px;
+  display: flex;
+  align-items: center;
 }
 
 @mixin disabled {
@@ -85,4 +120,5 @@
   @include disabled;
   @include color-set;
   @include mark;
+  @include size;
 }
