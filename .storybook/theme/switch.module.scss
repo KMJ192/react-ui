@@ -27,7 +27,7 @@
   --switch-background-checked-disabled: #{$dark-primary300};
   --switch-background-checked-hover: #{$dark-blue100};
   --switch-background-disabled: #{$dark-primary400};
-  --switch-background-hover: #{$dark-blue100};
+  --switch-background-hover: #{$dark-blue400};
 
   --switch-bullet: #{$dark-primary800};
   --switch-bullet-checked: #{$dark-primary800};
@@ -38,6 +38,6 @@
   --switch-bullet-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
 
   --switch-text: #{$dark-primary900};
-  --switch-text-hover: #{$dark-blue200};
+  --switch-text-hover: #{$dark-blue400};
   --switch-text-disabled: #{$dark-primary200};
 }
