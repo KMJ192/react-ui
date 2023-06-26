@@ -43,10 +43,18 @@
     background: none;
     box-shadow: none;
     outline: 1px solid $button-outline;
+    &:hover {
+      background: $button-background-hover;
+      color: $button-text-hover;
+    }
   }
   &.clear {
     background: none;
     box-shadow: none;
+    &:hover {
+      background: $button-background-hover;
+      color: $button-text-hover;
+    }
   }
 }
 
