@@ -10,7 +10,13 @@ export default {
   },
   argTypes: {
     type: {
-      options: ['type-1', 'type-2', 'type-3', 'type-4'],
+      options: ['type-1', 'type-2', 'type-3'],
+      control: {
+        type: 'select',
+      },
+    },
+    size: {
+      options: ['xs', 'sm', 'md', 'lg'],
       control: {
         type: 'select',
       },
@@ -27,4 +33,5 @@ export const HamburgerMenuStory: StoryFn<HamburgerMenuProps> =
 HamburgerMenuStory.args = {
   active: false,
   type: 'type-1',
+  size: 'md',
 };
