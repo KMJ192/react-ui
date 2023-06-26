@@ -54,11 +54,58 @@
   }
 }
 
+@mixin size {
+  &.xs {
+    .mark {
+      width: 12px;
+      .pupil {
+        width: 6px;
+      }
+    }
+    .children {
+      font-size: 12px;
+    }
+  }
+  &.sm {
+    .mark {
+      width: 14px;
+      .pupil {
+        width: 8px;
+      }
+    }
+    .children {
+      font-size: 14px;
+    }
+  }
+  &.md {
+    .mark {
+      width: 16px;
+      .pupil {
+        width: 10px;
+      }
+    }
+    .children {
+      font-size: 16px;
+    }
+  }
+  &.lg {
+    .mark {
+      width: 20px;
+      .pupil {
+        width: 12px;
+      }
+    }
+    .children {
+      font-size: 20px;
+    }
+  }
+}
+
 @mixin pupil {
   .pupil {
-    width: 10px;
     aspect-ratio: 1;
     border-radius: 50%;
+    width: 10px;
     place-content: center;
     transform: scale(0);
     transition: transform 0.1s ease, background-color 0.1s ease;
@@ -70,7 +117,6 @@
 
 @mixin mark {
   border: 2px solid;
-  width: 16px;
   aspect-ratio: 1;
   place-content: center;
   border-radius: 50%;
@@ -92,6 +138,7 @@
     @include mark;
     @include pupil;
   }
+  @include size;
   @include color-set;
   .children {
     transition: color 0.1s ease;

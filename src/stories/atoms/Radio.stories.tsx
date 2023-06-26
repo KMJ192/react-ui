@@ -16,6 +16,12 @@ const meta: Meta<typeof Radio> = {
     disabled: {
       option: ['true', 'false'],
     },
+    size: {
+      options: ['xs', 'sm', 'md', 'lg'],
+      control: {
+        type: 'select',
+      },
+    },
   },
 };
 
@@ -30,6 +36,7 @@ PrimaryRadio.args = {
   children: 'Radio',
   checked: false,
   disabled: false,
+  size: 'md',
 };
 
 export default meta;
