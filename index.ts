@@ -18,6 +18,8 @@ export { default as Switch } from '@src/components/atoms/Switch/Switch';
 export type { SwitchProps } from '@src/components/atoms/Switch/Switch';
 export { default as Tab } from '@src/components/atoms/Tab/Tab';
 export type { TabProps } from '@src/components/atoms/Tab/Tab';
+export { default as Progressbar } from '@src/components/atoms/Progressbar/Progressbar';
+export type { ProgressbarProps } from '@src/components/atoms/Progressbar/Progressbar';
 export { default as Text } from '@src/components/atoms/Text/Text';
 export type { TextProps } from '@src/components/atoms/Text/Text';
 
@@ -31,6 +33,3 @@ export { default as UIProvider } from '@src/store/Provider';
 export { default as useSetUIState } from '@src/store/hooks/useSetUIState';
 export { default as useUIState } from '@src/store/hooks/useUIState';
 export { default as useValueUIState } from '@src/store/hooks/useValueUIState';
-
-// Color
-export { COLOR } from '@src/styles/color';
