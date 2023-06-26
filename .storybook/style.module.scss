@@ -12,6 +12,7 @@
     @include radio-light;
     @include input-light;
     @include switch-light;
+    @include progressbar-light;
   }
   &.dark {
     @include button-dark;
@@ -24,6 +25,7 @@
     @include radio-dark;
     @include input-dark;
     @include switch-dark;
+    @include progressbar-dark;
   }
 }
 
