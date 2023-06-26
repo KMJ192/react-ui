@@ -21,6 +21,10 @@ export type { TabProps } from '@src/components/atoms/Tab/Tab';
 export { default as Text } from '@src/components/atoms/Text/Text';
 export type { TextProps } from '@src/components/atoms/Text/Text';
 
+// molecules
+export { default as Floating } from '@src/components/molecules/Floating/Floating';
+export type { FloatingProps } from '@src/components/molecules/Floating/Floating';
+
 // Store
 export { default as UIContext } from '@src/store/Context';
 export { default as UIProvider } from '@src/store/Provider';
