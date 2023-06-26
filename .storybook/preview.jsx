@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { RecoilRoot } from 'recoil';
 import { themes } from '@storybook/theming';
 import cloneDeep from 'lodash/cloneDeep';
@@ -46,6 +47,15 @@ export const parameters = {
 function GlobalStory({ children }) {
   const [ui, setUI] = useUIState();
   const { theme } = ui;
+
+  useEffect(() => {
+    if (!theme) {
+      setUI({
+        theme: 'light',
+      });
+      window.localStorage.setItem('theme', 'light');
+    }
+  }, []);
 
   return (
     <main className={cx('storybook', theme)}>
