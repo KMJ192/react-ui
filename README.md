@@ -69,3 +69,7 @@ yarn build:lib
 - Typescript
 - sass
 - vite
+
+##### Deployed Storybook link
+
+- https://kmj-react-ui.vercel.app/
