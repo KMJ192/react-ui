@@ -6,7 +6,6 @@ module.exports = {
     '@storybook/addon-docs',
     '@storybook/addon-actions',
     '@storybook/addon-controls',
-    '@storybook/addon-backgrounds',
     'storybook-dark-mode',
   ],
   viteFinal: async (config) => {

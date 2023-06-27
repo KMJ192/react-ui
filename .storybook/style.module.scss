@@ -1,3 +1,4 @@
+@import '@styles/color.module.scss';
 @import './theme/theme.module.scss';
 
 @mixin theme {
@@ -13,6 +14,7 @@
     @include input-light;
     @include switch-light;
     @include progressbar-light;
+    background: $light-background;
   }
   &.dark {
     @include button-dark;
@@ -26,6 +28,7 @@
     @include input-dark;
     @include switch-dark;
     @include progressbar-dark;
+    background: $dark-background;
   }
 }
 
@@ -34,5 +37,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 24px;
+  width: 100vw;
+  height: 100vh;
   @include theme;
 }
