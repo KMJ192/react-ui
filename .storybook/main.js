@@ -15,6 +15,9 @@ module.exports = {
       '@styles': path.resolve(__dirname, '../src/styles'),
       '@icons': path.resolve(__dirname, '../src/static/icons'),
     };
+    config.optimizeDeps.exclude = config.optimizeDeps.exclude
+      ? [...config.optimizeDeps.exclude, 'node_modules']
+      : ['node_modules'];
 
     return config;
   },
