@@ -8,7 +8,7 @@ import style from './style.module.scss';
 const cx = classNames.bind(style);
 
 type Props = {
-  theme?: 'light' | 'dark';
+  theme: string | null;
 };
 
 const colorKey = [
