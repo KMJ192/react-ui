@@ -76,6 +76,10 @@ yarn build:lib
 
 ##### git commit message
 
+- [날짜][액션] 커밋 내용
+
+- 액션
+
 ```
 feat: 기능 추가, 삭제, 변경 (코드 수정)
 fix: 버그 수정
