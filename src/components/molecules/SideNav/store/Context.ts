@@ -3,7 +3,9 @@ import { cloneDeep } from 'lodash';
 
 import type { SideNavState, SideNavStateDispatch } from './types';
 
-const INIT_STATE: SideNavState = {};
+const INIT_STATE: SideNavState = {
+  position: 'left',
+};
 
 const INIT_CONTEXT: SideNavStateDispatch = [
   cloneDeep(INIT_STATE),

@@ -7,6 +7,7 @@ import style from './style.module.scss';
 const cx = classNames.bind(style);
 
 type BaseProps = {
+  selected?: boolean;
   children?: React.ReactNode;
 };
 
@@ -15,11 +16,15 @@ const ELEMENT = 'div';
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
 function Menu<T extends React.ElementType = typeof ELEMENT>(
-  { children, className, ...props }: Props<T>,
+  { selected = false, children, className, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
   return (
-    <ELEMENT {...props} ref={ref} className={cx(className)}>
+    <ELEMENT
+      {...props}
+      ref={ref}
+      className={cx('menu', { selected }, className)}
+    >
       {children}
     </ELEMENT>
   );

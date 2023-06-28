@@ -1,4 +1,6 @@
-type ContextState = {};
+type ContextState = {
+  position: 'left' | 'right';
+};
 
 type ContextDispatch = [
   ContextState,

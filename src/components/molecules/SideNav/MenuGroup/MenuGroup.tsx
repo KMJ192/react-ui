@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children, useState } from 'react';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
@@ -7,7 +7,10 @@ import style from './style.module.scss';
 const cx = classNames.bind(style);
 
 type BaseProps = {
+  show?: boolean;
+  depth?: number;
   children?: React.ReactNode;
+  style?: React.CSSProperties;
 };
 
 const ELEMENT = 'div';
@@ -15,11 +18,21 @@ const ELEMENT = 'div';
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
 function MenuGroup<T extends React.ElementType = typeof ELEMENT>(
-  { children, className, ...props }: Props<T>,
+  { show = false, depth = 0, children, style, className, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
+  const [_style, setStyle] = useState<React.CSSProperties>({
+    ...style,
+    marginLeft: `${depth * 8}px`,
+  });
+
   return (
-    <ELEMENT {...props} ref={ref} className={cx(className)}>
+    <ELEMENT
+      {...props}
+      ref={ref}
+      className={cx('nav-group', show ? 'show' : 'collapse', className)}
+      style={_style}
+    >
       {children}
     </ELEMENT>
   );

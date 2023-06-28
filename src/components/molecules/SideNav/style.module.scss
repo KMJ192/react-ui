@@ -1,1 +1,13 @@
 @import './variable/variable.module.scss';
+
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  width: 134px;
+  height: 100%;
+  overflow: auto;
+  background: gray;
+  &.right {
+    margin-left: auto;
+  }
+}

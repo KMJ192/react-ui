@@ -19,7 +19,7 @@ function Bot<T extends React.ElementType = typeof ELEMENT>(
   ref: React.Ref<any>,
 ) {
   return (
-    <ELEMENT {...props} ref={ref} className={cx(className)}>
+    <ELEMENT {...props} ref={ref} className={cx('bot', className)}>
       {children}
     </ELEMENT>
   );

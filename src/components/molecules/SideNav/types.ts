@@ -1,11 +1,11 @@
 import { ReactNode } from 'react';
 
-type SideNavItem = {
+type NavItem = {
   key: string | number;
   contents: ReactNode;
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
-  children: Array<SideNavItem>;
+  children: Array<NavItem>;
 };
 
-export type { SideNavItem };
+export type { NavItem };
