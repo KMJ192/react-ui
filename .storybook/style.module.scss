@@ -39,5 +39,9 @@
   row-gap: 24px;
   width: calc(100% - 32px);
   height: 100vh;
+  overflow: auto;
   @include theme;
+  .contents {
+    height: 100%;
+  }
 }
