@@ -42,6 +42,7 @@ function SN<T extends React.ElementType = typeof ELEMENT>(
     <SideNavProvider
       value={{
         position: 'left',
+        depthGap,
       }}
     >
       <ELEMENT

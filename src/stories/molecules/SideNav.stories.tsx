@@ -29,7 +29,7 @@ export const LeftSideNav = () => {
   };
 
   return (
-    <SideNav position='left'>
+    <SideNav position='left' depthGap={24}>
       <SideNav.Menu
         onClick={() => {
           onShow('0');
