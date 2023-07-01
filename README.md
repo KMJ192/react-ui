@@ -83,8 +83,7 @@ yarn build:lib
 ```
 feat: 기능 추가, 삭제, 변경 (코드 수정)
 fix: 버그 수정
-style: 코드 형식 변경
-design: UI 변경
+type: 코드 형식 변경
 refactor: 코드 리팩토링
 docs: 코드 외 문서의 추가, 삭제, 변경
 test: 테스트 코드 추가, 삭제, 변경
