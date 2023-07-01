@@ -47,7 +47,8 @@ export const LeftSideNav = () => {
 
   const onClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const element = e.target as HTMLDivElement;
-    if (String(element.dataset.key)) {
+
+    if (element.dataset.key) {
       setSelected({
         ...initSelected.current,
         [String(element.dataset.key)]: true,
@@ -94,7 +95,7 @@ export const LeftSideNav = () => {
             menu1-1-3
           </SideNav.Menu>
         </SideNav.MenuGroup>
-        <SideNav.Menu data-key='1-2' selected={selected['1-2']}>
+        <SideNav.Menu data-key='1-2' selected={selected['1-2']} disabled>
           menu1-2
         </SideNav.Menu>
         <SideNav.Menu data-key='1-3' selected={selected['1-3']}>

@@ -4,9 +4,6 @@ import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import SideNavProvider from './store/Provider';
 
-import Top from './Top/Top';
-import Mid from './Mid/Mid';
-import Bot from './Bot/Bot';
 import Menu from './Menu/Menu';
 import MenuGroup from './MenuGroup/MenuGroup';
 import Template from './Template/Template';
@@ -56,9 +53,6 @@ function SN<T extends React.ElementType = typeof ELEMENT>(
 }
 
 const SideNav = Object.assign(React.forwardRef(SN) as typeof SN, {
-  Top,
-  Mid,
-  Bot,
   Menu,
   MenuGroup,
   Template,

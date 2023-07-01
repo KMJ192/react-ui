@@ -8,6 +8,7 @@ const cx = classNames.bind(style);
 
 type BaseProps = {
   selected?: boolean;
+  disabled?: boolean;
   children?: React.ReactNode;
 };
 
@@ -16,14 +17,20 @@ const ELEMENT = 'div';
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
 function Menu<T extends React.ElementType = typeof ELEMENT>(
-  { selected = false, children, className, ...props }: Props<T>,
+  {
+    selected = false,
+    disabled = false,
+    children,
+    className,
+    ...props
+  }: Props<T>,
   ref: React.Ref<any>,
 ) {
   return (
     <ELEMENT
       {...props}
       ref={ref}
-      className={cx('menu', { selected }, className)}
+      className={cx('menu', { selected }, { disabled }, className)}
     >
       {children}
     </ELEMENT>
