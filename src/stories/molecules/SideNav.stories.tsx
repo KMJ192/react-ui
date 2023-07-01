@@ -12,7 +12,7 @@ const meta: Meta<typeof SideNav> = {
   argTypes: {},
 };
 
-export const LeftSideNav = () => {
+export const PrimarySideNav = () => {
   const initSelected = useRef({
     '1': false,
     '1-1': false,
