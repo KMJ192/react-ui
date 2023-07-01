@@ -16,6 +16,7 @@
     @include progressbar-light;
     @include sideNav-light;
     @include header-light;
+    @include footer-light;
     background: $light-background;
   }
   &.dark {
@@ -32,6 +33,7 @@
     @include progressbar-dark;
     @include sideNav-dark;
     @include header-dark;
+    @include footer-dark;
     background: $dark-background;
   }
 }
