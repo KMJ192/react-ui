@@ -17,7 +17,7 @@ type BaseProps = {
   depthGap?: number;
 };
 
-const ELEMENT = 'div';
+const ELEMENT = 'nav';
 
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
