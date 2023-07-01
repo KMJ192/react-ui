@@ -14,16 +14,16 @@ const ELEMENT = 'div';
 
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function Left<T extends React.ElementType = typeof ELEMENT>(
+function Mid<T extends React.ElementType = typeof ELEMENT>(
   { children, className, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
   return (
-    <ELEMENT {...props} ref={ref} className={cx('header-mid', className)}>
+    <ELEMENT {...props} ref={ref} className={cx('header-right', className)}>
       {children}
     </ELEMENT>
   );
 }
 
-export type HeaderLeftProps = Props<typeof ELEMENT>;
-export default React.forwardRef(Left) as typeof Left;
+export type HeaderMidProps = Props<typeof ELEMENT>;
+export default React.forwardRef(Mid) as typeof Mid;
