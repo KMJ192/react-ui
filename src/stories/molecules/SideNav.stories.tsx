@@ -64,7 +64,7 @@ export const LeftSideNav = () => {
   };
 
   return (
-    <SideNav position='left' depthGap={16} onClick={onClick}>
+    <SideNav depthGap={16} onClick={onClick}>
       <SideNav.Menu
         data-key='1'
         selected={selected['1']}
@@ -161,14 +161,6 @@ export const LeftSideNav = () => {
       </SideNav.MenuGroup>
     </SideNav>
   );
-};
-
-export const RightSideNav = () => {
-  return <SideNav position='right'></SideNav>;
-};
-
-export const SideNavTemplate = () => {
-  return <SideNav.Template />;
 };
 
 export default meta;

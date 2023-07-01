@@ -1,5 +1,4 @@
 type ContextState = {
-  position: 'left' | 'right';
   depthGap: number;
 };
 

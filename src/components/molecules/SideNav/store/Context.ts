@@ -4,7 +4,6 @@ import { cloneDeep } from 'lodash';
 import type { SideNavState, SideNavStateDispatch } from './types';
 
 const INIT_STATE: SideNavState = {
-  position: 'left',
   depthGap: 0,
 };
 

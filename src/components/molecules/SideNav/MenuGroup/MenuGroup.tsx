@@ -1,10 +1,11 @@
-import React, { Children, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
+import useValueSideNavState from '../store/hooks/useValueSideNavState';
+
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
-import useValueSideNavState from '../store/hooks/useValueSideNavState';
 const cx = classNames.bind(style);
 
 type BaseProps = {
@@ -50,5 +51,5 @@ function MenuGroup<T extends React.ElementType = typeof ELEMENT>(
   );
 }
 
-export type MenuGroupProps = Props<typeof ELEMENT>;
+export type SideNavMenuGroupProps = Props<typeof ELEMENT>;
 export default React.forwardRef(MenuGroup) as typeof MenuGroup;

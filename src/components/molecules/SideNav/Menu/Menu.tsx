@@ -37,5 +37,5 @@ function Menu<T extends React.ElementType = typeof ELEMENT>(
   );
 }
 
-export type MenuProps = Props<typeof ELEMENT>;
+export type SideNavMenuProps = Props<typeof ELEMENT>;
 export default React.forwardRef(Menu) as typeof Menu;
