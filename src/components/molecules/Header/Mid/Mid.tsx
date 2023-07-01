@@ -19,7 +19,7 @@ function Mid<T extends React.ElementType = typeof ELEMENT>(
   ref: React.Ref<any>,
 ) {
   return (
-    <ELEMENT {...props} ref={ref} className={cx('header-right', className)}>
+    <ELEMENT {...props} ref={ref} className={cx(className)}>
       {children}
     </ELEMENT>
   );
