@@ -7,8 +7,6 @@ import style from './style.module.scss';
 const cx = classNames.bind(style);
 
 type BaseProps = {
-  selected?: boolean;
-  disabled?: boolean;
   children?: React.ReactNode;
 };
 
@@ -16,26 +14,16 @@ const ELEMENT = 'div';
 
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function Menu<T extends React.ElementType = typeof ELEMENT>(
-  {
-    selected = false,
-    disabled = false,
-    children,
-    className,
-    ...props
-  }: Props<T>,
+function Mid<T extends React.ElementType = typeof ELEMENT>(
+  { children, className, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
   return (
-    <ELEMENT
-      {...props}
-      ref={ref}
-      className={cx('menu', { selected }, { disabled }, className)}
-    >
+    <ELEMENT {...props} ref={ref} className={cx(className)}>
       {children}
     </ELEMENT>
   );
 }
 
-export type SideNavMenuProps = Props<typeof ELEMENT>;
-export default React.forwardRef(Menu) as typeof Menu;
+export type FooterMidProps = Props<typeof ELEMENT>;
+export default React.forwardRef(Mid) as typeof Mid;

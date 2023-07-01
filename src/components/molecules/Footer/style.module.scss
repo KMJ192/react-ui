@@ -1,0 +1,15 @@
+@import './variable/variable.module.scss';
+
+@mixin color-set {
+  background: $footer-background;
+  color: $footer-text;
+}
+
+.footer {
+  padding: 28px;
+  width: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include color-set;
+}

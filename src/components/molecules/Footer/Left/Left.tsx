@@ -1,29 +1,29 @@
-import { forwardRef } from 'react';
-import type { ReactNode, ElementType, Ref } from 'react';
+import React from 'react';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import classNames from 'classnames/bind';
-import style from './Left.module.scss';
+import style from './style.module.scss';
 const cx = classNames.bind(style);
 
 type BaseProps = {
-  children?: ReactNode;
+  children?: React.ReactNode;
 };
 
-const ELEMENT = 'section';
+const ELEMENT = 'div';
 
-type Props<T extends ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function Left<T extends ElementType = typeof ELEMENT>(
+function Left<T extends React.ElementType = typeof ELEMENT>(
   { children, className, ...props }: Props<T>,
-  ref: Ref<any>,
+  ref: React.Ref<any>,
 ) {
   return (
-    <ELEMENT {...props} ref={ref} className={cx('left', className)}>
+    <ELEMENT {...props} ref={ref} className={cx(className)}>
       {children}
     </ELEMENT>
   );
 }
 
-export default forwardRef(Left) as typeof Left;
+export type FooterLeftProps = Props<typeof ELEMENT>;
+export default React.forwardRef(Left) as typeof Left;

@@ -1,11 +1,14 @@
 import { ReactNode } from 'react';
 
-type SideNavItem = {
-  key: string | number;
+type NavKey = string | number;
+
+type NavItem = {
+  key: NavKey;
   contents: ReactNode;
+  disabled?: boolean;
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
-  children: Array<SideNavItem>;
+  children?: Array<NavItem>;
 };
 
-export type { SideNavItem };
+export type { NavItem, NavKey };

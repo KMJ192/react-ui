@@ -1,4 +1,6 @@
-type ContextState = {};
+type ContextState = {
+  depthGap: number;
+};
 
 type ContextDispatch = [
   ContextState,
