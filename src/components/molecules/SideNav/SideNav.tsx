@@ -3,7 +3,6 @@ import React from 'react';
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import SideNavProvider from './store/Provider';
-import useSideNavState from './store/hooks/useSideNavState';
 
 import Top from './Top/Top';
 import Mid from './Mid/Mid';

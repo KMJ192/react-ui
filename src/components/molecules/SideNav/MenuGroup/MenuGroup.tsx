@@ -23,7 +23,6 @@ function MenuGroup<T extends React.ElementType = typeof ELEMENT>(
   ref: React.Ref<any>,
 ) {
   const { depthGap } = useValueSideNavState();
-  console.log(depthGap);
 
   const [_style, setStyle] = useState<React.CSSProperties>({
     ...style,
@@ -35,7 +34,7 @@ function MenuGroup<T extends React.ElementType = typeof ELEMENT>(
       ...style,
       marginLeft: `${depth * depthGap}px`,
     });
-  }, [depth, style]);
+  }, [depth, style, show]);
 
   return (
     <ELEMENT

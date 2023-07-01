@@ -1,12 +1,15 @@
 @import './variable/variable.module.scss';
+@import '@styles/scrollbar.scss';
 
 .side-nav {
   display: flex;
   flex-direction: column;
-  width: 134px;
+  width: 164px;
   height: 100%;
   overflow: auto;
-  background: gray;
+  background: $sideNav-background;
+  padding: 16px 0 16px 16px;
+  @include scrollbar(16px, 16px);
   &.right {
     margin-left: auto;
   }
