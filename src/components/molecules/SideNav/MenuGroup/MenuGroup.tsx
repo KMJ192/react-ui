@@ -40,10 +40,12 @@ function MenuGroup<T extends React.ElementType = typeof ELEMENT>(
     <ELEMENT
       {...props}
       ref={ref}
-      className={cx('nav-group', show ? 'show' : 'collapse', className)}
+      className={cx('nav-group', { show }, className)}
       style={_style}
     >
-      {children}
+      <div className={cx('children', show ? 'show' : 'collapse')}>
+        {children}
+      </div>
     </ELEMENT>
   );
 }
