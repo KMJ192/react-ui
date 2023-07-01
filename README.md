@@ -18,11 +18,14 @@
   - Text
   - Input
   - Switch
-  - ProgressBar (예정)
+  - ProgressBar
   - Toast (예정)
   - Row (예정)
   - Slider (예정)
 - molecules
+  - Header
+  - Footer
+  - SideNav
   - Floating (진행 중)
     - 일반 타입, 확장 타입, 드래그 타입
   - Select (예정)
@@ -33,14 +36,10 @@
 - organisms
   - DatePicker (예정)
   - DateRangePicker (예정)
-  - Nav (예정)
-  - SideNav (예정)
-  - Header (예정)
-  - Footer (예정)
   - Modal (예정)
   - Table (예정)
 - template
-  - PageTemplate (예정)
+  - PageTemplate (진행중)
 
 ##### Project start
 
