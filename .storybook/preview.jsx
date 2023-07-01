@@ -39,7 +39,7 @@ function GlobalStory({ children }) {
           {theme}
         </Floating.Button>
       </Floating>
-      <section>{children}</section>
+      <section className={cx('contents')}>{children}</section>
     </main>
   );
 }

@@ -1,0 +1,13 @@
+@import '@styles/color.module.scss';
+
+@mixin footer-light {
+  --footer-background: #{$light-primary100};
+
+  --footer-text: #{$light-primary900};
+}
+
+@mixin footer-dark {
+  --footer-background: #{$dark-primary100};
+
+  --footer-text: #{$dark-primary900};
+}

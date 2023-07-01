@@ -14,6 +14,9 @@
     @include input-light;
     @include switch-light;
     @include progressbar-light;
+    @include sideNav-light;
+    @include header-light;
+    @include footer-light;
     background: $light-background;
   }
   &.dark {
@@ -28,6 +31,9 @@
     @include input-dark;
     @include switch-dark;
     @include progressbar-dark;
+    @include sideNav-dark;
+    @include header-dark;
+    @include footer-dark;
     background: $dark-background;
   }
 }
@@ -39,5 +45,9 @@
   row-gap: 24px;
   width: calc(100% - 32px);
   height: 100vh;
+  overflow: auto;
   @include theme;
+  .contents {
+    height: 100%;
+  }
 }

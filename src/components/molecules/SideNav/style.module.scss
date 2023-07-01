@@ -1,1 +1,22 @@
 @import './variable/variable.module.scss';
+@import '@styles/scrollbar.scss';
+
+@mixin color-set {
+  background: $sideNav-background;
+  box-shadow: $sideNav-box-shadow;
+}
+
+@mixin side-nav {
+  display: flex;
+  flex-direction: column;
+  width: 164px;
+  height: inherit;
+  overflow: auto;
+  padding: 16px 0 16px 16px;
+}
+
+.side-nav {
+  @include side-nav;
+  @include color-set;
+  @include scrollbar(16px, 16px);
+}
