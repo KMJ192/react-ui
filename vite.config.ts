@@ -28,7 +28,7 @@ export default defineConfig({
       entry: resolve(__dirname, 'index.ts'),
       name: 'react-ui',
       formats: ['cjs', 'es', 'umd'],
-      fileName: (format) => `react-ui.${format}.js`,
+      fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
       external: ['react', 'react-dom'],
