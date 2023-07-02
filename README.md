@@ -1,4 +1,4 @@
-# @kmj/react-ui
+# any-react-ui
 
 - Personal Design System
 
@@ -71,7 +71,7 @@ yarn build:lib
 
 ##### Deployed Storybook link
 
-- https://kmj-react-ui.vercel.app/
+- https://any-react-ui.vercel.app/
 
 ##### git commit message
 
