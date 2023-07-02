@@ -26,6 +26,18 @@ export type { TextProps } from '@src/components/atoms/Text/Text';
 // molecules
 export { default as Floating } from '@src/components/molecules/Floating/Floating';
 export type { FloatingProps } from '@src/components/molecules/Floating/Floating';
+export { default as Footer } from '@src/components/molecules/Footer/Footer';
+export type { FooterProps } from '@src/components/molecules/Footer/Footer';
+export { default as Header } from '@src/components/molecules/Header/Header';
+export type { HeaderProps } from '@src/components/molecules/Header/Header';
+export { default as SideNav } from '@src/components/molecules/SideNav/SideNav';
+export type { SideNavProps } from '@src/components/molecules/SideNav/SideNav';
+
+// organisms
+
+// templates
+export { default as PageTemplate } from '@src/components/templates/PageTemplate/PageTemplate';
+export type { PageTemplateProps } from '@src/components/templates/PageTemplate/PageTemplate';
 
 // Store
 export { default as UIContext } from '@src/store/Context';
