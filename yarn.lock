@@ -3399,6 +3399,7 @@ __metadata:
     tsc-alias: ^1.8.6
     typescript: ^5.0.4
     vite: ^4.3.5
+    vite-plugin-css-injected-by-js: ^3.1.2
   languageName: unknown
   linkType: soft
 
@@ -9666,6 +9667,15 @@ __metadata:
   version: 1.1.2
   resolution: "vary@npm:1.1.2"
   checksum: ae0123222c6df65b437669d63dfa8c36cee20a504101b2fcd97b8bf76f91259c17f9f2b4d70a1e3c6bbcee7f51b28392833adb6b2770b23b01abec84e369660b
+  languageName: node
+  linkType: hard
+
+"vite-plugin-css-injected-by-js@npm:^3.1.2":
+  version: 3.1.2
+  resolution: "vite-plugin-css-injected-by-js@npm:3.1.2"
+  peerDependencies:
+    vite: ">2.0.0-0"
+  checksum: 9a3abf9fae34b54850e1a4eb0280652532b12e3dd3ddf7c451116da60814ca535726a662685ef4533e250d7a8b4e957593060efe81690f4585e2e0c2ec7ec15f
   languageName: node
   linkType: hard
 
