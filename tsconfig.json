@@ -7,7 +7,6 @@
       "@icons/*": ["src/static/icons/*"]
     },
     "declaration": true,
-    "declarationDir": "./build",
     "outDir": "build",
     "jsx": "react-jsx",
     "target": "ESNext",
@@ -35,5 +34,6 @@
     "**/declaration.d.ts",
     "**/namespace.d.ts",
     "./.yarn"
-  ]
+  ],
+  "exclude": ["node_modules", "build"]
 }

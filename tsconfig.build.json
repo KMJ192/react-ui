@@ -1,7 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "declaration": true,
+    "declarationDir": "build",
     "outDir": "build",
     "noEmit": false,
     "emitDeclarationOnly": true
@@ -10,10 +10,9 @@
     "./src/components/**/*.tsx",
     "./src/components/**/*.ts",
     "./src/store/*",
-    "./types/*",
+    "./src/types/*",
     "./typings/*",
-    "./styles/*",
+    "**/declaration.d.ts",
     "./index.ts"
-  ],
-  "exclude": ["./node_modules"]
+  ]
 }
