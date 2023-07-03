@@ -2,45 +2,6 @@
 
 - Personal Design System
 
-### 구조
-
-- atomic design
-
-- atoms
-  - Button
-  - HamburgerMenu
-  - Tab
-    - 수평, 수직
-  - Popup
-  - Radio
-  - Checkbox
-  - Spinner
-  - Text
-  - Input
-  - Switch
-  - ProgressBar
-  - Toast (예정)
-  - Row (예정)
-  - Slider (예정)
-- molecules
-  - Header
-  - Footer
-  - SideNav
-  - Floating (진행 중)
-    - 일반 타입, 확장 타입, 드래그 타입
-  - Select (예정)
-    - 기본선택, 검색선택, 다중선택 타입
-  - Radio Group (예정)
-  - Check Group (예정)
-  - List
-- organisms
-  - DatePicker (예정)
-  - DateRangePicker (예정)
-  - Modal (예정)
-  - Table (예정)
-- template
-  - PageTemplate (진행중)
-
 ##### Project start
 
 - dev start
@@ -60,14 +21,6 @@ yarn build:story
 ```
 yarn build:lib
 ```
-
-##### dev
-
-- Storybook v7
-- React
-- Typescript
-- sass
-- vite
 
 ##### Deployed Storybook link
 
@@ -89,3 +42,11 @@ test: 테스트 코드 추가, 삭제, 변경
 build: 빌드 옵션 변경
 etc: 위 해당 사항이 없는 모든 변경 사항
 ```
+
+##### dev
+
+- Storybook v7
+- React
+- Typescript
+- sass
+- vite
