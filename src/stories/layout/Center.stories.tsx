@@ -21,6 +21,7 @@ const Template = (args: CenterProps) => {
 export const CenterStory: StoryFn<CenterProps> = Template.bind({});
 CenterStory.args = {
   children: 'Center',
+  as: 'div',
 };
 
 export default meta;

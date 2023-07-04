@@ -21,6 +21,7 @@ const Template = (args: GridProps) => {
 export const GridStory: StoryFn<GridProps> = Template.bind({});
 GridStory.args = {
   children: 'Grid',
+  as: 'div',
 };
 
 export default meta;

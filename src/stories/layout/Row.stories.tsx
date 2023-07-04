@@ -21,6 +21,7 @@ const Template = (args: RowProps) => {
 export const RowStory: StoryFn<RowProps> = Template.bind({});
 RowStory.args = {
   children: 'Row',
+  as: 'div',
 };
 
 export default meta;

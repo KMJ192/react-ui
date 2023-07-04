@@ -21,6 +21,7 @@ const Template = (args: FlexProps) => {
 export const FlexStory: StoryFn<FlexProps> = Template.bind({});
 FlexStory.args = {
   children: 'Flex',
+  as: 'div',
 };
 
 export default meta;

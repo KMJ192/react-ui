@@ -10,14 +10,18 @@ type BaseProps = {
   children?: React.ReactNode;
 };
 
-const ELEMENT = 'div';
+const DEFAULT_ELEMENT = 'div';
 
-type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps> & {
+  as?: T;
+};
 
-function Row<T extends React.ElementType = typeof ELEMENT>(
-  { children, className, ...props }: Props<T>,
+function Row<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
+  { as, children, className, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
+  const ELEMENT = as || DEFAULT_ELEMENT;
+
   return (
     <ELEMENT {...props} ref={ref} className={cx(className)}>
       {children}
@@ -25,5 +29,5 @@ function Row<T extends React.ElementType = typeof ELEMENT>(
   );
 }
 
-export type RowProps = Props<typeof ELEMENT>;
+export type RowProps = Props<typeof DEFAULT_ELEMENT>;
 export default React.forwardRef(Row) as typeof Row;

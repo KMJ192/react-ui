@@ -21,6 +21,7 @@ const Template = (args: FloatProps) => {
 export const FloatStory: StoryFn<FloatProps> = Template.bind({});
 FloatStory.args = {
   children: 'Float',
+  as: 'div',
 };
 
 export default meta;

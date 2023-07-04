@@ -10,14 +10,18 @@ type BaseProps = {
   children?: React.ReactNode;
 };
 
-const ELEMENT = 'div';
+const DEFAULT_ELEMENT = 'div';
 
-type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps> & {
+  as?: T;
+};
 
-function Float<T extends React.ElementType = typeof ELEMENT>(
-  { children, className, ...props }: Props<T>,
+function Float<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
+  { as, children, className, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
+  const ELEMENT = as || DEFAULT_ELEMENT;
+
   return (
     <ELEMENT {...props} ref={ref} className={cx(className)}>
       {children}
@@ -25,5 +29,5 @@ function Float<T extends React.ElementType = typeof ELEMENT>(
   );
 }
 
-export type FloatProps = Props<typeof ELEMENT>;
+export type FloatProps = Props<typeof DEFAULT_ELEMENT>;
 export default React.forwardRef(Float) as typeof Float;

@@ -21,6 +21,7 @@ const Template = (args: StackProps) => {
 export const StackStory: StoryFn<StackProps> = Template.bind({});
 StackStory.args = {
   children: 'Stack',
+  as: 'div',
 };
 
 export default meta;
