@@ -21,10 +21,12 @@ function Center<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   { as, children, className, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
+  const ELEMENT = as || DEFAULT_ELEMENT;
+
   return (
-    <Flex {...props} ref={ref} className={cx('center', className)}>
+    <ELEMENT {...props} ref={ref} className={cx('center', className)}>
       {children}
-    </Flex>
+    </ELEMENT>
   );
 }
 

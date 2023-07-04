@@ -1,6 +1,13 @@
-.center {
+@import '../Flex/style.module.scss';
+
+@mixin center {
   align-items: center;
   -webkit-box-align: center;
   -webkit-box-pack: center;
   justify-content: center;
+}
+
+.center {
+  @include flex;
+  @include center;
 }
