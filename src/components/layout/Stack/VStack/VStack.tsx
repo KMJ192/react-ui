@@ -14,16 +14,16 @@ const ELEMENT = 'div';
 
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function Flex<T extends React.ElementType = typeof ELEMENT>(
+function VStack<T extends React.ElementType = typeof ELEMENT>(
   { children, className, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
   return (
-    <ELEMENT {...props} ref={ref} className={cx('flex', className)}>
+    <ELEMENT {...props} ref={ref} className={cx(className)}>
       {children}
     </ELEMENT>
   );
 }
 
-export type FlexProps = Props<typeof ELEMENT>;
-export default React.forwardRef(Flex) as typeof Flex;
+export type VStackProps = Props<typeof ELEMENT>;
+export default React.forwardRef(VStack) as typeof VStack;
