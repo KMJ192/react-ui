@@ -22,6 +22,8 @@ export const CenterStory: StoryFn<CenterProps> = Template.bind({});
 CenterStory.args = {
   children: 'Center',
   as: 'div',
+  vertical: true,
+  horizontal: true,
 };
 
 export default meta;

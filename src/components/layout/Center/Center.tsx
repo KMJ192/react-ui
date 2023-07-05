@@ -8,6 +8,8 @@ import Flex from '../Flex/Flex';
 const cx = classNames.bind(style);
 
 type BaseProps = {
+  vertical?: boolean;
+  horizontal?: boolean;
   children?: React.ReactNode;
 };
 
@@ -18,13 +20,24 @@ type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps> & {
 };
 
 function Center<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
-  { as, children, className, ...props }: Props<T>,
+  {
+    as,
+    vertical = true,
+    horizontal = true,
+    children,
+    className,
+    ...props
+  }: Props<T>,
   ref: React.Ref<any>,
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
 
   return (
-    <ELEMENT {...props} ref={ref} className={cx('center', className)}>
+    <ELEMENT
+      {...props}
+      ref={ref}
+      className={cx('center', { vertical }, { horizontal }, className)}
+    >
       {children}
     </ELEMENT>
   );
