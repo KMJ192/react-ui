@@ -1,11 +1,12 @@
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { RecoilRoot } from 'recoil';
 import cloneDeep from 'lodash/cloneDeep';
 
 import UIProvider from '../src/store/Provider';
 import useUIState from '../src/store/hooks/useUIState';
 
-import Floating from '@src/components/molecules/Floating/Floating';
+import Float from '@src/components/layout/Float/Float';
+import Button from '@src/components/atoms/Button/Button';
 
 import './index.css';
 
@@ -14,6 +15,11 @@ import style from './style.module.scss';
 const cx = classNames.bind(style);
 
 function GlobalStory({ children }) {
+  const mainRef = useRef(null);
+  const [floatPos, setFloatPos] = useState({
+    x: 0,
+    y: 50,
+  });
   const [ui, setUI] = useUIState();
   const { theme } = ui;
 
@@ -26,19 +32,28 @@ function GlobalStory({ children }) {
     }
   }, []);
 
+  useEffect(() => {
+    setFloatPos({
+      ...floatPos,
+      x: window.innerWidth - 80,
+    });
+  }, []);
+
   return (
     <main className={cx('storybook', theme)}>
-      <Floating>
-        <Floating.Button
+      <Float {...floatPos} className={cx('float')}>
+        <Button
           onClick={() => {
             const newState = cloneDeep(ui);
             newState.theme = theme === 'light' ? 'dark' : 'light';
             setUI(newState);
           }}
+          shape='circle'
+          className={cx('float-btn')}
         >
           {theme}
-        </Floating.Button>
-      </Floating>
+        </Button>
+      </Float>
       <section className={cx('contents')}>{children}</section>
     </main>
   );
