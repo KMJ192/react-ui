@@ -17,6 +17,7 @@
     @include sideNav-light;
     @include header-light;
     @include footer-light;
+    @include row-light;
     background: $light-background;
     color: $light-text;
   }
@@ -35,6 +36,7 @@
     @include sideNav-dark;
     @include header-dark;
     @include footer-dark;
+    @include row-dark;
     background: $dark-background;
     color: $dark-text;
   }
