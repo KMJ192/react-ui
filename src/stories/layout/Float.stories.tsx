@@ -9,7 +9,14 @@ const meta: Meta<typeof Float> = {
   parameters: {
     componentSubtitle: 'Float',
   },
-  argTypes: {},
+  argTypes: {
+    startDirection: {
+      options: ['lt', 'rb'],
+      control: {
+        type: 'radio',
+      },
+    },
+  },
 };
 
 const Template = (args: FloatProps) => {
@@ -22,8 +29,11 @@ export const FloatStory: StoryFn<FloatProps> = Template.bind({});
 FloatStory.args = {
   children: 'Float',
   as: 'div',
-  x: 0,
-  y: 0,
+  startDirection: 'lt',
+  left: 0,
+  top: 0,
+  right: 0,
+  bottom: 0,
 };
 
 export default meta;
