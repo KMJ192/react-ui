@@ -3,7 +3,7 @@ import React from 'react';
 import { Switch, Case, Default } from '@src/components/IfComponents/SwitchCase';
 import { When } from '@src/components/IfComponents/WhenUnless';
 
-import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
 
 import type { Variant } from './types';
 import Spinner from '../Spinner/Spinner';
@@ -23,7 +23,7 @@ type BaseProps = {
 
 const ELEMENT = 'button';
 
-type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
 
 function Button<T extends React.ElementType = typeof ELEMENT>(
   {

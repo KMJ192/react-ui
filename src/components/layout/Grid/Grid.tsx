@@ -14,9 +14,7 @@ type BaseProps = {
 
 const DEFAULT_ELEMENT = 'div';
 
-type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps> & {
-  as?: T;
-};
+type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
 function G<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   { as, children, className, ...props }: Props<T>,

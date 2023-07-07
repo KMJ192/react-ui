@@ -4,7 +4,6 @@ import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
-import Flex from '../Flex/Flex';
 const cx = classNames.bind(style);
 
 type BaseProps = {
@@ -15,9 +14,7 @@ type BaseProps = {
 
 const DEFAULT_ELEMENT = 'div';
 
-type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps> & {
-  as?: T;
-};
+type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
 function Center<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   {

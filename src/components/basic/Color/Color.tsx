@@ -57,7 +57,7 @@ function Color({ theme = 'light' }: Props) {
                         </div>
                       );
                     }
-                    return <></>;
+                    return null;
                   })}
                 </div>
               </div>
@@ -92,7 +92,7 @@ function Color({ theme = 'light' }: Props) {
                         </div>
                       );
                     }
-                    return <></>;
+                    return null;
                   })}
                 </div>
               </div>

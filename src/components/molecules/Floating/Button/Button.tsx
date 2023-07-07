@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
 import Button from '@src/components/atoms/Button/Button';
 
 import classNames from 'classnames/bind';
@@ -16,14 +16,14 @@ type BaseProps = {
 
 const ELEMENT = 'button';
 
-type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
 
 function B<T extends React.ElementType = typeof ELEMENT>(
   { children, options = [], className, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
   return (
-    <Button {...props} className={cx('float-btn', className)}>
+    <Button {...props} ref={ref} className={cx('float-btn', className)}>
       {children}
     </Button>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
 
 import Button from './Button/Button';
 
@@ -15,7 +15,7 @@ type BaseProps = {
 
 const ELEMENT = 'div';
 
-type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
 
 function F<T extends React.ElementType = typeof ELEMENT>(
   { children, position = 'br', ...props }: Props<T>,

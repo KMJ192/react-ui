@@ -19,7 +19,7 @@ export default {
   },
 };
 
-const tabTemplate = (args: TabProps): JSX.Element => {
+const TabTemplate = (args: TabProps) => {
   const [select, setSelect] = useState(0);
 
   const onSelect = (idx: number) => {
@@ -29,7 +29,7 @@ const tabTemplate = (args: TabProps): JSX.Element => {
   return <Tab {...args} onSelect={onSelect} selected={select} />;
 };
 
-export const HorizontalTab: StoryFn<TabProps> = tabTemplate.bind({});
+export const HorizontalTab: StoryFn<TabProps> = TabTemplate.bind({});
 HorizontalTab.args = {
   options: [
     {
@@ -45,7 +45,7 @@ HorizontalTab.args = {
   direction: 'horizontal',
 };
 
-export const VerticalTab: StoryFn<TabProps> = tabTemplate.bind({});
+export const VerticalTab: StoryFn<TabProps> = TabTemplate.bind({});
 VerticalTab.args = {
   options: [
     {
