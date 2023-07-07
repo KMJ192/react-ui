@@ -15,7 +15,6 @@ import style from './style.module.scss';
 const cx = classNames.bind(style);
 
 function GlobalStory({ children }) {
-  const mainRef = useRef(null);
   const [floatPos, setFloatPos] = useState({
     x: 0,
     y: 50,
@@ -41,7 +40,13 @@ function GlobalStory({ children }) {
 
   return (
     <main className={cx('storybook', theme)}>
-      <Float {...floatPos} className={cx('float')}>
+      <Float
+        {...floatPos}
+        className={cx('float')}
+        startDirection='rb'
+        right={32}
+        bottom={32}
+      >
         <Button
           onClick={() => {
             const newState = cloneDeep(ui);
