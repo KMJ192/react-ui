@@ -8,6 +8,8 @@ const cx = classNames.bind(style);
 
 type BaseProps = {
   children?: React.ReactNode;
+  x?: number;
+  y?: number;
 };
 
 const DEFAULT_ELEMENT = 'div';
@@ -15,13 +17,27 @@ const DEFAULT_ELEMENT = 'div';
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
 function Float<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
-  { as, children, className, ...props }: Props<T>,
+  { as, children, x = 0, y = 0, className, style, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
+  const [_style, setStyle] = React.useState(style);
+
+  React.useEffect(() => {
+    setStyle({
+      ...style,
+      top: y,
+      left: x,
+    });
+  }, [x, y]);
 
   return (
-    <ELEMENT {...props} ref={ref} className={cx(className)}>
+    <ELEMENT
+      {...props}
+      ref={ref}
+      style={_style}
+      className={cx('float', className)}
+    >
       {children}
     </ELEMENT>
   );
