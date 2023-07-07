@@ -9,19 +9,32 @@ const meta: Meta<typeof Stack> = {
   parameters: {
     componentSubtitle: 'Stack',
   },
-  argTypes: {},
+  argTypes: {
+    direction: {
+      options: ['column', 'row'],
+      control: {
+        type: 'radio',
+      },
+    },
+  },
 };
 
 const Template = (args: StackProps) => {
-  const { children, ...arg } = args;
-
-  return <Stack {...arg}>{children}</Stack>;
+  return (
+    <Stack {...args}>
+      <div>stack1</div>
+      <div>stack2</div>
+      <div>stack3</div>
+      <div>stack4</div>
+    </Stack>
+  );
 };
 
 export const StackStory: StoryFn<StackProps> = Template.bind({});
 StackStory.args = {
-  children: 'Stack',
   as: 'div',
+  direction: 'column',
+  spacing: 16,
 };
 
 export default meta;

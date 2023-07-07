@@ -51,7 +51,7 @@ function Float<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
         right: `${right}px`,
       });
     }
-  }, [startDirection, left, top, bottom, right]);
+  }, [style, startDirection, left, top, bottom, right]);
 
   return (
     <ELEMENT
