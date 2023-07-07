@@ -18,6 +18,7 @@
     @include header-light;
     @include footer-light;
     background: $light-background;
+    color: $light-text;
   }
   &.dark {
     @include button-dark;
@@ -35,6 +36,7 @@
     @include header-dark;
     @include footer-dark;
     background: $dark-background;
+    color: $dark-text;
   }
 }
 
