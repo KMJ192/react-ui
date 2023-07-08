@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 import Tab, { TabProps } from '@src/components/atoms/Tab/Tab';
-import type { StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 
-export default {
+const meta: Meta<typeof Tab> = {
   title: 'UI/Atoms/Tab',
   component: Tab,
   parameters: {
@@ -60,3 +60,5 @@ VerticalTab.args = {
   ],
   direction: 'vertical',
 };
+
+export default meta;
