@@ -38,14 +38,18 @@ export { default as Card } from '@src/components/atoms/Card/Card';
 export type { CardProps } from '@src/components/atoms/Card/Card';
 
 // molecules
-export { default as Floating } from '@src/components/molecules/Floating/Floating';
-export type { FloatingProps } from '@src/components/molecules/Floating/Floating';
 export { default as Footer } from '@src/components/molecules/Footer/Footer';
 export type { FooterProps } from '@src/components/molecules/Footer/Footer';
 export { default as Header } from '@src/components/molecules/Header/Header';
 export type { HeaderProps } from '@src/components/molecules/Header/Header';
-export { default as SideNav } from '@src/components/molecules/SideNav/SideNav';
-export type { SideNavProps } from '@src/components/molecules/SideNav/SideNav';
+export { SideNav, SideNavTemplate } from '@src/components/molecules/SideNav';
+export type {
+  SideNavProps,
+  SideNavMenuProps,
+  SideNavMenuGroupProps,
+  SideNavItem,
+  SideNavKey,
+} from '@src/components/molecules/SideNav';
 
 // organisms
 
