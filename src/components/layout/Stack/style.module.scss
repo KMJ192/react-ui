@@ -1,5 +1,7 @@
+@import '../Flex/style.module.scss';
+
 .stack {
-  display: flex;
+  @include flex;
   &.row {
     flex-direction: column;
   }
