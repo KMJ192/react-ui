@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
 
 import useValueSideNavState from '../store/hooks/useValueSideNavState';
 
@@ -17,7 +17,7 @@ type BaseProps = {
 
 const ELEMENT = 'div';
 
-type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
 
 function MenuGroup<T extends React.ElementType = typeof ELEMENT>(
   { show = false, depth = 0, children, style, className, ...props }: Props<T>,

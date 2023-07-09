@@ -4,10 +4,6 @@ import Button, { ButtonProps } from '@src/components/atoms/Button/Button';
 
 import downloadIcon from '@icons/download_icon.svg';
 
-// import classNames from 'classnames/bind';
-// import style from './Test.module.scss';
-// const cx = classNames.bind(style);
-
 const meta: Meta<typeof Button> = {
   title: 'UI/Atoms/Button',
   component: Button,
@@ -17,6 +13,12 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     variant: {
       options: ['primary', 'outlined', 'clear'],
+      control: {
+        type: 'select',
+      },
+    },
+    shape: {
+      options: ['rect', 'circle', 'square'],
       control: {
         type: 'select',
       },
@@ -56,12 +58,14 @@ export const Primary: StoryFn<ButtonProps> = Template.bind({});
 Primary.args = {
   children: 'Primary',
   variant: 'primary',
+  shape: 'rect',
 };
 
 export const LeftIcon: StoryFn<ButtonProps> = Template.bind({});
 LeftIcon.args = {
   children: 'LeftIcon',
   variant: 'primary',
+  shape: 'rect',
   leftIcon: (
     <img
       src={downloadIcon}
@@ -77,6 +81,7 @@ export const RightIcon: StoryFn<ButtonProps> = Template.bind({});
 RightIcon.args = {
   children: 'RightIcon',
   variant: 'primary',
+  shape: 'rect',
   rightIcon: (
     <img
       src={downloadIcon}

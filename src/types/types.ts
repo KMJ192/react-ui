@@ -12,7 +12,9 @@ type COMBINE_ELEMENT_PROPS<T extends ElementType, K = unknown> = COMBINE<
 type OVER_RIDABLE_PROPS<
   T extends ElementType,
   K = unknown,
-> = COMBINE_ELEMENT_PROPS<T, K>;
+> = COMBINE_ELEMENT_PROPS<T, K> & {
+  as?: T;
+};
 
 type RecursivePartial<T> = {
   [P in keyof T]?: RecursivePartial<T[P]>;

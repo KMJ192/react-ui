@@ -13,14 +13,23 @@ type BaseProps = {
   ellipsis?: boolean;
 };
 
-const ELEMENT = 'span';
+const DEFAULT_ELEMENT = 'span';
 
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function Text<T extends React.ElementType = typeof ELEMENT>(
-  { children, typo = 'b1', ellipsis = false, className, ...props }: Props<T>,
+function Text<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
+  {
+    as,
+    children,
+    typo = 'b1',
+    ellipsis = false,
+    className,
+    ...props
+  }: Props<T>,
   ref: React.Ref<any>,
 ) {
+  const ELEMENT = as || DEFAULT_ELEMENT;
+
   return (
     <ELEMENT
       {...props}
@@ -32,5 +41,5 @@ function Text<T extends React.ElementType = typeof ELEMENT>(
   );
 }
 
-export type TextProps = Props<typeof ELEMENT>;
+export type TextProps = Props<typeof DEFAULT_ELEMENT>;
 export default React.forwardRef(Text) as typeof Text;

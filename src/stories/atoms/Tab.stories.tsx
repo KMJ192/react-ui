@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 import Tab, { TabProps } from '@src/components/atoms/Tab/Tab';
-import type { StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 
-export default {
+const meta: Meta<typeof Tab> = {
   title: 'UI/Atoms/Tab',
   component: Tab,
   parameters: {
@@ -19,7 +19,7 @@ export default {
   },
 };
 
-const tabTemplate = (args: TabProps): JSX.Element => {
+const TabTemplate = (args: TabProps) => {
   const [select, setSelect] = useState(0);
 
   const onSelect = (idx: number) => {
@@ -29,7 +29,7 @@ const tabTemplate = (args: TabProps): JSX.Element => {
   return <Tab {...args} onSelect={onSelect} selected={select} />;
 };
 
-export const HorizontalTab: StoryFn<TabProps> = tabTemplate.bind({});
+export const HorizontalTab: StoryFn<TabProps> = TabTemplate.bind({});
 HorizontalTab.args = {
   options: [
     {
@@ -45,7 +45,7 @@ HorizontalTab.args = {
   direction: 'horizontal',
 };
 
-export const VerticalTab: StoryFn<TabProps> = tabTemplate.bind({});
+export const VerticalTab: StoryFn<TabProps> = TabTemplate.bind({});
 VerticalTab.args = {
   options: [
     {
@@ -60,3 +60,5 @@ VerticalTab.args = {
   ],
   direction: 'vertical',
 };
+
+export default meta;

@@ -1,0 +1,11 @@
+@import '../Flex/style.module.scss';
+
+.stack {
+  @include flex;
+  &.row {
+    flex-direction: column;
+  }
+  &.column {
+    flex-direction: row;
+  }
+}

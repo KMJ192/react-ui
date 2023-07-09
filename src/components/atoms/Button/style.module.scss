@@ -18,6 +18,16 @@
   }
 }
 
+@mixin shape {
+  &.circle {
+    border-radius: 50%;
+    aspect-ratio: 1;
+  }
+  &.square {
+    aspect-ratio: 1;
+  }
+}
+
 @mixin color-set {
   background: $button-background;
   color: $button-text;
@@ -98,6 +108,8 @@
   @include default;
   @include ripple-animation;
   @include color-set;
+  @include shape;
+
   .icon {
     @include icon;
   }
