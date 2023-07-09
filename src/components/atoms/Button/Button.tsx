@@ -3,9 +3,9 @@ import React from 'react';
 import { Switch, Case, Default } from '@src/components/IfComponents/SwitchCase';
 import { When } from '@src/components/IfComponents/WhenUnless';
 
-import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
 
-import type { Variant } from './types';
+import type { Shape, Variant } from './types';
 import Spinner from '../Spinner/Spinner';
 
 import classNames from 'classnames/bind';
@@ -15,6 +15,7 @@ const cx = classNames.bind(style);
 type BaseProps = {
   children?: React.ReactNode;
   variant?: Variant;
+  shape?: Shape;
   loading?: boolean;
   loadingElement?: React.ReactNode;
   leftIcon?: React.ReactNode;
@@ -23,12 +24,13 @@ type BaseProps = {
 
 const ELEMENT = 'button';
 
-type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
 
 function Button<T extends React.ElementType = typeof ELEMENT>(
   {
     children,
     variant = 'primary',
+    shape = 'rect',
     loading = false,
     loadingElement,
     className,
@@ -44,7 +46,7 @@ function Button<T extends React.ElementType = typeof ELEMENT>(
       {...props}
       ref={ref}
       disabled={disabled || loading}
-      className={cx('button', variant, className)}
+      className={cx('button', variant, shape, className)}
     >
       {leftIcon && <div className={cx('icon')}>{leftIcon}</div>}
       {children}

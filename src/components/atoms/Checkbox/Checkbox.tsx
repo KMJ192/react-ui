@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { OVER_RIDABLE_PROPS, SIZE } from '@src/types/types';
+import type { COMBINE_ELEMENT_PROPS, SIZE } from '@src/types/types';
 
 import Mark from './Mark';
 
@@ -18,7 +18,7 @@ type BaseProps = {
 
 const ELEMENT = 'div';
 
-type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
 
 function Checkbox<T extends React.ElementType = typeof ELEMENT>(
   {

@@ -1,4 +1,16 @@
 // entry point
+// layouts
+export { default as Center } from '@src/components/layout/Center/Center';
+export type { CenterProps } from '@src/components/layout/Center/Center';
+export { default as Flex } from '@src/components/layout/Flex/Flex';
+export type { FlexProps } from '@src/components/layout/Flex/Flex';
+export { default as Grid } from '@src/components/layout/Grid/Grid';
+export type { GridProps } from '@src/components/layout/Grid/Grid';
+export { default as Float } from '@src/components/layout/Float/Float';
+export type { FloatProps } from '@src/components/layout/Float/Float';
+export { default as Row } from '@src/components/layout/Row/Row';
+export type { RowProps } from '@src/components/layout/Row/Row';
+
 // atoms
 export { default as Button } from '@src/components/atoms/Button/Button';
 export type { ButtonProps } from '@src/components/atoms/Button/Button';
@@ -22,16 +34,22 @@ export { default as Progressbar } from '@src/components/atoms/Progressbar/Progre
 export type { ProgressbarProps } from '@src/components/atoms/Progressbar/Progressbar';
 export { default as Text } from '@src/components/atoms/Text/Text';
 export type { TextProps } from '@src/components/atoms/Text/Text';
+export { default as Card } from '@src/components/atoms/Card/Card';
+export type { CardProps } from '@src/components/atoms/Card/Card';
 
 // molecules
-export { default as Floating } from '@src/components/molecules/Floating/Floating';
-export type { FloatingProps } from '@src/components/molecules/Floating/Floating';
 export { default as Footer } from '@src/components/molecules/Footer/Footer';
 export type { FooterProps } from '@src/components/molecules/Footer/Footer';
 export { default as Header } from '@src/components/molecules/Header/Header';
 export type { HeaderProps } from '@src/components/molecules/Header/Header';
-export { default as SideNav } from '@src/components/molecules/SideNav/SideNav';
-export type { SideNavProps } from '@src/components/molecules/SideNav/SideNav';
+export { SideNav, SideNavTemplate } from '@src/components/molecules/SideNav';
+export type {
+  SideNavProps,
+  SideNavMenuProps,
+  SideNavMenuGroupProps,
+  SideNavItem,
+  SideNavKey,
+} from '@src/components/molecules/SideNav';
 
 // organisms
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
 
 import Header from '@src/components/molecules/Header/Header';
 import type { HeaderProps } from '@src/components/molecules/Header/Header';
@@ -21,7 +21,7 @@ type BaseProps = {
 
 const ELEMENT = 'div';
 
-type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
 
 function PageTemplate<T extends React.ElementType = typeof ELEMENT>(
   { children, className, ...props }: Props<T>,

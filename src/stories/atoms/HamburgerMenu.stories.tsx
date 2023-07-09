@@ -1,8 +1,8 @@
 import HamburgerMenu from '@src/components/atoms/HamburgerMenu/HamburgerMenu';
 import type { HamburgerMenuProps } from '@src/components/atoms/HamburgerMenu/HamburgerMenu';
-import { StoryFn } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 
-export default {
+const meta: Meta<typeof HamburgerMenu> = {
   title: 'UI/Atoms/HamburgerMenu',
   component: HamburgerMenu,
   parameters: {
@@ -35,3 +35,5 @@ HamburgerMenuStory.args = {
   type: 'type-1',
   size: 'md',
 };
+
+export default meta;

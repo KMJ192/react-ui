@@ -1,0 +1,24 @@
+@import '../Flex/style.module.scss';
+
+@mixin center {
+}
+
+@mixin vertical-center {
+  &.vertical {
+    align-items: center;
+    -webkit-box-align: center;
+  }
+}
+
+@mixin horizontal-center {
+  &.horizontal {
+    justify-content: center;
+    -webkit-box-pack: center;
+  }
+}
+
+.center {
+  @include flex;
+  @include vertical-center;
+  @include horizontal-center;
+}

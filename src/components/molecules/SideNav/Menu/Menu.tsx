@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
@@ -14,7 +14,7 @@ type BaseProps = {
 
 const ELEMENT = 'div';
 
-type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
 
 function Menu<T extends React.ElementType = typeof ELEMENT>(
   {

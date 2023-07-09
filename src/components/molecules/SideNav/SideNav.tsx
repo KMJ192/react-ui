@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
 
 import SideNavProvider from './store/Provider';
 
@@ -13,16 +13,15 @@ const cx = classNames.bind(style);
 
 type BaseProps = {
   children?: React.ReactNode;
-  selected?: string | number;
   depthGap?: number;
 };
 
 const ELEMENT = 'nav';
 
-type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
 
 function SN<T extends React.ElementType = typeof ELEMENT>(
-  { children, depthGap = 0, selected, className, ...props }: Props<T>,
+  { children, depthGap = 0, className, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
   return (

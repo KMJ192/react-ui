@@ -1,3 +1,5 @@
 type Variant = 'primary' | 'outlined' | 'clear';
 
-export type { Variant };
+type Shape = 'rect' | 'circle' | 'square';
+
+export type { Shape, Variant };

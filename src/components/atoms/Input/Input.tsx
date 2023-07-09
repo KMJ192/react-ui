@@ -2,7 +2,7 @@ import React from 'react';
 
 import { When } from '@src/components/IfComponents/WhenUnless';
 
-import type { OVER_RIDABLE_PROPS, SIZE } from '@src/types/types';
+import type { COMBINE_ELEMENT_PROPS, SIZE } from '@src/types/types';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
@@ -17,7 +17,7 @@ type BaseProps = {
 
 const ELEMENT = 'input';
 
-type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
 
 function Input<T extends React.ElementType = typeof ELEMENT>(
   { size = 'md', leftIcon, rightIcon, error, className, ...props }: Props<T>,
