@@ -6,10 +6,8 @@
 }
 
 .footer {
-  padding: 28px;
   width: inherit;
-  display: flex;
   justify-content: space-between;
-  align-items: center;
+  min-height: var(--footer-height, 72px);
   @include color-set;
 }

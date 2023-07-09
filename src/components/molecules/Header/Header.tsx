@@ -2,6 +2,7 @@ import React from 'react';
 
 import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
 
+import Center from '@src/components/layout/Center/Center';
 import Left from './Left/Left';
 import Right from './Right/Right';
 import Mid from './Mid/Mid';
@@ -23,9 +24,14 @@ function Header<T extends React.ElementType = typeof ELEMENT>(
   ref: React.Ref<any>,
 ) {
   return (
-    <ELEMENT {...props} ref={ref} className={cx('header', className)}>
+    <Center
+      {...props}
+      ref={ref}
+      className={cx('header', className)}
+      horizontal={false}
+    >
       {children}
-    </ELEMENT>
+    </Center>
   );
 }
 

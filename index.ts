@@ -56,8 +56,6 @@ export type {
 // organisms
 
 // templates
-export { default as PageTemplate } from '@src/components/templates/PageTemplate/PageTemplate';
-export type { PageTemplateProps } from '@src/components/templates/PageTemplate/PageTemplate';
 
 // Store
 export { default as UIContext } from '@src/store/Context';
