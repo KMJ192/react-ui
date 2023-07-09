@@ -18,7 +18,7 @@ const meta: Meta<typeof SideNav> = {
   argTypes: {},
 };
 
-export const PrimarySideNav = () => {
+export const SideNavigation = () => {
   const initSelected = useRef({
     '1': false,
     '1-1': false,
@@ -169,7 +169,7 @@ export const PrimarySideNav = () => {
   );
 };
 
-export const SideNavTemp = () => {
+export const SideNavigationTemplate = () => {
   const navItem = useRef<Array<SideNavItem>>([
     {
       key: 'nav1',
@@ -228,10 +228,7 @@ export const SideNavTemp = () => {
   };
 
   return (
-    <SideNavTemplate
-      navItem={navItem.current}
-      onClickItem={onClickItem}
-    ></SideNavTemplate>
+    <SideNavTemplate navItem={navItem.current} onClickItem={onClickItem} />
   );
 };
 
