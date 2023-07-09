@@ -14,7 +14,7 @@ type BaseProps = {
   children?: React.ReactNode;
 };
 
-const ELEMENT = 'div';
+const ELEMENT = 'footer';
 
 type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
 
