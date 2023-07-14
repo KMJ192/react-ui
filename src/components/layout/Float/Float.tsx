@@ -1,10 +1,8 @@
 import React from 'react';
 
-import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+import Styled from './styled';
 
-import classNames from 'classnames/bind';
-import style from './style.module.scss';
-const cx = classNames.bind(style);
+import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 type BaseProps = {
   children?: React.ReactNode;
@@ -29,39 +27,26 @@ function Float<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     right = 0,
     bottom = 0,
     className,
-    style,
     ...props
   }: Props<T>,
   ref: React.Ref<any>,
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
-  const [_style, setStyle] = React.useState(style);
-
-  React.useEffect(() => {
-    if (startDirection === 'lt') {
-      setStyle({
-        ...style,
-        top: `${top}px`,
-        left: `${left}px`,
-      });
-    } else {
-      setStyle({
-        ...style,
-        bottom: `${bottom}px`,
-        right: `${right}px`,
-      });
-    }
-  }, [style, startDirection, left, top, bottom, right]);
 
   return (
-    <ELEMENT
+    <Styled.Container
       {...props}
       ref={ref}
-      style={_style}
-      className={cx('float', className)}
+      as={ELEMENT}
+      className={className}
+      startDirection={startDirection}
+      left={left}
+      top={top}
+      right={right}
+      bottom={bottom}
     >
       {children}
-    </ELEMENT>
+    </Styled.Container>
   );
 }
 

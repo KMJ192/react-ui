@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Styled from './styled';
+
 import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
 
 type BaseProps = {
@@ -12,26 +14,18 @@ const ELEMENT = 'div';
 type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
 
 function Spacing<T extends React.ElementType = typeof ELEMENT>(
-  { direction = 'vertical', size = 0, style, ...props }: Props<T>,
+  { direction = 'vertical', size = 0, className, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
-  const [_style, setStyle] = React.useState(style);
-
-  React.useEffect(() => {
-    if (direction === 'vertical') {
-      setStyle({
-        ...style,
-        height: `${size}px`,
-      });
-    } else {
-      setStyle({
-        ...style,
-        width: `${size}px`,
-      });
-    }
-  }, [style, size, direction]);
-
-  return <ELEMENT {...props} ref={ref} style={_style}></ELEMENT>;
+  return (
+    <Styled.Container
+      {...props}
+      ref={ref}
+      direction={direction}
+      size={size}
+      className={className}
+    />
+  );
 }
 
 export type SpacingProps = Props<typeof ELEMENT>;
