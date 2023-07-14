@@ -14,6 +14,7 @@ const Container = styled.div<Props>`
     return null;
   }};
 `;
+
 const Styled = {
   Container,
 };
