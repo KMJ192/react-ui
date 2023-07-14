@@ -32,7 +32,12 @@ function Radio<T extends React.ElementType = typeof ELEMENT>(
   ref: React.Ref<any>,
 ) {
   return (
-    <Flex {...props} ref={ref} className={cx('radio', { disabled }, size)}>
+    <Flex
+      {...props}
+      ref={ref}
+      as={ELEMENT}
+      className={cx('radio', { disabled }, size)}
+    >
       <Center className={cx('mark', { checked }, { disabled }, className)}>
         <span className={cx('pupil', { checked }, { disabled })}></span>
       </Center>
