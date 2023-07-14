@@ -28,7 +28,7 @@ yarn build:lib
 
 ##### git commit message
 
-- [날짜][액션] 커밋 내용
+- [액션] 커밋 내용
 
 - 액션
 
