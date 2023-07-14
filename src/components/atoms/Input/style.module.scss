@@ -127,8 +127,8 @@
 
 .container {
   position: relative;
-  display: flex;
   align-items: center;
+  -webkit-box-align: center;
 
   .input {
     @include input;

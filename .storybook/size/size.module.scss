@@ -1,0 +1,14 @@
+@mixin header-size {
+  --header-min-height: 72px;
+  --header-max-height: 72px;
+}
+
+@mixin footer-size {
+  --footer-min-height: 72px;
+  --footer-max-height: 72px;
+}
+
+@mixin size {
+  @include header-size;
+  @include footer-size;
+}

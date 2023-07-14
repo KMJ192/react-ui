@@ -10,7 +10,6 @@
 
 @mixin options {
   .options {
-    display: flex;
     &.vertical {
       flex-direction: column;
     }

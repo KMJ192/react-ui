@@ -1,5 +1,6 @@
 @import '@styles/color.module.scss';
 @import './theme/theme.module.scss';
+@import './size/size.module.scss';
 
 @mixin theme {
   &.light {
@@ -51,6 +52,7 @@
   height: 100vh;
   overflow: auto;
   @include theme;
+  @include size;
   .contents {
     height: 100%;
   }

@@ -10,6 +10,8 @@ export { default as Float } from '@src/components/layout/Float/Float';
 export type { FloatProps } from '@src/components/layout/Float/Float';
 export { default as Row } from '@src/components/layout/Row/Row';
 export type { RowProps } from '@src/components/layout/Row/Row';
+export { default as Spacing } from '@src/components/layout/Spacing/Spacing';
+export type { SpacingProps } from '@src/components/layout/Spacing/Spacing';
 
 // atoms
 export { default as Button } from '@src/components/atoms/Button/Button';
@@ -54,8 +56,6 @@ export type {
 // organisms
 
 // templates
-export { default as PageTemplate } from '@src/components/templates/PageTemplate/PageTemplate';
-export type { PageTemplateProps } from '@src/components/templates/PageTemplate/PageTemplate';
 
 // Store
 export { default as UIContext } from '@src/store/Context';

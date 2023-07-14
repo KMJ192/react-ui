@@ -178,6 +178,16 @@ export const SideNavigationTemplate = () => {
         {
           key: 'nav1-1',
           contents: 'Nav1-1',
+          children: [
+            {
+              key: 'nav1-1-1',
+              contents: 'Nav1-1-1',
+            },
+            {
+              key: 'nav1-1-2',
+              contents: 'Nav1-1-2',
+            },
+          ],
         },
         {
           key: 'nav1-2',

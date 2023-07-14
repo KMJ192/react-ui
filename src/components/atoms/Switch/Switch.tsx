@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Flex from '@src/components/layout/Flex/Flex';
+
 import type { COMBINE_ELEMENT_PROPS, SIZE } from '@src/types/types';
 
 import classNames from 'classnames/bind';
@@ -29,8 +31,9 @@ function Switch<T extends React.ElementType = typeof ELEMENT>(
   ref: React.Ref<any>,
 ) {
   return (
-    <ELEMENT
+    <Flex
       {...props}
+      as={ELEMENT}
       ref={ref}
       className={cx('switch', size, { checked }, { disabled }, className)}
     >
@@ -39,7 +42,7 @@ function Switch<T extends React.ElementType = typeof ELEMENT>(
       <span className={cx('children', { checked }, { disabled })}>
         {children}
       </span>
-    </ELEMENT>
+    </Flex>
   );
 }
 
