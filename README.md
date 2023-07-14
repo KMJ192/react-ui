@@ -49,4 +49,5 @@ etc: 위 해당 사항이 없는 모든 변경 사항
 - React
 - Typescript
 - sass
-- vite
+- EmotionJS
+- Vite
