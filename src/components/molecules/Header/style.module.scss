@@ -2,10 +2,9 @@
 
 .header {
   width: inherit;
-  display: flex;
   justify-content: space-between;
-  align-items: center;
   background: $header-background;
   color: $header-text;
-  min-height: var(--header-height, 72px);
+  min-height: var(--header-min-height);
+  max-height: var(--header-max-height);
 }
