@@ -3,7 +3,6 @@
 @mixin mark {
   transition: border-color 0.1s, color 0.1s;
   .mark {
-    display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
@@ -103,10 +102,9 @@
 @mixin default {
   border-radius: 2px;
   cursor: pointer;
-  display: flex;
   column-gap: 8px;
-  display: flex;
   align-items: center;
+  -webkit-box-align: center;
 }
 
 @mixin disabled {

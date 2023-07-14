@@ -9,6 +9,7 @@ import MenuGroup from './MenuGroup/MenuGroup';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
+import Flex from '@src/components/layout/Flex/Flex';
 const cx = classNames.bind(style);
 
 type BaseProps = {
@@ -30,9 +31,14 @@ function SN<T extends React.ElementType = typeof ELEMENT>(
         depthGap,
       }}
     >
-      <ELEMENT {...props} ref={ref} className={cx('side-nav', className)}>
+      <Flex
+        {...props}
+        ref={ref}
+        as={ELEMENT}
+        className={cx('side-nav', className)}
+      >
         {children}
-      </ELEMENT>
+      </Flex>
     </SideNavProvider>
   );
 }

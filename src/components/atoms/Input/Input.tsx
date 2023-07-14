@@ -2,6 +2,8 @@ import React from 'react';
 
 import { When } from '@src/components/IfComponents/WhenUnless';
 
+import Flex from '@src/components/layout/Flex/Flex';
+
 import type { COMBINE_ELEMENT_PROPS, SIZE } from '@src/types/types';
 
 import classNames from 'classnames/bind';
@@ -24,7 +26,7 @@ function Input<T extends React.ElementType = typeof ELEMENT>(
   ref: React.Ref<any>,
 ) {
   return (
-    <div className={cx('container')}>
+    <Flex className={cx('container')}>
       <When condition={leftIcon !== undefined}>
         <div className={cx('icon', 'left', size)}>{leftIcon}</div>
       </When>
@@ -43,7 +45,7 @@ function Input<T extends React.ElementType = typeof ELEMENT>(
       <When condition={rightIcon !== undefined}>
         <div className={cx('icon', 'right', size)}>{rightIcon}</div>
       </When>
-    </div>
+    </Flex>
   );
 }
 

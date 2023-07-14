@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Flex from '@src/components/layout/Flex/Flex';
+
 import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
 
 import classNames from 'classnames/bind';
@@ -27,13 +29,13 @@ function Menu<T extends React.ElementType = typeof ELEMENT>(
   ref: React.Ref<any>,
 ) {
   return (
-    <ELEMENT
+    <Flex
       {...props}
       ref={ref}
       className={cx('menu', { selected }, { disabled }, className)}
     >
       {children}
-    </ELEMENT>
+    </Flex>
   );
 }
 

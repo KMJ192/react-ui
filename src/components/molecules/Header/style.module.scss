@@ -1,11 +1,10 @@
 @import './variable/variable.module.scss';
 
 .header {
-  padding: 28px;
   width: inherit;
-  display: flex;
   justify-content: space-between;
-  align-items: center;
   background: $header-background;
   color: $header-text;
+  min-height: var(--header-min-height);
+  max-height: var(--header-max-height);
 }

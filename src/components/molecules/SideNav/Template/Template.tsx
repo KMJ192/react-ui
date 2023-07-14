@@ -6,7 +6,9 @@ import type { SideNavItem, SideNavKey } from '../types';
 import SideNav from '../SideNav';
 import Children from './Children';
 
-type Props = {
+import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
+
+type BaseProps = {
   navItem?: Array<SideNavItem>;
   depthGap?: number;
   onClickItem?: (key: SideNavKey) => void;
@@ -17,7 +19,14 @@ type Options = {
   selected: SideNavKey;
 };
 
-function Template({ navItem = [], depthGap = 16, onClickItem }: Props) {
+const ELEMENT = 'nav';
+
+type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
+
+function Template<T extends React.ElementType = typeof ELEMENT>(
+  { navItem = [], depthGap = 16, onClickItem, ...props }: Props<T>,
+  ref: React.Ref<any>,
+) {
   const [options, setOptions] = React.useState<Options>({
     show: new Set(),
     selected: '',
@@ -40,7 +49,7 @@ function Template({ navItem = [], depthGap = 16, onClickItem }: Props) {
   };
 
   return (
-    <SideNav depthGap={depthGap}>
+    <SideNav {...props} ref={ref} depthGap={depthGap}>
       {navItem.map(({ key, contents, disabled, children }) => {
         return (
           <Children
@@ -60,4 +69,4 @@ function Template({ navItem = [], depthGap = 16, onClickItem }: Props) {
 }
 
 export type { Options };
-export default Template;
+export default React.forwardRef(Template) as typeof Template;

@@ -20,14 +20,13 @@
 }
 
 @mixin menu {
+  align-items: center;
+  -webkit-box-align: center;
   padding: 8px;
   cursor: pointer;
   white-space: nowrap;
-  width: calc(100% - 24px);
   border-radius: 8px 0 0 8px;
   padding: 12px;
-  display: flex;
-  align-items: center;
   transition: color 0.15s, background-color 0.15s;
   &.disabled {
     cursor: not-allowed;

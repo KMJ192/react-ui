@@ -1,9 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 
+import Flex from '@src/components/layout/Flex/Flex';
+
 import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
 
 import type { Option, Direction } from './types';
 
+import Styled from './styled';
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
 const cx = classNames.bind(style);
@@ -107,20 +110,21 @@ function Tab<T extends React.ElementType = typeof ELEMENT>(
         });
       }
     }
-  }, [sizeInfo, selected]);
+  }, [sizeInfo, selected, direction]);
 
   return (
     <ELEMENT {...props} ref={ref} className={cx('tab', className)}>
-      <div
+      <Styled.TabLine
+        direction={direction}
+        {...tabLineStyle}
         className={cx(
           'tab-line',
           direction,
           selected === 0 && 'first',
           selected === options.length - 1 && 'last',
         )}
-        style={tabLineStyle}
-      ></div>
-      <div className={cx('options', direction)} ref={optionsRef}>
+      ></Styled.TabLine>
+      <Flex className={cx('options', direction)} ref={optionsRef}>
         {options.map(({ contents, disabled }, idx: number) => {
           return (
             <span
@@ -136,7 +140,7 @@ function Tab<T extends React.ElementType = typeof ELEMENT>(
             </span>
           );
         })}
-      </div>
+      </Flex>
     </ELEMENT>
   );
 }
