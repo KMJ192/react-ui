@@ -7,8 +7,8 @@ type Props = Pick<CenterProps, 'vertical' | 'horizontal'>;
 
 const Container = styled.div<Props>`
   ${flex}
-  height: inherit;
-  width: inherit;
+  height: 100%;
+  width: 100%;
   align-items: ${(props) => props.vertical && 'center'};
   -webkit-box-align: ${(props) => props.vertical && 'center'};
   justify-content: ${(props) => props.horizontal && 'center'};
