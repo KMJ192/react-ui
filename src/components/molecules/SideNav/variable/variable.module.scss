@@ -1,6 +1,9 @@
 @import '@styles/color.module.scss';
 
-$sideNav-background: var(--side-nav-background, $light-primary200);
+$sideNav-background: var(
+  --side-nav-background,
+  linear-gradient(#{$light-primary200}, #{$light-primary000})
+);
 $sideNav-box-shadow: var(
   --sideNav-box-shadow,
   0px 3px 6px rgba(64, 64, 64, 0.3)
