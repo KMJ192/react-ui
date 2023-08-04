@@ -1,8 +1,10 @@
+import type { ReactNode } from 'react';
+
 type SideNavKey = string | number;
 
 type SideNavItem = {
   key: SideNavKey;
-  contents: string;
+  contents: ReactNode;
   disabled?: boolean;
   children?: Array<SideNavItem>;
 };
