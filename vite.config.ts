@@ -28,11 +28,11 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'index.ts'),
       name: 'react-ui',
-      formats: ['cjs', 'es', 'umd'],
+      formats: ['cjs', 'es'],
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: ['react', 'react-dom', 'next'],
       treeshake: true,
       output: {
         globals: {
