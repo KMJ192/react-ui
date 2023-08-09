@@ -23,8 +23,9 @@ export default defineConfig({
   },
   build: {
     outDir: 'build',
-    target: 'modules',
+    target: 'esnext',
     minify: true,
+    ssrManifest: true,
     lib: {
       entry: resolve(__dirname, 'index.ts'),
       name: 'react-ui',
@@ -32,7 +33,7 @@ export default defineConfig({
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'next'],
+      external: ['react', 'react-dom'],
       treeshake: true,
       output: {
         globals: {

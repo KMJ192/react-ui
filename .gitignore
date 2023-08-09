@@ -9,6 +9,7 @@ node_modules
 !.yarn/versions
 
 build
+dist
 storybook-static
 
 .vscode
