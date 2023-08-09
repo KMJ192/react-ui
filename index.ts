@@ -1,5 +1,3 @@
-export { default as Test } from '@src/components/atoms/Test/Test';
-
 // entry point
 // layouts
 export { default as Center } from '@src/components/layout/Center/Center';
