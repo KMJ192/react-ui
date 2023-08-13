@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import { flex } from '../Flex/styled';
 
 import type { CenterProps } from './Center';
+import { flex } from '../Flex/styled';
 
 type Props = Pick<CenterProps, 'vertical' | 'horizontal'>;
 

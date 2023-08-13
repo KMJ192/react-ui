@@ -1,6 +1,7 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
-const flex = `
+const flex = css`
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

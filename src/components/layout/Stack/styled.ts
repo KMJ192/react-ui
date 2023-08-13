@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
-import { flex } from '../Flex/styled';
 import type { StackProps } from './Stack';
+
+import { flex } from '../Flex/styled';
 
 type Props = Pick<StackProps, 'direction' | 'spacing'>;
 

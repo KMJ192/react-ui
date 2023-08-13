@@ -1,8 +1,14 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
-const Container = styled.div`
+const grid = css`
   display: grid;
 `;
+
+const Container = styled.div`
+  ${grid}
+`;
+
 const Styled = {
   Container,
 };
