@@ -1,18 +1,19 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
-import Button, { ButtonProps } from '@src/components/atoms/Button/Button';
+// import Button, { ButtonProps } from '@src/components/atoms/Button/Button';
+import Button, { type ButtonProps } from '@src/components/Button/Button';
 
 import downloadIcon from '@icons/download_icon.svg';
 
 const meta: Meta<typeof Button> = {
-  title: 'UI/Atoms/Button',
+  title: 'UI/Components/Button',
   component: Button,
   parameters: {
     componentSubtitle: 'Button',
   },
   argTypes: {
     variant: {
-      options: ['primary', 'outlined', 'clear'],
+      options: ['primary', 'outline', 'clear'],
       control: {
         type: 'select',
       },
