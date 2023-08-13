@@ -24,7 +24,7 @@
     "allowSyntheticDefaultImports": true,
     "isolatedModules": false,
     "forceConsistentCasingInFileNames": true,
-    // "incremental": true,
+    "incremental": true,
     "typeRoots": ["./typings"]
   },
   "include": [
