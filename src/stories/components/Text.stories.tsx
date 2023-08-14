@@ -1,8 +1,8 @@
-import Text, { TextProps } from '@src/components/atoms/Text/Text';
+import Text, { type TextProps } from '@src/components/Text/Text';
 import type { Meta, StoryFn } from '@storybook/react';
 
 const meta: Meta<typeof Text> = {
-  title: 'UI/Atoms/Text',
+  title: 'UI/Components/Text',
   component: Text,
   parameters: {
     componentSubtitle: 'Text',

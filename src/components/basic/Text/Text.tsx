@@ -1,5 +1,5 @@
-import type { Typo } from '@src/components/atoms/Text/types';
-import Text from '@src/components/atoms/Text/Text';
+import Text from '@src/components/Text/Text';
+import type { Typo } from '@src/components/Text/types';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
