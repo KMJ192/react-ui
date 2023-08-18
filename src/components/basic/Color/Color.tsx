@@ -1,7 +1,7 @@
 import { COLOR } from '@src/styles/color';
 import type { ColorCategory } from '@src/styles/color';
 
-import Text from '@src/components/atoms/Text/Text';
+import Text from '@src/components/Text/Text';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
