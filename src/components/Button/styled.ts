@@ -6,26 +6,43 @@ import { COLOR } from '@src/color/color';
 
 type Props = Pick<ButtonBaseProps, 'variant' | 'shape'>;
 
+const buttonBackground = `var(--button-background, ${COLOR.LIGHT.primary000})`;
+const buttonBackgroundHover = `var(--button-background-hover, ${COLOR.LIGHT.blue000})`;
+const buttonBackgroundDisabled = `var(--button-background-disabled, ${COLOR.LIGHT.primary200})`;
+const buttonBackgroundActive = `var(--button-background-active, ${COLOR.LIGHT.primary000})`;
+const buttonBackgroundRipple = `var(--button-background-ripple, rgba(255, 255, 255, 0.6))`;
+
+const buttonText = `var(--button-text, ${COLOR.LIGHT.primary900})`;
+const buttonTextHover = `var(--button-text-hover, ${COLOR.LIGHT.primary900})`;
+const buttonTextDisabled = `var(--button-text-disabled, ${COLOR.LIGHT.primary500})`;
+const buttonTextActive = `var(--button-text-active, ${COLOR.LIGHT.primary700})`;
+
+const buttonBoxShadow = `var(--button-box-shadow, 0px 3px 6px rgba(0, 0, 0, 0.1))`;
+const buttonOutline = `var(--button-outline, ${COLOR.LIGHT.blue200})`;
+
 const colorSet = css`
-  background: var(--button-background, ${COLOR.LIGHT.primary000});
-  color: var(--button-text, ${COLOR.LIGHT.primary900});
-  box-shadow: var(--button-box-shadow, 0px 3px 6px rgba(0, 0, 0, 0.1));
+  background: ${buttonBackground};
+  color: ${buttonText};
+  box-shadow: ${buttonBoxShadow};
   &:hover {
-    background: var(--button-background-hover, ${COLOR.LIGHT.blue000});
-    color: var(--button-text-hover, ${COLOR.LIGHT.primary900});
+    background: ${buttonBackgroundHover};
+    color: ${buttonTextHover};
   }
   &:disabled {
-    background: var(--button-background-disabled, ${COLOR.LIGHT.primary200});
-    color: var(--button-text-disabled, ${COLOR.LIGHT.primary500});
+    background: ${buttonBackgroundDisabled};
+    color: ${buttonTextDisabled};
     &:active,
     &:hover {
-      background: var(--button-background-disabled, ${COLOR.LIGHT.primary200});
-      color: var(--button-text-disabled, ${COLOR.LIGHT.primary500});
+      background: ${buttonBackgroundDisabled};
+      color: ${buttonTextDisabled};
     }
   }
   &:active {
-    background: var(--button-background-active, ${COLOR.LIGHT.primary000});
-    color: var(--button-text-active, ${COLOR.LIGHT.primary700});
+    background: ${buttonBackgroundActive};
+    color: ${buttonTextActive};
+  }
+  &::after {
+    background: ${buttonBackgroundRipple};
   }
 `;
 
@@ -33,18 +50,18 @@ const buttonVariant = {
   outline: css`
     background: none;
     box-shadow: none;
-    outline: 1px solid var(--button-outline, ${COLOR.LIGHT.blue200});
+    outline: 1px solid ${buttonOutline};
     &:hover {
-      background: var(--button-background-hover, ${COLOR.LIGHT.blue000});
-      color: var(--button-text-hover, ${COLOR.LIGHT.primary900});
+      background: ${buttonBackgroundHover};
+      color: ${buttonTextHover};
     }
   `,
   clear: css`
     background: none;
     box-shadow: none;
     &:hover {
-      background: var(--button-background-hover, ${COLOR.LIGHT.blue000});
-      color: var(--button-text-hover, ${COLOR.LIGHT.primary900});
+      background: ${buttonBackgroundHover};
+      color: ${buttonTextHover};
     }
   `,
 };
@@ -96,7 +113,6 @@ const Container = styled.button<Props>`
     left: 50%;
     width: 4px;
     height: 4px;
-    background: var(--button-background-ripple, rgba(255, 255, 255, 0.6));
     opacity: 0;
     border-radius: 100%;
     transform: scale(1, 1) translate(-50%);
