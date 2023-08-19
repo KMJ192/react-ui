@@ -1,10 +1,10 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
-import Radio from '@src/components/atoms/Radio/Radio';
-import type { RadioProps } from '@src/components/atoms/Radio/Radio';
+import Radio from '@src/components/Radio/Radio';
+import type { RadioProps } from '@src/components/Radio/Radio';
 
 const meta: Meta<typeof Radio> = {
-  title: 'UI/Atoms/Radio',
+  title: 'UI/Components/Radio',
   component: Radio,
   parameters: {
     componentSubtitle: 'Radio',
@@ -15,12 +15,6 @@ const meta: Meta<typeof Radio> = {
     },
     disabled: {
       option: ['true', 'false'],
-    },
-    size: {
-      options: ['xs', 'sm', 'md', 'lg'],
-      control: {
-        type: 'select',
-      },
     },
   },
 };
@@ -36,7 +30,9 @@ PrimaryRadio.args = {
   children: 'Radio',
   checked: false,
   disabled: false,
-  size: 'md',
+  size: 16,
+  pupilSize: 10,
+  fontSize: 16,
 };
 
 export default meta;
