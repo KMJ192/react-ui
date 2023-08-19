@@ -21,10 +21,12 @@ const colorSet = {
     checkedDisabled: css`
       border: 2px solid
         var(--checkbox-border-checked-disabled, ${COLOR.LIGHT.primary400});
+      color: var(--checkbox-text-disabled, ${COLOR.LIGHT.primary300});
     `,
     checkedHover: css`
       border: 2px solid
         var(--checkbox-border-checked-hover, ${COLOR.LIGHT.blue500});
+      color: var(--checkbox-text-hover, ${COLOR.LIGHT.blue500});
     `,
     disabled: css`
       border: 2px solid
