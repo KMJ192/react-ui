@@ -1,24 +1,17 @@
-import Input from '@src/components/atoms/Input/Input';
-import type { InputProps } from '@src/components/atoms/Input/Input';
+import Input from '@src/components/Input/Input';
+import type { InputProps } from '@src/components/Input/Input';
 import type { Meta, StoryFn } from '@storybook/react';
 
 import showIcon from '@icons/show_view_icon.svg';
 import keyIcon from '@icons/key_icon.svg';
 
 const meta: Meta<typeof Input> = {
-  title: 'UI/Atoms/Input',
+  title: 'UI/Components/Input',
   component: Input,
   parameters: {
     componentSubtitle: 'Input',
   },
-  argTypes: {
-    size: {
-      options: ['xs', 'sm', 'md', 'lg'],
-      control: {
-        type: 'select',
-      },
-    },
-  },
+  argTypes: {},
 };
 
 const inputTemplate = (args: InputProps) => {
@@ -28,21 +21,47 @@ const inputTemplate = (args: InputProps) => {
 export const InputText: StoryFn<InputProps> = inputTemplate.bind({});
 InputText.args = {
   type: 'text',
-  size: 'md',
   error: false,
   placeholder: 'input-text',
   disabled: false,
+  paddingTop: 10,
+  paddingBottom: 10,
+  paddingLeft: 10,
+  paddingRight: 10,
 };
 
 export const InputPassword: StoryFn<InputProps> = inputTemplate.bind({});
 InputPassword.args = {
   type: 'password',
-  size: 'md',
   error: false,
   placeholder: 'input-password',
-  leftIcon: <img src={keyIcon} alt='key' />,
-  rightIcon: <img src={showIcon} alt='lock' />,
+  leftIcon: (
+    <img
+      src={keyIcon}
+      alt='key'
+      style={{
+        width: '24px',
+        height: '24px',
+      }}
+    />
+  ),
+  rightIcon: (
+    <img
+      src={showIcon}
+      alt='lock'
+      style={{
+        width: '24px',
+        height: '24px',
+      }}
+    />
+  ),
   disabled: false,
+  paddingTop: 10,
+  paddingBottom: 10,
+  paddingLeft: 36,
+  paddingRight: 36,
+  leftIconPos: 10,
+  rightIconPos: 10,
 };
 
 export default meta;
