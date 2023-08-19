@@ -9,94 +9,96 @@ type Props = Pick<
   'checked' | 'disabled' | 'size' | 'fontSize'
 >;
 
+// border
+const checkboxBorder = `var(--checkbox-border, ${COLOR.LIGHT.primary300})`;
+const checkboxBorderChecked = `var(--checkbox-border-checked, ${COLOR.LIGHT.blue400})`;
+const checkboxBorderCheckedDisabled = `var(--checkbox-border-checked-disabled, ${COLOR.LIGHT.primary400})`;
+const checkboxBorderCheckedHover = `var(--checkbox-border-checked-hover, ${COLOR.LIGHT.blue500})`;
+const checkboxBorderDisabled = `var(--checkbox-border-disabled, ${COLOR.LIGHT.primary300})`;
+const checkboxBorderHover = `var(--checkbox-border-hover, ${COLOR.LIGHT.blue500})`;
+
+// background
+const checkboxBackgroundChecked = `var(--checkbox-background-checked, ${COLOR.LIGHT.blue400})`;
+const checkboxBackgroundCheckedDisabled = `var(--checkbox-background-checked-disabled, ${COLOR.LIGHT.primary400})`;
+const checkboxBackgroundCheckedHover = `var(--checkbox-background-checked-hover, ${COLOR.LIGHT.blue500})`;
+const checkboxBackgroundDisabled = `var(--checkbox-background-disabled, ${COLOR.LIGHT.primary200})`;
+
+const checkboxText = `var(--checkbox-text, ${COLOR.LIGHT.primary900})`;
+const checkboxTextHover = `var(--checkbox-text-hover, ${COLOR.LIGHT.blue500})`;
+const checkboxTextDisabled = `var(--checkbox-text-disabled, ${COLOR.LIGHT.primary300})`;
+
+// mark
+const checkboxMarkChecked = `var(--checkbox-mark-checked, ${COLOR.LIGHT.primary000})`;
+const checkboxMarkCheckedDisabled = `var(--checkbox-mark-checked-disabled, ${COLOR.LIGHT.primary200})`;
+const checkboxMarkCheckedHover = `var(--checkbox-mark-checked-hover, ${COLOR.LIGHT.primary000})`;
+
 const colorSet = {
   checkbox: {
     default: css`
-      border: 2px solid var(--checkbox-border, ${COLOR.LIGHT.primary300});
-      color: var(--checkbox-text, ${COLOR.LIGHT.primary900});
+      border: 2px solid ${checkboxBorder};
+      color: ${checkboxText};
     `,
     checked: css`
-      border: 2px solid var(--checkbox-border-checked, ${COLOR.LIGHT.blue400});
+      border: 2px solid ${checkboxBorderChecked};
     `,
     checkedDisabled: css`
-      border: 2px solid
-        var(--checkbox-border-checked-disabled, ${COLOR.LIGHT.primary400});
-      color: var(--checkbox-text-disabled, ${COLOR.LIGHT.primary300});
+      border: 2px solid ${checkboxBorderCheckedDisabled};
+      color: ${checkboxTextDisabled};
     `,
     checkedHover: css`
-      border: 2px solid
-        var(--checkbox-border-checked-hover, ${COLOR.LIGHT.blue500});
-      color: var(--checkbox-text-hover, ${COLOR.LIGHT.blue500});
+      border: 2px solid ${checkboxBorderCheckedHover};
+      color: ${checkboxTextHover};
     `,
     disabled: css`
-      border: 2px solid
-        var(--checkbox-border-disabled, ${COLOR.LIGHT.primary300});
-      color: var(--checkbox-text-disabled, ${COLOR.LIGHT.primary300});
+      border: 2px solid ${checkboxBorderDisabled};
+      color: ${checkboxTextDisabled};
     `,
     hover: css`
-      border: 2px solid var(--checkbox-border-hover, ${COLOR.LIGHT.blue500});
-      color: var(--checkbox-text-hover, ${COLOR.LIGHT.blue500});
+      border: 2px solid ${checkboxBorderHover};
+      color: ${checkboxTextHover};
     `,
   },
   mark: {
     default: css`
-      color: var(--checkbox-mark-checked, ${COLOR.LIGHT.primary000});
+      color: ${checkboxMarkChecked};
     `,
     checked: css`
-      color: var(--checkbox-mark-checked, ${COLOR.LIGHT.primary000});
-      background: var(--checkbox-background-checked, ${COLOR.LIGHT.blue400});
+      color: ${checkboxMarkChecked};
+      background: ${checkboxBackgroundChecked};
     `,
     checkedDisabled: css`
-      background: var(
-        --checkbox-background-checked-disabled,
-        ${COLOR.LIGHT.primary400}
-      );
-      color: var(--checkbox-mark-checked-disabled, ${COLOR.LIGHT.primary200});
+      background: ${checkboxBackgroundCheckedDisabled};
+      color: ${checkboxMarkCheckedDisabled};
     `,
     checkedHover: css`
-      background: var(
-        --checkbox-background-checked-hover,
-        ${COLOR.LIGHT.blue500}
-      );
-      color: var(--checkbox-mark-checked-hover, ${COLOR.LIGHT.primary000});
+      background: ${checkboxBackgroundCheckedHover};
+      color: ${checkboxMarkCheckedHover};
     `,
     disabled: css`
       visibility: visible;
-      background: var(
-        --checkbox-background-disabled,
-        ${COLOR.LIGHT.primary200}
-      );
-      color: var(--checkbox-background-disabled, ${COLOR.LIGHT.primary200});
+      background: ${checkboxBackgroundDisabled};
+      color: ${checkboxBackgroundDisabled};
     `,
   },
   svg: {
     default: css`
-      color: var(--checkbox-mark-checked, ${COLOR.LIGHT.primary000});
+      color: ${checkboxMarkChecked};
     `,
     checked: css`
-      color: var(--checkbox-mark-checked, ${COLOR.LIGHT.primary000});
-      background: var(--checkbox-background-checked, ${COLOR.LIGHT.blue400});
+      color: ${checkboxMarkChecked};
+      background: ${checkboxBackgroundChecked};
     `,
     checkedDisabled: css`
-      color: var(--checkbox-mark-checked-disabled, ${COLOR.LIGHT.primary200});
-      background: var(
-        --checkbox-background-checked-disabled,
-        ${COLOR.LIGHT.primary400}
-      );
+      color: ${checkboxMarkCheckedDisabled};
+      background: ${checkboxBackgroundCheckedDisabled};
     `,
     checkedHover: css`
-      color: var(--checkbox-mark-checked-hover, ${COLOR.LIGHT.primary000});
-      background: var(
-        --checkbox-background-checked-hover,
-        ${COLOR.LIGHT.blue500}
-      );
+      color: ${checkboxMarkCheckedHover};
+      background: ${checkboxBackgroundCheckedHover};
     `,
     disabled: css`
-      color: var(--checkbox-background-disabled, ${COLOR.LIGHT.primary200});
-      background: var(
-        --checkbox-background-disabled,
-        ${COLOR.LIGHT.primary200}
-      );
+      color: ${checkboxBackgroundDisabled};
+      background: ${checkboxBackgroundDisabled};
     `,
   },
 };
