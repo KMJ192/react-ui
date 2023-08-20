@@ -1,7 +1,7 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
-import Footer from '@src/components/molecules/Footer/Footer';
-import type { FooterProps } from '@src/components/molecules/Footer/Footer';
+import Footer from '@src/Legacy/molecules/Footer/Footer';
+import type { FooterProps } from '@src/Legacy/molecules/Footer/Footer';
 
 const meta: Meta<typeof Footer> = {
   title: 'UI/Molecules/Footer',

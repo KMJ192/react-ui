@@ -1,16 +1,16 @@
 import { useRef, useState } from 'react';
 import type { Meta } from '@storybook/react';
 
-import SideNav from '@src/components/molecules/SideNav/SideNav';
-import { SideNavTemplate } from '@src/components/molecules/SideNav';
+import SideNav from '@src/Legacy/molecules/SideNav/SideNav';
+import { SideNavTemplate } from '@src/Legacy/molecules/SideNav';
 
 import type {
   SideNavItem,
   SideNavKey,
-} from '@src/components/molecules/SideNav/types';
+} from '@src/Legacy/molecules/SideNav/types';
 
 const meta: Meta<typeof SideNav> = {
-  title: 'UI/Molecules/SideNav',
+  title: 'UI/Components/SideNav',
   component: SideNav,
   parameters: {
     componentSubtitle: 'SideNav',
