@@ -1,13 +1,9 @@
 import { useRef, useState } from 'react';
 import type { Meta } from '@storybook/react';
 
-import SideNav from '@src/Legacy/molecules/SideNav/SideNav';
-import { SideNavTemplate } from '@src/Legacy/molecules/SideNav';
+import { SideNav, SideNavTemplate } from '@src/components/SideNav';
 
-import type {
-  SideNavItem,
-  SideNavKey,
-} from '@src/Legacy/molecules/SideNav/types';
+import type { SideNavItem, SideNavKey } from '@src/components/SideNav/types';
 
 const meta: Meta<typeof SideNav> = {
   title: 'UI/Components/SideNav',
@@ -234,7 +230,8 @@ export const SideNavigationTemplate = () => {
   ]);
 
   const onClickItem = (key: SideNavKey) => {
-    // console.log(key);
+    // eslint-disable-next-line no-console
+    console.log(key);
   };
 
   return (

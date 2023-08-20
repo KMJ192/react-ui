@@ -13,7 +13,7 @@ import type {
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 type BaseProps = {
-  options?: Option[];
+  options?: Array<Option>;
   direction?: Direction;
   selected?: number;
   onSelect?: (idx: number, key: OptionKey) => void;
@@ -41,7 +41,7 @@ function Tab<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
 
   const [sizeInfo, setSizeInfo] = useState<{
     optionsInfo: Size;
-    optionInfo: (Offset & Size)[];
+    optionInfo: Array<Offset & Size>;
   }>({
     optionsInfo: {
       width: 0,
