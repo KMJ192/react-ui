@@ -5,8 +5,8 @@ import cloneDeep from 'lodash/cloneDeep';
 import UIProvider from '../src/store/Provider';
 import useUIState from '../src/store/hooks/useUIState';
 
-import Float from '@src/components/layout/Float/Float';
-import Button from '@src/components/atoms/Button/Button';
+import Float from '@src/layout/Float/Float';
+import Button from '@src/components/Button/Button';
 
 import './index.css';
 
