@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react';
 
-import T from '@src/components/basic/Text/Text';
+import T from '@src/basic/Text/Text';
 
 const meta: Meta<typeof T> = {
   title: 'UI/Basic/Text',

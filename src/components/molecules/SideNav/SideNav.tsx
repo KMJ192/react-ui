@@ -9,7 +9,7 @@ import MenuGroup from './MenuGroup/MenuGroup';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
-import Flex from '@src/components/layout/Flex/Flex';
+import Flex from '@src/layout/Flex/Flex';
 const cx = classNames.bind(style);
 
 type BaseProps = {

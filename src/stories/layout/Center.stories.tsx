@@ -1,7 +1,7 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
-import Center from '@src/components/layout/Center/Center';
-import type { CenterProps } from '@src/components/layout/Center/Center';
+import Center from '@src/layout/Center/Center';
+import type { CenterProps } from '@src/layout/Center/Center';
 
 const meta: Meta<typeof Center> = {
   title: 'UI/Layout/Center',

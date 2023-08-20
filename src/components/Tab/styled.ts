@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
-import { flex } from '../layout/Flex/styled';
+import { flex } from '../../layout/Flex/styled';
 
 import type { Option, TabLineStyle } from './types';
 import type { TabBaseProps } from './Tab';

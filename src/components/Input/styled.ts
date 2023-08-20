@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { flex } from '../layout/Flex/styled';
+import { flex } from '../../layout/Flex/styled';
 import { InputBaseProps } from './Input';
 import { css } from '@emotion/react';
 import { COLOR } from '@src/color/color';

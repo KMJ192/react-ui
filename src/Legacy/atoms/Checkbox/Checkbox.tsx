@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Flex from '@src/components/layout/Flex/Flex';
+import Flex from '@src/layout/Flex/Flex';
 
 import Mark from './Mark';
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import Flex from '@src/components/layout/Flex/Flex';
+import Flex from '@src/layout/Flex/Flex';
 
 import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
 

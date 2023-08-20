@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import { flex } from '../layout/Flex/styled';
-import { center } from '../layout/Center/styled';
+import { flex } from '../../layout/Flex/styled';
+import { center } from '../../layout/Center/styled';
 import { css } from '@emotion/react';
 
 import { COLOR } from '@src/color/color';

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { CheckboxBaseProps } from './Checkbox';
-import { flex } from '../layout/Flex/styled';
+import { flex } from '../../layout/Flex/styled';
 import { css } from '@emotion/react';
 import { COLOR } from '@src/color/color';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Case, Default, Switch, When } from '@himideula/react-utils';
 import type { Shape, Variant } from './types';
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
-import Center from '../layout/Center/Center';
+import Center from '../../layout/Center/Center';
 import Spinner from '../Spinner/Spinner';
 import Styled from './styled';
 

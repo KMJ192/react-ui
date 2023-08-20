@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
-import { flex } from '../layout/Flex/styled';
-import { verticalCenter } from '../layout/Center/styled';
+import { flex } from '../../layout/Flex/styled';
+import { verticalCenter } from '../../layout/Center/styled';
 
 import { COLOR } from '@src/color/color';
 

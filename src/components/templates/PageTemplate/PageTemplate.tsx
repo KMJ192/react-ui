@@ -4,7 +4,7 @@ import {
   SideNavTemplate,
   SideNavKey,
 } from '@src/components/molecules/SideNav';
-import Flex from '@src/components/layout/Flex/Flex';
+import Flex from '@src/layout/Flex/Flex';
 import Header from '@src/components/molecules/Header/Header';
 import Footer from '@src/components/molecules/Footer/Footer';
 
