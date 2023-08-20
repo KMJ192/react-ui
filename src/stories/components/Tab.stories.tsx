@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-import Tab, { TabProps } from '@src/components/atoms/Tab/Tab';
+import Tab, { TabProps } from '@src/components/Tab/Tab';
 import type { Meta, StoryFn } from '@storybook/react';
 
 const meta: Meta<typeof Tab> = {
-  title: 'UI/Atoms/Tab',
+  title: 'UI/Components/Tab',
   component: Tab,
   parameters: {
     componentSubtitle: 'Tab',
@@ -20,45 +20,54 @@ const meta: Meta<typeof Tab> = {
 };
 
 const TabTemplate = (args: TabProps) => {
-  const [select, setSelect] = useState(0);
+  const [selected, setSelected] = useState(args.selected);
 
   const onSelect = (idx: number) => {
-    setSelect(idx);
+    setSelected(idx);
   };
 
-  return <Tab {...args} onSelect={onSelect} selected={select} />;
+  return <Tab {...args} onSelect={onSelect} selected={selected} />;
 };
 
 export const HorizontalTab: StoryFn<TabProps> = TabTemplate.bind({});
 HorizontalTab.args = {
   options: [
     {
+      key: 0,
       contents: 'option1',
     },
     {
+      key: 1,
       contents: 'option2',
     },
     {
+      key: 2,
       contents: 'option3',
     },
   ],
   direction: 'horizontal',
+  selected: 0,
 };
 
 export const VerticalTab: StoryFn<TabProps> = TabTemplate.bind({});
 VerticalTab.args = {
   options: [
     {
+      key: 0,
       contents: 'option1',
     },
     {
+      key: 1,
       contents: 'option2',
+      disabled: true,
     },
     {
+      key: 2,
       contents: 'option3',
     },
   ],
   direction: 'vertical',
+  selected: 0,
 };
 
 export default meta;
