@@ -1,60 +1,51 @@
 import React from 'react';
-import Styled from './styled';
 
-import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+import Flex from '@src/components/layout/Flex/Flex';
+
 import Mark from './Mark';
+
+import type { COMBINE_ELEMENT_PROPS, SIZE } from '@src/types/types';
+
+import classNames from 'classnames/bind';
+import style from './style.module.scss';
+const cx = classNames.bind(style);
 
 type BaseProps = {
   children?: React.ReactNode;
   checked?: boolean;
   multiple?: boolean;
   disabled?: boolean;
-  size?: number;
-  fontSize?: number;
+  size?: SIZE;
 };
 
-type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
+const ELEMENT = 'div';
 
-const DEFAULT_ELEMENT = 'div';
+type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
 
-function Checkbox<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
+function Checkbox<T extends React.ElementType = typeof ELEMENT>(
   {
     children,
     checked = false,
     multiple = false,
     disabled = false,
-    size = 16,
-    fontSize = 16,
-    as,
+    size = 'md',
     className,
     ...props
   }: Props<T>,
   ref: React.Ref<any>,
 ) {
-  const ELEMENT = as || DEFAULT_ELEMENT;
-
   return (
-    <Styled.Container
+    <Flex
       {...props}
       as={ELEMENT}
       ref={ref}
-      className={className}
-      size={size}
-      fontSize={fontSize}
-      checked={checked}
-      disabled={disabled}
+      className={cx('checkbox', { checked }, { disabled }, size, className)}
     >
-      <Mark
-        checked={checked}
-        multiple={multiple}
-        disabled={disabled}
-        size={size}
-      />
+      <Mark multiple={multiple} />
       {children}
-    </Styled.Container>
+    </Flex>
   );
 }
 
-type CheckboxProps = Props<typeof DEFAULT_ELEMENT>;
-export type { CheckboxProps, BaseProps as CheckboxBaseProps };
+export type CheckboxProps = Props<typeof ELEMENT>;
 export default React.forwardRef(Checkbox) as typeof Checkbox;

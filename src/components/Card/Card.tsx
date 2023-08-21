@@ -1,37 +1,29 @@
 import React from 'react';
-import Styled from './styled';
 
-import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
+
+import classNames from 'classnames/bind';
+import style from './style.module.scss';
+const cx = classNames.bind(style);
 
 type BaseProps = {
   children?: React.ReactNode;
-  width?: number;
-  height?: number;
 };
 
-type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
+const ELEMENT = 'div';
 
-const DEFAULT_ELEMENT = 'div';
+type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
 
-function Card<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
-  { children, width, height, as, ...props }: Props<T>,
+function Card<T extends React.ElementType = typeof ELEMENT>(
+  { children, className, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
-  const ELEMENT = as || DEFAULT_ELEMENT;
-
   return (
-    <Styled.Container
-      {...props}
-      as={ELEMENT}
-      ref={ref}
-      width={width}
-      height={height}
-    >
+    <ELEMENT {...props} ref={ref} className={cx(className)}>
       {children}
-    </Styled.Container>
+    </ELEMENT>
   );
 }
 
-type CardProps = Props<typeof DEFAULT_ELEMENT>;
-export type { CardProps, BaseProps as CardBaseProps };
+export type CardProps = Props<typeof ELEMENT>;
 export default React.forwardRef(Card) as typeof Card;

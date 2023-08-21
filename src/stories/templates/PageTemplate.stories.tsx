@@ -1,9 +1,10 @@
 import type { StoryFn, Meta } from '@storybook/react';
-
-import PageTemplate from '@src/Legacy/templates/PageTemplate/PageTemplate';
-import type { PageTemplateProps } from '@src/Legacy/templates/PageTemplate/PageTemplate';
 import { useRef } from 'react';
-import { SideNavItem } from '@src/Legacy/molecules/SideNav';
+
+import PageTemplate, {
+  type PageTemplateProps,
+} from '@src/components/templates/PageTemplate/PageTemplate';
+import { SideNavItem } from '@src/components/molecules/SideNav';
 
 const meta: Meta<typeof PageTemplate> = {
   title: 'UI/Template/PageTemplate',

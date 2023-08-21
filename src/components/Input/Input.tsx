@@ -1,90 +1,53 @@
 import React from 'react';
-import Styled from './styled';
 
-import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 import { When } from '@himideula/react-utils';
 
+import Flex from '@src/components/layout/Flex/Flex';
+
+import type { COMBINE_ELEMENT_PROPS, SIZE } from '@src/types/types';
+
+import classNames from 'classnames/bind';
+import style from './style.module.scss';
+const cx = classNames.bind(style);
+
 type BaseProps = {
+  size?: SIZE;
   error?: boolean;
-  fontSize?: number;
-  paddingTop?: number;
-  paddingBottom?: number;
-  paddingLeft?: number;
-  paddingRight?: number;
   leftIcon?: React.ReactNode;
-  leftIconPos?: number;
   rightIcon?: React.ReactNode;
-  rightIconPos?: number;
 };
 
-type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
+const ELEMENT = 'input';
 
-const DEFAULT_ELEMENT = 'input';
+type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
 
-function Input<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
-  {
-    type,
-    fontSize = 16,
-    error = false,
-    paddingTop = 10,
-    paddingBottom = 10,
-    paddingLeft = 10,
-    paddingRight = 10,
-    leftIcon,
-    leftIconPos = 10,
-    rightIcon,
-    rightIconPos = 10,
-    className,
-    ...props
-  }: Props<T>,
+function Input<T extends React.ElementType = typeof ELEMENT>(
+  { size = 'md', leftIcon, rightIcon, error, className, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
-  const isLeftIcon = leftIcon !== undefined && leftIcon !== null;
-  const isRightIcon = rightIcon !== undefined && rightIcon !== null;
-
   return (
-    <Styled.Container
-      isLeftIcon={isLeftIcon}
-      isRightIcon={isRightIcon}
-      className={className}
-    >
-      <When condition={isLeftIcon}>
-        <Styled.Icon
-          isLeftIcon
-          isRightIcon={false}
-          leftIconPos={leftIconPos}
-          rightIconPos={rightIconPos}
-        >
-          {leftIcon}
-        </Styled.Icon>
+    <Flex className={cx('container')}>
+      <When condition={leftIcon !== undefined}>
+        <div className={cx('icon', 'left', size)}>{leftIcon}</div>
       </When>
-      <Styled.Input
+      <ELEMENT
         {...props}
         ref={ref}
-        fontSize={fontSize}
-        error={error}
-        paddingTop={paddingTop}
-        paddingBottom={paddingBottom}
-        paddingLeft={paddingLeft}
-        paddingRight={paddingRight}
-        isLeftIcon={isLeftIcon}
-        isRightIcon={isRightIcon}
-        type={type}
-      />
-      <When condition={isRightIcon}>
-        <Styled.Icon
-          isLeftIcon={false}
-          isRightIcon
-          leftIconPos={leftIconPos}
-          rightIconPos={rightIconPos}
-        >
-          {rightIcon}
-        </Styled.Icon>
+        className={cx(
+          'input',
+          size,
+          leftIcon !== undefined && 'left-icon',
+          rightIcon !== undefined && 'right-icon',
+          { error },
+          className,
+        )}
+      ></ELEMENT>
+      <When condition={rightIcon !== undefined}>
+        <div className={cx('icon', 'right', size)}>{rightIcon}</div>
       </When>
-    </Styled.Container>
+    </Flex>
   );
 }
 
-type InputProps = Props<typeof DEFAULT_ELEMENT>;
-export type { InputProps, BaseProps as InputBaseProps };
+export type InputProps = Props<typeof ELEMENT>;
 export default React.forwardRef(Input) as typeof Input;

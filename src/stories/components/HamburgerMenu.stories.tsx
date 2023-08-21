@@ -1,6 +1,8 @@
-import HamburgerMenu from '@src/components/HamburgerMenu/HamburgerMenu';
-import type { HamburgerMenuProps } from '@src/components/HamburgerMenu/HamburgerMenu';
 import { Meta, StoryFn } from '@storybook/react';
+
+import HamburgerMenu, {
+  type HamburgerMenuProps,
+} from '@src/components/HamburgerMenu/HamburgerMenu';
 
 const meta: Meta<typeof HamburgerMenu> = {
   title: 'UI/Components/HamburgerMenu',
@@ -10,7 +12,13 @@ const meta: Meta<typeof HamburgerMenu> = {
   },
   argTypes: {
     type: {
-      options: ['type1', 'type2', 'type3'],
+      options: ['type-1', 'type-2', 'type-3'],
+      control: {
+        type: 'select',
+      },
+    },
+    size: {
+      options: ['xs', 'sm', 'md', 'lg'],
       control: {
         type: 'select',
       },
@@ -26,10 +34,8 @@ export const HamburgerMenuStory: StoryFn<HamburgerMenuProps> =
   hamburgerMenu.bind({});
 HamburgerMenuStory.args = {
   active: false,
-  type: 'type1',
-  width: 24,
-  height: 18,
-  midBar: 8,
+  type: 'type-1',
+  size: 'md',
 };
 
 export default meta;

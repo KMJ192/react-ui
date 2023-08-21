@@ -1,76 +1,50 @@
 import React from 'react';
-import Styled from './styled';
 
-import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+import Flex from '@src/components/layout/Flex/Flex';
+
+import type { COMBINE_ELEMENT_PROPS, SIZE } from '@src/types/types';
+
+import classNames from 'classnames/bind';
+import style from './style.module.scss';
+const cx = classNames.bind(style);
 
 type BaseProps = {
   children?: React.ReactNode;
   checked?: boolean;
   disabled?: boolean;
-  width?: number;
-  height?: number;
-  bulletSize?: number;
-  fontSize?: number;
+  size: SIZE;
 };
 
-type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
+const ELEMENT = 'div';
 
-const DEFAULT_ELEMENT = 'div';
+type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
 
-function Switch<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
+function Switch<T extends React.ElementType = typeof ELEMENT>(
   {
     children,
-    as,
     checked = false,
     disabled = false,
-    width = 44,
-    height = 24,
-    bulletSize = 16,
-    fontSize = 16,
+    size = 'md',
     className,
     ...props
   }: Props<T>,
   ref: React.Ref<any>,
 ) {
-  const ELEMENT = as || DEFAULT_ELEMENT;
-
   return (
-    <Styled.Container
+    <Flex
       {...props}
       as={ELEMENT}
       ref={ref}
-      checked={checked}
-      disabled={disabled}
-      className={className}
+      className={cx('switch', size, { checked }, { disabled }, className)}
     >
-      <Styled.SwitchBody
-        checked={checked}
-        disabled={disabled}
-        width={width}
-        height={height}
-        className='switch-body'
-      >
-        <Styled.SwitchBullet
-          width={width}
-          checked={checked}
-          disabled={disabled}
-          bulletSize={bulletSize}
-          className='switch-bullet'
-        />
-      </Styled.SwitchBody>
-
-      <Styled.Children
-        checked={checked}
-        disabled={disabled}
-        fontSize={fontSize}
-        className='switch-children'
-      >
+      <div className={cx('switch-body', { checked }, { disabled })}></div>
+      <div className={cx('switch-bullet', { checked }, { disabled })}></div>
+      <span className={cx('children', { checked }, { disabled })}>
         {children}
-      </Styled.Children>
-    </Styled.Container>
+      </span>
+    </Flex>
   );
 }
 
-type SwitchProps = Props<typeof DEFAULT_ELEMENT>;
-export type { SwitchProps, BaseProps as SwitchBaseProps };
+export type SwitchProps = Props<typeof ELEMENT>;
 export default React.forwardRef(Switch) as typeof Switch;

@@ -1,7 +1,8 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
-import Checkbox from '@src/components/Checkbox/Checkbox';
-import type { CheckboxProps } from '@src/components/Checkbox/Checkbox';
+import Checkbox, {
+  type CheckboxProps,
+} from '@src/components/Checkbox/Checkbox';
 
 const meta: Meta<typeof Checkbox> = {
   title: 'UI/Components/Checkbox',
@@ -19,6 +20,12 @@ const meta: Meta<typeof Checkbox> = {
     multiple: {
       option: ['true', 'false'],
     },
+    size: {
+      options: ['xs', 'sm', 'md', 'lg'],
+      control: {
+        type: 'select',
+      },
+    },
   },
 };
 
@@ -34,8 +41,7 @@ PrimaryCheckbox.args = {
   checked: true,
   disabled: false,
   multiple: false,
-  size: 16,
-  fontSize: 16,
+  size: 'md',
 };
 
 export default meta;

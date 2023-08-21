@@ -1,7 +1,10 @@
 import React from 'react';
-import Styled from './styled';
 
-import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
+
+import classNames from 'classnames/bind';
+import style from './style.module.scss';
+const cx = classNames.bind(style);
 
 type BaseProps = {
   children?: React.ReactNode;
@@ -9,14 +12,13 @@ type BaseProps = {
   visible?: boolean;
 };
 
-type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
+const ELEMENT = 'div';
 
-const DEFAULT_ELEMENT = 'div';
+type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
 
-function Popup<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
+function Popup<T extends React.ElementType = typeof ELEMENT>(
   {
     children,
-    as,
     animation = 'fade',
     visible = false,
     className,
@@ -24,22 +26,16 @@ function Popup<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   }: Props<T>,
   ref: React.Ref<any>,
 ) {
-  const ELEMENT = as || DEFAULT_ELEMENT;
-
   return (
-    <Styled.Container
+    <ELEMENT
       {...props}
-      as={ELEMENT}
       ref={ref}
-      className={className}
-      animation={animation}
-      visible={visible}
+      className={cx('popup', animation, { visible }, className)}
     >
       {children}
-    </Styled.Container>
+    </ELEMENT>
   );
 }
 
-type PopupProps = Props<typeof DEFAULT_ELEMENT>;
-export type { PopupProps, BaseProps as PopupBaseProps };
+export type PopupProps = Props<typeof ELEMENT>;
 export default React.forwardRef(Popup) as typeof Popup;

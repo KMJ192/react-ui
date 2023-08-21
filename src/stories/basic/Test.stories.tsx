@@ -1,10 +1,9 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
-import Test from '@src/basic/Test/Test';
-import type { TestProps } from '@src/basic/Test/Test';
+import Test, { type TestProps } from '@src/basic/Test/Test';
 
 const meta: Meta<typeof Test> = {
-  title: 'UI/Components/Test',
+  title: 'UI/Test',
   component: Test,
   parameters: {
     componentSubtitle: 'Test',

@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { COLOR } from '../color/color';
+import { COLOR } from '../Legacy/color/color';
 
 type Props = {
   width?: number;

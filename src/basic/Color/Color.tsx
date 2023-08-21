@@ -1,4 +1,4 @@
-import { COLOR } from '@src/color/color';
+import { COLOR } from '@src/Legacy/color/color';
 import type { ColorCategory } from '@src/styles/color';
 
 import Text from '@src/components/Text/Text';

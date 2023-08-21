@@ -1,7 +1,7 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
-import Spacing from '@src/layout/Spacing/Spacing';
-import type { SpacingProps } from '@src/layout/Spacing/Spacing';
+import Spacing from '@src/components/layout/Spacing/Spacing';
+import type { SpacingProps } from '@src/components/layout/Spacing/Spacing';
 
 const meta: Meta<typeof Spacing> = {
   title: 'UI/Layout/Spacing',

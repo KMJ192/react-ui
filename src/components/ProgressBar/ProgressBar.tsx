@@ -1,49 +1,37 @@
 import React from 'react';
-import Styled from './styled';
 
-import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
+
+import classNames from 'classnames/bind';
+import style from './style.module.scss';
+const cx = classNames.bind(style);
 
 type BaseProps = {
-  width?: number | string;
-  height?: number | string;
   percent?: number;
   isPending?: boolean;
 };
 
-type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
+const ELEMENT = 'div';
 
-const DEFAULT_ELEMENT = 'div';
+type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
 
-function ProgressBar<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
-  {
-    as,
-    width,
-    height,
-    percent = 0,
-    isPending = false,
-    className,
-    ...props
-  }: Props<T>,
+function Progressbar<T extends React.ElementType = typeof ELEMENT>(
+  { className, percent = 0, isPending = false, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
-  const ELEMENT = as || DEFAULT_ELEMENT;
-
   return (
-    <Styled.Container
-      {...props}
-      as={ELEMENT}
-      ref={ref}
-      className={className}
-      width={width}
-      height={height}
-    >
-      <Styled.Bar percent={percent}>
-        {isPending && <Styled.Pending></Styled.Pending>}
-      </Styled.Bar>
-    </Styled.Container>
+    <ELEMENT {...props} ref={ref} className={cx('progressbar', className)}>
+      <div
+        className={cx('bar')}
+        style={{
+          width: `${percent > 100 ? 100 : percent}%`,
+        }}
+      >
+        {isPending && <div className={cx('pending')}></div>}
+      </div>
+    </ELEMENT>
   );
 }
 
-type ProgressBarProps = Props<typeof DEFAULT_ELEMENT>;
-export type { ProgressBarProps, BaseProps as ProgressBarBaseProps };
-export default React.forwardRef(ProgressBar) as typeof ProgressBar;
+export type ProgressbarProps = Props<typeof ELEMENT>;
+export default React.forwardRef(Progressbar) as typeof Progressbar;

@@ -1,12 +1,5 @@
-type Variant = 'primary' | 'outline' | 'clear';
+type Variant = 'primary' | 'outlined' | 'clear';
 
 type Shape = 'rect' | 'circle' | 'square';
 
-type Color = Partial<{
-  background: string;
-  text: string;
-  boxShadow: string;
-  outline: string;
-}>;
-
-export type { Shape, Variant, Color as ButtonColor };
+export type { Shape, Variant };

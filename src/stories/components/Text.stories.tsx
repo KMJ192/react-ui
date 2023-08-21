@@ -1,5 +1,6 @@
-import Text, { type TextProps } from '@src/components/Text/Text';
 import type { Meta, StoryFn } from '@storybook/react';
+
+import Text, { type TextProps } from '@src/components/Text/Text';
 
 const meta: Meta<typeof Text> = {
   title: 'UI/Components/Text',

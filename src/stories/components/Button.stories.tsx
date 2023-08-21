@@ -1,6 +1,5 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
-// import Button, { ButtonProps } from '@src/components/atoms/Button/Button';
 import Button, { type ButtonProps } from '@src/components/Button/Button';
 
 import downloadIcon from '@icons/download_icon.svg';
@@ -13,7 +12,7 @@ const meta: Meta<typeof Button> = {
   },
   argTypes: {
     variant: {
-      options: ['primary', 'outline', 'clear'],
+      options: ['primary', 'outlined', 'clear'],
       control: {
         type: 'select',
       },

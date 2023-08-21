@@ -1,7 +1,6 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
-import Modal from '@src/Legacy/organisms/Modal/Modal';
-import type { ModalProps } from '@src/Legacy/organisms/Modal/Modal';
+import Modal, { type ModalProps } from '@src/components/organisms/Modal/Modal';
 
 const meta: Meta<typeof Modal> = {
   title: 'UI/Organisms/Modal',

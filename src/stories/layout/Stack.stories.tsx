@@ -1,7 +1,7 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
-import Stack from '@src/layout/Stack/Stack';
-import type { StackProps } from '@src/layout/Stack/Stack';
+import Stack from '@src/components/layout/Stack/Stack';
+import type { StackProps } from '@src/components/layout/Stack/Stack';
 
 const meta: Meta<typeof Stack> = {
   title: 'UI/Layout/Stack',

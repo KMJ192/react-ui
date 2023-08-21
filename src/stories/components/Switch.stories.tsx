@@ -1,7 +1,6 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
-import Switch from '@src/components/Switch/Switch';
-import type { SwitchProps } from '@src/components/Switch/Switch';
+import Switch, { type SwitchProps } from '@src/components/Switch/Switch';
 
 const meta: Meta<typeof Switch> = {
   title: 'UI/Components/Switch',
@@ -9,7 +8,14 @@ const meta: Meta<typeof Switch> = {
   parameters: {
     componentSubtitle: 'Switch',
   },
-  argTypes: {},
+  argTypes: {
+    size: {
+      options: ['xs', 'sm', 'md', 'lg'],
+      control: {
+        type: 'select',
+      },
+    },
+  },
 };
 
 const Template = (args: SwitchProps) => {
@@ -23,10 +29,7 @@ PrimarySwitch.args = {
   children: 'Switch',
   checked: false,
   disabled: false,
-  width: 44,
-  height: 24,
-  bulletSize: 16,
-  fontSize: 16,
+  size: 'md',
 };
 
 export default meta;

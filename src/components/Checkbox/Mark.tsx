@@ -1,15 +1,16 @@
-import Styled from './styled';
+import Flex from '@src/components/layout/Flex/Flex';
+
+import classNames from 'classnames/bind';
+import style from './style.module.scss';
+const cx = classNames.bind(style);
 
 type Props = {
   multiple: boolean;
-  checked: boolean;
-  disabled: boolean;
-  size: number;
 };
 
-function Mark({ multiple, checked, disabled, size }: Props) {
+function Mark({ multiple }: Props) {
   return (
-    <Styled.Mark checked={checked} disabled={disabled} size={size}>
+    <Flex className={cx('mark')}>
       {multiple ? (
         <svg
           width='1em'
@@ -42,7 +43,7 @@ function Mark({ multiple, checked, disabled, size }: Props) {
           />
         </svg>
       )}
-    </Styled.Mark>
+    </Flex>
   );
 }
 

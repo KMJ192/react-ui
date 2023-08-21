@@ -1,54 +1,37 @@
 import React from 'react';
-import Styled from './styled';
 
-import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+import type { COMBINE_ELEMENT_PROPS, SIZE } from '@src/types/types';
+
+import classNames from 'classnames/bind';
+import style from './style.module.scss';
+const cx = classNames.bind(style);
 
 type BaseProps = {
-  type?: 'type1' | 'type2' | 'type3';
+  type?: 'type-1' | 'type-2' | 'type-3';
   active?: boolean;
-  width?: number;
-  height?: number;
-  midBar?: number;
+  size?: SIZE;
 };
 
-type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
+const ELEMENT = 'div';
 
-const DEFAULT_ELEMENT = 'div';
+type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
 
-function HamburgerMenu<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
-  {
-    type = 'type1',
-    active = false,
-    width = 24,
-    height = 18,
-    midBar = 8,
-    as,
-    className,
-    ...props
-  }: Props<T>,
+function HamburgerMenu<T extends React.ElementType = typeof ELEMENT>(
+  { type = 'type-1', active = false, size = 'md', ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
-  const ELEMENT = as || DEFAULT_ELEMENT;
-
   return (
-    <Styled.Container
+    <ELEMENT
       {...props}
       ref={ref}
-      as={ELEMENT}
-      type={type}
-      active={active}
-      width={width}
-      height={height}
-      midBar={midBar}
-      className={className}
+      className={cx('hamburger', { active }, type, size)}
     >
       <span></span>
       <span></span>
       <span></span>
-    </Styled.Container>
+    </ELEMENT>
   );
 }
 
-type HamburgerMenuProps = Props<typeof DEFAULT_ELEMENT>;
-export type { HamburgerMenuProps, BaseProps as HamburgerMenuBaseProps };
+export type HamburgerMenuProps = Props<typeof ELEMENT>;
 export default React.forwardRef(HamburgerMenu) as typeof HamburgerMenu;
