@@ -1,4 +1,5 @@
-@import './variable/variable.module.scss';
+@import './variable/color.module.scss';
+@import './variable/size.module.scss';
 
 @mixin mark {
   transition: border-color 0.1s, color 0.1s;
@@ -84,9 +85,9 @@
   &.md {
     width: 16px;
     height: 16px;
-    font-size: 16px;
+    font-size: $fontSize;
     .mark {
-      font-size: 16px;
+      font-size: $fontSize;
     }
   }
   &.lg {
