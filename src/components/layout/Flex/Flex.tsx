@@ -1,6 +1,8 @@
 import React from 'react';
 
-import Styled from './styled';
+import classNames from 'classnames/bind';
+import style from './style.module.scss';
+const cx = classNames.bind(style);
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
@@ -19,9 +21,17 @@ function Flex<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   const ELEMENT = as || DEFAULT_ELEMENT;
 
   return (
-    <Styled.Container {...props} as={ELEMENT} ref={ref} className={className}>
+    <ELEMENT
+      {...props}
+      as={ELEMENT}
+      ref={ref}
+      className={cx('flex', className)}
+    >
       {children}
-    </Styled.Container>
+    </ELEMENT>
+    // <Styled.Container {...props} as={ELEMENT} ref={ref} className={className}>
+    //   {children}
+    // </Styled.Container>
   );
 }
 

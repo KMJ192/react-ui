@@ -21,7 +21,14 @@ const meta: Meta<typeof Stack> = {
 
 const Template = (args: StackProps) => {
   return (
-    <Stack {...args}>
+    <Stack
+      {...args}
+      style={
+        {
+          '--layoutStackGap': '12px',
+        } as any
+      }
+    >
       <div>stack1</div>
       <div>stack2</div>
       <div>stack3</div>
@@ -34,7 +41,6 @@ export const StackStory: StoryFn<StackProps> = Template.bind({});
 StackStory.args = {
   as: 'div',
   direction: 'column',
-  spacing: 16,
 };
 
 export default meta;

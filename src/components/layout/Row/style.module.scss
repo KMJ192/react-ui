@@ -1,0 +1,9 @@
+@import 'src/styles/color.module.scss';
+
+.row {
+  width: inherit;
+  padding: 16px 24px;
+  border-radius: 6px;
+  background: var(--row-background, $light_primary000);
+  box-shadow: var(--row-box-shadow, 0px 3px 6px rgba(64, 64, 64, 0.2));
+}

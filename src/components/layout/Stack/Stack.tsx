@@ -1,13 +1,14 @@
 import React from 'react';
 
-import Styled from './styled';
-
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+
+import classNames from 'classnames/bind';
+import style from './style.module.scss';
+const cx = classNames.bind(style);
 
 type BaseProps = {
   children?: React.ReactNode;
   direction?: 'row' | 'column';
-  spacing?: number;
 };
 
 const DEFAULT_ELEMENT = 'div';
@@ -15,29 +16,15 @@ const DEFAULT_ELEMENT = 'div';
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
 function Stack<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
-  {
-    as,
-    children,
-    direction = 'row',
-    spacing = 8,
-    className,
-    ...props
-  }: Props<T>,
+  { as, children, direction = 'row', className, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
 
   return (
-    <Styled.Container
-      {...props}
-      ref={ref}
-      as={ELEMENT}
-      direction={direction}
-      spacing={spacing}
-      className={className}
-    >
+    <ELEMENT {...props} ref={ref} className={cx('stack', direction, className)}>
       {children}
-    </Styled.Container>
+    </ELEMENT>
   );
 }
 

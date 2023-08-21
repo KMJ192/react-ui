@@ -37,7 +37,6 @@ const LayoutTemplate = (args: SpacingProps) => {
 export const SpacingStory: StoryFn<SpacingProps> = LayoutTemplate.bind({});
 SpacingStory.args = {
   direction: 'vertical',
-  size: 8,
 };
 
 export default meta;
