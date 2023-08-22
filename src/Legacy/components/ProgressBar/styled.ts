@@ -8,9 +8,9 @@ type Props = Pick<ProgressBarBaseProps, 'width' | 'height' | 'percent'>;
 
 type BarProps = Required<Pick<ProgressBarBaseProps, 'percent'>>;
 
-const progressBody = `var(--progress-body, ${COLOR.LIGHT.primary200})`;
-const progressBar = `var(--progress-bar, ${COLOR.LIGHT.blue600})`;
-const progressPending = `var(--progress-pending, rgba(255, 255, 255, 0.7))`;
+const progressBody = `var(--progressBody, ${COLOR.LIGHT.primary200})`;
+const progressBar = `var(--progressBar, ${COLOR.LIGHT.blue600})`;
+const progressPending = `var(--progressPending, rgba(255, 255, 255, 0.7))`;
 
 const colorSet = {
   body: css`

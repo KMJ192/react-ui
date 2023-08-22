@@ -30,7 +30,7 @@ InputText.args = {
   type: 'text',
   size: 'md',
   error: false,
-  placeholder: 'input-text',
+  placeholder: 'inputText',
   disabled: false,
 };
 

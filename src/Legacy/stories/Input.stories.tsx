@@ -21,7 +21,7 @@ export const InputText: StoryFn<InputProps> = inputTemplate.bind({});
 InputText.args = {
   type: 'text',
   error: false,
-  placeholder: 'input-text',
+  placeholder: 'inputText',
   disabled: false,
   paddingTop: 10,
   paddingBottom: 10,

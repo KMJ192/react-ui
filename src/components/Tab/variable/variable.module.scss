@@ -1,11 +1,11 @@
 @import '@src/styles/color.module.scss';
 
-$tab-background: var(--tab-background, $light-primary000);
-$tab-background-hover: var(--tab-background-hover, $light-blue100);
-$tab-background-disabled: var(--tab-background-disabled, $light-primary100);
+$tabBackground: var(--tabBackground, $light-primary000);
+$tabBackgroundHover: var(--tabBackgroundHover, $light-blue100);
+$tabBackgroundDisabled: var(--tabBackgroundDisabled, $light-primary100);
 
-$tab-select-line: var(--tab-select-line, $light-blue200);
+$tabSelectLine: var(--tabSelectLine, $light-blue200);
 
-$tab-text: var(--tab-text, $light-primary900);
-$tab-text-hover: var(--tab-text-hover, $light-primary800);
-$tab-text-disabled: var(--tab-text-disabled, $light-primary500);
+$tabText: var(--tabText, $light-primary900);
+$tabTextHover: var(--tabTextHover, $light-primary800);
+$tabTextDisabled: var(--tabTextDisabled, $light-primary500);

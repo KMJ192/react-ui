@@ -49,7 +49,7 @@
 }
 
 .typo {
-  color: $text-color;
+  color: $textColor;
   &.h1,
   &.header1 {
     @include header1;

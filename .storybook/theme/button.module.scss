@@ -1,35 +1,35 @@
 @import '@styles/color.module.scss';
 
 @mixin button-light {
-  --button-background: #{$light-primary000};
-  --button-background-hover: #{$light-blue000};
-  --button-background-disabled: #{$light-primary200};
-  --button-background-active: #{$light-primary000};
+  --buttonBackground: #{$light-primary000};
+  --buttonBackgroundHover: #{$light-blue000};
+  --buttonBackgroundDisabled: #{$light-primary200};
+  --buttonBackgroundActive: #{$light-primary000};
 
-  --button-text: #{$light-primary900};
-  --button-text-hover: #{$light-primary900};
-  --button-text-disabled: #{$light-primary500};
-  --button-text-active: #{$light-primary700};
+  --buttonText: #{$light-primary900};
+  --buttonTextHover: #{$light-primary900};
+  --buttonTextDisabled: #{$light-primary500};
+  --buttonTextActive: #{$light-primary700};
 
-  --button-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
-  --button-outline: #{$light-blue200};
+  --buttonBoxShadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  --buttonOutline: #{$light-blue200};
 
-  --button-background-ripple: rgba(255, 255, 255, 0.6);
+  --buttonBackgroundRipple: rgba(255, 255, 255, 0.6);
 }
 
 @mixin button-dark {
-  --button-background: #{$dark-primary100};
-  --button-background-hover: #{$dark-primary200};
-  --button-background-disabled: #{$dark-primary100};
-  --button-background-active: rgba(53, 53, 53, 0.6);
+  --buttonBackground: #{$dark-primary100};
+  --buttonBackgroundHover: #{$dark-primary200};
+  --buttonBackgroundDisabled: #{$dark-primary100};
+  --buttonBackgroundActive: rgba(53, 53, 53, 0.6);
 
-  --button-text: #{$dark-primary900};
-  --button-text-hover: #{$dark-primary900};
-  --button-text-disabled: #{$dark-primary300};
-  --button-text-active: #{$dark-primary700};
+  --buttonText: #{$dark-primary900};
+  --buttonTextHover: #{$dark-primary900};
+  --buttonTextDisabled: #{$dark-primary300};
+  --buttonTextActive: #{$dark-primary700};
 
-  --button-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.6);
-  --button-outline: #{$dark-primary100};
+  --buttonBoxShadow: 0px 3px 6px rgba(0, 0, 0, 0.6);
+  --buttonOutline: #{$dark-primary100};
 
-  --button-background-ripple: rgba(50, 50, 70, 0.6);
+  --buttonBackgroundRipple: rgba(50, 50, 70, 0.6);
 }

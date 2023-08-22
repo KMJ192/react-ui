@@ -1,29 +1,29 @@
 @import '@styles/color.module.scss';
 
-$radio-border: var(--radio-border, $light-primary300);
-$radio-border-checked: var(--radio-border-checked, $light-blue400);
-$radio-border-checked-disabled: var(
-  --radio-border-checked-disabled,
+$radioBorder: var(--radioBorder, $light-primary300);
+$radioBorderChecked: var(--radioBorderChecked, $light-blue400);
+$radioBorderChecked-disabled: var(
+  --radioBorderChecked-disabled,
   $light-primary400
 );
-$radio-border-checked-hover: var(--radio-border-checked-hover, $light-blue500);
-$radio-border-disabled: var(--radio-border-disabled, $light-primary300);
-$radio-border-hover: var(--radio-border-hover, $light-blue500);
+$radioBorderCheckedHover: var(--radioBorderCheckedHover, $light-blue500);
+$radioBorderDisabled: var(--radioBorderDisabled, $light-primary300);
+$radioBorder-hover: var(--radioBorder-hover, $light-blue500);
 
-$radio-background: var(--radio-background);
-$radio-background-checked: var(--radio-background-checked);
-$radio-background-checked-hover: var(--radio-background-checked-hover);
-$radio-background-checked-disabled: var(
-  --radio-background-checked-disabled,
+$radioBackground: var(--radioBackground);
+$radioBackgroundChecked: var(--radioBackgroundChecked);
+$radioBackgroundCheckedHover: var(--radioBackgroundCheckedHover);
+$radioBackgroundCheckedDisabled: var(
+  --radioBackgroundCheckedDisabled,
   $light-primary300
 );
-$radio-background-disabled: var(--radio-background-disabled, $light-primary200);
-$radio-background-hover: var(--radio-background-hover);
+$radioBackgroundDisabled: var(--radioBackgroundDisabled, $light-primary200);
+$radioBackgroundHover: var(--radioBackgroundHover);
 
-$radio-text: var(--radio-text, $light-primary900);
-$radio-text-hover: var(--radio-text-hover, $light-blue600);
-$radio-text-disabled: var(--radio-text-disabled, $light-primary300);
+$radioText: var(--radioText, $light-primary900);
+$radioTextHover: var(--radioTextHover, $light-blue600);
+$radioTextDisabled: var(--radioTextDisabled, $light-primary300);
 
-$radio-pupil: var(--radio-pupil, $radio-border-checked);
-$radio-pupil-disabled: var(--radio-pupil-disabled, $light-primary500);
-$radio-pupil-hover: var(--radio-pupil-hover, $radio-border-hover);
+$radioPupil: var(--radioPupil, $radioBorderChecked);
+$radioPupilDisabled: var(--radioPupilDisabled, $light-primary500);
+$radioPupilHover: var(--radioPupilHover, $radioBorder-hover);

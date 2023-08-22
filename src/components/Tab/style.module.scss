@@ -66,24 +66,24 @@
 }
 
 @mixin color-set {
-  background: $tab-background;
+  background: $tabBackground;
   .option {
-    color: $tab-text;
+    color: $tabText;
     &:hover {
-      color: $tab-text-hover;
-      background: $tab-background-hover;
+      color: $tabTextHover;
+      background: $tabBackgroundHover;
     }
     &.disabled {
-      color: $tab-text-disabled;
-      background: $tab-background-disabled;
+      color: $tabTextDisabled;
+      background: $tabBackgroundDisabled;
       &:hover {
-        color: $tab-text-disabled;
-        background: $tab-background-disabled;
+        color: $tabTextDisabled;
+        background: $tabBackgroundDisabled;
       }
     }
   }
   .tab-line {
-    background: $tab-select-line;
+    background: $tabSelectLine;
   }
 }
 

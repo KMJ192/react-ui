@@ -27,21 +27,21 @@ type IconProps = Required<
 > &
   IsIcon;
 
-const inputBorder = `var(--input-border, ${COLOR.LIGHT.primary400})`;
-const inputBorderFocus = `var(--input-border-focus, ${COLOR.LIGHT.blue500})`;
-const inputBorderError = `var(--input-border-error, ${COLOR.LIGHT.red900})`;
-const inputBorderDisabled = `var(--input-border-disabled, ${COLOR.LIGHT.primary300})`;
+const inputBorder = `var(--inputBorder, ${COLOR.LIGHT.primary400})`;
+const inputBorderFocus = `var(--inputBorderFocus, ${COLOR.LIGHT.blue500})`;
+const inputBorderError = `var(--inputBorderError, ${COLOR.LIGHT.red900})`;
+const inputBorderDisabled = `var(--inputBorderDisabled, ${COLOR.LIGHT.primary300})`;
 
-const inputBackground = `var(--input-background, ${COLOR.LIGHT.primary000})`;
-const inputBackgroundDisabled = `var(--input-background-disabled, ${COLOR.LIGHT.primary100})`;
+const inputBackground = `var(--inputBackground, ${COLOR.LIGHT.primary000})`;
+const inputBackgroundDisabled = `var(--inputBackgroundDisabled, ${COLOR.LIGHT.primary100})`;
 
-const inputText = `var(--input-text, ${COLOR.LIGHT.primary900})`;
-const inputTextDisabled = `var(--input-text-disabled, ${COLOR.LIGHT.primary400})`;
+const inputText = `var(--inputText, ${COLOR.LIGHT.primary900})`;
+const inputTextDisabled = `var(--inputTextDisabled, ${COLOR.LIGHT.primary400})`;
 
-const inputPlaceholder = `var(--input-placeholder, ${COLOR.LIGHT.primary400})`;
-const inputPlaceholderDisabled = `var(--input-placeholder-disabled, ${COLOR.LIGHT.primary300})`;
+const inputPlaceholder = `var(--inputPlaceholder, ${COLOR.LIGHT.primary400})`;
+const inputPlaceholderDisabled = `var(--inputPlaceholderDisabled, ${COLOR.LIGHT.primary300})`;
 
-const inputBoxShadow = `var(--input-box-shadow, 0px 3px 6px rgba(62, 62, 62, 0.1))`;
+const inputBoxShadow = `var(--inputBoxShadow, 0px 3px 6px rgba(62, 62, 62, 0.1))`;
 
 const colorSet = (error: boolean) => {
   return css`

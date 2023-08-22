@@ -1,29 +1,29 @@
 @import './variable/variable.module.scss';
 
 @mixin color-set {
-  border-color: $input-border;
-  background: $input-background;
-  color: $input-text;
+  border-color: $inputBorder;
+  background: $inputBackground;
+  color: $inputText;
   &::placeholder {
-    color: $input-placeholder;
+    color: $inputPlaceholder;
   }
 
   &:disabled {
-    border-color: $input-border-disabled;
-    background: $input-background-disabled;
-    color: $input-text-disabled;
+    border-color: $inputBorderDisabled;
+    background: $inputBackgroundDisabled;
+    color: $inputTextDisabled;
     &::placeholder {
-      color: $input-placeholder-disabled;
+      color: $inputPlaceholderDisabled;
     }
   }
 
   &.error {
-    border-color: $input-border-error;
+    border-color: $inputBorderError;
   }
 
   &:not(.error):focus {
-    border-color: $input-border-focus;
-    box-shadow: $input-box-shadow;
+    border-color: $inputBorderFocus;
+    box-shadow: $inputBoxShadow;
   }
 }
 

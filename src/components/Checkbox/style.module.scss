@@ -20,48 +20,48 @@
 }
 
 @mixin color-set {
-  border: 2px solid $checkbox-border;
-  color: $checkbox-text;
+  border: 2px solid $checkboxBorder;
+  color: $checkboxText;
 
   .mark > svg {
-    color: $checkbox-mark-checked;
+    color: $checkboxMarkChecked;
   }
 
   &.checked {
-    border-color: $checkbox-border-checked;
+    border-color: $checkboxBorderChecked;
     .mark > svg {
-      color: $checkbox-mark-checked;
-      background: $checkbox-background-checked;
+      color: $checkboxMarkChecked;
+      background: $checkboxBackgroundChecked;
     }
     &.disabled {
-      border-color: $checkbox-border-checked-disabled;
+      border-color: $checkboxBorderCheckedDisabled;
       .mark > svg {
-        background: $checkbox-background-checked-disabled;
-        color: $checkbox-mark-checked-disabled;
+        background: $checkboxBackgroundCheckedDisabled;
+        color: $checkboxMarkCheckedDisabled;
       }
     }
     &:not(.disabled):hover {
-      border-color: $checkbox-border-checked-hover;
+      border-color: $checkboxBorderCheckedHover;
       .mark > svg {
-        background: $checkbox-background-checked-hover;
-        color: $checkbox-mark-checked-hover;
+        background: $checkboxBackgroundCheckedHover;
+        color: $checkboxMarkCheckedHover;
       }
     }
   }
 
   &.disabled {
-    border-color: $checkbox-border-disabled;
-    color: $checkbox-text-disabled;
+    border-color: $checkboxBorderDisabled;
+    color: $checkboxTextDisabled;
     .mark > svg {
       visibility: visible;
-      background: $checkbox-background-disabled;
-      color: $checkbox-background-disabled;
+      background: $checkboxBackgroundDisabled;
+      color: $checkboxBackgroundDisabled;
     }
   }
 
   &:not(.disabled):hover {
-    border-color: $checkbox-border-hover;
-    color: $checkbox-text-hover;
+    border-color: $checkboxBorderHover;
+    color: $checkboxTextHover;
   }
 }
 

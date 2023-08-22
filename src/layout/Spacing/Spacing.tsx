@@ -29,7 +29,7 @@ function Spacing<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   const ELEMENT = as || DEFAULT_ELEMENT;
 
   const _style =
-    direction === 'vertical'
+    typeof spacing === 'number' && direction === 'vertical'
       ? { ...style, height: spacing }
       : { ...style, width: spacing };
   return (

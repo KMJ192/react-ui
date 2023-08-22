@@ -18,24 +18,24 @@ type BulletProps = Props &
 
 type ChildrenProps = Props & Required<Pick<SwitchBaseProps, 'fontSize'>>;
 
-const switchBackground = `var(--switch-background, ${COLOR.LIGHT.primary300})`;
-const switchBackgroundChecked = `var(--switch-background-checked, ${COLOR.LIGHT.blue400})`;
-const switchBackgroundCheckedDisabled = ` var(--switch-background-checked-disabled, ${COLOR.LIGHT.primary300})`;
-const switchBackgroundCheckedHover = `var(--switch-background-checked-hover, ${COLOR.LIGHT.blue500})`;
-const switchBackgroundDisabled = `var(--switch-background-disabled, ${COLOR.LIGHT.primary100})`;
-const switchBackgroundHover = `var(--switch-background-hover, ${COLOR.LIGHT.blue200})`;
+const switchBackground = `var(--switchBackground, ${COLOR.LIGHT.primary300})`;
+const switchBackgroundChecked = `var(--switchBackgroundChecked, ${COLOR.LIGHT.blue400})`;
+const switchBackgroundCheckedDisabled = ` var(--switchBackgroundCheckedDisabled, ${COLOR.LIGHT.primary300})`;
+const switchBackgroundCheckedHover = `var(--switchBackgroundCheckedHover, ${COLOR.LIGHT.blue500})`;
+const switchBackgroundDisabled = `var(--switchBackgroundDisabled, ${COLOR.LIGHT.primary100})`;
+const switchBackgroundHover = `var(--switchBackgroundHover, ${COLOR.LIGHT.blue200})`;
 
-const switchBullet = `var(--switch-bullet, ${COLOR.LIGHT.primary000})`;
-const switchBulletChecked = `var(--switch-bullet-checked, ${COLOR.LIGHT.primary000})`;
-const switchBulletCheckedDisabled = `var(--switch-bullet-checked-disabled, ${COLOR.LIGHT.primary200})`;
-const switchBulletCheckedHover = `var(--switch-bullet-checked-hover, ${COLOR.LIGHT.primary000})`;
-const switchBulletDisabled = `var(--switch-bullet-disabled, ${COLOR.LIGHT.primary200})`;
-const switchBulletHover = `var(--switch-bullet-hover, ${COLOR.LIGHT.primary000})`;
-const switchBulletBoxShadow = `var(--switch-bullet-box-shadow, 0px 3px 6px rgba(63, 63, 63, 0.3))`;
+const switchBullet = `var(--switchBullet, ${COLOR.LIGHT.primary000})`;
+const switchBulletChecked = `var(--switchBulletChecked, ${COLOR.LIGHT.primary000})`;
+const switchBulletCheckedDisabled = `var(--switchBulletCheckedDisabled, ${COLOR.LIGHT.primary200})`;
+const switchBulletCheckedHover = `var(--switchBulletCheckedHover, ${COLOR.LIGHT.primary000})`;
+const switchBulletDisabled = `var(--switchBulletDisabled, ${COLOR.LIGHT.primary200})`;
+const switchBulletHover = `var(--switchBulletHover, ${COLOR.LIGHT.primary000})`;
+const switchBulletBoxShadow = `var(--switchBulletBoxShadow, 0px 3px 6px rgba(63, 63, 63, 0.3))`;
 
-const switchText = `var(--switch-text, ${COLOR.LIGHT.primary900})`;
-const switchTextHover = `var(--switch-text-hover, ${COLOR.LIGHT.blue500})`;
-const switchTextDisabled = `var(--switch-text-disabled, ${COLOR.LIGHT.primary300})`;
+const switchText = `var(--switchText, ${COLOR.LIGHT.primary900})`;
+const switchTextHover = `var(--switchTextHover, ${COLOR.LIGHT.blue500})`;
+const switchTextDisabled = `var(--switchTextDisabled, ${COLOR.LIGHT.primary300})`;
 
 const colorSet = {
   body: {

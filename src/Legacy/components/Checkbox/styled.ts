@@ -10,27 +10,27 @@ type Props = Pick<
 >;
 
 // border
-const checkboxBorder = `var(--checkbox-border, ${COLOR.LIGHT.primary300})`;
-const checkboxBorderChecked = `var(--checkbox-border-checked, ${COLOR.LIGHT.blue400})`;
-const checkboxBorderCheckedDisabled = `var(--checkbox-border-checked-disabled, ${COLOR.LIGHT.primary400})`;
-const checkboxBorderCheckedHover = `var(--checkbox-border-checked-hover, ${COLOR.LIGHT.blue500})`;
-const checkboxBorderDisabled = `var(--checkbox-border-disabled, ${COLOR.LIGHT.primary300})`;
-const checkboxBorderHover = `var(--checkbox-border-hover, ${COLOR.LIGHT.blue500})`;
+const checkboxBorder = `var(--checkboxBorder, ${COLOR.LIGHT.primary300})`;
+const checkboxBorderChecked = `var(--checkboxBorderChecked, ${COLOR.LIGHT.blue400})`;
+const checkboxBorderCheckedDisabled = `var(--checkboxBorderCheckedDisabled, ${COLOR.LIGHT.primary400})`;
+const checkboxBorderCheckedHover = `var(--checkboxBorderCheckedHover, ${COLOR.LIGHT.blue500})`;
+const checkboxBorderDisabled = `var(--checkboxBorderDisabled, ${COLOR.LIGHT.primary300})`;
+const checkboxBorderHover = `var(--checkboxBorderHover, ${COLOR.LIGHT.blue500})`;
 
 // background
-const checkboxBackgroundChecked = `var(--checkbox-background-checked, ${COLOR.LIGHT.blue400})`;
-const checkboxBackgroundCheckedDisabled = `var(--checkbox-background-checked-disabled, ${COLOR.LIGHT.primary400})`;
-const checkboxBackgroundCheckedHover = `var(--checkbox-background-checked-hover, ${COLOR.LIGHT.blue500})`;
-const checkboxBackgroundDisabled = `var(--checkbox-background-disabled, ${COLOR.LIGHT.primary200})`;
+const checkboxBackgroundChecked = `var(--checkboxBackgroundChecked, ${COLOR.LIGHT.blue400})`;
+const checkboxBackgroundCheckedDisabled = `var(--checkboxBackgroundCheckedDisabled, ${COLOR.LIGHT.primary400})`;
+const checkboxBackgroundCheckedHover = `var(--checkboxBackgroundCheckedHover, ${COLOR.LIGHT.blue500})`;
+const checkboxBackgroundDisabled = `var(--checkboxBackgroundDisabled, ${COLOR.LIGHT.primary200})`;
 
-const checkboxText = `var(--checkbox-text, ${COLOR.LIGHT.primary900})`;
-const checkboxTextHover = `var(--checkbox-text-hover, ${COLOR.LIGHT.blue500})`;
-const checkboxTextDisabled = `var(--checkbox-text-disabled, ${COLOR.LIGHT.primary300})`;
+const checkboxText = `var(--checkboxText, ${COLOR.LIGHT.primary900})`;
+const checkboxTextHover = `var(--checkboxTextHover, ${COLOR.LIGHT.blue500})`;
+const checkboxTextDisabled = `var(--checkboxTextDisabled, ${COLOR.LIGHT.primary300})`;
 
 // mark
-const checkboxMarkChecked = `var(--checkbox-mark-checked, ${COLOR.LIGHT.primary000})`;
-const checkboxMarkCheckedDisabled = `var(--checkbox-mark-checked-disabled, ${COLOR.LIGHT.primary200})`;
-const checkboxMarkCheckedHover = `var(--checkbox-mark-checked-hover, ${COLOR.LIGHT.primary000})`;
+const checkboxMarkChecked = `var(--checkboxMarkChecked, ${COLOR.LIGHT.primary000})`;
+const checkboxMarkCheckedDisabled = `var(--checkboxMarkCheckedDisabled, ${COLOR.LIGHT.primary200})`;
+const checkboxMarkCheckedHover = `var(--checkboxMarkCheckedHover, ${COLOR.LIGHT.primary000})`;
 
 const colorSet = {
   checkbox: {

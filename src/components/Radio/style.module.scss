@@ -2,54 +2,54 @@
 
 @mixin color-set {
   .mark {
-    border-color: $radio-border;
-    background: $radio-background;
+    border-color: $radioBorder;
+    background: $radioBackground;
     &.checked {
-      border-color: $radio-border-checked;
-      background: $radio-background-checked;
+      border-color: $radioBorderChecked;
+      background: $radioBackgroundChecked;
       &.disabled {
-        border-color: $radio-border-checked-disabled;
-        background: $radio-background-checked-disabled;
+        border-color: $radioBorderChecked-disabled;
+        background: $radioBackgroundCheckedDisabled;
       }
       &:not(.disabled):hover {
-        border-color: $radio-border-checked-hover;
-        background: $radio-background-checked-hover;
+        border-color: $radioBorderCheckedHover;
+        background: $radioBackgroundCheckedHover;
       }
     }
 
     .pupil {
-      background: $radio-pupil;
+      background: $radioPupil;
       &.disabled {
-        background: $radio-pupil-disabled;
+        background: $radioPupilDisabled;
       }
     }
 
     &.disabled {
-      border-color: $radio-border-disabled;
-      background: $radio-background-disabled;
+      border-color: $radioBorderDisabled;
+      background: $radioBackgroundDisabled;
       .pupil {
-        background: $radio-pupil-disabled;
+        background: $radioPupilDisabled;
       }
     }
   }
   &:hover {
     .mark {
-      border-color: $radio-border-hover;
-      background: $radio-background-hover;
+      border-color: $radioBorder-hover;
+      background: $radioBackgroundHover;
       .pupil {
         &:not(.disabled) {
-          background: $radio-pupil-hover;
+          background: $radioPupilHover;
         }
       }
     }
     .children {
-      color: $radio-text-hover;
+      color: $radioTextHover;
     }
   }
   .children {
-    color: $radio-text;
+    color: $radioText;
     &.disabled {
-      color: $radio-text-disabled;
+      color: $radioTextDisabled;
     }
   }
 }

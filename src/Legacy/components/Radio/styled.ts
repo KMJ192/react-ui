@@ -12,27 +12,27 @@ type Props = Pick<
   'disabled' | 'checked' | 'size' | 'pupilSize' | 'fontSize'
 >;
 
-const radioBorder = `var(--radio-border, ${COLOR.LIGHT.primary300})`;
-const radioBorderChecked = `var(--radio-border-checked, ${COLOR.LIGHT.blue400})`;
-const radioBorderCheckedDisabled = `var(--radio-border-checked-disabled, ${COLOR.LIGHT.primary400})`;
-const radioBorderCheckedHover = `var(--radio-border-checked-hover, ${COLOR.LIGHT.blue500})`;
-const radioBorderDisabled = `var(--radio-border-disabled, ${COLOR.LIGHT.primary300})`;
-const radioBorderHover = `var(--radio-border-hover, ${COLOR.LIGHT.blue500})`;
+const radioBorder = `var(--radioBorder, ${COLOR.LIGHT.primary300})`;
+const radioBorderChecked = `var(--radioBorderChecked, ${COLOR.LIGHT.blue400})`;
+const radioBorderCheckedDisabled = `var(--radioBorderChecked-disabled, ${COLOR.LIGHT.primary400})`;
+const radioBorderCheckedHover = `var(--radioBorderCheckedHover, ${COLOR.LIGHT.blue500})`;
+const radioBorderDisabled = `var(--radioBorderDisabled, ${COLOR.LIGHT.primary300})`;
+const radioBorderHover = `var(--radioBorder-hover, ${COLOR.LIGHT.blue500})`;
 
-const radioBackground = `var(--radio-background)`;
-const radioBackgroundChecked = `var(--radio-background-checked)`;
-const radioBackgroundCheckedHover = `var(--radio-background-checked-hover)`;
-const radioBackgroundCheckedDisabled = `var(--radio-background-checked-disabled, ${COLOR.LIGHT.primary300})`;
-const radioBackgroundDisabled = `var(--radio-background-disabled, ${COLOR.LIGHT.primary200})`;
-const radioBackgroundHover = `var(--radio-background-hover)`;
+const radioBackground = `var(--radioBackground)`;
+const radioBackgroundChecked = `var(--radioBackgroundChecked)`;
+const radioBackgroundCheckedHover = `var(--radioBackgroundCheckedHover)`;
+const radioBackgroundCheckedDisabled = `var(--radioBackgroundCheckedDisabled, ${COLOR.LIGHT.primary300})`;
+const radioBackgroundDisabled = `var(--radioBackgroundDisabled, ${COLOR.LIGHT.primary200})`;
+const radioBackgroundHover = `var(--radioBackgroundHover)`;
 
-const radioText = `var(--radio-text, ${COLOR.LIGHT.primary900})`;
-const radioTextHover = `var(--radio-text-hover, ${COLOR.LIGHT.blue600})`;
-const radioTextDisabled = `var(--radio-text-disabled, ${COLOR.LIGHT.primary300})`;
+const radioText = `var(--radioText, ${COLOR.LIGHT.primary900})`;
+const radioTextHover = `var(--radioTextHover, ${COLOR.LIGHT.blue600})`;
+const radioTextDisabled = `var(--radioTextDisabled, ${COLOR.LIGHT.primary300})`;
 
-const radioPupil = `var(--radio-pupil, ${COLOR.LIGHT.blue400})`;
-const radioPupilDisabled = `var(--radio-pupil-disabled, ${COLOR.LIGHT.primary500})`;
-const radioPupilHover = `var(--radio-pupil-hover, ${COLOR.LIGHT.blue500})`;
+const radioPupil = `var(--radioPupil, ${COLOR.LIGHT.blue400})`;
+const radioPupilDisabled = `var(--radioPupilDisabled, ${COLOR.LIGHT.primary500})`;
+const radioPupilHover = `var(--radioPupilHover, ${COLOR.LIGHT.blue500})`;
 
 const colorSet = {
   mark: {
@@ -144,7 +144,7 @@ const Container = styled.div<Props>`
     ${({ disabled }) => {
       if (disabled) return null;
       return css`
-        .radio-pupil {
+        .radioPupil {
           ${colorSet.pupil.hover}
         }
         .radio-children {

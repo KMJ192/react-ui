@@ -6,9 +6,9 @@ import { COLOR } from '@src/Legacy/color/color';
 
 type Props = Pick<PopupBaseProps, 'animation' | 'visible'>;
 
-const popupBoxShadow = `var(--popup-box-shadow, 0px 3px 6px rgba(0, 0, 0, 0.2))`;
-const popupBackground = `var(--popup-background, ${COLOR.LIGHT.primary000})`;
-const popupText = `var(--popup-text, ${COLOR.LIGHT.primary900})`;
+const popupBoxShadow = `var(--popupBoxShadow, 0px 3px 6px rgba(0, 0, 0, 0.2))`;
+const popupBackground = `var(--popupBackground, ${COLOR.LIGHT.primary000})`;
+const popupText = `var(--popupText, ${COLOR.LIGHT.primary900})`;
 
 const colorSet = css`
   box-shadow: ${popupBoxShadow};

@@ -58,7 +58,7 @@ const type3 = (transform: number) => {
 };
 
 const colorSet = css`
-  background: var(--hamburger-menu-bar-background, ${COLOR.LIGHT.primary500});
+  background: var(--hamburgerMenuBarBackground, ${COLOR.LIGHT.primary500});
 `;
 
 const Container = styled.div<Props>`

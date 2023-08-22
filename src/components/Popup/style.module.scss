@@ -11,9 +11,9 @@
 }
 
 @mixin color-set {
-  box-shadow: $popup-box-shadow;
-  background-color: $popup-background;
-  color: $popup-text;
+  box-shadow: $popupBoxShadow;
+  background-color: $popupBackground;
+  color: $popupText;
 }
 
 @mixin animation {

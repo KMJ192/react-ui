@@ -29,41 +29,41 @@
 }
 
 @mixin color-set {
-  background: $button-background;
-  color: $button-text;
-  box-shadow: $button-box-shadow;
+  background: $buttonBackground;
+  color: $buttonText;
+  box-shadow: $buttonBoxShadow;
   &:hover {
-    background: $button-background-hover;
-    color: $button-text-hover;
+    background: $buttonBackgroundHover;
+    color: $buttonTextHover;
   }
   &:disabled {
-    background: $button-background-disabled;
-    color: $button-text-disabled;
+    background: $buttonBackgroundDisabled;
+    color: $buttonTextDisabled;
     &:active,
     &:hover {
-      background: $button-background-disabled;
-      color: $button-text-disabled;
+      background: $buttonBackgroundDisabled;
+      color: $buttonTextDisabled;
     }
   }
   &:active {
-    background: $button-background-active;
-    color: $button-text-active;
+    background: $buttonBackgroundActive;
+    color: $buttonTextActive;
   }
   &.outlined {
     background: none;
     box-shadow: none;
-    outline: 1px solid $button-outline;
+    outline: 1px solid $buttonOutline;
     &:hover {
-      background: $button-background-hover;
-      color: $button-text-hover;
+      background: $buttonBackgroundHover;
+      color: $buttonTextHover;
     }
   }
   &.clear {
     background: none;
     box-shadow: none;
     &:hover {
-      background: $button-background-hover;
-      color: $button-text-hover;
+      background: $buttonBackgroundHover;
+      color: $buttonTextHover;
     }
   }
 }
@@ -77,7 +77,7 @@
     left: 50%;
     width: 4px;
     height: 4px;
-    background: $button-background-ripple;
+    background: $buttonBackgroundRipple;
     opacity: 0;
     border-radius: 100%;
     transform: scale(1, 1) translate(-50%);

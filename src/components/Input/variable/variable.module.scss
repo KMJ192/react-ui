@@ -1,20 +1,17 @@
 @import '@styles/color.module.scss';
 
-$input-border: var(--input-border, $light-primary400);
-$input-border-focus: var(--input-border-focus, $light-blue500);
-$input-border-error: var(--input-border-error, $light-red900);
-$input-border-disabled: var(--input-border-disabled, $light-primary300);
+$inputBorder: var(--inputBorder, $light-primary400);
+$inputBorderFocus: var(--inputBorderFocus, $light-blue500);
+$inputBorderError: var(--inputBorderError, $light-red900);
+$inputBorderDisabled: var(--inputBorderDisabled, $light-primary300);
 
-$input-background: var(--input-background, $light-primary000);
-$input-background-disabled: var(--input-background-disabled, $light-primary100);
+$inputBackground: var(--inputBackground, $light-primary000);
+$inputBackgroundDisabled: var(--inputBackgroundDisabled, $light-primary100);
 
-$input-text: var(--input-text, $light-primary900);
-$input-text-disabled: var(--input-text-disabled, $light-primary400);
+$inputText: var(--inputText, $light-primary900);
+$inputTextDisabled: var(--inputTextDisabled, $light-primary400);
 
-$input-placeholder: var(--input-placeholder, $light-primary400);
-$input-placeholder-disabled: var(
-  --input-placeholder-disabled,
-  $light-primary300
-);
+$inputPlaceholder: var(--inputPlaceholder, $light-primary400);
+$inputPlaceholderDisabled: var(--inputPlaceholderDisabled, $light-primary300);
 
-$input-box-shadow: var(--input-box-shadow, 0px 3px 6px rgba(62, 62, 62, 0.1));
+$inputBoxShadow: var(--inputBoxShadow, 0px 3px 6px rgba(62, 62, 62, 0.1));

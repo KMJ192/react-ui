@@ -51,7 +51,7 @@ function Radio<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
           checked={checked}
           disabled={disabled}
           pupilSize={pupilSize}
-          className='radio-pupil'
+          className='radioPupil'
         />
       </Styled.Mark>
       <Styled.Children

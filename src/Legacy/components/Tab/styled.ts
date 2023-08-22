@@ -16,15 +16,15 @@ type OptionsProps = Pick<TabBaseProps, 'direction'>;
 
 type OptionProps = Pick<Option, 'disabled'>;
 
-const tabBackground = `var(--tab-background, ${COLOR.LIGHT.primary000})`;
-const tabBackgroundHover = `var(--tab-background-hover, ${COLOR.LIGHT.blue100})`;
-const tabBackgroundDisabled = `var(--tab-background-disabled, ${COLOR.LIGHT.primary100})`;
+const tabBackground = `var(--tabBackground, ${COLOR.LIGHT.primary000})`;
+const tabBackgroundHover = `var(--tabBackgroundHover, ${COLOR.LIGHT.blue100})`;
+const tabBackgroundDisabled = `var(--tabBackgroundDisabled, ${COLOR.LIGHT.primary100})`;
 
-const tabSelectLine = `var(--tab-select-line, ${COLOR.LIGHT.blue200})`;
+const tabSelectLine = `var(--tabSelectLine, ${COLOR.LIGHT.blue200})`;
 
-const tabText = `var(--tab-text, ${COLOR.LIGHT.primary900})`;
-const tabTextHover = `var(--tab-text-hover, ${COLOR.LIGHT.primary800})`;
-const tabTextDisabled = `var(--tab-text-disabled, ${COLOR.LIGHT.primary500})`;
+const tabText = `var(--tabText, ${COLOR.LIGHT.primary900})`;
+const tabTextHover = `var(--tabTextHover, ${COLOR.LIGHT.primary800})`;
+const tabTextDisabled = `var(--tabTextDisabled, ${COLOR.LIGHT.primary500})`;
 
 const colorSet = {
   container: {

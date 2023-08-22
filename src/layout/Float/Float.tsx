@@ -35,8 +35,15 @@ function Float<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   ref: React.Ref<any>,
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
+
+  const isPosition =
+    typeof bottom === 'number' ||
+    typeof right === 'number' ||
+    typeof top === 'number' ||
+    typeof left === 'number';
+
   const _style =
-    startDirection === 'rb'
+    isPosition && startDirection === 'rb'
       ? { ...style, bottom, right }
       : { ...style, top, left };
 

@@ -1,54 +1,39 @@
 @import '@styles/color.module.scss';
 
 // border
-$checkbox-border: var(--checkbox-border, $light-primary300);
-$checkbox-border-checked: var(--checkbox-border-checked, $light-blue400);
-$checkbox-border-checked-disabled: var(
-  --checkbox-border-checked-disabled,
+$checkboxBorder: var(--checkboxBorder, $light-primary300);
+$checkboxBorderChecked: var(--checkboxBorderChecked, $light-blue400);
+$checkboxBorderCheckedDisabled: var(
+  --checkboxBorderCheckedDisabled,
   $light-primary400
 );
-$checkbox-border-checked-hover: var(
-  --checkbox-border-checked-hover,
-  $light-blue500
-);
-$checkbox-border-disabled: var(--checkbox-border-disabled, $light-primary300);
-$checkbox-border-hover: var(--checkbox-border-hover, $light-blue500);
+$checkboxBorderCheckedHover: var(--checkboxBorderCheckedHover, $light-blue500);
+$checkboxBorderDisabled: var(--checkboxBorderDisabled, $light-primary300);
+$checkboxBorderHover: var(--checkboxBorderHover, $light-blue500);
 
 // background
-$checkbox-background-checked: var(
-  --checkbox-background-checked,
-  $light-blue400
-);
-$checkbox-background-checked-disabled: var(
-  --checkbox-background-checked-disabled,
+$checkboxBackgroundChecked: var(--checkboxBackgroundChecked, $light-blue400);
+$checkboxBackgroundCheckedDisabled: var(
+  --checkboxBackgroundCheckedDisabled,
   $light-primary400
 );
-$checkbox-background-checked-hover: var(
-  --checkbox-background-checked-hover,
+$checkboxBackgroundCheckedHover: var(
+  --checkboxBackgroundCheckedHover,
   $light-blue500
 );
-$checkbox-background-disabled: var(
-  --checkbox-background-disabled,
+$checkboxBackgroundDisabled: var(
+  --checkboxBackgroundDisabled,
   $light-primary200
 );
 
-$checkbox-text: var(--checkbox-text, $light-primary900);
-$checkbox-text-hover: var(
-  --checkbox-text-hover,
-  $light-blue500
-);
-$checkbox-text-disabled: var(
-  --checkbox-text-disabled,
-  $light-primary300
-);
+$checkboxText: var(--checkboxText, $light-primary900);
+$checkboxTextHover: var(--checkboxTextHover, $light-blue500);
+$checkboxTextDisabled: var(--checkboxTextDisabled, $light-primary300);
 
 // mark
-$checkbox-mark-checked: var(--checkbox-mark-checked, $light-primary000);
-$checkbox-mark-checked-disabled: var(
-  --checkbox-mark-checked-disabled,
+$checkboxMarkChecked: var(--checkboxMarkChecked, $light-primary000);
+$checkboxMarkCheckedDisabled: var(
+  --checkboxMarkCheckedDisabled,
   $light-primary200
 );
-$checkbox-mark-checked-hover: var(
-  --checkbox-mark-checked-hover,
-  $light-primary000
-);
+$checkboxMarkCheckedHover: var(--checkboxMarkCheckedHover, $light-primary000);
