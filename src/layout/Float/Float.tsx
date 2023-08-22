@@ -42,10 +42,11 @@ function Float<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     typeof top === 'number' ||
     typeof left === 'number';
 
-  const _style =
-    isPosition && startDirection === 'rb'
+  const _style = isPosition
+    ? startDirection === 'rb'
       ? { ...style, bottom, right }
-      : { ...style, top, left };
+      : { ...style, top, left }
+    : undefined;
 
   return (
     <ELEMENT

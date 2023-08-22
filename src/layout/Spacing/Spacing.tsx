@@ -27,11 +27,13 @@ function Spacing<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   ref: React.Ref<any>,
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
-
-  const _style =
-    typeof spacing === 'number' && direction === 'vertical'
+  const isSpacing = typeof spacing === 'number';
+  const _style = isSpacing
+    ? direction === 'vertical'
       ? { ...style, height: spacing }
-      : { ...style, width: spacing };
+      : { ...style, width: spacing }
+    : undefined;
+
   return (
     <ELEMENT
       {...props}
