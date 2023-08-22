@@ -6,11 +6,19 @@ const cx = classNames.bind(style);
 
 type Props = {
   multiple: boolean;
+  size?: number;
+  isSize: boolean;
 };
 
-function Mark({ multiple }: Props) {
+function Mark({ multiple, size, isSize }: Props) {
+  const _style: React.CSSProperties | undefined = isSize
+    ? {
+        fontSize: size,
+      }
+    : undefined;
+
   return (
-    <Flex className={cx('mark')}>
+    <Flex className={cx('mark')} style={_style}>
       {multiple ? (
         <svg
           width='1em'

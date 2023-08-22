@@ -4,6 +4,10 @@ import Checkbox, {
   type CheckboxProps,
 } from '@src/components/Checkbox/Checkbox';
 
+import classNames from 'classnames/bind';
+import style from './Components.module.scss';
+const cx = classNames.bind(style);
+
 const meta: Meta<typeof Checkbox> = {
   title: 'UI/Components/Checkbox',
   component: Checkbox,
@@ -20,19 +24,17 @@ const meta: Meta<typeof Checkbox> = {
     multiple: {
       option: ['true', 'false'],
     },
-    size: {
-      options: ['xs', 'sm', 'md', 'lg'],
-      control: {
-        type: 'select',
-      },
-    },
   },
 };
 
 const Template = (args: CheckboxProps) => {
   const { children, ...arg } = args;
 
-  return <Checkbox {...arg}>{children}</Checkbox>;
+  return (
+    <Checkbox className={cx('checkbox')} {...arg}>
+      {children}
+    </Checkbox>
+  );
 };
 
 export const PrimaryCheckbox: StoryFn<CheckboxProps> = Template.bind({});
@@ -41,7 +43,7 @@ PrimaryCheckbox.args = {
   checked: true,
   disabled: false,
   multiple: false,
-  size: 'md',
+  size: 16,
 };
 
 export default meta;

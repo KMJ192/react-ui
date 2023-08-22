@@ -65,47 +65,15 @@
   }
 }
 
-@mixin size {
-  &.xs {
-    width: 12px;
-    height: 12px;
-    font-size: 12px;
-    .mark {
-      font-size: 12px;
-    }
-  }
-  &.sm {
-    width: 14px;
-    height: 14px;
-    font-size: 14px;
-    .mark {
-      font-size: 14px;
-    }
-  }
-  &.md {
-    width: 16px;
-    height: 16px;
-    font-size: $fontSize;
-    .mark {
-      font-size: $fontSize;
-    }
-  }
-  &.lg {
-    width: 24px;
-    height: 24px;
-    font-size: 20px;
-    .mark {
-      font-size: 24px;
-    }
-  }
-}
-
 @mixin default {
   border-radius: 2px;
   cursor: pointer;
   column-gap: 8px;
   align-items: center;
   -webkit-box-align: center;
+  width: $size;
+  height: $size;
+  aspect-ratio: 1;
 }
 
 @mixin disabled {
@@ -119,5 +87,4 @@
   @include disabled;
   @include color-set;
   @include mark;
-  @include size;
 }

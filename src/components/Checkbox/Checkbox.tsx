@@ -4,7 +4,7 @@ import Flex from '@src/layout/Flex/Flex';
 
 import Mark from './Mark';
 
-import type { COMBINE_ELEMENT_PROPS, SIZE } from '@src/types/types';
+import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
@@ -15,7 +15,7 @@ type BaseProps = {
   checked?: boolean;
   multiple?: boolean;
   disabled?: boolean;
-  size?: SIZE;
+  size?: number;
 };
 
 const ELEMENT = 'div';
@@ -28,20 +28,31 @@ function Checkbox<T extends React.ElementType = typeof ELEMENT>(
     checked = false,
     multiple = false,
     disabled = false,
-    size = 'md',
+    size,
     className,
+    style,
     ...props
   }: Props<T>,
   ref: React.Ref<any>,
 ) {
+  const isSize = typeof size === 'number';
+  const _style: React.CSSProperties | undefined = isSize
+    ? {
+        ...style,
+        width: size,
+        height: size,
+      }
+    : undefined;
+
   return (
     <Flex
       {...props}
       as={ELEMENT}
       ref={ref}
-      className={cx('checkbox', { checked }, { disabled }, size, className)}
+      style={_style}
+      className={cx('checkbox', { checked }, { disabled }, className)}
     >
-      <Mark multiple={multiple} />
+      <Mark multiple={multiple} isSize={isSize} size={size} />
       {children}
     </Flex>
   );
