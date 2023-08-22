@@ -4,9 +4,7 @@ import Checkbox, {
   type CheckboxProps,
 } from '@src/components/Checkbox/Checkbox';
 
-import classNames from 'classnames/bind';
 import style from './Components.module.scss';
-const cx = classNames.bind(style);
 
 const meta: Meta<typeof Checkbox> = {
   title: 'UI/Components/Checkbox',
@@ -31,7 +29,7 @@ const Template = (args: CheckboxProps) => {
   const { children, ...arg } = args;
 
   return (
-    <Checkbox className={cx('checkbox')} {...arg}>
+    <Checkbox className={style.checkbox} {...arg}>
       {children}
     </Checkbox>
   );
