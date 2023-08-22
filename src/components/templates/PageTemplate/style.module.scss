@@ -20,10 +20,10 @@ $sideNav-width: 164px;
 
 .page-template {
   // @include hide-gnb;
-  --header-min-height: #{$header-height};
-  --header-max-height: #{$header-height};
-  --footer-min-height: #{$footer-height};
-  --footer-max-height: #{$footer-height};
+  --headerMinHeight: #{$header-height};
+  --headerMaxHeight: #{$header-height};
+  --footerMinHeight: #{$footer-height};
+  --footerMaxHeight: #{$footer-height};
   height: 100%;
   width: 100%;
   .gnb {
