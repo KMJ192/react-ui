@@ -9,6 +9,7 @@ const cx = classNames.bind(style);
 type BaseProps = {
   percent?: number;
   isPending?: boolean;
+  height?: number;
 };
 
 const ELEMENT = 'div';
@@ -16,11 +17,31 @@ const ELEMENT = 'div';
 type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
 
 function Progressbar<T extends React.ElementType = typeof ELEMENT>(
-  { className, percent = 0, isPending = false, ...props }: Props<T>,
+  {
+    className,
+    percent = 0,
+    isPending = false,
+    height,
+    style,
+    ...props
+  }: Props<T>,
   ref: React.Ref<any>,
 ) {
+  const isHeight = typeof height === 'number';
+  const _style = isHeight
+    ? {
+        ...style,
+        height,
+      }
+    : undefined;
+
   return (
-    <ELEMENT {...props} ref={ref} className={cx('progressbar', className)}>
+    <ELEMENT
+      {...props}
+      ref={ref}
+      style={_style}
+      className={cx('progressbar', className)}
+    >
       <div
         className={cx('bar')}
         style={{
