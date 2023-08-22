@@ -31,6 +31,7 @@
     // js/ts coding convention
     "linebreak-style": 0,
     "global-require": 0,
+    "no-nested-ternary": 0,
     // "jsx-quotes": ["warning", "prefer-single"],
     "no-use-before-define": 0,
     "no-shadow": 0,
