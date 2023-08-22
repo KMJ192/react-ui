@@ -2,7 +2,7 @@ import React from 'react';
 
 import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
 
-import Center from '@src/components/layout/Center/Center';
+import Center from '@src/layout/Center/Center';
 import Left from './Left/Left';
 import Mid from './Mid/Mid';
 import Right from './Right/Right';

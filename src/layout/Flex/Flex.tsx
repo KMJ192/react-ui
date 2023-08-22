@@ -29,9 +29,6 @@ function Flex<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     >
       {children}
     </ELEMENT>
-    // <Styled.Container {...props} as={ELEMENT} ref={ref} className={className}>
-    //   {children}
-    // </Styled.Container>
   );
 }
 

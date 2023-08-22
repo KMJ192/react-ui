@@ -2,7 +2,7 @@ import React from 'react';
 
 import { When } from '@himideula/react-utils';
 
-import Flex from '@src/components/layout/Flex/Flex';
+import Flex from '@src/layout/Flex/Flex';
 
 import type { COMBINE_ELEMENT_PROPS, SIZE } from '@src/types/types';
 

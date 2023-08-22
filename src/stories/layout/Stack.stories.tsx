@@ -1,7 +1,11 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
-import Stack from '@src/components/layout/Stack/Stack';
-import type { StackProps } from '@src/components/layout/Stack/Stack';
+import Stack from '@src/layout/Stack/Stack';
+import type { StackProps } from '@src/layout/Stack/Stack';
+
+import classNames from 'classnames/bind';
+import style from './layout.module.scss';
+const cx = classNames.bind(style);
 
 const meta: Meta<typeof Stack> = {
   title: 'UI/Layout/Stack',
@@ -21,14 +25,7 @@ const meta: Meta<typeof Stack> = {
 
 const Template = (args: StackProps) => {
   return (
-    <Stack
-      {...args}
-      style={
-        {
-          '--layoutStackGap': '12px',
-        } as any
-      }
-    >
+    <Stack {...args} className={cx('stack')}>
       <div>stack1</div>
       <div>stack2</div>
       <div>stack3</div>

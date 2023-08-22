@@ -20,15 +20,31 @@ const DEFAULT_ELEMENT = 'div';
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
 function Float<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
-  { as, children, startDirection = 'lt', className, ...props }: Props<T>,
+  {
+    as,
+    children,
+    startDirection = 'lt',
+    left = 0,
+    right = 0,
+    top = 0,
+    bottom = 0,
+    style,
+    className,
+    ...props
+  }: Props<T>,
   ref: React.Ref<any>,
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
+  const _style =
+    startDirection === 'rb'
+      ? { ...style, bottom, right }
+      : { ...style, top, left };
 
   return (
     <ELEMENT
       {...props}
       ref={ref}
+      style={_style}
       className={cx('float', startDirection, className)}
     >
       {children}

@@ -1,7 +1,7 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
-import Spacing from '@src/components/layout/Spacing/Spacing';
-import type { SpacingProps } from '@src/components/layout/Spacing/Spacing';
+import Spacing from '@src/layout/Spacing/Spacing';
+import type { SpacingProps } from '@src/layout/Spacing/Spacing';
 
 const meta: Meta<typeof Spacing> = {
   title: 'UI/Layout/Spacing',
@@ -37,6 +37,7 @@ const LayoutTemplate = (args: SpacingProps) => {
 export const SpacingStory: StoryFn<SpacingProps> = LayoutTemplate.bind({});
 SpacingStory.args = {
   direction: 'vertical',
+  spacing: 12,
 };
 
 export default meta;

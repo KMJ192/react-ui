@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Center from '@src/components/layout/Center/Center';
-import Flex from '@src/components/layout/Flex/Flex';
+import Center from '@src/layout/Center/Center';
+import Flex from '@src/layout/Flex/Flex';
 
 import type { COMBINE_ELEMENT_PROPS, SIZE } from '@src/types/types';
 

@@ -1,7 +1,7 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
-import Flex from '@src/components/layout/Flex/Flex';
-import type { FlexProps } from '@src/components/layout/Flex/Flex';
+import Flex from '@src/layout/Flex/Flex';
+import type { FlexProps } from '@src/layout/Flex/Flex';
 
 const meta: Meta<typeof Flex> = {
   title: 'UI/Layout/Flex',

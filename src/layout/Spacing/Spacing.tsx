@@ -8,6 +8,7 @@ const cx = classNames.bind(style);
 
 type BaseProps = {
   direction?: 'horizontal' | 'vertical';
+  spacing?: number;
 };
 
 const DEFAULT_ELEMENT = 'div';
@@ -15,16 +16,28 @@ const DEFAULT_ELEMENT = 'div';
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
 function Spacing<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
-  { as, direction = 'vertical', className, ...props }: Props<T>,
+  {
+    as,
+    direction = 'vertical',
+    spacing = 0,
+    className,
+    style,
+    ...props
+  }: Props<T>,
   ref: React.Ref<any>,
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
 
+  const _style =
+    direction === 'vertical'
+      ? { ...style, height: spacing }
+      : { ...style, width: spacing };
   return (
     <ELEMENT
       {...props}
       ref={ref}
       direction={direction}
+      style={_style}
       className={cx('spacing', direction, className)}
     />
   );

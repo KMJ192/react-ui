@@ -3,8 +3,8 @@ import React from 'react';
 import { Switch, Case, Default } from '@himideula/react-utils';
 import { When } from '@himideula/react-utils';
 
-import Center from '@src/components/layout/Center/Center';
-import Flex from '@src/components/layout/Flex/Flex';
+import Center from '@src/layout/Center/Center';
+import Flex from '@src/layout/Flex/Flex';
 import Spinner from '../Spinner/Spinner';
 
 import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';

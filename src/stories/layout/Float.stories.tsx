@@ -1,7 +1,7 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
-import Float from '@src/components/layout/Float/Float';
-import type { FloatProps } from '@src/components/layout/Float/Float';
+import Float from '@src/layout/Float/Float';
+import type { FloatProps } from '@src/layout/Float/Float';
 
 const meta: Meta<typeof Float> = {
   title: 'UI/Layout/Float',
