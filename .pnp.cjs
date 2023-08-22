@@ -46,7 +46,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:18.2.7"],\
             ["@typescript-eslint/eslint-plugin", "virtual:8aa25f3c0a6341672fe940fd09713c88f2e5dd32805ca759f17321bb0d76c6ace77fe1720f0948c1e79ea191a9c796a0266f232f7feca2b54652a013521128c7#npm:5.62.0"],\
             ["@typescript-eslint/parser", "virtual:8aa25f3c0a6341672fe940fd09713c88f2e5dd32805ca759f17321bb0d76c6ace77fe1720f0948c1e79ea191a9c796a0266f232f7feca2b54652a013521128c7#npm:5.62.0"],\
-            ["@vitejs/plugin-react", "virtual:8aa25f3c0a6341672fe940fd09713c88f2e5dd32805ca759f17321bb0d76c6ace77fe1720f0948c1e79ea191a9c796a0266f232f7feca2b54652a013521128c7#npm:4.0.4"],\
             ["classnames", "npm:2.3.2"],\
             ["eslint", "npm:8.47.0"],\
             ["eslint-config-airbnb", "virtual:8aa25f3c0a6341672fe940fd09713c88f2e5dd32805ca759f17321bb0d76c6ace77fe1720f0948c1e79ea191a9c796a0266f232f7feca2b54652a013521128c7#npm:19.0.4"],\
@@ -6051,30 +6050,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["npm:4.0.4", {\
-          "packageLocation": "./.yarn/cache/@vitejs-plugin-react-npm-4.0.4-a752ee42a8-ec25400dc7.zip/node_modules/@vitejs/plugin-react/",\
-          "packageDependencies": [\
-            ["@vitejs/plugin-react", "npm:4.0.4"]\
-          ],\
-          "linkType": "SOFT"\
-        }],\
-        ["virtual:8aa25f3c0a6341672fe940fd09713c88f2e5dd32805ca759f17321bb0d76c6ace77fe1720f0948c1e79ea191a9c796a0266f232f7feca2b54652a013521128c7#npm:4.0.4", {\
-          "packageLocation": "./.yarn/__virtual__/@vitejs-plugin-react-virtual-1c352f3449/0/cache/@vitejs-plugin-react-npm-4.0.4-a752ee42a8-ec25400dc7.zip/node_modules/@vitejs/plugin-react/",\
-          "packageDependencies": [\
-            ["@vitejs/plugin-react", "virtual:8aa25f3c0a6341672fe940fd09713c88f2e5dd32805ca759f17321bb0d76c6ace77fe1720f0948c1e79ea191a9c796a0266f232f7feca2b54652a013521128c7#npm:4.0.4"],\
-            ["@babel/core", "npm:7.22.10"],\
-            ["@babel/plugin-transform-react-jsx-self", "virtual:e27fa6423e771e9a0e410e98379b0b817cf3f7ac9288ce9b5182958380b92346e332b6b64f5008b72e860435f3d1eab8a214a84bac3f12882f60610ee8ededc8#npm:7.22.5"],\
-            ["@babel/plugin-transform-react-jsx-source", "virtual:e27fa6423e771e9a0e410e98379b0b817cf3f7ac9288ce9b5182958380b92346e332b6b64f5008b72e860435f3d1eab8a214a84bac3f12882f60610ee8ededc8#npm:7.22.5"],\
-            ["@types/vite", null],\
-            ["react-refresh", "npm:0.14.0"],\
-            ["vite", "virtual:8aa25f3c0a6341672fe940fd09713c88f2e5dd32805ca759f17321bb0d76c6ace77fe1720f0948c1e79ea191a9c796a0266f232f7feca2b54652a013521128c7#npm:4.4.9"]\
-          ],\
-          "packagePeers": [\
-            "@types/vite",\
-            "vite"\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["virtual:e701cfd65dd7730d1095d6ff048ba6584318821c9886667522c555f3bf0506bfada07cd1bc8f8d904efd2b4d76aca920391c678bc665be3301a4db5e905596cf#npm:3.1.0", {\
           "packageLocation": "./.yarn/__virtual__/@vitejs-plugin-react-virtual-e27fa6423e/0/cache/@vitejs-plugin-react-npm-3.1.0-98ff1f6673-450fac79e6.zip/node_modules/@vitejs/plugin-react/",\
           "packageDependencies": [\
@@ -6343,7 +6318,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:18.2.7"],\
             ["@typescript-eslint/eslint-plugin", "virtual:8aa25f3c0a6341672fe940fd09713c88f2e5dd32805ca759f17321bb0d76c6ace77fe1720f0948c1e79ea191a9c796a0266f232f7feca2b54652a013521128c7#npm:5.62.0"],\
             ["@typescript-eslint/parser", "virtual:8aa25f3c0a6341672fe940fd09713c88f2e5dd32805ca759f17321bb0d76c6ace77fe1720f0948c1e79ea191a9c796a0266f232f7feca2b54652a013521128c7#npm:5.62.0"],\
-            ["@vitejs/plugin-react", "virtual:8aa25f3c0a6341672fe940fd09713c88f2e5dd32805ca759f17321bb0d76c6ace77fe1720f0948c1e79ea191a9c796a0266f232f7feca2b54652a013521128c7#npm:4.0.4"],\
             ["classnames", "npm:2.3.2"],\
             ["eslint", "npm:8.47.0"],\
             ["eslint-config-airbnb", "virtual:8aa25f3c0a6341672fe940fd09713c88f2e5dd32805ca759f17321bb0d76c6ace77fe1720f0948c1e79ea191a9c796a0266f232f7feca2b54652a013521128c7#npm:19.0.4"],\
@@ -11658,10 +11632,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["postcss", [\
-        ["npm:8.4.27", {\
-          "packageLocation": "./.yarn/cache/postcss-npm-8.4.27-2a9f5f8f40-1cdd0c2988.zip/node_modules/postcss/",\
+        ["npm:8.4.28", {\
+          "packageLocation": "./.yarn/cache/postcss-npm-8.4.28-ce7cf45f10-f605c24a36.zip/node_modules/postcss/",\
           "packageDependencies": [\
-            ["postcss", "npm:8.4.27"],\
+            ["postcss", "npm:8.4.28"],\
             ["nanoid", "npm:3.3.6"],\
             ["picocolors", "npm:1.0.0"],\
             ["source-map-js", "npm:1.0.2"]\
@@ -12549,6 +12523,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/rollup-npm-3.28.0-4ab1b4022e-6ded4a0d3c.zip/node_modules/rollup/",\
           "packageDependencies": [\
             ["rollup", "npm:3.28.0"],\
+            ["fsevents", "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:3.28.1", {\
+          "packageLocation": "./.yarn/cache/rollup-npm-3.28.1-f67720d1e1-1fcab0929c.zip/node_modules/rollup/",\
+          "packageDependencies": [\
+            ["rollup", "npm:3.28.1"],\
             ["fsevents", "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"]\
           ],\
           "linkType": "HARD"\
@@ -13976,8 +13958,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["fsevents", "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"],\
             ["less", null],\
             ["lightningcss", null],\
-            ["postcss", "npm:8.4.27"],\
-            ["rollup", "npm:3.28.0"],\
+            ["postcss", "npm:8.4.28"],\
+            ["rollup", "npm:3.28.1"],\
             ["sass", "npm:1.65.1"],\
             ["stylus", null],\
             ["sugarss", null],\
