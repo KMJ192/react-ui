@@ -1,4 +1,4 @@
-@import '@styles/color.module.scss';
+@import 'src/styles/color.module.scss';
 
 @mixin row-light {
   --rowBoxShadow: 0px 3px 6px rgba(64, 64, 64, 0.2);

@@ -1,4 +1,4 @@
-@import '@styles/color.module.scss';
+@import 'src/styles/color.module.scss';
 
 $radioBorder: var(--radioBorder, $light-primary300);
 $radioBorderChecked: var(--radioBorderChecked, $light-blue400);

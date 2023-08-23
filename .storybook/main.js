@@ -12,7 +12,7 @@ module.exports = {
     config.resolve.alias = {
       ...config.resolve.alias,
       '@src': path.resolve(__dirname, '../src'),
-      '@styles': path.resolve(__dirname, '../src/styles'),
+      'src/styles': path.resolve(__dirname, '../src/styles'),
       '@icons': path.resolve(__dirname, '../src/static/icons'),
       '@migration': path.resolve(__dirname, '../src/components/migration'),
     };

@@ -1,4 +1,4 @@
-@import '@styles/color.module.scss';
+@import 'src/styles/color.module.scss';
 
 @mixin spinner-light {
   --spinnerColor: #{$light-primary400};

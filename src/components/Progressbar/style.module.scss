@@ -42,7 +42,7 @@
   overflow: hidden;
 }
 
-.progressbar {
+.progress-bar {
   @include progress-body;
   @include bar;
 }

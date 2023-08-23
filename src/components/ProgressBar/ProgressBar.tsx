@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
+import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
@@ -12,12 +12,13 @@ type BaseProps = {
   height?: number;
 };
 
-const ELEMENT = 'div';
+const DEFAULT_ELEMENT = 'div';
 
-type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function Progressbar<T extends React.ElementType = typeof ELEMENT>(
+function Progressbar<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   {
+    as,
     className,
     percent = 0,
     isPending = false,
@@ -27,6 +28,7 @@ function Progressbar<T extends React.ElementType = typeof ELEMENT>(
   }: Props<T>,
   ref: React.Ref<any>,
 ) {
+  const ELEMENT = as || DEFAULT_ELEMENT;
   const isHeight = typeof height === 'number';
   const _style = isHeight
     ? {
@@ -40,7 +42,7 @@ function Progressbar<T extends React.ElementType = typeof ELEMENT>(
       {...props}
       ref={ref}
       style={_style}
-      className={cx('progressbar', className)}
+      className={cx('progress-bar', className)}
     >
       <div
         className={cx('bar')}
@@ -54,5 +56,5 @@ function Progressbar<T extends React.ElementType = typeof ELEMENT>(
   );
 }
 
-export type ProgressBarProps = Props<typeof ELEMENT>;
+export type ProgressBarProps = Props<typeof DEFAULT_ELEMENT>;
 export default React.forwardRef(Progressbar) as typeof Progressbar;

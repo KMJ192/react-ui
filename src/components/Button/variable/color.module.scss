@@ -1,4 +1,4 @@
-@import '@styles/color.module.scss';
+@import 'src/styles/color.module.scss';
 
 $buttonBackground: var(--buttonBackground, $light-primary000);
 $buttonBackgroundHover: var(--buttonBackgroundHover, $light-blue000);

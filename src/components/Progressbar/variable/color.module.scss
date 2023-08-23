@@ -1,4 +1,4 @@
-@import '@styles/color.module.scss';
+@import 'src/styles/color.module.scss';
 
 $progressBody: var(--progressBody, $light-primary200);
 $progressBar: var(--progressBar, $light-blue600);

@@ -1,4 +1,4 @@
-@import '@styles/color.module.scss';
+@import 'src/styles/color.module.scss';
 
 $inputBorder: var(--inputBorder, $light-primary400);
 $inputBorderFocus: var(--inputBorderFocus, $light-blue500);

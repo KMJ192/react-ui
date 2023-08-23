@@ -1,4 +1,4 @@
-@import '@src/styles/color.module.scss';
+@import 'src/styles/color.module.scss';
 
 $tabBackground: var(--tabBackground, $light-primary000);
 $tabBackgroundHover: var(--tabBackgroundHover, $light-blue100);

@@ -1,4 +1,4 @@
-@import '@styles/color.module.scss';
+@import 'src/styles/color.module.scss';
 
 $spinnerColor: var(--spinnerColor, $light-primary400);
 $spinnerColor2: var(--spinnerColor2, $light-primary500);

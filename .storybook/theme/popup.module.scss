@@ -1,4 +1,4 @@
-@import '@styles/color.module.scss';
+@import 'src/styles/color.module.scss';
 
 @mixin popup-light {
   --popupBoxShadow: 0px 3px 6px rgba(0, 0, 0, 0.2);

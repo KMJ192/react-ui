@@ -1,4 +1,4 @@
-@import '@styles/color.module.scss';
+@import 'src/styles/color.module.scss';
 
 $popupBoxShadow: var(--popupBoxShadow, 0px 3px 6px rgba(0, 0, 0, 0.2));
 $popupBackground: var(--popupBackground, $light-primary000);
