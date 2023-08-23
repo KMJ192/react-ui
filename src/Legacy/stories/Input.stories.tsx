@@ -5,7 +5,7 @@ import showIcon from '@icons/show_view_icon.svg';
 import keyIcon from '@icons/key_icon.svg';
 
 const meta: Meta<typeof Input> = {
-  title: 'UI/Components/Input',
+  title: 'UI/Legacy/Input',
   component: Input,
   parameters: {
     componentSubtitle: 'Input',

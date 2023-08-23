@@ -2,7 +2,7 @@ import Text, { type TextProps } from '../components/Text/Text';
 import type { Meta, StoryFn } from '@storybook/react';
 
 const meta: Meta<typeof Text> = {
-  title: 'UI/Components/Text',
+  title: 'UI/Legacy/Text',
   component: Text,
   parameters: {
     componentSubtitle: 'Text',

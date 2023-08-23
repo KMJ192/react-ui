@@ -3,7 +3,7 @@ import type { StoryFn, Meta } from '@storybook/react';
 import Switch, { type SwitchProps } from '../components/Switch/Switch';
 
 const meta: Meta<typeof Switch> = {
-  title: 'UI/Components/Switch',
+  title: 'UI/Legacy/Switch',
   component: Switch,
   parameters: {
     componentSubtitle: 'Switch',
