@@ -1,0 +1,48 @@
+@import './variable/color.module.scss';
+@import './variable/size.module.scss';
+
+@keyframes progress {
+  0% {
+    left: -36px;
+  }
+  100% {
+    left: calc(100% + 36px);
+  }
+}
+
+@mixin bar {
+  .bar {
+    background: $progressBar;
+    height: 100%;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    .pending {
+      position: absolute;
+      height: 100%;
+      width: 36px;
+      top: 0;
+      left: -36px;
+      background: linear-gradient(
+        0.25turn,
+        $progressBar,
+        $progressPending,
+        $progressBar
+      );
+      animation: progress 1.3s infinite;
+    }
+  }
+}
+
+@mixin progress-body {
+  width: 100%;
+  height: $height;
+  background: $progressBody;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressbar {
+  @include progress-body;
+  @include bar;
+}

@@ -1,0 +1,55 @@
+@import './variable/color.module.scss';
+
+$header-height: 64px;
+$footer-height: 72px;
+$sideNav-width: 164px;
+
+// @mixin hide-gnb {
+//   &.hide-gnb {
+//     .gnb {
+//       transform: translate(-$sideNav-width);
+//     }
+//     .header {
+//       margin-left: 0;
+//     }
+//     .contents {
+//       margin-left: 0;
+//     }
+//   }
+// }
+
+.page-template {
+  // @include hide-gnb;
+  --headerMinHeight: #{$header-height};
+  --headerMaxHeight: #{$header-height};
+  --footerMinHeight: #{$footer-height};
+  --footerMaxHeight: #{$footer-height};
+  height: 100%;
+  width: 100%;
+  .gnb {
+    position: fixed;
+    z-index: 1;
+    width: $sideNav-width;
+    transition: transform 0.5s ease;
+  }
+  .header {
+    position: fixed;
+    margin-left: $sideNav-width;
+    padding: 0 16px;
+    transition: margin-left 0.5s ease;
+  }
+  .contents {
+    display: grid;
+    grid-template-rows: 1fr 72px;
+    margin-left: $sideNav-width;
+    margin-top: $header-height;
+    width: 100%;
+    transition: margin-left 0.5s ease;
+    .page {
+      padding: 16px;
+    }
+    .footer {
+      padding: 0 16px;
+    }
+  }
+}

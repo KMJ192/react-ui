@@ -1,11 +1,15 @@
+@mixin checkbox-size {
+  --checkboxSize: 16px;
+}
+
 @mixin header-size {
-  --header-min-height: 72px;
-  --header-max-height: 72px;
+  --headerMinHeight: 72px;
+  --headerMaxHeight: 72px;
 }
 
 @mixin footer-size {
-  --footer-min-height: 72px;
-  --footer-max-height: 72px;
+  --footerMinHeight: 72px;
+  --footerMaxHeight: 72px;
 }
 
 @mixin size {

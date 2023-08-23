@@ -1,0 +1,39 @@
+@import '@styles/color.module.scss';
+
+// border
+$checkboxBorder: var(--checkboxBorder, $light-primary300);
+$checkboxBorderChecked: var(--checkboxBorderChecked, $light-blue400);
+$checkboxBorderCheckedDisabled: var(
+  --checkboxBorderCheckedDisabled,
+  $light-primary400
+);
+$checkboxBorderCheckedHover: var(--checkboxBorderCheckedHover, $light-blue500);
+$checkboxBorderDisabled: var(--checkboxBorderDisabled, $light-primary300);
+$checkboxBorderHover: var(--checkboxBorderHover, $light-blue500);
+
+// background
+$checkboxBackgroundChecked: var(--checkboxBackgroundChecked, $light-blue400);
+$checkboxBackgroundCheckedDisabled: var(
+  --checkboxBackgroundCheckedDisabled,
+  $light-primary400
+);
+$checkboxBackgroundCheckedHover: var(
+  --checkboxBackgroundCheckedHover,
+  $light-blue500
+);
+$checkboxBackgroundDisabled: var(
+  --checkboxBackgroundDisabled,
+  $light-primary200
+);
+
+$checkboxText: var(--checkboxText, $light-primary900);
+$checkboxTextHover: var(--checkboxTextHover, $light-blue500);
+$checkboxTextDisabled: var(--checkboxTextDisabled, $light-primary300);
+
+// mark
+$checkboxMarkChecked: var(--checkboxMarkChecked, $light-primary000);
+$checkboxMarkCheckedDisabled: var(
+  --checkboxMarkCheckedDisabled,
+  $light-primary200
+);
+$checkboxMarkCheckedHover: var(--checkboxMarkCheckedHover, $light-primary000);

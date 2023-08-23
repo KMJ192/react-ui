@@ -1,0 +1,112 @@
+@import './variable/color.module.scss';
+@import './variable/size.module.scss';
+
+@mixin color-set {
+  .switch-body {
+    background: $switchBackground;
+    &.checked {
+      background: $switchBackgroundChecked;
+      &.disabled {
+        background: $switchBackgroundCheckedDisabled;
+      }
+    }
+    &.disabled {
+      background: $switchBackgroundDisabled;
+    }
+  }
+
+  .switch-bullet {
+    background: $switchBullet;
+    box-shadow: $switchBulletBoxShadow;
+    &.checked {
+      background: $switchBulletChecked;
+      &.disabled {
+        background: $switchBulletCheckedDisabled;
+        box-shadow: none;
+      }
+    }
+    &.disabled {
+      background: $switchBulletDisabled;
+      box-shadow: none;
+    }
+  }
+
+  .children {
+    color: $switchText;
+    &.disabled {
+      color: $switchTextDisabled;
+    }
+  }
+
+  &:not(.disabled):hover {
+    .switch-body {
+      background: $switchBackgroundHover;
+      &.checked {
+        background: $switchBackgroundCheckedHover;
+      }
+    }
+    .switch-bullet {
+      background: $switchBulletHover;
+      &.checked {
+        background: $switchBulletCheckedHover;
+      }
+    }
+    .children {
+      color: $switchTextHover;
+    }
+  }
+}
+
+@mixin switch-body {
+  .switch-body {
+    border-radius: 16px;
+    transition: background-color 0.1s ease;
+  }
+}
+
+@mixin switch-bullet {
+  .switch-bullet {
+    position: absolute;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+  }
+}
+
+@mixin switch {
+  position: relative;
+  align-items: center;
+  -webkit-box-align: center;
+  column-gap: 8px;
+  &:not(.disabled):hover {
+    cursor: pointer;
+  }
+  &.disabled {
+    cursor: not-allowed;
+  }
+}
+
+@mixin size {
+  .switch-body {
+    width: $width;
+    height: $height;
+  }
+  .switch-bullet {
+    width: $bulletSize;
+    height: $bulletSize;
+    transform: translateX(4px);
+    &.checked {
+      transform: translateX(#{calc($width - $bulletSize - 4px)});
+    }
+  }
+  .children {
+    font-size: calc($height - 8px);
+  }
+}
+
+.switch {
+  @include switch;
+  @include switch-body;
+  @include switch-bullet;
+  @include size;
+  @include color-set;
+}

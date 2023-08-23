@@ -1,0 +1,17 @@
+@import '@styles/color.module.scss';
+
+$inputBorder: var(--inputBorder, $light-primary400);
+$inputBorderFocus: var(--inputBorderFocus, $light-blue500);
+$inputBorderError: var(--inputBorderError, $light-red900);
+$inputBorderDisabled: var(--inputBorderDisabled, $light-primary300);
+
+$inputBackground: var(--inputBackground, $light-primary000);
+$inputBackgroundDisabled: var(--inputBackgroundDisabled, $light-primary100);
+
+$inputText: var(--inputText, $light-primary900);
+$inputTextDisabled: var(--inputTextDisabled, $light-primary400);
+
+$inputPlaceholder: var(--inputPlaceholder, $light-primary400);
+$inputPlaceholderDisabled: var(--inputPlaceholderDisabled, $light-primary300);
+
+$inputBoxShadow: var(--inputBoxShadow, 0px 3px 6px rgba(62, 62, 62, 0.1));

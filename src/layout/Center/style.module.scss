@@ -1,0 +1,16 @@
+@import 'src/layout/Flex/flex.scss';
+
+.center {
+  @include flex;
+  height: 100%;
+  width: 100%;
+  &.vertical {
+    align-items: center;
+    -webkit-box-align: center;
+  }
+
+  &.horizontal {
+    justify-content: center;
+    -webkit-box-pack: center;
+  }
+}

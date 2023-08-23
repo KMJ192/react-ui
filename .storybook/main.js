@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  stories: ['../**/*.stories.tsx'],
+  stories: ['../src/stories/**/*.stories.tsx'],
   addons: [
     '@storybook/addon-docs',
     '@storybook/addon-actions',
@@ -14,6 +14,7 @@ module.exports = {
       '@src': path.resolve(__dirname, '../src'),
       '@styles': path.resolve(__dirname, '../src/styles'),
       '@icons': path.resolve(__dirname, '../src/static/icons'),
+      '@migration': path.resolve(__dirname, '../src/components/migration'),
     };
 
     return config;

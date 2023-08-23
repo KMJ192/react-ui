@@ -1,0 +1,18 @@
+@import '@styles/color.module.scss';
+
+$buttonBackground: var(--buttonBackground, $light-primary000);
+$buttonBackgroundHover: var(--buttonBackgroundHover, $light-blue000);
+$buttonBackgroundDisabled: var(--buttonBackgroundDisabled, $light-primary200);
+$buttonBackgroundActive: var(--buttonBackgroundActive, $light-primary100);
+$buttonBackgroundRipple: var(
+  --buttonBackgroundRipple,
+  rgba(255, 255, 255, 0.6)
+);
+
+$buttonText: var(--buttonText, $light-primary900);
+$buttonTextHover: var(--buttonTextHover, $light-primary900);
+$buttonTextDisabled: var(--buttonTextDisabled, $light-primary500);
+$buttonTextActive: var(--buttonTextActive, $light-primary700);
+
+$buttonBoxShadow: var(--buttonBoxShadow, 0px 3px 6px rgba(0, 0, 0, 0.1));
+$buttonOutline: var(--buttonOutline, $light-blue200);

@@ -1,25 +1,25 @@
 @import '@styles/color.module.scss';
 
 @mixin tab-light {
-  --tab-background: #{$light-primary000};
-  --tab-background-hover: #{$light-blue100};
-  --tab-background-disabled: #{$light-primary100};
+  --tabBackground: #{$light-primary000};
+  --tabBackgroundHover: #{$light-blue100};
+  --tabBackgroundDisabled: #{$light-primary100};
 
-  --tab-select-line: #{$light-blue200};
+  --tabSelectLine: #{$light-blue200};
 
-  --tab-text: #{$light-primary900};
-  --tab-text-hover: #{$light-primary800};
-  --tab-text-disabled: #{$light-primary500};
+  --tabText: #{$light-primary900};
+  --tabTextHover: #{$light-primary800};
+  --tabTextDisabled: #{$light-primary500};
 }
 
 @mixin tab-dark {
-  --tab-background: #{$dark-primary200};
-  --tab-background-hover: #{$dark-primary300};
-  --tab-background-disabled: #{$dark-primary100};
+  --tabBackground: #{$dark-primary200};
+  --tabBackgroundHover: #{$dark-primary300};
+  --tabBackgroundDisabled: #{$dark-primary100};
 
-  --tab-select-line: #{$dark-blue400};
+  --tabSelectLine: #{$dark-blue400};
 
-  --tab-text: #{$dark-primary900};
-  --tab-text-hover: #{$dark-primary800};
-  --tab-text-disabled: #{$dark-primary300};
+  --tabText: #{$dark-primary900};
+  --tabTextHover: #{$dark-primary800};
+  --tabTextDisabled: #{$dark-primary300};
 }

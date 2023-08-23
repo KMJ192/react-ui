@@ -1,0 +1,134 @@
+@import '@styles/transition.scss';
+@import './variable/color.module.scss';
+
+@mixin default {
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  overflow: hidden;
+  column-gap: 8px;
+  cursor: pointer;
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+@mixin contents {
+  position: relative;
+}
+
+@mixin shape {
+  &.circle {
+    border-radius: 50%;
+    aspect-ratio: 1;
+  }
+  &.square {
+    aspect-ratio: 1;
+  }
+}
+
+@mixin color-set {
+  background: $buttonBackground;
+  color: $buttonText;
+  box-shadow: $buttonBoxShadow;
+  &:hover {
+    background: $buttonBackgroundHover;
+    color: $buttonTextHover;
+  }
+  &:disabled {
+    background: $buttonBackgroundDisabled;
+    color: $buttonTextDisabled;
+    &:active,
+    &:hover {
+      background: $buttonBackgroundDisabled;
+      color: $buttonTextDisabled;
+    }
+  }
+  &:active {
+    background: $buttonBackgroundActive;
+    color: $buttonTextActive;
+  }
+  &.outlined {
+    background: none;
+    box-shadow: none;
+    outline: 1px solid $buttonOutline;
+    &:hover {
+      background: $buttonBackgroundHover;
+      color: $buttonTextHover;
+    }
+  }
+  &.clear {
+    background: none;
+    box-shadow: none;
+    &:hover {
+      background: $buttonBackgroundHover;
+      color: $buttonTextHover;
+    }
+  }
+}
+
+@mixin ripple-animation {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background: $buttonBackgroundRipple;
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+  }
+
+  &:focus:not(:active)::after {
+    animation: ripple 0.5s ease-out;
+  }
+}
+
+@mixin icon {
+  width: 24px;
+  aspect-ratio: 1;
+  place-content: center;
+}
+
+@mixin spinner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+}
+
+.button {
+  @include default;
+  @include ripple-animation;
+  @include color-set;
+  @include shape;
+
+  .contents {
+    @include contents;
+    .icon {
+      @include icon;
+    }
+    .btn-spinner {
+      @include spinner;
+    }
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(25, 25);
+  }
+  100% {
+    transform: scale(40, 40);
+    opacity: 0;
+  }
+}

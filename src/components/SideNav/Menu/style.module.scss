@@ -1,0 +1,39 @@
+@import '../variable/color.module.scss';
+
+@mixin color-set {
+  background: $sideNav-menu-background;
+  box-shadow: $sideNav-menu-box-shadow;
+  color: $sideNav-menu-text;
+  &:not(.disabled):hover {
+    color: $sideNav-menu-text-hover;
+  }
+  &.selected {
+    background: $sideNav-menu-background-selected;
+    box-shadow: $sideNav-menu-box-shadow-selected;
+    color: $sideNav-menu-text-selected;
+  }
+  &.disabled {
+    background: $sideNav-menu-background-disabled;
+    box-shadow: none;
+    color: $sideNav-menu-text-disabled;
+  }
+}
+
+@mixin menu {
+  align-items: center;
+  -webkit-box-align: center;
+  padding: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  border-radius: 8px 0 0 8px;
+  padding: 12px;
+  transition: color 0.15s, background-color 0.15s;
+  &.disabled {
+    cursor: not-allowed;
+  }
+}
+
+.menu {
+  @include menu;
+  @include color-set;
+}

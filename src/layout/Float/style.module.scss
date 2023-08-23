@@ -1,0 +1,16 @@
+$top: var(--layoutFloatTop, 0px);
+$bottom: var(--layoutFloatBottom, 0px);
+$left: var(--layoutFloatLeft, 0px);
+$right: var(--layoutFloatRight, 0px);
+
+.float {
+  position: fixed;
+  &.lt {
+    top: $top;
+    left: $left;
+  }
+  &.rb {
+    bottom: $bottom;
+    right: $right;
+  }
+}

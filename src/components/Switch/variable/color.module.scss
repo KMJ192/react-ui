@@ -1,0 +1,32 @@
+@import '@styles/color.module.scss';
+
+$switchBackground: var(--switchBackground, $light-primary300);
+$switchBackgroundChecked: var(--switchBackgroundChecked, $light-blue400);
+$switchBackgroundCheckedDisabled: var(
+  --switchBackgroundCheckedDisabled,
+  $light-primary300
+);
+$switchBackgroundCheckedHover: var(
+  --switchBackgroundCheckedHover,
+  $light-blue500
+);
+$switchBackgroundDisabled: var(--switchBackgroundDisabled, $light-primary100);
+$switchBackgroundHover: var(--switchBackgroundHover, $light-blue200);
+
+$switchBullet: var(--switchBullet, $light-primary000);
+$switchBulletChecked: var(--switchBulletChecked, $light-primary000);
+$switchBulletCheckedDisabled: var(
+  --switchBulletCheckedDisabled,
+  $light-primary200
+);
+$switchBulletCheckedHover: var(--switchBulletCheckedHover, $light-primary000);
+$switchBulletDisabled: var(--switchBulletDisabled, $light-primary200);
+$switchBulletHover: var(--switchBulletHover, $light-primary000);
+$switchBulletBoxShadow: var(
+  --switchBulletBoxShadow,
+  0px 3px 6px rgba(63, 63, 63, 0.3)
+);
+
+$switchText: var(--switchText, $light-primary900);
+$switchTextHover: var(--switchTextHover, $light-blue500);
+$switchTextDisabled: var(--switchTextDisabled, $light-primary300);

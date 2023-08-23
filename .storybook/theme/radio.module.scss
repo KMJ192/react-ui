@@ -1,41 +1,41 @@
 @import '@styles/color.module.scss';
 
 @mixin radio-light {
-  --radio-border: #{$light-primary300};
-  --radio-border-checked: #{$light-blue400};
-  --radio-border-checked-disabled: #{$light-primary400};
-  --radio-border-checked-hover: #{$light-blue500};
-  --radio-border-disabled: #{$light-primary300};
-  --radio-border-hover: #{$light-blue500};
+  --radioBorder: #{$light-primary300};
+  --radioBorderChecked: #{$light-blue400};
+  --radioBorderChecked-disabled: #{$light-primary400};
+  --radioBorderCheckedHover: #{$light-blue500};
+  --radioBorderDisabled: #{$light-primary300};
+  --radioBorder-hover: #{$light-blue500};
 
-  --radio-background-checked-disabled: #{$light-primary300};
-  --radio-background-disabled: #{$light-primary200};
+  --radioBackgroundCheckedDisabled: #{$light-primary300};
+  --radioBackgroundDisabled: #{$light-primary200};
 
-  --radio-text: #{$light-primary900};
-  --radio-text-hover: #{$light-blue600};
-  --radio-text-disabled: #{$light-primary300};
+  --radioText: #{$light-primary900};
+  --radioTextHover: #{$light-blue600};
+  --radioTextDisabled: #{$light-primary300};
 
-  --radio-pupil: #{$light-blue400};
-  --radio-pupil-disabled: #{$light-primary500};
-  --radio-pupil-hover: #{$light-blue500};
+  --radioPupil: #{$light-blue400};
+  --radioPupilDisabled: #{$light-primary500};
+  --radioPupilHover: #{$light-blue500};
 }
 
 @mixin radio-dark {
-  --radio-border: #{$dark-primary300};
-  --radio-border-checked: #{$dark-blue300};
-  --radio-border-checked-disabled: #{$dark-primary400};
-  --radio-border-checked-hover: #{$dark-blue100};
-  --radio-border-disabled: #{$dark-primary600};
-  --radio-border-hover: #{$dark-blue100};
+  --radioBorder: #{$dark-primary300};
+  --radioBorderChecked: #{$dark-blue300};
+  --radioBorderChecked-disabled: #{$dark-primary400};
+  --radioBorderCheckedHover: #{$dark-blue100};
+  --radioBorderDisabled: #{$dark-primary600};
+  --radioBorder-hover: #{$dark-blue100};
 
-  --radio-background-checked-disabled: #{$dark-primary400};
-  --radio-background-disabled: #{$dark-primary300};
+  --radioBackgroundCheckedDisabled: #{$dark-primary400};
+  --radioBackgroundDisabled: #{$dark-primary300};
 
-  --radio-text: #{$dark-primary900};
-  --radio-text-hover: #{$dark-blue200};
-  --radio-text-disabled: #{$dark-primary600};
+  --radioText: #{$dark-primary900};
+  --radioTextHover: #{$dark-blue200};
+  --radioTextDisabled: #{$dark-primary600};
 
-  --radio-pupil: #{$dark-blue300};
-  --radio-pupil-disabled: #{$dark-primary600};
-  --radio-pupil-hover: #{$dark-blue100};
+  --radioPupil: #{$dark-blue300};
+  --radioPupilDisabled: #{$dark-primary600};
+  --radioPupilHover: #{$dark-blue100};
 }
