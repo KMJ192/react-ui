@@ -1,11 +1,9 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
-import Footer, {
-  type FooterProps,
-} from '@src/components/molecules/Footer/Footer';
+import Footer, { type FooterProps } from '@src/components/Footer/Footer';
 
 const meta: Meta<typeof Footer> = {
-  title: 'UI/Molecules/Footer',
+  title: 'UI/Components/Footer',
   component: Footer,
   parameters: {
     componentSubtitle: 'Footer',

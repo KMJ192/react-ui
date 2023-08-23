@@ -3,11 +3,11 @@ import { useRef } from 'react';
 
 import PageTemplate, {
   type PageTemplateProps,
-} from '@src/components/templates/PageTemplate/PageTemplate';
-import { SideNavItem } from '@src/components/molecules/SideNav';
+} from '@src/components/PageTemplate/PageTemplate';
+import { SideNavItem } from '@src/components/SideNav';
 
 const meta: Meta<typeof PageTemplate> = {
-  title: 'UI/Template/PageTemplate',
+  title: 'UI/Components/PageTemplate',
   component: PageTemplate,
   parameters: {
     componentSubtitle: 'PageTemplate',

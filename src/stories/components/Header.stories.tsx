@@ -1,11 +1,9 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
-import Header, {
-  type HeaderProps,
-} from '@src/components/molecules/Header/Header';
+import Header, { type HeaderProps } from '@src/components/Header/Header';
 
 const meta: Meta<typeof Header> = {
-  title: 'UI/Molecules/Header',
+  title: 'UI/Components/Header',
   component: Header,
   parameters: {
     componentSubtitle: 'Header',

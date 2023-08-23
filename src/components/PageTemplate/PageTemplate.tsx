@@ -3,10 +3,10 @@ import {
   type SideNavItem,
   SideNavTemplate,
   SideNavKey,
-} from '@src/components/molecules/SideNav';
+} from '@src/components/SideNav';
 import Flex from '@src/layout/Flex/Flex';
-import Header from '@src/components/molecules/Header/Header';
-import Footer from '@src/components/molecules/Footer/Footer';
+import Header from '@src/components/Header/Header';
+import Footer from '@src/components/Footer/Footer';
 
 import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
 
