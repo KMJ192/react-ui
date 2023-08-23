@@ -5,7 +5,7 @@ import ProgressBar, {
 } from '../components/ProgressBar/ProgressBar';
 
 const meta: Meta<typeof ProgressBar> = {
-  title: 'UI/Components/ProgressBar',
+  title: 'UI/Legacy/ProgressBar',
   component: ProgressBar,
   parameters: {
     componentSubtitle: 'ProgressBar',

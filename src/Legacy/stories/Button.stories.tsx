@@ -5,7 +5,7 @@ import Button, { type ButtonProps } from '../components/Button/Button';
 import downloadIcon from '@icons/download_icon.svg';
 
 const meta: Meta<typeof Button> = {
-  title: 'UI/Components/Button',
+  title: 'UI/Legacy/Button',
   component: Button,
   parameters: {
     componentSubtitle: 'Button',

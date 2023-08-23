@@ -3,7 +3,7 @@ import type { StoryFn, Meta } from '@storybook/react';
 import Radio, { type RadioProps } from '../components/Radio/Radio';
 
 const meta: Meta<typeof Radio> = {
-  title: 'UI/Components/Radio',
+  title: 'UI/Legacy/Radio',
   component: Radio,
   parameters: {
     componentSubtitle: 'Radio',

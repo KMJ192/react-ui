@@ -3,7 +3,7 @@ import type { StoryFn, Meta } from '@storybook/react';
 import Checkbox, { type CheckboxProps } from '../components/Checkbox/Checkbox';
 
 const meta: Meta<typeof Checkbox> = {
-  title: 'UI/Components/Checkbox',
+  title: 'UI/Legacy/Checkbox',
   component: Checkbox,
   parameters: {
     componentSubtitle: 'Checkbox',

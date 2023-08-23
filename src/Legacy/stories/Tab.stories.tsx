@@ -4,7 +4,7 @@ import type { Meta, StoryFn } from '@storybook/react';
 import Tab, { type TabProps } from '../components/Tab/Tab';
 
 const meta: Meta<typeof Tab> = {
-  title: 'UI/Components/Tab',
+  title: 'UI/Legacy/Tab',
   component: Tab,
   parameters: {
     componentSubtitle: 'Tab',
