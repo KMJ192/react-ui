@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { Meta, StoryFn } from '@storybook/react';
 
 import Tab, { type TabProps } from '@src/components/Tab/Tab';
+import type { OptionKey } from '@src/components/Tab/types';
 
 const meta: Meta<typeof Tab> = {
   title: 'UI/Components/Tab',
@@ -22,7 +23,7 @@ const meta: Meta<typeof Tab> = {
 const TabTemplate = (args: TabProps) => {
   const [select, setSelect] = useState(0);
 
-  const onSelect = (idx: number) => {
+  const onSelect = (_: OptionKey, idx: number) => {
     setSelect(idx);
   };
 
@@ -33,12 +34,15 @@ export const HorizontalTab: StoryFn<TabProps> = TabTemplate.bind({});
 HorizontalTab.args = {
   options: [
     {
+      key: 0,
       contents: 'option1',
     },
     {
+      key: 1,
       contents: 'option2',
     },
     {
+      key: 2,
       contents: 'option3',
     },
   ],
@@ -49,12 +53,15 @@ export const VerticalTab: StoryFn<TabProps> = TabTemplate.bind({});
 VerticalTab.args = {
   options: [
     {
+      key: 0,
       contents: 'option1',
     },
     {
+      key: 1,
       contents: 'option2',
     },
     {
+      key: 2,
       contents: 'option3',
     },
   ],
