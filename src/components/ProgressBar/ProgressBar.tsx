@@ -33,7 +33,7 @@ function Progressbar<T extends React.ElementType = typeof ELEMENT>(
         ...style,
         height,
       }
-    : undefined;
+    : style;
 
   return (
     <ELEMENT

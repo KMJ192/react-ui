@@ -42,7 +42,7 @@ function Checkbox<T extends React.ElementType = typeof ELEMENT>(
         width: size,
         height: size,
       }
-    : undefined;
+    : style;
 
   return (
     <Flex
