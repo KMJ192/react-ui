@@ -1,31 +1,5 @@
 @import './variable/color.module.scss';
-
-@mixin type1-size {
-  &.xs {
-    width: 16px;
-    height: 16px;
-    border: 2px solid $spinnerColor;
-    border-bottom-color: transparent;
-  }
-  &.sm {
-    width: 20px;
-    height: 20px;
-    border: 3px solid $spinnerColor;
-    border-bottom-color: transparent;
-  }
-  &.md {
-    width: 24px;
-    height: 24px;
-    border: 4px solid $spinnerColor;
-    border-bottom-color: transparent;
-  }
-  &.lg {
-    width: 32px;
-    height: 32px;
-    border: 4px solid $spinnerColor;
-    border-bottom-color: transparent;
-  }
-}
+@import './variable/size.module.scss';
 
 @keyframes rotation {
   0% {
@@ -38,10 +12,13 @@
 
 @mixin type-1 {
   &.type-1 {
-    @include type1-size;
+    width: $size;
+    height: $size;
+    border: $borderWidth solid $spinnerColor;
     border-radius: 50%;
     display: inline-block;
     box-sizing: border-box;
+    border-bottom-color: transparent;
     animation: rotation 1s linear infinite;
   }
 }
