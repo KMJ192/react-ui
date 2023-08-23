@@ -1,0 +1,90 @@
+@import './variable/color.module.scss';
+@import './variable/size.module.scss';
+
+@mixin mark {
+  transition: border-color 0.1s, color 0.1s;
+  .mark {
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    & > svg {
+      transition: all 0.1s cubic-bezier(0.4, 0, 1, 1) 0ms;
+      visibility: hidden;
+    }
+  }
+  &.checked {
+    .mark > svg {
+      visibility: visible;
+    }
+  }
+}
+
+@mixin color-set {
+  border: 2px solid $checkboxBorder;
+  color: $checkboxText;
+
+  .mark > svg {
+    color: $checkboxMarkChecked;
+  }
+
+  &.checked {
+    border-color: $checkboxBorderChecked;
+    .mark > svg {
+      color: $checkboxMarkChecked;
+      background: $checkboxBackgroundChecked;
+    }
+    &.disabled {
+      border-color: $checkboxBorderCheckedDisabled;
+      .mark > svg {
+        background: $checkboxBackgroundCheckedDisabled;
+        color: $checkboxMarkCheckedDisabled;
+      }
+    }
+    &:not(.disabled):hover {
+      border-color: $checkboxBorderCheckedHover;
+      .mark > svg {
+        background: $checkboxBackgroundCheckedHover;
+        color: $checkboxMarkCheckedHover;
+      }
+    }
+  }
+
+  &.disabled {
+    border-color: $checkboxBorderDisabled;
+    color: $checkboxTextDisabled;
+    .mark > svg {
+      visibility: visible;
+      background: $checkboxBackgroundDisabled;
+      color: $checkboxBackgroundDisabled;
+    }
+  }
+
+  &:not(.disabled):hover {
+    border-color: $checkboxBorderHover;
+    color: $checkboxTextHover;
+  }
+}
+
+@mixin default {
+  border-radius: 2px;
+  cursor: pointer;
+  column-gap: 8px;
+  align-items: center;
+  -webkit-box-align: center;
+  width: $size;
+  height: $size;
+  aspect-ratio: 1;
+}
+
+@mixin disabled {
+  &.disabled {
+    cursor: not-allowed;
+  }
+}
+
+.checkbox {
+  @include default;
+  @include disabled;
+  @include color-set;
+  @include mark;
+}

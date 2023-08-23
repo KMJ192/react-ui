@@ -1,11 +1,11 @@
 @import '@styles/color.module.scss';
 
 @mixin row-light {
-  --row-box-shadow: 0px 3px 6px rgba(64, 64, 64, 0.2);
-  --row-background: #{$light-primary000};
+  --rowBoxShadow: 0px 3px 6px rgba(64, 64, 64, 0.2);
+  --rowBackground: #{$light-primary000};
 }
 
 @mixin row-dark {
-  --row-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
-  --row-background: #{$dark-primary000};
+  --rowBoxShadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  --rowBackground: #{$dark-primary000};
 }

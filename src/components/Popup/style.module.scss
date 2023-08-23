@@ -1,0 +1,29 @@
+@import './variable/color.module.scss';
+
+@mixin default {
+  border-radius: 4px;
+  visibility: hidden;
+  opacity: 0;
+  &.visible {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@mixin color-set {
+  box-shadow: $popupBoxShadow;
+  background-color: $popupBackground;
+  color: $popupText;
+}
+
+@mixin animation {
+  &.fade {
+    transition: visibility 0.2s ease-out, opacity 0.2s ease-out;
+  }
+}
+
+.popup {
+  @include default;
+  @include color-set;
+  @include animation;
+}

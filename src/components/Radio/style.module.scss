@@ -1,0 +1,106 @@
+@import './variable/color.module.scss';
+@import './variable/size.module.scss';
+
+@mixin color-set {
+  .mark {
+    border-color: $radioBorder;
+    background: $radioBackground;
+    &.checked {
+      border-color: $radioBorderChecked;
+      background: $radioBackgroundChecked;
+      &.disabled {
+        border-color: $radioBorderChecked-disabled;
+        background: $radioBackgroundCheckedDisabled;
+      }
+      &:not(.disabled):hover {
+        border-color: $radioBorderCheckedHover;
+        background: $radioBackgroundCheckedHover;
+      }
+    }
+
+    .pupil {
+      background: $radioPupil;
+      &.disabled {
+        background: $radioPupilDisabled;
+      }
+    }
+
+    &.disabled {
+      border-color: $radioBorderDisabled;
+      background: $radioBackgroundDisabled;
+      .pupil {
+        background: $radioPupilDisabled;
+      }
+    }
+  }
+  &:hover {
+    .mark {
+      border-color: $radioBorder-hover;
+      background: $radioBackgroundHover;
+      .pupil {
+        &:not(.disabled) {
+          background: $radioPupilHover;
+        }
+      }
+    }
+    .children {
+      color: $radioTextHover;
+    }
+  }
+  .children {
+    color: $radioText;
+    &.disabled {
+      color: $radioTextDisabled;
+    }
+  }
+}
+
+@mixin pupil {
+  .pupil {
+    width: $pupilSize;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    place-content: center;
+    transform: scale(0);
+    transition: transform 0.1s ease, background-color 0.1s ease;
+    &.checked {
+      transform: scale(1);
+    }
+  }
+}
+
+@mixin mark {
+  width: $size;
+  border: 2px solid;
+  aspect-ratio: 1;
+  place-content: center;
+  border-radius: 50%;
+  transition: border-color 0.1s ease;
+}
+
+@mixin radio {
+  align-items: center;
+  -webkit-box-align: center;
+  column-gap: 8px;
+  cursor: pointer;
+  &.disabled {
+    cursor: not-allowed;
+  }
+}
+
+@mixin children {
+  .children {
+    font-size: $size;
+    transition: color 0.1s ease;
+  }
+}
+
+.radio {
+  @include radio;
+  @include children;
+  .mark {
+    @include mark;
+    @include pupil;
+  }
+  @include color-set;
+}

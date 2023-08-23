@@ -1,0 +1,10 @@
+$rowGap: var(--layoutSpacing, 0px);
+
+.spacing {
+  &.vertical {
+    height: $rowGap;
+  }
+  &.horizontal {
+    width: $rowGap;
+  }
+}

@@ -30,6 +30,7 @@
   "include": [
     ".",
     "src/**/*",
+    "src/styles/**/*",
     "typings/**/*.d.ts",
     "**/declaration.d.ts",
     "**/namespace.d.ts",

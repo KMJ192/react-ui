@@ -1,7 +1,10 @@
 @import '@styles/color.module.scss';
 
 @mixin sideNav-light {
-  --side-nav-background: #{$light-primary200};
+  --side-nav-background: linear-gradient(
+    #{$light-primary100},
+    #{$light-background}
+  );
 
   --sideNav-box-shadow: 0px 3px 6px rgba(64, 64, 64, 0.3);
   --sideNav-menu-background-selected: #{$light-primary000};

@@ -1,7 +1,7 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
-import Row from '@src/components/layout/Row/Row';
-import type { RowProps } from '@src/components/layout/Row/Row';
+import Row from '@src/layout/Row/Row';
+import type { RowProps } from '@src/layout/Row/Row';
 
 const meta: Meta<typeof Row> = {
   title: 'UI/Layout/Row',

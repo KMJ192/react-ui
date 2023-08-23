@@ -1,0 +1,96 @@
+@import './variable/color.module.scss';
+
+@mixin header1 {
+  font-size: 64px;
+  font-weight: 700;
+}
+@mixin header2 {
+  font-size: 48px;
+  font-weight: 700;
+}
+@mixin header3 {
+  font-size: 32px;
+  font-weight: 600;
+}
+@mixin title1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+@mixin title2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+@mixin subtitle1 {
+  font-size: 16px;
+  font-weight: 500;
+}
+@mixin subtitle2 {
+  font-size: 14px;
+  font-weight: 500;
+}
+@mixin body1 {
+  font-size: 16px;
+  font-weight: 400;
+}
+@mixin body2 {
+  font-size: 14px;
+  font-weight: 400;
+}
+@mixin caption1 {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+@mixin ellipsis {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.typo {
+  color: $textColor;
+  &.h1,
+  &.header1 {
+    @include header1;
+  }
+  &.h2,
+  &.header2 {
+    @include header2;
+  }
+  &.h3,
+  &.header3 {
+    @include header3;
+  }
+  &.t1,
+  &.title1 {
+    @include title1;
+  }
+  &.t2,
+  &.title2 {
+    @include title2;
+  }
+  &.s1,
+  &.subtitle1 {
+    @include subtitle1;
+  }
+  &.s2,
+  &.subtitle2 {
+    @include subtitle2;
+  }
+  &.b1,
+  &.body1 {
+    @include body1;
+  }
+  &.b2,
+  &.body2 {
+    @include body2;
+  }
+  &.c1,
+  &.caption1 {
+    @include caption1;
+  }
+  &.ellipsis {
+    @include ellipsis;
+  }
+}
