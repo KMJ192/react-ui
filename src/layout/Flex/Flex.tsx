@@ -21,12 +21,7 @@ function Flex<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   const ELEMENT = as || DEFAULT_ELEMENT;
 
   return (
-    <ELEMENT
-      {...props}
-      as={ELEMENT}
-      ref={ref}
-      className={cx('flex', className)}
-    >
+    <ELEMENT {...props} ref={ref} className={cx('flex', className)}>
       {children}
     </ELEMENT>
   );
