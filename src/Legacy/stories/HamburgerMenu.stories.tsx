@@ -5,7 +5,7 @@ import HamburgerMenu, {
 import { Meta, StoryFn } from '@storybook/react';
 
 const meta: Meta<typeof HamburgerMenu> = {
-  title: 'UI/Components/HamburgerMenu',
+  title: 'UI/Legacy/HamburgerMenu',
   component: HamburgerMenu,
   parameters: {
     componentSubtitle: 'HamburgerMenu',

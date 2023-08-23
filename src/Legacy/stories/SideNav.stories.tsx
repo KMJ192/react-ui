@@ -5,7 +5,7 @@ import { SideNav, SideNavTemplate } from '../components/SideNav';
 import type { SideNavItem, SideNavKey } from '../components/SideNav/types';
 
 const meta: Meta<typeof SideNav> = {
-  title: 'UI/Components/SideNav',
+  title: 'UI/Legacy/SideNav',
   component: SideNav,
   parameters: {
     componentSubtitle: 'SideNav',

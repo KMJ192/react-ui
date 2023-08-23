@@ -3,7 +3,7 @@ import type { StoryFn, Meta } from '@storybook/react';
 import Spinner, { type SpinnerProps } from '../components/Spinner/Spinner';
 
 const meta: Meta<typeof Spinner> = {
-  title: 'UI/Components/Spinner',
+  title: 'UI/Legacy/Spinner',
   component: Spinner,
   parameters: {
     componentSubtitle: 'Spinner',

@@ -3,7 +3,7 @@ import type { StoryFn, Meta } from '@storybook/react';
 import Card, { type CardProps } from '../components/Card/Card';
 
 const meta: Meta<typeof Card> = {
-  title: 'UI/Components/Card',
+  title: 'UI/Legacy/Card',
   component: Card,
   parameters: {
     componentSubtitle: 'Card',
