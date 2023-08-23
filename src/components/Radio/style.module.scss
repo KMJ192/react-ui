@@ -1,4 +1,5 @@
 @import './variable/color.module.scss';
+@import './variable/size.module.scss';
 
 @mixin color-set {
   .mark {
@@ -54,58 +55,11 @@
   }
 }
 
-@mixin size {
-  &.xs {
-    .mark {
-      width: 12px;
-      .pupil {
-        width: 6px;
-      }
-    }
-    .children {
-      font-size: 12px;
-    }
-  }
-  &.sm {
-    .mark {
-      width: 14px;
-      .pupil {
-        width: 8px;
-      }
-    }
-    .children {
-      font-size: 14px;
-    }
-  }
-  &.md {
-    .mark {
-      width: 16px;
-      .pupil {
-        width: 10px;
-      }
-    }
-    .children {
-      font-size: 16px;
-    }
-  }
-  &.lg {
-    .mark {
-      width: 20px;
-      .pupil {
-        width: 12px;
-      }
-    }
-    .children {
-      font-size: 20px;
-    }
-  }
-}
-
 @mixin pupil {
   .pupil {
+    width: $pupilSize;
     aspect-ratio: 1;
     border-radius: 50%;
-    width: 10px;
     place-content: center;
     transform: scale(0);
     transition: transform 0.1s ease, background-color 0.1s ease;
@@ -116,6 +70,7 @@
 }
 
 @mixin mark {
+  width: $size;
   border: 2px solid;
   aspect-ratio: 1;
   place-content: center;
@@ -123,7 +78,7 @@
   transition: border-color 0.1s ease;
 }
 
-.radio {
+@mixin radio {
   align-items: center;
   -webkit-box-align: center;
   column-gap: 8px;
@@ -131,13 +86,21 @@
   &.disabled {
     cursor: not-allowed;
   }
+}
+
+@mixin children {
+  .children {
+    font-size: $size;
+    transition: color 0.1s ease;
+  }
+}
+
+.radio {
+  @include radio;
+  @include children;
   .mark {
     @include mark;
     @include pupil;
   }
-  @include size;
   @include color-set;
-  .children {
-    transition: color 0.1s ease;
-  }
 }

@@ -2,6 +2,8 @@ import type { StoryFn, Meta } from '@storybook/react';
 
 import Radio, { type RadioProps } from '@src/components/Radio/Radio';
 
+import style from './Components.module.scss';
+
 const meta: Meta<typeof Radio> = {
   title: 'UI/Components/Radio',
   component: Radio,
@@ -15,19 +17,17 @@ const meta: Meta<typeof Radio> = {
     disabled: {
       option: ['true', 'false'],
     },
-    size: {
-      options: ['xs', 'sm', 'md', 'lg'],
-      control: {
-        type: 'select',
-      },
-    },
   },
 };
 
 const Template = (args: RadioProps) => {
   const { children, ...arg } = args;
 
-  return <Radio {...arg}>{children}</Radio>;
+  return (
+    <Radio {...arg} className={style.radio}>
+      {children}
+    </Radio>
+  );
 };
 
 export const PrimaryRadio: StoryFn<RadioProps> = Template.bind({});
@@ -35,7 +35,8 @@ PrimaryRadio.args = {
   children: 'Radio',
   checked: false,
   disabled: false,
-  size: 'md',
+  size: 16,
+  pupilSize: 10,
 };
 
 export default meta;

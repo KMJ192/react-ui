@@ -3,7 +3,7 @@ import React from 'react';
 import Center from '@src/layout/Center/Center';
 import Flex from '@src/layout/Flex/Flex';
 
-import type { COMBINE_ELEMENT_PROPS, SIZE } from '@src/types/types';
+import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
@@ -13,7 +13,8 @@ type BaseProps = {
   children?: React.ReactNode;
   checked?: boolean;
   disabled?: boolean;
-  size?: SIZE;
+  size?: number;
+  pupilSize?: number;
 };
 
 const ELEMENT = 'div';
@@ -25,23 +26,46 @@ function Radio<T extends React.ElementType = typeof ELEMENT>(
     children,
     checked = false,
     disabled = false,
-    size = 'md',
+    size,
+    pupilSize,
     className,
     ...props
   }: Props<T>,
   ref: React.Ref<any>,
 ) {
+  const isSize = typeof size === 'number';
+  const isPupilSize = typeof pupilSize === 'number';
+
+  const markSize = isSize
+    ? {
+        width: size,
+      }
+    : undefined;
+  const childrenSize = isSize
+    ? {
+        fontSize: size,
+      }
+    : undefined;
+  const pupilSz = isPupilSize
+    ? {
+        width: pupilSize,
+      }
+    : undefined;
+
   return (
-    <Flex
-      {...props}
-      ref={ref}
-      as={ELEMENT}
-      className={cx('radio', { disabled }, size)}
-    >
-      <Center className={cx('mark', { checked }, { disabled }, className)}>
-        <span className={cx('pupil', { checked }, { disabled })}></span>
+    <Flex {...props} ref={ref} className={cx('radio', { disabled }, className)}>
+      <Center
+        className={cx('mark', { checked }, { disabled })}
+        style={markSize}
+      >
+        <div
+          className={cx('pupil', { checked }, { disabled })}
+          style={pupilSz}
+        />
       </Center>
-      <span className={cx('children', { disabled })}>{children}</span>
+      <span className={cx('children', { disabled })} style={childrenSize}>
+        {children}
+      </span>
     </Flex>
   );
 }
