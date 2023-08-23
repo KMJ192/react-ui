@@ -54,5 +54,5 @@ function Progressbar<T extends React.ElementType = typeof ELEMENT>(
   );
 }
 
-export type ProgressbarProps = Props<typeof ELEMENT>;
+export type ProgressBarProps = Props<typeof ELEMENT>;
 export default React.forwardRef(Progressbar) as typeof Progressbar;
