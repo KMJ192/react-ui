@@ -14,13 +14,13 @@
   "keywords": [],
   "license": "ISC",
   "devDependencies": {
-    "@storybook/addon-actions": "^7.0.11",
-    "@storybook/addon-controls": "^7.0.11",
-    "@storybook/addon-docs": "^7.0.11",
-    "@storybook/addons": "^7.0.11",
-    "@storybook/builder-vite": "^7.0.11",
-    "@storybook/react": "^7.0.11",
-    "@storybook/react-vite": "^7.0.11",
+    "@storybook/addon-actions": "^7.3.2",
+    "@storybook/addon-controls": "^7.3.2",
+    "@storybook/addon-docs": "^7.3.2",
+    "@storybook/addons": "^7.3.2",
+    "@storybook/builder-vite": "^7.3.2",
+    "@storybook/react": "^7.3.2",
+    "@storybook/react-vite": "^7.3.2",
     "@types/eslint": "^8",
     "@types/lodash": "^4",
     "@types/node": "^18.11.18",
@@ -41,8 +41,8 @@
     "prettier": "^2.8.8",
     "recoil": "^0.7.7",
     "sass": "^1.62.1",
-    "storybook": "^7.0.11",
-    "storybook-dark-mode": "^3.0.0",
+    "storybook": "^7.3.2",
+    "storybook-dark-mode": "^3.0.1",
     "typescript": "^5.0.4",
     "vite": "^4.4.9",
     "vite-plugin-css-injected-by-js": "^3.1.2"
@@ -56,5 +56,5 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "packageManager": "yarn@3.6.1"
+  "packageManager": "yarn@3.6.2"
 }
