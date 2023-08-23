@@ -1,4 +1,5 @@
 @import './variable/color.module.scss';
+@import './variable/size.module.scss';
 
 @mixin color-set {
   .switch-body {
@@ -56,77 +57,6 @@
   }
 }
 
-@mixin size {
-  &.xs {
-    .switch-body {
-      width: 28px;
-      height: 16px;
-    }
-    .switch-bullet {
-      width: 10px;
-      height: 10px;
-      transform: translateX(4px);
-      &.checked {
-        transform: translateX(14px);
-      }
-    }
-    .children {
-      font-size: 12px;
-    }
-  }
-  &.sm {
-    .switch-body {
-      width: 36px;
-      height: 20px;
-    }
-    .switch-bullet {
-      width: 12px;
-      height: 12px;
-      transform: translateX(4px);
-      &.checked {
-        transform: translateX(20px);
-      }
-    }
-    .children {
-      font-size: 14px;
-    }
-  }
-  &.md {
-    .switch-body {
-      width: 44px;
-      height: 24px;
-    }
-    .switch-bullet {
-      width: 16px;
-      height: 16px;
-      transform: translateX(4px);
-      &.checked {
-        transform: translateX(24px);
-      }
-    }
-    .children {
-      font-size: 16px;
-    }
-  }
-  &.lg {
-    .switch-body {
-      width: 52px;
-      height: 28px;
-    }
-    .switch-bullet {
-      width: 18px;
-      height: 18px;
-      transform: translateX(4px);
-      &.checked {
-        transform: translateX(30px);
-      }
-    }
-    .children {
-      font-size: 20px;
-    }
-  }
-}
-
 @mixin switch-body {
   .switch-body {
     border-radius: 16px;
@@ -152,6 +82,24 @@
   }
   &.disabled {
     cursor: not-allowed;
+  }
+}
+
+@mixin size {
+  .switch-body {
+    width: $width;
+    height: $height;
+  }
+  .switch-bullet {
+    width: $bulletSize;
+    height: $bulletSize;
+    transform: translateX(4px);
+    &.checked {
+      transform: translateX(#{calc($width - $bulletSize - 4px)});
+    }
+  }
+  .children {
+    font-size: calc($height - 8px);
   }
 }
 

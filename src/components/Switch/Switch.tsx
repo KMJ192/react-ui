@@ -2,7 +2,7 @@ import React from 'react';
 
 import Flex from '@src/layout/Flex/Flex';
 
-import type { COMBINE_ELEMENT_PROPS, SIZE } from '@src/types/types';
+import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
@@ -12,7 +12,9 @@ type BaseProps = {
   children?: React.ReactNode;
   checked?: boolean;
   disabled?: boolean;
-  size: SIZE;
+  width?: number;
+  height?: number;
+  bulletSize?: number;
 };
 
 const ELEMENT = 'div';
@@ -26,10 +28,35 @@ function Switch<T extends React.ElementType = typeof ELEMENT>(
     disabled = false,
     size = 'md',
     className,
+    width,
+    height,
+    bulletSize,
     ...props
   }: Props<T>,
   ref: React.Ref<any>,
 ) {
+  const isSwitchSize = typeof width === 'number' || typeof height === 'number';
+  const isBulletSize = typeof bulletSize === 'number';
+
+  const switchSize = isSwitchSize
+    ? {
+        width,
+        height,
+      }
+    : undefined;
+  const bulletSz = isBulletSize
+    ? {
+        width: bulletSize,
+        height: bulletSize,
+      }
+    : undefined;
+  const fontSize =
+    isSwitchSize && typeof height === 'number'
+      ? {
+          fontSize: height > 8 ? height - 8 : height,
+        }
+      : undefined;
+
   return (
     <Flex
       {...props}
@@ -37,9 +64,18 @@ function Switch<T extends React.ElementType = typeof ELEMENT>(
       ref={ref}
       className={cx('switch', size, { checked }, { disabled }, className)}
     >
-      <div className={cx('switch-body', { checked }, { disabled })}></div>
-      <div className={cx('switch-bullet', { checked }, { disabled })}></div>
-      <span className={cx('children', { checked }, { disabled })}>
+      <div
+        className={cx('switch-body', { checked }, { disabled })}
+        style={switchSize}
+      ></div>
+      <div
+        className={cx('switch-bullet', { checked }, { disabled })}
+        style={bulletSz}
+      ></div>
+      <span
+        className={cx('children', { checked }, { disabled })}
+        style={fontSize}
+      >
         {children}
       </span>
     </Flex>
