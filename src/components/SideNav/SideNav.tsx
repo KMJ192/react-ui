@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
+import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import SideNavProvider from './store/Provider';
 
@@ -9,7 +9,6 @@ import MenuGroup from './MenuGroup/MenuGroup';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
-import Flex from '@src/layout/Flex/Flex';
 const cx = classNames.bind(style);
 
 type BaseProps = {
@@ -17,11 +16,11 @@ type BaseProps = {
   depthGap?: number;
 };
 
-const ELEMENT = 'nav';
+const DEFAULT_ELEMENT = 'nav';
 
-type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function SN<T extends React.ElementType = typeof ELEMENT>(
+function SN<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   { children, depthGap = 0, className, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
@@ -31,14 +30,9 @@ function SN<T extends React.ElementType = typeof ELEMENT>(
         depthGap,
       }}
     >
-      <Flex
-        {...props}
-        ref={ref}
-        as={ELEMENT}
-        className={cx('side-nav', className)}
-      >
-        {children}
-      </Flex>
+      <nav {...props} ref={ref} className={cx('side-nav', className)}>
+        <DEFAULT_ELEMENT>{children}</DEFAULT_ELEMENT>
+      </nav>
     </SideNavProvider>
   );
 }
@@ -48,5 +42,5 @@ const SideNav = Object.assign(React.forwardRef(SN) as typeof SN, {
   MenuGroup,
 });
 
-export type SideNavProps = Props<typeof ELEMENT>;
+export type SideNavProps = Props<typeof DEFAULT_ELEMENT>;
 export default SideNav;
