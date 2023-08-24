@@ -1,5 +1,5 @@
 import React from 'react';
-import { Case, Default, Switch, When } from '@himideula/react-utils';
+import { Case, Default, Switch, When } from '@ssamssam/react-utils';
 import type { Shape, Variant } from './types';
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 import Center from '../../components/layout/Center/Center';

@@ -1901,76 +1901,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@himideula/react-ui@npm:^0.0.21":
-  version: 0.0.21
-  resolution: "@himideula/react-ui@npm:0.0.21"
-  dependencies:
-    "@emotion/react": ^11.11.1
-    "@emotion/styled": ^11.11.0
-    "@himideula/react-utils": ^0.0.1
-    react: ^18.2.0
-    react-dom: ^18.2.0
-  checksum: 08db122a18f39029f87ade6e8d1c4e2cab65a8adb87ff5da8bdff7e9ed257a81d3f26078b1712ce19dc0c5ffe4f0e26f699f3306d1a8626519283c033bb788f2
-  languageName: node
-  linkType: hard
-
-"@himideula/react-utils@npm:^0.0.1":
-  version: 0.0.1
-  resolution: "@himideula/react-utils@npm:0.0.1"
-  dependencies:
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    react-router-dom: ^6.14.2
-  checksum: 2fd1c54d3aea2c12befd662c3f6af220d8f56eb6303a4d446531f161d87d70ffdd8d433597d05378afcca642c06f547b04fcdbc88ac644e0505b1b2340279d55
-  languageName: node
-  linkType: hard
-
-"@himideula/storybook@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@himideula/storybook@workspace:."
-  dependencies:
-    "@emotion/react": ^11.11.1
-    "@emotion/styled": ^11.11.0
-    "@himideula/react-ui": ^0.0.21
-    "@himideula/react-utils": ^0.0.1
-    "@storybook/addon-actions": ^7.3.2
-    "@storybook/addon-controls": ^7.3.2
-    "@storybook/addon-docs": ^7.3.2
-    "@storybook/addons": ^7.3.2
-    "@storybook/builder-vite": ^7.3.2
-    "@storybook/react": ^7.3.2
-    "@storybook/react-vite": ^7.3.2
-    "@types/eslint": ^8
-    "@types/lodash": ^4
-    "@types/node": ^18.11.18
-    "@types/react": ^18.2.6
-    "@types/react-dom": ^18.2.4
-    "@typescript-eslint/eslint-plugin": ^5.60.0
-    "@typescript-eslint/parser": ^5.60.0
-    classnames: ^2.3.2
-    eslint: ^8.43.0
-    eslint-config-airbnb: ^19.0.4
-    eslint-config-prettier: ^8.8.0
-    eslint-plugin-import: ^2.27.5
-    eslint-plugin-jsx-a11y: ^6.7.1
-    eslint-plugin-prettier: ^4.2.1
-    eslint-plugin-react: ^7.32.2
-    eslint-plugin-react-hooks: ^4.6.0
-    eslint-plugin-simple-import-sort: ^10.0.0
-    lodash: ^4.17.21
-    prettier: ^2.8.8
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    recoil: ^0.7.7
-    sass: ^1.62.1
-    storybook: ^7.3.2
-    storybook-dark-mode: ^3.0.1
-    typescript: ^5.0.4
-    vite: ^4.4.9
-    vite-plugin-css-injected-by-js: ^3.1.2
-  languageName: unknown
-  linkType: soft
-
 "@humanwhocodes/config-array@npm:^0.11.10":
   version: 0.11.10
   resolution: "@humanwhocodes/config-array@npm:0.11.10"
@@ -2806,6 +2736,62 @@ __metadata:
   checksum: 00bd7362a3439021aa1ea51b0e0d0a0e8ca1351a3d54c606b115fdcc49b51b16db6e5f43b4fe7a28c38688523e22a94d49dd31168868b655f0d4d50f032d07a1
   languageName: node
   linkType: hard
+
+"@ssamssam/react-modules@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "@ssamssam/react-modules@npm:0.0.1"
+  dependencies:
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    react-router-dom: ^6.14.2
+  checksum: 3ad29dd3789d53165842d5097acd7641ad0c245b05002c56c5f4de5735d3c185a63f4b425125fb1fd18e28586eb4b6092e58a2126fb6ff93473c1a451f4e2d17
+  languageName: node
+  linkType: hard
+
+"@ssamssam/storybook@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@ssamssam/storybook@workspace:."
+  dependencies:
+    "@emotion/react": ^11.11.1
+    "@emotion/styled": ^11.11.0
+    "@ssamssam/react-modules": ^0.0.1
+    "@storybook/addon-actions": ^7.3.2
+    "@storybook/addon-controls": ^7.3.2
+    "@storybook/addon-docs": ^7.3.2
+    "@storybook/addons": ^7.3.2
+    "@storybook/builder-vite": ^7.3.2
+    "@storybook/react": ^7.3.2
+    "@storybook/react-vite": ^7.3.2
+    "@types/eslint": ^8
+    "@types/lodash": ^4
+    "@types/node": ^18.11.18
+    "@types/react": ^18.2.6
+    "@types/react-dom": ^18.2.4
+    "@typescript-eslint/eslint-plugin": ^5.60.0
+    "@typescript-eslint/parser": ^5.60.0
+    classnames: ^2.3.2
+    eslint: ^8.43.0
+    eslint-config-airbnb: ^19.0.4
+    eslint-config-prettier: ^8.8.0
+    eslint-plugin-import: ^2.27.5
+    eslint-plugin-jsx-a11y: ^6.7.1
+    eslint-plugin-prettier: ^4.2.1
+    eslint-plugin-react: ^7.32.2
+    eslint-plugin-react-hooks: ^4.6.0
+    eslint-plugin-simple-import-sort: ^10.0.0
+    lodash: ^4.17.21
+    prettier: ^2.8.8
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    recoil: ^0.7.7
+    sass: ^1.62.1
+    storybook: ^7.3.2
+    storybook-dark-mode: ^3.0.1
+    typescript: ^5.0.4
+    vite: ^4.4.9
+    vite-plugin-css-injected-by-js: ^3.1.2
+  languageName: unknown
+  linkType: soft
 
 "@storybook/addon-actions@npm:^7.3.2":
   version: 7.3.2
@@ -3805,23 +3791,23 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*":
-  version: 20.5.3
-  resolution: "@types/node@npm:20.5.3"
-  checksum: fe67a0fd7402218bdf91523a2b1c2e41d619f7294b1a471e0a778b8bc7bb3fcf291aed12041bcbe9622d50a3d1295a9adea0e7e19bb9386a246bf66071404721
+  version: 20.5.4
+  resolution: "@types/node@npm:20.5.4"
+  checksum: 18de76c990e1c298183661cfc7cf16c9384531538c8090cc27bc3cab801e7c46b9f6943591ab0433955dd57961601684cc0fb19ba2deee9609e137c91afd2e25
   languageName: node
   linkType: hard
 
 "@types/node@npm:^16.0.0":
-  version: 16.18.43
-  resolution: "@types/node@npm:16.18.43"
-  checksum: a3ae424834818d1aa53d05e9de954b4559aaa9c02294e654403d9bd2a2b1db608c328755970071369a0c85159a6f2969502e1b9c7e1f29d2629ca677c33c8bdb
+  version: 16.18.44
+  resolution: "@types/node@npm:16.18.44"
+  checksum: 5600765a303e2ab8913e8dbc6871f2740678bf6420f0b009a0ad059d4cbf7cd93a9679dc304c9d382bee57fa9cf802ea8b8b70839d11903e98bd9e09c98a7e32
   languageName: node
   linkType: hard
 
 "@types/node@npm:^18.11.18":
-  version: 18.17.8
-  resolution: "@types/node@npm:18.17.8"
-  checksum: ebb71526368c9c58f03e2c2408bfda4aa686c13d84226e2c9b48d9c4aee244fb82e672aaf4aa8ccb6e4993b4274d5f4b2b3d52d0a2e57ab187ae653903376411
+  version: 18.17.9
+  resolution: "@types/node@npm:18.17.9"
+  checksum: 0d5835710e49a654a1ca34167e7cd504cc709c006006ebe9b23c360dac5637c6c4f1b4f3aff33df1b7f9debfb9ad8bd81da2fc4540970d2ad56eb479cda77613
   languageName: node
   linkType: hard
 
@@ -5467,9 +5453,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.477":
-  version: 1.4.499
-  resolution: "electron-to-chromium@npm:1.4.499"
-  checksum: 9002f3bcd9018f38b3496c2ced5393c6144d3a09bc5e1ea9866541045f6364841a6d11afe8c5977838835bc70f50f8caee63ba928a910e68ac1eed45afd18120
+  version: 1.4.500
+  resolution: "electron-to-chromium@npm:1.4.500"
+  checksum: fdd56b7f27ccc0aba837614ba80741f20aaaf558dc4eceb1e9525bf5e6ca9010d02d5a9554adeed43506facc60602c1b162b66fbee93d52db3d279a4e1a135db
   languageName: node
   linkType: hard
 
@@ -6423,9 +6409,9 @@ __metadata:
   linkType: hard
 
 "flow-parser@npm:0.*":
-  version: 0.215.0
-  resolution: "flow-parser@npm:0.215.0"
-  checksum: f25c35ef7cd24e6d3441946d138d59e65f945c782cc2f587d1cac620c6a692f8a195f61f2153487cdac3005c8ecaf4094b22d310d096489e47a250766e8737a4
+  version: 0.215.1
+  resolution: "flow-parser@npm:0.215.1"
+  checksum: bc2bb20e49f81f6b1a60848de3be291eb2e9bf7b1cdc748d747b02985aa9ddcf5981bf6b9983062aaa058a1466c996afc539ce9e5637c68dce318524096a623e
   languageName: node
   linkType: hard
 
@@ -7049,9 +7035,9 @@ __metadata:
   linkType: hard
 
 "immutable@npm:^4.0.0":
-  version: 4.3.2
-  resolution: "immutable@npm:4.3.2"
-  checksum: bb1d0f3eb8ebef04aa9e2c698ba1a248976a4dc0257fa2f1bffaaae575f891395fe9ef39eaf49856d6c4edd31704e300ec563ed44ea9d7c7996186deab91d0ff
+  version: 4.3.3
+  resolution: "immutable@npm:4.3.3"
+  checksum: 313a354c8fc08bb2e9db3e5ad62d22c2b42edd6a8e1d6ca3fc70e44ae87f561c02e7a2383603c413429c7bca81e5e65d386cc6b26a85925b766f39bb142b5912
   languageName: node
   linkType: hard
 
@@ -8400,8 +8386,8 @@ __metadata:
   linkType: hard
 
 "node-fetch@npm:^2.0.0":
-  version: 2.6.13
-  resolution: "node-fetch@npm:2.6.13"
+  version: 2.7.0
+  resolution: "node-fetch@npm:2.7.0"
   dependencies:
     whatwg-url: ^5.0.0
   peerDependencies:
@@ -8409,7 +8395,7 @@ __metadata:
   peerDependenciesMeta:
     encoding:
       optional: true
-  checksum: 055845ae5b4796c78c7053564745345025cf959563b3568b43c385f67d311779e6b00e5fef6ed1b79f86ba4048e4b4b722e1aa948305521b9353eb7e788912c9
+  checksum: d76d2f5edb451a3f05b15115ec89fc6be39de37c6089f1b6368df03b91e1633fd379a7e01b7ab05089a25034b2023d959b47e59759cb38d88341b2459e89d6e5
   languageName: node
   linkType: hard
 
