@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Switch, Case, Default } from '@ssamssam/react-utils';
-import { When } from '@ssamssam/react-utils';
+import { Switch, Case, Default } from '@ssamssam/react-modules';
+import { When } from '@ssamssam/react-modules';
 
 import Center from '@src/layout/Center/Center';
 import Flex from '@src/layout/Flex/Flex';

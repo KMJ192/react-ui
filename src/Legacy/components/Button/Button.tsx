@@ -1,8 +1,8 @@
 import React from 'react';
-import { Case, Default, Switch, When } from '@ssamssam/react-utils';
+import { Case, Default, Switch, When } from '@ssamssam/react-modules';
 import type { Shape, Variant } from './types';
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
-import Center from '../../components/layout/Center/Center';
+import Center from '@src/Legacy/layout/Center/Center';
 import Spinner from '../Spinner/Spinner';
 import Styled from './styled';
 

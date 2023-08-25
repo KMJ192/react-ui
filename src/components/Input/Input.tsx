@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { When } from '@ssamssam/react-utils';
+import { When } from '@ssamssam/react-modules';
 
 import Flex from '@src/layout/Flex/Flex';
 

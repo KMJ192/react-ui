@@ -2,7 +2,7 @@ import React from 'react';
 import Styled from './styled';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
-import { When } from '@ssamssam/react-utils';
+import { When } from '@ssamssam/react-modules';
 
 type BaseProps = {
   error?: boolean;
