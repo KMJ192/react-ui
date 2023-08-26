@@ -1,10 +1,10 @@
 import { useRef, useState, useEffect } from 'react';
-import { Direction, Offset, Option, Size } from '../types';
+import { TabDirection, Offset, TabOption, Size } from '../types';
 
 type Props = {
   selected: number;
-  options: Array<Option>;
-  direction: Direction;
+  options: Array<TabOption>;
+  direction: TabDirection;
 };
 
 type TabLinePosition = Size & Offset;

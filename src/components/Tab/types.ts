@@ -21,7 +21,7 @@ type Offset = {
 export type {
   OptionKey as TabOptionKey,
   Option as TabOption,
-  Direction,
+  Direction as TabDirection,
   Size,
   Offset,
 };

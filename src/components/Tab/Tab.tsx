@@ -4,7 +4,7 @@ import Flex from '@src/layout/Flex/Flex';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
-import type { TabOption, Direction, TabOptionKey } from './types';
+import type { TabOption, TabDirection, TabOptionKey } from './types';
 
 import useSelectTab from './hooks/useSelectTab';
 
@@ -14,7 +14,7 @@ const cx = classNames.bind(style);
 
 type BaseProps = {
   options?: Array<TabOption>;
-  direction?: Direction;
+  direction?: TabDirection;
   selected?: number;
   onSelect?: (key: TabOptionKey, idx: number) => void;
 };
