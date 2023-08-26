@@ -3,6 +3,7 @@
 $header-height: 64px;
 $footer-height: 72px;
 $sideNav-width: 164px;
+$sideNav-padding: 16px;
 
 // @mixin hide-gnb {
 //   &.hide-gnb {
@@ -41,12 +42,12 @@ $sideNav-width: 164px;
   .contents {
     display: grid;
     grid-template-rows: 1fr 72px;
-    margin-left: $sideNav-width;
+    margin-left: calc($sideNav-width + $sideNav-padding);
     margin-top: $header-height;
     width: 100%;
     transition: margin-left 0.5s ease;
     .page {
-      padding: 16px;
+      // padding: 16px;
     }
     .footer {
       padding: 0 16px;

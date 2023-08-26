@@ -47,10 +47,16 @@ function PageTemplate<T extends React.ElementType = typeof ELEMENT>(
         navItem={menu}
         onClickItem={onClickItem}
       />
-      <Header className={cx('header')}></Header>
+      <Header className={cx('header')}>
+        <Header.Left>123</Header.Left>
+        <Header.Mid>123</Header.Mid>
+        <Header.Right>123</Header.Right>
+      </Header>
       <div className={cx('contents')}>
         <section className={cx('page')}>{children}</section>
-        <Footer className={cx('footer')}></Footer>
+        <Footer className={cx('footer')}>
+          <Footer.Left>123</Footer.Left>
+        </Footer>
       </div>
     </Flex>
   );
