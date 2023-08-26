@@ -18,4 +18,10 @@ type Offset = {
   left: number;
 };
 
-export type { OptionKey, Option, Direction, Size, Offset };
+export type {
+  OptionKey as TabOptionKey,
+  Option as TabOption,
+  Direction,
+  Size,
+  Offset,
+};

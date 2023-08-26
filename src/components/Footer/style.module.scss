@@ -7,7 +7,6 @@
 
 .footer {
   width: inherit;
-  justify-content: space-between;
   min-height: var(--footerMinHeight);
   max-height: var(--footerMaxHeight);
   @include color-set;
