@@ -50,6 +50,7 @@
 
 .typo {
   color: $textColor;
+  letter-spacing: 0.05em;
   &.h1,
   &.header1 {
     @include header1;
