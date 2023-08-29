@@ -1,0 +1,13 @@
+@import 'src/styles/color.module.scss';
+
+$tableBackground: var(--tableBackground, $light-primary000);
+
+$tableBorder: var(--tableBorder, $light-primary300);
+
+$tableHeaderBackground: var(--tableHeaderBackground, $light-primary100);
+$tableFooterBackground: var(--tableFooterBackground, $light-primary000);
+
+$tableBodyBackground: var(--tableBodyBackground, $light-primary400);
+$tableBodyBackgroundHover: var(--tableBodyBackgroundHover, $light-blue100);
+
+$tableText: var(--tableText, $light-primary900);

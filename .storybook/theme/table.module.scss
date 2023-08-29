@@ -1,0 +1,31 @@
+@import 'src/styles/color.module.scss';
+
+@mixin table-light {
+  --tableBackground: #{$light-primary000};
+
+  --tableBorder: #{$light-primary300};
+
+  --tableHeaderBackground: #{$light-primary100};
+
+  --tableFooterBackground: #{$light-primary000};
+
+  --tableBodyBackground: #{$light-primary400};
+  --tableBodyBackgroundHover: #{$light-blue100};
+
+  --tableText: #{$light-primary900};
+}
+
+@mixin table-dark {
+  --tableBackground: #{$dark-primary100};
+
+  --tableBorder: #{$dark-primary000};
+
+  --tableHeaderBackground: #{$dark-primary200};
+
+  --tableFooterBackground: #{$dark-primary100};
+
+  --tableBodyBackground: #{$dark-primary400};
+  --tableBodyBackgroundHover: #{$dark-primary000};
+
+  --tableText: #{$dark-primary900};
+}
