@@ -1,6 +1,7 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
 import Table, { type TableProps } from '@src/components/Table/Table';
+import { useState } from 'react';
 
 const meta: Meta<typeof Table> = {
   title: 'UI/Components/Table',
@@ -8,14 +9,36 @@ const meta: Meta<typeof Table> = {
   parameters: {
     componentSubtitle: 'Table',
   },
-  argTypes: {},
+  argTypes: {
+    isPagination: {
+      options: [true, false],
+      control: {
+        type: 'radio',
+      },
+    },
+  },
 };
 
 const Template = (args: TableProps) => {
   const { ...arg } = args;
 
+  const [selected, setSelected] = useState(1);
+
+  const onClickPagination = (move: 'left' | 'right') => {
+    console.log(move);
+  };
+
+  const onClickPageIndex = (idx: number) => {
+    setSelected(idx);
+  };
+
   return (
-    <Table {...arg}>
+    <Table
+      {...arg}
+      selectedPage={selected}
+      onClickPageIndex={onClickPageIndex}
+      onClickPagination={onClickPagination}
+    >
       <Table.Caption>caption</Table.Caption>
       <Table.Thead>
         <Table.Tr>
@@ -58,6 +81,9 @@ const Template = (args: TableProps) => {
 };
 
 export const TableStory: StoryFn<TableProps> = Template.bind({});
-TableStory.args = {};
+TableStory.args = {
+  isPagination: true,
+  pageCnt: 10,
+};
 
 export default meta;

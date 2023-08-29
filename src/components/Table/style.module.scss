@@ -1,18 +1,65 @@
 @import './variable/color.module.scss';
 @import './variable/size.module.scss';
 
+@mixin color-set {
+  border: 1px solid $tableBorder;
+  background: $tableBackground;
+  color: $tableText;
+
+  .table {
+    .thead > .tr {
+      .th,
+      .td {
+        background: $tableHeaderBackground;
+      }
+    }
+    .tbody {
+      .tr {
+        border-top: 1px solid $tableBodyBackground;
+        border-bottom: 1px solid $tableBodyBackground;
+        &:hover {
+          background: $tableBodyBackgroundHover;
+        }
+      }
+    }
+    .tfoot > .tr {
+      .td,
+      .th {
+        background: $tableFooterBackground;
+      }
+    }
+  }
+
+  .pagination > .pages > .index {
+    background: $tablePaginationIndexBackground;
+    border: 1px solid $tablePaginationIndexBorder;
+    color: $tablePaginationIndexText;
+    &.selected {
+      background: $tablePaginationIndexBackgroundSelected;
+      border: 1px solid $tablePaginationIndexBackgroundSelected;
+    }
+    &:hover {
+      background: $tablePaginationIndexBackgroundHover;
+      border: 1px solid $tablePaginationIndexBackgroundHover;
+    }
+  }
+  .pagination {
+    .left,
+    .right {
+      fill: $tablePaginationArrow;
+    }
+  }
+}
+
 .table-container {
   width: inherit;
-  border: 1px solid $tableBorder;
   border-radius: 8px;
   white-space: nowrap;
   padding: 8px 24px;
-  background: $tableBackground;
-  color: $tableText;
+  @include color-set;
   .table {
     border-collapse: collapse;
     width: 100%;
-    display: table;
     .caption {
       padding: 16px;
       text-align: start;
@@ -29,8 +76,8 @@
     }
     .thead {
       .tr {
-        .th {
-          background: $tableHeaderBackground;
+        .th,
+        .td {
           &:first-child {
             border-top-left-radius: 8px;
           }
@@ -42,22 +89,16 @@
     }
     .tbody {
       .tr {
-        transition: background-color 0.1s ease-in-out;
-        border-top: 1px solid $tableBodyBackground;
-        border-bottom: 1px solid $tableBodyBackground;
-        &:hover {
-          background: $tableBodyBackgroundHover;
-        }
-        .td {
+        .td,
+        .th {
           padding: 16px;
         }
       }
     }
     .tfoot {
       .tr {
-        .th,
-        .td {
-          background: $tableFooterBackground;
+        .td,
+        .th {
           &:first-child {
             border-bottom-left-radius: 4px;
           }
@@ -66,6 +107,30 @@
           }
         }
       }
+    }
+  }
+
+  .pagination {
+    width: 100%;
+    padding: 16px 0;
+    .pages {
+      width: inherit;
+      justify-content: space-around;
+      .index {
+        width: 40px;
+        height: 24px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    }
+    .left,
+    .right {
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+    }
+    .right {
+      transform: rotate(180deg);
     }
   }
 }

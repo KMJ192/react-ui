@@ -1,16 +1,23 @@
 @import 'src/layout/Flex/flex.scss';
 
+@mixin vertical {
+  align-items: center;
+  -webkit-box-align: center;
+}
+
+@mixin horizontal {
+  justify-content: center;
+  -webkit-box-pack: center;
+}
+
 .center {
   @include flex;
   height: 100%;
   width: 100%;
   &.vertical {
-    align-items: center;
-    -webkit-box-align: center;
+    @include vertical;
   }
-
   &.horizontal {
-    justify-content: center;
-    -webkit-box-pack: center;
+    @include horizontal;
   }
 }
