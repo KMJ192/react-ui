@@ -12,13 +12,7 @@ const meta: Meta<typeof Footer> = {
 };
 
 const Template = (args: FooterProps) => {
-  return (
-    <Footer {...args}>
-      <Footer.Left>Left</Footer.Left>
-      <Footer.Mid>Mid</Footer.Mid>
-      <Footer.Right>Right</Footer.Right>
-    </Footer>
-  );
+  return <Footer {...args}></Footer>;
 };
 
 export const PrimaryFooter: StoryFn<FooterProps> = Template.bind({});

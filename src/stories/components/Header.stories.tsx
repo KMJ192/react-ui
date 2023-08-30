@@ -14,13 +14,7 @@ const meta: Meta<typeof Header> = {
 const Template = (args: HeaderProps) => {
   const { children, ...arg } = args;
 
-  return (
-    <Header {...arg}>
-      <Header.Left>Left</Header.Left>
-      <Header.Mid>Mid</Header.Mid>
-      <Header.Right>RIght</Header.Right>
-    </Header>
-  );
+  return <Header {...arg}>{children}</Header>;
 };
 
 export const PrimaryHeader: StoryFn<HeaderProps> = Template.bind({});
