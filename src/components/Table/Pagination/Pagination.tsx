@@ -1,7 +1,6 @@
 import PaginationIcon from './PaginationIcon';
 
 import Center from '@src/layout/Center/Center';
-import Flex from '@src/layout/Flex/Flex';
 
 import classNames from 'classnames/bind';
 import style from '../style.module.scss';
@@ -30,24 +29,22 @@ function Pagination({
       >
         <PaginationIcon />
       </div>
-      <Flex as='ul' className={cx('pages')}>
-        {Array.from({ length: pageCnt }, () => 0).map((_, idx) => {
-          const page = idx + 1;
-          const isSelected = page === selectedPage;
-          return (
-            <Center
-              as='li'
-              key={page}
-              className={cx('index', isSelected && 'selected')}
-              onClick={() => {
-                onClickPageIndex(page);
-              }}
-            >
-              {idx + 1}
-            </Center>
-          );
-        })}
-      </Flex>
+      {Array.from({ length: pageCnt }, () => 0).map((_, idx) => {
+        const page = idx + 1;
+        const isSelected = page === selectedPage;
+        return (
+          <Center
+            as='li'
+            key={page}
+            className={cx('index', isSelected && 'selected')}
+            onClick={() => {
+              onClickPageIndex(page);
+            }}
+          >
+            {idx + 1}
+          </Center>
+        );
+      })}
       <div
         className={cx('right')}
         onClick={() => {

@@ -5,7 +5,6 @@
   border: 1px solid $tableBorder;
   background: $tableBackground;
   color: $tableText;
-
   .table {
     .thead > .tr {
       .th,
@@ -29,18 +28,10 @@
       }
     }
   }
-
-  .pagination > .pages > .index {
-    background: $tablePaginationIndexBackground;
-    border: 1px solid $tablePaginationIndexBorder;
+  .pagination > .index {
     color: $tablePaginationIndexText;
     &.selected {
-      background: $tablePaginationIndexBackgroundSelected;
-      border: 1px solid $tablePaginationIndexBackgroundSelected;
-    }
-    &:hover {
-      background: $tablePaginationIndexBackgroundHover;
-      border: 1px solid $tablePaginationIndexBackgroundHover;
+      outline: 2px solid $tablePaginationIndexBorder;
     }
   }
   .pagination {
@@ -113,15 +104,12 @@
   .pagination {
     width: 100%;
     padding: 16px 0;
-    .pages {
-      width: inherit;
-      justify-content: space-around;
-      .index {
-        width: 40px;
-        height: 24px;
-        border-radius: 4px;
-        cursor: pointer;
-      }
+    column-gap: 8px;
+    .index {
+      width: 32px;
+      height: 24px;
+      border-radius: 2px;
+      cursor: pointer;
     }
     .left,
     .right {

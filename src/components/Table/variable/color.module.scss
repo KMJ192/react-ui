@@ -12,22 +12,7 @@ $tableBodyBackgroundHover: var(--tableBodyBackgroundHover, $light-blue100);
 
 $tableText: var(--tableText, $light-primary900);
 
-$tablePaginationIndexBackground: var(
-  --tablePaginationIndexBackground,
-  $light-primary000
-);
-$tablePaginationIndexBackgroundHover: var(
-  --tablePaginationIndexBackgroundHover,
-  $light-blue100
-);
-$tablePaginationIndexBackgroundSelected: var(
-  --tablePaginationIndexBackgroundSelected,
-  $light-blue200
-);
+$tablePaginationIndexBorder: var(--tablePaginationIndexBorder, $light-blue200);
 $tablePaginationIndexText: var(--tablePaginationIndexText, $light-primary900);
-$tablePaginationIndexBorder: var(
-  --tablePaginationIndexBorder,
-  $light-primary300
-);
 
 $tablePaginationArrow: var(--tablePaginationArrow, $light-primary600);
