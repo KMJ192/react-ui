@@ -7,4 +7,3 @@ export type { TrProps } from './Tr/Tr';
 export type { ThProps } from './Th/Th';
 export type { TdProps } from './Td/Td';
 export type { CaptionProps } from './Caption/Caption';
-export type { PaginationProps } from './Pagination/Pagination';
