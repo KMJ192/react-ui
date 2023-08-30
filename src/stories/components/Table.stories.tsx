@@ -84,6 +84,7 @@ export const TableStory: StoryFn<TableProps> = Template.bind({});
 TableStory.args = {
   isPagination: true,
   pageCnt: 10,
+  paginationCnt: 1,
 };
 
 export default meta;

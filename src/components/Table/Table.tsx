@@ -20,7 +20,7 @@ type BaseProps = {
   children: React.ReactNode;
   isPagination?: boolean;
   pageCnt?: number;
-  currentPage?: number;
+  paginationCnt?: number;
   selectedPage?: number;
   onClickPageIndex?: (idx: number) => void;
   onClickPagination?: (move: 'left' | 'right') => void;
@@ -36,7 +36,7 @@ function T<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     children,
     isPagination = false,
     pageCnt = 1,
-    // currentPage = 1,
+    paginationCnt = 1,
     selectedPage = 1,
     onClickPageIndex = () => {},
     onClickPagination = () => {},
@@ -54,6 +54,7 @@ function T<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
         <Pagination
           pageCnt={pageCnt}
           selectedPage={selectedPage}
+          paginationCnt={paginationCnt}
           onClickPageIndex={onClickPageIndex}
           onClickPagination={onClickPagination}
         />

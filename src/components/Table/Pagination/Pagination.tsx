@@ -9,6 +9,7 @@ const cx = classNames.bind(style);
 type Props = {
   pageCnt: number;
   selectedPage: number;
+  paginationCnt: number;
   onClickPagination: (move: 'left' | 'right') => void;
   onClickPageIndex: (idx: number) => void;
 };
@@ -16,6 +17,7 @@ type Props = {
 function Pagination({
   pageCnt,
   selectedPage,
+  paginationCnt,
   onClickPageIndex,
   onClickPagination,
 }: Props) {
@@ -30,7 +32,7 @@ function Pagination({
         <PaginationIcon />
       </div>
       {Array.from({ length: pageCnt }, () => 0).map((_, idx) => {
-        const page = idx + 1;
+        const page = idx + 1 + pageCnt * (paginationCnt - 1);
         const isSelected = page === selectedPage;
         return (
           <Center
@@ -41,7 +43,7 @@ function Pagination({
               onClickPageIndex(page);
             }}
           >
-            {idx + 1}
+            {page}
           </Center>
         );
       })}
