@@ -2,29 +2,29 @@
 @import './variable/size.module.scss';
 
 @mixin color-set {
-  border: 1px solid $tableBorder;
-  background: $tableBackground;
-  color: $tableText;
+  border: 1px solid $ss-c-table-border;
+  background: $ss-c-table-bg;
+  color: $ss-c-table-text;
   .table {
     .thead > .tr {
       .th,
       .td {
-        background: $tableHeaderBackground;
+        background: $ss-c-table-header-bg;
       }
     }
     .tbody {
       .tr {
-        border-top: 1px solid $tableBodyBackground;
+        border-top: 1px solid $ss-c-table-body-bg;
         &:hover {
-          background: $tableBodyBackgroundHover;
+          background: $ss-c-table-body-bg-hover;
         }
       }
     }
     .tfoot > .tr {
-      border-top: 1px solid $tableBodyBackground;
+      border-top: 1px solid $ss-c-table-body-bg;
       .td,
       .th {
-        background: $tableFooterBackground;
+        background: $ss-c-table-footer-bg;
       }
     }
   }

@@ -1,11 +1,11 @@
 @import 'src/styles/color.module.scss';
 
 @mixin badge-light {
-  --badgeText: #{$light-primary100};
-  --badgeBackground: #{$light-primary700};
+  --ss-c-badge-color: #{$light-primary100};
+  --ss-c-badge-bg: #{$light-primary700};
 }
 
 @mixin badge-dark {
-  --badgeText: #{$dark-primary900};
-  --badgeBackground: #{$dark-primary100};
+  --ss-c-badge-color: #{$dark-primary900};
+  --ss-c-badge-bg: #{$dark-primary100};
 }

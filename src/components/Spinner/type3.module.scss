@@ -45,7 +45,7 @@
 @mixin type-3 {
   &.type-3 {
     font-size: $size;
-    color: $spinnerColor;
+    color: $ss-c-spinner-color;
     text-indent: -9999em;
     overflow: hidden;
     width: 1.1em;

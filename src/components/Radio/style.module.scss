@@ -3,54 +3,54 @@
 
 @mixin color-set {
   .mark {
-    border-color: $radioBorder;
+    border-color: $ss-c-radio-border;
     background: $radioBackground;
     &.checked {
-      border-color: $radioBorderChecked;
+      border-color: $ss-c-radio-border-checked;
       background: $radioBackgroundChecked;
       &.disabled {
-        border-color: $radioBorderChecked-disabled;
-        background: $radioBackgroundCheckedDisabled;
+        border-color: $ss-c-radio-border-checked-disabled;
+        background: $ss-c-radio-bg-checked-disabled;
       }
       &:not(.disabled):hover {
-        border-color: $radioBorderCheckedHover;
+        border-color: $ss-c-radio-border-checked-hover;
         background: $radioBackgroundCheckedHover;
       }
     }
 
     .pupil {
-      background: $radioPupil;
+      background: $ss-c-radio-pupil;
       &.disabled {
-        background: $radioPupilDisabled;
+        background: $ss-c-radio-pupil-disabled;
       }
     }
 
     &.disabled {
-      border-color: $radioBorderDisabled;
-      background: $radioBackgroundDisabled;
+      border-color: $ss-c-radio-border-disabled;
+      background: $ss-c-radio-bg-disabled;
       .pupil {
-        background: $radioPupilDisabled;
+        background: $ss-c-radio-pupil-disabled;
       }
     }
   }
   &:hover {
     .mark {
-      border-color: $radioBorder-hover;
+      border-color: $ss-c-radio-border-hover;
       background: $radioBackgroundHover;
       .pupil {
         &:not(.disabled) {
-          background: $radioPupilHover;
+          background: $ss-c-radio-pupil-hover;
         }
       }
     }
     .children {
-      color: $radioTextHover;
+      color: $ss-c-radio-text-hover;
     }
   }
   .children {
-    color: $radioText;
+    color: $ss-c-radio-text;
     &.disabled {
-      color: $radioTextDisabled;
+      color: $ss-c-radio-text-disabled;
     }
   }
 }

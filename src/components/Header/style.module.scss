@@ -2,8 +2,8 @@
 
 .header {
   width: inherit;
-  background: $header-background;
-  color: $header-text;
+  background: $ss-c-header-bg;
+  color: $ss-c-header-text;
   min-height: var(--headerMinHeight);
   max-height: var(--headerMaxHeight);
 }

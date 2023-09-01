@@ -1,5 +1,5 @@
 @import 'src/styles/color.module.scss';
 
-$progressBody: var(--progressBody, $light-primary200);
-$progressBar: var(--progressBar, $light-blue600);
-$progressPending: var(--progressPending, rgba(255, 255, 255, 0.7));
+$ss-c-progress-body: var(--ss-c-progress-body, $light-primary200);
+$ss-c-progress-bar: var(--ss-c-progress-bar, $light-blue600);
+$ss-c-progress-pending: var(--ss-c-progress-pending, rgba(255, 255, 255, 0.7));

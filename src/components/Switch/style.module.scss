@@ -3,56 +3,56 @@
 
 @mixin color-set {
   .switch-body {
-    background: $switchBackground;
+    background: $ss-c-switch-bg;
     &.checked {
-      background: $switchBackgroundChecked;
+      background: $ss-c-switch-bg-checked;
       &.disabled {
-        background: $switchBackgroundCheckedDisabled;
+        background: $ss-c-switch-bg-checked-disabled;
       }
     }
     &.disabled {
-      background: $switchBackgroundDisabled;
+      background: $ss-c-switch-bg-disabled;
     }
   }
 
   .switch-bullet {
-    background: $switchBullet;
-    box-shadow: $switchBulletBoxShadow;
+    background: $ss-c-switch-bullet;
+    box-shadow: $ss-c-switch-bullet-box-shadow;
     &.checked {
-      background: $switchBulletChecked;
+      background: $ss-c-switch-bullet-checked;
       &.disabled {
-        background: $switchBulletCheckedDisabled;
+        background: $ss-c-switch-bullet-checked-disabled;
         box-shadow: none;
       }
     }
     &.disabled {
-      background: $switchBulletDisabled;
+      background: $ss-c-switch-bullet-disabled;
       box-shadow: none;
     }
   }
 
   .children {
-    color: $switchText;
+    color: $ss-c-switch-text;
     &.disabled {
-      color: $switchTextDisabled;
+      color: $ss-c-switch-text-disabled;
     }
   }
 
   &:not(.disabled):hover {
     .switch-body {
-      background: $switchBackgroundHover;
+      background: $ss-c-switch-bg-hover;
       &.checked {
-        background: $switchBackgroundCheckedHover;
+        background: $ss-c-switch-bg-checked-hover;
       }
     }
     .switch-bullet {
-      background: $switchBulletHover;
+      background: $ss-c-switch-bullet-hover;
       &.checked {
-        background: $switchBulletCheckedHover;
+        background: $ss-c-switch-bullet-checked-hover;
       }
     }
     .children {
-      color: $switchTextHover;
+      color: $ss-c-switch-text-hover;
     }
   }
 }

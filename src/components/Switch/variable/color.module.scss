@@ -1,32 +1,41 @@
 @import 'src/styles/color.module.scss';
 
-$switchBackground: var(--switchBackground, $light-primary300);
-$switchBackgroundChecked: var(--switchBackgroundChecked, $light-blue400);
-$switchBackgroundCheckedDisabled: var(
-  --switchBackgroundCheckedDisabled,
+$ss-c-switch-bg: var(--ss-c-switch-bg, $light-primary300);
+$ss-c-switch-bg-checked: var(--ss-c-switch-bg-checked, $light-blue400);
+$ss-c-switch-bg-checked-disabled: var(
+  --ss-c-switch-bg-checked-disabled,
   $light-primary300
 );
-$switchBackgroundCheckedHover: var(
-  --switchBackgroundCheckedHover,
+$ss-c-switch-bg-checked-hover: var(
+  --ss-c-switch-bg-checked-hover,
   $light-blue500
 );
-$switchBackgroundDisabled: var(--switchBackgroundDisabled, $light-primary100);
-$switchBackgroundHover: var(--switchBackgroundHover, $light-blue200);
+$ss-c-switch-bg-disabled: var(--ss-c-switch-bg-disabled, $light-primary100);
+$ss-c-switch-bg-hover: var(--ss-c-switch-bg-hover, $light-blue200);
 
-$switchBullet: var(--switchBullet, $light-primary000);
-$switchBulletChecked: var(--switchBulletChecked, $light-primary000);
-$switchBulletCheckedDisabled: var(
-  --switchBulletCheckedDisabled,
+$ss-c-switch-bullet: var(--ss-c-switch-bullet, $light-primary000);
+$ss-c-switch-bullet-checked: var(
+  --ss-c-switch-bullet-checked,
+  $light-primary000
+);
+$ss-c-switch-bullet-checked-disabled: var(
+  --ss-c-switch-bullet-checked-disabled,
   $light-primary200
 );
-$switchBulletCheckedHover: var(--switchBulletCheckedHover, $light-primary000);
-$switchBulletDisabled: var(--switchBulletDisabled, $light-primary200);
-$switchBulletHover: var(--switchBulletHover, $light-primary000);
-$switchBulletBoxShadow: var(
-  --switchBulletBoxShadow,
+$ss-c-switch-bullet-checked-hover: var(
+  --ss-c-switch-bullet-checked-hover,
+  $light-primary000
+);
+$ss-c-switch-bullet-disabled: var(
+  --ss-c-switch-bullet-disabled,
+  $light-primary200
+);
+$ss-c-switch-bullet-hover: var(--ss-c-switch-bullet-hover, $light-primary000);
+$ss-c-switch-bullet-box-shadow: var(
+  --ss-c-switch-bullet-box-shadow,
   0px 3px 6px rgba(63, 63, 63, 0.3)
 );
 
-$switchText: var(--switchText, $light-primary900);
-$switchTextHover: var(--switchTextHover, $light-blue500);
-$switchTextDisabled: var(--switchTextDisabled, $light-primary300);
+$ss-c-switch-text: var(--ss-c-switch-text, $light-primary900);
+$ss-c-switch-text-hover: var(--ss-c-switch-text-hover, $light-blue500);
+$ss-c-switch-text-disabled: var(--ss-c-switch-text-disabled, $light-primary300);

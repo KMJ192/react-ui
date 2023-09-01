@@ -4,7 +4,7 @@
 
 @mixin color-set {
   background: $sideNav-background;
-  box-shadow: $sideNav-box-shadow;
+  box-shadow: $ss-c-side-nav-box-shadow;
 }
 
 @mixin side-nav {

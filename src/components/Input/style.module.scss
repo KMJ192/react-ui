@@ -1,35 +1,37 @@
+@import 'src/layout/center/style.module.scss';
 @import './variable/color.module.scss';
 
 @mixin color-set {
-  border-color: $inputBorder;
-  background: $inputBackground;
-  color: $inputText;
+  border-color: $ss-c-input-border;
+  background: $ss-c-input-bg;
+  color: $ss-c-input-text;
   &::placeholder {
-    color: $inputPlaceholder;
+    color: $ss-c-input-placeholder;
   }
 
   &:disabled {
-    border-color: $inputBorderDisabled;
-    background: $inputBackgroundDisabled;
-    color: $inputTextDisabled;
+    border-color: $ss-c-input-border-disabled;
+    background: $ss-c-input-bg-disabled;
+    color: $ss-c-input-text-disabled;
     &::placeholder {
-      color: $inputPlaceholderDisabled;
+      color: $ss-c-input-placeholder-disabled;
     }
   }
 
   &.error {
-    border-color: $inputBorderError;
+    border-color: $ss-c-input-border-error;
   }
 
   &:not(.error):focus {
-    border-color: $inputBorderFocus;
-    box-shadow: $inputBoxShadow;
+    border-color: $ss-c-input-border-focus;
+    box-shadow: $ss-c-input-box-shadow;
   }
 }
 
 @mixin icon {
   position: absolute;
   aspect-ratio: 1;
+  transform: translateY(-50%);
   &.xs {
     width: 12px;
     height: 12px;
@@ -126,9 +128,9 @@
 }
 
 .container {
+  display: flex;
   position: relative;
-  align-items: center;
-  -webkit-box-align: center;
+  @include vertical;
 
   .input {
     @include input;

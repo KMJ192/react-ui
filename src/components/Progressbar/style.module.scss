@@ -12,7 +12,7 @@
 
 @mixin bar {
   .bar {
-    background: $progressBar;
+    background: $ss-c-progress-bar;
     height: 100%;
     border-radius: 4px;
     position: relative;
@@ -25,9 +25,9 @@
       left: -36px;
       background: linear-gradient(
         0.25turn,
-        $progressBar,
-        $progressPending,
-        $progressBar
+        $ss-c-progress-bar,
+        $ss-c-progress-pending,
+        $ss-c-progress-bar
       );
       animation: progress 1.3s infinite;
     }
@@ -37,7 +37,7 @@
 @mixin progress-body {
   width: 100%;
   height: $height;
-  background: $progressBody;
+  background: $ss-c-progress-body;
   border-radius: 4px;
   overflow: hidden;
 }

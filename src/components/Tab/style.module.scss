@@ -66,24 +66,24 @@
 }
 
 @mixin color-set {
-  background: $tabBackground;
+  background: $ss-c-tab-bg;
   .option {
-    color: $tabText;
+    color: $ss-c-tab-text;
     &:hover {
-      color: $tabTextHover;
-      background: $tabBackgroundHover;
+      color: $ss-c-tab-text-hover;
+      background: $ss-c-tab-bg-hover;
     }
     &.disabled {
-      color: $tabTextDisabled;
-      background: $tabBackgroundDisabled;
+      color: $ss-c-tab-text-disabled;
+      background: $ss-c-tab-bg-disabled;
       &:hover {
-        color: $tabTextDisabled;
-        background: $tabBackgroundDisabled;
+        color: $ss-c-tab-text-disabled;
+        background: $ss-c-tab-bg-disabled;
       }
     }
   }
   .tab-line {
-    background: $tabSelectLine;
+    background: $ss-c-tab-select-line;
   }
 }
 

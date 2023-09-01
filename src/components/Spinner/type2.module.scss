@@ -15,8 +15,8 @@
     display: inline-block;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
-    border: $borderWidth solid $spinnerColor;
-    border-bottom-color: $spinnerColor2;
+    border: $borderWidth solid $ss-c-spinner-color;
+    border-bottom-color: $ss-c-spinner-color2;
     width: $size;
     height: $size;
   }

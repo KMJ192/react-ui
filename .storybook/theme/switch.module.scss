@@ -1,43 +1,43 @@
 @import 'src/styles/color.module.scss';
 
 @mixin switch-light {
-  --switchBackground: #{$light-primary300};
-  --switchBackgroundChecked: #{$light-blue400};
-  --switchBackgroundCheckedDisabled: #{$light-primary300};
-  --switchBackgroundCheckedHover: #{$light-blue500};
-  --switchBackgroundDisabled: #{$light-primary100};
-  --switchBackgroundHover: #{$light-blue200};
+  --ss-c-switch-bg: #{$light-primary300};
+  --ss-c-switch-bg-checked: #{$light-blue400};
+  --ss-c-switch-bg-checked-disabled: #{$light-primary300};
+  --ss-c-switch-bg-checked-hover: #{$light-blue500};
+  --ss-c-switch-bg-disabled: #{$light-primary100};
+  --ss-c-switch-bg-hover: #{$light-blue200};
 
-  --switchBullet: #{$light-primary000};
-  --switchBulletChecked: #{$light-primary000};
-  --switchBulletCheckedDisabled: #{$light-primary200};
-  --switchBulletCheckedHover: #{$light-primary000};
-  --switchBulletDisabled: #{$light-primary200};
-  --switchBulletHover: #{$light-primary000};
-  --switchBulletBoxShadow: 0px 3px 6px rgba(63, 63, 63, 0.3);
+  --ss-c-switch-bullet: #{$light-primary000};
+  --ss-c-switch-bullet-checked: #{$light-primary000};
+  --ss-c-switch-bullet-checked-disabled: #{$light-primary200};
+  --ss-c-switch-bullet-checked-hover: #{$light-primary000};
+  --ss-c-switch-bullet-disabled: #{$light-primary200};
+  --ss-c-switch-bullet-hover: #{$light-primary000};
+  --ss-c-switch-bullet-box-shadow: 0px 3px 6px rgba(63, 63, 63, 0.3);
 
-  --switchText: #{$light-primary900};
-  --switchTextHover: #{$light-blue500};
-  --switchTextDisabled: #{$light-primary300};
+  --ss-c-switch-text: #{$light-primary900};
+  --ss-c-switch-text-hover: #{$light-blue500};
+  --ss-c-switch-text-disabled: #{$light-primary300};
 }
 
 @mixin switch-dark {
-  --switchBackground: #{$dark-primary300};
-  --switchBackgroundChecked: #{$dark-blue200};
-  --switchBackgroundCheckedDisabled: #{$dark-primary300};
-  --switchBackgroundCheckedHover: #{$dark-blue100};
-  --switchBackgroundDisabled: #{$dark-primary400};
-  --switchBackgroundHover: #{$dark-blue400};
+  --ss-c-switch-bg: #{$dark-primary300};
+  --ss-c-switch-bg-checked: #{$dark-blue200};
+  --ss-c-switch-bg-checked-disabled: #{$dark-primary300};
+  --ss-c-switch-bg-checked-hover: #{$dark-blue100};
+  --ss-c-switch-bg-disabled: #{$dark-primary400};
+  --ss-c-switch-bg-hover: #{$dark-blue400};
 
-  --switchBullet: #{$dark-primary800};
-  --switchBulletChecked: #{$dark-primary800};
-  --switchBulletCheckedDisabled: #{$dark-primary200};
-  --switchBulletCheckedHover: #{$dark-primary800};
-  --switchBulletDisabled: #{$dark-primary300};
-  --switchBulletHover: #{$dark-primary800};
-  --switchBulletBoxShadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  --ss-c-switch-bullet: #{$dark-primary800};
+  --ss-c-switch-bullet-checked: #{$dark-primary800};
+  --ss-c-switch-bullet-checked-disabled: #{$dark-primary200};
+  --ss-c-switch-bullet-checked-hover: #{$dark-primary800};
+  --ss-c-switch-bullet-disabled: #{$dark-primary300};
+  --ss-c-switch-bullet-hover: #{$dark-primary800};
+  --ss-c-switch-bullet-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
 
-  --switchText: #{$dark-primary900};
-  --switchTextHover: #{$dark-blue300};
-  --switchTextDisabled: #{$dark-primary200};
+  --ss-c-switch-text: #{$dark-primary900};
+  --ss-c-switch-text-hover: #{$dark-blue300};
+  --ss-c-switch-text-disabled: #{$dark-primary200};
 }

@@ -1,29 +1,38 @@
 @import 'src/styles/color.module.scss';
 
-$radioBorder: var(--radioBorder, $light-primary300);
-$radioBorderChecked: var(--radioBorderChecked, $light-blue400);
-$radioBorderChecked-disabled: var(
-  --radioBorderChecked-disabled,
+$ss-c-radio-border: var(--ss-c-radio-border, $light-primary300);
+$ss-c-radio-border-checked: var(--ss-c-radio-border-checked, $light-blue400);
+$ss-c-radio-border-checked-disabled: var(
+  --ss-c-radio-border-checked-disabled,
   $light-primary400
 );
-$radioBorderCheckedHover: var(--radioBorderCheckedHover, $light-blue500);
-$radioBorderDisabled: var(--radioBorderDisabled, $light-primary300);
-$radioBorder-hover: var(--radioBorder-hover, $light-blue500);
+$ss-c-radio-border-checked-hover: var(
+  --ss-c-radio-border-checked-hover,
+  $light-blue500
+);
+$ss-c-radio-border-disabled: var(
+  --ss-c-radio-border-disabled,
+  $light-primary300
+);
+$ss-c-radio-border-hover: var(--ss-c-radio-border-hover, $light-blue500);
 
 $radioBackground: var(--radioBackground);
 $radioBackgroundChecked: var(--radioBackgroundChecked);
 $radioBackgroundCheckedHover: var(--radioBackgroundCheckedHover);
-$radioBackgroundCheckedDisabled: var(
-  --radioBackgroundCheckedDisabled,
+$ss-c-radio-bg-checked-disabled: var(
+  --ss-c-radio-bg-checked-disabled,
   $light-primary300
 );
-$radioBackgroundDisabled: var(--radioBackgroundDisabled, $light-primary200);
+$ss-c-radio-bg-disabled: var(--ss-c-radio-bg-disabled, $light-primary200);
 $radioBackgroundHover: var(--radioBackgroundHover);
 
-$radioText: var(--radioText, $light-primary900);
-$radioTextHover: var(--radioTextHover, $light-blue600);
-$radioTextDisabled: var(--radioTextDisabled, $light-primary300);
+$ss-c-radio-text: var(--ss-c-radio-text, $light-primary900);
+$ss-c-radio-text-hover: var(--ss-c-radio-text-hover, $light-blue600);
+$ss-c-radio-text-disabled: var(--ss-c-radio-text-disabled, $light-primary300);
 
-$radioPupil: var(--radioPupil, $radioBorderChecked);
-$radioPupilDisabled: var(--radioPupilDisabled, $light-primary500);
-$radioPupilHover: var(--radioPupilHover, $radioBorder-hover);
+$ss-c-radio-pupil: var(--ss-c-radio-pupil, $ss-c-radio-border-checked);
+$ss-c-radio-pupil-disabled: var(--ss-c-radio-pupil-disabled, $light-primary500);
+$ss-c-radio-pupil-hover: var(
+  --ss-c-radio-pupil-hover,
+  $ss-c-radio-border-hover
+);

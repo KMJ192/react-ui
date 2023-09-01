@@ -1,16 +1,16 @@
 @import 'src/styles/color.module.scss';
 
-$tableBackground: var(--tableBackground, $light-primary000);
+$ss-c-table-bg: var(--ss-c-table-bg, $light-primary000);
 
-$tableBorder: var(--tableBorder, $light-primary300);
+$ss-c-table-border: var(--ss-c-table-border, $light-primary300);
 
-$tableHeaderBackground: var(--tableHeaderBackground, $light-primary100);
-$tableFooterBackground: var(--tableFooterBackground, $light-primary000);
+$ss-c-table-header-bg: var(--ss-c-table-header-bg, $light-primary100);
+$ss-c-table-footer-bg: var(--ss-c-table-footer-bg, $light-primary000);
 
-$tableBodyBackground: var(--tableBodyBackground, $light-primary400);
-$tableBodyBackgroundHover: var(--tableBodyBackgroundHover, $light-blue100);
+$ss-c-table-body-bg: var(--ss-c-table-body-bg, $light-primary400);
+$ss-c-table-body-bg-hover: var(--ss-c-table-body-bg-hover, $light-blue100);
 
-$tableText: var(--tableText, $light-primary900);
+$ss-c-table-text: var(--ss-c-table-text, $light-primary900);
 
 $tablePaginationIndexBorder: var(--tablePaginationIndexBorder, $light-blue200);
 $tablePaginationIndexText: var(--tablePaginationIndexText, $light-primary900);

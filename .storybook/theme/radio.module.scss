@@ -1,41 +1,41 @@
 @import 'src/styles/color.module.scss';
 
 @mixin radio-light {
-  --radioBorder: #{$light-primary300};
-  --radioBorderChecked: #{$light-blue400};
-  --radioBorderChecked-disabled: #{$light-primary400};
-  --radioBorderCheckedHover: #{$light-blue500};
-  --radioBorderDisabled: #{$light-primary300};
-  --radioBorder-hover: #{$light-blue500};
+  --ss-c-radio-border: #{$light-primary300};
+  --ss-c-radio-border-checked: #{$light-blue400};
+  --ss-c-radio-border-checked-disabled: #{$light-primary400};
+  --ss-c-radio-border-checked-hover: #{$light-blue500};
+  --ss-c-radio-border-disabled: #{$light-primary300};
+  --ss-c-radio-border-hover: #{$light-blue500};
 
-  --radioBackgroundCheckedDisabled: #{$light-primary300};
-  --radioBackgroundDisabled: #{$light-primary200};
+  --ss-c-radio-bg-checked-disabled: #{$light-primary300};
+  --ss-c-radio-bg-disabled: #{$light-primary200};
 
-  --radioText: #{$light-primary900};
-  --radioTextHover: #{$light-blue600};
-  --radioTextDisabled: #{$light-primary300};
+  --ss-c-radio-text: #{$light-primary900};
+  --ss-c-radio-text-hover: #{$light-blue600};
+  --ss-c-radio-text-disabled: #{$light-primary300};
 
-  --radioPupil: #{$light-blue400};
-  --radioPupilDisabled: #{$light-primary500};
-  --radioPupilHover: #{$light-blue500};
+  --ss-c-radio-pupil: #{$light-blue400};
+  --ss-c-radio-pupil-disabled: #{$light-primary500};
+  --ss-c-radio-pupil-hover: #{$light-blue500};
 }
 
 @mixin radio-dark {
-  --radioBorder: #{$dark-primary300};
-  --radioBorderChecked: #{$dark-blue300};
-  --radioBorderChecked-disabled: #{$dark-primary400};
-  --radioBorderCheckedHover: #{$dark-blue100};
-  --radioBorderDisabled: #{$dark-primary600};
-  --radioBorder-hover: #{$dark-blue100};
+  --ss-c-radio-border: #{$dark-primary300};
+  --ss-c-radio-border-checked: #{$dark-blue300};
+  --ss-c-radio-border-checked-disabled: #{$dark-primary400};
+  --ss-c-radio-border-checked-hover: #{$dark-blue100};
+  --ss-c-radio-border-disabled: #{$dark-primary600};
+  --ss-c-radio-border-hover: #{$dark-blue100};
 
-  --radioBackgroundCheckedDisabled: #{$dark-primary400};
-  --radioBackgroundDisabled: #{$dark-primary300};
+  --ss-c-radio-bg-checked-disabled: #{$dark-primary400};
+  --ss-c-radio-bg-disabled: #{$dark-primary300};
 
-  --radioText: #{$dark-primary900};
-  --radioTextHover: #{$dark-blue200};
-  --radioTextDisabled: #{$dark-primary600};
+  --ss-c-radio-text: #{$dark-primary900};
+  --ss-c-radio-text-hover: #{$dark-blue200};
+  --ss-c-radio-text-disabled: #{$dark-primary600};
 
-  --radioPupil: #{$dark-blue300};
-  --radioPupilDisabled: #{$dark-primary600};
-  --radioPupilHover: #{$dark-blue100};
+  --ss-c-radio-pupil: #{$dark-blue300};
+  --ss-c-radio-pupil-disabled: #{$dark-primary600};
+  --ss-c-radio-pupil-hover: #{$dark-blue100};
 }

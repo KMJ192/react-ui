@@ -29,41 +29,41 @@
 }
 
 @mixin color-set {
-  background: $buttonBackground;
-  color: $buttonText;
-  box-shadow: $buttonBoxShadow;
+  background: $c-button-bg;
+  color: $ss-c-button-text;
+  box-shadow: $ss-c-button-box-shadow;
   &:hover {
-    background: $buttonBackgroundHover;
-    color: $buttonTextHover;
+    background: $c-button-bg-hover;
+    color: $ss-c-button-text-hover;
   }
   &:disabled {
-    background: $buttonBackgroundDisabled;
-    color: $buttonTextDisabled;
+    background: $c-button-bg-disabled;
+    color: $ss-c-button-text-disabled;
     &:active,
     &:hover {
-      background: $buttonBackgroundDisabled;
-      color: $buttonTextDisabled;
+      background: $c-button-bg-disabled;
+      color: $ss-c-button-text-disabled;
     }
   }
   &:active {
-    background: $buttonBackgroundActive;
-    color: $buttonTextActive;
+    background: $c-button-bg-active;
+    color: $ss-c-button-text-active;
   }
   &.outlined {
     background: none;
     box-shadow: none;
-    outline: 1px solid $buttonOutline;
+    outline: 1px solid $ss-c-button-outline;
     &:hover {
-      background: $buttonBackgroundHover;
-      color: $buttonTextHover;
+      background: $c-button-bg-hover;
+      color: $ss-c-button-text-hover;
     }
   }
   &.clear {
     background: none;
     box-shadow: none;
     &:hover {
-      background: $buttonBackgroundHover;
-      color: $buttonTextHover;
+      background: $c-button-bg-hover;
+      color: $ss-c-button-text-hover;
     }
   }
 }
@@ -77,7 +77,7 @@
     left: 50%;
     width: 4px;
     height: 4px;
-    background: $buttonBackgroundRipple;
+    background: $c-button-bg-ripple;
     opacity: 0;
     border-radius: 100%;
     transform: scale(1, 1) translate(-50%);

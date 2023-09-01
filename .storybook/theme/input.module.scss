@@ -1,37 +1,37 @@
 @import 'src/styles/color.module.scss';
 
 @mixin input-light {
-  --inputBorder: #{$light-primary400};
-  --inputBorderFocus: #{$light-blue500};
-  --inputBorderError: #{$light-red900};
-  --inputBorderDisabled: #{$light-primary300};
+  --ss-c-input-border: #{$light-primary400};
+  --ss-c-input-border-focus: #{$light-blue500};
+  --ss-c-input-border-error: #{$light-red900};
+  --ss-c-input-border-disabled: #{$light-primary300};
 
-  --inputBackground: #{$light-primary000};
-  --inputBackgroundDisabled: #{$light-primary100};
+  --ss-c-input-bg: #{$light-primary000};
+  --ss-c-input-bg-disabled: #{$light-primary100};
 
-  --inputText: #{$light-primary900};
-  --inputTextDisabled: #{$light-primary400};
+  --ss-c-input-text: #{$light-primary900};
+  --ss-c-input-text-disabled: #{$light-primary400};
 
-  --inputPlaceholder: #{$light-primary400};
-  --inputPlaceholderDisabled: #{$light-primary300};
+  --ss-c-input-placeholder: #{$light-primary400};
+  --ss-c-input-placeholder-disabled: #{$light-primary300};
 
-  --inputBoxShadow: 0px 3px 6px rgba(62, 62, 62, 0.1);
+  --ss-c-input-box-shadow: 0px 3px 6px rgba(62, 62, 62, 0.1);
 }
 
 @mixin input-dark {
-  --inputBorder: #{$dark-primary300};
-  --inputBorderFocus: #{$dark-blue500};
-  --inputBorderError: #{$dark-red000};
-  --inputBorderDisabled: #{$dark-primary100};
+  --ss-c-input-border: #{$dark-primary300};
+  --ss-c-input-border-focus: #{$dark-blue500};
+  --ss-c-input-border-error: #{$dark-red000};
+  --ss-c-input-border-disabled: #{$dark-primary100};
 
-  --inputBackground: #{$dark-primary100};
-  --inputBackgroundDisabled: #{$dark-primary200};
+  --ss-c-input-bg: #{$dark-primary100};
+  --ss-c-input-bg-disabled: #{$dark-primary200};
 
-  --inputText: #{$dark-primary800};
-  --inputTextDisabled: #{$dark-primary000};
+  --ss-c-input-text: #{$dark-primary800};
+  --ss-c-input-text-disabled: #{$dark-primary000};
 
-  --inputPlaceholder: #{$dark-primary300};
-  --inputPlaceholderDisabled: #{$dark-primary100};
+  --ss-c-input-placeholder: #{$dark-primary300};
+  --ss-c-input-placeholder-disabled: #{$dark-primary100};
 
-  --inputBoxShadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
+  --ss-c-input-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
 }

@@ -1,37 +1,40 @@
 @import 'src/styles/color.module.scss';
 
 $sideNav-background: var(
-  --side-nav-background,
+  --ss-c-side-nav-bg,
   linear-gradient(#{$light-primary200}, #{$light-primary000})
 );
-$sideNav-box-shadow: var(
-  --sideNav-box-shadow,
+$ss-c-side-nav-box-shadow: var(
+  --ss-c-side-nav-box-shadow,
   0px 3px 6px rgba(64, 64, 64, 0.3)
 );
 
 $sideNav-menu-background: var(--sideNav-menu-background);
-$sideNav-menu-background-selected: var(
-  --sideNav-menu-background-selected,
+$ss-c-side-nav-menu-bg-selected: var(
+  --ss-c-side-nav-menu-bg-selected,
   $light-primary000
 );
-$sideNav-menu-background-disabled: var(
-  --sideNav-menu-background-disabled,
+$ss-c-side-nav-menu-bg-disabled: var(
+  --ss-c-side-nav-menu-bg-disabled,
   $light-primary300
 );
 
-$sideNav-menu-text: var(--sideNav-menu-text, $light-primary900);
-$sideNav-menu-text-selected: var(
-  --sideNav-menu-text-selected,
+$ss-c-side-nav-menu-text: var(--ss-c-side-nav-menu-text, $light-primary900);
+$ss-c-side-nav-menu-text-selected: var(
+  --ss-c-side-nav-menu-text-selected,
   $light-primary900
 );
-$sideNav-menu-text-hover: var(--sideNav-menu-text-hover, $light-blue700);
-$sideNav-menu-text-disabled: var(
-  --sideNav-menu-text-disabled,
+$ss-c-side-nav-menu-text-hover: var(
+  --ss-c-side-nav-menu-text-hover,
+  $light-blue700
+);
+$ss-c-side-nav-menu-text-disabled: var(
+  --ss-c-side-nav-menu-text-disabled,
   $light-primary500
 );
 
 $sideNav-menu-box-shadow: var(--sideNav-menu-box-shadow);
-$sideNav-menu-box-shadow-selected: var(
-  --sideNav-menu-box-shadow-selected,
+$ss-c-side-nav-menu-box-shadow-selected: var(
+  --ss-c-side-nav-menu-box-shadow-selected,
   0px 3px 6px rgba(64, 64, 64, 0.1)
 );

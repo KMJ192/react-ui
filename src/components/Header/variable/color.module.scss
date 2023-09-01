@@ -1,8 +1,8 @@
 @import 'src/styles/color.module.scss';
 
-$header-background: var(
-  --header-background,
+$ss-c-header-bg: var(
+  --ss-c-header-bg,
   linear-gradient(165deg, #{$light-primary100}, #{$light-primary700})
 );
 
-$header-text: var(--header-text, $light-primary900);
+$ss-c-header-text: var(--ss-c-header-text, $light-primary900);

@@ -1,6 +1,3 @@
 @import 'src/styles/color.module.scss';
 
-$hamburgerMenuBarBackground: var(
-  --hamburgerMenuBarBackground,
-  $light-primary500
-);
+$ss-c-hamburger-color: var(--ss-c-hamburger-color, $light-primary500);

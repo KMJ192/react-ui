@@ -1,5 +1,8 @@
 @import 'src/styles/color.module.scss';
 
-$popupBoxShadow: var(--popupBoxShadow, 0px 3px 6px rgba(0, 0, 0, 0.2));
-$popupBackground: var(--popupBackground, $light-primary000);
-$popupText: var(--popupText, $light-primary900);
+$ss-c-popup-box-shadow: var(
+  --ss-c-popup-box-shadow,
+  0px 3px 6px rgba(0, 0, 0, 0.2)
+);
+$ss-c-popup-bg: var(--ss-c-popup-bg, $light-primary000);
+$ss-c-popup-text: var(--ss-c-popup-text, $light-primary900);
