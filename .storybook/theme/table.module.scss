@@ -13,6 +13,14 @@
   --ss-c-table-body-bg-hover: #{$light-blue100};
 
   --ss-c-table-text: #{$light-primary900};
+
+  --ss-c-table-pagination-index-bg: #{$light-primary000};
+  --ss-c-table-pagination-index-bg-selected: #{$light-blue600};
+
+  --ss-c-table-pagination-index-text: #{$light-primary900};
+  --ss-c-table-pagination-index-text-selected: #{$light-primary000};
+
+  --ss-c-table-pagination-arrow: #{$light-primary600};
 }
 
 @mixin table-dark {
@@ -28,4 +36,12 @@
   --ss-c-table-body-bg-hover: #{$dark-primary000};
 
   --ss-c-table-text: #{$dark-primary900};
+
+  --ss-c-table-pagination-index-bg: #{$dark-primary100};
+  --ss-c-table-pagination-index-bg-selected: #{$dark-blue100};
+
+  --ss-c-table-pagination-index-text: #{$dark-primary900};
+  --ss-c-table-pagination-index-text-selected: #{$dark-primary900};
+
+  --ss-c-table-pagination-arrow: #{$dark-primary700};
 }

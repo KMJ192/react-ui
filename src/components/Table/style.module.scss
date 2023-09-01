@@ -29,15 +29,17 @@
     }
   }
   .pagination > .index {
-    color: $tablePaginationIndexText;
+    color: $ss-c-table-pagination-index-text;
+    background: $ss-c-table-pagination-index-bg;
     &.selected {
-      outline: 2px solid $tablePaginationIndexBorder;
+      background: $ss-c-table-pagination-index-bg-selected;
+      color: $ss-c-table-pagination-index-text-selected;
     }
   }
   .pagination {
     .left,
     .right {
-      fill: $tablePaginationArrow;
+      fill: $ss-c-table-pagination-arrow;
     }
   }
 }
@@ -107,8 +109,9 @@
     column-gap: 8px;
     .index {
       width: 32px;
-      height: 24px;
-      border-radius: 2px;
+      aspect-ratio: 1;
+      place-content: center;
+      border-radius: 50%;
       cursor: pointer;
     }
     .left,
