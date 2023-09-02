@@ -4,6 +4,8 @@ import Flex from '@src/layout/Flex/Flex';
 
 import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
 
+import { getStyle } from './calcStyle';
+
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
 const cx = classNames.bind(style);
@@ -35,27 +37,11 @@ function Switch<T extends React.ElementType = typeof ELEMENT>(
   }: Props<T>,
   ref: React.Ref<any>,
 ) {
-  const isSwitchSize = typeof width === 'number' || typeof height === 'number';
-  const isBulletSize = typeof bulletSize === 'number';
-
-  const switchSize = isSwitchSize
-    ? {
-        width,
-        height,
-      }
-    : undefined;
-  const bulletSz = isBulletSize
-    ? {
-        width: bulletSize,
-        height: bulletSize,
-      }
-    : undefined;
-  const fontSize =
-    isSwitchSize && typeof height === 'number'
-      ? {
-          fontSize: height > 8 ? height - 8 : height,
-        }
-      : undefined;
+  const { switchStyle, bulletStyle, fontStyle } = getStyle({
+    width,
+    height,
+    bulletSize,
+  });
 
   return (
     <Flex
@@ -66,15 +52,15 @@ function Switch<T extends React.ElementType = typeof ELEMENT>(
     >
       <div
         className={cx('switch-body', { checked }, { disabled })}
-        style={switchSize}
+        style={switchStyle}
       ></div>
       <div
         className={cx('switch-bullet', { checked }, { disabled })}
-        style={bulletSz}
+        style={bulletStyle}
       ></div>
       <span
         className={cx('children', { checked }, { disabled })}
-        style={fontSize}
+        style={fontStyle}
       >
         {children}
       </span>
