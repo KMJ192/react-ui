@@ -4,6 +4,7 @@ import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
+import { getStyle } from './calcStyle';
 const cx = classNames.bind(style);
 
 type BaseProps = {
@@ -16,30 +17,21 @@ const DEFAULT_ELEMENT = 'div';
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
 function Spacing<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
-  {
-    as,
-    direction = 'vertical',
-    spacing = 0,
-    className,
-    style,
-    ...props
-  }: Props<T>,
+  { as, direction = 'vertical', spacing, className, style, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
-  const isSpacing = typeof spacing === 'number';
-  const _style = isSpacing
-    ? direction === 'vertical'
-      ? { ...style, height: spacing }
-      : { ...style, width: spacing }
-    : undefined;
+  const curStyle = getStyle({
+    direction,
+    spacing,
+    style,
+  });
 
   return (
     <ELEMENT
       {...props}
       ref={ref}
-      direction={direction}
-      style={_style}
+      style={curStyle}
       className={cx('spacing', direction, className)}
     />
   );
