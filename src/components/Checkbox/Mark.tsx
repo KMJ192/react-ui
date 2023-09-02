@@ -1,5 +1,7 @@
 import Flex from '@src/layout/Flex/Flex';
 
+import { getMarkSize } from './calcStyle';
+
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
 const cx = classNames.bind(style);
@@ -7,18 +9,13 @@ const cx = classNames.bind(style);
 type Props = {
   multiple: boolean;
   size?: number;
-  isSize: boolean;
 };
 
-function Mark({ multiple, size, isSize }: Props) {
-  const _style: React.CSSProperties | undefined = isSize
-    ? {
-        fontSize: size,
-      }
-    : undefined;
+function Mark({ multiple, size }: Props) {
+  const curSize = getMarkSize(size);
 
   return (
-    <Flex className={cx('mark')} style={_style}>
+    <Flex className={cx('mark')} style={curSize}>
       {multiple ? (
         <svg
           width='1em'

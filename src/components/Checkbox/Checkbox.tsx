@@ -1,10 +1,11 @@
 import React from 'react';
 
 import Flex from '@src/layout/Flex/Flex';
-
 import Mark from './Mark';
 
 import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
+
+import { getStyle } from './calcStyle';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
@@ -35,24 +36,20 @@ function Checkbox<T extends React.ElementType = typeof ELEMENT>(
   }: Props<T>,
   ref: React.Ref<any>,
 ) {
-  const isSize = typeof size === 'number';
-  const _style: React.CSSProperties | undefined = isSize
-    ? {
-        ...style,
-        width: size,
-        height: size,
-      }
-    : style;
+  const curStyle = getStyle({
+    size,
+    style,
+  });
 
   return (
     <Flex
       {...props}
       as={ELEMENT}
       ref={ref}
-      style={_style}
+      style={curStyle}
       className={cx('checkbox', { checked }, { disabled }, className)}
     >
-      <Mark multiple={multiple} isSize={isSize} size={size} />
+      <Mark multiple={multiple} size={size} />
       {children}
     </Flex>
   );
