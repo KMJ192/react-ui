@@ -1,6 +1,7 @@
 import React from 'react';
 
-import type { COLOR_SCHEME, OVER_RIDABLE_PROPS } from '@src/types/types';
+import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+import type { COLOR_SCHEME } from '@src/styles/color/color';
 
 import Center from '@src/layout/Center/Center';
 
