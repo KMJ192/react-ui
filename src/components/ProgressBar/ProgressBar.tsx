@@ -2,6 +2,8 @@ import React from 'react';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
+import { getStyle } from './calcStyle';
+
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
 const cx = classNames.bind(style);
@@ -29,19 +31,16 @@ function Progressbar<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   ref: React.Ref<any>,
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
-  const isHeight = typeof height === 'number';
-  const _style = isHeight
-    ? {
-        ...style,
-        height,
-      }
-    : style;
+  const curStyle = getStyle({
+    height,
+    style,
+  });
 
   return (
     <ELEMENT
       {...props}
       ref={ref}
-      style={_style}
+      style={curStyle}
       className={cx('progress-bar', className)}
     >
       <div
