@@ -2,7 +2,7 @@ import React from 'react';
 
 import Flex from '@src/layout/Flex/Flex';
 
-import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
+import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import { getStyle } from './calcStyle';
 
@@ -19,12 +19,13 @@ type BaseProps = {
   bulletSize?: number;
 };
 
-const ELEMENT = 'div';
+const DEFAULT_ELEMENT = 'div';
 
-type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function Switch<T extends React.ElementType = typeof ELEMENT>(
+function Switch<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   {
+    as,
     children,
     checked = false,
     disabled = false,
@@ -37,6 +38,8 @@ function Switch<T extends React.ElementType = typeof ELEMENT>(
   }: Props<T>,
   ref: React.Ref<any>,
 ) {
+  const ELEMENT = as || DEFAULT_ELEMENT;
+
   const { switchStyle, bulletStyle, fontStyle } = getStyle({
     width,
     height,
@@ -46,7 +49,7 @@ function Switch<T extends React.ElementType = typeof ELEMENT>(
   return (
     <Flex
       {...props}
-      as={ELEMENT}
+      as={ELEMENT as any}
       ref={ref}
       className={cx('switch', size, { checked }, { disabled }, className)}
     >
@@ -68,5 +71,5 @@ function Switch<T extends React.ElementType = typeof ELEMENT>(
   );
 }
 
-export type SwitchProps = Props<typeof ELEMENT>;
+export type SwitchProps = Props<typeof DEFAULT_ELEMENT>;
 export default React.forwardRef(Switch) as typeof Switch;

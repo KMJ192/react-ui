@@ -4,7 +4,7 @@ import { When } from '@ssamssam/react-modules';
 
 import Flex from '@src/layout/Flex/Flex';
 
-import type { COMBINE_ELEMENT_PROPS, SIZE } from '@src/types/types';
+import type { OVER_RIDABLE_PROPS, SIZE } from '@src/types/types';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
@@ -17,14 +17,24 @@ type BaseProps = {
   rightIcon?: React.ReactNode;
 };
 
-const ELEMENT = 'input';
+const DEFAULT_ELEMENT = 'input';
 
-type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function Input<T extends React.ElementType = typeof ELEMENT>(
-  { size = 'md', leftIcon, rightIcon, error, className, ...props }: Props<T>,
+function Input<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
+  {
+    as,
+    size = 'md',
+    leftIcon,
+    rightIcon,
+    error,
+    className,
+    ...props
+  }: Props<T>,
   ref: React.Ref<any>,
 ) {
+  const ELEMENT = as || DEFAULT_ELEMENT;
+
   return (
     <Flex className={cx('container')}>
       <When condition={leftIcon !== undefined}>
@@ -49,5 +59,5 @@ function Input<T extends React.ElementType = typeof ELEMENT>(
   );
 }
 
-export type InputProps = Props<typeof ELEMENT>;
+export type InputProps = Props<typeof DEFAULT_ELEMENT>;
 export default React.forwardRef(Input) as typeof Input;

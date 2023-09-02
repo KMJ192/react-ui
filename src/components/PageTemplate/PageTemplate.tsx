@@ -8,7 +8,7 @@ import Flex from '@src/layout/Flex/Flex';
 import Header from '@src/components/Header/Header';
 import Footer from '@src/components/Footer/Footer';
 
-import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
+import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
@@ -21,12 +21,13 @@ type BaseProps = {
   onClickItem?: (key: SideNavKey) => void;
 };
 
-const ELEMENT = 'div';
+const DEFAULT_ELEMENT = 'div';
 
-type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function PageTemplate<T extends React.ElementType = typeof ELEMENT>(
+function PageTemplate<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   {
+    as,
     menu = [],
     isHide = false,
     onClickItem,
@@ -36,9 +37,12 @@ function PageTemplate<T extends React.ElementType = typeof ELEMENT>(
   }: Props<T>,
   ref: React.Ref<any>,
 ) {
+  const ELEMENT = as || DEFAULT_ELEMENT;
+
   return (
     <Flex
       ref={ref}
+      as={ELEMENT as any}
       className={cx('page-template', isHide && 'hide-gnb', 'dark', className)}
       {...props}
     >
@@ -56,5 +60,5 @@ function PageTemplate<T extends React.ElementType = typeof ELEMENT>(
   );
 }
 
-export type PageTemplateProps = Props<typeof ELEMENT>;
+export type PageTemplateProps = Props<typeof DEFAULT_ELEMENT>;
 export default React.forwardRef(PageTemplate) as typeof PageTemplate;

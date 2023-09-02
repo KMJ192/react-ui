@@ -7,7 +7,7 @@ import Center from '@src/layout/Center/Center';
 import Flex from '@src/layout/Flex/Flex';
 import Spinner from '../Spinner/Spinner';
 
-import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
+import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import type { Shape, Variant } from './types';
 
@@ -25,12 +25,13 @@ type BaseProps = {
   rightIcon?: React.ReactNode;
 };
 
-const ELEMENT = 'button';
+const DEFAULT_ELEMENT = 'button';
 
-type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function Button<T extends React.ElementType = typeof ELEMENT>(
+function Button<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   {
+    as,
     children,
     variant = 'primary',
     shape = 'rect',
@@ -44,6 +45,8 @@ function Button<T extends React.ElementType = typeof ELEMENT>(
   }: Props<T>,
   ref: React.Ref<any>,
 ) {
+  const ELEMENT = as || DEFAULT_ELEMENT;
+
   return (
     <ELEMENT
       {...props}
@@ -70,5 +73,5 @@ function Button<T extends React.ElementType = typeof ELEMENT>(
   );
 }
 
-export type ButtonProps = Props<typeof ELEMENT>;
+export type ButtonProps = Props<typeof DEFAULT_ELEMENT>;
 export default React.forwardRef(Button) as typeof Button;
