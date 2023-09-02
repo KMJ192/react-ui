@@ -36,7 +36,7 @@
 
 @mixin progress-body {
   width: 100%;
-  height: $height;
+  height: $ss-size-progress-height;
   background: $ss-c-progress-body;
   border-radius: 4px;
   overflow: hidden;

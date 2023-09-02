@@ -8,7 +8,7 @@
 }
 
 @mixin side-nav {
-  width: $width;
+  width: $ss-size-side-nav-width;
   height: inherit;
   overflow: auto;
   padding: 16px 0 16px 16px;

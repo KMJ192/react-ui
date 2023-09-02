@@ -57,7 +57,7 @@
 
 @mixin pupil {
   .pupil {
-    width: $pupilSize;
+    width: $ss-size-radio-pupil;
     aspect-ratio: 1;
     border-radius: 50%;
     place-content: center;
@@ -70,7 +70,7 @@
 }
 
 @mixin mark {
-  width: $size;
+  width: $ss-size-radio;
   border: 2px solid;
   aspect-ratio: 1;
   place-content: center;
@@ -90,7 +90,7 @@
 
 @mixin children {
   .children {
-    font-size: $size;
+    font-size: $ss-size-radio;
     transition: color 0.1s ease;
   }
 }

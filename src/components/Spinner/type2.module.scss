@@ -15,9 +15,9 @@
     display: inline-block;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
-    border: $borderWidth solid $ss-c-spinner-color;
+    border: $ss-size-border-width solid $ss-c-spinner-color;
     border-bottom-color: $ss-c-spinner-color2;
-    width: $size;
-    height: $size;
+    width: $ss-size-spinner;
+    height: $ss-size-spinner;
   }
 }
