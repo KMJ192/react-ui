@@ -3,7 +3,9 @@ import React from 'react';
 import Center from '@src/layout/Center/Center';
 import Flex from '@src/layout/Flex/Flex';
 
-import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
+import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+
+import { getStyle } from './calcStyle';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
@@ -17,12 +19,13 @@ type BaseProps = {
   pupilSize?: number;
 };
 
-const ELEMENT = 'div';
+const DEFAULT_ELEMENT = 'div';
 
-type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function Radio<T extends React.ElementType = typeof ELEMENT>(
+function Radio<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   {
+    as,
     children,
     checked = false,
     disabled = false,
@@ -33,27 +36,20 @@ function Radio<T extends React.ElementType = typeof ELEMENT>(
   }: Props<T>,
   ref: React.Ref<any>,
 ) {
-  const isSize = typeof size === 'number';
-  const isPupilSize = typeof pupilSize === 'number';
+  const ELEMENT = as || DEFAULT_ELEMENT;
 
-  const markSize = isSize
-    ? {
-        width: size,
-      }
-    : undefined;
-  const childrenSize = isSize
-    ? {
-        fontSize: size,
-      }
-    : undefined;
-  const pupilSz = isPupilSize
-    ? {
-        width: pupilSize,
-      }
-    : undefined;
+  const { childrenSize, markSize, pupilSz } = getStyle({
+    size,
+    pupilSize,
+  });
 
   return (
-    <Flex {...props} ref={ref} className={cx('radio', { disabled }, className)}>
+    <Flex
+      {...props}
+      ref={ref}
+      as={ELEMENT as any}
+      className={cx('radio', { disabled }, className)}
+    >
       <Center
         className={cx('mark', { checked }, { disabled })}
         style={markSize}
@@ -70,5 +66,5 @@ function Radio<T extends React.ElementType = typeof ELEMENT>(
   );
 }
 
-export type RadioProps = Props<typeof ELEMENT>;
+export type RadioProps = Props<typeof DEFAULT_ELEMENT>;
 export default React.forwardRef(Radio) as typeof Radio;
