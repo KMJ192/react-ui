@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { COLOR_SCHEMA, OVER_RIDABLE_PROPS } from '@src/types/types';
+import type { COLOR_SCHEME, OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import Center from '@src/layout/Center/Center';
 
@@ -10,7 +10,7 @@ const cx = classNames.bind(style);
 
 type BaseProps = {
   children?: React.ReactNode;
-  colorSchema?: COLOR_SCHEMA;
+  colorSchema?: COLOR_SCHEME;
 };
 
 const DEFAULT_ELEMENT = 'span';

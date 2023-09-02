@@ -1,4 +1,4 @@
-import { COLOR } from '@src/Legacy/color/color';
+import { COLOR } from '@src/styles/color';
 import type { ColorCategory } from '@src/styles/color';
 
 import Text from '@src/components/Text/Text';
@@ -46,107 +46,107 @@ const COLOR_MAP: {
 } = {
   light: {
     primary: {
-      '000': COLOR.LIGHT.primary000,
-      '200': COLOR.LIGHT.primary200,
-      '100': COLOR.LIGHT.primary100,
-      '400': COLOR.LIGHT.primary400,
-      '300': COLOR.LIGHT.primary300,
-      '600': COLOR.LIGHT.primary600,
-      '500': COLOR.LIGHT.primary500,
-      '700': COLOR.LIGHT.primary700,
-      '800': COLOR.LIGHT.primary800,
-      '900': COLOR.LIGHT.primary900,
+      '000': COLOR.light.primary['000'],
+      '200': COLOR.light.primary['200'],
+      '100': COLOR.light.primary['100'],
+      '400': COLOR.light.primary['400'],
+      '300': COLOR.light.primary['300'],
+      '600': COLOR.light.primary['600'],
+      '500': COLOR.light.primary['500'],
+      '700': COLOR.light.primary['700'],
+      '800': COLOR.light.primary['800'],
+      '900': COLOR.light.primary['900'],
     },
     blue: {
-      '000': COLOR.LIGHT.blue000,
-      '100': COLOR.LIGHT.blue100,
-      '200': COLOR.LIGHT.blue200,
-      '300': COLOR.LIGHT.blue300,
-      '400': COLOR.LIGHT.blue400,
-      '500': COLOR.LIGHT.blue500,
-      '600': COLOR.LIGHT.blue600,
-      '700': COLOR.LIGHT.blue700,
+      '000': COLOR.light.blue['000'],
+      '100': COLOR.light.blue['100'],
+      '200': COLOR.light.blue['200'],
+      '300': COLOR.light.blue['300'],
+      '400': COLOR.light.blue['400'],
+      '500': COLOR.light.blue['500'],
+      '600': COLOR.light.blue['600'],
+      '700': COLOR.light.blue['700'],
     },
     green: {
-      '000': COLOR.LIGHT.green000,
-      '100': COLOR.LIGHT.green100,
-      '200': COLOR.LIGHT.green200,
-      '300': COLOR.LIGHT.green300,
-      '400': COLOR.LIGHT.green400,
-      '500': COLOR.LIGHT.green500,
-      '600': COLOR.LIGHT.green600,
-      '700': COLOR.LIGHT.green700,
+      '000': COLOR.light.green['000'],
+      '100': COLOR.light.green['100'],
+      '200': COLOR.light.green['200'],
+      '300': COLOR.light.green['300'],
+      '400': COLOR.light.green['400'],
+      '500': COLOR.light.green['500'],
+      '600': COLOR.light.green['600'],
+      '700': COLOR.light.green['700'],
     },
     red: {
-      '000': COLOR.LIGHT.red000,
-      '100': COLOR.LIGHT.red100,
-      '200': COLOR.LIGHT.red200,
-      '300': COLOR.LIGHT.red300,
-      '400': COLOR.LIGHT.red400,
-      '500': COLOR.LIGHT.red500,
-      '600': COLOR.LIGHT.red600,
-      '700': COLOR.LIGHT.red700,
-      '800': COLOR.LIGHT.red800,
-      '900': COLOR.LIGHT.red900,
+      '000': COLOR.light.red['000'],
+      '100': COLOR.light.red['100'],
+      '200': COLOR.light.red['200'],
+      '300': COLOR.light.red['300'],
+      '400': COLOR.light.red['400'],
+      '500': COLOR.light.red['500'],
+      '600': COLOR.light.red['600'],
+      '700': COLOR.light.red['700'],
+      '800': COLOR.light.red['800'],
+      '900': COLOR.light.red['900'],
     },
     background: {
-      global: COLOR.LIGHT.background,
+      global: COLOR.light.background,
     },
     text: {
-      global: COLOR.LIGHT.text,
+      global: COLOR.light.text,
     },
   },
   dark: {
     primary: {
-      '000': COLOR.DARK.primary000,
-      '100': COLOR.DARK.primary100,
-      '200': COLOR.DARK.primary200,
-      '300': COLOR.DARK.primary300,
-      '400': COLOR.DARK.primary400,
-      '500': COLOR.DARK.primary500,
-      '600': COLOR.DARK.primary600,
-      '700': COLOR.DARK.primary700,
+      '000': COLOR.dark.primary['000'],
+      '100': COLOR.dark.primary['100'],
+      '200': COLOR.dark.primary['200'],
+      '300': COLOR.dark.primary['300'],
+      '400': COLOR.dark.primary['400'],
+      '500': COLOR.dark.primary['500'],
+      '600': COLOR.dark.primary['600'],
+      '700': COLOR.dark.primary['700'],
     },
     blue: {
-      '000': COLOR.DARK.blue000,
-      '100': COLOR.DARK.blue100,
-      '200': COLOR.DARK.blue200,
-      '300': COLOR.DARK.blue300,
-      '400': COLOR.DARK.blue400,
-      '500': COLOR.DARK.blue500,
-      '600': COLOR.DARK.blue600,
-      '700': COLOR.DARK.blue700,
+      '000': COLOR.dark.blue['000'],
+      '100': COLOR.dark.blue['100'],
+      '200': COLOR.dark.blue['200'],
+      '300': COLOR.dark.blue['300'],
+      '400': COLOR.dark.blue['400'],
+      '500': COLOR.dark.blue['500'],
+      '600': COLOR.dark.blue['600'],
+      '700': COLOR.dark.blue['700'],
     },
     green: {
-      '000': COLOR.DARK.green000,
-      '100': COLOR.DARK.green100,
-      '200': COLOR.DARK.green200,
-      '300': COLOR.DARK.green300,
-      '400': COLOR.DARK.green400,
-      '500': COLOR.DARK.green500,
-      '600': COLOR.DARK.green600,
-      '700': COLOR.DARK.green700,
+      '000': COLOR.dark.green['000'],
+      '100': COLOR.dark.green['100'],
+      '200': COLOR.dark.green['200'],
+      '300': COLOR.dark.green['300'],
+      '400': COLOR.dark.green['400'],
+      '500': COLOR.dark.green['500'],
+      '600': COLOR.dark.green['600'],
+      '700': COLOR.dark.green['700'],
     },
     red: {
-      '000': COLOR.DARK.red000,
-      '100': COLOR.DARK.red100,
-      '200': COLOR.DARK.red200,
-      '300': COLOR.DARK.red300,
-      '400': COLOR.DARK.red400,
-      '500': COLOR.DARK.red500,
-      '600': COLOR.DARK.red600,
-      '700': COLOR.DARK.red700,
+      '000': COLOR.dark.red['000'],
+      '100': COLOR.dark.red['100'],
+      '200': COLOR.dark.red['200'],
+      '300': COLOR.dark.red['300'],
+      '400': COLOR.dark.red['400'],
+      '500': COLOR.dark.red['500'],
+      '600': COLOR.dark.red['600'],
+      '700': COLOR.dark.red['700'],
     },
     background: {
-      global: COLOR.DARK.background,
+      global: COLOR.dark.background,
     },
     text: {
-      global: COLOR.DARK.text,
+      global: COLOR.dark.text,
     },
   },
   solid: {
-    white: COLOR.SOLID.white,
-    black: COLOR.SOLID.black,
+    white: COLOR.solid.white,
+    black: COLOR.solid.black,
   },
 };
 
@@ -154,7 +154,7 @@ function Color({ theme = 'light' }: Props) {
   return (
     <div className={cx('container', theme)}>
       <Text typo='h2'>{theme} Theme</Text>
-      <div className={cx('contents')}>
+      {/* <div className={cx('contents')}>
         {theme === 'light' &&
           Object.keys(COLOR_MAP.light).map((category: string, idx: number) => {
             const c = COLOR_MAP.light[category as ColorCategory];
@@ -244,7 +244,7 @@ function Color({ theme = 'light' }: Props) {
             })}
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

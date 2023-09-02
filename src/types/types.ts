@@ -22,13 +22,13 @@ type RecursivePartial<T> = {
 
 type SIZE = 'xs' | 'sm' | 'md' | 'lg';
 
-type COLOR_SCHEMA = 'primary' | 'white' | 'black' | 'red' | 'green' | 'blue';
+type COLOR_SCHEME = 'primary' | 'white' | 'black' | 'red' | 'green' | 'blue';
 
 export type {
   OVER_RIDABLE_PROPS,
   COMBINE_ELEMENT_PROPS,
   COMBINE,
-  COLOR_SCHEMA,
+  COLOR_SCHEME,
   SIZE,
   RecursivePartial,
 };

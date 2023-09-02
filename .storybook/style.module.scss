@@ -3,48 +3,48 @@
 @import './size/size.module.scss';
 
 @mixin theme {
-  &.light {
-    @include button-light;
-    @include h-menu-light;
-    @include tab-light;
-    @include spinner-light;
-    @include text-light;
-    @include popup-light;
-    @include checkbox-light;
-    @include radio-light;
-    @include input-light;
-    @include switch-light;
-    @include progressbar-light;
-    @include sideNav-light;
-    @include header-light;
-    @include footer-light;
-    @include row-light;
-    @include table-light;
-    @include badge-light;
-    background: $light-background;
-    color: $light-text;
-  }
-  &.dark {
-    @include button-dark;
-    @include h-menu-dark;
-    @include tab-dark;
-    @include spinner-dark;
-    @include text-dark;
-    @include popup-dark;
-    @include checkbox-dark;
-    @include radio-dark;
-    @include input-dark;
-    @include switch-dark;
-    @include progressbar-dark;
-    @include sideNav-dark;
-    @include header-dark;
-    @include footer-dark;
-    @include row-dark;
-    @include table-dark;
-    @include badge-dark;
-    background: $dark-background;
-    color: $dark-text;
-  }
+  // &.light {
+  //   @include button-light;
+  //   @include h-menu-light;
+  //   @include tab-light;
+  //   @include spinner-light;
+  //   @include text-light;
+  //   @include popup-light;
+  //   @include checkbox-light;
+  //   @include radio-light;
+  //   @include input-light;
+  //   @include switch-light;
+  //   @include progressbar-light;
+  //   @include sideNav-light;
+  //   @include header-light;
+  //   @include footer-light;
+  //   @include row-light;
+  //   @include table-light;
+  //   @include badge-light;
+  //   background: $light-background;
+  //   color: $light-text;
+  // }
+  // &.dark {
+  //   @include button-dark;
+  //   @include h-menu-dark;
+  //   @include tab-dark;
+  //   @include spinner-dark;
+  //   @include text-dark;
+  //   @include popup-dark;
+  //   @include checkbox-dark;
+  //   @include radio-dark;
+  //   @include input-dark;
+  //   @include switch-dark;
+  //   @include progressbar-dark;
+  //   @include sideNav-dark;
+  //   @include header-dark;
+  //   @include footer-dark;
+  //   @include row-dark;
+  //   @include table-dark;
+  //   @include badge-dark;
+  //   background: $dark-background;
+  //   color: $dark-text;
+  // }
 }
 
 .storybook {
