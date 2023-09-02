@@ -10,6 +10,8 @@ const getStyle = ({
     newStyle = {
       height,
     };
+  } else {
+    return style;
   }
 
   return style

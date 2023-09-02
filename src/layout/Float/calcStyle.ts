@@ -28,6 +28,9 @@ const getStyle = ({
         top,
       };
     }
+    if (!isLeft && !isTop) {
+      return style;
+    }
   } else if (startDirection === 'rb') {
     if (isRight) {
       newStyle = {
@@ -41,6 +44,11 @@ const getStyle = ({
         bottom,
       };
     }
+    if (!isRight && !isBottom) {
+      return style;
+    }
+  } else {
+    return style;
   }
 
   return style

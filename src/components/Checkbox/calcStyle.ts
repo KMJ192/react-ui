@@ -9,6 +9,8 @@ const getStyle = ({ size, style }: Pick<CheckboxProps, 'size' | 'style'>) => {
       width: size,
       height: size,
     };
+  } else {
+    return style;
   }
 
   return style

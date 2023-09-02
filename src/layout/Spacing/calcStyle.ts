@@ -16,6 +16,8 @@ const getStyle = ({
     newStyle = {
       width: spacing,
     };
+  } else {
+    return style;
   }
 
   return style
