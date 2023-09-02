@@ -37,7 +37,7 @@ function Tab<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
 
-  const { tabLineStyle, optionsRef } = useSelectTab({
+  const { tabLineRef, optionsRef } = useSelectTab({
     selected,
     options,
     direction,
@@ -46,7 +46,7 @@ function Tab<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   return (
     <ELEMENT {...props} ref={ref} className={cx('tab', className)}>
       <div
-        style={tabLineStyle}
+        ref={tabLineRef}
         className={cx(
           'tab-line',
           direction,
