@@ -54,10 +54,8 @@ function MenuGroup<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
       className={cx('nav-group', { show }, className)}
       style={_style}
     >
-      <div className={cx('children', show ? 'show' : 'collapse')}>
-        {children}
-        <div className={cx('gap')}></div>
-      </div>
+      {children}
+      <div className={cx('gap')}></div>
     </ELEMENT>
   );
 }
