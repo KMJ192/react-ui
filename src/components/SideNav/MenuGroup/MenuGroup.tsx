@@ -45,7 +45,7 @@ function MenuGroup<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
       ...style,
       marginLeft: `${depth * depthGap}px`,
     });
-  }, [depth, style, show]);
+  }, [depth, style, show, depthGap]);
 
   return (
     <ELEMENT
