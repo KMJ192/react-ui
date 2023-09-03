@@ -11,6 +11,9 @@
       max-height: 0px;
       transition: max-height 0.3s cubic-bezier(0, 1, 0, 1), padding 0.5s;
     }
+    .gap {
+      height: 4px;
+    }
   }
   &.show {
     width: 100%;
