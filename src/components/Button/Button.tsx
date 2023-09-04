@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { Switch, Case, Default } from '@ssamssam/react-modules';
 import { When } from '@ssamssam/react-modules';
 
 import Center from '@src/layout/Center/Center';
@@ -59,14 +58,11 @@ function Button<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
         {children}
         {rightIcon && <Flex className={cx('icon')}>{rightIcon}</Flex>}
         <When condition={loading}>
-          <Switch>
-            <Case condition={loadingElement !== undefined}>
-              {loadingElement}
-            </Case>
-            <Default>
-              <Spinner className={cx('btn-spinner')} type='type-1' />
-            </Default>
-          </Switch>
+          {loadingElement !== undefined ? (
+            loadingElement
+          ) : (
+            <Spinner className={cx('btn-spinner')} type='type-1' />
+          )}
         </When>
       </Center>
     </ELEMENT>
