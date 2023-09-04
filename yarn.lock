@@ -2600,14 +2600,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ssamssam/react-modules@npm:^0.0.1":
-  version: 0.0.1
-  resolution: "@ssamssam/react-modules@npm:0.0.1"
+"@ssamssam/react-modules@npm:^0.0.12":
+  version: 0.0.12
+  resolution: "@ssamssam/react-modules@npm:0.0.12"
   dependencies:
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-router-dom: ^6.14.2
-  checksum: 3ad29dd3789d53165842d5097acd7641ad0c245b05002c56c5f4de5735d3c185a63f4b425125fb1fd18e28586eb4b6092e58a2126fb6ff93473c1a451f4e2d17
+    react-router-dom: ^6.15.0
+  checksum: 5444c41c8699d5e0d67212196479ab502935dc1a7b9612f36b028c4afa6d90bed4b42ee63cd5ebdddd863b1659f5912f5758a7409153029650b30e6400ae9f60
   languageName: node
   linkType: hard
 
@@ -2615,7 +2615,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ssamssam/storybook@workspace:."
   dependencies:
-    "@ssamssam/react-modules": ^0.0.1
+    "@ssamssam/react-modules": ^0.0.12
     "@storybook/addon-actions": ^7.3.2
     "@storybook/addon-controls": ^7.3.2
     "@storybook/addon-docs": ^7.3.2
@@ -9066,7 +9066,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router-dom@npm:^6.14.2":
+"react-router-dom@npm:^6.15.0":
   version: 6.15.0
   resolution: "react-router-dom@npm:6.15.0"
   dependencies:
