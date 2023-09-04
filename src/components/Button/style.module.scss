@@ -7,7 +7,6 @@
   border-radius: 4px;
   border: none;
   overflow: hidden;
-  column-gap: 8px;
   cursor: pointer;
   &:disabled {
     cursor: not-allowed;
@@ -16,6 +15,7 @@
 
 @mixin contents {
   position: relative;
+  column-gap: 8px;
 }
 
 @mixin shape {
@@ -29,24 +29,24 @@
 }
 
 @mixin color-set {
-  background: $c-button-bg;
+  background: $ss-c-button-bg;
   color: $ss-c-button-text;
   box-shadow: $ss-c-button-box-shadow;
   &:hover {
-    background: $c-button-bg-hover;
+    background: $ss-c-button-bg-hover;
     color: $ss-c-button-text-hover;
   }
   &:disabled {
-    background: $c-button-bg-disabled;
+    background: $ss-c-button-bg-disabled;
     color: $ss-c-button-text-disabled;
     &:active,
     &:hover {
-      background: $c-button-bg-disabled;
+      background: $ss-c-button-bg-disabled;
       color: $ss-c-button-text-disabled;
     }
   }
   &:active {
-    background: $c-button-bg-active;
+    background: $ss-c-button-bg-active;
     color: $ss-c-button-text-active;
   }
   &.outlined {
@@ -54,7 +54,7 @@
     box-shadow: none;
     outline: 1px solid $ss-c-button-outline;
     &:hover {
-      background: $c-button-bg-hover;
+      background: $ss-c-button-bg-hover;
       color: $ss-c-button-text-hover;
     }
   }
@@ -62,7 +62,7 @@
     background: none;
     box-shadow: none;
     &:hover {
-      background: $c-button-bg-hover;
+      background: $ss-c-button-bg-hover;
       color: $ss-c-button-text-hover;
     }
   }
@@ -77,7 +77,7 @@
     left: 50%;
     width: 4px;
     height: 4px;
-    background: $c-button-bg-ripple;
+    background: $ss-c-button-bg-ripple;
     opacity: 0;
     border-radius: 100%;
     transform: scale(1, 1) translate(-50%);

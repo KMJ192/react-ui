@@ -1,10 +1,10 @@
 @import 'src/styles/color.module.scss';
 
-$c-button-bg: var(--ss-c-button-bg, $light-primary000);
-$c-button-bg-hover: var(--ss-c-button-bg-hover, $light-blue000);
-$c-button-bg-disabled: var(--ss-c-button-bg-disabled, $light-primary200);
-$c-button-bg-active: var(--ss-c-button-bg-active, $light-primary100);
-$c-button-bg-ripple: var(--ss-c-button-bg-ripple, rgba(255, 255, 255, 0.6));
+$ss-c-button-bg: var(--ss-c-button-bg, $light-primary000);
+$ss-c-button-bg-hover: var(--ss-c-button-bg-hover, $light-blue000);
+$ss-c-button-bg-disabled: var(--ss-c-button-bg-disabled, $light-primary200);
+$ss-c-button-bg-active: var(--ss-c-button-bg-active, $light-primary100);
+$ss-c-button-bg-ripple: var(--ss-c-button-bg-ripple, rgba(255, 255, 255, 0.6));
 
 $ss-c-button-text: var(--ss-c-button-text, $light-primary900);
 $ss-c-button-text-hover: var(--ss-c-button-text-hover, $light-primary900);
