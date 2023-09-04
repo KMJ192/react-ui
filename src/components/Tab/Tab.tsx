@@ -60,7 +60,8 @@ function Tab<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
             <span
               className={cx('option', disabled && 'disabled')}
               key={key}
-              onClick={() => {
+              onClick={(e: React.MouseEvent) => {
+                e.stopPropagation();
                 if (!disabled) {
                   onSelect(key, idx);
                 }
