@@ -16,15 +16,15 @@ $ss-c-radio-border-disabled: var(
 );
 $ss-c-radio-border-hover: var(--ss-c-radio-border-hover, $light-blue500);
 
-$radioBackground: var(--radioBackground);
-$radioBackgroundChecked: var(--radioBackgroundChecked);
-$radioBackgroundCheckedHover: var(--radioBackgroundCheckedHover);
+$ss-c-radio-bg: var(--ss-c-radio-bg);
+$ss-c-radio-bg-checked: var(--ss-c-radio-bg-checked);
+$ss-c-radio-bg-checked-hover: var(--ss-c-radio-bg-checked-hover);
 $ss-c-radio-bg-checked-disabled: var(
   --ss-c-radio-bg-checked-disabled,
   $light-primary300
 );
 $ss-c-radio-bg-disabled: var(--ss-c-radio-bg-disabled, $light-primary200);
-$radioBackgroundHover: var(--radioBackgroundHover);
+$ss-c-radio-bg-hover: var(--ss-c-radio-bg-hover);
 
 $ss-c-radio-text: var(--ss-c-radio-text, $light-primary900);
 $ss-c-radio-text-hover: var(--ss-c-radio-text-hover, $light-blue600);

@@ -4,17 +4,17 @@
 @mixin color-set {
   .mark {
     border-color: $ss-c-radio-border;
-    background: $radioBackground;
+    background: $ss-c-radio-bg;
     &.checked {
       border-color: $ss-c-radio-border-checked;
-      background: $radioBackgroundChecked;
+      background: $ss-c-radio-bg-checked;
       &.disabled {
         border-color: $ss-c-radio-border-checked-disabled;
         background: $ss-c-radio-bg-checked-disabled;
       }
       &:not(.disabled):hover {
         border-color: $ss-c-radio-border-checked-hover;
-        background: $radioBackgroundCheckedHover;
+        background: $ss-c-radio-bg-checked-hover;
       }
     }
 
@@ -33,20 +33,20 @@
       }
     }
   }
-  &:hover {
+
+  &:hover:not(.disabled) {
     .mark {
       border-color: $ss-c-radio-border-hover;
-      background: $radioBackgroundHover;
+      background: $ss-c-radio-bg-hover;
       .pupil {
-        &:not(.disabled) {
-          background: $ss-c-radio-pupil-hover;
-        }
+        background: $ss-c-radio-pupil-hover;
       }
     }
     .children {
       color: $ss-c-radio-text-hover;
     }
   }
+
   .children {
     color: $ss-c-radio-text;
     &.disabled {
@@ -58,7 +58,7 @@
 @mixin pupil {
   .pupil {
     width: $ss-size-radio-pupil;
-    aspect-ratio: 1;
+    height: $ss-size-radio-pupil;
     border-radius: 50%;
     place-content: center;
     transform: scale(0);
@@ -71,8 +71,8 @@
 
 @mixin mark {
   width: $ss-size-radio;
+  height: $ss-size-radio;
   border: 2px solid;
-  aspect-ratio: 1;
   place-content: center;
   border-radius: 50%;
   transition: border-color 0.1s ease;
