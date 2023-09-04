@@ -12,7 +12,7 @@ const cx = classNames.bind(style);
 type Group = Pick<RadioProps, 'children' | 'disabled' | 'size' | 'pupilSize'>;
 
 type BaseProps = {
-  group?: Array<Group>;
+  options?: Array<Group>;
   direction?: 'horizontal' | 'vertical';
   selected?: number;
   onSelect?: (idx: number) => void;
@@ -27,7 +27,7 @@ function RadioGroup<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     as,
     className,
     selected = -1,
-    group = [],
+    options = [],
     direction = 'horizontal',
     onSelect = () => {},
     ...props
@@ -43,7 +43,7 @@ function RadioGroup<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
       as={ELEMENT as any}
       className={cx('radio-group', direction, className)}
     >
-      {group.map(({ children, disabled, size, pupilSize }, idx) => {
+      {options.map(({ children, disabled, size, pupilSize }, idx) => {
         const isSelect = selected === idx;
         return (
           <Radio

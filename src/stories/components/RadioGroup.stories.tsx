@@ -41,7 +41,7 @@ export const RadioGroupStory: StoryFn<RadioGroupProps> = Template.bind({});
 RadioGroupStory.args = {
   direction: 'horizontal',
   selected: 0,
-  group: [
+  options: [
     {
       children: 'first',
       disabled: false,
