@@ -15,6 +15,7 @@
 
   --ss-c-button-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
   --ss-c-button-outline: #{$light-blue200};
+  --ss-c-button-outline-disabled: #{$light-primary200};
 }
 
 @mixin button-dark {

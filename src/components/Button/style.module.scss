@@ -32,36 +32,40 @@
   background: $ss-c-button-bg;
   color: $ss-c-button-text;
   box-shadow: $ss-c-button-box-shadow;
-  &:hover {
-    background: $ss-c-button-bg-hover;
-    color: $ss-c-button-text-hover;
-  }
   &:disabled {
     background: $ss-c-button-bg-disabled;
     color: $ss-c-button-text-disabled;
-    &:active,
-    &:hover {
+    &:active:not(.outlined):not(.clear),
+    &:hover:not(.outlined):not(.clear) {
       background: $ss-c-button-bg-disabled;
       color: $ss-c-button-text-disabled;
     }
   }
-  &:active {
+  &:active:not(.disabled):not(.loading) {
     background: $ss-c-button-bg-active;
     color: $ss-c-button-text-active;
+  }
+  &:hover:not(.disabled):not(.loading) {
+    background: $ss-c-button-bg-hover;
+    color: $ss-c-button-text-hover;
   }
   &.outlined {
     background: none;
     box-shadow: none;
     outline: 1px solid $ss-c-button-outline;
-    &:hover {
+    &:hover:not(.disabled):not(.loading) {
       background: $ss-c-button-bg-hover;
       color: $ss-c-button-text-hover;
+    }
+    &.disabled,
+    &.loading {
+      outline: 1px solid $ss-c-button-outline-disabled;
     }
   }
   &.clear {
     background: none;
     box-shadow: none;
-    &:hover {
+    &:hover:not(.disabled):not(.loading) {
       background: $ss-c-button-bg-hover;
       color: $ss-c-button-text-hover;
     }
