@@ -9,10 +9,13 @@ import classNames from 'classnames/bind';
 import style from './style.module.scss';
 const cx = classNames.bind(style);
 
-type Group = Pick<RadioProps, 'children' | 'disabled' | 'size' | 'pupilSize'>;
+type Options = Pick<
+  RadioProps,
+  'children' | 'disabled' | 'size' | 'pupilSize'
+> & { key: string | number };
 
 type BaseProps = {
-  options?: Array<Group>;
+  options?: Array<Options>;
   direction?: 'horizontal' | 'vertical';
   selected?: number;
   onSelect?: (idx: number) => void;
@@ -47,6 +50,7 @@ function RadioGroup<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
         const isSelect = selected === idx;
         return (
           <Radio
+            key={idx}
             checked={isSelect}
             disabled={disabled}
             size={size}
@@ -66,5 +70,6 @@ function RadioGroup<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   );
 }
 
+export type { Options as RadioGroupOptions };
 export type RadioGroupProps = Props<typeof DEFAULT_ELEMENT>;
 export default React.forwardRef(RadioGroup) as typeof RadioGroup;

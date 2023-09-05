@@ -43,24 +43,28 @@ RadioGroupStory.args = {
   selected: 0,
   options: [
     {
+      key: 0,
       children: 'first',
       disabled: false,
       size: 16,
       pupilSize: 10,
     },
     {
+      key: 1,
       children: 'second',
       disabled: false,
       size: 16,
       pupilSize: 10,
     },
     {
+      key: 2,
       children: 'third',
       disabled: false,
       size: 16,
       pupilSize: 10,
     },
     {
+      key: 3,
       children: 'disabled',
       disabled: true,
       size: 16,
