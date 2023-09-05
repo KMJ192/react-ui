@@ -8,7 +8,14 @@ const meta: Meta<typeof Badge> = {
   parameters: {
     componentSubtitle: 'Test',
   },
-  argTypes: {},
+  argTypes: {
+    colorSchema: {
+      options: ['primary', 'success', 'info', 'warning', 'danger', 'custom'],
+      control: {
+        type: 'select',
+      },
+    },
+  },
 };
 
 const Template = (args: BadgeProps) => {
@@ -20,6 +27,7 @@ const Template = (args: BadgeProps) => {
 export const BadgeStory: StoryFn<BadgeProps> = Template.bind({});
 BadgeStory.args = {
   children: 'Badge',
+  colorSchema: 'success',
 };
 
 export default meta;

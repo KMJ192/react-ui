@@ -6,18 +6,28 @@
   padding: 8px;
   border-radius: 16px;
   min-height: 12px;
-  &.primary {
+  &.custom {
     color: $ss-c-badge-color;
     background: $ss-c-badge-bg;
   }
-  &.white {
+  &.primary {
+    color: $light-text;
+    background: $light-primary200;
   }
-  &.black {
+  &.success {
+    color: $light-primary000;
+    background: $light-success;
   }
-  &.red {
+  &.info {
+    color: $light-text;
+    background: $light-info;
   }
-  &.green {
+  &.warning {
+    color: $light-text;
+    background: $light-warning;
   }
-  &.blue {
+  &.danger {
+    color: $light-primary000;
+    background: $light-danger;
   }
 }
