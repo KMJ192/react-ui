@@ -7,7 +7,11 @@ type COLOR_SCHEME =
   | 'green'
   | 'blue'
   | 'purple'
-  | 'solid';
+  | 'gray'
+  | 'success'
+  | 'info'
+  | 'warning'
+  | 'danger';
 
 type ColorMap = {
   LIGHT: { [key: string]: any };
