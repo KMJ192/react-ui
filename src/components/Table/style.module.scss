@@ -49,6 +49,7 @@
   border-radius: 8px;
   white-space: nowrap;
   padding: 8px 24px;
+  overflow: scroll;
   @include color-set;
   .table {
     border-collapse: collapse;
