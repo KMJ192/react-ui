@@ -1,6 +1,8 @@
 @import './variable/color.module.scss';
 @import './variable/size.module.scss';
 
+@import 'src/layout/Center/style.module.scss';
+
 @mixin mark {
   transition: border-color 0.1s, color 0.1s;
   .mark {
@@ -13,71 +15,69 @@
       visibility: hidden;
     }
   }
-  &.checked {
-    .mark > svg {
-      visibility: visible;
-    }
+  &.checked > .mark > svg {
+    visibility: visible;
   }
 }
 
 @mixin color-set {
-  border: 2px solid $ss-c-checkbox-border;
   color: $ss-c-checkbox-text;
-
-  .mark > svg {
-    color: $ss-c-checkbox-mark-checked;
-  }
-
-  &.checked {
-    border-color: $ss-c-checkbox-border-checked;
-    .mark > svg {
-      color: $ss-c-checkbox-mark-checked;
-      background: $ss-c-checkbox-bg-checked;
-    }
-    &.disabled {
-      border-color: $ss-c-checkbox-border-checked-disabled;
-      .mark > svg {
-        background: $ss-c-checkbox-bg-checked-disabled;
-        color: $ss-c-checkbox-mark-checked-disabled;
-      }
-    }
-    &:not(.disabled):hover {
-      border-color: $ss-c-checkbox-border-checked-hover;
-      .mark > svg {
-        background: $ss-c-checkbox-bg-checked-hover;
-        color: $ss-c-checkbox-mark-checked-hover;
-      }
-    }
-  }
-
   &.disabled {
-    border-color: $ss-c-checkbox-border-disabled;
     color: $ss-c-checkbox-text-disabled;
-    .mark > svg {
-      visibility: visible;
-      background: $ss-c-checkbox-bg-disabled;
-      color: $ss-c-checkbox-bg-disabled;
-    }
+  }
+  .box {
+    border: 2px solid $ss-c-checkbox-border;
+  }
+  .box.checked {
+    border-color: $ss-c-checkbox-border-checked;
+  }
+  .box.disabled {
+    border-color: $ss-c-checkbox-border-disabled;
+  }
+  .box.checked.disabled {
+    border-color: $ss-c-checkbox-border-checked-disabled;
+  }
+  .box > .mark > svg {
+    color: $ss-c-checkbox-mark;
+  }
+  .box.checked > .mark > svg {
+    background: $ss-c-checkbox-bg;
+  }
+  .box.disabled > .mark > svg {
+    visibility: visible;
+    background: $ss-c-checkbox-bg-disabled;
+    color: $ss-c-checkbox-bg-disabled;
+  }
+  .box.checked.disabled > .mark > svg {
+    background: $ss-c-checkbox-bg-checked-disabled;
+    color: $ss-c-checkbox-mark-disabled;
   }
 
-  &:not(.disabled):hover {
-    border-color: $ss-c-checkbox-border-hover;
+  &:hover:not(.disabled) {
     color: $ss-c-checkbox-text-hover;
+    .box {
+      border-color: $ss-c-checkbox-border-hover;
+    }
+    .box.checked {
+      border-color: $ss-c-checkbox-border-checked-hover;
+    }
+    .box.checked > .mark > svg {
+      background: $ss-c-checkbox-bg-hover;
+      color: $ss-c-checkbox-mark-hover;
+    }
   }
 }
 
-@mixin default {
+@mixin box {
   border-radius: 2px;
-  cursor: pointer;
-  column-gap: 8px;
-  align-items: center;
-  -webkit-box-align: center;
   width: $ss-size-checkbox;
   height: $ss-size-checkbox;
   aspect-ratio: 1;
 }
 
-@mixin disabled {
+@mixin default {
+  cursor: pointer;
+  column-gap: 8px;
   &.disabled {
     cursor: not-allowed;
   }
@@ -85,7 +85,10 @@
 
 .checkbox {
   @include default;
-  @include disabled;
+  @include vertical;
   @include color-set;
-  @include mark;
+  .box {
+    @include box;
+    @include mark;
+  }
 }

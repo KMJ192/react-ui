@@ -1,6 +1,6 @@
 import { CheckboxProps } from './Checkbox';
 
-const getStyle = ({ size, style }: Pick<CheckboxProps, 'size' | 'style'>) => {
+const getStyle = ({ size }: Pick<CheckboxProps, 'size'>) => {
   let newStyle = {};
 
   const isSize = typeof size === 'number';
@@ -10,15 +10,10 @@ const getStyle = ({ size, style }: Pick<CheckboxProps, 'size' | 'style'>) => {
       height: size,
     };
   } else {
-    return style;
+    return undefined;
   }
 
-  return style
-    ? {
-        ...newStyle,
-        ...style,
-      }
-    : newStyle;
+  return newStyle;
 };
 
 const getMarkSize = (size?: number) => {

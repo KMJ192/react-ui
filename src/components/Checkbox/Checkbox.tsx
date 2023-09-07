@@ -32,7 +32,6 @@ function Checkbox<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     disabled = false,
     size,
     className,
-    style,
     ...props
   }: Props<T>,
   ref: React.Ref<any>,
@@ -41,19 +40,21 @@ function Checkbox<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
 
   const curStyle = getStyle({
     size,
-    style,
+    // style,
   });
 
   return (
     <Flex
-      {...props}
       as={ELEMENT as any}
+      {...props}
       ref={ref}
-      style={curStyle}
-      className={cx('checkbox', { checked }, { disabled }, className)}
+      horizontal={false}
+      className={cx('checkbox', { disabled }, className)}
     >
-      <Mark multiple={multiple} size={size} />
-      {children}
+      <div style={curStyle} className={cx('box', { checked }, { disabled })}>
+        <Mark multiple={multiple} size={size} />
+      </div>
+      <span className={cx('children')}>{children}</span>
     </Flex>
   );
 }
