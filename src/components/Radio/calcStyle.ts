@@ -14,6 +14,7 @@ const getStyle = ({
   if (isSize) {
     markSize = {
       width: size,
+      height: size,
     };
     childrenSize = {
       fontSize: size,
@@ -22,6 +23,7 @@ const getStyle = ({
   if (isPupilSize) {
     pupilSz = {
       width: pupilSize,
+      height: pupilSize,
     };
   }
 
