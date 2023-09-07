@@ -48,7 +48,13 @@ function Radio<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
       {...props}
       ref={ref}
       as={ELEMENT as any}
-      className={cx('radio', { checked }, { disabled }, className)}
+      className={cx(
+        'radio',
+        { checked },
+        { disabled },
+        children !== undefined && 'is-children',
+        className,
+      )}
     >
       <Center
         className={cx('mark', { checked }, { disabled })}

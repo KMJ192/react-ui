@@ -88,8 +88,10 @@
 @mixin radio {
   align-items: center;
   -webkit-box-align: center;
-  column-gap: 8px;
   cursor: pointer;
+  &.is-children {
+    column-gap: 8px;
+  }
   &.disabled {
     cursor: not-allowed;
   }
