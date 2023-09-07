@@ -130,7 +130,7 @@
 .container {
   display: flex;
   position: relative;
-  @include vertical;
+  @include center-vertical;
 
   .input {
     @include input;

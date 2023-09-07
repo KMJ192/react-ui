@@ -40,7 +40,6 @@ function Checkbox<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
 
   const curStyle = getStyle({
     size,
-    // style,
   });
 
   return (
@@ -49,7 +48,12 @@ function Checkbox<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
       {...props}
       ref={ref}
       horizontal={false}
-      className={cx('checkbox', { disabled }, className)}
+      className={cx(
+        'checkbox',
+        { disabled },
+        children !== undefined && 'is-children',
+        className,
+      )}
     >
       <div style={curStyle} className={cx('box', { checked }, { disabled })}>
         <Mark multiple={multiple} size={size} />

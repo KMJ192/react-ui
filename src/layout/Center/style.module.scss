@@ -1,11 +1,11 @@
 @import 'src/layout/Flex/flex.scss';
 
-@mixin vertical {
+@mixin center-vertical {
   align-items: center;
   -webkit-box-align: center;
 }
 
-@mixin horizontal {
+@mixin center-horizontal {
   justify-content: center;
   -webkit-box-pack: center;
 }
@@ -15,9 +15,9 @@
   height: 100%;
   width: 100%;
   &.vertical {
-    @include vertical;
+    @include center-vertical;
   }
   &.horizontal {
-    @include horizontal;
+    @include center-horizontal;
   }
 }

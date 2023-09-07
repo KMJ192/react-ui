@@ -26,7 +26,7 @@
     color: $ss-c-checkbox-text-disabled;
   }
   .box {
-    border: 2px solid $ss-c-checkbox-border;
+    border-color: $ss-c-checkbox-border;
   }
   .box.checked {
     border-color: $ss-c-checkbox-border-checked;
@@ -73,11 +73,15 @@
   width: $ss-size-checkbox;
   height: $ss-size-checkbox;
   aspect-ratio: 1;
+  border-width: 2px;
+  border-style: solid;
 }
 
 @mixin default {
   cursor: pointer;
-  column-gap: 8px;
+  &.is-children {
+    column-gap: 8px;
+  }
   &.disabled {
     cursor: not-allowed;
   }
@@ -85,10 +89,10 @@
 
 .checkbox {
   @include default;
-  @include vertical;
-  @include color-set;
+  @include center-vertical;
   .box {
     @include box;
     @include mark;
   }
+  @include color-set;
 }
