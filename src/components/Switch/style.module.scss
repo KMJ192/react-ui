@@ -76,7 +76,9 @@
   position: relative;
   align-items: center;
   -webkit-box-align: center;
-  column-gap: 8px;
+  &.is-children {
+    column-gap: 8px;
+  }
   &:not(.disabled):hover {
     cursor: pointer;
   }
