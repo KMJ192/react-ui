@@ -4,52 +4,52 @@
 @mixin color-set {
   .switch-body {
     background: $ss-c-switch-bg;
-    &.checked {
-      background: $ss-c-switch-bg-checked;
-      &.disabled {
-        background: $ss-c-switch-bg-checked-disabled;
-      }
-    }
-    &.disabled {
-      background: $ss-c-switch-bg-disabled;
-    }
+  }
+  .switch-body.checked {
+    background: $ss-c-switch-bg-checked;
+  }
+  .switch-body.checked.disabled {
+    background: $ss-c-switch-bg-checked-disabled;
+  }
+  .switch-body.disabled {
+    background: $ss-c-switch-bg-disabled;
   }
 
   .switch-bullet {
     background: $ss-c-switch-bullet;
     box-shadow: $ss-c-switch-bullet-box-shadow;
-    &.checked {
-      background: $ss-c-switch-bullet-checked;
-      &.disabled {
-        background: $ss-c-switch-bullet-checked-disabled;
-        box-shadow: none;
-      }
-    }
-    &.disabled {
-      background: $ss-c-switch-bullet-disabled;
-      box-shadow: none;
-    }
+  }
+  .switch-bullet.checked {
+    background: $ss-c-switch-bullet-checked;
+  }
+  .switch-bullet.checked.disabled {
+    background: $ss-c-switch-bullet-checked-disabled;
+    box-shadow: none;
+  }
+  .switch-bullet.disabled {
+    background: $ss-c-switch-bullet-disabled;
+    box-shadow: none;
   }
 
   .children {
     color: $ss-c-switch-text;
-    &.disabled {
-      color: $ss-c-switch-text-disabled;
-    }
+  }
+  .children.disabled {
+    color: $ss-c-switch-text-disabled;
   }
 
-  &:not(.disabled):hover {
+  &:hover:not(.disabled) {
     .switch-body {
       background: $ss-c-switch-bg-hover;
-      &.checked {
-        background: $ss-c-switch-bg-checked-hover;
-      }
+    }
+    .switch-body.checked {
+      background: $ss-c-switch-bg-checked-hover;
     }
     .switch-bullet {
       background: $ss-c-switch-bullet-hover;
-      &.checked {
-        background: $ss-c-switch-bullet-checked-hover;
-      }
+    }
+    .switch-bullet.checked {
+      background: $ss-c-switch-bullet-checked-hover;
     }
     .children {
       color: $ss-c-switch-text-hover;
@@ -76,6 +76,7 @@
   position: relative;
   align-items: center;
   -webkit-box-align: center;
+  width: fit-content;
   &.is-children {
     column-gap: 8px;
   }
