@@ -36,9 +36,12 @@ function useSelectTab({ selected, options, direction }: Props) {
       return info;
     }
     return [];
-  }, [options, direction]);
+  }, []);
 
   useEffect(() => {
+    if (selected < 0 || options.length - 1 < selected) {
+      return;
+    }
     const sizeInfo = getSizeInfo();
 
     if (sizeInfo.length > 0 && tabLineRef.current) {

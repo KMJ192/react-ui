@@ -69,18 +69,14 @@
   background: $ss-c-tab-bg;
   .option {
     color: $ss-c-tab-text;
-    &:hover {
-      color: $ss-c-tab-text-hover;
-      background: $ss-c-tab-bg-hover;
-    }
-    &.disabled {
-      color: $ss-c-tab-text-disabled;
-      background: $ss-c-tab-bg-disabled;
-      &:hover {
-        color: $ss-c-tab-text-disabled;
-        background: $ss-c-tab-bg-disabled;
-      }
-    }
+  }
+  .option:hover:not(.disabled) {
+    color: $ss-c-tab-text-hover;
+    background: $ss-c-tab-bg-hover;
+  }
+  .option.disabled {
+    color: $ss-c-tab-text-disabled;
+    background: $ss-c-tab-bg-disabled;
   }
   .tab-line {
     background: $ss-c-tab-select-line;
