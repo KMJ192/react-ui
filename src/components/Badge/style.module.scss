@@ -1,0 +1,33 @@
+@import './variable/color.module.scss';
+
+.badge {
+  display: inline-block;
+  white-space: nowrap;
+  padding: 8px;
+  border-radius: 16px;
+  min-height: 12px;
+  &.custom {
+    color: $ss-c-badge-color;
+    background: $ss-c-badge-bg;
+  }
+  &.primary {
+    color: $light-text;
+    background: $light-primary200;
+  }
+  &.success {
+    color: $light-primary000;
+    background: $light-success;
+  }
+  &.info {
+    color: $light-text;
+    background: $light-info;
+  }
+  &.warning {
+    color: $light-text;
+    background: $light-warning;
+  }
+  &.danger {
+    color: $light-primary000;
+    background: $light-danger;
+  }
+}

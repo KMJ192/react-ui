@@ -1,18 +1,12 @@
 .nav-group {
-  padding: 0;
-  width: 0;
-  .children {
-    overflow: hidden;
-    &.show {
-      max-height: 100vh;
-      transition: max-height 0.3s ease-in-out;
-    }
-    &.collapse {
-      max-height: 0px;
-      transition: max-height 0.3s cubic-bezier(0, 1, 0, 1), padding 0.5s;
-    }
-  }
+  overflow: hidden;
+  max-height: 0px;
+  transition: max-height 0.3s cubic-bezier(0, 1, 0, 1), padding 0.5s;
   &.show {
-    width: 100%;
+    max-height: 100vh;
+    transition: max-height 0.3s ease-in-out;
+  }
+  .gap {
+    height: 6px;
   }
 }

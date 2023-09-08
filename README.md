@@ -16,12 +16,6 @@ yarn start
 yarn build:story
 ```
 
-- library build
-
-```
-yarn build:lib
-```
-
 ##### Deployed Storybook link
 
 - https://any-react-ui.vercel.app/
@@ -45,9 +39,7 @@ etc: 위 해당 사항이 없는 모든 변경 사항
 
 ##### dev
 
-- Storybook v7
+- Storybook v7 (Vite)
 - React
 - Typescript
 - sass
-- EmotionJS
-- Vite

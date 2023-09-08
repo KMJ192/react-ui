@@ -34,9 +34,9 @@ function Children({
       >
         {contents}
       </SideNav.Menu>
-      <SideNav.MenuGroup depth={depth} show={options.show.has(uniqueKey)}>
-        {Array.isArray(navItem) &&
-          navItem.map(({ key, contents, disabled, children }) => {
+      {Array.isArray(navItem) && (
+        <SideNav.MenuGroup depth={depth} show={options.show.has(uniqueKey)}>
+          {navItem.map(({ key, contents, disabled, children }) => {
             return (
               <Children
                 key={key}
@@ -50,7 +50,8 @@ function Children({
               />
             );
           })}
-      </SideNav.MenuGroup>
+        </SideNav.MenuGroup>
+      )}
     </>
   );
 }

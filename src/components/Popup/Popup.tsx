@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
+import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
@@ -12,12 +12,13 @@ type BaseProps = {
   visible?: boolean;
 };
 
-const ELEMENT = 'div';
+const DEFAULT_ELEMENT = 'div';
 
-type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function Popup<T extends React.ElementType = typeof ELEMENT>(
+function Popup<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   {
+    as,
     children,
     animation = 'fade',
     visible = false,
@@ -26,6 +27,8 @@ function Popup<T extends React.ElementType = typeof ELEMENT>(
   }: Props<T>,
   ref: React.Ref<any>,
 ) {
+  const ELEMENT = as || DEFAULT_ELEMENT;
+
   return (
     <ELEMENT
       {...props}
@@ -37,5 +40,5 @@ function Popup<T extends React.ElementType = typeof ELEMENT>(
   );
 }
 
-export type PopupProps = Props<typeof ELEMENT>;
+export type PopupProps = Props<typeof DEFAULT_ELEMENT>;
 export default React.forwardRef(Popup) as typeof Popup;

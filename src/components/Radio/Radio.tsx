@@ -3,7 +3,7 @@ import React from 'react';
 import Center from '@src/layout/Center/Center';
 import Flex from '@src/layout/Flex/Flex';
 
-import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
+import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
@@ -13,62 +13,45 @@ type BaseProps = {
   children?: React.ReactNode;
   checked?: boolean;
   disabled?: boolean;
-  size?: number;
-  pupilSize?: number;
 };
 
-const ELEMENT = 'div';
+const DEFAULT_ELEMENT = 'div';
 
-type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function Radio<T extends React.ElementType = typeof ELEMENT>(
+function Radio<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   {
+    as,
     children,
     checked = false,
     disabled = false,
-    size,
-    pupilSize,
     className,
     ...props
   }: Props<T>,
   ref: React.Ref<any>,
 ) {
-  const isSize = typeof size === 'number';
-  const isPupilSize = typeof pupilSize === 'number';
-
-  const markSize = isSize
-    ? {
-        width: size,
-      }
-    : undefined;
-  const childrenSize = isSize
-    ? {
-        fontSize: size,
-      }
-    : undefined;
-  const pupilSz = isPupilSize
-    ? {
-        width: pupilSize,
-      }
-    : undefined;
+  const ELEMENT = as || DEFAULT_ELEMENT;
 
   return (
-    <Flex {...props} ref={ref} className={cx('radio', { disabled }, className)}>
-      <Center
-        className={cx('mark', { checked }, { disabled })}
-        style={markSize}
-      >
-        <div
-          className={cx('pupil', { checked }, { disabled })}
-          style={pupilSz}
-        />
+    <Flex
+      {...props}
+      ref={ref}
+      as={ELEMENT as any}
+      className={cx(
+        'radio',
+        { checked },
+        { disabled },
+        children !== undefined && 'is-children',
+        className,
+      )}
+    >
+      <Center className={cx('mark', { checked }, { disabled })}>
+        <div className={cx('pupil', { checked }, { disabled })} />
       </Center>
-      <span className={cx('children', { disabled })} style={childrenSize}>
-        {children}
-      </span>
+      <span className={cx('children', { disabled })}>{children}</span>
     </Flex>
   );
 }
 
-export type RadioProps = Props<typeof ELEMENT>;
+export type RadioProps = Props<typeof DEFAULT_ELEMENT>;
 export default React.forwardRef(Radio) as typeof Radio;

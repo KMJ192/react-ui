@@ -1,16 +1,16 @@
-$top: var(--layoutFloatTop, 0px);
-$bottom: var(--layoutFloatBottom, 0px);
-$left: var(--layoutFloatLeft, 0px);
-$right: var(--layoutFloatRight, 0px);
+$ss-layout-float-top: var(--ss-layout-float-top, 0px);
+$ss-layout-float-bottom: var(--ss-layout-float-bottom, 0px);
+$ss-layout-float-left: var(--ss-layout-float-left, 0px);
+$ss-layout-float-right: var(--ss-layout-float-right, 0px);
 
 .float {
   position: fixed;
   &.lt {
-    top: $top;
-    left: $left;
+    top: $ss-layout-float-top;
+    left: $ss-layout-float-left;
   }
   &.rb {
-    bottom: $bottom;
-    right: $right;
+    bottom: $ss-layout-float-bottom;
+    right: $ss-layout-float-right;
   }
 }

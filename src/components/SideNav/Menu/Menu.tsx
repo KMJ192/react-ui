@@ -2,7 +2,7 @@ import React from 'react';
 
 import Flex from '@src/layout/Flex/Flex';
 
-import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
+import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
@@ -14,12 +14,13 @@ type BaseProps = {
   children?: React.ReactNode;
 };
 
-const ELEMENT = 'div';
+const DEFAULT_ELEMENT = 'div';
 
-type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function Menu<T extends React.ElementType = typeof ELEMENT>(
+function Menu<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   {
+    as,
     selected = false,
     disabled = false,
     children,
@@ -28,9 +29,12 @@ function Menu<T extends React.ElementType = typeof ELEMENT>(
   }: Props<T>,
   ref: React.Ref<any>,
 ) {
+  const ELEMENT = as || DEFAULT_ELEMENT;
+
   return (
     <Flex
       {...props}
+      as={ELEMENT as any}
       ref={ref}
       className={cx('menu', { selected }, { disabled }, className)}
     >
@@ -39,5 +43,5 @@ function Menu<T extends React.ElementType = typeof ELEMENT>(
   );
 }
 
-export type SideNavMenuProps = Props<typeof ELEMENT>;
+export type SideNavMenuProps = Props<typeof DEFAULT_ELEMENT>;
 export default React.forwardRef(Menu) as typeof Menu;

@@ -1,10 +1,10 @@
-$rowGap: var(--layoutSpacing, 0px);
+$ss-layout-spacing-gap: var(--ss-layout-spacing-gap, 0px);
 
 .spacing {
   &.vertical {
-    height: $rowGap;
+    height: $ss-layout-spacing-gap;
   }
   &.horizontal {
-    width: $rowGap;
+    width: $ss-layout-spacing-gap;
   }
 }

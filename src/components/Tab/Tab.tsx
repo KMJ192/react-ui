@@ -1,23 +1,22 @@
-'use client';
-
 import React from 'react';
 
 import Flex from '@src/layout/Flex/Flex';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
-import type { Option, Direction, OptionKey } from './types';
+import type { TabOption, TabDirection, TabOptionKey } from './types';
+
+import useSelectTab from './hooks/useSelectTab';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
-import useSelectTab from './hooks/useSelectTab';
 const cx = classNames.bind(style);
 
 type BaseProps = {
-  options?: Array<Option>;
-  direction?: Direction;
+  options?: Array<TabOption>;
+  direction?: TabDirection;
   selected?: number;
-  onSelect?: (key: OptionKey, idx: number) => void;
+  onSelect?: (key: TabOptionKey, idx: number) => void;
 };
 
 const DEFAULT_ELEMENT = 'div';
@@ -38,7 +37,7 @@ function Tab<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
 
-  const { tabLineStyle, optionsRef } = useSelectTab({
+  const { tabLineRef, optionsRef } = useSelectTab({
     selected,
     options,
     direction,
@@ -47,7 +46,7 @@ function Tab<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   return (
     <ELEMENT {...props} ref={ref} className={cx('tab', className)}>
       <div
-        style={tabLineStyle}
+        ref={tabLineRef}
         className={cx(
           'tab-line',
           direction,
@@ -61,7 +60,8 @@ function Tab<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
             <span
               className={cx('option', disabled && 'disabled')}
               key={key}
-              onClick={() => {
+              onClick={(e: React.MouseEvent) => {
+                e.stopPropagation();
                 if (!disabled) {
                   onSelect(key, idx);
                 }

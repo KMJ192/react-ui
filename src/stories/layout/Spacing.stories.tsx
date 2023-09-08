@@ -3,6 +3,8 @@ import type { StoryFn, Meta } from '@storybook/react';
 import Spacing from '@src/layout/Spacing/Spacing';
 import type { SpacingProps } from '@src/layout/Spacing/Spacing';
 
+import style from './layout.module.scss';
+
 const meta: Meta<typeof Spacing> = {
   title: 'UI/Layout/Spacing',
   component: Spacing,
@@ -28,7 +30,7 @@ const LayoutTemplate = (args: SpacingProps) => {
       }}
     >
       <div>layout</div>
-      <Spacing {...args} />
+      <Spacing className={style.spacing} {...args} />
       <div>layout</div>
     </div>
   );

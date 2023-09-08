@@ -1,13 +1,13 @@
-@import '@styles/color.module.scss';
+@import 'src/styles/color.module.scss';
 
 @mixin popup-light {
-  --popupBoxShadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
-  --popupBackground: #{$light-primary000};
-  --popupText: #{$light-primary900};
+  --ss-c-popup-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  --ss-c-popup-bg: #{$light-primary000};
+  --ss-c-popup-text: #{$light-primary900};
 }
 
 @mixin popup-dark {
-  --popupBoxShadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
-  --popupBackground: #{$dark-primary100};
-  --popupText: #{$dark-primary900};
+  --ss-c-popup-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
+  --ss-c-popup-bg: #{$dark-primary100};
+  --ss-c-popup-text: #{$dark-primary900};
 }

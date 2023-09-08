@@ -1,11 +1,8 @@
 import React from 'react';
 
-import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
+import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import Center from '@src/layout/Center/Center';
-import Left from './Left/Left';
-import Right from './Right/Right';
-import Mid from './Mid/Mid';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
@@ -15,18 +12,21 @@ type BaseProps = {
   children?: React.ReactNode;
 };
 
-const ELEMENT = 'header';
+const DEFAULT_ELEMENT = 'header';
 
-type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function Header<T extends React.ElementType = typeof ELEMENT>(
-  { children, className, ...props }: Props<T>,
+function Header<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
+  { as, children, className, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
+  const ELEMENT = as || DEFAULT_ELEMENT;
+
   return (
-    <Center
+    <Center<any>
       {...props}
       ref={ref}
+      as={ELEMENT}
       className={cx('header', className)}
       horizontal={false}
     >
@@ -35,9 +35,5 @@ function Header<T extends React.ElementType = typeof ELEMENT>(
   );
 }
 
-export type HeaderProps = Props<typeof ELEMENT>;
-export default Object.assign(React.forwardRef(Header) as typeof Header, {
-  Left,
-  Mid,
-  Right,
-});
+export type HeaderProps = Props<typeof DEFAULT_ELEMENT>;
+export default React.forwardRef(Header) as typeof Header;

@@ -1,5 +1,5 @@
 {
-  "name": "@himideula/storybook",
+  "name": "@ssamssam/storybook",
   "version": "0.0.1",
   "description": "React UI components",
   "author": {
@@ -48,13 +48,10 @@
     "vite-plugin-css-injected-by-js": "^3.1.2"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@himideula/react-ui": "^0.0.21",
-    "@himideula/react-utils": "^0.0.1",
+    "@ssamssam/react-modules": "^0.0.12",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "packageManager": "yarn@3.6.2"
+  "packageManager": "yarn@3.6.3"
 }

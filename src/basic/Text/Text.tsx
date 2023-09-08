@@ -43,8 +43,14 @@ const typoMap: Array<TypoMap> = [
     fontWeight: '600',
   },
   {
-    name: 's1, subtitle2',
+    name: 's1, subtitle1',
     typo: 's1',
+    fontSize: '16px',
+    fontWeight: '500',
+  },
+  {
+    name: 's2, subtitle2',
+    typo: 's2',
     fontSize: '14px',
     fontWeight: '500',
   },

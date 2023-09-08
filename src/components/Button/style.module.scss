@@ -1,4 +1,4 @@
-@import '@styles/transition.scss';
+@import 'src/styles/transition.scss';
 @import './variable/color.module.scss';
 
 @mixin default {
@@ -7,7 +7,6 @@
   border-radius: 4px;
   border: none;
   overflow: hidden;
-  column-gap: 8px;
   cursor: pointer;
   &:disabled {
     cursor: not-allowed;
@@ -16,6 +15,7 @@
 
 @mixin contents {
   position: relative;
+  column-gap: 8px;
 }
 
 @mixin shape {
@@ -29,41 +29,45 @@
 }
 
 @mixin color-set {
-  background: $buttonBackground;
-  color: $buttonText;
-  box-shadow: $buttonBoxShadow;
-  &:hover {
-    background: $buttonBackgroundHover;
-    color: $buttonTextHover;
-  }
+  background: $ss-c-button-bg;
+  color: $ss-c-button-text;
+  box-shadow: $ss-c-button-box-shadow;
   &:disabled {
-    background: $buttonBackgroundDisabled;
-    color: $buttonTextDisabled;
-    &:active,
-    &:hover {
-      background: $buttonBackgroundDisabled;
-      color: $buttonTextDisabled;
+    background: $ss-c-button-bg-disabled;
+    color: $ss-c-button-text-disabled;
+    &:active:not(.outlined):not(.clear),
+    &:hover:not(.outlined):not(.clear) {
+      background: $ss-c-button-bg-disabled;
+      color: $ss-c-button-text-disabled;
     }
   }
-  &:active {
-    background: $buttonBackgroundActive;
-    color: $buttonTextActive;
+  &:active:not(.disabled):not(.loading) {
+    background: $ss-c-button-bg-active;
+    color: $ss-c-button-text-active;
+  }
+  &:hover:not(.disabled):not(.loading) {
+    background: $ss-c-button-bg-hover;
+    color: $ss-c-button-text-hover;
   }
   &.outlined {
     background: none;
     box-shadow: none;
-    outline: 1px solid $buttonOutline;
-    &:hover {
-      background: $buttonBackgroundHover;
-      color: $buttonTextHover;
+    outline: 1px solid $ss-c-button-outline;
+    &:hover:not(.disabled):not(.loading) {
+      background: $ss-c-button-bg-hover;
+      color: $ss-c-button-text-hover;
+    }
+    &.disabled,
+    &.loading {
+      outline: 1px solid $ss-c-button-outline-disabled;
     }
   }
   &.clear {
     background: none;
     box-shadow: none;
-    &:hover {
-      background: $buttonBackgroundHover;
-      color: $buttonTextHover;
+    &:hover:not(.disabled):not(.loading) {
+      background: $ss-c-button-bg-hover;
+      color: $ss-c-button-text-hover;
     }
   }
 }
@@ -77,7 +81,7 @@
     left: 50%;
     width: 4px;
     height: 4px;
-    background: $buttonBackgroundRipple;
+    background: $ss-c-button-bg-ripple;
     opacity: 0;
     border-radius: 100%;
     transform: scale(1, 1) translate(-50%);

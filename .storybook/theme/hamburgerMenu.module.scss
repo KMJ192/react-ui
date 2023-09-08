@@ -1,9 +1,9 @@
-@import '@styles/color.module.scss';
+@import 'src/styles/color.module.scss';
 
 @mixin h-menu-light {
-  --hamburgerMenuBarBackground: #{$light-primary500};
+  --ss-c-hamburger-color: #{$light-primary500};
 }
 
 @mixin h-menu-dark {
-  --hamburgerMenuBarBackground: #{$dark-blue600};
+  --ss-c-hamburger-color: #{$dark-blue600};
 }

@@ -1,23 +1,23 @@
 .checkbox {
-  --checkboxSize: 16px;
+  --ss-size-checkbox: 16px;
 }
 
 .progress {
-  --progressBarHeight: 12px;
+  --ss-size-progress-height: 12px;
 }
 
 .radio {
-  --radioSize: 16px;
-  --radioPupilSize: 10px;
+  --ss-size-radio: 16px;
+  --ss-size-radio-pupil: 10px;
 }
 
 .spinner {
-  --spinnerSize: 24px;
-  --spinnerBorderWidth: 4px;
+  --ss-size-spinner: 24px;
+  --ss-size-border-width: 4px;
 }
 
 .switch {
-  --switchBulletSize: 16px;
-  --switchWidth: 44px;
-  --switchHeight: 24px;
+  --ss-size-switch-bullet: 16px;
+  --ss-size-switch-width: 44px;
+  --ss-size-switch-height: 24px;
 }

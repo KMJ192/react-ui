@@ -1,29 +1,28 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
-import Progressbar, {
-  type ProgressbarProps,
-} from '@src/components/Progressbar/Progressbar';
+import ProgressBar, {
+  type ProgressBarProps,
+} from '@src/components/ProgressBar/ProgressBar';
 
 import style from './Components.module.scss';
 
-const meta: Meta<typeof Progressbar> = {
+const meta: Meta<typeof ProgressBar> = {
   title: 'UI/Components/Progressbar',
-  component: Progressbar,
+  component: ProgressBar,
   parameters: {
     componentSubtitle: 'Progressbar',
   },
   argTypes: {},
 };
 
-const Template = (args: ProgressbarProps) => {
-  return <Progressbar className={style.progress} {...args}></Progressbar>;
+const Template = (args: ProgressBarProps) => {
+  return <ProgressBar className={style.progress} {...args}></ProgressBar>;
 };
 
-export const PrimaryProgressbar: StoryFn<ProgressbarProps> = Template.bind({});
+export const PrimaryProgressbar: StoryFn<ProgressBarProps> = Template.bind({});
 PrimaryProgressbar.args = {
   percent: 70,
-  isPending: true,
-  height: 12,
+  pending: true,
 };
 
 export default meta;

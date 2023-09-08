@@ -2,6 +2,8 @@ import React from 'react';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
+import { getStyle } from './calcStyle';
+
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
 const cx = classNames.bind(style);
@@ -24,10 +26,10 @@ function Float<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     as,
     children,
     startDirection = 'lt',
-    left = 0,
-    right = 0,
-    top = 0,
-    bottom = 0,
+    left,
+    right,
+    top,
+    bottom,
     style,
     className,
     ...props
@@ -35,24 +37,20 @@ function Float<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   ref: React.Ref<any>,
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
-
-  const isPosition =
-    typeof bottom === 'number' ||
-    typeof right === 'number' ||
-    typeof top === 'number' ||
-    typeof left === 'number';
-
-  const _style = isPosition
-    ? startDirection === 'rb'
-      ? { ...style, bottom, right }
-      : { ...style, top, left }
-    : undefined;
+  const curStyle = getStyle({
+    left,
+    right,
+    top,
+    bottom,
+    style,
+    startDirection,
+  });
 
   return (
     <ELEMENT
       {...props}
       ref={ref}
-      style={_style}
+      style={curStyle}
       className={cx('float', startDirection, className)}
     >
       {children}

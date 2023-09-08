@@ -1,14 +1,14 @@
 @import './variable/color.module.scss';
+@import './variable/size.module.scss';
 
 @mixin color-set {
-  background: $footer-background;
-  color: $footer-text;
+  background: $ss-c-footer-bg;
+  color: $ss-c-footer-text;
 }
 
 .footer {
   width: inherit;
-  justify-content: space-between;
-  min-height: var(--footerMinHeight);
-  max-height: var(--footerMaxHeight);
+  min-height: $ss-size-footer-min-height;
+  max-height: $ss-size-footer-max-height;
   @include color-set;
 }

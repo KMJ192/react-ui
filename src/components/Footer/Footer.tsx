@@ -1,11 +1,8 @@
 import React from 'react';
 
-import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
+import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import Center from '@src/layout/Center/Center';
-import Left from './Left/Left';
-import Mid from './Mid/Mid';
-import Right from './Right/Right';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
@@ -15,18 +12,21 @@ type BaseProps = {
   children?: React.ReactNode;
 };
 
-const ELEMENT = 'footer';
+const DEFAULT_ELEMENT = 'footer';
 
-type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function Footer<T extends React.ElementType = typeof ELEMENT>(
-  { children, className, ...props }: Props<T>,
+function Footer<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
+  { as, children, className, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
+  const ELEMENT = as || DEFAULT_ELEMENT;
+
   return (
-    <Center
+    <Center<any>
       {...props}
       ref={ref}
+      as={ELEMENT}
       className={cx('footer', className)}
       horizontal={false}
     >
@@ -35,9 +35,5 @@ function Footer<T extends React.ElementType = typeof ELEMENT>(
   );
 }
 
-export type FooterProps = Props<typeof ELEMENT>;
-export default Object.assign(React.forwardRef(Footer) as typeof Footer, {
-  Left,
-  Mid,
-  Right,
-});
+export type FooterProps = Props<typeof DEFAULT_ELEMENT>;
+export default React.forwardRef(Footer) as typeof Footer;

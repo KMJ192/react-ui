@@ -1,10 +1,9 @@
 import React from 'react';
 
 import Flex from '@src/layout/Flex/Flex';
-
 import Mark from './Mark';
 
-import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
+import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
@@ -15,48 +14,45 @@ type BaseProps = {
   checked?: boolean;
   multiple?: boolean;
   disabled?: boolean;
-  size?: number;
 };
 
-const ELEMENT = 'div';
+const DEFAULT_ELEMENT = 'div';
 
-type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function Checkbox<T extends React.ElementType = typeof ELEMENT>(
+function Checkbox<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   {
+    as,
     children,
     checked = false,
     multiple = false,
     disabled = false,
-    size,
     className,
-    style,
     ...props
   }: Props<T>,
   ref: React.Ref<any>,
 ) {
-  const isSize = typeof size === 'number';
-  const _style: React.CSSProperties | undefined = isSize
-    ? {
-        ...style,
-        width: size,
-        height: size,
-      }
-    : style;
+  const ELEMENT = as || DEFAULT_ELEMENT;
 
   return (
     <Flex
+      as={ELEMENT as any}
       {...props}
-      as={ELEMENT}
       ref={ref}
-      style={_style}
-      className={cx('checkbox', { checked }, { disabled }, className)}
+      className={cx(
+        'checkbox',
+        { disabled },
+        children !== undefined && 'is-children',
+        className,
+      )}
     >
-      <Mark multiple={multiple} isSize={isSize} size={size} />
-      {children}
+      <div className={cx('box', { checked }, { disabled })}>
+        <Mark multiple={multiple} />
+      </div>
+      <span className={cx('children')}>{children}</span>
     </Flex>
   );
 }
 
-export type CheckboxProps = Props<typeof ELEMENT>;
+export type CheckboxProps = Props<typeof DEFAULT_ELEMENT>;
 export default React.forwardRef(Checkbox) as typeof Checkbox;
