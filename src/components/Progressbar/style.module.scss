@@ -10,9 +10,25 @@
   }
 }
 
-@mixin bar {
+@mixin color-set {
   .bar {
     background: $ss-c-progress-bar;
+  }
+  .bar.exit {
+    background: $ss-c-progress-exit;
+  }
+  .bar > .pending {
+    background: linear-gradient(
+      0.25turn,
+      $ss-c-progress-bar,
+      $ss-c-progress-pending,
+      $ss-c-progress-bar
+    );
+  }
+}
+
+@mixin bar {
+  .bar {
     height: 100%;
     border-radius: 4px;
     position: relative;
@@ -23,12 +39,6 @@
       width: 36px;
       top: 0;
       left: -36px;
-      background: linear-gradient(
-        0.25turn,
-        $ss-c-progress-bar,
-        $ss-c-progress-pending,
-        $ss-c-progress-bar
-      );
       animation: progress 1.3s infinite;
     }
   }
@@ -45,4 +55,5 @@
 .progress-bar {
   @include progress-body;
   @include bar;
+  @include color-set;
 }

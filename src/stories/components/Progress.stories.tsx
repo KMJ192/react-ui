@@ -22,8 +22,7 @@ const Template = (args: ProgressBarProps) => {
 export const PrimaryProgressbar: StoryFn<ProgressBarProps> = Template.bind({});
 PrimaryProgressbar.args = {
   percent: 70,
-  isPending: true,
-  height: 12,
+  pending: true,
 };
 
 export default meta;

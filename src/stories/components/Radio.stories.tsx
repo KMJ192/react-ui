@@ -35,8 +35,6 @@ PrimaryRadio.args = {
   children: 'Radio',
   checked: false,
   disabled: false,
-  size: 16,
-  pupilSize: 10,
 };
 
 export default meta;

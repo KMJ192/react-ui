@@ -5,8 +5,6 @@ import Flex from '@src/layout/Flex/Flex';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
-import { getStyle } from './calcStyle';
-
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
 const cx = classNames.bind(style);
@@ -15,8 +13,6 @@ type BaseProps = {
   children?: React.ReactNode;
   checked?: boolean;
   disabled?: boolean;
-  size?: number;
-  pupilSize?: number;
 };
 
 const DEFAULT_ELEMENT = 'div';
@@ -29,19 +25,12 @@ function Radio<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     children,
     checked = false,
     disabled = false,
-    size,
-    pupilSize,
     className,
     ...props
   }: Props<T>,
   ref: React.Ref<any>,
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
-
-  const { childrenSize, markSize, pupilSz } = getStyle({
-    size,
-    pupilSize,
-  });
 
   return (
     <Flex
@@ -56,18 +45,10 @@ function Radio<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
         className,
       )}
     >
-      <Center
-        className={cx('mark', { checked }, { disabled })}
-        style={markSize}
-      >
-        <div
-          className={cx('pupil', { checked }, { disabled })}
-          style={pupilSz}
-        />
+      <Center className={cx('mark', { checked }, { disabled })}>
+        <div className={cx('pupil', { checked }, { disabled })} />
       </Center>
-      <span className={cx('children', { disabled })} style={childrenSize}>
-        {children}
-      </span>
+      <span className={cx('children', { disabled })}>{children}</span>
     </Flex>
   );
 }
