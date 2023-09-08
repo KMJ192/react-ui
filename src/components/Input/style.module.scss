@@ -1,144 +1,47 @@
+@import 'src/layout/center/style.module.scss';
 @import './variable/color.module.scss';
 
 @mixin color-set {
-  border-color: $inputBorder;
-  background: $inputBackground;
-  color: $inputText;
+  border-color: $ss-c-input-border;
+  background: $ss-c-input-bg;
+  color: $ss-c-input-text;
   &::placeholder {
-    color: $inputPlaceholder;
+    color: $ss-c-input-placeholder;
   }
 
   &:disabled {
-    border-color: $inputBorderDisabled;
-    background: $inputBackgroundDisabled;
-    color: $inputTextDisabled;
+    border-color: $ss-c-input-border-disabled;
+    background: $ss-c-input-bg-disabled;
+    color: $ss-c-input-text-disabled;
     &::placeholder {
-      color: $inputPlaceholderDisabled;
+      color: $ss-c-input-placeholder-disabled;
     }
   }
 
   &.error {
-    border-color: $inputBorderError;
+    border-color: $ss-c-input-border-error;
   }
 
   &:not(.error):focus {
-    border-color: $inputBorderFocus;
-    box-shadow: $inputBoxShadow;
-  }
-}
-
-@mixin icon {
-  position: absolute;
-  aspect-ratio: 1;
-  &.xs {
-    width: 12px;
-    height: 12px;
-    &.left {
-      left: 6px;
-    }
-    &.right {
-      right: 6px;
-    }
-  }
-  &.sm {
-    width: 16px;
-    height: 16px;
-    &.left {
-      left: 8px;
-    }
-    &.right {
-      right: 8px;
-    }
-  }
-  &.md {
-    width: 20px;
-    height: 20px;
-    &.left {
-      left: 10px;
-    }
-    &.right {
-      right: 10px;
-    }
-  }
-  &.lg {
-    width: 24px;
-    height: 24px;
-    &.left {
-      left: 10px;
-    }
-    &.right {
-      right: 12px;
-    }
-  }
-}
-
-@mixin size {
-  &.xs {
-    padding: 4px;
-    font-size: 12px;
-    &.left-icon {
-      padding-left: 20px;
-    }
-    &.right-icon {
-      padding-right: 20px;
-    }
-  }
-  &.sm {
-    padding: 8px;
-    font-size: 14px;
-    &.left-icon {
-      padding-left: 26px;
-    }
-    &.right-icon {
-      padding-right: 26px;
-    }
-  }
-  &.md {
-    padding: 10px;
-    font-size: 16px;
-    &.left-icon {
-      padding-left: 32px;
-    }
-    &.right-icon {
-      padding-right: 36px;
-    }
-  }
-  &.lg {
-    padding: 12px;
-    font-size: 20px;
-    &.left-icon {
-      padding-left: 40px;
-    }
-    &.right-icon {
-      padding-right: 44px;
-    }
+    border-color: $ss-c-input-border-focus;
+    box-shadow: $ss-c-input-box-shadow;
   }
 }
 
 @mixin input {
-  width: 100%;
   border: 1px solid;
   border-radius: 4px;
-
+  padding: 10px;
+  font-size: 16px;
   &:focus {
     outline: none;
   }
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
 
-.container {
-  position: relative;
-  align-items: center;
-  -webkit-box-align: center;
-
-  .input {
-    @include input;
-    @include color-set;
-    @include size;
-    &:disabled {
-      cursor: not-allowed;
-    }
-  }
-  .icon {
-    @include icon;
-  }
+.input {
+  @include input;
+  @include color-set;
 }

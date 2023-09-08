@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { Meta, StoryFn } from '@storybook/react';
 
 import Tab, { type TabProps } from '@src/components/Tab/Tab';
-import type { OptionKey } from '@src/components/Tab/types';
+import type { TabOptionKey } from '@src/components/Tab/types';
 
 const meta: Meta<typeof Tab> = {
   title: 'UI/Components/Tab',
@@ -23,7 +23,7 @@ const meta: Meta<typeof Tab> = {
 const TabTemplate = (args: TabProps) => {
   const [select, setSelect] = useState(0);
 
-  const onSelect = (_: OptionKey, idx: number) => {
+  const onSelect = (_: TabOptionKey, idx: number) => {
     setSelect(idx);
   };
 

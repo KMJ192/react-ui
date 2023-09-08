@@ -65,7 +65,7 @@
 
 @mixin color-set {
   & > span {
-    background: $hamburgerMenuBarBackground;
+    background: $ss-c-hamburger-color;
   }
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { COMBINE_ELEMENT_PROPS, SIZE } from '@src/types/types';
+import type { OVER_RIDABLE_PROPS, SIZE } from '@src/types/types';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
@@ -12,14 +12,16 @@ type BaseProps = {
   size?: SIZE;
 };
 
-const ELEMENT = 'div';
+const DEFAULT_ELEMENT = 'div';
 
-type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function HamburgerMenu<T extends React.ElementType = typeof ELEMENT>(
-  { type = 'type-1', active = false, size = 'md', ...props }: Props<T>,
+function HamburgerMenu<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
+  { as, type = 'type-1', active = false, size = 'md', ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
+  const ELEMENT = as || DEFAULT_ELEMENT;
+
   return (
     <ELEMENT
       {...props}
@@ -33,5 +35,5 @@ function HamburgerMenu<T extends React.ElementType = typeof ELEMENT>(
   );
 }
 
-export type HamburgerMenuProps = Props<typeof ELEMENT>;
+export type HamburgerMenuProps = Props<typeof DEFAULT_ELEMENT>;
 export default React.forwardRef(HamburgerMenu) as typeof HamburgerMenu;

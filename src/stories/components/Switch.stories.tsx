@@ -28,9 +28,6 @@ PrimarySwitch.args = {
   children: 'Switch',
   checked: false,
   disabled: false,
-  width: 44,
-  height: 24,
-  bulletSize: 16,
 };
 
 export default meta;

@@ -26,21 +26,11 @@ const Template = (args: SpinnerProps) => {
 export const SpinnerType1: StoryFn<SpinnerProps> = Template.bind({});
 SpinnerType1.args = {
   type: 'type-1',
-  size: 24,
-  borderWidth: 4,
 };
 
 export const SpinnerType2: StoryFn<SpinnerProps> = Template.bind({});
 SpinnerType2.args = {
   type: 'type-2',
-  size: 24,
-  borderWidth: 4,
-};
-
-export const SpinnerType3: StoryFn<SpinnerProps> = Template.bind({});
-SpinnerType3.args = {
-  type: 'type-3',
-  size: 24,
 };
 
 export default meta;

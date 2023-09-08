@@ -1,45 +1,45 @@
-@import '@styles/color.module.scss';
+@import 'src/styles/color.module.scss';
 
 @mixin checkbox-light {
-  --checkboxBorder: #{$light-primary300};
-  --checkboxBorderChecked: #{$light-blue400};
-  --checkboxBorderCheckedDisabled: #{$light-primary400};
-  --checkboxBorderCheckedHover: #{$light-blue500};
-  --checkboxBorderDisabled: #{$light-primary300};
-  --checkboxBorderHover: #{$light-blue500};
+  --ss-c-checkbox-border: #{$light-primary300};
+  --ss-c-checkbox-border-checked: #{$light-blue400};
+  --ss-c-checkbox-border-checked-disabled: #{$light-primary400};
+  --ss-c-checkbox-border-checked-hover: #{$light-blue500};
+  --ss-c-checkbox-border-disabled: #{$light-primary300};
+  --ss-c-checkbox-border-hover: #{$light-blue500};
 
-  --checkboxBackgroundChecked: #{$light-blue400};
-  --checkboxBackgroundCheckedDisabled: #{$light-primary400};
-  --checkboxBackgroundCheckedHover: #{$light-blue500};
-  --checkboxBackgroundDisabled: #{$light-primary200};
+  --ss-c-checkbox-bg-checked: #{$light-blue400};
+  --ss-c-checkbox-bg-checked-disabled: #{$light-primary400};
+  --ss-c-checkbox-bg-checked-hover: #{$light-blue500};
+  --ss-c-checkbox-bg-disabled: #{$light-primary200};
 
-  --checkboxText: #{$light-primary900};
-  --checkboxTextHover: #{$light-blue500};
-  --checkboxTextDisabled: #{$light-primary300};
+  --ss-c-checkbox-text: #{$light-primary900};
+  --ss-c-checkbox-text-hover: #{$light-blue500};
+  --ss-c-checkbox-text-disabled: #{$light-primary300};
 
-  --checkboxMarkChecked: #{$light-primary000};
-  --checkboxMarkCheckedDisabled: #{$light-primary200};
-  --checkboxMarkCheckedHover: #{$light-primary000};
+  --ss-c-checkbox-mark-checked: #{$light-primary000};
+  --ss-c-checkbox-mark-checked-disabled: #{$light-primary200};
+  --ss-c-checkbox-mark-checked-hover: #{$light-primary000};
 }
 
 @mixin checkbox-dark {
-  --checkboxBorder: #{$dark-primary300};
-  --checkboxBorderChecked: #{$dark-blue200};
-  --checkboxBorderCheckedDisabled: #{$dark-primary400};
-  --checkboxBorderCheckedHover: #{$dark-blue100};
-  --checkboxBorderDisabled: #{$dark-primary600};
-  --checkboxBorderHover: #{$dark-blue100};
+  --ss-c-checkbox-border: #{$dark-primary300};
+  --ss-c-checkbox-border-checked: #{$dark-blue200};
+  --ss-c-checkbox-border-checked-disabled: #{$dark-primary400};
+  --ss-c-checkbox-border-checked-hover: #{$dark-blue100};
+  --ss-c-checkbox-border-disabled: #{$dark-primary600};
+  --ss-c-checkbox-border-hover: #{$dark-blue100};
 
-  --checkboxBackgroundChecked: #{$dark-blue200};
-  --checkboxBackgroundCheckedDisabled: #{$dark-primary400};
-  --checkboxBackgroundCheckedHover: #{$dark-blue100};
-  --checkboxBackgroundDisabled: #{$dark-primary200};
+  --ss-c-checkbox-bg-checked: #{$dark-blue200};
+  --ss-c-checkbox-bg-checked-disabled: #{$dark-primary400};
+  --ss-c-checkbox-bg-checked-hover: #{$dark-blue100};
+  --ss-c-checkbox-bg-disabled: #{$dark-primary200};
 
-  --checkboxText: #{$dark-primary900};
-  --checkboxTextHover: #{$dark-blue200};
-  --checkboxTextDisabled: #{$dark-primary200};
+  --ss-c-checkbox-text: #{$dark-primary900};
+  --ss-c-checkbox-text-hover: #{$dark-blue200};
+  --ss-c-checkbox-text-disabled: #{$dark-primary200};
 
-  --checkboxMarkChecked: #{$dark-primary800};
-  --checkboxMarkCheckedDisabled: #{$dark-primary600};
-  --checkboxMarkCheckedHover: #{$dark-primary800};
+  --ss-c-checkbox-mark-checked: #{$dark-primary800};
+  --ss-c-checkbox-mark-checked-disabled: #{$dark-primary600};
+  --ss-c-checkbox-mark-checked-hover: #{$dark-primary800};
 }

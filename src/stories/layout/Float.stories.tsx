@@ -3,6 +3,8 @@ import type { StoryFn, Meta } from '@storybook/react';
 import Float from '@src/layout/Float/Float';
 import type { FloatProps } from '@src/layout/Float/Float';
 
+import style from './layout.module.scss';
+
 const meta: Meta<typeof Float> = {
   title: 'UI/Layout/Float',
   component: Float,
@@ -22,7 +24,11 @@ const meta: Meta<typeof Float> = {
 const Template = (args: FloatProps) => {
   const { children, ...arg } = args;
 
-  return <Float {...arg}>{children}</Float>;
+  return (
+    <Float {...arg} className={style.float}>
+      {children}
+    </Float>
+  );
 };
 
 export const FloatStory: StoryFn<FloatProps> = Template.bind({});

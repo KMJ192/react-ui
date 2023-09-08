@@ -1,10 +1,10 @@
 @import './variable/color.module.scss';
+@import './variable/size.module.scss';
 
 .header {
   width: inherit;
-  justify-content: space-between;
-  background: $header-background;
-  color: $header-text;
-  min-height: var(--headerMinHeight);
-  max-height: var(--headerMaxHeight);
+  background: $ss-c-header-bg;
+  color: $ss-c-header-text;
+  min-height: $ss-size-header-min-height;
+  max-height: $ss-size-header-max-height;
 }

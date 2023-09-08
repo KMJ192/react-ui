@@ -1,0 +1,4 @@
+@import 'src/styles/color/color.module.scss';
+
+$ss-c-badge-color: var(--ss-c-badge-color, $light-primary100);
+$ss-c-badge-bg: var(--ss-c-badge-bg, $light-primary700);

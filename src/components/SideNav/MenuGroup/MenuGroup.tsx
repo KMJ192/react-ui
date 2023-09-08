@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
+import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import useValueSideNavState from '../store/hooks/useValueSideNavState';
 
@@ -15,14 +15,24 @@ type BaseProps = {
   style?: React.CSSProperties;
 };
 
-const ELEMENT = 'div';
+const DEFAULT_ELEMENT = 'div';
 
-type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function MenuGroup<T extends React.ElementType = typeof ELEMENT>(
-  { show = false, depth = 0, children, style, className, ...props }: Props<T>,
+function MenuGroup<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
+  {
+    as,
+    show = false,
+    depth = 0,
+    children,
+    style,
+    className,
+    ...props
+  }: Props<T>,
   ref: React.Ref<any>,
 ) {
+  const ELEMENT = as || DEFAULT_ELEMENT;
+
   const { depthGap } = useValueSideNavState();
 
   const [_style, setStyle] = useState<React.CSSProperties>({
@@ -35,7 +45,7 @@ function MenuGroup<T extends React.ElementType = typeof ELEMENT>(
       ...style,
       marginLeft: `${depth * depthGap}px`,
     });
-  }, [depth, style, show]);
+  }, [depth, style, show, depthGap]);
 
   return (
     <ELEMENT
@@ -44,12 +54,11 @@ function MenuGroup<T extends React.ElementType = typeof ELEMENT>(
       className={cx('nav-group', { show }, className)}
       style={_style}
     >
-      <div className={cx('children', show ? 'show' : 'collapse')}>
-        {children}
-      </div>
+      {children}
+      <div className={cx('gap')}></div>
     </ELEMENT>
   );
 }
 
-export type SideNavMenuGroupProps = Props<typeof ELEMENT>;
+export type SideNavMenuGroupProps = Props<typeof DEFAULT_ELEMENT>;
 export default React.forwardRef(MenuGroup) as typeof MenuGroup;

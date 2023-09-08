@@ -1,13 +1,14 @@
 @import './variable/color.module.scss';
-@import '@styles/scrollbar.scss';
+@import './variable/size.module.scss';
+@import 'src/styles/scrollbar.scss';
 
 @mixin color-set {
   background: $sideNav-background;
-  box-shadow: $sideNav-box-shadow;
+  box-shadow: $ss-c-side-nav-box-shadow;
 }
 
 @mixin side-nav {
-  width: 164px;
+  width: $ss-size-side-nav-width;
   height: inherit;
   overflow: auto;
   padding: 16px 0 16px 16px;
