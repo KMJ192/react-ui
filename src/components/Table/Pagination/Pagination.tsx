@@ -1,31 +1,52 @@
+import React from 'react';
 import PaginationIcon from './PaginationIcon';
 
 import Center from '@src/layout/Center/Center';
+
+import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import classNames from 'classnames/bind';
 import style from '../style.module.scss';
 const cx = classNames.bind(style);
 
-type Props = {
-  pageCnt: number;
+type BaseProps = {
+  pageCnt?: number;
   selectedPage: number;
-  paginationCnt: number;
-  onClickPagination: (move: 'left' | 'right') => void;
-  onClickPageIndex: (idx: number) => void;
+  paginationCnt?: number;
+  onClickPagination?: (move: 'left' | 'right') => void;
+  onClickPageIndex?: (idx: number) => void;
 };
 
-function Pagination({
-  pageCnt,
-  selectedPage,
-  paginationCnt,
-  onClickPageIndex,
-  onClickPagination,
-}: Props) {
+const DEFAULT_ELEMENT = 'div';
+
+type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
+
+function Pagination<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
+  {
+    as,
+    pageCnt = 1,
+    selectedPage = 1,
+    paginationCnt = 1,
+    onClickPageIndex = () => {},
+    onClickPagination = () => {},
+    className,
+    ...props
+  }: Props<T>,
+  ref: React.Ref<any>,
+) {
+  const ELEMENT = as || DEFAULT_ELEMENT;
+
   return (
-    <Center className={cx('pagination')}>
+    <Center
+      {...props}
+      ref={ref}
+      as={ELEMENT as any}
+      className={cx('pagination', className)}
+    >
       <div
         className={cx('left')}
-        onClick={() => {
+        onClick={(e: React.MouseEvent) => {
+          e.stopPropagation();
           onClickPagination('left');
         }}
       >
@@ -39,7 +60,8 @@ function Pagination({
             as='li'
             key={page}
             className={cx('index', isSelected && 'selected')}
-            onClick={() => {
+            onClick={(e: React.MouseEvent) => {
+              e.stopPropagation();
               onClickPageIndex(page);
             }}
           >
@@ -49,7 +71,8 @@ function Pagination({
       })}
       <div
         className={cx('right')}
-        onClick={() => {
+        onClick={(e: React.MouseEvent) => {
+          e.stopPropagation();
           onClickPagination('right');
         }}
       >
@@ -59,4 +82,5 @@ function Pagination({
   );
 }
 
-export default Pagination;
+export type TablePaginationProps = Props<typeof DEFAULT_ELEMENT>;
+export default React.forwardRef(Pagination) as typeof Pagination;

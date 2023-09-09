@@ -1,7 +1,8 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
 import Table, { type TableProps } from '@src/components/Table/Table';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import TableContainer from '@src/components/Table/TableContainer/TableContainer';
 
 const meta: Meta<typeof Table> = {
   title: 'UI/Components/Table',
@@ -22,10 +23,20 @@ const meta: Meta<typeof Table> = {
 const Template = (args: TableProps) => {
   const { ...arg } = args;
 
+  const pageCnt = useRef(10);
   const [selected, setSelected] = useState(1);
+  const [paginationCnt, setPaginationCnt] = useState(1);
 
   const onClickPagination = (move: 'left' | 'right') => {
-    console.log(move);
+    if (move === 'left' && paginationCnt - 1 > 0) {
+      const pCnt = paginationCnt - 1;
+      setSelected(pCnt * pageCnt.current);
+      setPaginationCnt(pCnt);
+    } else if (move === 'right') {
+      const pCnt = paginationCnt + 1;
+      setSelected(paginationCnt * pageCnt.current + 1);
+      setPaginationCnt(pCnt);
+    }
   };
 
   const onClickPageIndex = (idx: number) => {
@@ -33,58 +44,58 @@ const Template = (args: TableProps) => {
   };
 
   return (
-    <Table
-      {...arg}
-      selectedPage={selected}
-      onClickPageIndex={onClickPageIndex}
-      onClickPagination={onClickPagination}
-    >
-      <Table.Caption>caption</Table.Caption>
-      <Table.Thead>
-        <Table.Tr>
-          <Table.Th>head1</Table.Th>
-          <Table.Th>head2</Table.Th>
-          <Table.Th>head3</Table.Th>
-        </Table.Tr>
-      </Table.Thead>
-      <Table.Tbody>
-        <Table.Tr>
-          <Table.Td>data1</Table.Td>
-          <Table.Td>data2</Table.Td>
-          <Table.Td>data3</Table.Td>
-        </Table.Tr>
-        <Table.Tr>
-          <Table.Td>data1</Table.Td>
-          <Table.Td>data2</Table.Td>
-          <Table.Td>data3</Table.Td>
-        </Table.Tr>
-        <Table.Tr>
-          <Table.Td>data1</Table.Td>
-          <Table.Td>data2</Table.Td>
-          <Table.Td>data3</Table.Td>
-        </Table.Tr>
-        <Table.Tr>
-          <Table.Td>data1</Table.Td>
-          <Table.Td>data2</Table.Td>
-          <Table.Td>data3</Table.Td>
-        </Table.Tr>
-      </Table.Tbody>
-      <Table.Tfoot>
-        <Table.Tr>
-          <Table.Th>foot1</Table.Th>
-          <Table.Th>foot2</Table.Th>
-          <Table.Th>foot3</Table.Th>
-        </Table.Tr>
-      </Table.Tfoot>
-    </Table>
+    <TableContainer>
+      <Table {...arg}>
+        <Table.Caption>caption</Table.Caption>
+        <Table.Thead>
+          <Table.Tr>
+            <Table.Th>head1</Table.Th>
+            <Table.Th>head2</Table.Th>
+            <Table.Th>head3</Table.Th>
+          </Table.Tr>
+        </Table.Thead>
+        <Table.Tbody>
+          <Table.Tr>
+            <Table.Td>data1</Table.Td>
+            <Table.Td>data2</Table.Td>
+            <Table.Td>data3</Table.Td>
+          </Table.Tr>
+          <Table.Tr>
+            <Table.Td>data1</Table.Td>
+            <Table.Td>data2</Table.Td>
+            <Table.Td>data3</Table.Td>
+          </Table.Tr>
+          <Table.Tr>
+            <Table.Td>data1</Table.Td>
+            <Table.Td>data2</Table.Td>
+            <Table.Td>data3</Table.Td>
+          </Table.Tr>
+          <Table.Tr>
+            <Table.Td>data1</Table.Td>
+            <Table.Td>data2</Table.Td>
+            <Table.Td>data3</Table.Td>
+          </Table.Tr>
+        </Table.Tbody>
+        <Table.Tfoot>
+          <Table.Tr>
+            <Table.Th>foot1</Table.Th>
+            <Table.Th>foot2</Table.Th>
+            <Table.Th>foot3</Table.Th>
+          </Table.Tr>
+        </Table.Tfoot>
+      </Table>
+      <Table.Pagination
+        pageCnt={pageCnt.current}
+        selectedPage={selected}
+        paginationCnt={paginationCnt}
+        onClickPageIndex={onClickPageIndex}
+        onClickPagination={onClickPagination}
+      />
+    </TableContainer>
   );
 };
 
 export const TableStory: StoryFn<TableProps> = Template.bind({});
-TableStory.args = {
-  isPagination: true,
-  pageCnt: 10,
-  paginationCnt: 1,
-};
+TableStory.args = {};
 
 export default meta;

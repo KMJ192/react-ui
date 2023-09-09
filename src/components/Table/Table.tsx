@@ -17,48 +17,22 @@ import style from './style.module.scss';
 const cx = classNames.bind(style);
 
 type BaseProps = {
-  children: React.ReactNode;
-  isPagination?: boolean;
-  pageCnt?: number;
-  paginationCnt?: number;
-  selectedPage?: number;
-  onClickPageIndex?: (idx: number) => void;
-  onClickPagination?: (move: 'left' | 'right') => void;
+  children?: React.ReactNode;
 };
 
-const DEFAULT_ELEMENT = 'div';
+const DEFAULT_ELEMENT = 'table';
 
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
 function T<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
-  {
-    as,
-    children,
-    isPagination = false,
-    pageCnt = 1,
-    paginationCnt = 1,
-    selectedPage = 1,
-    onClickPageIndex = () => {},
-    onClickPagination = () => {},
-    className,
-    ...props
-  }: Props<T>,
+  { as, children, className, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
 
   return (
-    <ELEMENT {...props} ref={ref} className={cx('table-container', className)}>
-      <table className={cx('table')}>{children}</table>
-      {isPagination && (
-        <Pagination
-          pageCnt={pageCnt}
-          selectedPage={selectedPage}
-          paginationCnt={paginationCnt}
-          onClickPageIndex={onClickPageIndex}
-          onClickPagination={onClickPagination}
-        />
-      )}
+    <ELEMENT {...props} ref={ref} className={cx('table', className)}>
+      {children}
     </ELEMENT>
   );
 }
@@ -71,6 +45,7 @@ const Table = Object.assign(React.forwardRef(T) as typeof T, {
   Tr,
   Th,
   Td,
+  Pagination,
 });
 
 export type TableProps = Props<typeof DEFAULT_ELEMENT>;
