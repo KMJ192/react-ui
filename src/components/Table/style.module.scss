@@ -38,27 +38,37 @@
       background: $ss-c-table-pagination-index-bg-selected;
       color: $ss-c-table-pagination-index-text-selected;
     }
+    &.over {
+      color: $ss-c-table-pagination-index-text-disabled;
+      background-color: $ss-c-table-pagination-index-bg-disabled;
+      cursor: not-allowed;
+    }
+    &:hover:not(.selected):not(.over) {
+      background: $ss-c-table-pagination-index-bg-hover;
+    }
   }
 
-  .left,
-  .right {
+  .prev,
+  .next {
     fill: $ss-c-table-pagination-arrow;
+  }
+  .prev.first-page,
+  .next.last-page {
+    fill: $ss-c-table-pagination-arrow-disabled;
   }
 }
 
-.table-container {
+@mixin table-container {
   width: inherit;
   border-radius: 8px;
   white-space: nowrap;
   padding: 8px 24px;
   overflow: scroll;
-  @include color-set-container;
 }
 
-.table {
+@mixin table {
   border-collapse: collapse;
   width: 100%;
-  @include color-set-table;
   .caption {
     padding: 16px;
     text-align: start;
@@ -109,11 +119,11 @@
   }
 }
 
-.pagination {
+@mixin pagination {
   width: 100%;
   padding: 16px 0;
   column-gap: 8px;
-  @include color-set-pagination;
+  user-select: none;
   .index {
     width: 32px;
     aspect-ratio: 1;
@@ -121,13 +131,31 @@
     border-radius: 50%;
     cursor: pointer;
   }
-  .left,
-  .right {
-    cursor: pointer;
-    width: 20px;
-    height: 20px;
+  .prev,
+  .next {
+    column-gap: 8px;
+    & > div {
+      cursor: pointer;
+      width: 16px;
+      height: 16px;
+    }
   }
-  .right {
+  .next > div {
     transform: rotate(180deg);
   }
+}
+
+.table-container {
+  @include table-container;
+  @include color-set-container;
+}
+
+.table {
+  @include table;
+  @include color-set-table;
+}
+
+.pagination {
+  @include pagination;
+  @include color-set-pagination;
 }

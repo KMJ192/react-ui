@@ -1,7 +1,10 @@
 import React from 'react';
 import PaginationIcon from './PaginationIcon';
+import PaginationEndIcon from './PaginationEndIcon';
 
 import Center from '@src/layout/Center/Center';
+import Text from '@src/components/Text/Text';
+import Flex from '@src/layout/Flex/Flex';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
@@ -10,10 +13,10 @@ import style from '../style.module.scss';
 const cx = classNames.bind(style);
 
 type BaseProps = {
-  pageCnt?: number;
-  selectedPage: number;
-  paginationCnt?: number;
-  onClickPagination?: (move: 'left' | 'right') => void;
+  selectedPageIndex?: number;
+  currentPaging?: number;
+  lastPage?: number;
+  onClickPaging?: (move: 'prev' | 'next' | 'first' | 'last') => void;
   onClickPageIndex?: (idx: number) => void;
 };
 
@@ -21,20 +24,24 @@ const DEFAULT_ELEMENT = 'div';
 
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
+const perPage = 10;
+
 function Pagination<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   {
     as,
-    pageCnt = 1,
-    selectedPage = 1,
-    paginationCnt = 1,
+    selectedPageIndex = 1,
+    currentPaging = 1,
+    lastPage = 1,
     onClickPageIndex = () => {},
-    onClickPagination = () => {},
+    onClickPaging = () => {},
     className,
     ...props
   }: Props<T>,
   ref: React.Ref<any>,
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
+  const isFirst = currentPaging === 1;
+  const isLast = currentPaging >= lastPage / perPage;
 
   return (
     <Center
@@ -43,41 +50,60 @@ function Pagination<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
       as={ELEMENT as any}
       className={cx('pagination', className)}
     >
-      <div
-        className={cx('left')}
-        onClick={(e: React.MouseEvent) => {
-          e.stopPropagation();
-          onClickPagination('left');
-        }}
-      >
-        <PaginationIcon />
-      </div>
-      {Array.from({ length: pageCnt }, () => 0).map((_, idx) => {
-        const page = idx + 1 + pageCnt * (paginationCnt - 1);
-        const isSelected = page === selectedPage;
+      <Flex className={cx('prev', isFirst && 'first-page')}>
+        <div
+          onClick={(e: React.MouseEvent) => {
+            e.stopPropagation();
+            if (!isFirst) onClickPaging('first');
+          }}
+        >
+          <PaginationEndIcon />
+        </div>
+        <div
+          onClick={(e: React.MouseEvent) => {
+            e.stopPropagation();
+            if (!isFirst) onClickPaging('prev');
+          }}
+        >
+          <PaginationIcon />
+        </div>
+      </Flex>
+      {Array.from({ length: perPage }, () => 0).map((_, idx) => {
+        const page = idx + 1 + perPage * (currentPaging - 1);
+        const isSelected = page === selectedPageIndex;
+        const isOver = page > lastPage;
         return (
           <Center
             as='li'
             key={page}
-            className={cx('index', isSelected && 'selected')}
+            className={cx('index', isSelected && 'selected', isOver && 'over')}
             onClick={(e: React.MouseEvent) => {
               e.stopPropagation();
-              onClickPageIndex(page);
+              if (!isOver) onClickPageIndex(page);
             }}
           >
-            {page}
+            <Text typo='b2'>{page}</Text>
           </Center>
         );
       })}
-      <div
-        className={cx('right')}
-        onClick={(e: React.MouseEvent) => {
-          e.stopPropagation();
-          onClickPagination('right');
-        }}
-      >
-        <PaginationIcon />
-      </div>
+      <Flex className={cx('next', isLast && 'last-page')}>
+        <div
+          onClick={(e: React.MouseEvent) => {
+            e.stopPropagation();
+            if (!isLast) onClickPaging('next');
+          }}
+        >
+          <PaginationIcon />
+        </div>
+        <div
+          onClick={(e: React.MouseEvent) => {
+            e.stopPropagation();
+            if (!isLast) onClickPaging('last');
+          }}
+        >
+          <PaginationEndIcon />
+        </div>
+      </Flex>
     </Center>
   );
 }

@@ -9,7 +9,6 @@ import Tr from './Tr/Tr';
 import Th from './Th/Th';
 import Td from './Td/Td';
 import Caption from './Caption/Caption';
-
 import Pagination from './Pagination/Pagination';
 
 import classNames from 'classnames/bind';

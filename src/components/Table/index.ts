@@ -1,4 +1,6 @@
 export { default as Table } from './Table';
+export { default as TableContainer } from './TableContainer/TableContainer';
+export { default as useTablePage } from './hooks/useTablePage';
 export type { TableContainerProps } from './TableContainer/TableContainer';
 export type { TableProps } from './Table';
 export type { TheadProps } from './Thead/Thead';

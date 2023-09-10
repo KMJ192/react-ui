@@ -20,6 +20,14 @@ $ss-c-table-pagination-index-bg-selected: var(
   --ss-c-table-pagination-index-bg-selected,
   $light-blue600
 );
+$ss-c-table-pagination-index-bg-disabled: var(
+  --ss-c-table-pagination-index-bg-disabled,
+  $light-primary100
+);
+$ss-c-table-pagination-index-bg-hover: var(
+  --ss-c-table-pagination-index-bg-selected,
+  $light-blue100
+);
 $ss-c-table-pagination-index-text: var(
   --ss-c-table-pagination-index-text,
   $light-primary900
@@ -28,8 +36,16 @@ $ss-c-table-pagination-index-text-selected: var(
   --ss-c-table-pagination-index-text-selected,
   $light-primary000
 );
+$ss-c-table-pagination-index-text-disabled: var(
+  --ss-c-table-pagination-index-text-disabled,
+  $light-primary000
+);
 
 $ss-c-table-pagination-arrow: var(
   --ss-c-table-pagination-arrow,
   $light-primary600
+);
+$ss-c-table-pagination-arrow-disabled: var(
+  --ss-c-table-pagination-arrow-disabled,
+  $light-primary100
 );
