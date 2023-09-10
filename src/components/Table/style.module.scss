@@ -44,6 +44,7 @@
       cursor: not-allowed;
     }
     &:hover:not(.selected):not(.over) {
+      color: $ss-c-table-pagination-index-text-hover;
       background: $ss-c-table-pagination-index-bg-hover;
     }
   }
@@ -98,6 +99,9 @@
   }
   .tbody {
     .tr {
+      &:hover {
+        transition: background-color 0.1s ease-in-out;
+      }
       .td,
       .th {
         padding: 16px;
@@ -130,6 +134,7 @@
     place-content: center;
     border-radius: 50%;
     cursor: pointer;
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
   }
   .prev,
   .next {

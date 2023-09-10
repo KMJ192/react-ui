@@ -25,11 +25,15 @@ $ss-c-table-pagination-index-bg-disabled: var(
   $light-primary100
 );
 $ss-c-table-pagination-index-bg-hover: var(
-  --ss-c-table-pagination-index-bg-selected,
+  --ss-c-table-pagination-index-bg-hover,
   $light-blue100
 );
 $ss-c-table-pagination-index-text: var(
   --ss-c-table-pagination-index-text,
+  $light-primary900
+);
+$ss-c-table-pagination-index-text-hover: var(
+  --ss-c-table-pagination-index-text-hover,
   $light-primary900
 );
 $ss-c-table-pagination-index-text-selected: var(
