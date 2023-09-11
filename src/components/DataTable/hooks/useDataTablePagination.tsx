@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 type Props = {
-  lastPage: number;
+  lastPageIndex: number;
 };
 
 const perPage = 10;
 
-function useDataTablePagination({ lastPage }: Props) {
+function useDataTablePagination({ lastPageIndex }: Props) {
   const [selectedPageIndex, setSelectedPageIndex] = useState(1);
   const [currentPaging, setCurrentPaging] = useState(1);
 
@@ -24,8 +24,8 @@ function useDataTablePagination({ lastPage }: Props) {
       setSelectedPageIndex(1);
       setCurrentPaging(1);
     } else if (move === 'last') {
-      const cur = Math.floor(lastPage / perPage);
-      const lastPaging = cur * perPage < lastPage ? cur + 1 : cur;
+      const cur = Math.floor(lastPageIndex / perPage);
+      const lastPaging = cur * perPage < lastPageIndex ? cur + 1 : cur;
       setSelectedPageIndex(lastPaging * perPage - (perPage - 1));
       setCurrentPaging(lastPaging);
     }
@@ -36,7 +36,7 @@ function useDataTablePagination({ lastPage }: Props) {
   };
 
   return {
-    lastPage,
+    lastPageIndex,
     currentPaging,
     selectedPageIndex,
     onClickPaging,

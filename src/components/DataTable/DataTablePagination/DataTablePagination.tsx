@@ -15,7 +15,7 @@ const cx = classNames.bind(style);
 type BaseProps = {
   selectedPageIndex?: number;
   currentPaging?: number;
-  lastPage?: number;
+  lastPageIndex?: number;
   onClickPaging?: (move: 'prev' | 'next' | 'first' | 'last') => void;
   onClickPageIndex?: (idx: number) => void;
 };
@@ -33,7 +33,7 @@ function DataTablePagination<
     as,
     selectedPageIndex = 1,
     currentPaging = 1,
-    lastPage = 1,
+    lastPageIndex = 1,
     onClickPageIndex = () => {},
     onClickPaging = () => {},
     className,
@@ -43,7 +43,7 @@ function DataTablePagination<
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
   const isFirst = currentPaging === 1;
-  const isLast = currentPaging >= lastPage / perPage;
+  const isLast = currentPaging >= lastPageIndex / perPage;
 
   return (
     <Center
@@ -73,7 +73,7 @@ function DataTablePagination<
       {Array.from({ length: perPage }, () => 0).map((_, idx) => {
         const page = idx + 1 + perPage * (currentPaging - 1);
         const isSelected = page === selectedPageIndex;
-        const isOver = page > lastPage;
+        const isOver = page > lastPageIndex;
         return (
           <Center
             as='li'

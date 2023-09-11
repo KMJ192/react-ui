@@ -153,11 +153,15 @@
   .prev,
   .next {
     column-gap: 8px;
+    cursor: pointer;
     & > div {
-      cursor: pointer;
       width: 16px;
       height: 16px;
     }
+  }
+  .prev.first-page,
+  .next.last-page {
+    cursor: default;
   }
   .next > div {
     transform: rotate(180deg);

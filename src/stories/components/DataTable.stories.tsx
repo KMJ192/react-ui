@@ -27,7 +27,7 @@ const Template = (args: DataTableProps) => {
   const { ...arg } = args;
 
   const paging = useDataTablePagination({
-    lastPage: 41,
+    lastPageIndex: 41,
   });
 
   return (
