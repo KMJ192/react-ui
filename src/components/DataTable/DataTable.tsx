@@ -9,7 +9,7 @@ import Tr from './Tr/Tr';
 import Th from './Th/Th';
 import Td from './Td/Td';
 import Caption from './Caption/Caption';
-import Pagination from './Pagination/Pagination';
+import DataTablePagination from './DataTablePagination/DataTablePagination';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
@@ -23,20 +23,20 @@ const DEFAULT_ELEMENT = 'table';
 
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function T<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
+function DT<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   { as, children, className, ...props }: Props<T>,
   ref: React.Ref<any>,
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
 
   return (
-    <ELEMENT {...props} ref={ref} className={cx('table', className)}>
+    <ELEMENT {...props} ref={ref} className={cx('data-table', className)}>
       {children}
     </ELEMENT>
   );
 }
 
-const Table = Object.assign(React.forwardRef(T) as typeof T, {
+const DataTable = Object.assign(React.forwardRef(DT) as typeof DT, {
   Caption,
   Thead,
   Tbody,
@@ -44,8 +44,8 @@ const Table = Object.assign(React.forwardRef(T) as typeof T, {
   Tr,
   Th,
   Td,
-  Pagination,
+  DataTablePagination,
 });
 
-export type TableProps = Props<typeof DEFAULT_ELEMENT>;
-export default Table;
+export type DataTableProps = Props<typeof DEFAULT_ELEMENT>;
+export default DataTable;

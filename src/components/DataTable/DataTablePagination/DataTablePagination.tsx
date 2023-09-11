@@ -26,7 +26,9 @@ type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
 const perPage = 10;
 
-function Pagination<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
+function DataTablePagination<
+  T extends React.ElementType = typeof DEFAULT_ELEMENT,
+>(
   {
     as,
     selectedPageIndex = 1,
@@ -108,5 +110,7 @@ function Pagination<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   );
 }
 
-export type TablePaginationProps = Props<typeof DEFAULT_ELEMENT>;
-export default React.forwardRef(Pagination) as typeof Pagination;
+export type DataTablePaginationProps = Props<typeof DEFAULT_ELEMENT>;
+export default React.forwardRef(
+  DataTablePagination,
+) as typeof DataTablePagination;

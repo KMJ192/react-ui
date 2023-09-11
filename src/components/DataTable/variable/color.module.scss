@@ -1,0 +1,61 @@
+@import 'src/styles/color.module.scss';
+
+$ss-c-data-table-bg: var(--ss-c-data-table-bg, $light-primary000);
+
+$ss-c-data-table-border: var(--ss-c-data-table-border, $light-primary300);
+
+$ss-c-data-table-header-bg: var(--ss-c-data-table-header-bg, $light-primary100);
+$ss-c-data-table-footer-bg: var(--ss-c-data-table-footer-bg, $light-primary000);
+
+$ss-c-data-table-divide-line: var(
+  --ss-c-data-table-divide-line,
+  $light-primary400
+);
+$ss-c-data-table-body-bg-hover: var(
+  --ss-c-data-table-body-bg-hover,
+  $light-blue100
+);
+
+$ss-c-data-table-text: var(--ss-c-data-table-text, $light-primary900);
+
+$ss-c-data-table-pagination-index-bg: var(
+  --ss-c-data-table-pagination-index-bg,
+  $light-primary000
+);
+$ss-c-data-table-pagination-index-bg-selected: var(
+  --ss-c-data-table-pagination-index-bg-selected,
+  $light-blue600
+);
+$ss-c-data-table-pagination-index-bg-disabled: var(
+  --ss-c-data-table-pagination-index-bg-disabled,
+  $light-primary100
+);
+$ss-c-data-table-pagination-index-bg-hover: var(
+  --ss-c-data-table-pagination-index-bg-hover,
+  $light-blue100
+);
+$ss-c-data-table-pagination-index-text: var(
+  --ss-c-data-table-pagination-index-text,
+  $light-primary900
+);
+$ss-c-data-table-pagination-index-text-hover: var(
+  --ss-c-data-table-pagination-index-text-hover,
+  $light-primary900
+);
+$ss-c-data-table-pagination-index-text-selected: var(
+  --ss-c-data-table-pagination-index-text-selected,
+  $light-primary000
+);
+$ss-c-data-table-pagination-index-text-disabled: var(
+  --ss-c-data-table-pagination-index-text-disabled,
+  $light-primary000
+);
+
+$ss-c-data-table-pagination-arrow: var(
+  --ss-c-data-table-pagination-arrow,
+  $light-primary600
+);
+$ss-c-data-table-pagination-arrow-disabled: var(
+  --ss-c-data-table-pagination-arrow-disabled,
+  $light-primary100
+);

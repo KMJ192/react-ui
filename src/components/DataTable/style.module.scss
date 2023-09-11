@@ -1,65 +1,65 @@
 @import './variable/color.module.scss';
 
-@mixin color-set-container {
-  border: 1px solid $ss-c-table-border;
-  background: $ss-c-table-bg;
-  color: $ss-c-table-text;
+@mixin color-set-data-table-container {
+  border: 1px solid $ss-c-data-table-border;
+  background: $ss-c-data-table-bg;
+  color: $ss-c-data-table-text;
 }
 
-@mixin color-set-table {
+@mixin color-set-data-table {
   .thead > .tr {
     .th,
     .td {
-      background: $ss-c-table-header-bg;
+      background: $ss-c-data-table-header-bg;
     }
   }
   .tbody {
     .tr {
-      border-top: 1px solid $ss-c-table-divide-line;
+      border-top: 1px solid $ss-c-data-table-divide-line;
       &:hover {
-        background: $ss-c-table-body-bg-hover;
+        background: $ss-c-data-table-body-bg-hover;
       }
     }
   }
   .tfoot > .tr {
-    border-top: 1px solid $ss-c-table-divide-line;
+    border-top: 1px solid $ss-c-data-table-divide-line;
     .td,
     .th {
-      background: $ss-c-table-footer-bg;
+      background: $ss-c-data-table-footer-bg;
     }
   }
 }
 
 @mixin color-set-pagination {
   & > .index {
-    color: $ss-c-table-pagination-index-text;
-    background: $ss-c-table-pagination-index-bg;
+    color: $ss-c-data-table-pagination-index-text;
+    background: $ss-c-data-table-pagination-index-bg;
     &.selected {
-      background: $ss-c-table-pagination-index-bg-selected;
-      color: $ss-c-table-pagination-index-text-selected;
+      background: $ss-c-data-table-pagination-index-bg-selected;
+      color: $ss-c-data-table-pagination-index-text-selected;
     }
     &.over {
-      color: $ss-c-table-pagination-index-text-disabled;
-      background-color: $ss-c-table-pagination-index-bg-disabled;
+      color: $ss-c-data-table-pagination-index-text-disabled;
+      background-color: $ss-c-data-table-pagination-index-bg-disabled;
       cursor: not-allowed;
     }
     &:hover:not(.selected):not(.over) {
-      color: $ss-c-table-pagination-index-text-hover;
-      background: $ss-c-table-pagination-index-bg-hover;
+      color: $ss-c-data-table-pagination-index-text-hover;
+      background: $ss-c-data-table-pagination-index-bg-hover;
     }
   }
 
   .prev,
   .next {
-    fill: $ss-c-table-pagination-arrow;
+    fill: $ss-c-data-table-pagination-arrow;
   }
   .prev.first-page,
   .next.last-page {
-    fill: $ss-c-table-pagination-arrow-disabled;
+    fill: $ss-c-data-table-pagination-arrow-disabled;
   }
 }
 
-@mixin table-container {
+@mixin data-table-container {
   width: inherit;
   border-radius: 8px;
   white-space: nowrap;
@@ -67,7 +67,7 @@
   overflow: scroll;
 }
 
-@mixin table {
+@mixin data-table {
   border-collapse: collapse;
   width: 100%;
   .caption {
@@ -150,14 +150,14 @@
   }
 }
 
-.table-container {
-  @include table-container;
-  @include color-set-container;
+.data-table-container {
+  @include data-table-container;
+  @include color-set-data-table-container;
 }
 
-.table {
-  @include table;
-  @include color-set-table;
+.data-table {
+  @include data-table;
+  @include color-set-data-table;
 }
 
 .pagination {

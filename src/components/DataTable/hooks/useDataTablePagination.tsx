@@ -6,7 +6,7 @@ type Props = {
 
 const perPage = 10;
 
-function useTablePage({ lastPage }: Props) {
+function useDataTablePagination({ lastPage }: Props) {
   const [selectedPageIndex, setSelectedPageIndex] = useState(1);
   const [currentPaging, setCurrentPaging] = useState(1);
 
@@ -44,4 +44,4 @@ function useTablePage({ lastPage }: Props) {
   };
 }
 
-export default useTablePage;
+export default useDataTablePagination;
