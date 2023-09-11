@@ -44,7 +44,7 @@ const DataTable = Object.assign(React.forwardRef(DT) as typeof DT, {
   Tr,
   Th,
   Td,
-  DataTablePagination,
+  Pagination: DataTablePagination,
 });
 
 export type DataTableProps = Props<typeof DEFAULT_ELEMENT>;

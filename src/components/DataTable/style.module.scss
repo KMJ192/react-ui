@@ -3,21 +3,31 @@
 @mixin color-set-data-table-container {
   border: 1px solid $ss-c-data-table-border;
   background: $ss-c-data-table-bg;
-  color: $ss-c-data-table-text;
 }
 
 @mixin color-set-data-table {
+  .caption {
+    color: $ss-c-data-table-caption-text;
+  }
   .thead > .tr {
     .th,
     .td {
+      color: $ss-c-data-table-header-text;
       background: $ss-c-data-table-header-bg;
     }
   }
   .tbody {
     .tr {
       border-top: 1px solid $ss-c-data-table-divide-line;
-      &:hover {
-        background: $ss-c-data-table-body-bg-hover;
+      background: $ss-c-data-table-row-bg;
+      color: $ss-c-data-table-row-text;
+      &.disabled {
+        color: $ss-c-data-table-row-text-disabled;
+        background: $ss-c-data-table-row-bg-disabled;
+      }
+      &:hover:not(.disabled) {
+        color: $ss-c-data-table-row-text-hover;
+        background: $ss-c-data-table-row-bg-hover;
       }
     }
   }
@@ -25,6 +35,7 @@
     border-top: 1px solid $ss-c-data-table-divide-line;
     .td,
     .th {
+      color: $ss-c-data-table-footer-text;
       background: $ss-c-data-table-footer-bg;
     }
   }
@@ -99,8 +110,11 @@
   }
   .tbody {
     .tr {
+      &.disabled {
+        cursor: not-allowed;
+      }
       &:hover {
-        transition: background-color 0.1s ease-in-out;
+        transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
       }
       .td,
       .th {

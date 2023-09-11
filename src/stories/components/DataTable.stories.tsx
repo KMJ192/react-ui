@@ -52,7 +52,7 @@ const Template = (args: DataTableProps) => {
             <DataTable.Td>data2</DataTable.Td>
             <DataTable.Td>data3</DataTable.Td>
           </DataTable.Tr>
-          <DataTable.Tr>
+          <DataTable.Tr disabled>
             <DataTable.Td>data1</DataTable.Td>
             <DataTable.Td>data2</DataTable.Td>
             <DataTable.Td>data3</DataTable.Td>
@@ -71,7 +71,7 @@ const Template = (args: DataTableProps) => {
           </DataTable.Tr>
         </DataTable.Tfoot>
       </DataTable>
-      <DataTable.DataTablePagination {...paging} />
+      <DataTable.Pagination {...paging} />
     </DataTableContainer>
   );
 };

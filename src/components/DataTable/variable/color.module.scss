@@ -4,19 +4,44 @@ $ss-c-data-table-bg: var(--ss-c-data-table-bg, $light-primary000);
 
 $ss-c-data-table-border: var(--ss-c-data-table-border, $light-primary300);
 
+$ss-c-data-table-caption-text: var(
+  --ss-c-data-table-caption-text,
+  $light-primary900
+);
+
 $ss-c-data-table-header-bg: var(--ss-c-data-table-header-bg, $light-primary100);
+$ss-c-data-table-header-text: var(
+  --ss-c-data-table-header-text,
+  $light-primary900
+);
 $ss-c-data-table-footer-bg: var(--ss-c-data-table-footer-bg, $light-primary000);
+$ss-c-data-table-footer-text: var(
+  --ss-c-data-table-footer-text,
+  $light-primary900
+);
 
 $ss-c-data-table-divide-line: var(
   --ss-c-data-table-divide-line,
   $light-primary400
 );
-$ss-c-data-table-body-bg-hover: var(
-  --ss-c-data-table-body-bg-hover,
+$ss-c-data-table-row-bg: var(--ss-c-data-table-row-bg, $light-primary000);
+$ss-c-data-table-row-bg-disabled: var(
+  --ss-c-data-table-row-bg-disabled,
+  $light-primary200
+);
+$ss-c-data-table-row-bg-hover: var(
+  --ss-c-data-table-row-bg-hover,
   $light-blue100
 );
-
-$ss-c-data-table-text: var(--ss-c-data-table-text, $light-primary900);
+$ss-c-data-table-row-text: var(--ss-c-data-table-row-text, $light-primary900);
+$ss-c-data-table-row-text-disabled: var(
+  --ss-c-data-table-row-text-disabled,
+  $light-primary400
+);
+$ss-c-data-table-row-text-hover: var(
+  --ss-c-data-table-row-text-hover,
+  $light-primary900
+);
 
 $ss-c-data-table-pagination-index-bg: var(
   --ss-c-data-table-pagination-index-bg,
