@@ -74,7 +74,7 @@
   width: inherit;
   border-radius: 8px;
   white-space: nowrap;
-  padding: 8px 24px;
+  padding: 16px 24px;
   overflow: scroll;
 }
 
@@ -82,7 +82,8 @@
   border-collapse: collapse;
   width: 100%;
   .caption {
-    padding: 16px;
+    padding-top: 8px;
+    padding-bottom: 16px;
     text-align: start;
   }
   .thead,
@@ -139,7 +140,7 @@
 
 @mixin pagination {
   width: 100%;
-  padding: 16px 0;
+  padding-top: 16px;
   column-gap: 8px;
   user-select: none;
   .index {
