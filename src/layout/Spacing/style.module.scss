@@ -3,8 +3,10 @@ $ss-layout-spacing-gap: var(--ss-layout-spacing-gap, 0px);
 .spacing {
   &.vertical {
     height: $ss-layout-spacing-gap;
+    min-height: $ss-layout-spacing-gap;
   }
   &.horizontal {
     width: $ss-layout-spacing-gap;
+    min-width: $ss-layout-spacing-gap;
   }
 }

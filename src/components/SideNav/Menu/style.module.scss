@@ -1,8 +1,8 @@
 @import '../variable/color.module.scss';
 
 @mixin color-set {
-  background: $sideNav-menu-background;
-  box-shadow: $sideNav-menu-box-shadow;
+  background: $ss-c-side-nav-menu-background;
+  box-shadow: $ss-c-side-nav-menu-box-shadow;
   color: $ss-c-side-nav-menu-text;
   &:not(.disabled):hover {
     color: $ss-c-side-nav-menu-text-hover;

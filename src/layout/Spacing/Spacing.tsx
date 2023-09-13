@@ -2,9 +2,10 @@ import React from 'react';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
+import { getStyle } from './calcStyle';
+
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
-import { getStyle } from './calcStyle';
 const cx = classNames.bind(style);
 
 type BaseProps = {
