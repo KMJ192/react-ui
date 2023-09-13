@@ -21,7 +21,7 @@ const meta: Meta<typeof Tab> = {
 };
 
 const TabTemplate = (args: TabProps) => {
-  const [select, setSelect] = useState(-1);
+  const [select, setSelect] = useState(0);
 
   const onSelect = (_: TabOptionKey, idx: number) => {
     setSelect(idx);

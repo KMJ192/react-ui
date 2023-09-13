@@ -1,41 +1,41 @@
-@import 'src/styles/color.module.scss';
+@import 'src/styles/color/color.module.scss';
 
 $ss-c-switch-bg: var(--ss-c-switch-bg, $light-primary300);
-$ss-c-switch-bg-checked: var(--ss-c-switch-bg-checked, $light-blue400);
+$ss-c-switch-bg-checked: var(--ss-c-switch-bg-checked, $light-blue300);
+$ss-c-switch-bg-disabled: var(--ss-c-switch-bg-disabled, $light-gray000);
 $ss-c-switch-bg-checked-disabled: var(
   --ss-c-switch-bg-checked-disabled,
-  $light-primary300
+  $light-gray200
 );
+$ss-c-switch-bg-hover: var(--ss-c-switch-bg-hover, $light-blue200);
 $ss-c-switch-bg-checked-hover: var(
   --ss-c-switch-bg-checked-hover,
   $light-blue500
 );
-$ss-c-switch-bg-disabled: var(--ss-c-switch-bg-disabled, $light-primary100);
-$ss-c-switch-bg-hover: var(--ss-c-switch-bg-hover, $light-blue200);
 
 $ss-c-switch-bullet: var(--ss-c-switch-bullet, $light-primary000);
+$ss-c-switch-bullet-disabled: var(
+  --ss-c-switch-bullet-disabled,
+  $light-gray200
+);
 $ss-c-switch-bullet-checked: var(
   --ss-c-switch-bullet-checked,
   $light-primary000
 );
 $ss-c-switch-bullet-checked-disabled: var(
   --ss-c-switch-bullet-checked-disabled,
-  $light-primary200
+  $light-gray400
 );
+$ss-c-switch-bullet-hover: var(--ss-c-switch-bullet-hover, $light-primary000);
 $ss-c-switch-bullet-checked-hover: var(
   --ss-c-switch-bullet-checked-hover,
   $light-primary000
 );
-$ss-c-switch-bullet-disabled: var(
-  --ss-c-switch-bullet-disabled,
-  $light-primary200
-);
-$ss-c-switch-bullet-hover: var(--ss-c-switch-bullet-hover, $light-primary000);
 $ss-c-switch-bullet-box-shadow: var(
   --ss-c-switch-bullet-box-shadow,
   0px 3px 6px rgba(63, 63, 63, 0.3)
 );
 
-$ss-c-switch-text: var(--ss-c-switch-text, $light-primary900);
-$ss-c-switch-text-hover: var(--ss-c-switch-text-hover, $light-blue500);
-$ss-c-switch-text-disabled: var(--ss-c-switch-text-disabled, $light-primary300);
+$ss-c-switch-text: var(--ss-c-switch-text, $light-text);
+$ss-c-switch-text-hover: var(--ss-c-switch-text-hover, $light-text);
+$ss-c-switch-text-disabled: var(--ss-c-switch-text-disabled, $light-gray200);

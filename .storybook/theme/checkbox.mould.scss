@@ -1,4 +1,4 @@
-@import 'src/styles/color.module.scss';
+@import 'src/styles/color/color.module.scss';
 
 @mixin checkbox-light {
   --ss-c-checkbox-border: #{$light-primary300};

@@ -1,39 +1,32 @@
-@import 'src/styles/color.module.scss';
+@import 'src/styles/color/color.module.scss';
 
-// background
-$ss-c-radio-bg: var(--ss-c-radio-bg);
-$ss-c-radio-bg-checked: var(--ss-c-radio-bg-checked);
-$ss-c-radio-bg-disabled: var(--ss-c-radio-bg-disabled, $light-primary200);
-$ss-c-radio-bg-checked-disabled: var(
-  --ss-c-radio-bg-checked-disabled,
-  $light-primary300
-);
-$ss-c-radio-bg-hover: var(--ss-c-radio-bg-hover);
-$ss-c-radio-bg-checked-hover: var(--ss-c-radio-bg-checked-hover);
-
-// border
 $ss-c-radio-border: var(--ss-c-radio-border, $light-primary300);
-$ss-c-radio-border-checked: var(--ss-c-radio-border-checked, $light-blue400);
-$ss-c-radio-border-disabled: var(
-  --ss-c-radio-border-disabled,
-  $light-primary300
-);
+$ss-c-radio-border-checked: var(--ss-c-radio-border-checked, $light-blue300);
+$ss-c-radio-border-disabled: var(--ss-c-radio-border-disabled, $light-gray100);
 $ss-c-radio-border-checked-disabled: var(
   --ss-c-radio-border-checked-disabled,
-  $light-primary400
+  $light-gray100
 );
-$ss-c-radio-border-hover: var(--ss-c-radio-border-hover, $light-blue500);
+$ss-c-radio-border-hover: var(--ss-c-radio-border-hover, $light-blue400);
 $ss-c-radio-border-checked-hover: var(
   --ss-c-radio-border-checked-hover,
   $light-blue500
 );
 
-// pupil
-$ss-c-radio-pupil: var(--ss-c-radio-pupil, $light-blue400);
-$ss-c-radio-pupil-disabled: var(--ss-c-radio-pupil-disabled, $light-primary500);
-$ss-c-radio-pupil-hover: var(--ss-c-radio-pupil-hover, $light-blue500);
+$ss-c-radio-bg: var(--ss-c-radio-bg, $light-background);
+$ss-c-radio-bg-checked: var(--ss-c-radio-bg, $light-background);
+$ss-c-radio-bg-checked-hover: var(--ss-c-radio-bg-hover, $light-background);
+$ss-c-radio-bg-checked-disabled: var(
+  --ss-c-radio-bg-checked-disabled,
+  $light-gray000
+);
+$ss-c-radio-bg-disabled: var(--ss-c-radio-bg-disabled, $light-gray000);
+$ss-c-radio-bg-hover: var(--ss-c-radio-bg-disabled, $light-background);
 
-// text
-$ss-c-radio-text: var(--ss-c-radio-text, $light-primary900);
-$ss-c-radio-text-disabled: var(--ss-c-radio-text-disabled, $light-primary300);
-$ss-c-radio-text-hover: var(--ss-c-radio-text-hover, $light-blue600);
+$ss-c-radio-text: var(--ss-c-radio-text, $light-text);
+$ss-c-radio-text-disabled: var(--ss-c-radio-text-disabled, $light-gray200);
+$ss-c-radio-text-hover: var(--ss-c-radio-text-hover, $light-text);
+
+$ss-c-radio-pupil: var(--ss-c-radio-pupil, $light-blue300);
+$ss-c-radio-pupil-disabled: var(--ss-c-radio-pupil-disabled, $light-gray100);
+$ss-c-radio-pupil-hover: var(--ss-c-radio-pupil-hover, $light-blue500);

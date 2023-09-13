@@ -1,2 +1,2 @@
-$ss-size-header-min-height: var(--ss-size-header-min-height);
-$ss-size-header-max-height: var(--ss-size-header-max-height);
+$ss-size-header-min-height: var(--ss-size-header-min-height, 72px);
+$ss-size-header-max-height: var(--ss-size-header-max-height, 72px);

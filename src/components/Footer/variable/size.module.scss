@@ -1,2 +1,2 @@
-$ss-size-footer-min-height: var(--ss-size-footer-min-height);
-$ss-size-footer-max-height: var(--ss-size-footer-max-height);
+$ss-size-footer-min-height: var(--ss-size-footer-min-height, 72px);
+$ss-size-footer-max-height: var(--ss-size-footer-max-height, 72px);

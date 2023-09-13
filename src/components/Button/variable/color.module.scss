@@ -1,22 +1,23 @@
-@import 'src/styles/color.module.scss';
+@import 'src/styles/color/color.module.scss';
 
 $ss-c-button-bg: var(--ss-c-button-bg, $light-primary000);
-$ss-c-button-bg-hover: var(--ss-c-button-bg-hover, $light-blue000);
-$ss-c-button-bg-disabled: var(--ss-c-button-bg-disabled, $light-primary200);
-$ss-c-button-bg-active: var(--ss-c-button-bg-active, $light-primary100);
-$ss-c-button-bg-ripple: var(--ss-c-button-bg-ripple, rgba(255, 255, 255, 0.6));
+$ss-c-button-bg-hover: var(--ss-c-button-bg-hover, $light-primary100);
+$ss-c-button-bg-disabled: var(--ss-c-button-bg-disabled, $light-gray000);
+$ss-c-button-bg-active: var(--ss-c-button-bg-active, $light-primary300);
 
-$ss-c-button-text: var(--ss-c-button-text, $light-primary900);
-$ss-c-button-text-hover: var(--ss-c-button-text-hover, $light-primary900);
-$ss-c-button-text-disabled: var(--ss-c-button-text-disabled, $light-primary500);
-$ss-c-button-text-active: var(--ss-c-button-text-active, $light-primary700);
+$ss-c-button-bg-ripple: var(--ss-c-button-bg-ripple, $light-primary200);
+
+$ss-c-button-text: var(--ss-c-button-text, $light-text);
+$ss-c-button-text-hover: var(--ss-c-button-text-hover, $light-text);
+$ss-c-button-text-disabled: var(--ss-c-button-text-disabled, $light-gray200);
+$ss-c-button-text-active: var(--ss-c-button-text-active, $black);
 
 $ss-c-button-box-shadow: var(
   --ss-c-button-box-shadow,
-  0px 3px 6px rgba(0, 0, 0, 0.1)
+  0px 2px 4px rgba(0, 0, 0, 0.1)
 );
-$ss-c-button-outline: var(--ss-c-button-outline, $light-blue200);
+$ss-c-button-outline: var(--ss-c-button-outline, $light-primary300);
 $ss-c-button-outline-disabled: var(
   --ss-c-button-outline-disabled,
-  $light-primary200
+  $light-gray300
 );

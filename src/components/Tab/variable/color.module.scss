@@ -1,11 +1,11 @@
-@import 'src/styles/color.module.scss';
+@import 'src/styles/color/color.module.scss';
 
 $ss-c-tab-bg: var(--ss-c-tab-bg, $light-primary000);
-$ss-c-tab-bg-hover: var(--ss-c-tab-bg-hover, $light-blue100);
-$ss-c-tab-bg-disabled: var(--ss-c-tab-bg-disabled, $light-primary100);
+$ss-c-tab-bg-hover: var(--ss-c-tab-bg-hover, $light-primary200);
+$ss-c-tab-bg-disabled: var(--ss-c-tab-bg-disabled, $light-gray100);
 
-$ss-c-tab-select-line: var(--ss-c-tab-select-line, $light-blue200);
+$ss-c-tab-select-line: var(--ss-c-tab-select-line, $light-blue300);
 
-$ss-c-tab-text: var(--ss-c-tab-text, $light-primary900);
-$ss-c-tab-text-hover: var(--ss-c-tab-text-hover, $light-primary800);
-$ss-c-tab-text-disabled: var(--ss-c-tab-text-disabled, $light-primary500);
+$ss-c-tab-text: var(--ss-c-tab-text, $light-text);
+$ss-c-tab-text-hover: var(--ss-c-tab-text-hover, $light-text);
+$ss-c-tab-text-disabled: var(--ss-c-tab-text-disabled, $light-blue000);

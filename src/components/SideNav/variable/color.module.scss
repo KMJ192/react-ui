@@ -1,4 +1,4 @@
-@import 'src/styles/color.module.scss';
+@import 'src/styles/color/color.module.scss';
 
 $ss-c-side-nav-bg: var(
   --ss-c-side-nav-bg,
@@ -9,32 +9,32 @@ $ss-c-side-nav-box-shadow: var(
   0px 3px 6px rgba(64, 64, 64, 0.3)
 );
 
-$ss-c-side-nav-menu-background: var(--ss-c-side-nav-menu-background);
+$ss-c-side-nav-menu-bg: var(--ss-c-side-nav-menu-bg);
 $ss-c-side-nav-menu-bg-selected: var(
   --ss-c-side-nav-menu-bg-selected,
   $light-primary000
 );
 $ss-c-side-nav-menu-bg-disabled: var(
   --ss-c-side-nav-menu-bg-disabled,
-  $light-primary300
+  $light-gray300
 );
 
-$ss-c-side-nav-menu-text: var(--ss-c-side-nav-menu-text, $light-primary900);
+$ss-c-side-nav-menu-text: var(--ss-c-side-nav-menu-text, $light-text);
 $ss-c-side-nav-menu-text-selected: var(
   --ss-c-side-nav-menu-text-selected,
-  $light-primary900
+  $light-text
 );
 $ss-c-side-nav-menu-text-hover: var(
   --ss-c-side-nav-menu-text-hover,
-  $light-blue700
+  $light-text
 );
 $ss-c-side-nav-menu-text-disabled: var(
   --ss-c-side-nav-menu-text-disabled,
-  $light-primary500
+  $light-gray100
 );
 
 $ss-c-side-nav-menu-box-shadow: var(--ss-c-side-nav-menu-box-shadow);
 $ss-c-side-nav-menu-box-shadow-selected: var(
   --ss-c-side-nav-menu-box-shadow-selected,
-  0px 3px 6px rgba(64, 64, 64, 0.1)
+  0px 1px 3px rgba(8, 104, 99, 0.2)
 );

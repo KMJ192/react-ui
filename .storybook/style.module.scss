@@ -1,5 +1,4 @@
-@import 'src/styles/color.module.scss';
-@import './theme/theme.module.scss';
+@import 'src/styles/color/color.module.scss';
 @import './size/size.module.scss';
 
 @mixin theme {

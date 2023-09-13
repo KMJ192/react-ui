@@ -46,8 +46,8 @@
     color: $ss-c-data-table-pagination-index-text;
     background: $ss-c-data-table-pagination-index-bg;
     &.selected {
-      background: $ss-c-data-table-pagination-index-bg-selected;
       color: $ss-c-data-table-pagination-index-text-selected;
+      background: $ss-c-data-table-pagination-index-bg-selected;
     }
     &.over {
       color: $ss-c-data-table-pagination-index-text-disabled;

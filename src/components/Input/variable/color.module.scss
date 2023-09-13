@@ -1,23 +1,20 @@
-@import 'src/styles/color.module.scss';
+@import 'src/styles/color/color.module.scss';
 
-$ss-c-input-border: var(--ss-c-input-border, $light-primary400);
+$ss-c-input-border: var(--ss-c-input-border, $light-primary600);
 $ss-c-input-border-focus: var(--ss-c-input-border-focus, $light-blue500);
-$ss-c-input-border-error: var(--ss-c-input-border-error, $light-red900);
-$ss-c-input-border-disabled: var(
-  --ss-c-input-border-disabled,
-  $light-primary300
-);
+$ss-c-input-border-error: var(--ss-c-input-border-error, $light-danger);
+$ss-c-input-border-disabled: var(--ss-c-input-border-disabled, $light-gray100);
 
 $ss-c-input-bg: var(--ss-c-input-bg, $light-primary000);
-$ss-c-input-bg-disabled: var(--ss-c-input-bg-disabled, $light-primary100);
+$ss-c-input-bg-disabled: var(--ss-c-input-bg-disabled, $light-gray000);
 
-$ss-c-input-text: var(--ss-c-input-text, $light-primary900);
-$ss-c-input-text-disabled: var(--ss-c-input-text-disabled, $light-primary400);
+$ss-c-input-text: var(--ss-c-input-text, $light-text);
+$ss-c-input-text-disabled: var(--ss-c-input-text-disabled, $light-gray200);
 
-$ss-c-input-placeholder: var(--ss-c-input-placeholder, $light-primary400);
+$ss-c-input-placeholder: var(--ss-c-input-placeholder, $light-gray100);
 $ss-c-input-placeholder-disabled: var(
   --ss-c-input-placeholder-disabled,
-  $light-primary300
+  $light-gray100
 );
 
 $ss-c-input-box-shadow: var(

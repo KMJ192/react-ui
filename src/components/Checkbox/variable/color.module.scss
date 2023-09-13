@@ -1,49 +1,46 @@
-@import 'src/styles/color.module.scss';
+@import 'src/styles/color/color.module.scss';
 
 // border
-$ss-c-checkbox-border: var(--ss-c-checkbox-border, $light-primary300);
+$ss-c-checkbox-border: var(--ss-c-checkbox-border, $light-primary700);
+$ss-c-checkbox-border-hover: var(--ss-c-checkbox-border-hover, $light-blue300);
+$ss-c-checkbox-border-disabled: var(
+  --ss-c-checkbox-border-disabled,
+  $light-gray200
+);
 $ss-c-checkbox-border-checked: var(
   --ss-c-checkbox-border-checked,
   $light-blue400
-);
-$ss-c-checkbox-border-checked-disabled: var(
-  --ss-c-checkbox-border-checked-disabled,
-  $light-primary400
 );
 $ss-c-checkbox-border-checked-hover: var(
   --ss-c-checkbox-border-checked-hover,
   $light-blue500
 );
-$ss-c-checkbox-border-disabled: var(
-  --ss-c-checkbox-border-disabled,
-  $light-primary300
+$ss-c-checkbox-border-checked-disabled: var(
+  --ss-c-checkbox-border-checked-disabled,
+  $light-gray300
 );
-$ss-c-checkbox-border-hover: var(--ss-c-checkbox-border-hover, $light-blue500);
 
 // background
 $ss-c-checkbox-bg: var(--ss-c-checkbox-bg, $light-blue400);
 $ss-c-checkbox-bg-hover: var(--ss-c-checkbox-bg-hover, $light-blue500);
-$ss-c-checkbox-bg-disabled: var(--ss-c-checkbox-bg-disabled, $light-primary200);
+$ss-c-checkbox-bg-disabled: var(--ss-c-checkbox-bg-disabled, $light-gray100);
 $ss-c-checkbox-bg-checked-disabled: var(
   --ss-c-checkbox-bg-checked-disabled,
-  $light-primary400
+  $light-gray300
 );
 
 // text
-$ss-c-checkbox-text: var(--ss-c-checkbox-text, $light-primary900);
-$ss-c-checkbox-text-hover: var(--ss-c-checkbox-text-hover, $light-blue500);
+$ss-c-checkbox-text: var(--ss-c-checkbox-text, $light-text);
+$ss-c-checkbox-text-hover: var(--ss-c-checkbox-text-hover, $light-text);
 $ss-c-checkbox-text-disabled: var(
   --ss-c-checkbox-text-disabled,
-  $light-primary300
+  $light-gray300
 );
 
 // mark
-$ss-c-checkbox-mark: var(--ss-c-checkbox-mark-checked, $light-primary000);
+$ss-c-checkbox-mark: var(--ss-c-checkbox-mark, $light-primary000);
+$ss-c-checkbox-mark-hover: var(--ss-c-checkbox-mark-hover, $light-primary000);
 $ss-c-checkbox-mark-disabled: var(
-  --ss-c-checkbox-mark-checked-disabled,
-  $light-primary200
-);
-$ss-c-checkbox-mark-hover: var(
-  --ss-c-checkbox-mark-checked-hover,
-  $light-primary000
+  --ss-c-checkbox-mark-disabled,
+  $light-gray000
 );
