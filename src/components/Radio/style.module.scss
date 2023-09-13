@@ -89,6 +89,7 @@
   align-items: center;
   -webkit-box-align: center;
   cursor: pointer;
+  width: fit-content;
   &.is-children {
     column-gap: 8px;
   }

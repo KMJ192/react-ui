@@ -1,6 +1,6 @@
 @import 'src/styles/color.module.scss';
 
-$sideNav-background: var(
+$ss-c-side-nav-bg: var(
   --ss-c-side-nav-bg,
   linear-gradient(#{$light-primary200}, #{$light-primary000})
 );
@@ -9,7 +9,7 @@ $ss-c-side-nav-box-shadow: var(
   0px 3px 6px rgba(64, 64, 64, 0.3)
 );
 
-$sideNav-menu-background: var(--sideNav-menu-background);
+$ss-c-side-nav-menu-background: var(--ss-c-side-nav-menu-background);
 $ss-c-side-nav-menu-bg-selected: var(
   --ss-c-side-nav-menu-bg-selected,
   $light-primary000
@@ -33,7 +33,7 @@ $ss-c-side-nav-menu-text-disabled: var(
   $light-primary500
 );
 
-$sideNav-menu-box-shadow: var(--sideNav-menu-box-shadow);
+$ss-c-side-nav-menu-box-shadow: var(--ss-c-side-nav-menu-box-shadow);
 $ss-c-side-nav-menu-box-shadow-selected: var(
   --ss-c-side-nav-menu-box-shadow-selected,
   0px 3px 6px rgba(64, 64, 64, 0.1)
