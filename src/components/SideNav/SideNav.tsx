@@ -30,9 +30,13 @@ function SN<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
         depthGap,
       }}
     >
-      <nav {...props} ref={ref} className={cx('side-nav', className)}>
-        <DEFAULT_ELEMENT>{children}</DEFAULT_ELEMENT>
-      </nav>
+      <DEFAULT_ELEMENT
+        {...props}
+        ref={ref}
+        className={cx('side-nav', className)}
+      >
+        {children}
+      </DEFAULT_ELEMENT>
     </SideNavProvider>
   );
 }
