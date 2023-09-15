@@ -13,7 +13,7 @@ const meta: Meta<typeof Float> = {
   },
   argTypes: {
     startDirection: {
-      options: ['lt', 'rb'],
+      options: ['lt', 'lb', 'rt', 'rb'],
       control: {
         type: 'radio',
       },

@@ -6,11 +6,19 @@ $ss-layout-float-right: var(--ss-layout-float-right, 0px);
 .float {
   position: fixed;
   &.lt {
-    top: $ss-layout-float-top;
     left: $ss-layout-float-left;
+    top: $ss-layout-float-top;
+  }
+  &.lb {
+    left: $ss-layout-float-left;
+    bottom: $ss-layout-float-bottom;
+  }
+  &.rt {
+    right: $ss-layout-float-right;
+    top: $ss-layout-float-top;
   }
   &.rb {
-    bottom: $ss-layout-float-bottom;
     right: $ss-layout-float-right;
+    bottom: $ss-layout-float-bottom;
   }
 }

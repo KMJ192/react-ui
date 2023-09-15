@@ -31,6 +31,37 @@ const getStyle = ({
     if (!isLeft && !isTop) {
       return style;
     }
+  } else if (startDirection === 'lb') {
+    if (isLeft) {
+      newStyle = {
+        left,
+      };
+    }
+    if (isBottom) {
+      newStyle = {
+        ...newStyle,
+        bottom,
+      };
+    }
+    if (!isLeft && !isBottom) {
+      return style;
+    }
+  } else if (startDirection === 'rt') {
+    if (isRight) {
+      newStyle = {
+        ...newStyle,
+        right,
+      };
+    }
+    if (isTop) {
+      newStyle = {
+        ...newStyle,
+        top,
+      };
+    }
+    if (!isRight && !isTop) {
+      return style;
+    }
   } else if (startDirection === 'rb') {
     if (isRight) {
       newStyle = {

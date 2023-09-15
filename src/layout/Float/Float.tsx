@@ -10,7 +10,7 @@ const cx = classNames.bind(style);
 
 type BaseProps = {
   children?: React.ReactNode;
-  startDirection?: 'lt' | 'rb';
+  startDirection?: 'lt' | 'lb' | 'rt' | 'rb';
   left?: number;
   right?: number;
   top?: number;

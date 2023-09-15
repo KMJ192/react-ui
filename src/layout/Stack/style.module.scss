@@ -4,11 +4,11 @@ $ss-layout-stack-gap: var(--ss-layout-stack-gap, 0px);
 
 .stack {
   @include flex;
-  &.column {
+  &.row {
     flex-direction: column;
     row-gap: $ss-layout-stack-gap;
   }
-  &.row {
+  &.column {
     flex-direction: row;
     column-gap: $ss-layout-stack-gap;
   }

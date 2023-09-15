@@ -21,7 +21,7 @@ $ss-c-radio-bg-checked-disabled: var(
   $light-gray000
 );
 $ss-c-radio-bg-disabled: var(--ss-c-radio-bg-disabled, $light-gray000);
-$ss-c-radio-bg-hover: var(--ss-c-radio-bg-disabled, $light-background);
+$ss-c-radio-bg-hover: var(--ss-c-radio-bg-hover, $light-background);
 
 $ss-c-radio-text: var(--ss-c-radio-text, $light-text);
 $ss-c-radio-text-disabled: var(--ss-c-radio-text-disabled, $light-gray200);
