@@ -41,7 +41,6 @@ PrimaryCheckbox.args = {
   checked: true,
   disabled: false,
   multiple: false,
-  size: 16,
 };
 
 export default meta;
