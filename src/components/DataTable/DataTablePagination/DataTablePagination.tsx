@@ -39,7 +39,7 @@ function DataTablePagination<
     className,
     ...props
   }: Props<T>,
-  ref: React.Ref<any>,
+  ref: React.Ref<React.ElementRef<typeof DEFAULT_ELEMENT>>,
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
   const isFirst = currentPaging === 1;

@@ -18,7 +18,7 @@ type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
 function HamburgerMenu<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   { as, type = 'type-1', active = false, size = 'md', ...props }: Props<T>,
-  ref: React.Ref<any>,
+  ref: React.Ref<React.ElementRef<typeof DEFAULT_ELEMENT>>,
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
 

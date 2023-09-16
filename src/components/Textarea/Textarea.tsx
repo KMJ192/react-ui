@@ -16,7 +16,7 @@ type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
 
 function Textarea<T extends React.ElementType = typeof ELEMENT>(
   { className, ...props }: Props<T>,
-  ref: React.Ref<any>,
+  ref: React.Ref<React.ElementRef<typeof DEFAULT_ELEMENT>>,
 ) {
   return <ELEMENT {...props} ref={ref} className={cx(className)}></ELEMENT>;
 }

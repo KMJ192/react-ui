@@ -16,7 +16,10 @@ type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
 function DataTableContainer<
   T extends React.ElementType = typeof DEFAULT_ELEMENT,
->({ as, children, className, ...props }: Props<T>, ref: React.Ref<any>) {
+>(
+  { as, children, className, ...props }: Props<T>,
+  ref: React.Ref<React.ElementRef<typeof DEFAULT_ELEMENT>>,
+) {
   const ELEMENT = as || DEFAULT_ELEMENT;
 
   return (

@@ -22,7 +22,7 @@ type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
 function SN<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   { children, depthGap = 0, className, ...props }: Props<T>,
-  ref: React.Ref<any>,
+  ref: React.Ref<React.ElementRef<typeof DEFAULT_ELEMENT>>,
 ) {
   return (
     <SideNavProvider

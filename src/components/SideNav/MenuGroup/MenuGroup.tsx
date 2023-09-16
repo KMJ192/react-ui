@@ -29,7 +29,7 @@ function MenuGroup<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     className,
     ...props
   }: Props<T>,
-  ref: React.Ref<any>,
+  ref: React.Ref<React.ElementRef<typeof DEFAULT_ELEMENT>>,
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
 
