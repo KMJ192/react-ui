@@ -1,10 +1,12 @@
 import React from 'react';
 
-import type { OVER_RIDABLE_PROPS, SIZE } from '@src/types/types';
+import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
 const cx = classNames.bind(style);
+
+type SIZE = 'xs' | 'sm' | 'md' | 'lg';
 
 type BaseProps = {
   type?: 'type-1' | 'type-2' | 'type-3';

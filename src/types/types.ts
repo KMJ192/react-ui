@@ -20,12 +20,9 @@ type RecursivePartial<T> = {
   [P in keyof T]?: RecursivePartial<T[P]>;
 };
 
-type SIZE = 'xs' | 'sm' | 'md' | 'lg';
-
 export type {
   OVER_RIDABLE_PROPS,
   COMBINE_ELEMENT_PROPS,
   COMBINE,
-  SIZE,
   RecursivePartial,
 };
