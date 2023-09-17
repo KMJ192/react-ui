@@ -1,9 +1,14 @@
+import { useState } from 'react';
 import type { StoryFn, Meta } from '@storybook/react';
 
-import RadioGroup, {
+// import RadioGroup, {
+//   type RadioGroupProps,
+// } from '@src/components/RadioGroup/RadioGroup';
+import {
+  RadioGroup,
+  RadioGroupOptionKey,
   type RadioGroupProps,
-} from '@src/components/RadioGroup/RadioGroup';
-import { useState } from 'react';
+} from '@upcast/react-ui';
 
 const meta: Meta<typeof RadioGroup> = {
   title: 'UI/Components/RadioGroup',
@@ -30,7 +35,7 @@ const Template = (args: RadioGroupProps) => {
   const { selected, ...arg } = args;
   const [s, setS] = useState(selected);
 
-  const onSelect = (idx: number) => {
+  const onSelect = (key: RadioGroupOptionKey, idx: number) => {
     setS(idx);
   };
 

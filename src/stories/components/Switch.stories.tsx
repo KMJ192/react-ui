@@ -1,6 +1,7 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
-import Switch, { type SwitchProps } from '@src/components/Switch/Switch';
+// import Switch, { type SwitchProps } from '@src/components/Switch/Switch';
+import { Switch, type SwitchProps } from '@upcast/react-ui';
 
 import style from './Components.module.scss';
 

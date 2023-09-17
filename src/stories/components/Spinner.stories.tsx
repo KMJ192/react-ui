@@ -1,6 +1,7 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
-import Spinner, { type SpinnerProps } from '@src/components/Spinner/Spinner';
+// import Spinner, { type SpinnerProps } from '@src/components/Spinner/Spinner';
+import { Spinner, type SpinnerProps } from '@upcast/react-ui';
 
 import style from './Components.module.scss';
 
