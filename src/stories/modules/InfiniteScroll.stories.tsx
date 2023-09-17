@@ -1,13 +1,16 @@
+import { useState } from 'react';
 import type { StoryFn, Meta } from '@storybook/react';
 
-import {
-  InfiniteScroll,
+import InfiniteScroll, {
   type InfiniteScrollProps,
-} from '@upcast/react-modules';
+} from '@src/modules/InfiniteScroll/InfiniteScroll';
+// import {
+//   InfiniteScroll,
+//   type InfiniteScrollProps,
+// } from '@upcast/react-modules';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
-import { useState } from 'react';
 const cx = classNames.bind(style);
 
 const meta: Meta<typeof InfiniteScroll> = {
