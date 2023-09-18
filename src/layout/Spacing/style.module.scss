@@ -1,12 +1,12 @@
-$ss-layout-spacing-gap: var(--upcast-layout-spacing-gap, 0px);
+$upcast-layout-spacing-gap: var(--upcast-layout-spacing-gap, 0px);
 
 .spacing {
   &.vertical {
-    height: $ss-layout-spacing-gap;
-    min-height: $ss-layout-spacing-gap;
+    height: $upcast-layout-spacing-gap;
+    min-height: $upcast-layout-spacing-gap;
   }
   &.horizontal {
-    width: $ss-layout-spacing-gap;
-    min-width: $ss-layout-spacing-gap;
+    width: $upcast-layout-spacing-gap;
+    min-width: $upcast-layout-spacing-gap;
   }
 }

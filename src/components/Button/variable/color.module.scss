@@ -1,29 +1,47 @@
 @import 'src/styles/color/color.module.scss';
 
-$ss-c-button-bg: var(--upcast-color-button-bg, $light-primary000);
-$ss-c-button-bg-hover: var(--upcast-color-button-bg-hover, $light-primary100);
-$ss-c-button-bg-disabled: var(
+$upcast-color-button-bg: var(--upcast-color-button-bg, $light-primary000);
+$upcast-color-button-bg-hover: var(
+  --upcast-color-button-bg-hover,
+  $light-primary100
+);
+$upcast-color-button-bg-disabled: var(
   --upcast-color-button-bg-disabled,
   $light-gray000
 );
-$ss-c-button-bg-active: var(--upcast-color-button-bg-active, $light-primary300);
+$upcast-color-button-bg-active: var(
+  --upcast-color-button-bg-active,
+  $light-primary300
+);
 
-$ss-c-button-bg-ripple: var(--upcast-color-button-bg-ripple, $light-primary200);
+$upcast-color-button-bg-ripple: var(
+  --upcast-color-button-bg-ripple,
+  $light-primary200
+);
 
-$ss-c-button-text: var(--upcast-color-button-text, $light-text);
-$ss-c-button-text-hover: var(--upcast-color-button-text-hover, $light-text);
-$ss-c-button-text-disabled: var(
+$upcast-color-button-text: var(--upcast-color-button-text, $light-text);
+$upcast-color-button-text-hover: var(
+  --upcast-color-button-text-hover,
+  $light-text
+);
+$upcast-color-button-text-disabled: var(
   --upcast-color-button-text-disabled,
   $light-gray200
 );
-$ss-c-button-text-active: var(--upcast-color-button-text-active, $black);
+$upcast-color-button-text-active: var(
+  --upcast-color-button-text-active,
+  $black
+);
 
-$ss-c-button-box-shadow: var(
+$upcast-color-button-box-shadow: var(
   --upcast-color-button-box-shadow,
   0px 2px 4px rgba(0, 0, 0, 0.1)
 );
-$ss-c-button-outline: var(--upcast-color-button-outline, $light-primary300);
-$ss-c-button-outline-disabled: var(
+$upcast-color-button-outline: var(
+  --upcast-color-button-outline,
+  $light-primary300
+);
+$upcast-color-button-outline-disabled: var(
   --upcast-color-button-outline-disabled,
   $light-gray300
 );

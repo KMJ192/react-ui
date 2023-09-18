@@ -1,40 +1,45 @@
 @import 'src/styles/color/color.module.scss';
 
-$ss-c-side-nav-bg: var(
+$upcast-color-side-nav-bg: var(
   --upcast-color-side-nav-bg,
   linear-gradient(#{$light-primary200}, #{$light-primary000})
 );
-$ss-c-side-nav-box-shadow: var(
+$upcast-color-side-nav-box-shadow: var(
   --upcast-color-side-nav-box-shadow,
   0px 3px 6px rgba(64, 64, 64, 0.3)
 );
 
-$ss-c-side-nav-menu-bg: var(--upcast-color-side-nav-menu-bg);
-$ss-c-side-nav-menu-bg-selected: var(
+$upcast-color-side-nav-menu-bg: var(--upcast-color-side-nav-menu-bg);
+$upcast-color-side-nav-menu-bg-selected: var(
   --upcast-color-side-nav-menu-bg-selected,
   $light-primary000
 );
-$ss-c-side-nav-menu-bg-disabled: var(
+$upcast-color-side-nav-menu-bg-disabled: var(
   --upcast-color-side-nav-menu-bg-disabled,
   $light-gray300
 );
 
-$ss-c-side-nav-menu-text: var(--upcast-color-side-nav-menu-text, $light-text);
-$ss-c-side-nav-menu-text-selected: var(
+$upcast-color-side-nav-menu-text: var(
+  --upcast-color-side-nav-menu-text,
+  $light-text
+);
+$upcast-color-side-nav-menu-text-selected: var(
   --upcast-color-side-nav-menu-text-selected,
   $light-text
 );
-$ss-c-side-nav-menu-text-hover: var(
+$upcast-color-side-nav-menu-text-hover: var(
   --upcast-color-side-nav-menu-text-hover,
   $light-text
 );
-$ss-c-side-nav-menu-text-disabled: var(
+$upcast-color-side-nav-menu-text-disabled: var(
   --upcast-color-side-nav-menu-text-disabled,
   $light-gray100
 );
 
-$ss-c-side-nav-menu-box-shadow: var(--upcast-color-side-nav-menu-box-shadow);
-$ss-c-side-nav-menu-box-shadow-selected: var(
+$upcast-color-side-nav-menu-box-shadow: var(
+  --upcast-color-side-nav-menu-box-shadow
+);
+$upcast-color-side-nav-menu-box-shadow-selected: var(
   --upcast-color-side-nav-menu-box-shadow-selected,
   0px 1px 3px rgba(8, 104, 99, 0.2)
 );

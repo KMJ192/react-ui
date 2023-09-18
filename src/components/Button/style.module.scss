@@ -29,45 +29,45 @@
 }
 
 @mixin color-set {
-  background: $ss-c-button-bg;
-  color: $ss-c-button-text;
-  box-shadow: $ss-c-button-box-shadow;
+  background: $upcast-color-button-bg;
+  color: $upcast-color-button-text;
+  box-shadow: $upcast-color-button-box-shadow;
   &:disabled {
-    background: $ss-c-button-bg-disabled;
-    color: $ss-c-button-text-disabled;
+    background: $upcast-color-button-bg-disabled;
+    color: $upcast-color-button-text-disabled;
     &:active:not(.outlined):not(.clear),
     &:hover:not(.outlined):not(.clear) {
-      background: $ss-c-button-bg-disabled;
-      color: $ss-c-button-text-disabled;
+      background: $upcast-color-button-bg-disabled;
+      color: $upcast-color-button-text-disabled;
     }
   }
   &:active:not(.disabled):not(.loading) {
-    background: $ss-c-button-bg-active;
-    color: $ss-c-button-text-active;
+    background: $upcast-color-button-bg-active;
+    color: $upcast-color-button-text-active;
   }
   &:hover:not(.disabled):not(.loading) {
-    background: $ss-c-button-bg-hover;
-    color: $ss-c-button-text-hover;
+    background: $upcast-color-button-bg-hover;
+    color: $upcast-color-button-text-hover;
   }
   &.outlined {
     background: none;
     box-shadow: none;
-    outline: 1px solid $ss-c-button-outline;
+    outline: 1px solid $upcast-color-button-outline;
     &:hover:not(.disabled):not(.loading) {
-      background: $ss-c-button-bg-hover;
-      color: $ss-c-button-text-hover;
+      background: $upcast-color-button-bg-hover;
+      color: $upcast-color-button-text-hover;
     }
     &.disabled,
     &.loading {
-      outline: 1px solid $ss-c-button-outline-disabled;
+      outline: 1px solid $upcast-color-button-outline-disabled;
     }
   }
   &.clear {
     background: none;
     box-shadow: none;
     &:hover:not(.disabled):not(.loading) {
-      background: $ss-c-button-bg-hover;
-      color: $ss-c-button-text-hover;
+      background: $upcast-color-button-bg-hover;
+      color: $upcast-color-button-text-hover;
     }
   }
 }
@@ -81,7 +81,7 @@
     left: 50%;
     width: 4px;
     height: 4px;
-    background: $ss-c-button-bg-ripple;
+    background: $upcast-color-button-bg-ripple;
     opacity: 0;
     border-radius: 100%;
     transform: scale(1, 1) translate(-50%);

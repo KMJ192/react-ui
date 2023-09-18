@@ -3,12 +3,12 @@
 @import 'src/styles/scrollbar.scss';
 
 @mixin color-set {
-  background: $ss-c-side-nav-bg;
-  box-shadow: $ss-c-side-nav-box-shadow;
+  background: $upcast-color-side-nav-bg;
+  box-shadow: $upcast-color-side-nav-box-shadow;
 }
 
 @mixin side-nav {
-  width: $ss-size-side-nav-width;
+  width: $upcast-size-side-nav-width;
   height: inherit;
   overflow: auto;
   padding: 16px 0 16px 16px;

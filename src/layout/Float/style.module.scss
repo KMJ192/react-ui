@@ -1,24 +1,24 @@
-$ss-layout-float-top: var(--upcast-layout-float-top, 0px);
-$ss-layout-float-bottom: var(--upcast-layout-float-bottom, 0px);
-$ss-layout-float-left: var(--upcast-layout-float-left, 0px);
-$ss-layout-float-right: var(--upcast-layout-float-right, 0px);
+$upcast-layout-float-top: var(--upcast-layout-float-top, 0px);
+$upcast-layout-float-bottom: var(--upcast-layout-float-bottom, 0px);
+$upcast-layout-float-left: var(--upcast-layout-float-left, 0px);
+$upcast-layout-float-right: var(--upcast-layout-float-right, 0px);
 
 .float {
   position: fixed;
   &.lt {
-    left: $ss-layout-float-left;
-    top: $ss-layout-float-top;
+    left: $upcast-layout-float-left;
+    top: $upcast-layout-float-top;
   }
   &.lb {
-    left: $ss-layout-float-left;
-    bottom: $ss-layout-float-bottom;
+    left: $upcast-layout-float-left;
+    bottom: $upcast-layout-float-bottom;
   }
   &.rt {
-    right: $ss-layout-float-right;
-    top: $ss-layout-float-top;
+    right: $upcast-layout-float-right;
+    top: $upcast-layout-float-top;
   }
   &.rb {
-    right: $ss-layout-float-right;
-    bottom: $ss-layout-float-bottom;
+    right: $upcast-layout-float-right;
+    bottom: $upcast-layout-float-bottom;
   }
 }

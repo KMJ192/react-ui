@@ -7,7 +7,7 @@ import style from './style.module.scss';
 const cx = classNames.bind(style);
 
 type BaseProps = {
-  // ...
+  error?: boolean;
 };
 
 const ELEMENT = 'textarea';
@@ -15,10 +15,16 @@ const ELEMENT = 'textarea';
 type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
 
 function Textarea<T extends React.ElementType = typeof ELEMENT>(
-  { className, ...props }: Props<T>,
-  ref: React.Ref<React.ElementRef<typeof DEFAULT_ELEMENT>>,
+  { error = false, className, ...props }: Props<T>,
+  ref: React.Ref<React.ElementRef<typeof ELEMENT>>,
 ) {
-  return <ELEMENT {...props} ref={ref} className={cx(className)}></ELEMENT>;
+  return (
+    <ELEMENT
+      {...props}
+      ref={ref}
+      className={cx('textarea', { error }, className)}
+    ></ELEMENT>
+  );
 }
 
 export type TextareaProps = Props<typeof ELEMENT>;

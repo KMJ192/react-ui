@@ -2,29 +2,29 @@
 @import './variable/color.module.scss';
 
 @mixin color-set {
-  border-color: $ss-c-input-border;
-  background: $ss-c-input-bg;
-  color: $ss-c-input-text;
+  border-color: $upcast-color-input-border;
+  background: $upcast-color-input-bg;
+  color: $upcast-color-input-text;
   &::placeholder {
-    color: $ss-c-input-placeholder;
+    color: $upcast-color-input-placeholder;
   }
 
   &:disabled {
-    border-color: $ss-c-input-border-disabled;
-    background: $ss-c-input-bg-disabled;
-    color: $ss-c-input-text-disabled;
+    border-color: $upcast-color-input-border-disabled;
+    background: $upcast-color-input-bg-disabled;
+    color: $upcast-color-input-text-disabled;
     &::placeholder {
-      color: $ss-c-input-placeholder-disabled;
+      color: $upcast-color-input-placeholder-disabled;
     }
   }
 
   &.error {
-    border-color: $ss-c-input-border-error;
+    border-color: $upcast-color-input-border-error;
   }
 
   &:not(.error):focus {
-    border-color: $ss-c-input-border-focus;
-    box-shadow: $ss-c-input-box-shadow;
+    border-color: $upcast-color-input-border-focus;
+    box-shadow: $upcast-color-input-box-shadow;
   }
 }
 

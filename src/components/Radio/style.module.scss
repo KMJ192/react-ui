@@ -3,70 +3,70 @@
 
 @mixin color-set {
   .mark {
-    border-color: $ss-c-radio-border;
-    background: $ss-c-radio-bg;
+    border-color: $upcast-color-radio-border;
+    background: $upcast-color-radio-bg;
   }
 
   .mark.checked {
-    border-color: $ss-c-radio-border-checked;
-    background: $ss-c-radio-bg-checked;
+    border-color: $upcast-color-radio-border-checked;
+    background: $upcast-color-radio-bg-checked;
   }
 
   .mark.disabled {
-    border-color: $ss-c-radio-border-disabled;
-    background: $ss-c-radio-bg-disabled;
+    border-color: $upcast-color-radio-border-disabled;
+    background: $upcast-color-radio-bg-disabled;
   }
 
   .mark.checked.disabled {
-    border-color: $ss-c-radio-border-checked-disabled;
-    background: $ss-c-radio-bg-checked-disabled;
+    border-color: $upcast-color-radio-border-checked-disabled;
+    background: $upcast-color-radio-bg-checked-disabled;
   }
 
   .mark > .pupil {
-    background: $ss-c-radio-pupil;
+    background: $upcast-color-radio-pupil;
   }
 
   .mark > .pupil.disabled {
-    background: $ss-c-radio-pupil-disabled;
+    background: $upcast-color-radio-pupil-disabled;
   }
 
   .children {
-    color: $ss-c-radio-text;
+    color: $upcast-color-radio-text;
   }
 
   .children.disabled {
-    color: $ss-c-radio-text-disabled;
+    color: $upcast-color-radio-text-disabled;
   }
 
   &:hover:not(.disabled) {
     .mark {
-      background: $ss-c-radio-bg-checked-hover;
-      border-color: $ss-c-radio-border-checked-hover;
+      background: $upcast-color-radio-bg-checked-hover;
+      border-color: $upcast-color-radio-border-checked-hover;
     }
     .mark > .pupil {
-      background: $ss-c-radio-pupil-hover;
-      border-color: $ss-c-radio-pupil-hover;
+      background: $upcast-color-radio-pupil-hover;
+      border-color: $upcast-color-radio-pupil-hover;
     }
     .children {
-      color: $ss-c-radio-text-hover;
+      color: $upcast-color-radio-text-hover;
     }
   }
 
   &:hover:not(.disabled):not(.checked) {
     .mark {
-      background: $ss-c-radio-bg-hover;
-      border-color: $ss-c-radio-border-hover;
+      background: $upcast-color-radio-bg-hover;
+      border-color: $upcast-color-radio-border-hover;
     }
     .children {
-      color: $ss-c-radio-text-hover;
+      color: $upcast-color-radio-text-hover;
     }
   }
 }
 
 @mixin pupil {
   .pupil {
-    width: $ss-size-radio-pupil;
-    height: $ss-size-radio-pupil;
+    width: $upcast-size-radio-pupil;
+    height: $upcast-size-radio-pupil;
     border-radius: 50%;
     place-content: center;
     transform: scale(0);
@@ -78,8 +78,8 @@
 }
 
 @mixin mark {
-  width: $ss-size-radio;
-  height: $ss-size-radio;
+  width: $upcast-size-radio;
+  height: $upcast-size-radio;
   border: 2px solid;
   border-radius: 50%;
   transition: border-color 0.1s ease;

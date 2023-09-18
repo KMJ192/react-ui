@@ -2,13 +2,13 @@
 @import './variable/size.module.scss';
 
 @mixin color-set {
-  background: $ss-c-footer-bg;
-  color: $ss-c-footer-text;
+  background: $upcast-color-footer-bg;
+  color: $upcast-color-footer-text;
 }
 
 .footer {
   width: inherit;
-  min-height: $ss-size-footer-min-height;
-  max-height: $ss-size-footer-max-height;
+  min-height: $upcast-size-footer-min-height;
+  max-height: $upcast-size-footer-max-height;
   @include color-set;
 }

@@ -1,15 +1,15 @@
 @import 'src/layout/Flex/flex.scss';
 
-$ss-layout-stack-gap: var(--upcast-layout-stack-gap, 0px);
+$upcast-layout-stack-gap: var(--upcast-layout-stack-gap, 0px);
 
 .stack {
   @include flex;
   &.row {
     flex-direction: column;
-    row-gap: $ss-layout-stack-gap;
+    row-gap: $upcast-layout-stack-gap;
   }
   &.column {
     flex-direction: row;
-    column-gap: $ss-layout-stack-gap;
+    column-gap: $upcast-layout-stack-gap;
   }
 }

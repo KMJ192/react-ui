@@ -1,32 +1,41 @@
 @import 'src/styles/color/color.module.scss';
 
-$ss-c-input-border: var(--upcast-color-input-border, $light-primary600);
-$ss-c-input-border-focus: var(
+$upcast-color-input-border: var(--upcast-color-input-border, $light-primary600);
+$upcast-color-input-border-focus: var(
   --upcast-color-input-border-focus,
   $light-blue500
 );
-$ss-c-input-border-error: var(--upcast-color-input-border-error, $light-danger);
-$ss-c-input-border-disabled: var(
+$upcast-color-input-border-error: var(
+  --upcast-color-input-border-error,
+  $light-danger
+);
+$upcast-color-input-border-disabled: var(
   --upcast-color-input-border-disabled,
   $light-gray100
 );
 
-$ss-c-input-bg: var(--upcast-color-input-bg, $light-primary000);
-$ss-c-input-bg-disabled: var(--upcast-color-input-bg-disabled, $light-gray000);
+$upcast-color-input-bg: var(--upcast-color-input-bg, $light-primary000);
+$upcast-color-input-bg-disabled: var(
+  --upcast-color-input-bg-disabled,
+  $light-gray000
+);
 
-$ss-c-input-text: var(--upcast-color-input-text, $light-text);
-$ss-c-input-text-disabled: var(
+$upcast-color-input-text: var(--upcast-color-input-text, $light-text);
+$upcast-color-input-text-disabled: var(
   --upcast-color-input-text-disabled,
   $light-gray200
 );
 
-$ss-c-input-placeholder: var(--upcast-color-input-placeholder, $light-gray100);
-$ss-c-input-placeholder-disabled: var(
+$upcast-color-input-placeholder: var(
+  --upcast-color-input-placeholder,
+  $light-gray100
+);
+$upcast-color-input-placeholder-disabled: var(
   --upcast-color-input-placeholder-disabled,
   $light-gray100
 );
 
-$ss-c-input-box-shadow: var(
+$upcast-color-input-box-shadow: var(
   --upcast-color-input-box-shadow,
   0px 3px 6px rgba(62, 62, 62, 0.1)
 );

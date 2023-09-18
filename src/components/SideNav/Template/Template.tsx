@@ -25,7 +25,7 @@ type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
 
 function Template<T extends React.ElementType = typeof ELEMENT>(
   { navItem = [], depthGap = 16, onClickItem, ...props }: Props<T>,
-  ref: React.Ref<React.ElementRef<typeof DEFAULT_ELEMENT>>,
+  ref: React.Ref<React.ElementRef<typeof ELEMENT>>,
 ) {
   const [options, setOptions] = React.useState<Options>({
     show: new Set(),

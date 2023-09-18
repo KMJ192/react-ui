@@ -1,1 +1,44 @@
 @import 'src/styles/color/color.module.scss';
+
+$upcast-color-textarea-border: var(
+  --upcast-color-textarea-border,
+  $light-primary600
+);
+$upcast-color-textarea-border-focus: var(
+  --upcast-color-textarea-border-focus,
+  $light-blue500
+);
+$upcast-color-textarea-border-error: var(
+  --upcast-color-textarea-border-error,
+  $light-danger
+);
+$upcast-color-textarea-border-disabled: var(
+  --upcast-color-textarea-border-disabled,
+  $light-gray100
+);
+
+$upcast-color-textarea-bg: var(--upcast-color-textarea-bg, $light-primary000);
+$upcast-color-textarea-bg-disabled: var(
+  --upcast-color-textarea-bg-disabled,
+  $light-gray000
+);
+
+$upcast-color-textarea-text: var(--upcast-color-textarea-text, $light-text);
+$upcast-color-textarea-text-disabled: var(
+  --upcast-color-textarea-text-disabled,
+  $light-gray200
+);
+
+$upcast-color-textarea-placeholder: var(
+  --upcast-color-textarea-placeholder,
+  $light-gray100
+);
+$upcast-color-textarea-placeholder-disabled: var(
+  --upcast-color-textarea-placeholder-disabled,
+  $light-gray100
+);
+
+$upcast-color-textarea-box-shadow: var(
+  --upcast-color-textarea-box-shadow,
+  0px 3px 6px rgba(62, 62, 62, 0.1)
+);

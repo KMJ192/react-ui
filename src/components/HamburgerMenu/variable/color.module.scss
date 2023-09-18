@@ -1,3 +1,6 @@
 @import 'src/styles/color/color.module.scss';
 
-$ss-c-hamburger-color: var(--upcast-color-hamburger-color, $light-primary500);
+$upcast-color-hamburger-color: var(
+  --upcast-color-hamburger-color,
+  $light-primary500
+);

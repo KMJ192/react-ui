@@ -18,6 +18,10 @@ const Template = (args: TextareaProps) => {
 };
 
 export const TextareaStory: StoryFn<TextareaProps> = Template.bind({});
-TextareaStory.args = {};
+TextareaStory.args = {
+  disabled: true,
+  placeholder: 'textarea-placeholder',
+  error: false,
+};
 
 export default meta;

@@ -1,9 +1,12 @@
 @import 'src/styles/color/color.module.scss';
 
-$ss-c-progress-body: var(--upcast-color-progress-body, $light-primary300);
-$ss-c-progress-bar: var(--upcast-color-progress-bar, $light-blue600);
-$ss-c-progress-exit: var(--upcast-color-progress-exit, $light-gray300);
-$ss-c-progress-pending: var(
+$upcast-color-progress-body: var(
+  --upcast-color-progress-body,
+  $light-primary300
+);
+$upcast-color-progress-bar: var(--upcast-color-progress-bar, $light-blue600);
+$upcast-color-progress-exit: var(--upcast-color-progress-exit, $light-gray300);
+$upcast-color-progress-pending: var(
   --upcast-color-progress-pending,
   rgba(255, 255, 255, 0.7)
 );

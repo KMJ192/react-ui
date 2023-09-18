@@ -1,11 +1,20 @@
 @import 'src/styles/color/color.module.scss';
 
-$ss-c-tab-bg: var(--upcast-color-tab-bg, $light-primary000);
-$ss-c-tab-bg-hover: var(--upcast-color-tab-bg-hover, $light-primary200);
-$ss-c-tab-bg-disabled: var(--upcast-color-tab-bg-disabled, $light-gray100);
+$upcast-color-tab-bg: var(--upcast-color-tab-bg, $light-primary000);
+$upcast-color-tab-bg-hover: var(--upcast-color-tab-bg-hover, $light-primary200);
+$upcast-color-tab-bg-disabled: var(
+  --upcast-color-tab-bg-disabled,
+  $light-gray100
+);
 
-$ss-c-tab-select-line: var(--upcast-color-tab-select-line, $light-blue300);
+$upcast-color-tab-select-line: var(
+  --upcast-color-tab-select-line,
+  $light-blue300
+);
 
-$ss-c-tab-text: var(--upcast-color-tab-text, $light-text);
-$ss-c-tab-text-hover: var(--upcast-color-tab-text-hover, $light-text);
-$ss-c-tab-text-disabled: var(--upcast-color-tab-text-disabled, $light-blue000);
+$upcast-color-tab-text: var(--upcast-color-tab-text, $light-text);
+$upcast-color-tab-text-hover: var(--upcast-color-tab-text-hover, $light-text);
+$upcast-color-tab-text-disabled: var(
+  --upcast-color-tab-text-disabled,
+  $light-blue000
+);

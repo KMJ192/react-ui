@@ -9,15 +9,17 @@ import classNames from 'classnames/bind';
 import style from './style.module.scss';
 const cx = classNames.bind(style);
 
+type OptionKey = string | number;
+
 type Option = Pick<RadioProps, 'children' | 'disabled'> & {
-  key: string | number;
+  key: OptionKey;
 };
 
 type BaseProps = {
   options?: Array<Option>;
   direction?: 'horizontal' | 'vertical';
   selected?: number;
-  onSelect?: (idx: number) => void;
+  onSelect?: (key: OptionKey, idx: number) => void;
 };
 
 const DEFAULT_ELEMENT = 'div';
@@ -45,17 +47,17 @@ function RadioGroup<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
       as={ELEMENT as any}
       className={cx('radio-group', direction, className)}
     >
-      {options.map(({ children, disabled }, idx) => {
+      {options.map(({ key, children, disabled }, idx) => {
         const isSelect = selected === idx;
         return (
           <Radio
-            key={idx}
+            key={`${key}-${idx}`}
             checked={isSelect}
             disabled={disabled}
             onClick={(e: React.MouseEvent) => {
               e.stopPropagation();
               if (!disabled) {
-                onSelect(idx);
+                onSelect(key, idx);
               }
             }}
           >
@@ -67,6 +69,6 @@ function RadioGroup<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   );
 }
 
-export type { Option as RadioGroupOption };
+export type { Option as RadioGroupOption, OptionKey as RadioGroupOptionKey };
 export type RadioGroupProps = Props<typeof DEFAULT_ELEMENT>;
 export default React.forwardRef(RadioGroup) as typeof RadioGroup;

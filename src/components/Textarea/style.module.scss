@@ -1,1 +1,46 @@
 @import './variable/color.module.scss';
+
+@mixin color-set {
+  border-color: $upcast-color-textarea-border;
+  background: $upcast-color-textarea-bg;
+  color: $upcast-color-textarea-text;
+  &::placeholder {
+    color: $upcast-color-textarea-placeholder;
+  }
+
+  &:disabled {
+    border-color: $upcast-color-textarea-border-disabled;
+    background: $upcast-color-textarea-bg-disabled;
+    color: $upcast-color-textarea-text-disabled;
+    &::placeholder {
+      color: $upcast-color-textarea-placeholder-disabled;
+    }
+  }
+
+  &.error {
+    border-color: $upcast-color-textarea-border-error;
+  }
+
+  &:not(.error):focus {
+    border-color: $upcast-color-textarea-border-focus;
+    box-shadow: $upcast-color-textarea-box-shadow;
+  }
+}
+
+@mixin textarea {
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 16px;
+  &:focus {
+    outline: none;
+  }
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.textarea {
+  @include textarea;
+  @include color-set;
+}

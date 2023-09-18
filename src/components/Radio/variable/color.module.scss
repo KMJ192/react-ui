@@ -1,50 +1,62 @@
 @import 'src/styles/color/color.module.scss';
 
-$ss-c-radio-border: var(--upcast-color-radio-border, $light-primary300);
-$ss-c-radio-border-checked: var(
+$upcast-color-radio-border: var(--upcast-color-radio-border, $light-primary300);
+$upcast-color-radio-border-checked: var(
   --upcast-color-radio-border-checked,
   $light-blue300
 );
-$ss-c-radio-border-disabled: var(
+$upcast-color-radio-border-disabled: var(
   --upcast-color-radio-border-disabled,
   $light-gray100
 );
-$ss-c-radio-border-checked-disabled: var(
+$upcast-color-radio-border-checked-disabled: var(
   --upcast-color-radio-border-checked-disabled,
   $light-gray100
 );
-$ss-c-radio-border-hover: var(
+$upcast-color-radio-border-hover: var(
   --upcast-color-radio-border-hover,
   $light-blue400
 );
-$ss-c-radio-border-checked-hover: var(
+$upcast-color-radio-border-checked-hover: var(
   --upcast-color-radio-border-checked-hover,
   $light-blue500
 );
 
-$ss-c-radio-bg: var(--upcast-color-radio-bg, $light-background);
-$ss-c-radio-bg-checked: var(--upcast-color-radio-bg, $light-background);
-$ss-c-radio-bg-checked-hover: var(
+$upcast-color-radio-bg: var(--upcast-color-radio-bg, $light-background);
+$upcast-color-radio-bg-checked: var(--upcast-color-radio-bg, $light-background);
+$upcast-color-radio-bg-checked-hover: var(
   --upcast-color-radio-bg-hover,
   $light-background
 );
-$ss-c-radio-bg-checked-disabled: var(
+$upcast-color-radio-bg-checked-disabled: var(
   --upcast-color-radio-bg-checked-disabled,
   $light-gray000
 );
-$ss-c-radio-bg-disabled: var(--upcast-color-radio-bg-disabled, $light-gray000);
-$ss-c-radio-bg-hover: var(--upcast-color-radio-bg-hover, $light-background);
+$upcast-color-radio-bg-disabled: var(
+  --upcast-color-radio-bg-disabled,
+  $light-gray000
+);
+$upcast-color-radio-bg-hover: var(
+  --upcast-color-radio-bg-hover,
+  $light-background
+);
 
-$ss-c-radio-text: var(--upcast-color-radio-text, $light-text);
-$ss-c-radio-text-disabled: var(
+$upcast-color-radio-text: var(--upcast-color-radio-text, $light-text);
+$upcast-color-radio-text-disabled: var(
   --upcast-color-radio-text-disabled,
   $light-gray200
 );
-$ss-c-radio-text-hover: var(--upcast-color-radio-text-hover, $light-text);
+$upcast-color-radio-text-hover: var(
+  --upcast-color-radio-text-hover,
+  $light-text
+);
 
-$ss-c-radio-pupil: var(--upcast-color-radio-pupil, $light-blue300);
-$ss-c-radio-pupil-disabled: var(
+$upcast-color-radio-pupil: var(--upcast-color-radio-pupil, $light-blue300);
+$upcast-color-radio-pupil-disabled: var(
   --upcast-color-radio-pupil-disabled,
   $light-gray100
 );
-$ss-c-radio-pupil-hover: var(--upcast-color-radio-pupil-hover, $light-blue500);
+$upcast-color-radio-pupil-hover: var(
+  --upcast-color-radio-pupil-hover,
+  $light-blue500
+);
