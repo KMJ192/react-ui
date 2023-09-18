@@ -1,21 +1,21 @@
 @import 'src/styles/color/color.module.scss';
 
 @mixin header-light {
-  --ss-c-header-bg: linear-gradient(
+  --upcast-color-header-bg: linear-gradient(
     165deg,
     #{$light-primary100},
     #{$light-primary700}
   );
 
-  --ss-c-header-text: #{$light-primary900};
+  --upcast-color-header-text: #{$light-primary900};
 }
 
 @mixin header-dark {
-  --ss-c-header-bg: linear-gradient(
+  --upcast-color-header-bg: linear-gradient(
     165deg,
     #{$dark-primary100},
     #{$dark-primary000}
   );
 
-  --ss-c-header-text: #{$dark-primary900};
+  --upcast-color-header-text: #{$dark-primary900};
 }

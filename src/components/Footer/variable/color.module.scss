@@ -1,8 +1,8 @@
 @import 'src/styles/color/color.module.scss';
 
 $ss-c-footer-bg: var(
-  --ss-c-footer-bg,
+  --upcast-color-footer-bg,
   linear-gradient(165deg, #{$light-primary200}, #{$light-background})
 );
 
-$ss-c-footer-text: var(--ss-c-footer-text, $light-text);
+$ss-c-footer-text: var(--upcast-color-footer-text, $light-text);

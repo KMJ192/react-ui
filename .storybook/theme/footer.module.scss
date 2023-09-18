@@ -1,21 +1,21 @@
 @import 'src/styles/color/color.module.scss';
 
 @mixin footer-light {
-  --ss-c-footer-bg: linear-gradient(
+  --upcast-color-footer-bg: linear-gradient(
     165deg,
     #{$light-primary200},
     #{$light-background}
   );
 
-  --ss-c-footer-text: #{$light-primary900};
+  --upcast-color-footer-text: #{$light-primary900};
 }
 
 @mixin footer-dark {
-  --ss-c-footer-bg: linear-gradient(
+  --upcast-color-footer-bg: linear-gradient(
     165deg,
     #{$dark-background},
     #{$dark-primary100}
   );
 
-  --ss-c-footer-text: #{$dark-primary900};
+  --upcast-color-footer-text: #{$dark-primary900};
 }

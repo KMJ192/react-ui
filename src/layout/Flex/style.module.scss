@@ -2,4 +2,10 @@
 
 .flex {
   @include flex;
+  &.column {
+    flex-direction: column;
+  }
+  &.row {
+    flex-direction: row;
+  }
 }

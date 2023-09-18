@@ -1,13 +1,13 @@
 @import 'src/styles/color/color.module.scss';
 
 @mixin progressbar-light {
-  --ss-c-progress-body: #{$light-primary200};
-  --ss-c-progress-bar: #{$light-blue600};
-  --ss-c-progress-pending: rgba(255, 255, 255, 0.7);
+  --upcast-color-progress-body: #{$light-primary200};
+  --upcast-color-progress-bar: #{$light-blue600};
+  --upcast-color-progress-pending: rgba(255, 255, 255, 0.7);
 }
 
 @mixin progressbar-dark {
-  --ss-c-progress-body: #{$dark-primary200};
-  --ss-c-progress-bar: #{$dark-blue200};
-  --ss-c-progress-pending: rgba(255, 255, 255, 0.7);
+  --upcast-color-progress-body: #{$dark-primary200};
+  --upcast-color-progress-bar: #{$dark-blue200};
+  --upcast-color-progress-pending: rgba(255, 255, 255, 0.7);
 }

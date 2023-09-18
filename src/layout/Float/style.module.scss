@@ -1,7 +1,7 @@
-$ss-layout-float-top: var(--ss-layout-float-top, 0px);
-$ss-layout-float-bottom: var(--ss-layout-float-bottom, 0px);
-$ss-layout-float-left: var(--ss-layout-float-left, 0px);
-$ss-layout-float-right: var(--ss-layout-float-right, 0px);
+$ss-layout-float-top: var(--upcast-layout-float-top, 0px);
+$ss-layout-float-bottom: var(--upcast-layout-float-bottom, 0px);
+$ss-layout-float-left: var(--upcast-layout-float-left, 0px);
+$ss-layout-float-right: var(--upcast-layout-float-right, 0px);
 
 .float {
   position: fixed;

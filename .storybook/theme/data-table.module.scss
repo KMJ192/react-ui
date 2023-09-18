@@ -1,47 +1,47 @@
 @import 'src/styles/color/color.module.scss';
 
 @mixin data-table-light {
-  --ss-c-data-table-bg: #{$light-primary000};
+  --upcast-color-data-table-bg: #{$light-primary000};
 
-  --ss-c-data-table-border: #{$light-primary300};
+  --upcast-color-data-table-border: #{$light-primary300};
 
-  --ss-c-data-table-header-bg: #{$light-primary100};
+  --upcast-color-data-table-header-bg: #{$light-primary100};
 
-  --ss-c-data-table-footer-bg: #{$light-primary000};
+  --upcast-color-data-table-footer-bg: #{$light-primary000};
 
-  --ss-c-data-table-divide-line: #{$light-primary400};
-  --ss-c-data-table-body-bg-hover: #{$light-blue100};
+  --upcast-color-data-table-divide-line: #{$light-primary400};
+  --upcast-color-data-table-body-bg-hover: #{$light-blue100};
 
-  --ss-c-data-table-text: #{$light-primary900};
+  --upcast-color-data-table-text: #{$light-primary900};
 
-  --ss-c-data-table-pagination-index-bg: #{$light-primary000};
-  --ss-c-data-table-pagination-index-bg-selected: #{$light-blue600};
+  --upcast-color-data-table-pagination-index-bg: #{$light-primary000};
+  --upcast-color-data-table-pagination-index-bg-selected: #{$light-blue600};
 
-  --ss-c-data-table-pagination-index-text: #{$light-primary900};
-  --ss-c-data-table-pagination-index-text-selected: #{$light-primary000};
+  --upcast-color-data-table-pagination-index-text: #{$light-primary900};
+  --upcast-color-data-table-pagination-index-text-selected: #{$light-primary000};
 
-  --ss-c-data-table-pagination-arrow: #{$light-primary600};
+  --upcast-color-data-table-pagination-arrow: #{$light-primary600};
 }
 
 @mixin data-table-dark {
-  --ss-c-data-table-bg: #{$dark-primary100};
+  --upcast-color-data-table-bg: #{$dark-primary100};
 
-  --ss-c-data-table-border: #{$dark-primary000};
+  --upcast-color-data-table-border: #{$dark-primary000};
 
-  --ss-c-data-table-header-bg: #{$dark-primary200};
+  --upcast-color-data-table-header-bg: #{$dark-primary200};
 
-  --ss-c-data-table-footer-bg: #{$dark-primary100};
+  --upcast-color-data-table-footer-bg: #{$dark-primary100};
 
-  --ss-c-data-table-divide-line: #{$dark-primary400};
-  --ss-c-data-table-body-bg-hover: #{$dark-primary000};
+  --upcast-color-data-table-divide-line: #{$dark-primary400};
+  --upcast-color-data-table-body-bg-hover: #{$dark-primary000};
 
-  --ss-c-data-table-text: #{$dark-primary900};
+  --upcast-color-data-table-text: #{$dark-primary900};
 
-  --ss-c-data-table-pagination-index-bg: #{$dark-primary100};
-  --ss-c-data-table-pagination-index-bg-selected: #{$dark-blue100};
+  --upcast-color-data-table-pagination-index-bg: #{$dark-primary100};
+  --upcast-color-data-table-pagination-index-bg-selected: #{$dark-blue100};
 
-  --ss-c-data-table-pagination-index-text: #{$dark-primary900};
-  --ss-c-data-table-pagination-index-text-selected: #{$dark-primary900};
+  --upcast-color-data-table-pagination-index-text: #{$dark-primary900};
+  --upcast-color-data-table-pagination-index-text-selected: #{$dark-primary900};
 
-  --ss-c-data-table-pagination-arrow: #{$dark-primary700};
+  --upcast-color-data-table-pagination-arrow: #{$dark-primary700};
 }

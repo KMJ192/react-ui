@@ -1,37 +1,37 @@
 @import 'src/styles/color/color.module.scss';
 
 @mixin input-light {
-  --ss-c-input-border: #{$light-primary400};
-  --ss-c-input-border-focus: #{$light-blue500};
-  --ss-c-input-border-error: #{$light-red900};
-  --ss-c-input-border-disabled: #{$light-primary300};
+  --upcast-color-input-border: #{$light-primary400};
+  --upcast-color-input-border-focus: #{$light-blue500};
+  --upcast-color-input-border-error: #{$light-red900};
+  --upcast-color-input-border-disabled: #{$light-primary300};
 
-  --ss-c-input-bg: #{$light-primary000};
-  --ss-c-input-bg-disabled: #{$light-primary100};
+  --upcast-color-input-bg: #{$light-primary000};
+  --upcast-color-input-bg-disabled: #{$light-primary100};
 
-  --ss-c-input-text: #{$light-primary900};
-  --ss-c-input-text-disabled: #{$light-primary400};
+  --upcast-color-input-text: #{$light-primary900};
+  --upcast-color-input-text-disabled: #{$light-primary400};
 
-  --ss-c-input-placeholder: #{$light-primary400};
-  --ss-c-input-placeholder-disabled: #{$light-primary300};
+  --upcast-color-input-placeholder: #{$light-primary400};
+  --upcast-color-input-placeholder-disabled: #{$light-primary300};
 
-  --ss-c-input-box-shadow: 0px 3px 6px rgba(62, 62, 62, 0.1);
+  --upcast-color-input-box-shadow: 0px 3px 6px rgba(62, 62, 62, 0.1);
 }
 
 @mixin input-dark {
-  --ss-c-input-border: #{$dark-primary300};
-  --ss-c-input-border-focus: #{$dark-blue500};
-  --ss-c-input-border-error: #{$dark-red000};
-  --ss-c-input-border-disabled: #{$dark-primary100};
+  --upcast-color-input-border: #{$dark-primary300};
+  --upcast-color-input-border-focus: #{$dark-blue500};
+  --upcast-color-input-border-error: #{$dark-red000};
+  --upcast-color-input-border-disabled: #{$dark-primary100};
 
-  --ss-c-input-bg: #{$dark-primary100};
-  --ss-c-input-bg-disabled: #{$dark-primary200};
+  --upcast-color-input-bg: #{$dark-primary100};
+  --upcast-color-input-bg-disabled: #{$dark-primary200};
 
-  --ss-c-input-text: #{$dark-primary800};
-  --ss-c-input-text-disabled: #{$dark-primary000};
+  --upcast-color-input-text: #{$dark-primary800};
+  --upcast-color-input-text-disabled: #{$dark-primary000};
 
-  --ss-c-input-placeholder: #{$dark-primary300};
-  --ss-c-input-placeholder-disabled: #{$dark-primary100};
+  --upcast-color-input-placeholder: #{$dark-primary300};
+  --upcast-color-input-placeholder-disabled: #{$dark-primary100};
 
-  --ss-c-input-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
+  --upcast-color-input-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
 }

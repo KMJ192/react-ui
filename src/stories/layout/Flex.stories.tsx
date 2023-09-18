@@ -9,7 +9,14 @@ const meta: Meta<typeof Flex> = {
   parameters: {
     componentSubtitle: 'Flex',
   },
-  argTypes: {},
+  argTypes: {
+    flexDirection: {
+      options: ['column', 'row'],
+      control: {
+        type: 'radio',
+      },
+    },
+  },
 };
 
 const Template = (args: FlexProps) => {
@@ -22,6 +29,7 @@ export const FlexStory: StoryFn<FlexProps> = Template.bind({});
 FlexStory.args = {
   children: 'Flex',
   as: 'div',
+  flexDirection: 'row',
 };
 
 export default meta;

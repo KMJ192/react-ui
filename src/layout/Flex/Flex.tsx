@@ -8,6 +8,7 @@ import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 type BaseProps = {
   children?: React.ReactNode;
+  flexDirection?: 'column' | 'row';
 };
 
 const DEFAULT_ELEMENT = 'div';
@@ -15,13 +16,17 @@ const DEFAULT_ELEMENT = 'div';
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
 function Flex<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
-  { as, children, className, ...props }: Props<T>,
+  { as, children, flexDirection = 'row', className, ...props }: Props<T>,
   ref: React.Ref<React.ElementRef<typeof DEFAULT_ELEMENT>>,
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
 
   return (
-    <ELEMENT {...props} ref={ref} className={cx('flex', className)}>
+    <ELEMENT
+      {...props}
+      ref={ref}
+      className={cx('flex', flexDirection, className)}
+    >
       {children}
     </ELEMENT>
   );

@@ -1,36 +1,36 @@
 @import 'src/styles/color/color.module.scss';
 
 @mixin button-light {
-  --ss-c-button-bg: #{$light-primary000};
-  --ss-c-button-bg-hover: #{$light-blue000};
-  --ss-c-button-bg-disabled: #{$light-primary200};
-  --ss-c-button-bg-active: #{$light-primary000};
+  --upcast-color-button-bg: #{$light-primary000};
+  --upcast-color-button-bg-hover: #{$light-blue000};
+  --upcast-color-button-bg-disabled: #{$light-primary200};
+  --upcast-color-button-bg-active: #{$light-primary000};
 
-  --ss-c-button-bg-ripple: rgba(255, 255, 255, 0.6);
+  --upcast-color-button-bg-ripple: rgba(255, 255, 255, 0.6);
 
-  --ss-c-button-text: #{$light-primary900};
-  --ss-c-button-text-hover: #{$light-primary900};
-  --ss-c-button-text-disabled: #{$light-primary500};
-  --ss-c-button-text-active: #{$light-primary700};
+  --upcast-color-button-text: #{$light-primary900};
+  --upcast-color-button-text-hover: #{$light-primary900};
+  --upcast-color-button-text-disabled: #{$light-primary500};
+  --upcast-color-button-text-active: #{$light-primary700};
 
-  --ss-c-button-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
-  --ss-c-button-outline: #{$light-blue200};
-  --ss-c-button-outline-disabled: #{$light-primary200};
+  --upcast-color-button-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  --upcast-color-button-outline: #{$light-blue200};
+  --upcast-color-button-outline-disabled: #{$light-primary200};
 }
 
 @mixin button-dark {
-  --ss-c-button-bg: #{$dark-primary100};
-  --ss-c-button-bg-hover: #{$dark-primary200};
-  --ss-c-button-bg-disabled: #{$dark-primary100};
-  --ss-c-button-bg-active: rgba(53, 53, 53, 0.6);
+  --upcast-color-button-bg: #{$dark-primary100};
+  --upcast-color-button-bg-hover: #{$dark-primary200};
+  --upcast-color-button-bg-disabled: #{$dark-primary100};
+  --upcast-color-button-bg-active: rgba(53, 53, 53, 0.6);
 
-  --ss-c-button-bg-ripple: rgba(50, 50, 70, 0.6);
+  --upcast-color-button-bg-ripple: rgba(50, 50, 70, 0.6);
 
-  --ss-c-button-text: #{$dark-primary900};
-  --ss-c-button-text-hover: #{$dark-primary900};
-  --ss-c-button-text-disabled: #{$dark-primary300};
-  --ss-c-button-text-active: #{$dark-primary700};
+  --upcast-color-button-text: #{$dark-primary900};
+  --upcast-color-button-text-hover: #{$dark-primary900};
+  --upcast-color-button-text-disabled: #{$dark-primary300};
+  --upcast-color-button-text-active: #{$dark-primary700};
 
-  --ss-c-button-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.6);
-  --ss-c-button-outline: #{$dark-primary100};
+  --upcast-color-button-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.6);
+  --upcast-color-button-outline: #{$dark-primary100};
 }

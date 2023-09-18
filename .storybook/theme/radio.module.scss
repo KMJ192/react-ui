@@ -1,41 +1,41 @@
 @import 'src/styles/color/color.module.scss';
 
 @mixin radio-light {
-  --ss-c-radio-border: #{$light-primary300};
-  --ss-c-radio-border-checked: #{$light-blue400};
-  --ss-c-radio-border-checked-disabled: #{$light-primary400};
-  --ss-c-radio-border-checked-hover: #{$light-blue500};
-  --ss-c-radio-border-disabled: #{$light-primary300};
-  --ss-c-radio-border-hover: #{$light-blue500};
+  --upcast-color-radio-border: #{$light-primary300};
+  --upcast-color-radio-border-checked: #{$light-blue400};
+  --upcast-color-radio-border-checked-disabled: #{$light-primary400};
+  --upcast-color-radio-border-checked-hover: #{$light-blue500};
+  --upcast-color-radio-border-disabled: #{$light-primary300};
+  --upcast-color-radio-border-hover: #{$light-blue500};
 
-  --ss-c-radio-bg-checked-disabled: #{$light-primary300};
-  --ss-c-radio-bg-disabled: #{$light-primary200};
+  --upcast-color-radio-bg-checked-disabled: #{$light-primary300};
+  --upcast-color-radio-bg-disabled: #{$light-primary200};
 
-  --ss-c-radio-text: #{$light-primary900};
-  --ss-c-radio-text-hover: #{$light-blue600};
-  --ss-c-radio-text-disabled: #{$light-primary300};
+  --upcast-color-radio-text: #{$light-primary900};
+  --upcast-color-radio-text-hover: #{$light-blue600};
+  --upcast-color-radio-text-disabled: #{$light-primary300};
 
-  --ss-c-radio-pupil: #{$light-blue400};
-  --ss-c-radio-pupil-disabled: #{$light-primary500};
-  --ss-c-radio-pupil-hover: #{$light-blue500};
+  --upcast-color-radio-pupil: #{$light-blue400};
+  --upcast-color-radio-pupil-disabled: #{$light-primary500};
+  --upcast-color-radio-pupil-hover: #{$light-blue500};
 }
 
 @mixin radio-dark {
-  --ss-c-radio-border: #{$dark-primary300};
-  --ss-c-radio-border-checked: #{$dark-blue300};
-  --ss-c-radio-border-checked-disabled: #{$dark-primary400};
-  --ss-c-radio-border-checked-hover: #{$dark-blue100};
-  --ss-c-radio-border-disabled: #{$dark-primary600};
-  --ss-c-radio-border-hover: #{$dark-blue100};
+  --upcast-color-radio-border: #{$dark-primary300};
+  --upcast-color-radio-border-checked: #{$dark-blue300};
+  --upcast-color-radio-border-checked-disabled: #{$dark-primary400};
+  --upcast-color-radio-border-checked-hover: #{$dark-blue100};
+  --upcast-color-radio-border-disabled: #{$dark-primary600};
+  --upcast-color-radio-border-hover: #{$dark-blue100};
 
-  --ss-c-radio-bg-checked-disabled: #{$dark-primary400};
-  --ss-c-radio-bg-disabled: #{$dark-primary300};
+  --upcast-color-radio-bg-checked-disabled: #{$dark-primary400};
+  --upcast-color-radio-bg-disabled: #{$dark-primary300};
 
-  --ss-c-radio-text: #{$dark-primary900};
-  --ss-c-radio-text-hover: #{$dark-blue200};
-  --ss-c-radio-text-disabled: #{$dark-primary600};
+  --upcast-color-radio-text: #{$dark-primary900};
+  --upcast-color-radio-text-hover: #{$dark-blue200};
+  --upcast-color-radio-text-disabled: #{$dark-primary600};
 
-  --ss-c-radio-pupil: #{$dark-blue300};
-  --ss-c-radio-pupil-disabled: #{$dark-primary600};
-  --ss-c-radio-pupil-hover: #{$dark-blue100};
+  --upcast-color-radio-pupil: #{$dark-blue300};
+  --upcast-color-radio-pupil-disabled: #{$dark-primary600};
+  --upcast-color-radio-pupil-hover: #{$dark-blue100};
 }

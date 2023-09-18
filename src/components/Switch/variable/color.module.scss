@@ -1,41 +1,50 @@
 @import 'src/styles/color/color.module.scss';
 
-$ss-c-switch-bg: var(--ss-c-switch-bg, $light-primary300);
-$ss-c-switch-bg-checked: var(--ss-c-switch-bg-checked, $light-blue300);
-$ss-c-switch-bg-disabled: var(--ss-c-switch-bg-disabled, $light-gray000);
+$ss-c-switch-bg: var(--upcast-color-switch-bg, $light-primary300);
+$ss-c-switch-bg-checked: var(--upcast-color-switch-bg-checked, $light-blue300);
+$ss-c-switch-bg-disabled: var(
+  --upcast-color-switch-bg-disabled,
+  $light-gray000
+);
 $ss-c-switch-bg-checked-disabled: var(
-  --ss-c-switch-bg-checked-disabled,
+  --upcast-color-switch-bg-checked-disabled,
   $light-gray200
 );
-$ss-c-switch-bg-hover: var(--ss-c-switch-bg-hover, $light-blue200);
+$ss-c-switch-bg-hover: var(--upcast-color-switch-bg-hover, $light-blue200);
 $ss-c-switch-bg-checked-hover: var(
-  --ss-c-switch-bg-checked-hover,
+  --upcast-color-switch-bg-checked-hover,
   $light-blue500
 );
 
-$ss-c-switch-bullet: var(--ss-c-switch-bullet, $light-primary000);
+$ss-c-switch-bullet: var(--upcast-color-switch-bullet, $light-primary000);
 $ss-c-switch-bullet-disabled: var(
-  --ss-c-switch-bullet-disabled,
+  --upcast-color-switch-bullet-disabled,
   $light-gray200
 );
 $ss-c-switch-bullet-checked: var(
-  --ss-c-switch-bullet-checked,
+  --upcast-color-switch-bullet-checked,
   $light-primary000
 );
 $ss-c-switch-bullet-checked-disabled: var(
-  --ss-c-switch-bullet-checked-disabled,
+  --upcast-color-switch-bullet-checked-disabled,
   $light-gray400
 );
-$ss-c-switch-bullet-hover: var(--ss-c-switch-bullet-hover, $light-primary000);
+$ss-c-switch-bullet-hover: var(
+  --upcast-color-switch-bullet-hover,
+  $light-primary000
+);
 $ss-c-switch-bullet-checked-hover: var(
-  --ss-c-switch-bullet-checked-hover,
+  --upcast-color-switch-bullet-checked-hover,
   $light-primary000
 );
 $ss-c-switch-bullet-box-shadow: var(
-  --ss-c-switch-bullet-box-shadow,
+  --upcast-color-switch-bullet-box-shadow,
   0px 3px 6px rgba(63, 63, 63, 0.3)
 );
 
-$ss-c-switch-text: var(--ss-c-switch-text, $light-text);
-$ss-c-switch-text-hover: var(--ss-c-switch-text-hover, $light-text);
-$ss-c-switch-text-disabled: var(--ss-c-switch-text-disabled, $light-gray200);
+$ss-c-switch-text: var(--upcast-color-switch-text, $light-text);
+$ss-c-switch-text-hover: var(--upcast-color-switch-text-hover, $light-text);
+$ss-c-switch-text-disabled: var(
+  --upcast-color-switch-text-disabled,
+  $light-gray200
+);

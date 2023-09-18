@@ -1,81 +1,102 @@
 @import 'src/styles/color/color.module.scss';
 
-$ss-c-data-table-bg: var(--ss-c-data-table-bg, $light-background);
+$ss-c-data-table-bg: var(--upcast-color-data-table-bg, $light-background);
 
-$ss-c-data-table-border: var(--ss-c-data-table-border, $light-primary600);
+$ss-c-data-table-border: var(
+  --upcast-color-data-table-border,
+  $light-primary600
+);
 
-$ss-c-data-table-caption-text: var(--ss-c-data-table-caption-text, $light-text);
+$ss-c-data-table-caption-text: var(
+  --upcast-color-data-table-caption-text,
+  $light-text
+);
 
-$ss-c-data-table-header-bg: var(--ss-c-data-table-header-bg, $light-primary200);
-$ss-c-data-table-header-text: var(--ss-c-data-table-header-text, $light-text);
+$ss-c-data-table-header-bg: var(
+  --upcast-color-data-table-header-bg,
+  $light-primary200
+);
+$ss-c-data-table-header-text: var(
+  --upcast-color-data-table-header-text,
+  $light-text
+);
 
-$ss-c-data-table-footer-bg: var(--ss-c-data-table-footer-bg, $light-primary000);
-$ss-c-data-table-footer-text: var(--ss-c-data-table-footer-text, $light-text);
+$ss-c-data-table-footer-bg: var(
+  --upcast-color-data-table-footer-bg,
+  $light-primary000
+);
+$ss-c-data-table-footer-text: var(
+  --upcast-color-data-table-footer-text,
+  $light-text
+);
 
 $ss-c-data-table-divide-line: var(
-  --ss-c-data-table-divide-line,
+  --upcast-color-data-table-divide-line,
   $light-primary500
 );
 
-$ss-c-data-table-row-bg: var(--ss-c-data-table-row-bg, $light-background);
+$ss-c-data-table-row-bg: var(
+  --upcast-color-data-table-row-bg,
+  $light-background
+);
 $ss-c-data-table-row-bg-hover: var(
-  --ss-c-data-table-row-bg-hover,
+  --upcast-color-data-table-row-bg-hover,
   $light-primary000
 );
 $ss-c-data-table-row-bg-disabled: var(
-  --ss-c-data-table-row-bg-disabled,
+  --upcast-color-data-table-row-bg-disabled,
   $light-gray000
 );
 
-$ss-c-data-table-row-text: var(--ss-c-data-table-row-text, $light-text);
+$ss-c-data-table-row-text: var(--upcast-color-data-table-row-text, $light-text);
 $ss-c-data-table-row-text-hover: var(
-  --ss-c-data-table-row-text-hover,
+  --upcast-color-data-table-row-text-hover,
   $light-text
 );
 $ss-c-data-table-row-text-disabled: var(
-  --ss-c-data-table-row-text-disabled,
+  --upcast-color-data-table-row-text-disabled,
   $light-gray200
 );
 
 $ss-c-data-table-pagination-index-bg: var(
-  --ss-c-data-table-pagination-index-bg,
+  --upcast-color-data-table-pagination-index-bg,
   $light-background
 );
 $ss-c-data-table-pagination-index-bg-selected: var(
-  --ss-c-data-table-pagination-index-bg-selected,
+  --upcast-color-data-table-pagination-index-bg-selected,
   $light-blue500
 );
 $ss-c-data-table-pagination-index-bg-disabled: var(
-  --ss-c-data-table-pagination-index-bg-disabled,
+  --upcast-color-data-table-pagination-index-bg-disabled,
   $light-background
 );
 $ss-c-data-table-pagination-index-bg-hover: var(
-  --ss-c-data-table-pagination-index-bg-hover,
+  --upcast-color-data-table-pagination-index-bg-hover,
   $light-blue100
 );
 
 $ss-c-data-table-pagination-index-text: var(
-  --ss-c-data-table-pagination-index-text,
+  --upcast-color-data-table-pagination-index-text,
   $light-text
 );
 $ss-c-data-table-pagination-index-text-selected: var(
-  --ss-c-data-table-pagination-index-text-selected,
+  --upcast-color-data-table-pagination-index-text-selected,
   $light-primary000
 );
 $ss-c-data-table-pagination-index-text-disabled: var(
-  --ss-c-data-table-pagination-index-text-disabled,
+  --upcast-color-data-table-pagination-index-text-disabled,
   $light-gray100
 );
 $ss-c-data-table-pagination-index-text-hover: var(
-  --ss-c-data-table-pagination-index-text-hover,
+  --upcast-color-data-table-pagination-index-text-hover,
   $light-text
 );
 
 $ss-c-data-table-pagination-arrow: var(
-  --ss-c-data-table-pagination-arrow,
+  --upcast-color-data-table-pagination-arrow,
   $light-gray200
 );
 $ss-c-data-table-pagination-arrow-disabled: var(
-  --ss-c-data-table-pagination-arrow-disabled,
+  --upcast-color-data-table-pagination-arrow-disabled,
   $light-gray000
 );

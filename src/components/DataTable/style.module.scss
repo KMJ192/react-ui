@@ -1,81 +1,81 @@
 @import './variable/color.module.scss';
 
 @mixin color-set-data-table-container {
-  border: 1px solid $ss-c-data-table-border;
-  background: $ss-c-data-table-bg;
+  border: 1px solid $upcast-color-data-table-border;
+  background: $upcast-color-data-table-bg;
 }
 
 @mixin color-set-data-table {
   .caption {
-    color: $ss-c-data-table-caption-text;
+    color: $upcast-color-data-table-caption-text;
   }
   .thead > .tr {
     .th,
     .td {
-      color: $ss-c-data-table-header-text;
-      background: $ss-c-data-table-header-bg;
+      color: $upcast-color-data-table-header-text;
+      background: $upcast-color-data-table-header-bg;
     }
   }
   .tbody {
     .tr {
-      border-top: 1px solid $ss-c-data-table-divide-line;
-      background: $ss-c-data-table-row-bg;
-      color: $ss-c-data-table-row-text;
+      border-top: 1px solid $upcast-color-data-table-divide-line;
+      background: $upcast-color-data-table-row-bg;
+      color: $upcast-color-data-table-row-text;
       &.disabled {
-        color: $ss-c-data-table-row-text-disabled;
-        background: $ss-c-data-table-row-bg-disabled;
+        color: $upcast-color-data-table-row-text-disabled;
+        background: $upcast-color-data-table-row-bg-disabled;
       }
       &:hover:not(.disabled) {
-        color: $ss-c-data-table-row-text-hover;
-        background: $ss-c-data-table-row-bg-hover;
+        color: $upcast-color-data-table-row-text-hover;
+        background: $upcast-color-data-table-row-bg-hover;
       }
     }
   }
   .tfoot > .tr {
-    border-top: 1px solid $ss-c-data-table-divide-line;
+    border-top: 1px solid $upcast-color-data-table-divide-line;
     .td,
     .th {
-      color: $ss-c-data-table-footer-text;
-      background: $ss-c-data-table-footer-bg;
+      color: $upcast-color-data-table-footer-text;
+      background: $upcast-color-data-table-footer-bg;
     }
   }
 }
 
 @mixin color-set-pagination {
   & > .index {
-    color: $ss-c-data-table-pagination-index-text;
-    background: $ss-c-data-table-pagination-index-bg;
+    color: $upcast-color-data-table-pagination-index-text;
+    background: $upcast-color-data-table-pagination-index-bg;
     &.selected {
-      color: $ss-c-data-table-pagination-index-text-selected;
-      background: $ss-c-data-table-pagination-index-bg-selected;
+      color: $upcast-color-data-table-pagination-index-text-selected;
+      background: $upcast-color-data-table-pagination-index-bg-selected;
     }
     &.over {
-      color: $ss-c-data-table-pagination-index-text-disabled;
-      background-color: $ss-c-data-table-pagination-index-bg-disabled;
+      color: $upcast-color-data-table-pagination-index-text-disabled;
+      background-color: $upcast-color-data-table-pagination-index-bg-disabled;
       cursor: not-allowed;
     }
     &:hover:not(.selected):not(.over) {
-      color: $ss-c-data-table-pagination-index-text-hover;
-      background: $ss-c-data-table-pagination-index-bg-hover;
+      color: $upcast-color-data-table-pagination-index-text-hover;
+      background: $upcast-color-data-table-pagination-index-bg-hover;
     }
   }
 
   .prev,
   .next {
-    fill: $ss-c-data-table-pagination-arrow;
+    fill: $upcast-color-data-table-pagination-arrow;
   }
   .prev.first-page,
   .next.last-page {
-    fill: $ss-c-data-table-pagination-arrow-disabled;
+    fill: $upcast-color-data-table-pagination-arrow-disabled;
   }
 }
 
 @mixin data-table-container {
-  width: inherit;
   border-radius: 8px;
   white-space: nowrap;
   padding: 16px 24px;
   overflow: scroll;
+  box-sizing: border-box;
 }
 
 @mixin data-table {

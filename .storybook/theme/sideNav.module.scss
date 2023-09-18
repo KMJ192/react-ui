@@ -1,34 +1,36 @@
 @import 'src/styles/color/color.module.scss';
 
 @mixin sideNav-light {
-  --ss-c-side-nav-bg: linear-gradient(
+  --upcast-color-side-nav-bg: linear-gradient(
     #{$light-primary100},
     #{$light-background}
   );
 
-  --ss-c-side-nav-box-shadow: 0px 3px 6px rgba(64, 64, 64, 0.3);
-  --ss-c-side-nav-menu-bg-selected: #{$light-primary000};
-  --ss-c-side-nav-menu-bg-disabled: #{$light-primary300};
+  --upcast-color-side-nav-box-shadow: 0px 3px 6px rgba(64, 64, 64, 0.3);
+  --upcast-color-side-nav-menu-bg-selected: #{$light-primary000};
+  --upcast-color-side-nav-menu-bg-disabled: #{$light-primary300};
 
-  --ss-c-side-nav-menu-text: #{$light-primary900};
-  --ss-c-side-nav-menu-text-selected: #{$light-primary900};
-  --ss-c-side-nav-menu-text-hover: #{$light-blue700};
-  --ss-c-side-nav-menu-text-disabled: #{$light-primary500};
+  --upcast-color-side-nav-menu-text: #{$light-primary900};
+  --upcast-color-side-nav-menu-text-selected: #{$light-primary900};
+  --upcast-color-side-nav-menu-text-hover: #{$light-blue700};
+  --upcast-color-side-nav-menu-text-disabled: #{$light-primary500};
 
-  --ss-c-side-nav-menu-box-shadow-selected: 0px 3px 6px rgba(64, 64, 64, 0.1);
+  --upcast-color-side-nav-menu-box-shadow-selected: 0px 3px 6px
+    rgba(64, 64, 64, 0.1);
 }
 
 @mixin sideNav-dark {
-  --ss-c-side-nav-bg: #{$dark-primary200};
+  --upcast-color-side-nav-bg: #{$dark-primary200};
 
-  --ss-c-side-nav-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
-  --ss-c-side-nav-menu-bg-selected: #{$dark-primary100};
-  --ss-c-side-nav-menu-bg-disabled: #{$dark-primary300};
+  --upcast-color-side-nav-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
+  --upcast-color-side-nav-menu-bg-selected: #{$dark-primary100};
+  --upcast-color-side-nav-menu-bg-disabled: #{$dark-primary300};
 
-  --ss-c-side-nav-menu-text: #{$dark-primary900};
-  --ss-c-side-nav-menu-text-selected: #{$dark-primary800};
-  --ss-c-side-nav-menu-text-hover: #{$dark-blue500};
-  --ss-c-side-nav-menu-text-disabled: #{$dark-primary500};
+  --upcast-color-side-nav-menu-text: #{$dark-primary900};
+  --upcast-color-side-nav-menu-text-selected: #{$dark-primary800};
+  --upcast-color-side-nav-menu-text-hover: #{$dark-blue500};
+  --upcast-color-side-nav-menu-text-disabled: #{$dark-primary500};
 
-  --ss-c-side-nav-menu-box-shadow-selected: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  --upcast-color-side-nav-menu-box-shadow-selected: 0px 3px 6px
+    rgba(0, 0, 0, 0.2);
 }
