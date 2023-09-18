@@ -8,7 +8,7 @@ import style from './style.module.scss';
 const cx = classNames.bind(style);
 
 type BaseProps = {
-  isObserve?: boolean;
+  isExecute?: boolean;
   children?: ReactNode;
   loadingElement?: ReactNode;
   isLoading: boolean;
@@ -19,15 +19,13 @@ const DEFAULT_ELEMENT = 'div';
 
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-let loadDetector = true;
-
 function InfiniteScroll<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   {
     as,
     children,
     isLoading,
     loadingElement,
-    isObserve = true,
+    isExecute = true,
     onLoad = () => {},
     className,
     ...props
@@ -56,15 +54,10 @@ function InfiniteScroll<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
       }
       return;
     }
-    if (isObserve && observingNodeRef.current) {
-      const load = () => {
-        loadDetector = !loadDetector;
-        onLoad();
-      };
-
+    if (isExecute && observingNodeRef.current) {
       const observer = new IntersectionObserver((entries) => {
         if (Array.isArray(entries) && entries[0].isIntersecting) {
-          load();
+          onLoad();
         }
       });
 
@@ -76,7 +69,7 @@ function InfiniteScroll<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
       };
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [loadDetector, isObserve, isLoading]);
+  }, [isExecute, isLoading, onLoad]);
 
   return (
     <ELEMENT
