@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
@@ -10,16 +10,14 @@ type BaseProps = {
   error?: boolean;
 };
 
-const DEFAULT_ELEMENT = 'input';
+const ELEMENT = 'input';
 
-type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
+type Props<T extends React.ElementType> = COMBINE_ELEMENT_PROPS<T, BaseProps>;
 
-function Input<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
-  { as, error, className, ...props }: Props<T>,
-  ref: React.Ref<React.ElementRef<typeof DEFAULT_ELEMENT>>,
+function Input<T extends React.ElementType = typeof ELEMENT>(
+  { error, className, ...props }: Props<T>,
+  ref: React.Ref<React.ElementRef<typeof ELEMENT>>,
 ) {
-  const ELEMENT = as || DEFAULT_ELEMENT;
-
   return (
     <ELEMENT
       {...props}
@@ -29,5 +27,5 @@ function Input<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   );
 }
 
-export type InputProps = Props<typeof DEFAULT_ELEMENT>;
+export type InputProps = Props<typeof ELEMENT>;
 export default React.forwardRef(Input) as typeof Input;

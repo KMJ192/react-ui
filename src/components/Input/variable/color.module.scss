@@ -13,17 +13,45 @@ $upcast-color-input-border-disabled: var(
   --upcast-color-input-border-disabled,
   $light-gray100
 );
+$upcast-color-input-border-hover: var(
+  --upcast-color-input-border-hover,
+  $light-blue300
+);
 
-$upcast-color-input-bg: var(--upcast-color-input-bg, $light-primary000);
+$upcast-color-input-bg: var(--upcast-color-input-bg, $light-background);
+$upcast-color-input-bg-focus: var(
+  --upcast-color-input-bg-focus,
+  $light-background
+);
+$upcast-color-input-bg-error: var(
+  --upcast-color-input-bg-error,
+  $light-background
+);
 $upcast-color-input-bg-disabled: var(
   --upcast-color-input-bg-disabled,
   $light-gray000
 );
+$upcast-color-input-bg-hover: var(
+  --upcast-color-input-bg-hover,
+  $light-background
+);
 
 $upcast-color-input-text: var(--upcast-color-input-text, $light-text);
+$upcast-color-input-text-focus: var(
+  --upcast-color-input-text-focus,
+  $light-text
+);
+$upcast-color-input-text-error: var(
+  --upcast-color-input-text-error,
+  $light-text
+);
 $upcast-color-input-text-disabled: var(
   --upcast-color-input-text-disabled,
   $light-gray200
+);
+$upcast-color-input-text-hover: var(
+  --upcast-color-input-text-hover,
+  $light-text
 );
 
 $upcast-color-input-placeholder: var(
@@ -33,9 +61,4 @@ $upcast-color-input-placeholder: var(
 $upcast-color-input-placeholder-disabled: var(
   --upcast-color-input-placeholder-disabled,
   $light-gray100
-);
-
-$upcast-color-input-box-shadow: var(
-  --upcast-color-input-box-shadow,
-  0px 3px 6px rgba(62, 62, 62, 0.1)
 );

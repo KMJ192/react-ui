@@ -20,11 +20,20 @@
 
   &.error {
     border-color: $upcast-color-input-border-error;
+    background: $upcast-color-input-bg-error;
+    color: $upcast-color-input-text-error;
   }
 
-  &:not(.error):focus {
+  &:hover:not(:disabled):not(.error) {
+    border-color: $upcast-color-input-border-hover;
+    background: $upcast-color-input-bg-hover;
+    color: $upcast-color-input-text-hover;
+  }
+
+  &:not(:disabled):not(.error):focus {
     border-color: $upcast-color-input-border-focus;
-    box-shadow: $upcast-color-input-box-shadow;
+    background: $upcast-color-input-bg-focus;
+    color: $upcast-color-input-text-focus;
   }
 }
 
@@ -32,7 +41,7 @@
   border: 1px solid;
   border-radius: 4px;
   padding: 10px;
-  font-size: 16px;
+  font-size: 0.96em;
   &:focus {
     outline: none;
   }
