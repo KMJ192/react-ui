@@ -1,0 +1,54 @@
+@import '../variable/color.module.scss';
+
+@mixin color-set {
+  border-color: $upcast-color-select-box-border;
+  background: $upcast-color-select-box-bg;
+  color: $upcast-color-select-box-text;
+  &.error {
+    border-color: $upcast-color-select-box-border-error;
+    background: $upcast-color-select-box-bg-error;
+    color: $upcast-color-select-box-text-error;
+  }
+  &.disabled {
+    border-color: $upcast-color-select-box-border-disabled;
+    background: $upcast-color-select-box-bg-disabled;
+    color: $upcast-color-select-box-text-disabled;
+  }
+  &:focus:not(.disabled):not(.error),
+  &.open:not(.error) {
+    border-color: $upcast-color-select-box-border-focus;
+    background: $upcast-color-select-box-bg-focus;
+    color: $upcast-color-select-box-text-focus;
+  }
+  &:hover:not(.disabled) {
+    border-color: $upcast-color-select-box-border-hover;
+    background: $upcast-color-select-box-bg-hover;
+    color: $upcast-color-select-box-text-hover;
+  }
+
+  .placeholder {
+    color: $upcast-color-select-box-placeholder;
+  }
+  &.disabled > .placeholder {
+    color: $upcast-color-select-box-placeholder-disabled;
+  }
+}
+
+@mixin select-box {
+  position: relative;
+  padding: 10px 32px 10px 10px;
+  border-radius: 4px;
+  border: 1px solid;
+  box-sizing: border-box;
+  width: 100%;
+
+  cursor: default;
+  &.disabled {
+    cursor: not-allowed;
+  }
+}
+
+.select-box {
+  @include select-box;
+  @include color-set;
+}

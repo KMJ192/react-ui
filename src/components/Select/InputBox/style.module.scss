@@ -1,0 +1,59 @@
+@import '../variable/color.module.scss';
+
+@mixin color-set {
+  --upcast-color-input-border: #{$upcast-color-select-box-border};
+  --upcast-color-input-border-focus: #{$upcast-color-select-box-border-focus};
+  --upcast-color-input-border-error: #{$upcast-color-select-box-border-error};
+  --upcast-color-input-border-disabled: #{$upcast-color-select-box-border-disabled};
+  --upcast-color-input-border-hover: #{$upcast-color-select-box-border-hover};
+
+  --upcast-color-input-bg: #{$upcast-color-select-box-bg};
+  --upcast-color-input-bg-focus: #{$upcast-color-select-box-bg-focus};
+  --upcast-color-input-bg-error: #{$upcast-color-select-box-bg-error};
+  --upcast-color-input-bg-disabled: #{$upcast-color-select-box-bg-disabled};
+  --upcast-color-input-bg-hover: #{$upcast-color-select-box-bg-hover};
+
+  --upcast-color-input-text: #{$upcast-color-select-box-text};
+  --upcast-color-input-text-focus: #{$upcast-color-select-box-text-focus};
+  --upcast-color-input-text-error: #{$upcast-color-select-box-text-error};
+  --upcast-color-input-text-disabled: #{$upcast-color-select-box-text-disabled};
+  --upcast-color-input-text-hover: #{$upcast-color-select-box-text-hover};
+
+  --upcast-color-input-placeholder: #{$upcast-color-select-box-placeholder};
+  --upcast-color-input-placeholder-disabled: #{$upcast-color-select-box-placeholder-disabled};
+
+  .input-box.open:not(.error) {
+    border-color: $upcast-color-select-box-border-focus;
+    background: $upcast-color-select-box-bg-focus;
+    color: $upcast-color-select-box-text-focus;
+  }
+}
+
+@mixin container {
+  position: relative;
+}
+
+@mixin input-box {
+  .input-box {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 32px 10px 10px;
+  }
+}
+
+@mixin icon {
+  .icon {
+    top: 50%;
+    transform: translateY(-55%) rotate(0deg);
+    &.open {
+      transform: translateY(-55%) rotate(-180deg);
+    }
+  }
+}
+
+.container {
+  @include container;
+  @include input-box;
+  @include icon;
+  @include color-set;
+}

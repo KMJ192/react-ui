@@ -1,0 +1,23 @@
+@mixin color-set {
+  color: black;
+  &.disabled {
+    color: white;
+  }
+}
+
+@mixin expand-icon {
+  position: absolute;
+  right: 10px;
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+  transform: rotate(0deg);
+  &.open {
+    transform: rotate(-180deg);
+  }
+}
+
+.expand-icon {
+  @include expand-icon;
+  @include color-set;
+}

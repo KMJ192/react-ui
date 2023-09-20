@@ -1,0 +1,28 @@
+@import '../variable/color.module.scss';
+
+@mixin color-set {
+  background: $upcast-color-select-dropbox-bg;
+  box-shadow: $upcast-color-select-dropbox-box-shadow;
+}
+
+@mixin select-dropbox {
+  flex-direction: column;
+  overflow: auto;
+  border-radius: 8px;
+  padding: 8px 0;
+  transform: scaleY(0);
+  transition: transform 0.2s ease-in-out;
+  transform-origin: top;
+  z-index: 999;
+  &.up {
+    transform-origin: bottom;
+  }
+  &.open {
+    transform: scaleY(1);
+  }
+}
+
+.select-dropbox {
+  @include select-dropbox;
+  @include color-set;
+}

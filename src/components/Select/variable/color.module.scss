@@ -1,0 +1,123 @@
+@import 'src/styles/color/color.module.scss';
+
+// ====== box ======
+// background
+$upcast-color-select-box-bg: var(
+  --upcast-color-select-box-bg,
+  $light-background
+);
+$upcast-color-select-box-bg-focus: var(
+  --upcast-color-select-box-bg-focus,
+  $light-background
+);
+$upcast-color-select-box-bg-error: var(
+  --upcast-color-select-box-bg-error,
+  $light-background
+);
+$upcast-color-select-box-bg-disabled: var(
+  --upcast-color-select-box-bg-disabled,
+  $light-gray000
+);
+$upcast-color-select-box-bg-hover: var(
+  --upcast-color-select-box-bg-hover,
+  $light-background
+);
+// text
+$upcast-color-select-box-text: var(--upcast-color-select-box-text, $light-text);
+$upcast-color-select-box-text-focus: var(
+  --upcast-color-select-box-text-focus,
+  $light-text
+);
+$upcast-color-select-box-text-error: var(
+  --upcast-color-select-box-text-error,
+  $light-text
+);
+$upcast-color-select-box-text-disabled: var(
+  --upcast-color-select-box-text-disabled,
+  $light-gray200
+);
+$upcast-color-select-box-text-hover: var(
+  --upcast-color-select-box-text-hover,
+  $light-text
+);
+// border
+$upcast-color-select-box-border: var(
+  --upcast-color-select-box-border,
+  $light-primary600
+);
+$upcast-color-select-box-border-focus: var(
+  --upcast-color-select-box-border-focus,
+  $light-blue500
+);
+$upcast-color-select-box-border-error: var(
+  --upcast-color-select-box-border-error,
+  $light-danger
+);
+$upcast-color-select-box-border-disabled: var(
+  --upcast-color-select-box-border-disabled,
+  $light-gray100
+);
+$upcast-color-select-box-border-hover: var(
+  --upcast-color-select-box-border-hover,
+  $light-blue300
+);
+
+// placeholder
+$upcast-color-select-box-placeholder: var(
+  --upcast-color-select-box-placeholder,
+  $light-gray100
+);
+$upcast-color-select-box-placeholder-disabled: var(
+  --upcast-color-select-box-placeholder-disabled,
+  $light-gray100
+);
+// ====== box ======
+
+// ====== dropbox ======
+$upcast-color-select-dropbox-bg: var(
+  --upcast-color-select-dropbox-bg,
+  $light-background
+);
+$upcast-color-select-dropbox-box-shadow: var(
+  --upcast-color-select-dropbox-box-shadow,
+  0px 3px 6px rgba(0, 0, 0, 0.2)
+);
+// ====== dropbox ======
+
+// ====== option ======
+// background
+$upcast-color-select-option-bg: var(
+  --upcast-color-select-option-bg,
+  $light-background
+);
+$upcast-color-select-option-bg-selected: var(
+  --upcast-color-select-option-bg-selected,
+  $light-primary200
+);
+$upcast-color-select-option-bg-disabled: var(
+  --upcast-color-select-option-bg-disabled,
+  $light-gray000
+);
+$upcast-color-select-option-bg-hover: var(
+  --upcast-color-select-option-bg-hover,
+  $light-primary300
+);
+
+// text
+$upcast-color-select-option-text: var(
+  --upcast-color-select-option-text,
+  $light-text
+);
+$upcast-color-select-option-text-selected: var(
+  --upcast-color-select-option-text-selected,
+  $light-text
+);
+$upcast-color-select-option-text-disabled: var(
+  --upcast-color-select-option-text-disabled,
+  $light-gray200
+);
+$upcast-color-select-option-text-hover: var(
+  --upcast-color-select-option-text-hover,
+  $light-text
+);
+// ====== option ======
