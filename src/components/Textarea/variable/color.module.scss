@@ -16,17 +16,45 @@ $upcast-color-textarea-border-disabled: var(
   --upcast-color-textarea-border-disabled,
   $light-gray100
 );
+$upcast-color-textarea-border-hover: var(
+  --upcast-color-textarea-border-hover,
+  $light-blue300
+);
 
 $upcast-color-textarea-bg: var(--upcast-color-textarea-bg, $light-primary000);
+$upcast-color-textarea-bg-focus: var(
+  --upcast-color-textarea-bg-focus,
+  $light-background
+);
+$upcast-color-textarea-bg-error: var(
+  --upcast-color-textarea-bg-error,
+  $light-background
+);
 $upcast-color-textarea-bg-disabled: var(
   --upcast-color-textarea-bg-disabled,
   $light-gray000
 );
+$upcast-color-textarea-bg-hover: var(
+  --upcast-color-textarea-bg-hover,
+  $light-background
+);
 
 $upcast-color-textarea-text: var(--upcast-color-textarea-text, $light-text);
+$upcast-color-textarea-text-focus: var(
+  --upcast-color-textarea-text-focus,
+  $light-text
+);
+$upcast-color-textarea-text-error: var(
+  --upcast-color-input-text-error,
+  $light-text
+);
 $upcast-color-textarea-text-disabled: var(
   --upcast-color-textarea-text-disabled,
   $light-gray200
+);
+$upcast-color-textarea-text-hover: var(
+  --upcast-color-textarea-text-hover,
+  $light-text
 );
 
 $upcast-color-textarea-placeholder: var(
@@ -36,9 +64,4 @@ $upcast-color-textarea-placeholder: var(
 $upcast-color-textarea-placeholder-disabled: var(
   --upcast-color-textarea-placeholder-disabled,
   $light-gray100
-);
-
-$upcast-color-textarea-box-shadow: var(
-  --upcast-color-textarea-box-shadow,
-  0px 3px 6px rgba(62, 62, 62, 0.1)
 );

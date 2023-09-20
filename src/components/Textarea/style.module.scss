@@ -19,11 +19,20 @@
 
   &.error {
     border-color: $upcast-color-textarea-border-error;
+    background: $upcast-color-textarea-bg-error;
+    color: $upcast-color-textarea-text-error;
   }
 
-  &:not(.error):focus {
+  &:hover:not(:disabled):not(.error) {
+    border-color: $upcast-color-textarea-border-hover;
+    background: $upcast-color-textarea-bg-hover;
+    color: $upcast-color-textarea-text-hover;
+  }
+
+  &:not(:disabled):not(.error):focus {
     border-color: $upcast-color-textarea-border-focus;
-    box-shadow: $upcast-color-textarea-box-shadow;
+    background: $upcast-color-textarea-bg-focus;
+    color: $upcast-color-textarea-text-focus;
   }
 }
 
