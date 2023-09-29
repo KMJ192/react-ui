@@ -4,15 +4,19 @@
   background: $upcast-color-select-option-bg;
   color: $upcast-color-select-option-text;
 
-  &.selected:not(.disabled) {
-    background: $upcast-color-select-option-bg-selected;
-    color: $upcast-color-select-option-text-selected;
-  }
   &.disabled {
     background: $upcast-color-select-option-bg-disabled;
     color: $upcast-color-select-option-text-disabled;
   }
-  &:hover:not(.disabled) {
+  &.selected:not(.disabled) {
+    background: $upcast-color-select-option-bg-selected;
+    color: $upcast-color-select-option-text-selected;
+  }
+  &.reserved:not(.disabled):not(.selected) {
+    background: $upcast-color-select-option-bg-reserved;
+    color: $upcast-color-select-option-text-reserved;
+  }
+  &:hover:not(.disabled):not(.selected) {
     background: $upcast-color-select-option-bg-hover;
     color: $upcast-color-select-option-text-hover;
   }
