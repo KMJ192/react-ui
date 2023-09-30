@@ -10,9 +10,10 @@ type BaseProps = {
   children?: React.ReactNode;
   disabled?: boolean;
   selected?: boolean;
+  reserved?: boolean;
 };
 
-const DEFAULT_ELEMENT = 'div';
+const DEFAULT_ELEMENT = 'li';
 
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
@@ -22,6 +23,7 @@ function Option<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     children,
     disabled = false,
     selected = false,
+    reserved = false,
     className,
     ...props
   }: Props<T>,
@@ -33,7 +35,13 @@ function Option<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     <ELEMENT
       {...props}
       ref={ref}
-      className={cx('select-option', { selected }, { disabled }, className)}
+      className={cx(
+        'select-option',
+        { selected },
+        { disabled },
+        { reserved },
+        className,
+      )}
     >
       {children}
     </ELEMENT>

@@ -41,8 +41,8 @@
   border: 1px solid;
   box-sizing: border-box;
   width: 100%;
-
   cursor: default;
+  outline: none;
   &.disabled {
     cursor: not-allowed;
   }

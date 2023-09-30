@@ -3,11 +3,12 @@ import React from 'react';
 import type { COMBINE_ELEMENT_PROPS } from '@src/types/types';
 
 import Input, { type InputProps } from '@src/components/Input/Input';
+import ExpandIcon from '../ExpandIcon/ExpandIcon';
+
 import useSelectState from '../store/hooks/useSelectState';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
-import ExpandIcon from '../ExpandIcon/ExpandIcon';
 const cx = classNames.bind(style);
 
 type BaseProps = {

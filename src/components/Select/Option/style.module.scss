@@ -12,11 +12,11 @@
     background: $upcast-color-select-option-bg-selected;
     color: $upcast-color-select-option-text-selected;
   }
-  &.reserved:not(.disabled):not(.selected) {
+  &.reserved:not(.disabled) {
     background: $upcast-color-select-option-bg-reserved;
     color: $upcast-color-select-option-text-reserved;
   }
-  &:hover:not(.disabled):not(.selected) {
+  &:hover:not(.disabled) {
     background: $upcast-color-select-option-bg-hover;
     color: $upcast-color-select-option-text-hover;
   }

@@ -5,6 +5,7 @@ $upcast-layout-float-right: var(--upcast-layout-float-right, 0px);
 
 .float {
   position: fixed;
+  z-index: 999;
   &.lt {
     left: $upcast-layout-float-left;
     top: $upcast-layout-float-top;

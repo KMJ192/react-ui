@@ -92,6 +92,10 @@ $upcast-color-select-option-bg: var(
 );
 $upcast-color-select-option-bg-selected: var(
   --upcast-color-select-option-bg-selected,
+  $light-primary100
+);
+$upcast-color-select-option-bg-reserved: var(
+  --upcast-color-select-option-bg-reserved,
   $light-primary200
 );
 $upcast-color-select-option-bg-disabled: var(
@@ -100,7 +104,7 @@ $upcast-color-select-option-bg-disabled: var(
 );
 $upcast-color-select-option-bg-hover: var(
   --upcast-color-select-option-bg-hover,
-  $light-primary300
+  $light-primary200
 );
 
 // text
@@ -110,6 +114,10 @@ $upcast-color-select-option-text: var(
 );
 $upcast-color-select-option-text-selected: var(
   --upcast-color-select-option-text-selected,
+  $light-text
+);
+$upcast-color-select-option-text-reserved: var(
+  --upcast-color-select-option-text-reserved,
   $light-text
 );
 $upcast-color-select-option-text-disabled: var(

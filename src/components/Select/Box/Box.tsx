@@ -3,13 +3,13 @@ import { When } from '@upcast/react-modules';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
+import Center from '@src/layout/Center/Center';
 import ExpandIcon from '../ExpandIcon/ExpandIcon';
 
 import useSelectState from '../store/hooks/useSelectState';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
-import Center from '@src/layout/Center/Center';
 const cx = classNames.bind(style);
 
 type BaseProps = {
@@ -38,7 +38,7 @@ function Box<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
       horizontal={false}
       className={cx('select-box', { open }, { disabled }, { error }, className)}
     >
-      <When condition={children === undefined}>
+      <When condition={children === undefined || children === ''}>
         <span className={cx('placeholder')}>{placeholder}</span>
       </When>
       <When condition={children !== undefined}>{children}</When>

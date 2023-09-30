@@ -1,6 +1,8 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
 import Select from '@src/components/Select/Select';
+import useSelectController from '@src/components/Select/hooks/useSelectController';
+import useInputSelectController from '@src/components/Select/hooks/useInputSelectController';
 
 const meta: Meta<typeof Select> = {
   title: 'UI/Components/Select',
@@ -11,8 +13,9 @@ const meta: Meta<typeof Select> = {
   argTypes: {},
 };
 
-const PrimaryTemplate = (args: any) => {
+const PrimaryType = (args: any) => {
   const { selectedIdx, disabledIdx, placeholder, ...arg } = args;
+
   return (
     <Select {...arg}>
       <Select.Box placeholder={placeholder}></Select.Box>
@@ -31,7 +34,7 @@ const PrimaryTemplate = (args: any) => {
   );
 };
 
-export const PrimarySelect: StoryFn = PrimaryTemplate.bind({});
+export const PrimarySelect: StoryFn = PrimaryType.bind({});
 PrimarySelect.args = {
   disabled: false,
   error: false,
@@ -41,7 +44,7 @@ PrimarySelect.args = {
   placeholder: 'placeholder',
 };
 
-const InputTemplate = (args: any) => {
+const InputType = (args: any) => {
   const { selectedIdx, disabledIdx, placeholder, ...arg } = args;
   return (
     <Select {...arg}>
@@ -61,7 +64,7 @@ const InputTemplate = (args: any) => {
   );
 };
 
-export const InputSelect: StoryFn = InputTemplate.bind({});
+export const InputSelect: StoryFn = InputType.bind({});
 InputSelect.args = {
   disabled: false,
   error: false,
@@ -69,6 +72,227 @@ InputSelect.args = {
   selectedIdx: -1,
   disabledIdx: -1,
   placeholder: 'placeholder',
+};
+
+const PrimaryTemplate = (args: any) => {
+  const {
+    initSelectedIdx,
+    placeholder,
+    optionList: list,
+    error,
+    disabled,
+  } = args;
+
+  const {
+    selectRef,
+    dropboxRef,
+    open,
+    selectedIdx,
+    reserveIdx,
+    onClickSelect,
+    onClickOption,
+    onKeyDown,
+    optionList,
+  } = useSelectController({
+    initSelectedIdx,
+    optionList: list,
+  });
+
+  return (
+    <Select
+      ref={selectRef}
+      open={open}
+      error={error}
+      disabled={disabled}
+      isOption={optionList.length > 0}
+      onClick={onClickSelect}
+      onKeyDown={onKeyDown}
+    >
+      <Select.Box placeholder={placeholder}>
+        {list[selectedIdx]?.content ?? ''}
+      </Select.Box>
+      <Select.Dropbox
+        ref={dropboxRef}
+        direction='down'
+        style={{
+          maxHeight: '300px',
+        }}
+      >
+        {optionList.map(({ key, content, disabled }, idx) => {
+          const selected = idx === selectedIdx;
+          const reserved = idx === reserveIdx;
+
+          return (
+            <Select.Option
+              key={key}
+              disabled={disabled}
+              selected={selected}
+              reserved={reserved}
+              onClick={(e: React.MouseEvent) => {
+                e.stopPropagation();
+                onClickOption(idx);
+              }}
+            >
+              {content}
+            </Select.Option>
+          );
+        })}
+      </Select.Dropbox>
+    </Select>
+  );
+};
+
+export const PrimarySelectTemplate: StoryFn = PrimaryTemplate.bind({});
+PrimarySelectTemplate.args = {
+  disabled: false,
+  error: false,
+  initSelectedIdx: -1,
+  placeholder: 'placeholder',
+  optionList: Array.from({ length: 50 }, (_, idx: number) => ({
+    key: idx,
+    content: `Option${idx + 1}`,
+  })),
+};
+
+const InputTemplate = (args: any) => {
+  const {
+    initSelectedIdx,
+    placeholder,
+    optionList: list,
+    error,
+    disabled,
+  } = args;
+
+  const {
+    open,
+    reservedKey,
+    selectedKey,
+    onClickOption,
+    onClickSelect,
+    onKeyDown,
+    onChange,
+    optionList,
+    selectRef,
+    dropboxRef,
+  } = useInputSelectController({
+    initSelectedIdx,
+    optionList: list,
+  });
+
+  return (
+    <Select
+      open={open}
+      error={error}
+      disabled={disabled}
+      isOption={optionList.length > 0}
+      onClick={onClickSelect}
+      onKeyDown={onKeyDown}
+    >
+      <Select.InputBox
+        ref={selectRef}
+        placeholder={placeholder}
+        onChange={onChange}
+      />
+      <Select.Dropbox
+        ref={dropboxRef}
+        direction='down'
+        style={{
+          maxHeight: '300px',
+        }}
+      >
+        {optionList.map(({ key, content, disabled }, idx) => {
+          const selected = key === selectedKey;
+          const reserved = key === reservedKey;
+          return (
+            <Select.Option
+              key={key}
+              disabled={disabled}
+              selected={selected}
+              reserved={reserved}
+              onClick={(e: React.MouseEvent) => {
+                e.stopPropagation();
+                onClickOption(idx);
+              }}
+            >
+              {content}
+            </Select.Option>
+          );
+        })}
+      </Select.Dropbox>
+    </Select>
+  );
+};
+
+export const InputSelectTemplate: StoryFn = InputTemplate.bind({});
+InputSelectTemplate.args = {
+  disabled: false,
+  error: false,
+  initSelectedIdx: -1,
+  placeholder: 'placeholder',
+  optionList: [
+    ...[
+      {
+        key: 0,
+        content: '안녕',
+        index: 0,
+      },
+      {
+        key: 1,
+        content: '안녕하세요.',
+        index: 1,
+      },
+      {
+        key: 2,
+        content: '안',
+        index: 2,
+      },
+      {
+        key: 3,
+        content: '않돼',
+        index: 3,
+      },
+      {
+        key: 4,
+        content: '않된다.',
+        index: 4,
+      },
+      {
+        key: 5,
+        content: '안자',
+        index: 5,
+      },
+      {
+        key: 6,
+        content: '앉다',
+        index: 6,
+      },
+      {
+        key: 7,
+        content: '앉어',
+        index: 7,
+      },
+      {
+        key: 8,
+        content: '한글',
+        index: 8,
+      },
+      {
+        key: 9,
+        content: '한지',
+        index: 9,
+      },
+      {
+        key: 10,
+        content: '핝다',
+        index: 10,
+      },
+    ],
+    ...Array.from({ length: 50 }, (_, idx: number) => ({
+      key: idx + 11,
+      content: `Option${idx + 1}`,
+      index: idx + 11,
+    })),
+  ],
 };
 
 export default meta;

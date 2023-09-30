@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type RefObject, useEffect, useRef, useState } from 'react';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
@@ -18,6 +18,7 @@ type BaseProps = {
   open?: boolean;
   disabled?: boolean;
   error?: boolean;
+  isOption?: boolean;
   children?: React.ReactNode;
 };
 
@@ -32,6 +33,7 @@ function S<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     open = false,
     disabled = false,
     error = false,
+    isOption = true,
     className,
     ...props
   }: Props<T>,
@@ -39,18 +41,55 @@ function S<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
 
+  const selectRef = useRef<HTMLElement>(null);
+  const [selectBBox, setSelectBBox] = useState({
+    width: 0,
+    height: 0,
+    top: 0,
+    left: 0,
+  });
+
+  useEffect(() => {
+    const getPosition = () => {
+      let container = null;
+      if (
+        ref &&
+        (ref as RefObject<React.ElementRef<typeof DEFAULT_ELEMENT>>).current
+      ) {
+        container = (ref as RefObject<React.ElementRef<typeof DEFAULT_ELEMENT>>)
+          .current;
+      } else if (selectRef.current) {
+        container = selectRef.current;
+      }
+      if (container) {
+        const { width, height, top, left } = container.getBoundingClientRect();
+        setSelectBBox({
+          width,
+          height,
+          top,
+          left,
+        });
+      }
+    };
+    getPosition();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <Provider
       value={{
         open,
         disabled,
         error,
+        selectBBox,
+        isOption,
       }}
     >
       <Flex
         as={ELEMENT as any}
         {...props}
-        ref={ref}
+        ref={ref ?? selectRef}
         className={cx('select', className)}
       >
         {children}
