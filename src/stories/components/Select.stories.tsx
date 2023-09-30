@@ -84,11 +84,12 @@ const PrimaryTemplate = (args: any) => {
   } = args;
 
   const {
+    open,
     selectRef,
     dropboxRef,
-    open,
-    selectedIdx,
-    reserveIdx,
+    selectedKey,
+    reservedKey,
+    boxContent,
     onClickSelect,
     onClickOption,
     onKeyDown,
@@ -108,9 +109,7 @@ const PrimaryTemplate = (args: any) => {
       onClick={onClickSelect}
       onKeyDown={onKeyDown}
     >
-      <Select.Box placeholder={placeholder}>
-        {list[selectedIdx]?.content ?? ''}
-      </Select.Box>
+      <Select.Box placeholder={placeholder}>{boxContent}</Select.Box>
       <Select.Dropbox
         ref={dropboxRef}
         direction='down'
@@ -119,8 +118,8 @@ const PrimaryTemplate = (args: any) => {
         }}
       >
         {optionList.map(({ key, content, disabled }, idx) => {
-          const selected = idx === selectedIdx;
-          const reserved = idx === reserveIdx;
+          const selected = key === selectedKey;
+          const reserved = key === reservedKey;
 
           return (
             <Select.Option

@@ -94,8 +94,8 @@ function useInputSelectController({
         idx: realIndex,
         key: realKey,
       });
-      selectEle.value = '';
       selectEle.value = content;
+      selectEle.blur();
       return;
     }
 
@@ -140,6 +140,7 @@ function useInputSelectController({
           key: realKey,
         });
         selectEle.value = content;
+        selectEle.blur();
       }
       return;
     }
@@ -179,6 +180,7 @@ function useInputSelectController({
       return;
     }
 
+    // 6. input change 이벤트
     if (type === 'change') {
       const { value } = option;
       selectEle.value = value;

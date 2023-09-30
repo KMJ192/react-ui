@@ -12,8 +12,16 @@ function useSelectController({
   optionList = [],
 }: Params) {
   const [open, setOpen] = useState<boolean>(false);
-  const [reserveIdx, setReserveIdx] = useState<number>(initSelectedIdx);
-  const [selectedIdx, setSelectedIdx] = useState<number>(initSelectedIdx);
+  // const [reserveIdx, setReserveIdx] = useState<number>(initSelectedIdx);
+  // const [selectedIdx, setSelectedIdx] = useState<number>(initSelectedIdx);
+  const [reserved, setReserved] = useState({
+    idx: initSelectedIdx,
+    key: initSelectedIdx === -1 ? null : optionList[initSelectedIdx].key,
+  });
+  const [selected, setSelected] = useState({
+    idx: initSelectedIdx,
+    key: initSelectedIdx === -1 ? null : optionList[initSelectedIdx].key,
+  });
   const selectRef = useRef<HTMLDivElement>(null);
   const dropboxRef = useRef<HTMLUListElement>(null);
 
@@ -47,8 +55,16 @@ function useSelectController({
 
   const onClickOption = (idx: number) => {
     if (!optionList[idx].disabled) {
-      setSelectedIdx(idx);
-      setReserveIdx(idx);
+      // setSelectedIdx(idx);
+      // setReserveIdx(idx);
+      setSelected({
+        idx,
+        key: optionList[idx].key,
+      });
+      setReserved({
+        idx,
+        key: optionList[idx].key,
+      });
       scrollTo(idx);
       setOpen(false);
     }
@@ -71,7 +87,7 @@ function useSelectController({
     if (key === 'ArrowDown') {
       let endFlag = 0;
       let next = 0;
-      next = reserveIdx === -1 ? 0 : reserveIdx + 1;
+      next = reserved.idx === -1 ? 0 : reserved.idx + 1;
       if (next >= len) next = 0;
       while (optionList[next].disabled) {
         endFlag++;
@@ -81,14 +97,18 @@ function useSelectController({
 
         if (endFlag > len) return;
       }
-      setReserveIdx(next);
+      // setReserveIdx(next);
+      setReserved({
+        idx: next,
+        key: optionList[next].key,
+      });
       scrollTo(next);
       return;
     }
 
     if (key === 'ArrowUp') {
       let endFlag = 0;
-      let next = reserveIdx - 1;
+      let next = reserved.idx - 1;
       if (next < 0) next = len - 1;
 
       while (optionList[next].disabled) {
@@ -98,22 +118,32 @@ function useSelectController({
 
         if (endFlag > len) return;
       }
-      setReserveIdx(next);
+      setReserved({
+        idx: next,
+        key: optionList[next].key,
+      });
       scrollTo(next);
       return;
     }
 
     if (key === 'Enter') {
       setOpen(!open);
-      setSelectedIdx(reserveIdx);
-      scrollTo(reserveIdx);
+      // setSelectedIdx(reserve.idx);
+      setSelected({
+        idx: reserved.idx,
+        key: reserved.key,
+      });
+      scrollTo(reserved.idx);
       return;
     }
 
     if (key === 'Escape') {
-      setReserveIdx(selectedIdx);
       setOpen(false);
-      scrollTo(selectedIdx);
+      setReserved({
+        idx: selected.idx,
+        key: selected.key,
+      });
+      scrollTo(selected.idx);
     }
   };
 
@@ -122,25 +152,38 @@ function useSelectController({
   };
 
   const onClickAway = () => {
-    setReserveIdx(selectedIdx);
+    // setReserveIdx(selectedIdx);
     setOpen(false);
-    scrollTo(selectedIdx);
+    setReserved({
+      idx: selected.idx,
+      key: selected.key,
+    });
+    scrollTo(selected.idx);
   };
 
   useClickAway({ onClickAway, elementRefs: [selectRef, dropboxRef] });
 
   useEffect(() => {
     const initialize = () => {
-      setSelectedIdx(initSelectedIdx);
-      setReserveIdx(initSelectedIdx);
+      // setSelectedIdx(initSelectedIdx);
+      // setReserveIdx(initSelectedIdx);
+      setSelected({
+        idx: initSelectedIdx,
+        key: initSelectedIdx === -1 ? null : optionList[initSelectedIdx].key,
+      });
+      setReserved({
+        idx: initSelectedIdx,
+        key: initSelectedIdx === -1 ? null : optionList[initSelectedIdx].key,
+      });
     };
     initialize();
-  }, [initSelectedIdx]);
+  }, [initSelectedIdx, optionList]);
 
   return {
     open,
-    selectedIdx,
-    reserveIdx,
+    selectedKey: selected.key,
+    reservedKey: reserved.key,
+    boxContent: optionList[selected.idx]?.content ?? '',
     optionList,
     onClickSelect,
     onClickOption,
