@@ -3845,25 +3845,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@upcast/react-modules@npm:^0.0.23":
-  version: 0.0.23
-  resolution: "@upcast/react-modules@npm:0.0.23"
+"@upcast/react-modules@npm:^0.0.24":
+  version: 0.0.24
+  resolution: "@upcast/react-modules@npm:0.0.24"
   dependencies:
     react: ^18.2.0
     react-dom: ^18.2.0
     react-router-dom: ^6.15.0
-  checksum: bf6039a0a0cc1be2e9fc69ca257979ac0853cd2aedbc56791898317d0344f277fdafd85cdb8be0b93b718c2f7b86e9298a33273f123ed2023dbda9a3f4bc0c56
+  checksum: fdf339c73ade1c2aac60624db7bcdbb2278dfb185532b3a9fe8e3c60320c11f9858d7a6f9cef4b456753fdf58b440f611bd7bb7689fdcc4c2f84e1b610af783d
   languageName: node
   linkType: hard
 
-"@upcast/react-ui@npm:^0.0.23":
-  version: 0.0.23
-  resolution: "@upcast/react-ui@npm:0.0.23"
+"@upcast/react-ui@npm:^0.0.24":
+  version: 0.0.24
+  resolution: "@upcast/react-ui@npm:0.0.24"
   dependencies:
-    "@upcast/react-modules": ^0.0.23
+    "@upcast/react-modules": ^0.0.24
     lodash: ^4.17.21
     react: ^18.2.0
-  checksum: 51f6138546cddfa464decfc996f5ac1b1473819db6a60c04378dbb9075811f33b803b513c54e1728493b207ea88ea585c769a965743499c715afba476da14a3b
+  checksum: 68cd722d6e944be2db853b07ce42dae9a54c46e32ff2b137c48654330d22db9953dc180aff84f8c7138fff8456be086e85b286f192abfdf9a32bf0c689acbf3b
   languageName: node
   linkType: hard
 
@@ -3885,8 +3885,8 @@ __metadata:
     "@types/react-dom": ^18.2.4
     "@typescript-eslint/eslint-plugin": ^5.60.0
     "@typescript-eslint/parser": ^5.60.0
-    "@upcast/react-modules": ^0.0.23
-    "@upcast/react-ui": ^0.0.23
+    "@upcast/react-modules": ^0.0.24
+    "@upcast/react-ui": ^0.0.24
     classnames: ^2.3.2
     eslint: ^8.43.0
     eslint-config-airbnb: ^19.0.4
