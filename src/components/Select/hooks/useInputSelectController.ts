@@ -2,12 +2,13 @@ import React, { useEffect, useRef, useState } from 'react';
 import cloneDeep from 'lodash/cloneDeep';
 import { useTrie } from '@upcast/react-modules';
 
-import useClickAway from '@src/modules/useClickAway/useClickAway';
+import { useClickAway } from '@upcast/react-modules';
 import type { InputSelectOption } from '../types';
 
 type Params = {
   initSelectedIdx?: number;
   optionList?: Array<InputSelectOption>;
+  caseSensitive?: boolean;
 };
 
 const makePrimitive = (optionList: Array<InputSelectOption>) => {
@@ -29,8 +30,9 @@ const KEY_EVENT = {
 function useInputSelectController({
   initSelectedIdx = -1,
   optionList = [],
+  caseSensitive = false,
 }: Params) {
-  const selectRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const dropboxRef = useRef<HTMLUListElement>(null);
   const compositionRef = useRef(false);
   const primitive = useRef<Array<InputSelectOption>>(makePrimitive(optionList));
@@ -50,9 +52,9 @@ function useInputSelectController({
 
   const { trie, rebuild: rebuildTrie } = useTrie<{
     disabled?: boolean;
-    index: number;
   }>({
     dictionary: primitive.current,
+    caseSensitive,
   });
 
   const scrollTo = (idx: number) => {
@@ -73,8 +75,8 @@ function useInputSelectController({
     type: 'enter' | 'esc' | 'mouse-click' | 'click-away' | 'init' | 'change';
     option?: any;
   }) => {
-    if (!selectRef.current) return;
-    const selectEle = selectRef.current;
+    if (!inputRef.current) return;
+    const selectEle = inputRef.current;
     const { type, option } = e;
     // 1. 선택 이벤트 - Enter
     if (type === 'enter') {
@@ -296,7 +298,8 @@ function useInputSelectController({
     }
   };
 
-  const onClickOption = (idx: number) => {
+  const onClickOption = (e: React.MouseEvent, idx: number) => {
+    e.stopPropagation();
     event({
       type: 'mouse-click',
       option: {
@@ -305,7 +308,8 @@ function useInputSelectController({
     });
   };
 
-  const onClickSelect = () => {
+  const onClickSelect = (e: React.MouseEvent) => {
+    e.stopPropagation();
     setOpen(true);
   };
 
@@ -317,7 +321,7 @@ function useInputSelectController({
 
   useClickAway({
     onClickAway,
-    elementRefs: [selectRef, dropboxRef],
+    elementRefs: [inputRef, dropboxRef],
   });
 
   useEffect(() => {
@@ -336,9 +340,9 @@ function useInputSelectController({
   }, [reserved.idx]);
 
   useEffect(() => {
-    if (!selectRef.current) return () => {};
+    if (!inputRef.current) return () => {};
 
-    const selectEle = selectRef.current;
+    const selectEle = inputRef.current;
     const onCompositionStart = () => {
       compositionRef.current = true;
     };
@@ -364,7 +368,8 @@ function useInputSelectController({
     onKeyDown,
     onChange,
     optionList: viewOptionList,
-    selectRef,
+    isOption: viewOptionList.length > 0,
+    inputRef,
     dropboxRef,
   };
 }

@@ -12,8 +12,6 @@ function useSelectController({
   optionList = [],
 }: Params) {
   const [open, setOpen] = useState<boolean>(false);
-  // const [reserveIdx, setReserveIdx] = useState<number>(initSelectedIdx);
-  // const [selectedIdx, setSelectedIdx] = useState<number>(initSelectedIdx);
   const [reserved, setReserved] = useState({
     idx: initSelectedIdx,
     key: initSelectedIdx === -1 ? null : optionList[initSelectedIdx].key,
@@ -39,24 +37,9 @@ function useSelectController({
     });
   };
 
-  // const updateOpen = (isOpen: boolean | ((open: boolean) => boolean)) => {
-  //   setOpen(isOpen);
-  // };
-
-  // const updateReserve = (isHover: number | ((hover: number) => number)) => {
-  //   setReserveIdx(isHover);
-  // };
-
-  // const updateSelectedIdx = (
-  //   isSelected: number | ((selected: number) => number),
-  // ) => {
-  //   setSelectedIdx(isSelected);
-  // };
-
-  const onClickOption = (idx: number) => {
+  const onClickOption = (e: React.MouseEvent, idx: number) => {
+    e.stopPropagation();
     if (!optionList[idx].disabled) {
-      // setSelectedIdx(idx);
-      // setReserveIdx(idx);
       setSelected({
         idx,
         key: optionList[idx].key,
@@ -97,7 +80,6 @@ function useSelectController({
 
         if (endFlag > len) return;
       }
-      // setReserveIdx(next);
       setReserved({
         idx: next,
         key: optionList[next].key,
@@ -128,7 +110,6 @@ function useSelectController({
 
     if (key === 'Enter') {
       setOpen(!open);
-      // setSelectedIdx(reserve.idx);
       setSelected({
         idx: reserved.idx,
         key: reserved.key,
@@ -152,7 +133,6 @@ function useSelectController({
   };
 
   const onClickAway = () => {
-    // setReserveIdx(selectedIdx);
     setOpen(false);
     setReserved({
       idx: selected.idx,
@@ -165,8 +145,6 @@ function useSelectController({
 
   useEffect(() => {
     const initialize = () => {
-      // setSelectedIdx(initSelectedIdx);
-      // setReserveIdx(initSelectedIdx);
       setSelected({
         idx: initSelectedIdx,
         key: initSelectedIdx === -1 ? null : optionList[initSelectedIdx].key,
@@ -185,6 +163,7 @@ function useSelectController({
     reservedKey: reserved.key,
     boxContent: optionList[selected.idx]?.content ?? '',
     optionList,
+    isOption: optionList.length > 0,
     onClickSelect,
     onClickOption,
     onKeyDown,

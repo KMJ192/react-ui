@@ -94,6 +94,7 @@ const PrimaryTemplate = (args: any) => {
     onClickOption,
     onKeyDown,
     optionList,
+    isOption,
   } = useSelectController({
     initSelectedIdx,
     optionList: list,
@@ -105,7 +106,7 @@ const PrimaryTemplate = (args: any) => {
       open={open}
       error={error}
       disabled={disabled}
-      isOption={optionList.length > 0}
+      isOption={isOption}
       onClick={onClickSelect}
       onKeyDown={onKeyDown}
     >
@@ -128,8 +129,7 @@ const PrimaryTemplate = (args: any) => {
               selected={selected}
               reserved={reserved}
               onClick={(e: React.MouseEvent) => {
-                e.stopPropagation();
-                onClickOption(idx);
+                onClickOption(e, idx);
               }}
             >
               {content}
@@ -160,6 +160,7 @@ const InputTemplate = (args: any) => {
     optionList: list,
     error,
     disabled,
+    caseSensitive,
   } = args;
 
   const {
@@ -171,11 +172,13 @@ const InputTemplate = (args: any) => {
     onKeyDown,
     onChange,
     optionList,
-    selectRef,
+    isOption,
+    inputRef,
     dropboxRef,
   } = useInputSelectController({
     initSelectedIdx,
     optionList: list,
+    caseSensitive,
   });
 
   return (
@@ -183,22 +186,16 @@ const InputTemplate = (args: any) => {
       open={open}
       error={error}
       disabled={disabled}
-      isOption={optionList.length > 0}
+      isOption={isOption}
       onClick={onClickSelect}
       onKeyDown={onKeyDown}
     >
       <Select.InputBox
-        ref={selectRef}
+        ref={inputRef}
         placeholder={placeholder}
         onChange={onChange}
       />
-      <Select.Dropbox
-        ref={dropboxRef}
-        direction='down'
-        style={{
-          maxHeight: '300px',
-        }}
-      >
+      <Select.Dropbox ref={dropboxRef} direction='down'>
         {optionList.map(({ key, content, disabled }, idx) => {
           const selected = key === selectedKey;
           const reserved = key === reservedKey;
@@ -209,8 +206,7 @@ const InputTemplate = (args: any) => {
               selected={selected}
               reserved={reserved}
               onClick={(e: React.MouseEvent) => {
-                e.stopPropagation();
-                onClickOption(idx);
+                onClickOption(e, idx);
               }}
             >
               {content}
@@ -228,6 +224,7 @@ InputSelectTemplate.args = {
   error: false,
   initSelectedIdx: -1,
   placeholder: 'placeholder',
+  caseSensitive: false,
   optionList: [
     ...[
       {
