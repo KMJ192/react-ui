@@ -84,6 +84,8 @@ function useInputSelectController({
         content,
         key: realKey,
       } = viewOptionList[reservedIdx];
+      if (open) selectEle.blur();
+
       setOpen(!open);
       setViewOptionList(cloneDeep(primitive.current));
       setReserved({
@@ -95,7 +97,6 @@ function useInputSelectController({
         key: realKey,
       });
       selectEle.value = content;
-      selectEle.blur();
       return;
     }
 
@@ -122,6 +123,7 @@ function useInputSelectController({
     // 3. 취소 이벤트 - Escape
     if (type === 'esc') {
       setOpen(false);
+      selectEle.blur();
       if (selected.idx === -1) {
         selectEle.value = '';
       } else {
@@ -140,7 +142,6 @@ function useInputSelectController({
           key: realKey,
         });
         selectEle.value = content;
-        selectEle.blur();
       }
       return;
     }
@@ -186,13 +187,18 @@ function useInputSelectController({
       selectEle.value = value;
       const filtered = trie.containList(value);
       setOpen(true);
-      setViewOptionList(filtered);
       setReserved({
         idx: -1,
         key: null,
       });
-      if (filtered.length > 0) {
+      if (value === '') {
+        setViewOptionList(cloneDeep(primitive.current));
         scrollTo(0);
+      } else {
+        setViewOptionList(filtered);
+        if (filtered.length > 0) {
+          scrollTo(0);
+        }
       }
     }
   };
