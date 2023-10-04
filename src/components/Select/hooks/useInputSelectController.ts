@@ -1,14 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import cloneDeep from 'lodash/cloneDeep';
-import { useTrie } from '@upcast/react-modules';
+import { useTrie, useClickAway } from '@upcast/react-modules';
 
-import { useClickAway } from '@upcast/react-modules';
 import type { InputSelectOption } from '../types';
 
 type Params = {
   initSelectedIdx?: number;
-  optionList?: Array<InputSelectOption>;
   caseSensitive?: boolean;
+  readonly optionList?: Array<InputSelectOption>;
 };
 
 const makePrimitive = (optionList: Array<InputSelectOption>) => {

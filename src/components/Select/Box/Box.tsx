@@ -47,5 +47,5 @@ function Box<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   );
 }
 
-export type BoxProps = Props<typeof DEFAULT_ELEMENT>;
+export type SelectBoxProps = Props<typeof DEFAULT_ELEMENT>;
 export default React.forwardRef(Box) as typeof Box;

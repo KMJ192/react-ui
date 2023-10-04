@@ -81,5 +81,5 @@ function Dropbox<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   );
 }
 
-export type DropboxProps = Props<typeof DEFAULT_ELEMENT>;
+export type SelectDropboxProps = Props<typeof DEFAULT_ELEMENT>;
 export default React.forwardRef(Dropbox) as typeof Dropbox;

@@ -39,5 +39,5 @@ function InputBox<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   );
 }
 
-export type InputBoxProps = Props<typeof DEFAULT_ELEMENT>;
+export type SelectInputBoxProps = Props<typeof DEFAULT_ELEMENT>;
 export default React.forwardRef(InputBox) as typeof InputBox;

@@ -7,6 +7,7 @@ const INIT_STATE: ContextState = {
   open: false,
   disabled: false,
   error: false,
+  isOption: false,
   selectBBox: {
     width: 0,
     height: 0,

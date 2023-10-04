@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
+import { useClickAway } from '@upcast/react-modules';
+
 import type { SelectOption } from '../types';
-import useClickAway from '@src/modules/useClickAway/useClickAway';
 
 type Params = {
   initSelectedIdx?: number;
