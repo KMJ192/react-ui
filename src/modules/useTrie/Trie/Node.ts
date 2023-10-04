@@ -2,7 +2,7 @@ import { TrieData } from './types';
 
 type TrieObject<T> = { [key: string]: TrieNode<T> };
 
-class TrieNode<T> {
+class TrieNode<T = unknown> {
   public isWord: boolean;
 
   public info: Array<TrieData<T>> | null;

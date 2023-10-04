@@ -23,7 +23,7 @@ type Params = {
   caseSensitive?: boolean;
 };
 
-class Trie<T> implements ITrie<T> {
+class Trie<T = unknown> implements ITrie<T> {
   private root: TrieNode<T>;
 
   private memo: string;

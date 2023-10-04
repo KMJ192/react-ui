@@ -1,6 +1,6 @@
 type TrieDataKey = string | number;
 
-type TrieData<T = any> = {
+type TrieData<T = unknown> = {
   key: TrieDataKey;
   content: string;
   index: number;

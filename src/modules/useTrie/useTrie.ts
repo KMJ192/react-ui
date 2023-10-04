@@ -3,7 +3,7 @@ import { useEffect, useMemo } from 'react';
 import { Trie, type TrieData } from './Trie';
 import Hangul from './Trie/Hangul';
 
-type Params<T = any> = {
+type Params<T = unknown> = {
   dictionary?: Array<TrieData<T>>;
   isBuild?: boolean;
   caseSensitive?: boolean;
@@ -16,7 +16,7 @@ type Params<T = any> = {
  * @param caseSensitive 대소문자 구분 여부
  * @returns
  */
-function useTrie<T = any>({
+function useTrie<T = unknown>({
   dictionary = [],
   isBuild = true,
   caseSensitive = false,
