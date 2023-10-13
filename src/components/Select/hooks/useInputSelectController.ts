@@ -7,10 +7,10 @@ import type { InputSelectOption } from '../types';
 type Params = {
   initSelectedIdx?: number;
   caseSensitive?: boolean;
-  readonly optionList?: Array<InputSelectOption>;
+  readonly optionList?: ReadonlyArray<InputSelectOption>;
 };
 
-const makePrimitive = (optionList: Array<InputSelectOption>) => {
+const makePrimitiveList = (optionList: ReadonlyArray<InputSelectOption>) => {
   return optionList.map(({ key, content, disabled }, index) => ({
     key,
     content,
@@ -31,28 +31,36 @@ function useInputSelectController({
   optionList = [],
   caseSensitive = false,
 }: Params) {
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputBoxRef = useRef<HTMLInputElement>(null);
   const dropboxRef = useRef<HTMLUListElement>(null);
   const compositionRef = useRef(false);
-  const primitive = useRef<Array<InputSelectOption>>(makePrimitive(optionList));
+  const primitiveList = useRef<Array<InputSelectOption>>(
+    makePrimitiveList(optionList),
+  );
 
   const [open, setOpen] = useState<boolean>(false);
   const [reserved, setReserved] = useState({
     idx: initSelectedIdx,
-    key: initSelectedIdx === -1 ? null : primitive.current[initSelectedIdx].key,
+    key:
+      initSelectedIdx === -1
+        ? null
+        : primitiveList.current[initSelectedIdx].key,
   });
   const [selected, setSelected] = useState({
     idx: initSelectedIdx,
-    key: initSelectedIdx === -1 ? null : primitive.current[initSelectedIdx].key,
+    key:
+      initSelectedIdx === -1
+        ? null
+        : primitiveList.current[initSelectedIdx].key,
   });
   const [viewOptionList, setViewOptionList] = useState<
     Array<InputSelectOption>
-  >(cloneDeep(primitive.current));
+  >(cloneDeep(primitiveList.current));
 
   const { trie, rebuild: rebuildTrie } = useTrie<{
     disabled?: boolean;
   }>({
-    dictionary: primitive.current,
+    dictionary: primitiveList.current,
     caseSensitive,
   });
 
@@ -74,8 +82,8 @@ function useInputSelectController({
     type: 'enter' | 'esc' | 'mouse-click' | 'click-away' | 'init' | 'change';
     option?: any;
   }) => {
-    if (!inputRef.current) return;
-    const selectEle = inputRef.current;
+    if (!inputBoxRef.current) return;
+    const selectEle = inputBoxRef.current;
     const { type, option } = e;
     // 1. 선택 이벤트 - Enter
     if (type === 'enter') {
@@ -88,7 +96,7 @@ function useInputSelectController({
       if (open) selectEle.blur();
 
       setOpen(!open);
-      setViewOptionList(cloneDeep(primitive.current));
+      setViewOptionList(cloneDeep(primitiveList.current));
       setReserved({
         idx: realIndex,
         key: realKey,
@@ -107,7 +115,7 @@ function useInputSelectController({
       if (!viewOptionList[idx].disabled) {
         const { index: realIndex, content, key: realKey } = viewOptionList[idx];
         setOpen(false);
-        setViewOptionList(cloneDeep(primitive.current));
+        setViewOptionList(cloneDeep(primitiveList.current));
         setReserved({
           idx: realIndex,
           key: realKey,
@@ -133,7 +141,7 @@ function useInputSelectController({
           key: realKey,
           content,
         } = optionList[selected.idx];
-        setViewOptionList(cloneDeep(primitive.current));
+        setViewOptionList(cloneDeep(primitiveList.current));
         setReserved({
           idx: realIndex,
           key: realKey,
@@ -154,31 +162,32 @@ function useInputSelectController({
         return;
       }
       const { index: realIndex, key: realKey } = viewOptionList[selectedIdx];
-      const { content } = primitive.current[realIndex];
+      const { content } = primitiveList.current[realIndex];
       setOpen(false);
       setReserved({
         idx: realIndex,
         key: realKey,
       });
-      setViewOptionList(cloneDeep(primitive.current));
+      setViewOptionList(cloneDeep(primitiveList.current));
       selectEle.value = content;
       return;
     }
 
     // 5. 초기화 이벤트
     if (type === 'init') {
-      const { optionList: initList, initSelectedIdx: initIdx } = option;
-      primitive.current = makePrimitive(initList);
-      setViewOptionList(cloneDeep(primitive.current));
+      const { optionList: list, initSelectedIdx: initIdx } = option;
+      setOpen(false);
+      primitiveList.current = list;
+      setViewOptionList(cloneDeep(primitiveList.current));
       setReserved({
         idx: initIdx,
-        key: initIdx === -1 ? null : primitive.current[initIdx].key,
+        key: initIdx === -1 ? null : primitiveList.current[initIdx].key,
       });
       setSelected({
         idx: initIdx,
-        key: initIdx === -1 ? null : primitive.current[initIdx].key,
+        key: initIdx === -1 ? null : primitiveList.current[initIdx].key,
       });
-      rebuildTrie({ dictionary: primitive.current });
+      rebuildTrie({ dictionary: primitiveList.current });
       return;
     }
 
@@ -193,7 +202,7 @@ function useInputSelectController({
         key: null,
       });
       if (value === '') {
-        setViewOptionList(cloneDeep(primitive.current));
+        setViewOptionList(cloneDeep(primitiveList.current));
         scrollTo(0);
       } else {
         setViewOptionList(filtered);
@@ -320,7 +329,7 @@ function useInputSelectController({
 
   useClickAway({
     onClickAway,
-    elementRefs: [inputRef, dropboxRef],
+    elementRefs: [inputBoxRef, dropboxRef],
   });
 
   useEffect(() => {
@@ -339,9 +348,9 @@ function useInputSelectController({
   }, [reserved.idx]);
 
   useEffect(() => {
-    if (!inputRef.current) return () => {};
+    if (!inputBoxRef.current) return () => {};
 
-    const selectEle = inputRef.current;
+    const selectEle = inputBoxRef.current;
     const onCompositionStart = () => {
       compositionRef.current = true;
     };
@@ -368,7 +377,7 @@ function useInputSelectController({
     onChange,
     optionList: viewOptionList,
     isOption: viewOptionList.length > 0,
-    inputRef,
+    inputBoxRef,
     dropboxRef,
   };
 }

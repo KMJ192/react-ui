@@ -85,7 +85,7 @@ const PrimaryTemplate = (args: any) => {
 
   const {
     open,
-    selectRef,
+    selectBoxRef,
     dropboxRef,
     selectedKey,
     reservedKey,
@@ -102,7 +102,6 @@ const PrimaryTemplate = (args: any) => {
 
   return (
     <Select
-      ref={selectRef}
       open={open}
       error={error}
       disabled={disabled}
@@ -110,7 +109,9 @@ const PrimaryTemplate = (args: any) => {
       onClick={onClickSelect}
       onKeyDown={onKeyDown}
     >
-      <Select.Box placeholder={placeholder}>{boxContent}</Select.Box>
+      <Select.Box ref={selectBoxRef} placeholder={placeholder}>
+        {boxContent}
+      </Select.Box>
       <Select.Dropbox
         ref={dropboxRef}
         direction='down'
@@ -121,7 +122,6 @@ const PrimaryTemplate = (args: any) => {
         {optionList.map(({ key, content, disabled }, idx) => {
           const selected = key === selectedKey;
           const reserved = key === reservedKey;
-
           return (
             <Select.Option
               key={key}
@@ -173,7 +173,7 @@ const InputTemplate = (args: any) => {
     onChange,
     optionList,
     isOption,
-    inputRef,
+    inputBoxRef,
     dropboxRef,
   } = useInputSelectController({
     initSelectedIdx,
@@ -191,11 +191,17 @@ const InputTemplate = (args: any) => {
       onKeyDown={onKeyDown}
     >
       <Select.InputBox
-        ref={inputRef}
+        ref={inputBoxRef}
         placeholder={placeholder}
         onChange={onChange}
       />
-      <Select.Dropbox ref={dropboxRef} direction='down'>
+      <Select.Dropbox
+        ref={dropboxRef}
+        direction='down'
+        style={{
+          maxHeight: '240px',
+        }}
+      >
         {optionList.map(({ key, content, disabled }, idx) => {
           const selected = key === selectedKey;
           const reserved = key === reservedKey;
