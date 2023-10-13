@@ -9,7 +9,14 @@ const meta: Meta<typeof Center> = {
   parameters: {
     componentSubtitle: 'Center',
   },
-  argTypes: {},
+  argTypes: {
+    display: {
+      options: ['flex', 'grid'],
+      control: {
+        type: 'radio',
+      },
+    },
+  },
 };
 
 const Template = (args: CenterProps) => {
@@ -24,6 +31,7 @@ CenterStory.args = {
   as: 'div',
   vertical: true,
   horizontal: true,
+  display: 'flex',
 };
 
 export default meta;

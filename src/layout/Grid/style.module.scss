@@ -1,3 +1,5 @@
+@import './grid.scss';
+
 .grid {
-  display: grid;
+  @include grid;
 }

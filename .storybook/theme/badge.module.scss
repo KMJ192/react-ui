@@ -1,11 +1,11 @@
 @import 'src/styles/color/color.module.scss';
 
 @mixin badge-light {
-  --upcast-color-badge-color: #{$light-primary100};
+  --upcast-color-badge-text: #{$light-primary100};
   --upcast-color-badge-bg: #{$light-primary700};
 }
 
 @mixin badge-dark {
-  --upcast-color-badge-color: #{$dark-primary900};
+  --upcast-color-badge-text: #{$dark-primary900};
   --upcast-color-badge-bg: #{$dark-primary100};
 }

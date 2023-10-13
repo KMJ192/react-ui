@@ -10,6 +10,7 @@ type BaseProps = {
   vertical?: boolean;
   horizontal?: boolean;
   children?: React.ReactNode;
+  display?: 'flex' | 'grid';
 };
 
 const DEFAULT_ELEMENT = 'div';
@@ -22,6 +23,7 @@ function Center<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     vertical = true,
     horizontal = true,
     children,
+    display = 'flex',
     className,
     ...props
   }: Props<T>,
@@ -33,7 +35,7 @@ function Center<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     <ELEMENT
       {...props}
       ref={ref}
-      className={cx('center', { vertical }, { horizontal }, className)}
+      className={cx('center', display, { vertical }, { horizontal }, className)}
     >
       {children}
     </ELEMENT>
