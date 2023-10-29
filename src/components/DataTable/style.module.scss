@@ -1,72 +1,72 @@
 @import './variable/color.module.scss';
 
 @mixin color-set-data-table-container {
-  border: 1px solid $cdk-color-data-table-border;
-  background: $cdk-color-data-table-bg;
+  border: 1px solid $cdkit-color-data-table-border;
+  background: $cdkit-color-data-table-bg;
 }
 
 @mixin color-set-data-table {
   .caption {
-    color: $cdk-color-data-table-caption-text;
+    color: $cdkit-color-data-table-caption-text;
   }
   .thead > .tr {
     .th,
     .td {
-      color: $cdk-color-data-table-header-text;
-      background: $cdk-color-data-table-header-bg;
+      color: $cdkit-color-data-table-header-text;
+      background: $cdkit-color-data-table-header-bg;
     }
   }
   .tbody {
     .tr {
-      border-top: 1px solid $cdk-color-data-table-divide-line;
-      background: $cdk-color-data-table-row-bg;
-      color: $cdk-color-data-table-row-text;
+      border-top: 1px solid $cdkit-color-data-table-divide-line;
+      background: $cdkit-color-data-table-row-bg;
+      color: $cdkit-color-data-table-row-text;
       &.disabled {
-        color: $cdk-color-data-table-row-text-disabled;
-        background: $cdk-color-data-table-row-bg-disabled;
+        color: $cdkit-color-data-table-row-text-disabled;
+        background: $cdkit-color-data-table-row-bg-disabled;
       }
       &:hover:not(.disabled) {
-        color: $cdk-color-data-table-row-text-hover;
-        background: $cdk-color-data-table-row-bg-hover;
+        color: $cdkit-color-data-table-row-text-hover;
+        background: $cdkit-color-data-table-row-bg-hover;
       }
     }
   }
   .tfoot > .tr {
-    border-top: 1px solid $cdk-color-data-table-divide-line;
+    border-top: 1px solid $cdkit-color-data-table-divide-line;
     .td,
     .th {
-      color: $cdk-color-data-table-footer-text;
-      background: $cdk-color-data-table-footer-bg;
+      color: $cdkit-color-data-table-footer-text;
+      background: $cdkit-color-data-table-footer-bg;
     }
   }
 }
 
 @mixin color-set-pagination {
   & > .index {
-    color: $cdk-color-data-table-pagination-index-text;
-    background: $cdk-color-data-table-pagination-index-bg;
+    color: $cdkit-color-data-table-pagination-index-text;
+    background: $cdkit-color-data-table-pagination-index-bg;
     &.selected {
-      color: $cdk-color-data-table-pagination-index-text-selected;
-      background: $cdk-color-data-table-pagination-index-bg-selected;
+      color: $cdkit-color-data-table-pagination-index-text-selected;
+      background: $cdkit-color-data-table-pagination-index-bg-selected;
     }
     &.over {
-      color: $cdk-color-data-table-pagination-index-text-disabled;
-      background-color: $cdk-color-data-table-pagination-index-bg-disabled;
+      color: $cdkit-color-data-table-pagination-index-text-disabled;
+      background-color: $cdkit-color-data-table-pagination-index-bg-disabled;
       cursor: not-allowed;
     }
     &:hover:not(.selected):not(.over) {
-      color: $cdk-color-data-table-pagination-index-text-hover;
-      background: $cdk-color-data-table-pagination-index-bg-hover;
+      color: $cdkit-color-data-table-pagination-index-text-hover;
+      background: $cdkit-color-data-table-pagination-index-bg-hover;
     }
   }
 
   .prev,
   .next {
-    fill: $cdk-color-data-table-pagination-arrow;
+    fill: $cdkit-color-data-table-pagination-arrow;
   }
   .prev.first-page,
   .next.last-page {
-    fill: $cdk-color-data-table-pagination-arrow-disabled;
+    fill: $cdkit-color-data-table-pagination-arrow-disabled;
   }
 }
 

@@ -2,13 +2,13 @@
 @import './variable/size.module.scss';
 
 @mixin color-set {
-  background: $cdk-color-footer-bg;
-  color: $cdk-color-footer-text;
+  background: $cdkit-color-footer-bg;
+  color: $cdkit-color-footer-text;
 }
 
 .footer {
   width: inherit;
-  min-height: $cdk-size-footer-min-height;
-  max-height: $cdk-size-footer-max-height;
+  min-height: $cdkit-size-footer-min-height;
+  max-height: $cdkit-size-footer-max-height;
   @include color-set;
 }

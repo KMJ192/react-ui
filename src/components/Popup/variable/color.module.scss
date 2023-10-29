@@ -1,8 +1,8 @@
 @import 'src/styles/color/color.module.scss';
 
-$cdk-color-popup-bg: var(--cdk-color-popup-bg, $light-primary000);
-$cdk-color-popup-text: var(--cdk-color-popup-text, $light-text);
-$cdk-color-popup-box-shadow: var(
-  --cdk-color-popup-box-shadow,
+$cdkit-color-popup-bg: var(--cdkit-color-popup-bg, $light-primary000);
+$cdkit-color-popup-text: var(--cdkit-color-popup-text, $light-text);
+$cdkit-color-popup-box-shadow: var(
+  --cdkit-color-popup-box-shadow,
   0px 3px 6px rgba(0, 0, 0, 0.2)
 );

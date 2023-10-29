@@ -3,10 +3,10 @@
 .row {
   padding: 16px 24px;
   border-radius: 6px;
-  color: var(--cdk-color-row-text, $light-text);
-  background: var(--cdk-color-row-bg, $light-primary000);
+  color: var(--cdkit-color-row-text, $light-text);
+  background: var(--cdkit-color-row-bg, $light-primary000);
   box-shadow: var(
-    --cdk-color-row-box-shadow,
+    --cdkit-color-row-box-shadow,
     0px 3px 6px rgba(64, 64, 64, 0.2)
   );
 }

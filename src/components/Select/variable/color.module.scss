@@ -2,124 +2,127 @@
 
 // ====== box ======
 // background
-$cdk-color-select-box-bg: var(--cdk-color-select-box-bg, $light-background);
-$cdk-color-select-box-bg-focus: var(
-  --cdk-color-select-box-bg-focus,
+$cdkit-color-select-box-bg: var(--cdkit-color-select-box-bg, $light-background);
+$cdkit-color-select-box-bg-focus: var(
+  --cdkit-color-select-box-bg-focus,
   $light-background
 );
-$cdk-color-select-box-bg-error: var(
-  --cdk-color-select-box-bg-error,
+$cdkit-color-select-box-bg-error: var(
+  --cdkit-color-select-box-bg-error,
   $light-background
 );
-$cdk-color-select-box-bg-disabled: var(
-  --cdk-color-select-box-bg-disabled,
+$cdkit-color-select-box-bg-disabled: var(
+  --cdkit-color-select-box-bg-disabled,
   $light-gray000
 );
-$cdk-color-select-box-bg-hover: var(
-  --cdk-color-select-box-bg-hover,
+$cdkit-color-select-box-bg-hover: var(
+  --cdkit-color-select-box-bg-hover,
   $light-background
 );
 // text
-$cdk-color-select-box-text: var(--cdk-color-select-box-text, $light-text);
-$cdk-color-select-box-text-focus: var(
-  --cdk-color-select-box-text-focus,
+$cdkit-color-select-box-text: var(--cdkit-color-select-box-text, $light-text);
+$cdkit-color-select-box-text-focus: var(
+  --cdkit-color-select-box-text-focus,
   $light-text
 );
-$cdk-color-select-box-text-error: var(
-  --cdk-color-select-box-text-error,
+$cdkit-color-select-box-text-error: var(
+  --cdkit-color-select-box-text-error,
   $light-text
 );
-$cdk-color-select-box-text-disabled: var(
-  --cdk-color-select-box-text-disabled,
+$cdkit-color-select-box-text-disabled: var(
+  --cdkit-color-select-box-text-disabled,
   $light-gray200
 );
-$cdk-color-select-box-text-hover: var(
-  --cdk-color-select-box-text-hover,
+$cdkit-color-select-box-text-hover: var(
+  --cdkit-color-select-box-text-hover,
   $light-text
 );
 // border
-$cdk-color-select-box-border: var(
-  --cdk-color-select-box-border,
+$cdkit-color-select-box-border: var(
+  --cdkit-color-select-box-border,
   $light-primary600
 );
-$cdk-color-select-box-border-focus: var(
-  --cdk-color-select-box-border-focus,
+$cdkit-color-select-box-border-focus: var(
+  --cdkit-color-select-box-border-focus,
   $light-blue500
 );
-$cdk-color-select-box-border-error: var(
-  --cdk-color-select-box-border-error,
+$cdkit-color-select-box-border-error: var(
+  --cdkit-color-select-box-border-error,
   $light-danger
 );
-$cdk-color-select-box-border-disabled: var(
-  --cdk-color-select-box-border-disabled,
+$cdkit-color-select-box-border-disabled: var(
+  --cdkit-color-select-box-border-disabled,
   $light-gray100
 );
-$cdk-color-select-box-border-hover: var(
-  --cdk-color-select-box-border-hover,
+$cdkit-color-select-box-border-hover: var(
+  --cdkit-color-select-box-border-hover,
   $light-blue300
 );
 
 // placeholder
-$cdk-color-select-box-placeholder: var(
-  --cdk-color-select-box-placeholder,
+$cdkit-color-select-box-placeholder: var(
+  --cdkit-color-select-box-placeholder,
   $light-gray100
 );
-$cdk-color-select-box-placeholder-disabled: var(
-  --cdk-color-select-box-placeholder-disabled,
+$cdkit-color-select-box-placeholder-disabled: var(
+  --cdkit-color-select-box-placeholder-disabled,
   $light-gray100
 );
 // ====== box ======
 
 // ====== dropbox ======
-$cdk-color-select-dropbox-bg: var(
-  --cdk-color-select-dropbox-bg,
+$cdkit-color-select-dropbox-bg: var(
+  --cdkit-color-select-dropbox-bg,
   $light-background
 );
-$cdk-color-select-dropbox-box-shadow: var(
-  --cdk-color-select-dropbox-box-shadow,
+$cdkit-color-select-dropbox-box-shadow: var(
+  --cdkit-color-select-dropbox-box-shadow,
   0px 3px 6px rgba(0, 0, 0, 0.2)
 );
 // ====== dropbox ======
 
 // ====== option ======
 // background
-$cdk-color-select-option-bg: var(
-  --cdk-color-select-option-bg,
+$cdkit-color-select-option-bg: var(
+  --cdkit-color-select-option-bg,
   $light-background
 );
-$cdk-color-select-option-bg-selected: var(
-  --cdk-color-select-option-bg-selected,
+$cdkit-color-select-option-bg-selected: var(
+  --cdkit-color-select-option-bg-selected,
   $light-primary100
 );
-$cdk-color-select-option-bg-reserved: var(
-  --cdk-color-select-option-bg-reserved,
+$cdkit-color-select-option-bg-reserved: var(
+  --cdkit-color-select-option-bg-reserved,
   $light-primary200
 );
-$cdk-color-select-option-bg-disabled: var(
-  --cdk-color-select-option-bg-disabled,
+$cdkit-color-select-option-bg-disabled: var(
+  --cdkit-color-select-option-bg-disabled,
   $light-gray000
 );
-$cdk-color-select-option-bg-hover: var(
-  --cdk-color-select-option-bg-hover,
+$cdkit-color-select-option-bg-hover: var(
+  --cdkit-color-select-option-bg-hover,
   $light-primary200
 );
 
 // text
-$cdk-color-select-option-text: var(--cdk-color-select-option-text, $light-text);
-$cdk-color-select-option-text-selected: var(
-  --cdk-color-select-option-text-selected,
+$cdkit-color-select-option-text: var(
+  --cdkit-color-select-option-text,
   $light-text
 );
-$cdk-color-select-option-text-reserved: var(
-  --cdk-color-select-option-text-reserved,
+$cdkit-color-select-option-text-selected: var(
+  --cdkit-color-select-option-text-selected,
   $light-text
 );
-$cdk-color-select-option-text-disabled: var(
-  --cdk-color-select-option-text-disabled,
+$cdkit-color-select-option-text-reserved: var(
+  --cdkit-color-select-option-text-reserved,
+  $light-text
+);
+$cdkit-color-select-option-text-disabled: var(
+  --cdkit-color-select-option-text-disabled,
   $light-gray200
 );
-$cdk-color-select-option-text-hover: var(
-  --cdk-color-select-option-text-hover,
+$cdkit-color-select-option-text-hover: var(
+  --cdkit-color-select-option-text-hover,
   $light-text
 );
 // ====== option ======

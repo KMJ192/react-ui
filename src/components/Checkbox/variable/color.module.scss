@@ -1,61 +1,64 @@
 @import 'src/styles/color/color.module.scss';
 
 // border
-$cdk-color-checkbox-border: var(--cdk-color-checkbox-border, $light-primary700);
-$cdk-color-checkbox-border-hover: var(
-  --cdk-color-checkbox-border-hover,
+$cdkit-color-checkbox-border: var(
+  --cdkit-color-checkbox-border,
+  $light-primary700
+);
+$cdkit-color-checkbox-border-hover: var(
+  --cdkit-color-checkbox-border-hover,
   $light-blue300
 );
-$cdk-color-checkbox-border-disabled: var(
-  --cdk-color-checkbox-border-disabled,
+$cdkit-color-checkbox-border-disabled: var(
+  --cdkit-color-checkbox-border-disabled,
   $light-gray200
 );
-$cdk-color-checkbox-border-checked: var(
-  --cdk-color-checkbox-border-checked,
+$cdkit-color-checkbox-border-checked: var(
+  --cdkit-color-checkbox-border-checked,
   $light-blue400
 );
-$cdk-color-checkbox-border-checked-hover: var(
-  --cdk-color-checkbox-border-checked-hover,
+$cdkit-color-checkbox-border-checked-hover: var(
+  --cdkit-color-checkbox-border-checked-hover,
   $light-blue500
 );
-$cdk-color-checkbox-border-checked-disabled: var(
-  --cdk-color-checkbox-border-checked-disabled,
+$cdkit-color-checkbox-border-checked-disabled: var(
+  --cdkit-color-checkbox-border-checked-disabled,
   $light-gray300
 );
 
 // background
-$cdk-color-checkbox-bg: var(--cdk-color-checkbox-bg, $light-blue400);
-$cdk-color-checkbox-bg-hover: var(
-  --cdk-color-checkbox-bg-hover,
+$cdkit-color-checkbox-bg: var(--cdkit-color-checkbox-bg, $light-blue400);
+$cdkit-color-checkbox-bg-hover: var(
+  --cdkit-color-checkbox-bg-hover,
   $light-blue500
 );
-$cdk-color-checkbox-bg-disabled: var(
-  --cdk-color-checkbox-bg-disabled,
+$cdkit-color-checkbox-bg-disabled: var(
+  --cdkit-color-checkbox-bg-disabled,
   $light-gray100
 );
-$cdk-color-checkbox-bg-checked-disabled: var(
-  --cdk-color-checkbox-bg-checked-disabled,
+$cdkit-color-checkbox-bg-checked-disabled: var(
+  --cdkit-color-checkbox-bg-checked-disabled,
   $light-gray300
 );
 
 // text
-$cdk-color-checkbox-text: var(--cdk-color-checkbox-text, $light-text);
-$cdk-color-checkbox-text-hover: var(
-  --cdk-color-checkbox-text-hover,
+$cdkit-color-checkbox-text: var(--cdkit-color-checkbox-text, $light-text);
+$cdkit-color-checkbox-text-hover: var(
+  --cdkit-color-checkbox-text-hover,
   $light-text
 );
-$cdk-color-checkbox-text-disabled: var(
-  --cdk-color-checkbox-text-disabled,
+$cdkit-color-checkbox-text-disabled: var(
+  --cdkit-color-checkbox-text-disabled,
   $light-gray300
 );
 
 // mark
-$cdk-color-checkbox-mark: var(--cdk-color-checkbox-mark, $light-primary000);
-$cdk-color-checkbox-mark-hover: var(
-  --cdk-color-checkbox-mark-hover,
+$cdkit-color-checkbox-mark: var(--cdkit-color-checkbox-mark, $light-primary000);
+$cdkit-color-checkbox-mark-hover: var(
+  --cdkit-color-checkbox-mark-hover,
   $light-primary000
 );
-$cdk-color-checkbox-mark-disabled: var(
-  --cdk-color-checkbox-mark-disabled,
+$cdkit-color-checkbox-mark-disabled: var(
+  --cdkit-color-checkbox-mark-disabled,
   $light-gray000
 );

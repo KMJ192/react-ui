@@ -66,20 +66,20 @@
 }
 
 @mixin color-set {
-  background: $cdk-color-tab-bg;
+  background: $cdkit-color-tab-bg;
   .option {
-    color: $cdk-color-tab-text;
+    color: $cdkit-color-tab-text;
   }
   .option:hover:not(.disabled) {
-    color: $cdk-color-tab-text-hover;
-    background: $cdk-color-tab-bg-hover;
+    color: $cdkit-color-tab-text-hover;
+    background: $cdkit-color-tab-bg-hover;
   }
   .option.disabled {
-    color: $cdk-color-tab-text-disabled;
-    background: $cdk-color-tab-bg-disabled;
+    color: $cdkit-color-tab-text-disabled;
+    background: $cdkit-color-tab-bg-disabled;
   }
   .tab-line {
-    background: $cdk-color-tab-select-line;
+    background: $cdkit-color-tab-select-line;
   }
 }
 

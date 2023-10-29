@@ -3,70 +3,70 @@
 
 @mixin color-set {
   .mark {
-    border-color: $cdk-color-radio-border;
-    background: $cdk-color-radio-bg;
+    border-color: $cdkit-color-radio-border;
+    background: $cdkit-color-radio-bg;
   }
 
   .mark.checked {
-    border-color: $cdk-color-radio-border-checked;
-    background: $cdk-color-radio-bg-checked;
+    border-color: $cdkit-color-radio-border-checked;
+    background: $cdkit-color-radio-bg-checked;
   }
 
   .mark.disabled {
-    border-color: $cdk-color-radio-border-disabled;
-    background: $cdk-color-radio-bg-disabled;
+    border-color: $cdkit-color-radio-border-disabled;
+    background: $cdkit-color-radio-bg-disabled;
   }
 
   .mark.checked.disabled {
-    border-color: $cdk-color-radio-border-checked-disabled;
-    background: $cdk-color-radio-bg-checked-disabled;
+    border-color: $cdkit-color-radio-border-checked-disabled;
+    background: $cdkit-color-radio-bg-checked-disabled;
   }
 
   .mark > .pupil {
-    background: $cdk-color-radio-pupil;
+    background: $cdkit-color-radio-pupil;
   }
 
   .mark > .pupil.disabled {
-    background: $cdk-color-radio-pupil-disabled;
+    background: $cdkit-color-radio-pupil-disabled;
   }
 
   .children {
-    color: $cdk-color-radio-text;
+    color: $cdkit-color-radio-text;
   }
 
   .children.disabled {
-    color: $cdk-color-radio-text-disabled;
+    color: $cdkit-color-radio-text-disabled;
   }
 
   &:hover:not(.disabled) {
     .mark {
-      background: $cdk-color-radio-bg-checked-hover;
-      border-color: $cdk-color-radio-border-checked-hover;
+      background: $cdkit-color-radio-bg-checked-hover;
+      border-color: $cdkit-color-radio-border-checked-hover;
     }
     .mark > .pupil {
-      background: $cdk-color-radio-pupil-hover;
-      border-color: $cdk-color-radio-pupil-hover;
+      background: $cdkit-color-radio-pupil-hover;
+      border-color: $cdkit-color-radio-pupil-hover;
     }
     .children {
-      color: $cdk-color-radio-text-hover;
+      color: $cdkit-color-radio-text-hover;
     }
   }
 
   &:hover:not(.disabled):not(.checked) {
     .mark {
-      background: $cdk-color-radio-bg-hover;
-      border-color: $cdk-color-radio-border-hover;
+      background: $cdkit-color-radio-bg-hover;
+      border-color: $cdkit-color-radio-border-hover;
     }
     .children {
-      color: $cdk-color-radio-text-hover;
+      color: $cdkit-color-radio-text-hover;
     }
   }
 }
 
 @mixin pupil {
   .pupil {
-    width: $cdk-size-radio-pupil;
-    height: $cdk-size-radio-pupil;
+    width: $cdkit-size-radio-pupil;
+    height: $cdkit-size-radio-pupil;
     border-radius: 50%;
     place-content: center;
     transform: scale(0);
@@ -78,8 +78,8 @@
 }
 
 @mixin mark {
-  width: $cdk-size-radio;
-  height: $cdk-size-radio;
+  width: $cdkit-size-radio;
+  height: $cdkit-size-radio;
   border: 2px solid;
   border-radius: 50%;
   transition: border-color 0.1s ease;

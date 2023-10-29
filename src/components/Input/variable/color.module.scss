@@ -1,46 +1,55 @@
 @import 'src/styles/color/color.module.scss';
 
-$cdk-color-input-border: var(--cdk-color-input-border, $light-primary600);
-$cdk-color-input-border-focus: var(
-  --cdk-color-input-border-focus,
+$cdkit-color-input-border: var(--cdkit-color-input-border, $light-primary600);
+$cdkit-color-input-border-focus: var(
+  --cdkit-color-input-border-focus,
   $light-blue500
 );
-$cdk-color-input-border-error: var(
-  --cdk-color-input-border-error,
+$cdkit-color-input-border-error: var(
+  --cdkit-color-input-border-error,
   $light-danger
 );
-$cdk-color-input-border-disabled: var(
-  --cdk-color-input-border-disabled,
+$cdkit-color-input-border-disabled: var(
+  --cdkit-color-input-border-disabled,
   $light-gray100
 );
-$cdk-color-input-border-hover: var(
-  --cdk-color-input-border-hover,
+$cdkit-color-input-border-hover: var(
+  --cdkit-color-input-border-hover,
   $light-blue300
 );
 
-$cdk-color-input-bg: var(--cdk-color-input-bg, $light-background);
-$cdk-color-input-bg-focus: var(--cdk-color-input-bg-focus, $light-background);
-$cdk-color-input-bg-error: var(--cdk-color-input-bg-error, $light-background);
-$cdk-color-input-bg-disabled: var(
-  --cdk-color-input-bg-disabled,
+$cdkit-color-input-bg: var(--cdkit-color-input-bg, $light-background);
+$cdkit-color-input-bg-focus: var(
+  --cdkit-color-input-bg-focus,
+  $light-background
+);
+$cdkit-color-input-bg-error: var(
+  --cdkit-color-input-bg-error,
+  $light-background
+);
+$cdkit-color-input-bg-disabled: var(
+  --cdkit-color-input-bg-disabled,
   $light-gray000
 );
-$cdk-color-input-bg-hover: var(--cdk-color-input-bg-hover, $light-background);
+$cdkit-color-input-bg-hover: var(
+  --cdkit-color-input-bg-hover,
+  $light-background
+);
 
-$cdk-color-input-text: var(--cdk-color-input-text, $light-text);
-$cdk-color-input-text-focus: var(--cdk-color-input-text-focus, $light-text);
-$cdk-color-input-text-error: var(--cdk-color-input-text-error, $light-text);
-$cdk-color-input-text-disabled: var(
-  --cdk-color-input-text-disabled,
+$cdkit-color-input-text: var(--cdkit-color-input-text, $light-text);
+$cdkit-color-input-text-focus: var(--cdkit-color-input-text-focus, $light-text);
+$cdkit-color-input-text-error: var(--cdkit-color-input-text-error, $light-text);
+$cdkit-color-input-text-disabled: var(
+  --cdkit-color-input-text-disabled,
   $light-gray200
 );
-$cdk-color-input-text-hover: var(--cdk-color-input-text-hover, $light-text);
+$cdkit-color-input-text-hover: var(--cdkit-color-input-text-hover, $light-text);
 
-$cdk-color-input-placeholder: var(
-  --cdk-color-input-placeholder,
+$cdkit-color-input-placeholder: var(
+  --cdkit-color-input-placeholder,
   $light-gray100
 );
-$cdk-color-input-placeholder-disabled: var(
-  --cdk-color-input-placeholder-disabled,
+$cdkit-color-input-placeholder-disabled: var(
+  --cdkit-color-input-placeholder-disabled,
   $light-gray100
 );

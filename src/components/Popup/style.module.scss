@@ -11,9 +11,9 @@
 }
 
 @mixin color-set {
-  box-shadow: $cdk-color-popup-box-shadow;
-  background-color: $cdk-color-popup-bg;
-  color: $cdk-color-popup-text;
+  box-shadow: $cdkit-color-popup-box-shadow;
+  background-color: $cdkit-color-popup-bg;
+  color: $cdkit-color-popup-text;
 }
 
 @mixin animation {

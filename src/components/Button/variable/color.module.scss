@@ -1,35 +1,44 @@
 @import 'src/styles/color/color.module.scss';
 
-$cdk-color-button-bg: var(--cdk-color-button-bg, $light-primary000);
-$cdk-color-button-bg-hover: var(--cdk-color-button-bg-hover, $light-primary100);
-$cdk-color-button-bg-disabled: var(
-  --cdk-color-button-bg-disabled,
+$cdkit-color-button-bg: var(--cdkit-color-button-bg, $light-primary000);
+$cdkit-color-button-bg-hover: var(
+  --cdkit-color-button-bg-hover,
+  $light-primary100
+);
+$cdkit-color-button-bg-disabled: var(
+  --cdkit-color-button-bg-disabled,
   $light-gray000
 );
-$cdk-color-button-bg-active: var(
-  --cdk-color-button-bg-active,
+$cdkit-color-button-bg-active: var(
+  --cdkit-color-button-bg-active,
   $light-primary300
 );
 
-$cdk-color-button-bg-ripple: var(
-  --cdk-color-button-bg-ripple,
+$cdkit-color-button-bg-ripple: var(
+  --cdkit-color-button-bg-ripple,
   $light-primary200
 );
 
-$cdk-color-button-text: var(--cdk-color-button-text, $light-text);
-$cdk-color-button-text-hover: var(--cdk-color-button-text-hover, $light-text);
-$cdk-color-button-text-disabled: var(
-  --cdk-color-button-text-disabled,
+$cdkit-color-button-text: var(--cdkit-color-button-text, $light-text);
+$cdkit-color-button-text-hover: var(
+  --cdkit-color-button-text-hover,
+  $light-text
+);
+$cdkit-color-button-text-disabled: var(
+  --cdkit-color-button-text-disabled,
   $light-gray200
 );
-$cdk-color-button-text-active: var(--cdk-color-button-text-active, $black);
+$cdkit-color-button-text-active: var(--cdkit-color-button-text-active, $black);
 
-$cdk-color-button-box-shadow: var(
-  --cdk-color-button-box-shadow,
+$cdkit-color-button-box-shadow: var(
+  --cdkit-color-button-box-shadow,
   0px 2px 4px rgba(0, 0, 0, 0.1)
 );
-$cdk-color-button-outline: var(--cdk-color-button-outline, $light-primary300);
-$cdk-color-button-outline-disabled: var(
-  --cdk-color-button-outline-disabled,
+$cdkit-color-button-outline: var(
+  --cdkit-color-button-outline,
+  $light-primary300
+);
+$cdkit-color-button-outline-disabled: var(
+  --cdkit-color-button-outline-disabled,
   $light-gray300
 );

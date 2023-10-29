@@ -1,61 +1,67 @@
 @import 'src/styles/color/color.module.scss';
 
-$cdk-color-textarea-border: var(--cdk-color-textarea-border, $light-primary600);
-$cdk-color-textarea-border-focus: var(
-  --cdk-color-textarea-border-focus,
+$cdkit-color-textarea-border: var(
+  --cdkit-color-textarea-border,
+  $light-primary600
+);
+$cdkit-color-textarea-border-focus: var(
+  --cdkit-color-textarea-border-focus,
   $light-blue500
 );
-$cdk-color-textarea-border-error: var(
-  --cdk-color-textarea-border-error,
+$cdkit-color-textarea-border-error: var(
+  --cdkit-color-textarea-border-error,
   $light-danger
 );
-$cdk-color-textarea-border-disabled: var(
-  --cdk-color-textarea-border-disabled,
+$cdkit-color-textarea-border-disabled: var(
+  --cdkit-color-textarea-border-disabled,
   $light-gray100
 );
-$cdk-color-textarea-border-hover: var(
-  --cdk-color-textarea-border-hover,
+$cdkit-color-textarea-border-hover: var(
+  --cdkit-color-textarea-border-hover,
   $light-blue300
 );
 
-$cdk-color-textarea-bg: var(--cdk-color-textarea-bg, $light-background);
-$cdk-color-textarea-bg-focus: var(
-  --cdk-color-textarea-bg-focus,
+$cdkit-color-textarea-bg: var(--cdkit-color-textarea-bg, $light-background);
+$cdkit-color-textarea-bg-focus: var(
+  --cdkit-color-textarea-bg-focus,
   $light-background
 );
-$cdk-color-textarea-bg-error: var(
-  --cdk-color-textarea-bg-error,
+$cdkit-color-textarea-bg-error: var(
+  --cdkit-color-textarea-bg-error,
   $light-background
 );
-$cdk-color-textarea-bg-disabled: var(
-  --cdk-color-textarea-bg-disabled,
+$cdkit-color-textarea-bg-disabled: var(
+  --cdkit-color-textarea-bg-disabled,
   $light-gray000
 );
-$cdk-color-textarea-bg-hover: var(
-  --cdk-color-textarea-bg-hover,
+$cdkit-color-textarea-bg-hover: var(
+  --cdkit-color-textarea-bg-hover,
   $light-background
 );
 
-$cdk-color-textarea-text: var(--cdk-color-textarea-text, $light-text);
-$cdk-color-textarea-text-focus: var(
-  --cdk-color-textarea-text-focus,
+$cdkit-color-textarea-text: var(--cdkit-color-textarea-text, $light-text);
+$cdkit-color-textarea-text-focus: var(
+  --cdkit-color-textarea-text-focus,
   $light-text
 );
-$cdk-color-textarea-text-error: var(--cdk-color-input-text-error, $light-text);
-$cdk-color-textarea-text-disabled: var(
-  --cdk-color-textarea-text-disabled,
+$cdkit-color-textarea-text-error: var(
+  --cdkit-color-input-text-error,
+  $light-text
+);
+$cdkit-color-textarea-text-disabled: var(
+  --cdkit-color-textarea-text-disabled,
   $light-gray200
 );
-$cdk-color-textarea-text-hover: var(
-  --cdk-color-textarea-text-hover,
+$cdkit-color-textarea-text-hover: var(
+  --cdkit-color-textarea-text-hover,
   $light-text
 );
 
-$cdk-color-textarea-placeholder: var(
-  --cdk-color-textarea-placeholder,
+$cdkit-color-textarea-placeholder: var(
+  --cdkit-color-textarea-placeholder,
   $light-gray100
 );
-$cdk-color-textarea-placeholder-disabled: var(
-  --cdk-color-textarea-placeholder-disabled,
+$cdkit-color-textarea-placeholder-disabled: var(
+  --cdkit-color-textarea-placeholder-disabled,
   $light-gray100
 );

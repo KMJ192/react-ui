@@ -1,24 +1,24 @@
-$cdk-layout-float-top: var(--cdk-layout-float-top, 0px);
-$cdk-layout-float-bottom: var(--cdk-layout-float-bottom, 0px);
-$cdk-layout-float-left: var(--cdk-layout-float-left, 0px);
-$cdk-layout-float-right: var(--cdk-layout-float-right, 0px);
+$cdkit-layout-float-top: var(--cdkit-layout-float-top, 0px);
+$cdkit-layout-float-bottom: var(--cdkit-layout-float-bottom, 0px);
+$cdkit-layout-float-left: var(--cdkit-layout-float-left, 0px);
+$cdkit-layout-float-right: var(--cdkit-layout-float-right, 0px);
 
 .float {
   position: fixed;
   &.lt {
-    left: $cdk-layout-float-left;
-    top: $cdk-layout-float-top;
+    left: $cdkit-layout-float-left;
+    top: $cdkit-layout-float-top;
   }
   &.lb {
-    left: $cdk-layout-float-left;
-    bottom: $cdk-layout-float-bottom;
+    left: $cdkit-layout-float-left;
+    bottom: $cdkit-layout-float-bottom;
   }
   &.rt {
-    right: $cdk-layout-float-right;
-    top: $cdk-layout-float-top;
+    right: $cdkit-layout-float-right;
+    top: $cdkit-layout-float-top;
   }
   &.rb {
-    right: $cdk-layout-float-right;
-    bottom: $cdk-layout-float-bottom;
+    right: $cdkit-layout-float-right;
+    bottom: $cdkit-layout-float-bottom;
   }
 }

@@ -3,56 +3,56 @@
 
 @mixin color-set {
   .switch-body {
-    background: $cdk-color-switch-bg;
+    background: $cdkit-color-switch-bg;
   }
   .switch-body.checked {
-    background: $cdk-color-switch-bg-checked;
+    background: $cdkit-color-switch-bg-checked;
   }
   .switch-body.checked.disabled {
-    background: $cdk-color-switch-bg-checked-disabled;
+    background: $cdkit-color-switch-bg-checked-disabled;
   }
   .switch-body.disabled {
-    background: $cdk-color-switch-bg-disabled;
+    background: $cdkit-color-switch-bg-disabled;
   }
 
   .switch-bullet {
-    background: $cdk-color-switch-bullet;
-    box-shadow: $cdk-color-switch-bullet-box-shadow;
+    background: $cdkit-color-switch-bullet;
+    box-shadow: $cdkit-color-switch-bullet-box-shadow;
   }
   .switch-bullet.checked {
-    background: $cdk-color-switch-bullet-checked;
+    background: $cdkit-color-switch-bullet-checked;
   }
   .switch-bullet.checked.disabled {
-    background: $cdk-color-switch-bullet-checked-disabled;
+    background: $cdkit-color-switch-bullet-checked-disabled;
     box-shadow: none;
   }
   .switch-bullet.disabled {
-    background: $cdk-color-switch-bullet-disabled;
+    background: $cdkit-color-switch-bullet-disabled;
     box-shadow: none;
   }
 
   .children {
-    color: $cdk-color-switch-text;
+    color: $cdkit-color-switch-text;
   }
   .children.disabled {
-    color: $cdk-color-switch-text-disabled;
+    color: $cdkit-color-switch-text-disabled;
   }
 
   &:hover:not(.disabled) {
     .switch-body {
-      background: $cdk-color-switch-bg-hover;
+      background: $cdkit-color-switch-bg-hover;
     }
     .switch-body.checked {
-      background: $cdk-color-switch-bg-checked-hover;
+      background: $cdkit-color-switch-bg-checked-hover;
     }
     .switch-bullet {
-      background: $cdk-color-switch-bullet-hover;
+      background: $cdkit-color-switch-bullet-hover;
     }
     .switch-bullet.checked {
-      background: $cdk-color-switch-bullet-checked-hover;
+      background: $cdkit-color-switch-bullet-checked-hover;
     }
     .children {
-      color: $cdk-color-switch-text-hover;
+      color: $cdkit-color-switch-text-hover;
     }
   }
 }
@@ -90,21 +90,21 @@
 
 @mixin size {
   .switch-body {
-    width: $cdk-size-switch-width;
-    height: $cdk-size-switch-height;
+    width: $cdkit-size-switch-width;
+    height: $cdkit-size-switch-height;
   }
   .switch-bullet {
-    width: $cdk-size-switch-bullet;
-    height: $cdk-size-switch-bullet;
+    width: $cdkit-size-switch-bullet;
+    height: $cdkit-size-switch-bullet;
     transform: translateX(4px);
     &.checked {
       transform: translateX(
-        #{calc($cdk-size-switch-width - $cdk-size-switch-bullet - 4px)}
+        #{calc($cdkit-size-switch-width - $cdkit-size-switch-bullet - 4px)}
       );
     }
   }
   .children {
-    font-size: calc($cdk-size-switch-height - 8px);
+    font-size: calc($cdkit-size-switch-height - 8px);
   }
 }
 

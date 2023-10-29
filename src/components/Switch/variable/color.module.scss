@@ -1,53 +1,59 @@
 @import 'src/styles/color/color.module.scss';
 
-$cdk-color-switch-bg: var(--cdk-color-switch-bg, $light-primary300);
-$cdk-color-switch-bg-checked: var(
-  --cdk-color-switch-bg-checked,
+$cdkit-color-switch-bg: var(--cdkit-color-switch-bg, $light-primary300);
+$cdkit-color-switch-bg-checked: var(
+  --cdkit-color-switch-bg-checked,
   $light-blue300
 );
-$cdk-color-switch-bg-disabled: var(
-  --cdk-color-switch-bg-disabled,
+$cdkit-color-switch-bg-disabled: var(
+  --cdkit-color-switch-bg-disabled,
   $light-gray000
 );
-$cdk-color-switch-bg-checked-disabled: var(
-  --cdk-color-switch-bg-checked-disabled,
+$cdkit-color-switch-bg-checked-disabled: var(
+  --cdkit-color-switch-bg-checked-disabled,
   $light-gray200
 );
-$cdk-color-switch-bg-hover: var(--cdk-color-switch-bg-hover, $light-blue200);
-$cdk-color-switch-bg-checked-hover: var(
-  --cdk-color-switch-bg-checked-hover,
+$cdkit-color-switch-bg-hover: var(
+  --cdkit-color-switch-bg-hover,
+  $light-blue200
+);
+$cdkit-color-switch-bg-checked-hover: var(
+  --cdkit-color-switch-bg-checked-hover,
   $light-blue500
 );
 
-$cdk-color-switch-bullet: var(--cdk-color-switch-bullet, $light-primary000);
-$cdk-color-switch-bullet-disabled: var(
-  --cdk-color-switch-bullet-disabled,
+$cdkit-color-switch-bullet: var(--cdkit-color-switch-bullet, $light-primary000);
+$cdkit-color-switch-bullet-disabled: var(
+  --cdkit-color-switch-bullet-disabled,
   $light-gray200
 );
-$cdk-color-switch-bullet-checked: var(
-  --cdk-color-switch-bullet-checked,
+$cdkit-color-switch-bullet-checked: var(
+  --cdkit-color-switch-bullet-checked,
   $light-primary000
 );
-$cdk-color-switch-bullet-checked-disabled: var(
-  --cdk-color-switch-bullet-checked-disabled,
+$cdkit-color-switch-bullet-checked-disabled: var(
+  --cdkit-color-switch-bullet-checked-disabled,
   $light-gray400
 );
-$cdk-color-switch-bullet-hover: var(
-  --cdk-color-switch-bullet-hover,
+$cdkit-color-switch-bullet-hover: var(
+  --cdkit-color-switch-bullet-hover,
   $light-primary000
 );
-$cdk-color-switch-bullet-checked-hover: var(
-  --cdk-color-switch-bullet-checked-hover,
+$cdkit-color-switch-bullet-checked-hover: var(
+  --cdkit-color-switch-bullet-checked-hover,
   $light-primary000
 );
-$cdk-color-switch-bullet-box-shadow: var(
-  --cdk-color-switch-bullet-box-shadow,
+$cdkit-color-switch-bullet-box-shadow: var(
+  --cdkit-color-switch-bullet-box-shadow,
   0px 3px 6px rgba(63, 63, 63, 0.3)
 );
 
-$cdk-color-switch-text: var(--cdk-color-switch-text, $light-text);
-$cdk-color-switch-text-hover: var(--cdk-color-switch-text-hover, $light-text);
-$cdk-color-switch-text-disabled: var(
-  --cdk-color-switch-text-disabled,
+$cdkit-color-switch-text: var(--cdkit-color-switch-text, $light-text);
+$cdkit-color-switch-text-hover: var(
+  --cdkit-color-switch-text-hover,
+  $light-text
+);
+$cdkit-color-switch-text-disabled: var(
+  --cdkit-color-switch-text-disabled,
   $light-gray200
 );

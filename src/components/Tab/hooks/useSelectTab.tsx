@@ -62,7 +62,7 @@ function useSelectTab({ selected, options, direction }: Props) {
         tabLine.style.width = ``;
       }
     }
-  }, [options, selected, direction]);
+  }, [options.length, selected, direction]);
 
   return {
     optionsRef,

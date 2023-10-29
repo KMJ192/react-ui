@@ -29,45 +29,45 @@
 }
 
 @mixin color-set {
-  background: $cdk-color-button-bg;
-  color: $cdk-color-button-text;
-  box-shadow: $cdk-color-button-box-shadow;
+  background: $cdkit-color-button-bg;
+  color: $cdkit-color-button-text;
+  box-shadow: $cdkit-color-button-box-shadow;
   &:disabled {
-    background: $cdk-color-button-bg-disabled;
-    color: $cdk-color-button-text-disabled;
+    background: $cdkit-color-button-bg-disabled;
+    color: $cdkit-color-button-text-disabled;
     &:active:not(.outlined):not(.clear),
     &:hover:not(.outlined):not(.clear) {
-      background: $cdk-color-button-bg-disabled;
-      color: $cdk-color-button-text-disabled;
+      background: $cdkit-color-button-bg-disabled;
+      color: $cdkit-color-button-text-disabled;
     }
   }
   &:active:not(.disabled):not(.loading) {
-    background: $cdk-color-button-bg-active;
-    color: $cdk-color-button-text-active;
+    background: $cdkit-color-button-bg-active;
+    color: $cdkit-color-button-text-active;
   }
   &:hover:not(.disabled):not(.loading) {
-    background: $cdk-color-button-bg-hover;
-    color: $cdk-color-button-text-hover;
+    background: $cdkit-color-button-bg-hover;
+    color: $cdkit-color-button-text-hover;
   }
   &.outlined {
     background: none;
     box-shadow: none;
-    outline: 1px solid $cdk-color-button-outline;
+    outline: 1px solid $cdkit-color-button-outline;
     &:hover:not(.disabled):not(.loading) {
-      background: $cdk-color-button-bg-hover;
-      color: $cdk-color-button-text-hover;
+      background: $cdkit-color-button-bg-hover;
+      color: $cdkit-color-button-text-hover;
     }
     &.disabled,
     &.loading {
-      outline: 1px solid $cdk-color-button-outline-disabled;
+      outline: 1px solid $cdkit-color-button-outline-disabled;
     }
   }
   &.clear {
     background: none;
     box-shadow: none;
     &:hover:not(.disabled):not(.loading) {
-      background: $cdk-color-button-bg-hover;
-      color: $cdk-color-button-text-hover;
+      background: $cdkit-color-button-bg-hover;
+      color: $cdkit-color-button-text-hover;
     }
   }
 }
@@ -81,7 +81,7 @@
     left: 50%;
     width: 4px;
     height: 4px;
-    background: $cdk-color-button-bg-ripple;
+    background: $cdkit-color-button-bg-ripple;
     opacity: 0;
     border-radius: 100%;
     transform: scale(1, 1) translate(-50%);

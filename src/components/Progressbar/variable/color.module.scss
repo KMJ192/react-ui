@@ -1,9 +1,9 @@
 @import 'src/styles/color/color.module.scss';
 
-$cdk-color-progress-body: var(--cdk-color-progress-body, $light-primary300);
-$cdk-color-progress-bar: var(--cdk-color-progress-bar, $light-blue600);
-$cdk-color-progress-exit: var(--cdk-color-progress-exit, $light-gray300);
-$cdk-color-progress-pending: var(
-  --cdk-color-progress-pending,
+$cdkit-color-progress-body: var(--cdkit-color-progress-body, $light-primary300);
+$cdkit-color-progress-bar: var(--cdkit-color-progress-bar, $light-blue600);
+$cdkit-color-progress-exit: var(--cdkit-color-progress-exit, $light-gray300);
+$cdkit-color-progress-pending: var(
+  --cdkit-color-progress-pending,
   rgba(255, 255, 255, 0.7)
 );

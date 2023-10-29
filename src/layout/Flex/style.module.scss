@@ -2,4 +2,16 @@
 
 .flex {
   @include flex;
+  &.column {
+    @include column;
+  }
+  &.column-reverse {
+    @include column-reverse;
+  }
+  &.row {
+    @include row;
+  }
+  &.row-reverse {
+    @include row-reverse;
+  }
 }
