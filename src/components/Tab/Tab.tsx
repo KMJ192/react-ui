@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Flex from '@src/layout/Flex/Flex';
+import Center from '@src/layout/Center/Center';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
@@ -54,10 +55,14 @@ function Tab<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
           selected === options.length - 1 && 'last',
         )}
       />
-      <Flex className={cx('options', direction)} ref={optionsRef}>
+      <Flex
+        flexDirection={direction === 'vertical' ? 'column' : 'row'}
+        className={cx('options')}
+        ref={optionsRef}
+      >
         {options.map(({ key, contents, disabled }, idx: number) => {
           return (
-            <span
+            <Center
               className={cx('option', disabled && 'disabled')}
               key={key}
               onClick={(e: React.MouseEvent) => {
@@ -68,7 +73,7 @@ function Tab<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
               }}
             >
               {contents}
-            </span>
+            </Center>
           );
         })}
       </Flex>

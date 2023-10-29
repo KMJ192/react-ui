@@ -9,6 +9,7 @@ import Float from '@src/layout/Float/Float';
 import Button from '@src/components/Button/Button';
 
 import './index.css';
+import './media.scss';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';

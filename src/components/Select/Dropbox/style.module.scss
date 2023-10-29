@@ -1,8 +1,8 @@
 @import '../variable/color.module.scss';
 
 @mixin color-set {
-  background: $cdk-color-select-dropbox-bg;
-  box-shadow: $cdk-color-select-dropbox-box-shadow;
+  background: $cdkit-color-select-dropbox-bg;
+  box-shadow: $cdkit-color-select-dropbox-box-shadow;
 }
 
 @mixin select-dropbox {

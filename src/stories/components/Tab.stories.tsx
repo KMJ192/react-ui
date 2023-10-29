@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import type { Meta, StoryFn } from '@storybook/react';
 
-// import Tab, { type TabProps } from '@src/components/Tab/Tab';
-// import type { TabOptionKey } from '@src/components/Tab/types';
-import { Tab, type TabProps, type TabOptionKey } from '@upcast/react-ui';
+import Tab, { type TabProps } from '@src/components/Tab/Tab';
+import type { TabOptionKey } from '@src/components/Tab/types';
+// import { Tab, type TabProps, type TabOptionKey } from '@upcast/react-ui';
 
 const meta: Meta<typeof Tab> = {
   title: 'UI/Components/Tab',
