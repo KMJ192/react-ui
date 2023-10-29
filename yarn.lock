@@ -1500,6 +1500,62 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@cdkit/react-modules@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "@cdkit/react-modules@npm:0.0.1"
+  dependencies:
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    react-router-dom: ^6.15.0
+  checksum: c21d92aa861e5486394b1fa700ee02b0a28a8401d8d1aee9615b60525e0aa05e170b9a7ca1e543fd83c347c334b25a54d22deafb82958b12bfba845391913ef8
+  languageName: node
+  linkType: hard
+
+"@cdkit/storybook@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@cdkit/storybook@workspace:."
+  dependencies:
+    "@cdkit/react-modules": ^0.0.1
+    "@storybook/addon-actions": ^7.3.2
+    "@storybook/addon-controls": ^7.3.2
+    "@storybook/addon-docs": ^7.3.2
+    "@storybook/addons": ^7.3.2
+    "@storybook/builder-vite": ^7.3.2
+    "@storybook/react": ^7.3.2
+    "@storybook/react-vite": ^7.3.2
+    "@types/eslint": ^8
+    "@types/lodash": ^4
+    "@types/node": ^18.11.18
+    "@types/react": ^18.2.6
+    "@types/react-dom": ^18.2.4
+    "@typescript-eslint/eslint-plugin": ^5.60.0
+    "@typescript-eslint/parser": ^5.60.0
+    "@upcast/react-modules": ^0.0.24
+    "@upcast/react-ui": ^0.0.24
+    classnames: ^2.3.2
+    eslint: ^8.43.0
+    eslint-config-airbnb: ^19.0.4
+    eslint-config-prettier: ^8.8.0
+    eslint-plugin-import: ^2.27.5
+    eslint-plugin-jsx-a11y: ^6.7.1
+    eslint-plugin-prettier: ^4.2.1
+    eslint-plugin-react: ^7.32.2
+    eslint-plugin-react-hooks: ^4.6.0
+    eslint-plugin-simple-import-sort: ^10.0.0
+    lodash: ^4.17.21
+    prettier: ^2.8.8
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    recoil: ^0.7.7
+    sass: ^1.62.1
+    storybook: ^7.3.2
+    storybook-dark-mode: ^3.0.1
+    typescript: ^5.0.4
+    vite: ^4.4.9
+    vite-plugin-css-injected-by-js: ^3.1.2
+  languageName: unknown
+  linkType: soft
+
 "@colors/colors@npm:1.5.0":
   version: 1.5.0
   resolution: "@colors/colors@npm:1.5.0"
@@ -3866,50 +3922,6 @@ __metadata:
   checksum: 68cd722d6e944be2db853b07ce42dae9a54c46e32ff2b137c48654330d22db9953dc180aff84f8c7138fff8456be086e85b286f192abfdf9a32bf0c689acbf3b
   languageName: node
   linkType: hard
-
-"@upcast/storybook@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@upcast/storybook@workspace:."
-  dependencies:
-    "@storybook/addon-actions": ^7.3.2
-    "@storybook/addon-controls": ^7.3.2
-    "@storybook/addon-docs": ^7.3.2
-    "@storybook/addons": ^7.3.2
-    "@storybook/builder-vite": ^7.3.2
-    "@storybook/react": ^7.3.2
-    "@storybook/react-vite": ^7.3.2
-    "@types/eslint": ^8
-    "@types/lodash": ^4
-    "@types/node": ^18.11.18
-    "@types/react": ^18.2.6
-    "@types/react-dom": ^18.2.4
-    "@typescript-eslint/eslint-plugin": ^5.60.0
-    "@typescript-eslint/parser": ^5.60.0
-    "@upcast/react-modules": ^0.0.24
-    "@upcast/react-ui": ^0.0.24
-    classnames: ^2.3.2
-    eslint: ^8.43.0
-    eslint-config-airbnb: ^19.0.4
-    eslint-config-prettier: ^8.8.0
-    eslint-plugin-import: ^2.27.5
-    eslint-plugin-jsx-a11y: ^6.7.1
-    eslint-plugin-prettier: ^4.2.1
-    eslint-plugin-react: ^7.32.2
-    eslint-plugin-react-hooks: ^4.6.0
-    eslint-plugin-simple-import-sort: ^10.0.0
-    lodash: ^4.17.21
-    prettier: ^2.8.8
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    recoil: ^0.7.7
-    sass: ^1.62.1
-    storybook: ^7.3.2
-    storybook-dark-mode: ^3.0.1
-    typescript: ^5.0.4
-    vite: ^4.4.9
-    vite-plugin-css-injected-by-js: ^3.1.2
-  languageName: unknown
-  linkType: soft
 
 "@vitejs/plugin-react@npm:^3.0.1":
   version: 3.1.0

@@ -6,6 +6,7 @@
 }
 
 @mixin select-dropbox {
+  position: absolute;
   flex-direction: column;
   overflow: auto;
   border-radius: 4px;

@@ -48,6 +48,7 @@
     "vite-plugin-css-injected-by-js": "^3.1.2"
   },
   "dependencies": {
+    "@cdkit/react-modules": "^0.0.1",
     "@upcast/react-modules": "^0.0.24",
     "@upcast/react-ui": "^0.0.24",
     "lodash": "^4.17.21",

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useClickAway } from '@cdk/react-modules';
+import { useClickAway } from '@cdkit/react-modules';
 
 import type { SelectOption } from '../types';
 

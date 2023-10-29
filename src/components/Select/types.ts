@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import type { TrieData, TrieDataKey } from '@cdk/react-modules';
+import type { TrieData, TrieDataKey } from '@cdkit/react-modules';
 
 type SelectOptionKey = TrieDataKey;
 

@@ -5,8 +5,6 @@ import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 import Flex from '@src/layout/Flex/Flex';
 import useSelectState from '../store/hooks/useSelectState';
 
-import GlobalPortal from '@src/utils/GlobalPortal';
-
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
 const cx = classNames.bind(style);
@@ -62,22 +60,20 @@ function Dropbox<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   ]);
 
   return (
-    <GlobalPortal>
-      <Flex
-        as={ELEMENT as any}
-        {...props}
-        ref={ref ?? dropboxRef}
-        className={cx(
-          'select-dropbox',
-          direction,
-          isOption && 'is-option',
-          { open },
-          className,
-        )}
-      >
-        {children}
-      </Flex>
-    </GlobalPortal>
+    <Flex
+      as={ELEMENT as any}
+      {...props}
+      ref={ref ?? dropboxRef}
+      className={cx(
+        'select-dropbox',
+        direction,
+        isOption && 'is-option',
+        { open },
+        className,
+      )}
+    >
+      {children}
+    </Flex>
   );
 }
 

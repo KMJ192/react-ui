@@ -1,5 +1,5 @@
 import React from 'react';
-import { When } from '@cdk/react-modules';
+import { When } from '@cdkit/react-modules';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
