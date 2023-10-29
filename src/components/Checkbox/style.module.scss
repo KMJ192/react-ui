@@ -9,7 +9,7 @@
     flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
-    font-size: $upcast-size-checkbox;
+    font-size: $cdk-size-checkbox;
     & > svg {
       transition: all 0.1s cubic-bezier(0.4, 0, 1, 1) 0ms;
       visibility: hidden;
@@ -21,57 +21,57 @@
 }
 
 @mixin color-set {
-  color: $upcast-color-checkbox-text;
+  color: $cdk-color-checkbox-text;
   &.disabled {
-    color: $upcast-color-checkbox-text-disabled;
+    color: $cdk-color-checkbox-text-disabled;
   }
   .box {
-    border-color: $upcast-color-checkbox-border;
+    border-color: $cdk-color-checkbox-border;
   }
   .box.checked {
-    border-color: $upcast-color-checkbox-border-checked;
+    border-color: $cdk-color-checkbox-border-checked;
   }
   .box.disabled {
-    border-color: $upcast-color-checkbox-border-disabled;
+    border-color: $cdk-color-checkbox-border-disabled;
   }
   .box.checked.disabled {
-    border-color: $upcast-color-checkbox-border-checked-disabled;
+    border-color: $cdk-color-checkbox-border-checked-disabled;
   }
   .box > .mark > svg {
-    color: $upcast-color-checkbox-mark;
+    color: $cdk-color-checkbox-mark;
   }
   .box.checked > .mark > svg {
-    background: $upcast-color-checkbox-bg;
+    background: $cdk-color-checkbox-bg;
   }
   .box.disabled > .mark > svg {
     visibility: visible;
-    background: $upcast-color-checkbox-bg-disabled;
-    color: $upcast-color-checkbox-bg-disabled;
+    background: $cdk-color-checkbox-bg-disabled;
+    color: $cdk-color-checkbox-bg-disabled;
   }
   .box.checked.disabled > .mark > svg {
-    background: $upcast-color-checkbox-bg-checked-disabled;
-    color: $upcast-color-checkbox-mark-disabled;
+    background: $cdk-color-checkbox-bg-checked-disabled;
+    color: $cdk-color-checkbox-mark-disabled;
   }
 
   &:hover:not(.disabled) {
-    color: $upcast-color-checkbox-text-hover;
+    color: $cdk-color-checkbox-text-hover;
     .box {
-      border-color: $upcast-color-checkbox-border-hover;
+      border-color: $cdk-color-checkbox-border-hover;
     }
     .box.checked {
-      border-color: $upcast-color-checkbox-border-checked-hover;
+      border-color: $cdk-color-checkbox-border-checked-hover;
     }
     .box.checked > .mark > svg {
-      background: $upcast-color-checkbox-bg-hover;
-      color: $upcast-color-checkbox-mark-hover;
+      background: $cdk-color-checkbox-bg-hover;
+      color: $cdk-color-checkbox-mark-hover;
     }
   }
 }
 
 @mixin box {
   border-radius: 2px;
-  width: $upcast-size-checkbox;
-  height: $upcast-size-checkbox;
+  width: $cdk-size-checkbox;
+  height: $cdk-size-checkbox;
   aspect-ratio: 1;
   border-width: 2px;
   border-style: solid;

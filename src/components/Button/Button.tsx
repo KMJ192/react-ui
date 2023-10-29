@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { When } from '@upcast/react-modules';
+import { When } from '@cdk/react-modules';
 
 import Center from '@src/layout/Center/Center';
 import Flex from '@src/layout/Flex/Flex';

@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-// import { useClickAway } from '@upcast/react-modules';
-import useClickAway from '@src/modules/useClickAway/useClickAway';
+import { useClickAway } from '@cdk/react-modules';
 
 import type { SelectOption } from '../types';
 

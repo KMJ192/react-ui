@@ -1,8 +1,8 @@
 @import 'src/styles/color/color.module.scss';
 
-$upcast-color-footer-bg: var(
-  --upcast-color-footer-bg,
+$cdk-color-footer-bg: var(
+  --cdk-color-footer-bg,
   linear-gradient(165deg, #{$light-primary200}, #{$light-background})
 );
 
-$upcast-color-footer-text: var(--upcast-color-footer-text, $light-text);
+$cdk-color-footer-text: var(--cdk-color-footer-text, $light-text);

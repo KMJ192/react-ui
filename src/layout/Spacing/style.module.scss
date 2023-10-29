@@ -1,12 +1,12 @@
-$upcast-layout-spacing-gap: var(--upcast-layout-spacing-gap, 0px);
+$cdk-layout-spacing-gap: var(--cdk-layout-spacing-gap, 0px);
 
 .spacing {
   &.vertical {
-    height: $upcast-layout-spacing-gap;
-    min-height: $upcast-layout-spacing-gap;
+    height: $cdk-layout-spacing-gap;
+    min-height: $cdk-layout-spacing-gap;
   }
   &.horizontal {
-    width: $upcast-layout-spacing-gap;
-    min-width: $upcast-layout-spacing-gap;
+    width: $cdk-layout-spacing-gap;
+    min-width: $cdk-layout-spacing-gap;
   }
 }

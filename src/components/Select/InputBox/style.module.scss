@@ -1,31 +1,31 @@
 @import '../variable/color.module.scss';
 
 @mixin color-set {
-  --upcast-color-input-border: #{$upcast-color-select-box-border};
-  --upcast-color-input-border-focus: #{$upcast-color-select-box-border-focus};
-  --upcast-color-input-border-error: #{$upcast-color-select-box-border-error};
-  --upcast-color-input-border-disabled: #{$upcast-color-select-box-border-disabled};
-  --upcast-color-input-border-hover: #{$upcast-color-select-box-border-hover};
+  --cdk-color-input-border: #{$cdk-color-select-box-border};
+  --cdk-color-input-border-focus: #{$cdk-color-select-box-border-focus};
+  --cdk-color-input-border-error: #{$cdk-color-select-box-border-error};
+  --cdk-color-input-border-disabled: #{$cdk-color-select-box-border-disabled};
+  --cdk-color-input-border-hover: #{$cdk-color-select-box-border-hover};
 
-  --upcast-color-input-bg: #{$upcast-color-select-box-bg};
-  --upcast-color-input-bg-focus: #{$upcast-color-select-box-bg-focus};
-  --upcast-color-input-bg-error: #{$upcast-color-select-box-bg-error};
-  --upcast-color-input-bg-disabled: #{$upcast-color-select-box-bg-disabled};
-  --upcast-color-input-bg-hover: #{$upcast-color-select-box-bg-hover};
+  --cdk-color-input-bg: #{$cdk-color-select-box-bg};
+  --cdk-color-input-bg-focus: #{$cdk-color-select-box-bg-focus};
+  --cdk-color-input-bg-error: #{$cdk-color-select-box-bg-error};
+  --cdk-color-input-bg-disabled: #{$cdk-color-select-box-bg-disabled};
+  --cdk-color-input-bg-hover: #{$cdk-color-select-box-bg-hover};
 
-  --upcast-color-input-text: #{$upcast-color-select-box-text};
-  --upcast-color-input-text-focus: #{$upcast-color-select-box-text-focus};
-  --upcast-color-input-text-error: #{$upcast-color-select-box-text-error};
-  --upcast-color-input-text-disabled: #{$upcast-color-select-box-text-disabled};
-  --upcast-color-input-text-hover: #{$upcast-color-select-box-text-hover};
+  --cdk-color-input-text: #{$cdk-color-select-box-text};
+  --cdk-color-input-text-focus: #{$cdk-color-select-box-text-focus};
+  --cdk-color-input-text-error: #{$cdk-color-select-box-text-error};
+  --cdk-color-input-text-disabled: #{$cdk-color-select-box-text-disabled};
+  --cdk-color-input-text-hover: #{$cdk-color-select-box-text-hover};
 
-  --upcast-color-input-placeholder: #{$upcast-color-select-box-placeholder};
-  --upcast-color-input-placeholder-disabled: #{$upcast-color-select-box-placeholder-disabled};
+  --cdk-color-input-placeholder: #{$cdk-color-select-box-placeholder};
+  --cdk-color-input-placeholder-disabled: #{$cdk-color-select-box-placeholder-disabled};
 
   .input-box.open:not(.error) {
-    border-color: $upcast-color-select-box-border-focus;
-    background: $upcast-color-select-box-bg-focus;
-    color: $upcast-color-select-box-text-focus;
+    border-color: $cdk-color-select-box-border-focus;
+    background: $cdk-color-select-box-bg-focus;
+    color: $cdk-color-select-box-text-focus;
   }
 }
 

@@ -1,67 +1,61 @@
 @import 'src/styles/color/color.module.scss';
 
-$upcast-color-textarea-border: var(
-  --upcast-color-textarea-border,
-  $light-primary600
-);
-$upcast-color-textarea-border-focus: var(
-  --upcast-color-textarea-border-focus,
+$cdk-color-textarea-border: var(--cdk-color-textarea-border, $light-primary600);
+$cdk-color-textarea-border-focus: var(
+  --cdk-color-textarea-border-focus,
   $light-blue500
 );
-$upcast-color-textarea-border-error: var(
-  --upcast-color-textarea-border-error,
+$cdk-color-textarea-border-error: var(
+  --cdk-color-textarea-border-error,
   $light-danger
 );
-$upcast-color-textarea-border-disabled: var(
-  --upcast-color-textarea-border-disabled,
+$cdk-color-textarea-border-disabled: var(
+  --cdk-color-textarea-border-disabled,
   $light-gray100
 );
-$upcast-color-textarea-border-hover: var(
-  --upcast-color-textarea-border-hover,
+$cdk-color-textarea-border-hover: var(
+  --cdk-color-textarea-border-hover,
   $light-blue300
 );
 
-$upcast-color-textarea-bg: var(--upcast-color-textarea-bg, $light-background);
-$upcast-color-textarea-bg-focus: var(
-  --upcast-color-textarea-bg-focus,
+$cdk-color-textarea-bg: var(--cdk-color-textarea-bg, $light-background);
+$cdk-color-textarea-bg-focus: var(
+  --cdk-color-textarea-bg-focus,
   $light-background
 );
-$upcast-color-textarea-bg-error: var(
-  --upcast-color-textarea-bg-error,
+$cdk-color-textarea-bg-error: var(
+  --cdk-color-textarea-bg-error,
   $light-background
 );
-$upcast-color-textarea-bg-disabled: var(
-  --upcast-color-textarea-bg-disabled,
+$cdk-color-textarea-bg-disabled: var(
+  --cdk-color-textarea-bg-disabled,
   $light-gray000
 );
-$upcast-color-textarea-bg-hover: var(
-  --upcast-color-textarea-bg-hover,
+$cdk-color-textarea-bg-hover: var(
+  --cdk-color-textarea-bg-hover,
   $light-background
 );
 
-$upcast-color-textarea-text: var(--upcast-color-textarea-text, $light-text);
-$upcast-color-textarea-text-focus: var(
-  --upcast-color-textarea-text-focus,
+$cdk-color-textarea-text: var(--cdk-color-textarea-text, $light-text);
+$cdk-color-textarea-text-focus: var(
+  --cdk-color-textarea-text-focus,
   $light-text
 );
-$upcast-color-textarea-text-error: var(
-  --upcast-color-input-text-error,
-  $light-text
-);
-$upcast-color-textarea-text-disabled: var(
-  --upcast-color-textarea-text-disabled,
+$cdk-color-textarea-text-error: var(--cdk-color-input-text-error, $light-text);
+$cdk-color-textarea-text-disabled: var(
+  --cdk-color-textarea-text-disabled,
   $light-gray200
 );
-$upcast-color-textarea-text-hover: var(
-  --upcast-color-textarea-text-hover,
+$cdk-color-textarea-text-hover: var(
+  --cdk-color-textarea-text-hover,
   $light-text
 );
 
-$upcast-color-textarea-placeholder: var(
-  --upcast-color-textarea-placeholder,
+$cdk-color-textarea-placeholder: var(
+  --cdk-color-textarea-placeholder,
   $light-gray100
 );
-$upcast-color-textarea-placeholder-disabled: var(
-  --upcast-color-textarea-placeholder-disabled,
+$cdk-color-textarea-placeholder-disabled: var(
+  --cdk-color-textarea-placeholder-disabled,
   $light-gray100
 );

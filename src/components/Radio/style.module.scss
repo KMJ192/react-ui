@@ -3,70 +3,70 @@
 
 @mixin color-set {
   .mark {
-    border-color: $upcast-color-radio-border;
-    background: $upcast-color-radio-bg;
+    border-color: $cdk-color-radio-border;
+    background: $cdk-color-radio-bg;
   }
 
   .mark.checked {
-    border-color: $upcast-color-radio-border-checked;
-    background: $upcast-color-radio-bg-checked;
+    border-color: $cdk-color-radio-border-checked;
+    background: $cdk-color-radio-bg-checked;
   }
 
   .mark.disabled {
-    border-color: $upcast-color-radio-border-disabled;
-    background: $upcast-color-radio-bg-disabled;
+    border-color: $cdk-color-radio-border-disabled;
+    background: $cdk-color-radio-bg-disabled;
   }
 
   .mark.checked.disabled {
-    border-color: $upcast-color-radio-border-checked-disabled;
-    background: $upcast-color-radio-bg-checked-disabled;
+    border-color: $cdk-color-radio-border-checked-disabled;
+    background: $cdk-color-radio-bg-checked-disabled;
   }
 
   .mark > .pupil {
-    background: $upcast-color-radio-pupil;
+    background: $cdk-color-radio-pupil;
   }
 
   .mark > .pupil.disabled {
-    background: $upcast-color-radio-pupil-disabled;
+    background: $cdk-color-radio-pupil-disabled;
   }
 
   .children {
-    color: $upcast-color-radio-text;
+    color: $cdk-color-radio-text;
   }
 
   .children.disabled {
-    color: $upcast-color-radio-text-disabled;
+    color: $cdk-color-radio-text-disabled;
   }
 
   &:hover:not(.disabled) {
     .mark {
-      background: $upcast-color-radio-bg-checked-hover;
-      border-color: $upcast-color-radio-border-checked-hover;
+      background: $cdk-color-radio-bg-checked-hover;
+      border-color: $cdk-color-radio-border-checked-hover;
     }
     .mark > .pupil {
-      background: $upcast-color-radio-pupil-hover;
-      border-color: $upcast-color-radio-pupil-hover;
+      background: $cdk-color-radio-pupil-hover;
+      border-color: $cdk-color-radio-pupil-hover;
     }
     .children {
-      color: $upcast-color-radio-text-hover;
+      color: $cdk-color-radio-text-hover;
     }
   }
 
   &:hover:not(.disabled):not(.checked) {
     .mark {
-      background: $upcast-color-radio-bg-hover;
-      border-color: $upcast-color-radio-border-hover;
+      background: $cdk-color-radio-bg-hover;
+      border-color: $cdk-color-radio-border-hover;
     }
     .children {
-      color: $upcast-color-radio-text-hover;
+      color: $cdk-color-radio-text-hover;
     }
   }
 }
 
 @mixin pupil {
   .pupil {
-    width: $upcast-size-radio-pupil;
-    height: $upcast-size-radio-pupil;
+    width: $cdk-size-radio-pupil;
+    height: $cdk-size-radio-pupil;
     border-radius: 50%;
     place-content: center;
     transform: scale(0);
@@ -78,8 +78,8 @@
 }
 
 @mixin mark {
-  width: $upcast-size-radio;
-  height: $upcast-size-radio;
+  width: $cdk-size-radio;
+  height: $cdk-size-radio;
   border: 2px solid;
   border-radius: 50%;
   transition: border-color 0.1s ease;

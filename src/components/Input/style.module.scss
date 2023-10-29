@@ -1,39 +1,39 @@
-@import 'src/layout/center/style.module.scss';
+@import 'src/layout/Center/style.module.scss';
 @import './variable/color.module.scss';
 
 @mixin color-set {
-  border-color: $upcast-color-input-border;
-  background: $upcast-color-input-bg;
-  color: $upcast-color-input-text;
+  border-color: $cdk-color-input-border;
+  background: $cdk-color-input-bg;
+  color: $cdk-color-input-text;
   &::placeholder {
-    color: $upcast-color-input-placeholder;
+    color: $cdk-color-input-placeholder;
   }
 
   &:disabled {
-    border-color: $upcast-color-input-border-disabled;
-    background: $upcast-color-input-bg-disabled;
-    color: $upcast-color-input-text-disabled;
+    border-color: $cdk-color-input-border-disabled;
+    background: $cdk-color-input-bg-disabled;
+    color: $cdk-color-input-text-disabled;
     &::placeholder {
-      color: $upcast-color-input-placeholder-disabled;
+      color: $cdk-color-input-placeholder-disabled;
     }
   }
 
   &.error {
-    border-color: $upcast-color-input-border-error;
-    background: $upcast-color-input-bg-error;
-    color: $upcast-color-input-text-error;
+    border-color: $cdk-color-input-border-error;
+    background: $cdk-color-input-bg-error;
+    color: $cdk-color-input-text-error;
   }
 
   &:hover:not(:disabled):not(.error) {
-    border-color: $upcast-color-input-border-hover;
-    background: $upcast-color-input-bg-hover;
-    color: $upcast-color-input-text-hover;
+    border-color: $cdk-color-input-border-hover;
+    background: $cdk-color-input-bg-hover;
+    color: $cdk-color-input-text-hover;
   }
 
   &:not(:disabled):not(.error):focus {
-    border-color: $upcast-color-input-border-focus;
-    background: $upcast-color-input-bg-focus;
-    color: $upcast-color-input-text-focus;
+    border-color: $cdk-color-input-border-focus;
+    background: $cdk-color-input-bg-focus;
+    color: $cdk-color-input-text-focus;
   }
 }
 

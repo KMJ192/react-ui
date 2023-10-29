@@ -1,67 +1,61 @@
 @import 'src/styles/color/color.module.scss';
 
 // border
-$upcast-color-checkbox-border: var(
-  --upcast-color-checkbox-border,
-  $light-primary700
-);
-$upcast-color-checkbox-border-hover: var(
-  --upcast-color-checkbox-border-hover,
+$cdk-color-checkbox-border: var(--cdk-color-checkbox-border, $light-primary700);
+$cdk-color-checkbox-border-hover: var(
+  --cdk-color-checkbox-border-hover,
   $light-blue300
 );
-$upcast-color-checkbox-border-disabled: var(
-  --upcast-color-checkbox-border-disabled,
+$cdk-color-checkbox-border-disabled: var(
+  --cdk-color-checkbox-border-disabled,
   $light-gray200
 );
-$upcast-color-checkbox-border-checked: var(
-  --upcast-color-checkbox-border-checked,
+$cdk-color-checkbox-border-checked: var(
+  --cdk-color-checkbox-border-checked,
   $light-blue400
 );
-$upcast-color-checkbox-border-checked-hover: var(
-  --upcast-color-checkbox-border-checked-hover,
+$cdk-color-checkbox-border-checked-hover: var(
+  --cdk-color-checkbox-border-checked-hover,
   $light-blue500
 );
-$upcast-color-checkbox-border-checked-disabled: var(
-  --upcast-color-checkbox-border-checked-disabled,
+$cdk-color-checkbox-border-checked-disabled: var(
+  --cdk-color-checkbox-border-checked-disabled,
   $light-gray300
 );
 
 // background
-$upcast-color-checkbox-bg: var(--upcast-color-checkbox-bg, $light-blue400);
-$upcast-color-checkbox-bg-hover: var(
-  --upcast-color-checkbox-bg-hover,
+$cdk-color-checkbox-bg: var(--cdk-color-checkbox-bg, $light-blue400);
+$cdk-color-checkbox-bg-hover: var(
+  --cdk-color-checkbox-bg-hover,
   $light-blue500
 );
-$upcast-color-checkbox-bg-disabled: var(
-  --upcast-color-checkbox-bg-disabled,
+$cdk-color-checkbox-bg-disabled: var(
+  --cdk-color-checkbox-bg-disabled,
   $light-gray100
 );
-$upcast-color-checkbox-bg-checked-disabled: var(
-  --upcast-color-checkbox-bg-checked-disabled,
+$cdk-color-checkbox-bg-checked-disabled: var(
+  --cdk-color-checkbox-bg-checked-disabled,
   $light-gray300
 );
 
 // text
-$upcast-color-checkbox-text: var(--upcast-color-checkbox-text, $light-text);
-$upcast-color-checkbox-text-hover: var(
-  --upcast-color-checkbox-text-hover,
+$cdk-color-checkbox-text: var(--cdk-color-checkbox-text, $light-text);
+$cdk-color-checkbox-text-hover: var(
+  --cdk-color-checkbox-text-hover,
   $light-text
 );
-$upcast-color-checkbox-text-disabled: var(
-  --upcast-color-checkbox-text-disabled,
+$cdk-color-checkbox-text-disabled: var(
+  --cdk-color-checkbox-text-disabled,
   $light-gray300
 );
 
 // mark
-$upcast-color-checkbox-mark: var(
-  --upcast-color-checkbox-mark,
+$cdk-color-checkbox-mark: var(--cdk-color-checkbox-mark, $light-primary000);
+$cdk-color-checkbox-mark-hover: var(
+  --cdk-color-checkbox-mark-hover,
   $light-primary000
 );
-$upcast-color-checkbox-mark-hover: var(
-  --upcast-color-checkbox-mark-hover,
-  $light-primary000
-);
-$upcast-color-checkbox-mark-disabled: var(
-  --upcast-color-checkbox-mark-disabled,
+$cdk-color-checkbox-mark-disabled: var(
+  --cdk-color-checkbox-mark-disabled,
   $light-gray000
 );

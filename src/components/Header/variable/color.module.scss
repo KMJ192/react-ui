@@ -1,8 +1,8 @@
 @import 'src/styles/color/color.module.scss';
 
-$upcast-color-header-bg: var(
-  --upcast-color-header-bg,
+$cdk-color-header-bg: var(
+  --cdk-color-header-bg,
   linear-gradient(165deg, #{$light-primary000}, #{$light-primary300})
 );
 
-$upcast-color-header-text: var(--upcast-color-header-text, $light-text);
+$cdk-color-header-text: var(--cdk-color-header-text, $light-text);

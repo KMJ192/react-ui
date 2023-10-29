@@ -1,72 +1,72 @@
 @import './variable/color.module.scss';
 
 @mixin color-set-data-table-container {
-  border: 1px solid $upcast-color-data-table-border;
-  background: $upcast-color-data-table-bg;
+  border: 1px solid $cdk-color-data-table-border;
+  background: $cdk-color-data-table-bg;
 }
 
 @mixin color-set-data-table {
   .caption {
-    color: $upcast-color-data-table-caption-text;
+    color: $cdk-color-data-table-caption-text;
   }
   .thead > .tr {
     .th,
     .td {
-      color: $upcast-color-data-table-header-text;
-      background: $upcast-color-data-table-header-bg;
+      color: $cdk-color-data-table-header-text;
+      background: $cdk-color-data-table-header-bg;
     }
   }
   .tbody {
     .tr {
-      border-top: 1px solid $upcast-color-data-table-divide-line;
-      background: $upcast-color-data-table-row-bg;
-      color: $upcast-color-data-table-row-text;
+      border-top: 1px solid $cdk-color-data-table-divide-line;
+      background: $cdk-color-data-table-row-bg;
+      color: $cdk-color-data-table-row-text;
       &.disabled {
-        color: $upcast-color-data-table-row-text-disabled;
-        background: $upcast-color-data-table-row-bg-disabled;
+        color: $cdk-color-data-table-row-text-disabled;
+        background: $cdk-color-data-table-row-bg-disabled;
       }
       &:hover:not(.disabled) {
-        color: $upcast-color-data-table-row-text-hover;
-        background: $upcast-color-data-table-row-bg-hover;
+        color: $cdk-color-data-table-row-text-hover;
+        background: $cdk-color-data-table-row-bg-hover;
       }
     }
   }
   .tfoot > .tr {
-    border-top: 1px solid $upcast-color-data-table-divide-line;
+    border-top: 1px solid $cdk-color-data-table-divide-line;
     .td,
     .th {
-      color: $upcast-color-data-table-footer-text;
-      background: $upcast-color-data-table-footer-bg;
+      color: $cdk-color-data-table-footer-text;
+      background: $cdk-color-data-table-footer-bg;
     }
   }
 }
 
 @mixin color-set-pagination {
   & > .index {
-    color: $upcast-color-data-table-pagination-index-text;
-    background: $upcast-color-data-table-pagination-index-bg;
+    color: $cdk-color-data-table-pagination-index-text;
+    background: $cdk-color-data-table-pagination-index-bg;
     &.selected {
-      color: $upcast-color-data-table-pagination-index-text-selected;
-      background: $upcast-color-data-table-pagination-index-bg-selected;
+      color: $cdk-color-data-table-pagination-index-text-selected;
+      background: $cdk-color-data-table-pagination-index-bg-selected;
     }
     &.over {
-      color: $upcast-color-data-table-pagination-index-text-disabled;
-      background-color: $upcast-color-data-table-pagination-index-bg-disabled;
+      color: $cdk-color-data-table-pagination-index-text-disabled;
+      background-color: $cdk-color-data-table-pagination-index-bg-disabled;
       cursor: not-allowed;
     }
     &:hover:not(.selected):not(.over) {
-      color: $upcast-color-data-table-pagination-index-text-hover;
-      background: $upcast-color-data-table-pagination-index-bg-hover;
+      color: $cdk-color-data-table-pagination-index-text-hover;
+      background: $cdk-color-data-table-pagination-index-bg-hover;
     }
   }
 
   .prev,
   .next {
-    fill: $upcast-color-data-table-pagination-arrow;
+    fill: $cdk-color-data-table-pagination-arrow;
   }
   .prev.first-page,
   .next.last-page {
-    fill: $upcast-color-data-table-pagination-arrow-disabled;
+    fill: $cdk-color-data-table-pagination-arrow-disabled;
   }
 }
 

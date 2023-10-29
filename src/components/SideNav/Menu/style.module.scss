@@ -1,21 +1,21 @@
 @import '../variable/color.module.scss';
 
 @mixin color-set {
-  background: $upcast-color-side-nav-menu-bg;
-  box-shadow: $upcast-color-side-nav-menu-box-shadow;
-  color: $upcast-color-side-nav-menu-text;
+  background: $cdk-color-side-nav-menu-bg;
+  box-shadow: $cdk-color-side-nav-menu-box-shadow;
+  color: $cdk-color-side-nav-menu-text;
   &:not(.disabled):hover {
-    color: $upcast-color-side-nav-menu-text-hover;
+    color: $cdk-color-side-nav-menu-text-hover;
   }
   &.selected {
-    background: $upcast-color-side-nav-menu-bg-selected;
-    box-shadow: $upcast-color-side-nav-menu-box-shadow-selected;
-    color: $upcast-color-side-nav-menu-text-selected;
+    background: $cdk-color-side-nav-menu-bg-selected;
+    box-shadow: $cdk-color-side-nav-menu-box-shadow-selected;
+    color: $cdk-color-side-nav-menu-text-selected;
   }
   &.disabled {
-    background: $upcast-color-side-nav-menu-bg-disabled;
+    background: $cdk-color-side-nav-menu-bg-disabled;
     box-shadow: none;
-    color: $upcast-color-side-nav-menu-text-disabled;
+    color: $cdk-color-side-nav-menu-text-disabled;
   }
 }
 

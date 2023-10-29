@@ -1,47 +1,35 @@
 @import 'src/styles/color/color.module.scss';
 
-$upcast-color-button-bg: var(--upcast-color-button-bg, $light-primary000);
-$upcast-color-button-bg-hover: var(
-  --upcast-color-button-bg-hover,
-  $light-primary100
-);
-$upcast-color-button-bg-disabled: var(
-  --upcast-color-button-bg-disabled,
+$cdk-color-button-bg: var(--cdk-color-button-bg, $light-primary000);
+$cdk-color-button-bg-hover: var(--cdk-color-button-bg-hover, $light-primary100);
+$cdk-color-button-bg-disabled: var(
+  --cdk-color-button-bg-disabled,
   $light-gray000
 );
-$upcast-color-button-bg-active: var(
-  --upcast-color-button-bg-active,
+$cdk-color-button-bg-active: var(
+  --cdk-color-button-bg-active,
   $light-primary300
 );
 
-$upcast-color-button-bg-ripple: var(
-  --upcast-color-button-bg-ripple,
+$cdk-color-button-bg-ripple: var(
+  --cdk-color-button-bg-ripple,
   $light-primary200
 );
 
-$upcast-color-button-text: var(--upcast-color-button-text, $light-text);
-$upcast-color-button-text-hover: var(
-  --upcast-color-button-text-hover,
-  $light-text
-);
-$upcast-color-button-text-disabled: var(
-  --upcast-color-button-text-disabled,
+$cdk-color-button-text: var(--cdk-color-button-text, $light-text);
+$cdk-color-button-text-hover: var(--cdk-color-button-text-hover, $light-text);
+$cdk-color-button-text-disabled: var(
+  --cdk-color-button-text-disabled,
   $light-gray200
 );
-$upcast-color-button-text-active: var(
-  --upcast-color-button-text-active,
-  $black
-);
+$cdk-color-button-text-active: var(--cdk-color-button-text-active, $black);
 
-$upcast-color-button-box-shadow: var(
-  --upcast-color-button-box-shadow,
+$cdk-color-button-box-shadow: var(
+  --cdk-color-button-box-shadow,
   0px 2px 4px rgba(0, 0, 0, 0.1)
 );
-$upcast-color-button-outline: var(
-  --upcast-color-button-outline,
-  $light-primary300
-);
-$upcast-color-button-outline-disabled: var(
-  --upcast-color-button-outline-disabled,
+$cdk-color-button-outline: var(--cdk-color-button-outline, $light-primary300);
+$cdk-color-button-outline-disabled: var(
+  --cdk-color-button-outline-disabled,
   $light-gray300
 );

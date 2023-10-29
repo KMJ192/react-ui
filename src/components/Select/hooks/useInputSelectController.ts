@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import cloneDeep from 'lodash/cloneDeep';
-import { useTrie, useClickAway } from '@upcast/react-modules';
+import { useTrie, useClickAway } from '@cdk/react-modules';
 
 import type { InputSelectOption } from '../types';
 

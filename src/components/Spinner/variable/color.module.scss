@@ -1,10 +1,4 @@
 @import 'src/styles/color/color.module.scss';
 
-$upcast-color-spinner-color1: var(
-  --upcast-color-spinner-color1,
-  $light-gray200
-);
-$upcast-color-spinner-color2: var(
-  --upcast-color-spinner-color2,
-  $light-gray400
-);
+$cdk-color-spinner-color1: var(--cdk-color-spinner-color1, $light-gray200);
+$cdk-color-spinner-color2: var(--cdk-color-spinner-color2, $light-gray400);

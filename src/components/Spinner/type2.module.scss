@@ -15,9 +15,9 @@
     display: inline-block;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
-    border: $upcast-size-border-width solid $upcast-color-spinner-color1;
-    border-bottom-color: $upcast-color-spinner-color2;
-    width: $upcast-size-spinner;
-    height: $upcast-size-spinner;
+    border: $cdk-size-border-width solid $cdk-color-spinner-color1;
+    border-bottom-color: $cdk-color-spinner-color2;
+    width: $cdk-size-spinner;
+    height: $cdk-size-spinner;
   }
 }

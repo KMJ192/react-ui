@@ -1,64 +1,46 @@
 @import 'src/styles/color/color.module.scss';
 
-$upcast-color-input-border: var(--upcast-color-input-border, $light-primary600);
-$upcast-color-input-border-focus: var(
-  --upcast-color-input-border-focus,
+$cdk-color-input-border: var(--cdk-color-input-border, $light-primary600);
+$cdk-color-input-border-focus: var(
+  --cdk-color-input-border-focus,
   $light-blue500
 );
-$upcast-color-input-border-error: var(
-  --upcast-color-input-border-error,
+$cdk-color-input-border-error: var(
+  --cdk-color-input-border-error,
   $light-danger
 );
-$upcast-color-input-border-disabled: var(
-  --upcast-color-input-border-disabled,
+$cdk-color-input-border-disabled: var(
+  --cdk-color-input-border-disabled,
   $light-gray100
 );
-$upcast-color-input-border-hover: var(
-  --upcast-color-input-border-hover,
+$cdk-color-input-border-hover: var(
+  --cdk-color-input-border-hover,
   $light-blue300
 );
 
-$upcast-color-input-bg: var(--upcast-color-input-bg, $light-background);
-$upcast-color-input-bg-focus: var(
-  --upcast-color-input-bg-focus,
-  $light-background
-);
-$upcast-color-input-bg-error: var(
-  --upcast-color-input-bg-error,
-  $light-background
-);
-$upcast-color-input-bg-disabled: var(
-  --upcast-color-input-bg-disabled,
+$cdk-color-input-bg: var(--cdk-color-input-bg, $light-background);
+$cdk-color-input-bg-focus: var(--cdk-color-input-bg-focus, $light-background);
+$cdk-color-input-bg-error: var(--cdk-color-input-bg-error, $light-background);
+$cdk-color-input-bg-disabled: var(
+  --cdk-color-input-bg-disabled,
   $light-gray000
 );
-$upcast-color-input-bg-hover: var(
-  --upcast-color-input-bg-hover,
-  $light-background
-);
+$cdk-color-input-bg-hover: var(--cdk-color-input-bg-hover, $light-background);
 
-$upcast-color-input-text: var(--upcast-color-input-text, $light-text);
-$upcast-color-input-text-focus: var(
-  --upcast-color-input-text-focus,
-  $light-text
-);
-$upcast-color-input-text-error: var(
-  --upcast-color-input-text-error,
-  $light-text
-);
-$upcast-color-input-text-disabled: var(
-  --upcast-color-input-text-disabled,
+$cdk-color-input-text: var(--cdk-color-input-text, $light-text);
+$cdk-color-input-text-focus: var(--cdk-color-input-text-focus, $light-text);
+$cdk-color-input-text-error: var(--cdk-color-input-text-error, $light-text);
+$cdk-color-input-text-disabled: var(
+  --cdk-color-input-text-disabled,
   $light-gray200
 );
-$upcast-color-input-text-hover: var(
-  --upcast-color-input-text-hover,
-  $light-text
-);
+$cdk-color-input-text-hover: var(--cdk-color-input-text-hover, $light-text);
 
-$upcast-color-input-placeholder: var(
-  --upcast-color-input-placeholder,
+$cdk-color-input-placeholder: var(
+  --cdk-color-input-placeholder,
   $light-gray100
 );
-$upcast-color-input-placeholder-disabled: var(
-  --upcast-color-input-placeholder-disabled,
+$cdk-color-input-placeholder-disabled: var(
+  --cdk-color-input-placeholder-disabled,
   $light-gray100
 );

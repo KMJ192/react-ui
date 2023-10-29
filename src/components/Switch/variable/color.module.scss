@@ -1,62 +1,53 @@
 @import 'src/styles/color/color.module.scss';
 
-$upcast-color-switch-bg: var(--upcast-color-switch-bg, $light-primary300);
-$upcast-color-switch-bg-checked: var(
-  --upcast-color-switch-bg-checked,
+$cdk-color-switch-bg: var(--cdk-color-switch-bg, $light-primary300);
+$cdk-color-switch-bg-checked: var(
+  --cdk-color-switch-bg-checked,
   $light-blue300
 );
-$upcast-color-switch-bg-disabled: var(
-  --upcast-color-switch-bg-disabled,
+$cdk-color-switch-bg-disabled: var(
+  --cdk-color-switch-bg-disabled,
   $light-gray000
 );
-$upcast-color-switch-bg-checked-disabled: var(
-  --upcast-color-switch-bg-checked-disabled,
+$cdk-color-switch-bg-checked-disabled: var(
+  --cdk-color-switch-bg-checked-disabled,
   $light-gray200
 );
-$upcast-color-switch-bg-hover: var(
-  --upcast-color-switch-bg-hover,
-  $light-blue200
-);
-$upcast-color-switch-bg-checked-hover: var(
-  --upcast-color-switch-bg-checked-hover,
+$cdk-color-switch-bg-hover: var(--cdk-color-switch-bg-hover, $light-blue200);
+$cdk-color-switch-bg-checked-hover: var(
+  --cdk-color-switch-bg-checked-hover,
   $light-blue500
 );
 
-$upcast-color-switch-bullet: var(
-  --upcast-color-switch-bullet,
-  $light-primary000
-);
-$upcast-color-switch-bullet-disabled: var(
-  --upcast-color-switch-bullet-disabled,
+$cdk-color-switch-bullet: var(--cdk-color-switch-bullet, $light-primary000);
+$cdk-color-switch-bullet-disabled: var(
+  --cdk-color-switch-bullet-disabled,
   $light-gray200
 );
-$upcast-color-switch-bullet-checked: var(
-  --upcast-color-switch-bullet-checked,
+$cdk-color-switch-bullet-checked: var(
+  --cdk-color-switch-bullet-checked,
   $light-primary000
 );
-$upcast-color-switch-bullet-checked-disabled: var(
-  --upcast-color-switch-bullet-checked-disabled,
+$cdk-color-switch-bullet-checked-disabled: var(
+  --cdk-color-switch-bullet-checked-disabled,
   $light-gray400
 );
-$upcast-color-switch-bullet-hover: var(
-  --upcast-color-switch-bullet-hover,
+$cdk-color-switch-bullet-hover: var(
+  --cdk-color-switch-bullet-hover,
   $light-primary000
 );
-$upcast-color-switch-bullet-checked-hover: var(
-  --upcast-color-switch-bullet-checked-hover,
+$cdk-color-switch-bullet-checked-hover: var(
+  --cdk-color-switch-bullet-checked-hover,
   $light-primary000
 );
-$upcast-color-switch-bullet-box-shadow: var(
-  --upcast-color-switch-bullet-box-shadow,
+$cdk-color-switch-bullet-box-shadow: var(
+  --cdk-color-switch-bullet-box-shadow,
   0px 3px 6px rgba(63, 63, 63, 0.3)
 );
 
-$upcast-color-switch-text: var(--upcast-color-switch-text, $light-text);
-$upcast-color-switch-text-hover: var(
-  --upcast-color-switch-text-hover,
-  $light-text
-);
-$upcast-color-switch-text-disabled: var(
-  --upcast-color-switch-text-disabled,
+$cdk-color-switch-text: var(--cdk-color-switch-text, $light-text);
+$cdk-color-switch-text-hover: var(--cdk-color-switch-text-hover, $light-text);
+$cdk-color-switch-text-disabled: var(
+  --cdk-color-switch-text-disabled,
   $light-gray200
 );

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
-import type { Typo } from './types';
+import type { FontWeight, Typo } from './types';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';
@@ -10,6 +10,7 @@ const cx = classNames.bind(style);
 type BaseProps = {
   children: React.ReactNode;
   typo?: Typo;
+  fontWeight?: FontWeight;
   ellipsis?: boolean;
 };
 
@@ -23,6 +24,7 @@ function Text<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     children,
     typo = 'b1',
     ellipsis = false,
+    fontWeight,
     className,
     ...props
   }: Props<T>,
@@ -34,7 +36,7 @@ function Text<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     <ELEMENT
       {...props}
       ref={ref}
-      className={cx('typo', typo, ellipsis && 'ellipsis', className)}
+      className={cx('typo', typo, { ellipsis }, `fw-${fontWeight}`, className)}
     >
       {children}
     </ELEMENT>

@@ -1,38 +1,38 @@
 @import './variable/color.module.scss';
 
 @mixin color-set {
-  border-color: $upcast-color-textarea-border;
-  background: $upcast-color-textarea-bg;
-  color: $upcast-color-textarea-text;
+  border-color: $cdk-color-textarea-border;
+  background: $cdk-color-textarea-bg;
+  color: $cdk-color-textarea-text;
   &::placeholder {
-    color: $upcast-color-textarea-placeholder;
+    color: $cdk-color-textarea-placeholder;
   }
 
   &:disabled {
-    border-color: $upcast-color-textarea-border-disabled;
-    background: $upcast-color-textarea-bg-disabled;
-    color: $upcast-color-textarea-text-disabled;
+    border-color: $cdk-color-textarea-border-disabled;
+    background: $cdk-color-textarea-bg-disabled;
+    color: $cdk-color-textarea-text-disabled;
     &::placeholder {
-      color: $upcast-color-textarea-placeholder-disabled;
+      color: $cdk-color-textarea-placeholder-disabled;
     }
   }
 
   &.error {
-    border-color: $upcast-color-textarea-border-error;
-    background: $upcast-color-textarea-bg-error;
-    color: $upcast-color-textarea-text-error;
+    border-color: $cdk-color-textarea-border-error;
+    background: $cdk-color-textarea-bg-error;
+    color: $cdk-color-textarea-text-error;
   }
 
   &:hover:not(:disabled):not(.error) {
-    border-color: $upcast-color-textarea-border-hover;
-    background: $upcast-color-textarea-bg-hover;
-    color: $upcast-color-textarea-text-hover;
+    border-color: $cdk-color-textarea-border-hover;
+    background: $cdk-color-textarea-bg-hover;
+    color: $cdk-color-textarea-text-hover;
   }
 
   &:not(:disabled):not(.error):focus {
-    border-color: $upcast-color-textarea-border-focus;
-    background: $upcast-color-textarea-bg-focus;
-    color: $upcast-color-textarea-text-focus;
+    border-color: $cdk-color-textarea-border-focus;
+    background: $cdk-color-textarea-bg-focus;
+    color: $cdk-color-textarea-text-focus;
   }
 }
 

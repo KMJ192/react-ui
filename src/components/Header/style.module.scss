@@ -3,8 +3,8 @@
 
 .header {
   width: inherit;
-  background: $upcast-color-header-bg;
-  color: $upcast-color-header-text;
-  min-height: $upcast-size-header-min-height;
-  max-height: $upcast-size-header-max-height;
+  background: $cdk-color-header-bg;
+  color: $cdk-color-header-text;
+  min-height: $cdk-size-header-min-height;
+  max-height: $cdk-size-header-max-height;
 }

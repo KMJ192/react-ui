@@ -12,17 +12,17 @@
 
 @mixin color-set {
   .bar {
-    background: $upcast-color-progress-bar;
+    background: $cdk-color-progress-bar;
   }
   .bar.exit {
-    background: $upcast-color-progress-exit;
+    background: $cdk-color-progress-exit;
   }
   .bar > .pending {
     background: linear-gradient(
       0.25turn,
-      $upcast-color-progress-bar,
-      $upcast-color-progress-pending,
-      $upcast-color-progress-bar
+      $cdk-color-progress-bar,
+      $cdk-color-progress-pending,
+      $cdk-color-progress-bar
     );
   }
 }
@@ -46,8 +46,8 @@
 
 @mixin progress-body {
   width: 100%;
-  height: $upcast-size-progress-height;
-  background: $upcast-color-progress-body;
+  height: $cdk-size-progress-height;
+  background: $cdk-color-progress-body;
   border-radius: 4px;
   overflow: hidden;
 }

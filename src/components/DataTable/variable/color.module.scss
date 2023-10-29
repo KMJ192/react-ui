@@ -1,108 +1,105 @@
 @import 'src/styles/color/color.module.scss';
 
-$upcast-color-data-table-bg: var(
-  --upcast-color-data-table-bg,
-  $light-background
-);
+$cdk-color-data-table-bg: var(--cdk-color-data-table-bg, $light-background);
 
-$upcast-color-data-table-border: var(
-  --upcast-color-data-table-border,
+$cdk-color-data-table-border: var(
+  --cdk-color-data-table-border,
   $light-primary600
 );
 
-$upcast-color-data-table-caption-text: var(
-  --upcast-color-data-table-caption-text,
+$cdk-color-data-table-caption-text: var(
+  --cdk-color-data-table-caption-text,
   $light-text
 );
 
-$upcast-color-data-table-header-bg: var(
-  --upcast-color-data-table-header-bg,
+$cdk-color-data-table-header-bg: var(
+  --cdk-color-data-table-header-bg,
   $light-primary200
 );
-$upcast-color-data-table-header-text: var(
-  --upcast-color-data-table-header-text,
+$cdk-color-data-table-header-text: var(
+  --cdk-color-data-table-header-text,
   $light-text
 );
 
-$upcast-color-data-table-footer-bg: var(
-  --upcast-color-data-table-footer-bg,
+$cdk-color-data-table-footer-bg: var(
+  --cdk-color-data-table-footer-bg,
   $light-primary000
 );
-$upcast-color-data-table-footer-text: var(
-  --upcast-color-data-table-footer-text,
+$cdk-color-data-table-footer-text: var(
+  --cdk-color-data-table-footer-text,
   $light-text
 );
 
-$upcast-color-data-table-divide-line: var(
-  --upcast-color-data-table-divide-line,
+$cdk-color-data-table-divide-line: var(
+  --cdk-color-data-table-divide-line,
   $light-primary500
 );
 
-$upcast-color-data-table-row-bg: var(
-  --upcast-color-data-table-row-bg,
+$cdk-color-data-table-row-bg: var(
+  --cdk-color-data-table-row-bg,
   $light-background
 );
-$upcast-color-data-table-row-bg-hover: var(
-  --upcast-color-data-table-row-bg-hover,
+$cdk-color-data-table-row-bg-hover: var(
+  --cdk-color-data-table-row-bg-hover,
   $light-primary000
 );
-$upcast-color-data-table-row-bg-disabled: var(
-  --upcast-color-data-table-row-bg-disabled,
+$cdk-color-data-table-row-bg-disabled: var(
+  --cdk-color-data-table-row-bg-disabled,
   $light-gray000
 );
 
-$upcast-color-data-table-row-text: var(
-  --upcast-color-data-table-row-text,
+$cdk-color-data-table-row-text: var(
+  --cdk-color-data-table-row-text,
   $light-text
 );
-$upcast-color-data-table-row-text-hover: var(
-  --upcast-color-data-table-row-text-hover,
+$cdk-color-data-table-row-text-hover: var(
+  --cdk-color-data-table-row-text-hover,
   $light-text
 );
-$upcast-color-data-table-row-text-disabled: var(
-  --upcast-color-data-table-row-text-disabled,
+$cdk-color-data-table-row-text-disabled: var(
+  --cdk-color-data-table-row-text-disabled,
   $light-gray200
 );
 
-$upcast-color-data-table-pagination-index-bg: var(
-  --upcast-color-data-table-pagination-index-bg,
+$cdk-color-data-table-pagination-index-bg: var(
+  --cdk-color-data-table-pagination-index-bg,
   $light-background
 );
-$upcast-color-data-table-pagination-index-bg-selected: var(
-  --upcast-color-data-table-pagination-index-bg-selected,
+$cdk-color-data-table-pagination-index-bg-selected: var(
+  --cdk-color-data-table-pagination-index-bg-selected,
   $light-blue500
 );
-$upcast-color-data-table-pagination-index-bg-disabled: var(
-  --upcast-color-data-table-pagination-index-bg-disabled,
+$cdk-color-data-table-pagination-index-bg-disabled: var(
+  --cdk-color-data-table-pagination-index-bg-disabled,
   $light-background
 );
-$upcast-color-data-table-pagination-index-bg-hover: var(
-  --upcast-color-data-table-pagination-index-bg-hover,
+$cdk-color-data-table-pagination-index-bg-hover: var(
+  --cdk-color-data-table-pagination-index-bg-hover,
   $light-blue100
 );
 
-$upcast-color-data-table-pagination-index-text: var(
-  --upcast-color-data-table-pagination-index-text,
+$cdk-color-data-table-pagination-index-text: var(
+  --cdk-color-data-table-pagination-index-text,
   $light-text
 );
-$upcast-color-data-table-pagination-index-text-selected: var(
-  --upcast-color-data-table-pagination-index-text-selected,
+$cdk-color-data-table-pagination-index-text-selected: var(
+  --cdk-color-data-table-pagination-index-text-selected,
   $light-primary000
 );
-$upcast-color-data-table-pagination-index-text-disabled: var(
-  --upcast-color-data-table-pagination-index-text-disabled,
+$cdk-color-data-table-pagination-index-text-disabled: var(
+  --cdk-color-data-table-pagination-index-text-disabled,
   $light-gray100
 );
-$upcast-color-data-table-pagination-index-text-hover: var(
-  --upcast-color-data-table-pagination-index-text-hover,
+$cdk-color-data-table-pagination-index-text-hover: var(
+  --cdk-color-data-table-pagination-index-text-hover,
   $light-text
 );
 
-$upcast-color-data-table-pagination-arrow: var(
-  --upcast-color-data-table-pagination-arrow,
+$cdk-color-data-table-pagination-arrow: var(
+  --cdk-color-data-table-pagination-arrow,
   $light-gray200
 );
-$upcast-color-data-table-pagination-arrow-disabled: var(
-  --upcast-color-data-table-pagination-arrow-disabled,
+$cdk-color-data-table-pagination-arrow-disabled: var(
+  --cdk-color-data-table-pagination-arrow-disabled,
   $light-gray000
 );

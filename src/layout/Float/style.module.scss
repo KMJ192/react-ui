@@ -1,25 +1,24 @@
-$upcast-layout-float-top: var(--upcast-layout-float-top, 0px);
-$upcast-layout-float-bottom: var(--upcast-layout-float-bottom, 0px);
-$upcast-layout-float-left: var(--upcast-layout-float-left, 0px);
-$upcast-layout-float-right: var(--upcast-layout-float-right, 0px);
+$cdk-layout-float-top: var(--cdk-layout-float-top, 0px);
+$cdk-layout-float-bottom: var(--cdk-layout-float-bottom, 0px);
+$cdk-layout-float-left: var(--cdk-layout-float-left, 0px);
+$cdk-layout-float-right: var(--cdk-layout-float-right, 0px);
 
 .float {
   position: fixed;
-  z-index: 999;
   &.lt {
-    left: $upcast-layout-float-left;
-    top: $upcast-layout-float-top;
+    left: $cdk-layout-float-left;
+    top: $cdk-layout-float-top;
   }
   &.lb {
-    left: $upcast-layout-float-left;
-    bottom: $upcast-layout-float-bottom;
+    left: $cdk-layout-float-left;
+    bottom: $cdk-layout-float-bottom;
   }
   &.rt {
-    right: $upcast-layout-float-right;
-    top: $upcast-layout-float-top;
+    right: $cdk-layout-float-right;
+    top: $cdk-layout-float-top;
   }
   &.rb {
-    right: $upcast-layout-float-right;
-    bottom: $upcast-layout-float-bottom;
+    right: $cdk-layout-float-right;
+    bottom: $cdk-layout-float-bottom;
   }
 }
