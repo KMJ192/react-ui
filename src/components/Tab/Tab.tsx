@@ -46,15 +46,17 @@ function Tab<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
 
   return (
     <ELEMENT {...props} ref={ref} className={cx('tab', className)}>
-      <div
-        ref={tabLineRef}
-        className={cx(
-          'tab-line',
-          direction,
-          selected === 0 && 'first',
-          selected === options.length - 1 && 'last',
-        )}
-      />
+      {selected >= 0 && (
+        <div
+          ref={tabLineRef}
+          className={cx(
+            'tab-line',
+            direction,
+            selected === 0 && 'first',
+            selected === options.length - 1 && 'last',
+          )}
+        />
+      )}
       <Flex
         flexDirection={direction === 'vertical' ? 'column' : 'row'}
         className={cx('options')}
