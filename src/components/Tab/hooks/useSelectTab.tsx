@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { TabDirection, Offset, TabOption, Size } from '../types';
 
 type Props = {
@@ -12,6 +12,10 @@ type TabLinePosition = Size & Offset;
 function useSelectTab({ selected, options, direction }: Props) {
   const optionsRef = useRef<HTMLDivElement>(null);
   const tabLineRef = useRef<HTMLDivElement>(null);
+  const [windowSize, setWindowSize] = useState({
+    width: 0,
+    height: 0,
+  });
 
   useEffect(() => {
     if (selected < 0 || options.length - 1 < selected) {
@@ -62,7 +66,21 @@ function useSelectTab({ selected, options, direction }: Props) {
         tabLine.style.width = ``;
       }
     }
-  }, [options.length, selected, direction]);
+  }, [options.length, selected, direction, windowSize]);
+
+  useEffect(() => {
+    const resize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener('resize', resize);
+    return () => {
+      window.removeEventListener('resize', resize);
+    };
+  }, []);
 
   return {
     optionsRef,
