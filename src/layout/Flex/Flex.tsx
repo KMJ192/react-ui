@@ -16,7 +16,7 @@ const DEFAULT_ELEMENT = 'div';
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
 function Flex<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
-  { as, children, flexDirection = 'row', className, ...props }: Props<T>,
+  { as, children, flexDirection, className, ...props }: Props<T>,
   ref: React.Ref<React.ElementRef<typeof DEFAULT_ELEMENT>>,
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;

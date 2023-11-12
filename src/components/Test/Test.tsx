@@ -21,7 +21,7 @@ function Test<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   const ELEMENT = as || DEFAULT_ELEMENT;
 
   return (
-    <ELEMENT {...props} ref={ref} className={cx(className)}>
+    <ELEMENT {...props} ref={ref} className={cx('test', className)}>
       {children}
     </ELEMENT>
   );
