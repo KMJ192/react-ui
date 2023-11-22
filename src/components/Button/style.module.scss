@@ -41,11 +41,11 @@
       color: $cdkit-color-button-text-disabled;
     }
   }
-  &:active:not(.disabled):not(.loading) {
+  &:active:not(:disabled):not(.loading) {
     background: $cdkit-color-button-bg-active;
     color: $cdkit-color-button-text-active;
   }
-  &:hover:not(.disabled):not(.loading) {
+  &:hover:not(:disabled):not(.loading) {
     background: $cdkit-color-button-bg-hover;
     color: $cdkit-color-button-text-hover;
   }
@@ -53,11 +53,11 @@
     background: none;
     box-shadow: none;
     outline: 1px solid $cdkit-color-button-outline;
-    &:hover:not(.disabled):not(.loading) {
+    &:hover:not(:disabled):not(.loading) {
       background: $cdkit-color-button-bg-hover;
       color: $cdkit-color-button-text-hover;
     }
-    &.disabled,
+    &:disabled,
     &.loading {
       outline: 1px solid $cdkit-color-button-outline-disabled;
     }
@@ -65,7 +65,7 @@
   &.clear {
     background: none;
     box-shadow: none;
-    &:hover:not(.disabled):not(.loading) {
+    &:hover:not(:disabled):not(.loading) {
       background: $cdkit-color-button-bg-hover;
       color: $cdkit-color-button-text-hover;
     }

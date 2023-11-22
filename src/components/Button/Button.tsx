@@ -51,14 +51,7 @@ function Button<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
       {...props}
       ref={ref}
       disabled={disabled || loading}
-      className={cx(
-        'button',
-        variant,
-        shape,
-        className,
-        { disabled },
-        { loading },
-      )}
+      className={cx('button', variant, shape, className, { loading })}
     >
       <Center className={cx('contents')}>
         {leftIcon && <Flex className={cx('icon')}>{leftIcon}</Flex>}
