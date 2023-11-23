@@ -1,7 +1,7 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
-// import Popup, { type PopupProps } from '@src/components/Popup/Popup';
-import { Popup, type PopupProps } from '@upcast/react-ui';
+import Popup, { type PopupProps } from '@src/components/Popup/Popup';
+// import { Popup, type PopupProps } from '@upcast/react-ui';
 
 const meta: Meta<typeof Popup> = {
   title: 'UI/Components/Popup',

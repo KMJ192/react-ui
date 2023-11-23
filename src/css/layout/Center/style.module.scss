@@ -1,0 +1,29 @@
+@import '../Flex/flex.scss';
+@import '../Grid/grid.scss';
+
+@mixin center-vertical {
+  align-items: center;
+  -webkit-box-align: center;
+}
+
+@mixin center-horizontal {
+  justify-content: center;
+  -webkit-box-pack: center;
+}
+
+.center {
+  height: 100%;
+  width: 100%;
+  &.flex {
+    @include flex;
+  }
+  &.grid {
+    @include grid;
+  }
+  &.vertical {
+    @include center-vertical;
+  }
+  &.horizontal {
+    @include center-horizontal;
+  }
+}

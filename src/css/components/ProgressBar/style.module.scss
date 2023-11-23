@@ -1,0 +1,59 @@
+@import './variable/color.module.scss';
+@import './variable/size.module.scss';
+
+@keyframes progress {
+  0% {
+    left: -2.25rem;
+  }
+  100% {
+    left: calc(100% + 2.25rem);
+  }
+}
+
+@mixin color-set {
+  .bar {
+    background: $cdkit-color-progress-bar;
+  }
+  .bar.exit {
+    background: $cdkit-color-progress-exit;
+  }
+  .bar > .pending {
+    background: linear-gradient(
+      0.25turn,
+      $cdkit-color-progress-bar,
+      $cdkit-color-progress-pending,
+      $cdkit-color-progress-bar
+    );
+  }
+}
+
+@mixin bar {
+  .bar {
+    height: 100%;
+    border-radius: 0.25rem;
+    position: relative;
+    overflow: hidden;
+    .pending {
+      position: absolute;
+      height: 100%;
+      width: 2.25rem;
+      top: 0;
+      left: -2.25rem;
+      animation: progress 1.3s infinite;
+    }
+  }
+}
+
+@mixin progress-body {
+  width: 100%;
+  height: $cdkit-size-progress-height;
+  background: $cdkit-color-progress-body;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.progress-bar {
+  @include progress-body;
+  @include bar;
+  @include color-set;
+}

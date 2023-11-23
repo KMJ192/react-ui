@@ -1,0 +1,56 @@
+@import '../../layout/Center/style.module.scss';
+@import './variable/color.module.scss';
+
+@mixin color-set {
+  border-color: $cdkit-color-input-border;
+  background: $cdkit-color-input-bg;
+  color: $cdkit-color-input-text;
+  &::placeholder {
+    color: $cdkit-color-input-placeholder;
+  }
+
+  &:disabled {
+    border-color: $cdkit-color-input-border-disabled;
+    background: $cdkit-color-input-bg-disabled;
+    color: $cdkit-color-input-text-disabled;
+    &::placeholder {
+      color: $cdkit-color-input-placeholder-disabled;
+    }
+  }
+
+  &.error {
+    border-color: $cdkit-color-input-border-error;
+    background: $cdkit-color-input-bg-error;
+    color: $cdkit-color-input-text-error;
+  }
+
+  &:hover:not(:disabled):not(.error) {
+    border-color: $cdkit-color-input-border-hover;
+    background: $cdkit-color-input-bg-hover;
+    color: $cdkit-color-input-text-hover;
+  }
+
+  &:not(:disabled):not(.error):focus {
+    border-color: $cdkit-color-input-border-focus;
+    background: $cdkit-color-input-bg-focus;
+    color: $cdkit-color-input-text-focus;
+  }
+}
+
+@mixin input {
+  border: 0.08rem solid;
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+  font-size: 0.96rem;
+  &:focus {
+    outline: none;
+  }
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.input {
+  @include input;
+  @include color-set;
+}

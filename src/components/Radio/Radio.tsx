@@ -1,12 +1,9 @@
 import React from 'react';
 
-import Center from '@src/layout/Center/Center';
-import Flex from '@src/layout/Flex/Flex';
-
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import classNames from 'classnames/bind';
-import style from './style.module.scss';
+import style from '@css/components/Radio/style.module.scss';
 const cx = classNames.bind(style);
 
 type BaseProps = {
@@ -33,10 +30,9 @@ function Radio<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   const ELEMENT = as || DEFAULT_ELEMENT;
 
   return (
-    <Flex
+    <ELEMENT
       {...props}
       ref={ref}
-      as={ELEMENT as any}
       className={cx(
         'radio',
         { checked },
@@ -45,11 +41,11 @@ function Radio<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
         className,
       )}
     >
-      <Center className={cx('mark', { checked }, { disabled })}>
+      <div className={cx('mark', { checked }, { disabled })}>
         <div className={cx('pupil', { checked }, { disabled })} />
-      </Center>
+      </div>
       <span className={cx('children', { disabled })}>{children}</span>
-    </Flex>
+    </ELEMENT>
   );
 }
 

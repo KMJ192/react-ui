@@ -1,0 +1,20 @@
+@import '../../../styles/color/color.module.scss';
+
+$cdkit-color-tab-bg: var(--cdkit-color-tab-bg, $light-primary000);
+$cdkit-color-tab-bg-hover: var(--cdkit-color-tab-bg-hover, $light-primary200);
+$cdkit-color-tab-bg-disabled: var(
+  --cdkit-color-tab-bg-disabled,
+  $light-gray100
+);
+
+$cdkit-color-tab-select-line: var(
+  --cdkit-color-tab-select-line,
+  $light-blue300
+);
+
+$cdkit-color-tab-text: var(--cdkit-color-tab-text, $light-text);
+$cdkit-color-tab-text-hover: var(--cdkit-color-tab-text-hover, $light-text);
+$cdkit-color-tab-text-disabled: var(
+  --cdkit-color-tab-text-disabled,
+  $light-blue000
+);

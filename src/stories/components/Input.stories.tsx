@@ -9,14 +9,7 @@ const meta: Meta<typeof Input> = {
   parameters: {
     componentSubtitle: 'Input',
   },
-  argTypes: {
-    size: {
-      options: ['xs', 'sm', 'md', 'lg'],
-      control: {
-        type: 'select',
-      },
-    },
-  },
+  argTypes: {},
 };
 
 const inputTemplate = (args: InputProps) => {

@@ -12,7 +12,7 @@ import Caption from './Caption/Caption';
 import DataTablePagination from './DataTablePagination/DataTablePagination';
 
 import classNames from 'classnames/bind';
-import style from './style.module.scss';
+import style from '@css/components/DataTable/style.module.scss';
 const cx = classNames.bind(style);
 
 type BaseProps = {

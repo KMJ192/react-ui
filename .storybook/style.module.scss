@@ -1,5 +1,5 @@
-@import 'src/styles/color/color.module.scss';
-@import './size/size.module.scss';
+// @import 'src/styles/color/color.module.scss';
+// @import './size/size.module.scss';
 
 @mixin theme {
   // &.light {
@@ -54,8 +54,8 @@
   width: calc(100% - 32px);
   height: 100vh;
   overflow: auto;
-  @include theme;
-  @include size;
+  // @include theme;
+  // @include size;
   .contents {
     height: 100%;
   }

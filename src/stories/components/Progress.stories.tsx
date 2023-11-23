@@ -1,9 +1,9 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
-// import ProgressBar, {
-//   type ProgressBarProps,
-// } from '@src/components/ProgressBar/ProgressBar';
-import { ProgressBar, type ProgressBarProps } from '@upcast/react-ui';
+import ProgressBar, {
+  type ProgressBarProps,
+} from '@src/components/ProgressBar/ProgressBar';
+// import { ProgressBar, type ProgressBarProps } from '@upcast/react-ui';
 
 import style from './Components.module.scss';
 

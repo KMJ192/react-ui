@@ -5,7 +5,7 @@ import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 import Center from '@src/layout/Center/Center';
 
 import classNames from 'classnames/bind';
-import style from './style.module.scss';
+import style from '@css/components/Badge/style.module.scss';
 const cx = classNames.bind(style);
 
 type BaseProps = {

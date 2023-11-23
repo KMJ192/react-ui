@@ -1,0 +1,59 @@
+@import '../../../styles/color/color.module.scss';
+
+$cdkit-color-radio-border: var(--cdkit-color-radio-border, $light-primary300);
+$cdkit-color-radio-border-checked: var(
+  --cdkit-color-radio-border-checked,
+  $light-blue300
+);
+$cdkit-color-radio-border-disabled: var(
+  --cdkit-color-radio-border-disabled,
+  $light-gray100
+);
+$cdkit-color-radio-border-checked-disabled: var(
+  --cdkit-color-radio-border-checked-disabled,
+  $light-gray100
+);
+$cdkit-color-radio-border-hover: var(
+  --cdkit-color-radio-border-hover,
+  $light-blue400
+);
+$cdkit-color-radio-border-checked-hover: var(
+  --cdkit-color-radio-border-checked-hover,
+  $light-blue500
+);
+
+$cdkit-color-radio-bg: var(--cdkit-color-radio-bg, $light-background);
+$cdkit-color-radio-bg-checked: var(--cdkit-color-radio-bg, $light-background);
+$cdkit-color-radio-bg-checked-hover: var(
+  --cdkit-color-radio-bg-hover,
+  $light-background
+);
+$cdkit-color-radio-bg-checked-disabled: var(
+  --cdkit-color-radio-bg-checked-disabled,
+  $light-gray000
+);
+$cdkit-color-radio-bg-disabled: var(
+  --cdkit-color-radio-bg-disabled,
+  $light-gray000
+);
+$cdkit-color-radio-bg-hover: var(
+  --cdkit-color-radio-bg-hover,
+  $light-background
+);
+
+$cdkit-color-radio-text: var(--cdkit-color-radio-text, $light-text);
+$cdkit-color-radio-text-disabled: var(
+  --cdkit-color-radio-text-disabled,
+  $light-gray200
+);
+$cdkit-color-radio-text-hover: var(--cdkit-color-radio-text-hover, $light-text);
+
+$cdkit-color-radio-pupil: var(--cdkit-color-radio-pupil, $light-blue300);
+$cdkit-color-radio-pupil-disabled: var(
+  --cdkit-color-radio-pupil-disabled,
+  $light-gray100
+);
+$cdkit-color-radio-pupil-hover: var(
+  --cdkit-color-radio-pupil-hover,
+  $light-blue500
+);

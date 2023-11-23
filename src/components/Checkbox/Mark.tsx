@@ -1,7 +1,5 @@
-import Flex from '@src/layout/Flex/Flex';
-
 import classNames from 'classnames/bind';
-import style from './style.module.scss';
+import style from '@css/components/Checkbox/style.module.scss';
 const cx = classNames.bind(style);
 
 type Props = {
@@ -10,7 +8,7 @@ type Props = {
 
 function Mark({ multiple }: Props) {
   return (
-    <Flex className={cx('mark')}>
+    <div className={cx('mark')}>
       {multiple ? (
         <svg
           width='1em'
@@ -43,7 +41,7 @@ function Mark({ multiple }: Props) {
           />
         </svg>
       )}
-    </Flex>
+    </div>
   );
 }
 

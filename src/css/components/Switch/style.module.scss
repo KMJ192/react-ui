@@ -1,0 +1,119 @@
+@import '../../layout/Flex/flex.scss';
+@import '../../layout/Center/style.module.scss';
+@import './variable/color.module.scss';
+@import './variable/size.module.scss';
+
+@mixin color-set {
+  .switch-body {
+    background: $cdkit-color-switch-bg;
+  }
+  .switch-body.checked {
+    background: $cdkit-color-switch-bg-checked;
+  }
+  .switch-body.checked.disabled {
+    background: $cdkit-color-switch-bg-checked-disabled;
+  }
+  .switch-body.disabled {
+    background: $cdkit-color-switch-bg-disabled;
+  }
+
+  .switch-bullet {
+    background: $cdkit-color-switch-bullet;
+    box-shadow: $cdkit-color-switch-bullet-box-shadow;
+  }
+  .switch-bullet.checked {
+    background: $cdkit-color-switch-bullet-checked;
+  }
+  .switch-bullet.checked.disabled {
+    background: $cdkit-color-switch-bullet-checked-disabled;
+    box-shadow: none;
+  }
+  .switch-bullet.disabled {
+    background: $cdkit-color-switch-bullet-disabled;
+    box-shadow: none;
+  }
+
+  .children {
+    color: $cdkit-color-switch-text;
+  }
+  .children.disabled {
+    color: $cdkit-color-switch-text-disabled;
+  }
+
+  &:hover:not(.disabled) {
+    .switch-body {
+      background: $cdkit-color-switch-bg-hover;
+    }
+    .switch-body.checked {
+      background: $cdkit-color-switch-bg-checked-hover;
+    }
+    .switch-bullet {
+      background: $cdkit-color-switch-bullet-hover;
+    }
+    .switch-bullet.checked {
+      background: $cdkit-color-switch-bullet-checked-hover;
+    }
+    .children {
+      color: $cdkit-color-switch-text-hover;
+    }
+  }
+}
+
+@mixin switch-body {
+  .switch-body {
+    border-radius: 1rem;
+    transition: background-color 0.1s ease;
+  }
+}
+
+@mixin switch-bullet {
+  .switch-bullet {
+    position: absolute;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+  }
+}
+
+@mixin switch {
+  position: relative;
+  width: fit-content;
+  @include flex;
+  @include center-vertical;
+  &.is-children {
+    column-gap: 0.5rem;
+  }
+  &:not(.disabled):hover {
+    cursor: pointer;
+  }
+  &.disabled {
+    cursor: not-allowed;
+  }
+}
+
+@mixin size {
+  .switch-body {
+    width: $cdkit-size-switch-width;
+    height: $cdkit-size-switch-height;
+  }
+  .switch-bullet {
+    width: $cdkit-size-switch-bullet;
+    height: $cdkit-size-switch-bullet;
+    transform: translateX(0.25rem);
+    &.checked {
+      transform: translateX(
+        #{calc($cdkit-size-switch-width - $cdkit-size-switch-bullet - 0.25rem)}
+      );
+    }
+  }
+  .children {
+    font-size: calc($cdkit-size-switch-height - 0.5rem);
+  }
+}
+
+.switch {
+  @include switch;
+  @include switch-body;
+  @include switch-bullet;
+  @include size;
+  @include color-set;
+}

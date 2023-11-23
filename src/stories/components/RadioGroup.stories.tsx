@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import type { StoryFn, Meta } from '@storybook/react';
 
-// import RadioGroup, {
-//   type RadioGroupProps,
-// } from '@src/components/RadioGroup/RadioGroup';
-import {
-  RadioGroup,
-  RadioGroupOptionKey,
+import RadioGroup, {
   type RadioGroupProps,
-} from '@upcast/react-ui';
+  type RadioGroupOptionKey,
+} from '@src/components/RadioGroup/RadioGroup';
+// import {
+//   RadioGroup,
+//   RadioGroupOptionKey,
+//   type RadioGroupProps,
+// } from '@upcast/react-ui';
 
 const meta: Meta<typeof RadioGroup> = {
   title: 'UI/Components/RadioGroup',

@@ -1,7 +1,7 @@
 import useSelectState from '../store/hooks/useSelectState';
 
 import classNames from 'classnames/bind';
-import style from './style.module.scss';
+import style from '@css/components/Select/ExpandIcon/style.module.scss';
 const cx = classNames.bind(style);
 
 type Props = {

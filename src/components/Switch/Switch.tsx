@@ -1,11 +1,9 @@
 import React from 'react';
 
-import Flex from '@src/layout/Flex/Flex';
-
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import classNames from 'classnames/bind';
-import style from './style.module.scss';
+import style from '@css/components/Switch/style.module.scss';
 const cx = classNames.bind(style);
 
 type BaseProps = {
@@ -33,9 +31,8 @@ function Switch<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   const ELEMENT = as || DEFAULT_ELEMENT;
 
   return (
-    <Flex
+    <ELEMENT
       {...props}
-      as={ELEMENT as any}
       ref={ref}
       className={cx(
         'switch',
@@ -51,7 +48,7 @@ function Switch<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
       <span className={cx('children', { checked }, { disabled })}>
         {children}
       </span>
-    </Flex>
+    </ELEMENT>
   );
 }
 

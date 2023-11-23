@@ -1,0 +1,185 @@
+@import './variable/color.module.scss';
+
+@mixin color-set-data-table-container {
+  border: 0.14rem solid $cdkit-color-data-table-border;
+  background: $cdkit-color-data-table-bg;
+}
+
+@mixin color-set-data-table {
+  .caption {
+    color: $cdkit-color-data-table-caption-text;
+  }
+  .thead > .tr {
+    .th,
+    .td {
+      color: $cdkit-color-data-table-header-text;
+      background: $cdkit-color-data-table-header-bg;
+    }
+  }
+  .tbody {
+    .tr {
+      border-top: 0.08rem solid $cdkit-color-data-table-divide-line;
+      background: $cdkit-color-data-table-row-bg;
+      color: $cdkit-color-data-table-row-text;
+      &.disabled {
+        color: $cdkit-color-data-table-row-text-disabled;
+        background: $cdkit-color-data-table-row-bg-disabled;
+      }
+      &:hover:not(.disabled) {
+        color: $cdkit-color-data-table-row-text-hover;
+        background: $cdkit-color-data-table-row-bg-hover;
+      }
+    }
+  }
+  .tfoot > .tr {
+    border-top: 0.08rem solid $cdkit-color-data-table-divide-line;
+    .td,
+    .th {
+      color: $cdkit-color-data-table-footer-text;
+      background: $cdkit-color-data-table-footer-bg;
+    }
+  }
+}
+
+@mixin color-set-pagination {
+  & > .index {
+    color: $cdkit-color-data-table-pagination-index-text;
+    background: $cdkit-color-data-table-pagination-index-bg;
+    &.selected {
+      color: $cdkit-color-data-table-pagination-index-text-selected;
+      background: $cdkit-color-data-table-pagination-index-bg-selected;
+    }
+    &.over {
+      color: $cdkit-color-data-table-pagination-index-text-disabled;
+      background-color: $cdkit-color-data-table-pagination-index-bg-disabled;
+      cursor: not-allowed;
+    }
+    &:hover:not(.selected):not(.over) {
+      color: $cdkit-color-data-table-pagination-index-text-hover;
+      background: $cdkit-color-data-table-pagination-index-bg-hover;
+    }
+  }
+
+  .prev,
+  .next {
+    fill: $cdkit-color-data-table-pagination-arrow;
+  }
+  .prev.first-page,
+  .next.last-page {
+    fill: $cdkit-color-data-table-pagination-arrow-disabled;
+  }
+}
+
+@mixin data-table-container {
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  padding: 1rem 1.5rem;
+  overflow: scroll;
+  box-sizing: border-box;
+}
+
+@mixin data-table {
+  border-collapse: collapse;
+  width: 100%;
+  .caption {
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    text-align: start;
+  }
+  .thead,
+  .tfoot {
+    .tr {
+      .th,
+      .td {
+        padding: 1rem;
+        text-align: start;
+      }
+    }
+  }
+  .thead {
+    .tr {
+      .th,
+      .td {
+        &:first-child {
+          border-top-left-radius: 0.5rem;
+        }
+        &:last-child {
+          border-top-right-radius: 0.5rem;
+        }
+      }
+    }
+  }
+  .tbody {
+    .tr {
+      &.disabled {
+        cursor: not-allowed;
+      }
+      &:hover {
+        transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+      }
+      .td,
+      .th {
+        padding: 1rem;
+      }
+    }
+  }
+  .tfoot {
+    .tr {
+      .td,
+      .th {
+        &:first-child {
+          border-bottom-left-radius: 0.25rem;
+        }
+        &:last-child {
+          border-bottom-right-radius: 0.25rem;
+        }
+      }
+    }
+  }
+}
+
+@mixin pagination {
+  width: 100%;
+  padding-top: 1rem;
+  column-gap: 0.5rem;
+  user-select: none;
+  .index {
+    width: 2rem;
+    aspect-ratio: 1;
+    place-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+  }
+  .prev,
+  .next {
+    column-gap: 0.5rem;
+    cursor: pointer;
+    & > div {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+  .prev.first-page,
+  .next.last-page {
+    cursor: default;
+  }
+  .next > div {
+    transform: rotate(180deg);
+  }
+}
+
+.data-table-container {
+  @include data-table-container;
+  @include color-set-data-table-container;
+}
+
+.data-table {
+  @include data-table;
+  @include color-set-data-table;
+}
+
+.pagination {
+  @include pagination;
+  @include color-set-pagination;
+}

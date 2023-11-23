@@ -1,0 +1,9 @@
+@import './variable/color.module.scss';
+@import '../../layout/Flex/flex.scss';
+
+.select {
+  list-style: none;
+  width: 100%;
+  @include flex;
+  @include flex-column;
+}

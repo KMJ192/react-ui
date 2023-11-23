@@ -1,9 +1,9 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
-// import Checkbox, {
-//   type CheckboxProps,
-// } from '@src/components/Checkbox/Checkbox';
-import { Checkbox, type CheckboxProps } from '@upcast/react-ui';
+import Checkbox, {
+  type CheckboxProps,
+} from '@src/components/Checkbox/Checkbox';
+// import { Checkbox, type CheckboxProps } from '@upcast/react-ui';
 
 import style from './Components.module.scss';
 

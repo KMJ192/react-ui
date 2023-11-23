@@ -1,0 +1,17 @@
+@import './flex.scss';
+
+.flex {
+  @include flex;
+  &.column {
+    @include flex-column;
+  }
+  &.column-reverse {
+    @include flex-column-reverse;
+  }
+  &.row {
+    @include flex-row;
+  }
+  &.row-reverse {
+    @include flex-row-reverse;
+  }
+}

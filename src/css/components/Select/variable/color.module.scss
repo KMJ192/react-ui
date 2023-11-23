@@ -1,0 +1,128 @@
+@import '../../../styles/color/color.module.scss';
+
+// ====== box ======
+// background
+$cdkit-color-select-box-bg: var(--cdkit-color-select-box-bg, $light-background);
+$cdkit-color-select-box-bg-focus: var(
+  --cdkit-color-select-box-bg-focus,
+  $light-background
+);
+$cdkit-color-select-box-bg-error: var(
+  --cdkit-color-select-box-bg-error,
+  $light-background
+);
+$cdkit-color-select-box-bg-disabled: var(
+  --cdkit-color-select-box-bg-disabled,
+  $light-gray000
+);
+$cdkit-color-select-box-bg-hover: var(
+  --cdkit-color-select-box-bg-hover,
+  $light-background
+);
+// text
+$cdkit-color-select-box-text: var(--cdkit-color-select-box-text, $light-text);
+$cdkit-color-select-box-text-focus: var(
+  --cdkit-color-select-box-text-focus,
+  $light-text
+);
+$cdkit-color-select-box-text-error: var(
+  --cdkit-color-select-box-text-error,
+  $light-text
+);
+$cdkit-color-select-box-text-disabled: var(
+  --cdkit-color-select-box-text-disabled,
+  $light-gray200
+);
+$cdkit-color-select-box-text-hover: var(
+  --cdkit-color-select-box-text-hover,
+  $light-text
+);
+// border
+$cdkit-color-select-box-border: var(
+  --cdkit-color-select-box-border,
+  $light-primary600
+);
+$cdkit-color-select-box-border-focus: var(
+  --cdkit-color-select-box-border-focus,
+  $light-blue500
+);
+$cdkit-color-select-box-border-error: var(
+  --cdkit-color-select-box-border-error,
+  $light-danger
+);
+$cdkit-color-select-box-border-disabled: var(
+  --cdkit-color-select-box-border-disabled,
+  $light-gray100
+);
+$cdkit-color-select-box-border-hover: var(
+  --cdkit-color-select-box-border-hover,
+  $light-blue300
+);
+
+// placeholder
+$cdkit-color-select-box-placeholder: var(
+  --cdkit-color-select-box-placeholder,
+  $light-gray100
+);
+$cdkit-color-select-box-placeholder-disabled: var(
+  --cdkit-color-select-box-placeholder-disabled,
+  $light-gray100
+);
+// ====== box ======
+
+// ====== dropbox ======
+$cdkit-color-select-dropbox-bg: var(
+  --cdkit-color-select-dropbox-bg,
+  $light-background
+);
+$cdkit-color-select-dropbox-box-shadow: var(
+  --cdkit-color-select-dropbox-box-shadow,
+  0px 3px 6px rgba(0, 0, 0, 0.2)
+);
+// ====== dropbox ======
+
+// ====== option ======
+// background
+$cdkit-color-select-option-bg: var(
+  --cdkit-color-select-option-bg,
+  $light-background
+);
+$cdkit-color-select-option-bg-selected: var(
+  --cdkit-color-select-option-bg-selected,
+  $light-primary100
+);
+$cdkit-color-select-option-bg-reserved: var(
+  --cdkit-color-select-option-bg-reserved,
+  $light-primary200
+);
+$cdkit-color-select-option-bg-disabled: var(
+  --cdkit-color-select-option-bg-disabled,
+  $light-gray000
+);
+$cdkit-color-select-option-bg-hover: var(
+  --cdkit-color-select-option-bg-hover,
+  $light-primary200
+);
+
+// text
+$cdkit-color-select-option-text: var(
+  --cdkit-color-select-option-text,
+  $light-text
+);
+$cdkit-color-select-option-text-selected: var(
+  --cdkit-color-select-option-text-selected,
+  $light-text
+);
+$cdkit-color-select-option-text-reserved: var(
+  --cdkit-color-select-option-text-reserved,
+  $light-text
+);
+$cdkit-color-select-option-text-disabled: var(
+  --cdkit-color-select-option-text-disabled,
+  $light-gray200
+);
+$cdkit-color-select-option-text-hover: var(
+  --cdkit-color-select-option-text-hover,
+  $light-text
+);
+// ====== option ======

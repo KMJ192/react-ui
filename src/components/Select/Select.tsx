@@ -2,8 +2,6 @@ import React, { type RefObject, useEffect, useRef, useState } from 'react';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
-import Flex from '@src/layout/Flex/Flex';
-
 import Provider from './store/Provider';
 import Box from './Box/Box';
 import InputBox from './InputBox/InputBox';
@@ -11,7 +9,7 @@ import Dropbox from './Dropbox/Dropbox';
 import Option from './Option/Option';
 
 import classNames from 'classnames/bind';
-import style from './style.module.scss';
+import style from '@css/components/Select/style.module.scss';
 const cx = classNames.bind(style);
 
 type BaseProps = {
@@ -41,7 +39,7 @@ function S<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
 
-  const selectRef = useRef<HTMLElement>(null);
+  const selectRef = useRef<React.ElementRef<typeof DEFAULT_ELEMENT>>(null);
   const [selectBBox, setSelectBBox] = useState({
     width: 0,
     height: 0,
@@ -86,14 +84,13 @@ function S<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
         isOption,
       }}
     >
-      <Flex
-        as={ELEMENT as any}
+      <ELEMENT
         {...props}
         ref={ref ?? selectRef}
         className={cx('select', className)}
       >
         {children}
-      </Flex>
+      </ELEMENT>
     </Provider>
   );
 }

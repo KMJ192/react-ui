@@ -1,12 +1,11 @@
 import React from 'react';
 
-import Flex from '@src/layout/Flex/Flex';
 import Mark from './Mark';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import classNames from 'classnames/bind';
-import style from './style.module.scss';
+import style from '@css/components/Checkbox/style.module.scss';
 const cx = classNames.bind(style);
 
 type BaseProps = {
@@ -35,8 +34,7 @@ function Checkbox<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   const ELEMENT = as || DEFAULT_ELEMENT;
 
   return (
-    <Flex
-      as={ELEMENT as any}
+    <ELEMENT
       {...props}
       ref={ref}
       className={cx(
@@ -50,7 +48,7 @@ function Checkbox<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
         <Mark multiple={multiple} />
       </div>
       <span className={cx('children')}>{children}</span>
-    </Flex>
+    </ELEMENT>
   );
 }
 
