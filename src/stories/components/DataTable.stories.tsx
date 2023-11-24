@@ -11,7 +11,7 @@ import {
 //   DataTableContainer,
 //   useDataTablePagination,
 //   type DataTableProps,
-// } from '@upcast/react-ui';
+// } from '@cdkit/react-ui';
 
 const meta: Meta<typeof DataTable> = {
   title: 'UI/Components/DataTable',

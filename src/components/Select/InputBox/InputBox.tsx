@@ -8,7 +8,7 @@ import ExpandIcon from '../ExpandIcon/ExpandIcon';
 import useSelectState from '../store/hooks/useSelectState';
 
 import classNames from 'classnames/bind';
-import style from '@css/components/Select/InputBox/style.module.scss';
+import style from '@css/components/Select/style.module.scss';
 const cx = classNames.bind(style);
 
 type BaseProps = {

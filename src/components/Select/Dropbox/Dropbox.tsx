@@ -5,7 +5,7 @@ import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 import useSelectState from '../store/hooks/useSelectState';
 
 import classNames from 'classnames/bind';
-import style from '@css/components/Select/Dropbox/style.module.scss';
+import style from '@css/components/Select/style.module.scss';
 const cx = classNames.bind(style);
 
 type BaseProps = {

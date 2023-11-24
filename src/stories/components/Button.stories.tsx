@@ -1,7 +1,7 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
 import Button, { type ButtonProps } from '@src/components/Button/Button';
-// import { Button, type ButtonProps } from '@upcast/react-ui';
+// import { Button, type ButtonProps } from '@cdkit/react-ui';
 
 import downloadIcon from '@icons/download_icon.svg';
 

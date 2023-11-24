@@ -1,7 +1,7 @@
 import type { Meta, StoryFn } from '@storybook/react';
 
 import Input, { type InputProps } from '@src/components/Input/Input';
-// import { Input, type InputProps } from '@upcast/react-ui';
+// import { Input, type InputProps } from '@cdkit/react-ui';
 
 const meta: Meta<typeof Input> = {
   title: 'UI/Components/Input',

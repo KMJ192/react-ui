@@ -7,7 +7,7 @@ import InfiniteScroll, {
 // import {
 //   InfiniteScroll,
 //   type InfiniteScrollProps,
-// } from '@upcast/react-modules';
+// } from '@cdkit/react-modules';
 
 import classNames from 'classnames/bind';
 import style from './style.module.scss';

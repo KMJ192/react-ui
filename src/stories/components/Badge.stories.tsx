@@ -1,7 +1,7 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
 import Badge, { type BadgeProps } from '@src/components/Badge/Badge';
-// import { Badge, type BadgeProps } from '@upcast/react-ui';
+// import { Badge, type BadgeProps } from '@cdkit/react-ui';
 
 const meta: Meta<typeof Badge> = {
   title: 'UI/Components/Badge',

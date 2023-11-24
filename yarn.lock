@@ -1500,14 +1500,34 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cdkit/react-modules@npm:^0.0.1":
-  version: 0.0.1
-  resolution: "@cdkit/react-modules@npm:0.0.1"
+"@cdkit/common@npm:^0.0.7":
+  version: 0.0.7
+  resolution: "@cdkit/common@npm:0.0.7"
+  checksum: 51f6df1453182867eba4204715aea61e08d53dbd7d829098e0678f89b4ae0f38ec636020ee669f7333aeac79c1e1790ef29d2c0529d51b39b0eeb38f106224f7
+  languageName: node
+  linkType: hard
+
+"@cdkit/react-modules@npm:^0.0.7":
+  version: 0.0.7
+  resolution: "@cdkit/react-modules@npm:0.0.7"
   dependencies:
     react: ^18.2.0
     react-dom: ^18.2.0
     react-router-dom: ^6.15.0
-  checksum: c21d92aa861e5486394b1fa700ee02b0a28a8401d8d1aee9615b60525e0aa05e170b9a7ca1e543fd83c347c334b25a54d22deafb82958b12bfba845391913ef8
+  checksum: 4d0659883fca83635b67f42e1d769baac39d18f9f127cd3f5bdd07b01504f17f15cc9c162b61f7991ce24a22cb47693f074448de6430aac1a486875ae5398bc3
+  languageName: node
+  linkType: hard
+
+"@cdkit/react-ui@npm:^0.0.7":
+  version: 0.0.7
+  resolution: "@cdkit/react-ui@npm:0.0.7"
+  dependencies:
+    "@cdkit/common": ^0.0.7
+    "@cdkit/react-modules": ^0.0.7
+    lodash: ^4.17.21
+    react: ^18.2.0
+    react-dom: ^18.2.0
+  checksum: 5aee8f6ed66b303587a4781ea457624f2436509349ec48b6fc7f54e4d90f425b4730aa44df3e9623a287f84425af8c2314f33ab61d788dd59811d2469ce64177
   languageName: node
   linkType: hard
 
@@ -1515,7 +1535,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cdkit/storybook@workspace:."
   dependencies:
-    "@cdkit/react-modules": ^0.0.1
+    "@cdkit/common": ^0.0.7
+    "@cdkit/react-modules": ^0.0.7
+    "@cdkit/react-ui": ^0.0.7
     "@storybook/addon-actions": ^7.3.2
     "@storybook/addon-controls": ^7.3.2
     "@storybook/addon-docs": ^7.3.2
@@ -1530,8 +1552,6 @@ __metadata:
     "@types/react-dom": ^18.2.4
     "@typescript-eslint/eslint-plugin": ^5.60.0
     "@typescript-eslint/parser": ^5.60.0
-    "@upcast/react-modules": ^0.0.24
-    "@upcast/react-ui": ^0.0.24
     classnames: ^2.3.2
     eslint: ^8.43.0
     eslint-config-airbnb: ^19.0.4
@@ -3898,28 +3918,6 @@ __metadata:
     "@typescript-eslint/types": 5.62.0
     eslint-visitor-keys: ^3.3.0
   checksum: 976b05d103fe8335bef5c93ad3f76d781e3ce50329c0243ee0f00c0fcfb186c81df50e64bfdd34970148113f8ade90887f53e3c4938183afba830b4ba8e30a35
-  languageName: node
-  linkType: hard
-
-"@upcast/react-modules@npm:^0.0.24":
-  version: 0.0.24
-  resolution: "@upcast/react-modules@npm:0.0.24"
-  dependencies:
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    react-router-dom: ^6.15.0
-  checksum: fdf339c73ade1c2aac60624db7bcdbb2278dfb185532b3a9fe8e3c60320c11f9858d7a6f9cef4b456753fdf58b440f611bd7bb7689fdcc4c2f84e1b610af783d
-  languageName: node
-  linkType: hard
-
-"@upcast/react-ui@npm:^0.0.24":
-  version: 0.0.24
-  resolution: "@upcast/react-ui@npm:0.0.24"
-  dependencies:
-    "@upcast/react-modules": ^0.0.24
-    lodash: ^4.17.21
-    react: ^18.2.0
-  checksum: 68cd722d6e944be2db853b07ce42dae9a54c46e32ff2b137c48654330d22db9953dc180aff84f8c7138fff8456be086e85b286f192abfdf9a32bf0c689acbf3b
   languageName: node
   linkType: hard
 

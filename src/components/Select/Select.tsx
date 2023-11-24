@@ -1,4 +1,5 @@
 import React, { type RefObject, useEffect, useRef, useState } from 'react';
+import { useDebounce } from '@cdkit/react-modules';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
@@ -39,6 +40,7 @@ function S<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
 
+  const mount = useRef<boolean>(false);
   const selectRef = useRef<React.ElementRef<typeof DEFAULT_ELEMENT>>(null);
   const [selectBBox, setSelectBBox] = useState({
     width: 0,
@@ -47,29 +49,51 @@ function S<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     left: 0,
   });
 
+  const setPosition = (container: HTMLDivElement) => {
+    const { width, height, top, left } = container.getBoundingClientRect();
+    setSelectBBox({
+      width,
+      height,
+      top,
+      left,
+    });
+  };
+
+  const resizePosition = useDebounce((container: HTMLDivElement) => {
+    const { width, height, top, left } = container.getBoundingClientRect();
+    setSelectBBox({
+      width,
+      height,
+      top,
+      left,
+    });
+  }, 300);
+
   useEffect(() => {
-    const getPosition = () => {
-      let container = null;
-      if (
-        ref &&
-        (ref as RefObject<React.ElementRef<typeof DEFAULT_ELEMENT>>).current
-      ) {
-        container = (ref as RefObject<React.ElementRef<typeof DEFAULT_ELEMENT>>)
-          .current;
-      } else if (selectRef.current) {
-        container = selectRef.current;
-      }
-      if (container) {
-        const { width, height, top, left } = container.getBoundingClientRect();
-        setSelectBBox({
-          width,
-          height,
-          top,
-          left,
-        });
-      }
+    let container: HTMLDivElement | null = null;
+    if (
+      ref &&
+      (ref as RefObject<React.ElementRef<typeof DEFAULT_ELEMENT>>).current
+    ) {
+      container = (ref as RefObject<React.ElementRef<typeof DEFAULT_ELEMENT>>)
+        .current;
+    } else if (selectRef.current) {
+      container = selectRef.current;
+    }
+    if (container === null) return () => {};
+
+    setPosition(container);
+
+    const observer = new ResizeObserver(() => {
+      if (mount.current) resizePosition(container as HTMLDivElement);
+      else mount.current = true;
+    });
+
+    observer.observe(container);
+
+    return () => {
+      observer.disconnect();
     };
-    getPosition();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

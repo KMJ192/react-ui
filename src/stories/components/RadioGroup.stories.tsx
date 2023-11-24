@@ -9,7 +9,7 @@ import RadioGroup, {
 //   RadioGroup,
 //   RadioGroupOptionKey,
 //   type RadioGroupProps,
-// } from '@upcast/react-ui';
+// } from '@cdkit/react-ui';
 
 const meta: Meta<typeof RadioGroup> = {
   title: 'UI/Components/RadioGroup',
