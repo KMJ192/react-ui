@@ -2,9 +2,7 @@ import React from 'react';
 import PaginationIcon from './PaginationIcon';
 import PaginationEndIcon from './PaginationEndIcon';
 
-import Center from '@src/layout/Center/Center';
 import Text from '@src/components/Text/Text';
-import Flex from '@src/layout/Flex/Flex';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
@@ -46,13 +44,8 @@ function DataTablePagination<
   const isLast = currentPaging >= lastPageIndex / perPage;
 
   return (
-    <Center
-      {...props}
-      ref={ref}
-      as={ELEMENT as any}
-      className={cx('pagination', className)}
-    >
-      <Flex className={cx('prev', isFirst && 'first-page')}>
+    <ELEMENT {...props} ref={ref} className={cx('pagination', className)}>
+      <div className={cx('prev', isFirst && 'first-page')}>
         <div
           onClick={(e: React.MouseEvent) => {
             e.stopPropagation();
@@ -69,26 +62,31 @@ function DataTablePagination<
         >
           <PaginationIcon />
         </div>
-      </Flex>
-      {Array.from({ length: perPage }, () => 0).map((_, idx) => {
-        const page = idx + 1 + perPage * (currentPaging - 1);
-        const isSelected = page === selectedPageIndex;
-        const isOver = page > lastPageIndex;
-        return (
-          <Center
-            as='li'
-            key={page}
-            className={cx('index', isSelected && 'selected', isOver && 'over')}
-            onClick={(e: React.MouseEvent) => {
-              e.stopPropagation();
-              if (!isOver) onClickPageIndex(page);
-            }}
-          >
-            <Text typo='b2'>{page}</Text>
-          </Center>
-        );
-      })}
-      <Flex className={cx('next', isLast && 'last-page')}>
+      </div>
+      <ul className={cx('index-list')}>
+        {Array.from({ length: perPage }, () => 0).map((_, idx) => {
+          const page = idx + 1 + perPage * (currentPaging - 1);
+          const isSelected = page === selectedPageIndex;
+          const isOver = page > lastPageIndex;
+          return (
+            <li
+              key={page}
+              className={cx(
+                'index',
+                isSelected && 'selected',
+                isOver && 'over',
+              )}
+              onClick={(e: React.MouseEvent) => {
+                e.stopPropagation();
+                if (!isOver) onClickPageIndex(page);
+              }}
+            >
+              <Text typo='b2'>{page}</Text>
+            </li>
+          );
+        })}
+      </ul>
+      <div className={cx('next', isLast && 'last-page')}>
         <div
           onClick={(e: React.MouseEvent) => {
             e.stopPropagation();
@@ -105,8 +103,8 @@ function DataTablePagination<
         >
           <PaginationEndIcon />
         </div>
-      </Flex>
-    </Center>
+      </div>
+    </ELEMENT>
   );
 }
 

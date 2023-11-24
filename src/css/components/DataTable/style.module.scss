@@ -1,3 +1,5 @@
+@import '../../layout/Flex/flex.scss';
+@import '../../layout/Center/style.module.scss';
 @import './variable/color.module.scss';
 
 @mixin color-set-data-table-container {
@@ -42,7 +44,7 @@
 }
 
 @mixin color-set-pagination {
-  & > .index {
+  & > .index-list > .index {
     color: $cdkit-color-data-table-pagination-index-text;
     background: $cdkit-color-data-table-pagination-index-bg;
     &.selected {
@@ -143,18 +145,32 @@
   padding-top: 1rem;
   column-gap: 0.5rem;
   user-select: none;
-  .index {
-    width: 2rem;
-    aspect-ratio: 1;
-    place-content: center;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+  @include flex;
+  @include center-vertical;
+  @include center-horizontal;
+  .index-list {
+    @include flex;
+    @include flex-row;
+    list-style: none;
+    padding: 0;
+    .index {
+      width: 2rem;
+      aspect-ratio: 1;
+      place-content: center;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+      @include flex;
+      @include center-vertical;
+      @include center-horizontal;
+    }
   }
   .prev,
   .next {
     column-gap: 0.5rem;
     cursor: pointer;
+    @include flex;
+    @include flex-row;
     & > div {
       width: 1rem;
       height: 1rem;
