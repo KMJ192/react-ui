@@ -16,6 +16,12 @@ const meta: Meta<typeof Center> = {
         type: 'radio',
       },
     },
+    flexDirection: {
+      options: ['column', 'row', 'column-reverse', 'row-reverse'],
+      control: {
+        type: 'radio',
+      },
+    },
   },
 };
 
@@ -32,6 +38,7 @@ CenterStory.args = {
   vertical: true,
   horizontal: true,
   display: 'flex',
+  flexDirection: 'row',
 };
 
 export default meta;

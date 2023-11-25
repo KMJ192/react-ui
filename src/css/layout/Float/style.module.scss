@@ -1,3 +1,5 @@
+@import '../display.scss';
+
 $cdkit-layout-float-top: var(--cdkit-layout-float-top, 0px);
 $cdkit-layout-float-bottom: var(--cdkit-layout-float-bottom, 0px);
 $cdkit-layout-float-left: var(--cdkit-layout-float-left, 0px);
@@ -5,6 +7,7 @@ $cdkit-layout-float-right: var(--cdkit-layout-float-right, 0px);
 
 .float {
   position: fixed;
+  @include display;
   &.lt {
     left: $cdkit-layout-float-left;
     top: $cdkit-layout-float-top;

@@ -1,5 +1,4 @@
-@import '../Flex/flex.scss';
-@import '../Grid/grid.scss';
+@import '../display.scss';
 
 @mixin center-vertical {
   align-items: center;
@@ -14,12 +13,7 @@
 .center {
   height: 100%;
   width: 100%;
-  &.flex {
-    @include flex;
-  }
-  &.grid {
-    @include grid;
-  }
+  @include display;
   &.vertical {
     @include center-vertical;
   }

@@ -7,6 +7,8 @@ import style from '@css/layout/Row/style.module.scss';
 const cx = classNames.bind(style);
 
 type BaseProps = {
+  display?: 'flex' | 'grid';
+  flexDirection?: 'column' | 'row' | 'column-reverse' | 'row-reverse';
   children?: React.ReactNode;
 };
 
@@ -15,13 +17,17 @@ const DEFAULT_ELEMENT = 'div';
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
 function Row<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
-  { as, children, className, ...props }: Props<T>,
+  { as, display, flexDirection, children, className, ...props }: Props<T>,
   ref: React.Ref<React.ElementRef<typeof DEFAULT_ELEMENT>>,
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
 
   return (
-    <ELEMENT {...props} ref={ref} className={cx('row', className)}>
+    <ELEMENT
+      {...props}
+      ref={ref}
+      className={cx('row', display, flexDirection, className)}
+    >
       {children}
     </ELEMENT>
   );

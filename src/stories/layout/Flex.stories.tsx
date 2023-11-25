@@ -11,7 +11,7 @@ const meta: Meta<typeof Flex> = {
   },
   argTypes: {
     flexDirection: {
-      options: ['column', 'row'],
+      options: ['column', 'row', 'column-reverse', 'row-reverse'],
       control: {
         type: 'radio',
       },

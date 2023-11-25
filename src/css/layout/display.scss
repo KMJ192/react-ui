@@ -1,0 +1,23 @@
+@import './Flex/flex.scss';
+@import './Grid/grid.scss';
+
+@mixin display {
+  &.flex {
+    @include flex;
+    &.column {
+      @include flex-column;
+    }
+    &.row {
+      @include flex-row;
+    }
+    &.column-reverse {
+      @include flex-column-reverse;
+    }
+    &.row-reverse {
+      @include flex-row-reverse;
+    }
+  }
+  &.grid {
+    @include grid;
+  }
+}

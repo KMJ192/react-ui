@@ -9,7 +9,20 @@ const meta: Meta<typeof Row> = {
   parameters: {
     componentSubtitle: 'Row',
   },
-  argTypes: {},
+  argTypes: {
+    display: {
+      options: ['flex', 'grid'],
+      control: {
+        type: 'radio',
+      },
+    },
+    flexDirection: {
+      options: ['column', 'row', 'column-reverse', 'row-reverse'],
+      control: {
+        type: 'radio',
+      },
+    },
+  },
 };
 
 const Template = (args: RowProps) => {

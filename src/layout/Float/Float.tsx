@@ -15,6 +15,8 @@ type BaseProps = {
   right?: number;
   top?: number;
   bottom?: number;
+  display?: 'flex' | 'grid';
+  flexDirection?: 'column' | 'row' | 'column-reverse' | 'row-reverse';
 };
 
 const DEFAULT_ELEMENT = 'div';
@@ -30,6 +32,8 @@ function Float<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     right,
     top,
     bottom,
+    display,
+    flexDirection,
     style,
     className,
     ...props
@@ -51,7 +55,7 @@ function Float<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
       {...props}
       ref={ref}
       style={curStyle}
-      className={cx('float', startDirection, className)}
+      className={cx('float', display, flexDirection, startDirection, className)}
     >
       {children}
     </ELEMENT>

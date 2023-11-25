@@ -18,6 +18,18 @@ const meta: Meta<typeof Float> = {
         type: 'radio',
       },
     },
+    display: {
+      options: ['flex', 'grid'],
+      control: {
+        type: 'radio',
+      },
+    },
+    flexDirection: {
+      options: ['column', 'row', 'column-reverse', 'row-reverse'],
+      control: {
+        type: 'radio',
+      },
+    },
   },
 };
 
