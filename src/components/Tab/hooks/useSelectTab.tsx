@@ -1,5 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
-import { TabDirection, Offset, TabOption, Size } from '../types';
+import { useDebounce } from '@cdkit/react-modules';
+
+import type { TabDirection, Offset, TabOption, Size } from '../types';
 
 type Props = {
   selected: number;
@@ -16,6 +18,13 @@ function useSelectTab({ selected, options, direction }: Props) {
     width: 0,
     height: 0,
   });
+
+  const resize = useDebounce(() => {
+    setWindowSize({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
+  }, 300);
 
   useEffect(() => {
     if (selected < 0 || options.length - 1 < selected) {
@@ -69,17 +78,11 @@ function useSelectTab({ selected, options, direction }: Props) {
   }, [options.length, selected, direction, windowSize]);
 
   useEffect(() => {
-    const resize = () => {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    };
-
     window.addEventListener('resize', resize);
     return () => {
       window.removeEventListener('resize', resize);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return {
