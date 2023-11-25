@@ -18,6 +18,12 @@ const meta: Meta<typeof Spacing> = {
         type: 'radio',
       },
     },
+    unit: {
+      options: ['px', 'em', 'rem'],
+      control: {
+        type: 'radio',
+      },
+    },
   },
 };
 
@@ -40,6 +46,7 @@ export const SpacingStory: StoryFn<SpacingProps> = LayoutTemplate.bind({});
 SpacingStory.args = {
   direction: 'vertical',
   spacing: 12,
+  unit: 'px',
 };
 
 export default meta;

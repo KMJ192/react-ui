@@ -7,6 +7,15 @@ $dark-primary500: #a6a6a6;
 $dark-primary600: #cecece;
 $dark-primary700: #e7e7e7;
 
+$dark-secondary000: #31382d;
+$dark-secondary100: #414b3b;
+$dark-secondary200: #4b5843;
+$dark-secondary300: #556749;
+$dark-secondary400: #597247;
+$dark-secondary500: #577b40;
+$dark-secondary600: #58843c;
+$dark-secondary700: #578f34;
+
 $dark-blue000: #0000dd;
 $dark-blue100: #2d2ddd;
 $dark-blue200: #4b4bdd;
@@ -44,10 +53,13 @@ $dark-purple600: #d29ff9;
 $dark-purple700: #e3bdff;
 
 $dark-gray000: #636363;
-$dark-gray100: #7b7b7b;
-$dark-gray200: #898989;
-$dark-gray300: #909090;
-$dark-gray400: #a0a0a0;
+$dark-gray100: #777777;
+$dark-gray200: #7b7b7b;
+$dark-gray300: #878787;
+$dark-gray400: #898989;
+$dark-gray500: #909090;
+$dark-gray600: #989898;
+$dark-gray700: #a0a0a0;
 
 $dark-success: $dark-blue100;
 $dark-info: $dark-green300;
@@ -55,3 +67,4 @@ $dark-warning: #c8ce11;
 $dark-danger: $dark-red100;
 $dark-background: #1d1d1d;
 $dark-text: $dark-primary700;
+$dark-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);

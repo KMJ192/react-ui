@@ -1,1 +1,10 @@
 @import './variable/variable.module.scss';
+@import '../../layout/display.scss';
+
+.card {
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid $cdkit-color-card-border;
+  background: $cdkit-color-card-bg;
+  @include display;
+}
