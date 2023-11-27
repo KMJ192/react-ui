@@ -23,9 +23,12 @@ $cdkit-color-radio-border-checked-hover: var(
 );
 
 $cdkit-color-radio-bg: var(--cdkit-color-radio-bg, $light-background);
-$cdkit-color-radio-bg-checked: var(--cdkit-color-radio-bg, $light-background);
+$cdkit-color-radio-bg-checked: var(
+  --cdkit-color-radio-bg-checked,
+  $light-background
+);
 $cdkit-color-radio-bg-checked-hover: var(
-  --cdkit-color-radio-bg-hover,
+  --cdkit-color-radio-bg-checked-hover,
   $light-background
 );
 $cdkit-color-radio-bg-checked-disabled: var(

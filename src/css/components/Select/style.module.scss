@@ -12,4 +12,8 @@
   width: 100%;
   @include flex;
   @include flex-column;
+  ul {
+    padding: 0;
+    margin: 0;
+  }
 }

@@ -1,17 +1,17 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
-import {
-  DataTable,
-  DataTableContainer,
-  useDataTablePagination,
-  type DataTableProps,
-} from '@src/components/DataTable';
 // import {
 //   DataTable,
 //   DataTableContainer,
 //   useDataTablePagination,
 //   type DataTableProps,
-// } from '@cdkit/react-ui';
+// } from '@src/components/DataTable';
+import {
+  DataTable,
+  DataTableContainer,
+  useDataTablePagination,
+  type DataTableProps,
+} from '@cdkit/react-ui';
 
 const meta: Meta<typeof DataTable> = {
   title: 'UI/Components/DataTable',

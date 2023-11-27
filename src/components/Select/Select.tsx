@@ -50,7 +50,13 @@ function S<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   });
 
   const setPosition = (container: HTMLDivElement) => {
-    const { width, height, top, left } = container.getBoundingClientRect();
+    const {
+      offsetWidth: width,
+      offsetHeight: height,
+      offsetTop: top,
+      offsetLeft: left,
+    } = container;
+
     setSelectBBox({
       width,
       height,
@@ -60,7 +66,13 @@ function S<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   };
 
   const resizePosition = useDebounce((container: HTMLDivElement) => {
-    const { width, height, top, left } = container.getBoundingClientRect();
+    const {
+      offsetWidth: width,
+      offsetHeight: height,
+      offsetTop: top,
+      offsetLeft: left,
+    } = container;
+
     setSelectBBox({
       width,
       height,
@@ -84,15 +96,26 @@ function S<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
 
     setPosition(container);
 
-    const observer = new ResizeObserver(() => {
+    const resizeObserver = new ResizeObserver(() => {
       if (mount.current) resizePosition(container as HTMLDivElement);
       else mount.current = true;
     });
 
-    observer.observe(container);
+    const mutationObserver = new MutationObserver(() => {
+      if (mount.current) resizePosition(container as HTMLDivElement);
+      else mount.current = true;
+    });
+
+    resizeObserver.observe(container);
+    mutationObserver.observe(container, {
+      attributes: true,
+      childList: false,
+      subtree: false,
+    });
 
     return () => {
-      observer.disconnect();
+      resizeObserver.disconnect();
+      mutationObserver.disconnect();
     };
 
     // eslint-disable-next-line react-hooks/exhaustive-deps

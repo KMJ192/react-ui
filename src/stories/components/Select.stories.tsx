@@ -3,6 +3,11 @@ import type { StoryFn, Meta } from '@storybook/react';
 import Select from '@src/components/Select/Select';
 import useSelectController from '@src/components/Select/hooks/useSelectController';
 import useInputSelectController from '@src/components/Select/hooks/useInputSelectController';
+// import {
+//   Select,
+//   useSelectController,
+//   useInputSelectController,
+// } from '@cdkit/react-ui';
 
 const meta: Meta<typeof Select> = {
   title: 'UI/Components/Select',
@@ -101,43 +106,56 @@ const PrimaryTemplate = (args: any) => {
   });
 
   return (
-    <Select
-      open={open}
-      error={error}
-      disabled={disabled}
-      isOption={isOption}
-      onClick={onClickSelect}
-      onKeyDown={onKeyDown}
-    >
-      <Select.Box ref={selectBoxRef} placeholder={placeholder}>
-        {boxContent}
-      </Select.Box>
-      <Select.Dropbox
-        ref={dropboxRef}
-        direction='down'
-        style={{
-          maxHeight: '300px',
-        }}
+    <>
+      <div
+      // style={{
+      //   height: '500px',
+      // }}
+      ></div>
+      <Select
+        open={open}
+        error={error}
+        disabled={disabled}
+        isOption={isOption}
+        onClick={onClickSelect}
+        onKeyDown={onKeyDown}
+        style={
+          {
+            // marginTop: '1000px',
+            // marginBottom: '100px',
+          }
+        }
       >
-        {optionList.map(({ key, content, disabled }, idx) => {
-          const selected = key === selectedKey;
-          const reserved = key === reservedKey;
-          return (
-            <Select.Option
-              key={key}
-              disabled={disabled}
-              selected={selected}
-              reserved={reserved}
-              onClick={(e: React.MouseEvent) => {
-                onClickOption(e, idx);
-              }}
-            >
-              {content}
-            </Select.Option>
-          );
-        })}
-      </Select.Dropbox>
-    </Select>
+        <Select.Box ref={selectBoxRef} placeholder={placeholder}>
+          {boxContent}
+        </Select.Box>
+        <Select.Dropbox
+          ref={dropboxRef}
+          direction='down'
+          style={{
+            maxHeight: '300px',
+          }}
+        >
+          {optionList.map(({ key, content, disabled }, idx) => {
+            const selected = key === selectedKey;
+            const reserved = key === reservedKey;
+            return (
+              <Select.Option
+                key={key}
+                disabled={disabled}
+                selected={selected}
+                reserved={reserved}
+                onClick={(e: React.MouseEvent) => {
+                  onClickOption(e, idx);
+                }}
+              >
+                {content}
+              </Select.Option>
+            );
+          })}
+        </Select.Dropbox>
+      </Select>
+    </>
   );
 };
 
