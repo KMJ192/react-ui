@@ -1,7 +1,7 @@
 @import '../../styles/transition.scss';
 @import './variable/color.module.scss';
 
-@mixin default {
+@mixin button {
   padding: 0.5rem 1rem;
   font-size: 1rem;
   border-radius: 0.25rem;
@@ -22,6 +22,8 @@
   &.circle {
     border-radius: 50%;
     aspect-ratio: 1;
+    width: fit-content;
+    height: fit-content;
   }
   &.square {
     aspect-ratio: 1;
@@ -107,7 +109,7 @@
 }
 
 .button {
-  @include default;
+  @include button;
   @include ripple-animation;
   @include color-set;
   @include shape;
