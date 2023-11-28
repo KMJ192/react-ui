@@ -24,7 +24,7 @@ type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 function Tab<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   {
     as,
-    selected = 0,
+    selected = -1,
     options = [],
     direction = 'horizontal',
     className,

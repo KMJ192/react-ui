@@ -108,9 +108,9 @@ const PrimaryTemplate = (args: any) => {
   return (
     <>
       <div
-      // style={{
-      //   height: '500px',
-      // }}
+        style={{
+          height: '500px',
+        }}
       ></div>
       <Select
         open={open}
@@ -131,7 +131,7 @@ const PrimaryTemplate = (args: any) => {
         </Select.Box>
         <Select.Dropbox
           ref={dropboxRef}
-          direction='down'
+          direction='up'
           style={{
             maxHeight: '300px',
           }}

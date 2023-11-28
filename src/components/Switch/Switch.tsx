@@ -22,7 +22,6 @@ function Switch<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     children,
     checked = false,
     disabled = false,
-    size = 'md',
     className,
     ...props
   }: Props<T>,
@@ -36,7 +35,6 @@ function Switch<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
       ref={ref}
       className={cx(
         'switch',
-        size,
         { checked },
         { disabled },
         children !== undefined && 'is-children',
