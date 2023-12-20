@@ -1,0 +1,15 @@
+@import '../style.module.scss';
+
+@mixin tab-options {
+  @include flex;
+  &.vertical {
+    @include flex-column;
+  }
+  &.horizontal {
+    @include flex-row;
+  }
+}
+
+.tab-options {
+  @include tab-options;
+}

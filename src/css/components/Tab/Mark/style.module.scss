@@ -1,0 +1,32 @@
+@import '../style.module.scss';
+
+@mixin tab-mark {
+  position: absolute;
+  transition: all 0.2s;
+  z-index: 1;
+  background: $light-blue300;
+  // &.horizontal {
+  //   height: 0.24rem;
+  //   bottom: 0;
+  //   &.first {
+  //     border-bottom-left-radius: 0.25rem;
+  //   }
+  //   &.last {
+  //     border-bottom-right-radius: 0.25rem;
+  //   }
+  // }
+  // &.vertical {
+  //   left: 0;
+  //   width: 0.24rem;
+  //   &.first {
+  //     border-top-left-radius: 0.25rem;
+  //   }
+  //   &.last {
+  //     border-bottom-left-radius: 0.25rem;
+  //   }
+  // }
+}
+
+.tab-mark {
+  @include tab-mark;
+}

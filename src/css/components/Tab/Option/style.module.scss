@@ -1,0 +1,33 @@
+@import '../style.module.scss';
+
+@mixin color-set {
+  color: $light-text;
+  &:hover:not(.disabled) {
+    color: $light-text;
+    background: $light-primary200;
+  }
+  &.disabled {
+    color: $light-blue000;
+    background: $light-gray100;
+  }
+}
+
+@mixin tab-option {
+  height: inherit;
+  transition: background-color 0.2s;
+  padding: 0.9rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-wrap: nowrap;
+  @include flex;
+  @include center-vertical;
+  @include center-horizontal;
+  &.disabled {
+    cursor: not-allowed;
+  }
+}
+
+.tab-option {
+  @include tab-option;
+  @include color-set;
+}

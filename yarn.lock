@@ -1697,34 +1697,34 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cdkit/common@npm:^0.0.8":
-  version: 0.0.8
-  resolution: "@cdkit/common@npm:0.0.8"
-  checksum: 199f029e8003d100e23fa3a8bd516cc3800d1762a4478114cee603e796918542dfc80bda419bd8a555f8f2254c7d9e04bca6dde2909be8bd2f75e1fa56a1119d
+"@cdkit/common@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "@cdkit/common@npm:0.1.0"
+  checksum: 5a38da26dc371a6802e68bfcc22712b3e7df965d9dcf137186d39022b184fe62d6344db8cade988ec4348842c2b2867dafbdfb9a296568dee6ebfba6a717a5fe
   languageName: node
   linkType: hard
 
-"@cdkit/react-modules@npm:^0.0.8":
-  version: 0.0.8
-  resolution: "@cdkit/react-modules@npm:0.0.8"
+"@cdkit/react-modules@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "@cdkit/react-modules@npm:0.1.0"
   dependencies:
     react: ^18.2.0
     react-dom: ^18.2.0
     react-router-dom: ^6.15.0
-  checksum: 861972cc2dc4f9dddf52fc3d5bbe4bae84365e183559f267214ca2c63a54d34bd1321ccd138613aec63837501e829dbcc2ee23cf62dace9a247c00e547c778f3
+  checksum: 2f92d8ceab3b879f072c13ab33db2823b84aa9482ea54c7df7b0d9e81288e39e9987bf9dea0e6ae512336e45b02110840bc9c88f811c7e4031482dae0a2f92b6
   languageName: node
   linkType: hard
 
-"@cdkit/react-ui@npm:^0.0.8":
-  version: 0.0.8
-  resolution: "@cdkit/react-ui@npm:0.0.8"
+"@cdkit/react-ui@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "@cdkit/react-ui@npm:0.1.0"
   dependencies:
-    "@cdkit/common": ^0.0.8
-    "@cdkit/react-modules": ^0.0.8
+    "@cdkit/common": ^0.1.0
+    "@cdkit/react-modules": ^0.1.0
     lodash: ^4.17.21
     react: ^18.2.0
     react-dom: ^18.2.0
-  checksum: 5477441aec9c320b2a6f1fb3ab582a0bd7b6d58aaa835125bccd8e5f5f9adc92b32da21f3bc44a4dd72ef4e94e1630c205a406768f79a8555e97b1a86bd61349
+  checksum: 6b30089990419ab402a65995b028d89883cd065a91ebc606602f2d3a2205802ddef71579852c964cb3123792c6a6c390cac7daa73e349aecd5ca9779ec7eb8ec
   languageName: node
   linkType: hard
 
@@ -1732,9 +1732,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cdkit/storybook@workspace:."
   dependencies:
-    "@cdkit/common": ^0.0.8
-    "@cdkit/react-modules": ^0.0.8
-    "@cdkit/react-ui": ^0.0.8
+    "@cdkit/common": ^0.1.0
+    "@cdkit/react-modules": ^0.1.0
+    "@cdkit/react-ui": ^0.1.0
     "@storybook/addon-actions": ^7.6.4
     "@storybook/addon-controls": ^7.6.4
     "@storybook/addon-docs": ^7.6.4
