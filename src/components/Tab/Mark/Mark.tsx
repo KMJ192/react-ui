@@ -1,8 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
-
-import useTabState from '../store/hooks/useTabState';
 
 import classNames from 'classnames/bind';
 import style from '@css/components/Tab/Mark/style.module.scss';
@@ -21,7 +19,6 @@ function Mark<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   ref: React.Ref<React.ElementRef<typeof DEFAULT_ELEMENT>>,
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
-  const [tabState] = useTabState();
 
   return (
     <ELEMENT

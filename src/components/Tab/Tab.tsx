@@ -88,12 +88,12 @@ function T<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
 
     if (!optionsElement || !markElement) return () => {};
 
-    const t = setTimeout(() => {
+    const id = requestAnimationFrame(() => {
       setMark(optionsElement, markElement, selected, direction);
-    }, 100);
+    });
 
     return () => {
-      clearTimeout(t);
+      cancelAnimationFrame(id);
     };
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
