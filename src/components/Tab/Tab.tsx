@@ -7,6 +7,7 @@ import type { TabDirection } from './types';
 import Provider from './store/Provider';
 import Mark from './Mark/Mark';
 import Options from './Options/Options';
+import Option from './Option/Option';
 
 import useSelectTab from './hooks/useSelectTab';
 
@@ -119,6 +120,7 @@ function T<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
 const Tab = Object.assign(React.forwardRef(T) as typeof T, {
   Mark,
   Options,
+  Option,
 });
 
 export type TabProps = Props<typeof DEFAULT_ELEMENT>;

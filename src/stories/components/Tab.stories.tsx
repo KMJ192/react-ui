@@ -34,10 +34,10 @@ const TabTemplate = (args: TabProps) => {
     <Tab {...args} selected={selected} onClick={onSelect}>
       <Tab.Mark></Tab.Mark>
       <Tab.Options>
-        <Tab.Options.Option data-idx='0'>first</Tab.Options.Option>
-        <Tab.Options.Option data-idx='1'>second</Tab.Options.Option>
-        <Tab.Options.Option data-idx='2'>third</Tab.Options.Option>
-        <Tab.Options.Option data-idx='3'>last</Tab.Options.Option>
+        <Tab.Option data-idx='0'>first</Tab.Option>
+        <Tab.Option data-idx='1'>second</Tab.Option>
+        <Tab.Option data-idx='2'>third</Tab.Option>
+        <Tab.Option data-idx='3'>last</Tab.Option>
       </Tab.Options>
     </Tab>
   );

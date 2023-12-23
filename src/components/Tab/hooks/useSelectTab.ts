@@ -108,5 +108,5 @@ function useSelectTab() {
   return { windowSize, setMark };
 }
 
-export { MarkPosition as TabMarkPosition };
+export type { MarkPosition as TabMarkPosition };
 export default useSelectTab;
