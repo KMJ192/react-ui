@@ -24,8 +24,8 @@
     "@types/eslint": "^8",
     "@types/lodash": "^4",
     "@types/node": "^18.11.18",
-    "@types/react": "^18.2.6",
-    "@types/react-dom": "^18.2.4",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
     "@typescript-eslint/eslint-plugin": "^5.60.0",
     "@typescript-eslint/parser": "^5.60.0",
     "classnames": "^2.3.2",
@@ -40,11 +40,11 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "prettier": "^2.8.8",
     "recoil": "^0.7.7",
-    "sass": "^1.62.1",
+    "sass": "^1.69.5",
     "storybook": "^7.6.4",
     "storybook-dark-mode": "^3.0.1",
-    "typescript": "^5.0.4",
-    "vite": "^4.4.9",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.10",
     "vite-plugin-css-injected-by-js": "^3.1.2"
   },
   "dependencies": {
@@ -55,5 +55,5 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "packageManager": "yarn@3.6.3"
+  "packageManager": "yarn@4.0.2"
 }
