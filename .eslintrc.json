@@ -87,7 +87,8 @@
         "react/react-in-jsx-scope": 0,
         "react/require-default-props": 0,
         "@typescript-eslint/no-explicit-any": 0,
-        "@typescript-eslint/no-empty-function": 0
+        "@typescript-eslint/no-empty-function": 0,
+        "@typescript-eslint/no-non-null-assertion": 0
       },
       "settings": {
         "import/parsers": {
