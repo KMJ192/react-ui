@@ -1,4 +1,4 @@
-@import './variable/color.module.scss';
+@import '../../styles/color/color.module.scss';
 
 .badge {
   display: inline-block;
@@ -7,8 +7,8 @@
   border-radius: 1rem;
   min-height: 0.75rem;
   &.custom {
-    color: $cdkit-color-badge-text;
-    background: $cdkit-color-badge-bg;
+    color: none;
+    background: none;
   }
   &.primary {
     color: $light-text;

@@ -2,8 +2,6 @@ import React from 'react';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
-import Center from '@src/layout/Center/Center';
-
 import classNames from 'classnames/bind';
 import style from '@css/components/Badge/style.module.scss';
 const cx = classNames.bind(style);
@@ -35,7 +33,7 @@ function Badge<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
       ref={ref}
       className={cx('badge', colorSchema, className)}
     >
-      <Center>{children}</Center>
+      {children}
     </ELEMENT>
   );
 }
