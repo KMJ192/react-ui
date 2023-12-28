@@ -54,7 +54,7 @@ const Template = (args: any) => {
 
   return (
     <Button {...arg}>
-      {loading && <Button.LoadingSpinner />}
+      {loading && <Button.LoadingSpinner></Button.LoadingSpinner>}
       {leftIcon}
       {children}
       {rightIcon}

@@ -21,7 +21,7 @@ type BaseProps = {
   flexDirection?: CSS_DISPLAY_FLEX_DIRECTION;
   centerVertical?: boolean;
   centerHorizontal?: boolean;
-  clickAnimation?: boolean;
+  clickEffect?: boolean;
 };
 
 const DEFAULT_ELEMENT = 'button';
@@ -38,7 +38,7 @@ function Button<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     flexDirection,
     centerVertical = true,
     centerHorizontal = true,
-    clickAnimation = true,
+    clickEffect = true,
     className,
     ...props
   }: Props<T>,
@@ -58,7 +58,7 @@ function Button<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
         flexDirection,
         centerVertical && 'center-vertical',
         centerHorizontal && 'center-horizontal',
-        clickAnimation && 'ripple',
+        clickEffect && 'ripple',
         className,
       )}
     >
