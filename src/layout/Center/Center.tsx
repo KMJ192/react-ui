@@ -1,6 +1,10 @@
 import React from 'react';
 
-import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+import type {
+  CSS_DISPLAY,
+  CSS_DISPLAY_FLEX_DIRECTION,
+  OVER_RIDABLE_PROPS,
+} from '@src/types/types';
 
 import classNames from 'classnames/bind';
 import style from '@css/layout/Center/style.module.scss';
@@ -10,8 +14,8 @@ type BaseProps = {
   vertical?: boolean;
   horizontal?: boolean;
   children?: React.ReactNode;
-  display?: 'flex' | 'grid';
-  flexDirection?: 'column' | 'row' | 'column-reverse' | 'row-reverse';
+  display?: CSS_DISPLAY;
+  flexDirection?: CSS_DISPLAY_FLEX_DIRECTION;
 };
 
 const DEFAULT_ELEMENT = 'div';

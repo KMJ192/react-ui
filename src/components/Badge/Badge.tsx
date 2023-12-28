@@ -1,6 +1,10 @@
 import React from 'react';
 
-import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+import type {
+  CSS_DISPLAY,
+  CSS_DISPLAY_FLEX_DIRECTION,
+  OVER_RIDABLE_PROPS,
+} from '@src/types/types';
 
 import classNames from 'classnames/bind';
 import style from '@css/components/Badge/style.module.scss';
@@ -15,6 +19,8 @@ type BaseProps = {
     | 'warning'
     | 'danger'
     | 'custom';
+  display?: CSS_DISPLAY;
+  flexDirection?: CSS_DISPLAY_FLEX_DIRECTION;
 };
 
 const DEFAULT_ELEMENT = 'span';
@@ -22,7 +28,15 @@ const DEFAULT_ELEMENT = 'span';
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
 function Badge<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
-  { as, children, colorSchema = 'primary', className, ...props }: Props<T>,
+  {
+    as,
+    children,
+    colorSchema = 'primary',
+    display,
+    flexDirection,
+    className,
+    ...props
+  }: Props<T>,
   ref: React.Ref<React.ElementRef<typeof DEFAULT_ELEMENT>>,
 ) {
   const ELEMENT = as || DEFAULT_ELEMENT;
@@ -31,7 +45,7 @@ function Badge<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     <ELEMENT
       {...props}
       ref={ref}
-      className={cx('badge', colorSchema, className)}
+      className={cx('badge', colorSchema, display, flexDirection, className)}
     >
       {children}
     </ELEMENT>

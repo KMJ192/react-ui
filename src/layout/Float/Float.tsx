@@ -1,6 +1,10 @@
 import React from 'react';
 
-import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+import type {
+  CSS_DISPLAY,
+  CSS_DISPLAY_FLEX_DIRECTION,
+  OVER_RIDABLE_PROPS,
+} from '@src/types/types';
 
 import { getStyle } from './calcStyle';
 
@@ -15,8 +19,8 @@ type BaseProps = {
   right?: number;
   top?: number;
   bottom?: number;
-  display?: 'flex' | 'grid';
-  flexDirection?: 'column' | 'row' | 'column-reverse' | 'row-reverse';
+  display?: CSS_DISPLAY;
+  flexDirection?: CSS_DISPLAY_FLEX_DIRECTION;
 };
 
 const DEFAULT_ELEMENT = 'div';

@@ -7,16 +7,28 @@ const meta: Meta<typeof Canvas> = {
   parameters: {
     componentSubtitle: 'Canvas',
   },
-  argTypes: {},
+  argTypes: {
+    type: {
+      options: ['particle', 'fireworks'],
+      control: {
+        type: 'radio',
+      },
+    },
+  },
 };
 
-const Template = () => {
-  return <Canvas />;
+const Template = (args: any) => {
+  return <Canvas {...args} />;
 };
 
-export const TestStory: StoryFn = Template.bind({});
-TestStory.args = {
-  children: 'Test',
+export const ParticleStory: StoryFn = Template.bind({});
+ParticleStory.args = {
+  type: 'particle',
+};
+
+export const FireWorksStory: StoryFn = Template.bind({});
+FireWorksStory.args = {
+  type: 'fireworks',
 };
 
 export default meta;

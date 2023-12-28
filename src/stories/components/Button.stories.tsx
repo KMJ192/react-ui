@@ -24,18 +24,6 @@ const meta: Meta<typeof Button> = {
         type: 'select',
       },
     },
-    disabled: {
-      options: [true, false],
-      control: {
-        type: 'radio',
-      },
-    },
-    loading: {
-      options: [true, false],
-      control: {
-        type: 'radio',
-      },
-    },
     leftIcon: {
       control: {
         disable: true,
@@ -46,13 +34,32 @@ const meta: Meta<typeof Button> = {
         disable: true,
       },
     },
+    display: {
+      options: ['flex', 'grid'],
+      control: {
+        type: 'radio',
+      },
+    },
+    flexDirection: {
+      options: ['column', 'row', 'column-reverse', 'row-reverse'],
+      control: {
+        type: 'radio',
+      },
+    },
   },
 };
 
-const Template = (args: ButtonProps) => {
-  const { children, ...arg } = args;
+const Template = (args: any) => {
+  const { children, leftIcon, rightIcon, loading, ...arg } = args;
 
-  return <Button {...arg}>{children}</Button>;
+  return (
+    <Button {...arg}>
+      {loading && <Button.LoadingSpinner />}
+      {leftIcon}
+      {children}
+      {rightIcon}
+    </Button>
+  );
 };
 
 export const Primary: StoryFn<ButtonProps> = Template.bind({});
@@ -60,38 +67,67 @@ Primary.args = {
   children: 'Primary',
   variant: 'primary',
   shape: 'rect',
+  disabled: false,
+  centerVertical: true,
+  centerHorizontal: true,
+  clickAnimation: true,
 };
 
-export const LeftIcon: StoryFn<ButtonProps> = Template.bind({});
+export const Loading: StoryFn = Template.bind({});
+Loading.args = {
+  children: 'Loading',
+  variant: 'primary',
+  shape: 'rect',
+  disabled: true,
+  centerVertical: true,
+  centerHorizontal: true,
+  clickAnimation: true,
+  loading: true,
+};
+
+export const LeftIcon: StoryFn<ButtonProps & { leftIcon: any }> = Template.bind(
+  {},
+);
 LeftIcon.args = {
   children: 'LeftIcon',
   variant: 'primary',
   shape: 'rect',
+  disabled: false,
   leftIcon: (
     <img
       src={downloadIcon}
       alt='downIcon'
       style={{
         padding: '0',
+        width: '1.5rem',
       }}
     />
   ),
+  centerVertical: true,
+  centerHorizontal: true,
+  clickAnimation: true,
 };
 
-export const RightIcon: StoryFn<ButtonProps> = Template.bind({});
+export const RightIcon: StoryFn<ButtonProps & { rightIcon: any }> =
+  Template.bind({});
 RightIcon.args = {
   children: 'RightIcon',
   variant: 'primary',
   shape: 'rect',
+  disabled: false,
   rightIcon: (
     <img
       src={downloadIcon}
       alt='downIcon'
       style={{
         padding: '0',
+        width: '1.5rem',
       }}
     />
   ),
+  centerVertical: true,
+  centerHorizontal: true,
+  clickAnimation: true,
 };
 
 export default meta;

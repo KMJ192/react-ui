@@ -21,3 +21,22 @@
     @include grid;
   }
 }
+
+@mixin center-vertical {
+  align-items: center;
+  -webkit-box-align: center;
+}
+
+@mixin center-horizontal {
+  justify-content: center;
+  -webkit-box-pack: center;
+}
+
+@mixin position-center {
+  &.center-vertical {
+    @include center-vertical;
+  }
+  &.center-horizontal {
+    @include center-horizontal;
+  }
+}

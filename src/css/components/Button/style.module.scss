@@ -1,5 +1,20 @@
 @import '../../styles/transition.scss';
-@import './variable/color.module.scss';
+@import '../../styles/color/color.module.scss';
+@import '../../layout/display.scss';
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(25, 25);
+  }
+  100% {
+    transform: scale(40, 40);
+    opacity: 0;
+  }
+}
 
 @mixin button {
   padding: 0.5rem 1rem;
@@ -7,15 +22,12 @@
   border-radius: 0.25rem;
   border: none;
   overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
   cursor: pointer;
   &:disabled {
     cursor: not-allowed;
   }
-}
-
-@mixin contents {
-  position: relative;
-  gap: 0.5rem;
 }
 
 @mixin shape {
@@ -31,74 +43,74 @@
 }
 
 @mixin color-set {
-  background: $cdkit-color-button-bg;
-  color: $cdkit-color-button-text;
-  box-shadow: $cdkit-color-button-box-shadow;
+  background: $light-primary000;
+  color: $light-text;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  // active
+  &:active:not(:disabled):not(.loading) {
+    background: $light-primary300;
+    color: $black;
+  }
+  // hover
+  &:hover:not(:disabled):not(.loading) {
+    background: $light-primary100;
+    color: $light-text;
+  }
   &:disabled {
-    background: $cdkit-color-button-bg-disabled;
-    color: $cdkit-color-button-text-disabled;
+    background: $light-gray000;
+    color: $light-gray200;
     &:active:not(.outlined):not(.clear),
     &:hover:not(.outlined):not(.clear) {
-      background: $cdkit-color-button-bg-disabled;
-      color: $cdkit-color-button-text-disabled;
+      background: $light-gray000;
+      color: $light-gray200;
     }
   }
-  &:active:not(:disabled):not(.loading) {
-    background: $cdkit-color-button-bg-active;
-    color: $cdkit-color-button-text-active;
-  }
-  &:hover:not(:disabled):not(.loading) {
-    background: $cdkit-color-button-bg-hover;
-    color: $cdkit-color-button-text-hover;
-  }
+
+  // outlined
   &.outlined {
     background: none;
     box-shadow: none;
-    outline: 0.08rem solid $cdkit-color-button-outline;
+    outline: 0.08rem solid $light-primary300;
     &:hover:not(:disabled):not(.loading) {
-      background: $cdkit-color-button-bg-hover;
-      color: $cdkit-color-button-text-hover;
+      background: $light-primary100;
+      color: $light-text;
     }
     &:disabled,
     &.loading {
-      outline: 0.08rem solid $cdkit-color-button-outline-disabled;
+      outline: 0.08rem solid $light-gray300;
     }
   }
+
+  // clear
   &.clear {
     background: none;
     box-shadow: none;
     &:hover:not(:disabled):not(.loading) {
-      background: $cdkit-color-button-bg-hover;
-      color: $cdkit-color-button-text-hover;
+      background: $light-primary100;
+      color: $light-text;
     }
   }
 }
 
 @mixin ripple-animation {
-  position: relative;
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0.25rem;
-    height: 0.25rem;
-    background: $cdkit-color-button-bg-ripple;
-    opacity: 0;
-    border-radius: 100%;
-    transform: scale(1, 1) translate(-50%);
-    transform-origin: 50% 50%;
+  &.ripple {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0.25rem;
+      height: 0.25rem;
+      background: $light-primary200;
+      opacity: 0;
+      border-radius: 100%;
+      transform: scale(1, 1) translate(-50%);
+      transform-origin: 50% 50%;
+    }
+    &:focus:not(:active)::after {
+      animation: ripple 0.5s ease-out;
+    }
   }
-
-  &:focus:not(:active)::after {
-    animation: ripple 0.5s ease-out;
-  }
-}
-
-@mixin icon {
-  width: 1.5rem;
-  aspect-ratio: 1;
-  place-content: center;
 }
 
 @mixin spinner {
@@ -110,31 +122,9 @@
 
 .button {
   @include button;
-  @include ripple-animation;
-  @include color-set;
   @include shape;
-
-  .contents {
-    @include contents;
-    .icon {
-      @include icon;
-    }
-    .btn-spinner {
-      @include spinner;
-    }
-  }
-}
-
-@keyframes ripple {
-  0% {
-    transform: scale(0, 0);
-    opacity: 1;
-  }
-  20% {
-    transform: scale(25, 25);
-  }
-  100% {
-    transform: scale(40, 40);
-    opacity: 0;
-  }
+  @include color-set;
+  @include display;
+  @include position-center;
+  @include ripple-animation;
 }

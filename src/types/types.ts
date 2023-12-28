@@ -20,9 +20,19 @@ type RecursivePartial<T> = {
   [P in keyof T]?: RecursivePartial<T[P]>;
 };
 
+type CSS_DISPLAY = 'flex' | 'grid';
+
+type CSS_DISPLAY_FLEX_DIRECTION =
+  | 'column'
+  | 'row'
+  | 'column-reverse'
+  | 'row-reverse';
+
 export type {
   OVER_RIDABLE_PROPS,
   COMBINE_ELEMENT_PROPS,
   COMBINE,
   RecursivePartial,
+  CSS_DISPLAY,
+  CSS_DISPLAY_FLEX_DIRECTION,
 };

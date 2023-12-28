@@ -4,11 +4,14 @@ import classNames from 'classnames/bind';
 import style from '@css/layout/Flex/style.module.scss';
 const cx = classNames.bind(style);
 
-import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+import type {
+  CSS_DISPLAY_FLEX_DIRECTION,
+  OVER_RIDABLE_PROPS,
+} from '@src/types/types';
 
 type BaseProps = {
   children?: React.ReactNode;
-  flexDirection?: 'column' | 'row' | 'column-reverse' | 'row-reverse';
+  flexDirection?: CSS_DISPLAY_FLEX_DIRECTION;
 };
 
 const DEFAULT_ELEMENT = 'div';

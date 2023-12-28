@@ -16,6 +16,18 @@ const meta: Meta<typeof Badge> = {
         type: 'select',
       },
     },
+    display: {
+      options: ['flex', 'grid'],
+      control: {
+        type: 'radio',
+      },
+    },
+    flexDirection: {
+      options: ['column', 'row', 'column-reverse', 'row-reverse'],
+      control: {
+        type: 'radio',
+      },
+    },
   },
 };
 

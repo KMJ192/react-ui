@@ -1,4 +1,5 @@
 @import '../../styles/color/color.module.scss';
+@import '../../layout/display.scss';
 
 .badge {
   display: inline-block;
@@ -6,6 +7,7 @@
   padding: 0.5rem;
   border-radius: 1rem;
   min-height: 0.75rem;
+  @include display;
   &.custom {
     color: none;
     background: none;

@@ -1,14 +1,18 @@
 import React from 'react';
 
-import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+import type {
+  CSS_DISPLAY,
+  CSS_DISPLAY_FLEX_DIRECTION,
+  OVER_RIDABLE_PROPS,
+} from '@src/types/types';
 
 import classNames from 'classnames/bind';
 import style from '@css/layout/Row/style.module.scss';
 const cx = classNames.bind(style);
 
 type BaseProps = {
-  display?: 'flex' | 'grid';
-  flexDirection?: 'column' | 'row' | 'column-reverse' | 'row-reverse';
+  display?: CSS_DISPLAY;
+  flexDirection?: CSS_DISPLAY_FLEX_DIRECTION;
   children?: React.ReactNode;
 };
 

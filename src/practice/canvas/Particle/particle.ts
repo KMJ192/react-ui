@@ -1,4 +1,4 @@
-import { randomNumber } from '../utils/utils';
+import { randomNumber } from '../../utils/utils';
 
 type ParticleInit = {
   ctx: CanvasRenderingContext2D;
@@ -46,6 +46,7 @@ class Particle implements ParticleImpl {
   public init = ({ ctx, x, y, radius, vy, acc }: ParticleInit) => {
     this.ctx = ctx;
     this.canvas = ctx.canvas;
+    this.ctx.fillStyle = 'orange';
     this.x = x;
     this.y = y;
     this.vy = vy;
