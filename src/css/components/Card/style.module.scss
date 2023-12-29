@@ -1,11 +1,13 @@
-@import './variable/variable.module.scss';
+@import '../../styles/color/color.module.scss';
 @import '../../layout/display.scss';
 
 .card {
   padding: 1rem;
   border-radius: 6px;
-  border: 1px solid $cdkit-color-card-border;
-  background: $cdkit-color-card-bg;
+  border: 1px solid $light-gray400;
+  background: $light-background;
   overflow: auto;
+  box-sizing: border-box;
   @include display;
+  @include position-center;
 }

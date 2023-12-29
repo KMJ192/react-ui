@@ -24,14 +24,6 @@ class FPS {
   private animate = async () => {
     if (!this.nextFrame) return;
 
-    // if (!window) {
-    //   await new Promise((res) => {
-    //     setTimeout(res, 500);
-    //   });
-    //   this.animate();
-    //   return;
-    // }
-
     window.requestAnimationFrame(this.animate);
 
     this.now = Date.now();
@@ -45,9 +37,7 @@ class FPS {
     this.then = this.now - (this.delta % this.interval);
   };
 
-  public init = ({ fps = 60 }: { fps?: number }) => {
-    this.interval = 1000 / fps;
-
+  public init = () => {
     this.now = 0;
 
     this.delta = 0;
@@ -57,9 +47,11 @@ class FPS {
     this.nextFrame = null;
   };
 
-  public execute = (callback: () => void) => {
+  public execute = (callback: () => void, fps: number) => {
+    this.interval = 1000 / fps;
     this.then = Date.now();
     this.nextFrame = callback;
+
     this.animate();
   };
 }

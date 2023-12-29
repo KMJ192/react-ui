@@ -33,6 +33,9 @@ const Template = (args: CardProps) => {
 export const CardStory: StoryFn<CardProps> = Template.bind({});
 CardStory.args = {
   children: 'Card',
+  display: 'flex',
+  centerVertical: false,
+  centerHorizontal: false,
 };
 
 export default meta;
