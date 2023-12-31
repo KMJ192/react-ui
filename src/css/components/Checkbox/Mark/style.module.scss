@@ -1,0 +1,33 @@
+@import '../../../styles/color/color.module.scss';
+
+@mixin color-set {
+  color: $light-primary000;
+  background: $light-blue400;
+  &.checked.disabled {
+    color: $light-gray100;
+    background: $light-gray300;
+  }
+  &:hover:not(.disabled) {
+    background: $light-blue500;
+  }
+  &.disabled:not(.checked) {
+    color: $light-gray100;
+    background: $light-gray100;
+    opacity: 1;
+  }
+}
+
+@mixin cb-mark {
+  transition: all 0.1s cubic-bezier(0.4, 0, 1, 1) 0ms;
+  opacity: 0;
+  width: inherit;
+  height: inherit;
+  &.checked {
+    opacity: 1;
+  }
+}
+
+.cb-mark {
+  @include cb-mark;
+  @include color-set;
+}
