@@ -1,39 +1,33 @@
 @import '../../layout/Center/style.module.scss';
-@import './variable/color.module.scss';
+@import '../../styles/color/color.module.scss';
 
 @mixin color-set {
-  border-color: $cdkit-color-input-border;
-  background: $cdkit-color-input-bg;
-  color: $cdkit-color-input-text;
+  border-color: $light-primary600;
+  background: $light-background;
+  color: $light-text;
   &::placeholder {
-    color: $cdkit-color-input-placeholder;
+    color: $light-gray100;
   }
 
   &:disabled {
-    border-color: $cdkit-color-input-border-disabled;
-    background: $cdkit-color-input-bg-disabled;
-    color: $cdkit-color-input-text-disabled;
+    border-color: $light-gray100;
+    background: $light-gray000;
+    color: $light-gray200;
     &::placeholder {
-      color: $cdkit-color-input-placeholder-disabled;
+      color: $light-gray100;
     }
   }
 
   &.error {
-    border-color: $cdkit-color-input-border-error;
-    background: $cdkit-color-input-bg-error;
-    color: $cdkit-color-input-text-error;
+    border-color: $light-danger;
   }
 
   &:hover:not(:disabled):not(.error) {
-    border-color: $cdkit-color-input-border-hover;
-    background: $cdkit-color-input-bg-hover;
-    color: $cdkit-color-input-text-hover;
+    border-color: $light-blue300;
   }
 
   &:not(:disabled):not(.error):focus {
-    border-color: $cdkit-color-input-border-focus;
-    background: $cdkit-color-input-bg-focus;
-    color: $cdkit-color-input-text-focus;
+    border-color: $light-blue500;
   }
 }
 
