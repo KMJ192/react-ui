@@ -2,77 +2,77 @@
 @import '../../layout/Center/style.module.scss';
 @import './variable/color.module.scss';
 
-@mixin color-set-data-table-container {
-  border: 0.14rem solid $cdkit-color-data-table-border;
-  background: $cdkit-color-data-table-bg;
+@mixin color-set-dt-container {
+  border: 0.14rem solid $light-primary600;
+  background: $light-background;
 }
 
 @mixin color-set-data-table {
   .caption {
-    color: $cdkit-color-data-table-caption-text;
+    color: $light-text;
   }
   .thead > .tr {
     .th,
     .td {
-      color: $cdkit-color-data-table-header-text;
-      background: $cdkit-color-data-table-header-bg;
+      color: $light-text;
+      background: $light-primary200;
     }
   }
   .tbody {
     .tr {
-      border-top: 0.08rem solid $cdkit-color-data-table-divide-line;
-      background: $cdkit-color-data-table-row-bg;
-      color: $cdkit-color-data-table-row-text;
+      border-top: 0.08rem solid $light-primary500;
+      background: $light-background;
+      color: $light-text;
       &.disabled {
-        color: $cdkit-color-data-table-row-text-disabled;
-        background: $cdkit-color-data-table-row-bg-disabled;
+        color: $light-gray200;
+        background: $light-gray000;
       }
       &:hover:not(.disabled) {
-        color: $cdkit-color-data-table-row-text-hover;
-        background: $cdkit-color-data-table-row-bg-hover;
+        color: $light-text;
+        background: $light-primary000;
       }
     }
   }
   .tfoot > .tr {
-    border-top: 0.08rem solid $cdkit-color-data-table-divide-line;
+    border-top: 0.08rem solid $light-primary500;
     .td,
     .th {
-      color: $cdkit-color-data-table-footer-text;
-      background: $cdkit-color-data-table-footer-bg;
+      color: $light-text;
+      background: $light-primary000;
     }
   }
 }
 
 @mixin color-set-pagination {
   & > .index-list > .index {
-    color: $cdkit-color-data-table-pagination-index-text;
-    background: $cdkit-color-data-table-pagination-index-bg;
+    color: $cdkit-color-dt-pagination-index-text;
+    background: $cdkit-color-dt-pagination-index-bg;
     &.selected {
-      color: $cdkit-color-data-table-pagination-index-text-selected;
-      background: $cdkit-color-data-table-pagination-index-bg-selected;
+      color: $cdkit-color-dt-pagination-index-text-selected;
+      background: $cdkit-color-dt-pagination-index-bg-selected;
     }
     &.over {
-      color: $cdkit-color-data-table-pagination-index-text-disabled;
-      background-color: $cdkit-color-data-table-pagination-index-bg-disabled;
+      color: $cdkit-color-dt-pagination-index-text-disabled;
+      background-color: $cdkit-color-dt-pagination-index-bg-disabled;
       cursor: not-allowed;
     }
     &:hover:not(.selected):not(.over) {
-      color: $cdkit-color-data-table-pagination-index-text-hover;
-      background: $cdkit-color-data-table-pagination-index-bg-hover;
+      color: $cdkit-color-dt-pagination-index-text-hover;
+      background: $cdkit-color-dt-pagination-index-bg-hover;
     }
   }
 
   .prev,
   .next {
-    fill: $cdkit-color-data-table-pagination-arrow;
+    fill: $cdkit-color-dt-pagination-arrow;
   }
   .prev.first-page,
   .next.last-page {
-    fill: $cdkit-color-data-table-pagination-arrow-disabled;
+    fill: $cdkit-color-dt-pagination-arrow-disabled;
   }
 }
 
-@mixin data-table-container {
+@mixin dt-container {
   border-radius: 0.5rem;
   white-space: nowrap;
   padding: 1rem 1.5rem;
@@ -185,9 +185,9 @@
   }
 }
 
-.data-table-container {
-  @include data-table-container;
-  @include color-set-data-table-container;
+.dt-container {
+  @include dt-container;
+  @include color-set-dt-container;
 }
 
 .data-table {

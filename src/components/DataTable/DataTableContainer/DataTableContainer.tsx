@@ -23,11 +23,7 @@ function DataTableContainer<
   const ELEMENT = as || DEFAULT_ELEMENT;
 
   return (
-    <ELEMENT
-      {...props}
-      ref={ref}
-      className={cx('data-table-container', className)}
-    >
+    <ELEMENT {...props} ref={ref} className={cx('dt-container', className)}>
       {children}
     </ELEMENT>
   );
