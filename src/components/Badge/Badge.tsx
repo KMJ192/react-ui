@@ -12,13 +12,7 @@ const cx = classNames.bind(style);
 
 type BaseProps = {
   children?: React.ReactNode;
-  colorSchema?:
-    | 'primary'
-    | 'success'
-    | 'info'
-    | 'warning'
-    | 'danger'
-    | 'custom';
+  colorSchema?: 'primary' | 'success' | 'info' | 'warning' | 'danger';
   display?: CSS_DISPLAY;
   flexDirection?: CSS_DISPLAY_FLEX_DIRECTION;
   centerVertical?: boolean;

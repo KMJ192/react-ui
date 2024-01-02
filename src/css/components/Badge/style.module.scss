@@ -2,10 +2,6 @@
 @import '../../layout/display.scss';
 
 @mixin color-schema {
-  &.custom {
-    color: none;
-    background: none;
-  }
   &.primary {
     color: $light-text;
     background: $light-primary200;
