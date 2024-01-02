@@ -1,15 +1,7 @@
 @import '../../styles/color/color.module.scss';
 @import '../../layout/display.scss';
 
-.badge {
-  display: inline-block;
-  white-space: nowrap;
-  padding: 0.5rem;
-  border-radius: 1rem;
-  width: fit-content;
-  min-height: 0.75rem;
-  @include display;
-  @include position-center;
+@mixin color-schema {
   &.custom {
     color: none;
     background: none;
@@ -34,4 +26,20 @@
     color: $light-primary000;
     background: $light-danger;
   }
+}
+
+@mixin badge {
+  display: inline-block;
+  white-space: nowrap;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  width: fit-content;
+  min-height: 0.75rem;
+}
+
+.badge {
+  @include badge;
+  @include display;
+  @include color-schema;
+  @include position-center;
 }

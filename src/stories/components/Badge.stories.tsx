@@ -4,6 +4,8 @@ import Badge, { type BadgeProps } from '@src/components/Badge/Badge';
 import { display, flexDirection } from './common';
 // import { Badge, type BadgeProps } from '@cdkit/react-ui';
 
+import style from './Components.module.scss';
+
 const meta: Meta<typeof Badge> = {
   title: 'UI/Components/Badge',
   component: Badge,
@@ -25,7 +27,11 @@ const meta: Meta<typeof Badge> = {
 const Template = (args: BadgeProps) => {
   const { children, ...arg } = args;
 
-  return <Badge {...arg}>{children}</Badge>;
+  return (
+    <Badge {...arg} className={style.badge}>
+      {children}
+    </Badge>
+  );
 };
 
 export const BadgeStory: StoryFn<BadgeProps> = Template.bind({});

@@ -1,23 +1,31 @@
-.checkbox {
-  --upcast-size-checkbox: 16px;
+// .checkbox {
+//   --upcast-size-checkbox: 16px;
+// }
+
+// .progress {
+//   --upcast-size-progress-height: 12px;
+// }
+
+// .radio {
+//   --upcast-size-radio: 16px;
+//   --upcast-size-radio-pupil: 10px;
+// }
+
+// .spinner {
+//   --upcast-size-spinner: 24px;
+//   --upcast-size-border-width: 4px;
+// }
+
+// .switch {
+//   --upcast-size-switch-bullet: 16px;
+//   --upcast-size-switch-width: 44px;
+//   --upcast-size-switch-height: 24px;
+// }
+
+.popup {
+  width: 100px;
 }
 
-.progress {
-  --upcast-size-progress-height: 12px;
-}
-
-.radio {
-  --upcast-size-radio: 16px;
-  --upcast-size-radio-pupil: 10px;
-}
-
-.spinner {
-  --upcast-size-spinner: 24px;
-  --upcast-size-border-width: 4px;
-}
-
-.switch {
-  --upcast-size-switch-bullet: 16px;
-  --upcast-size-switch-width: 44px;
-  --upcast-size-switch-height: 24px;
+.badge {
+  width: 100px;
 }
