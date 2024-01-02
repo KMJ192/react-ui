@@ -63,7 +63,8 @@ const RAW_RUNTIME_STATE =
           ["storybook-dark-mode", "virtual:919a460de175d417e396996396313abe6319d03d649c84854ba98f82404a0d632494b481ddb4cec8961febf5a612dc3e313602b33e8cd0523a9678dfb25332a1#npm:3.0.3"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"],\
           ["vite", "virtual:919a460de175d417e396996396313abe6319d03d649c84854ba98f82404a0d632494b481ddb4cec8961febf5a612dc3e313602b33e8cd0523a9678dfb25332a1#npm:5.0.10"],\
-          ["vite-plugin-css-injected-by-js", "virtual:919a460de175d417e396996396313abe6319d03d649c84854ba98f82404a0d632494b481ddb4cec8961febf5a612dc3e313602b33e8cd0523a9678dfb25332a1#npm:3.3.1"]\
+          ["vite-plugin-css-injected-by-js", "virtual:919a460de175d417e396996396313abe6319d03d649c84854ba98f82404a0d632494b481ddb4cec8961febf5a612dc3e313602b33e8cd0523a9678dfb25332a1#npm:3.3.1"],\
+          ["vite-plugin-wasm", "virtual:919a460de175d417e396996396313abe6319d03d649c84854ba98f82404a0d632494b481ddb4cec8961febf5a612dc3e313602b33e8cd0523a9678dfb25332a1#npm:3.3.0"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -2706,7 +2707,8 @@ const RAW_RUNTIME_STATE =
           ["storybook-dark-mode", "virtual:919a460de175d417e396996396313abe6319d03d649c84854ba98f82404a0d632494b481ddb4cec8961febf5a612dc3e313602b33e8cd0523a9678dfb25332a1#npm:3.0.3"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"],\
           ["vite", "virtual:919a460de175d417e396996396313abe6319d03d649c84854ba98f82404a0d632494b481ddb4cec8961febf5a612dc3e313602b33e8cd0523a9678dfb25332a1#npm:5.0.10"],\
-          ["vite-plugin-css-injected-by-js", "virtual:919a460de175d417e396996396313abe6319d03d649c84854ba98f82404a0d632494b481ddb4cec8961febf5a612dc3e313602b33e8cd0523a9678dfb25332a1#npm:3.3.1"]\
+          ["vite-plugin-css-injected-by-js", "virtual:919a460de175d417e396996396313abe6319d03d649c84854ba98f82404a0d632494b481ddb4cec8961febf5a612dc3e313602b33e8cd0523a9678dfb25332a1#npm:3.3.1"],\
+          ["vite-plugin-wasm", "virtual:919a460de175d417e396996396313abe6319d03d649c84854ba98f82404a0d632494b481ddb4cec8961febf5a612dc3e313602b33e8cd0523a9678dfb25332a1#npm:3.3.0"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -14732,6 +14734,28 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/vite-plugin-css-injected-by-js-virtual-1d2bbd5793/4/.yarn/berry/cache/vite-plugin-css-injected-by-js-npm-3.3.1-25936b941d-10c0.zip/node_modules/vite-plugin-css-injected-by-js/",\
         "packageDependencies": [\
           ["vite-plugin-css-injected-by-js", "virtual:919a460de175d417e396996396313abe6319d03d649c84854ba98f82404a0d632494b481ddb4cec8961febf5a612dc3e313602b33e8cd0523a9678dfb25332a1#npm:3.3.1"],\
+          ["@types/vite", null],\
+          ["vite", "virtual:919a460de175d417e396996396313abe6319d03d649c84854ba98f82404a0d632494b481ddb4cec8961febf5a612dc3e313602b33e8cd0523a9678dfb25332a1#npm:5.0.10"]\
+        ],\
+        "packagePeers": [\
+          "@types/vite",\
+          "vite"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["vite-plugin-wasm", [\
+      ["npm:3.3.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/vite-plugin-wasm-npm-3.3.0-e46ee06ea0-10c0.zip/node_modules/vite-plugin-wasm/",\
+        "packageDependencies": [\
+          ["vite-plugin-wasm", "npm:3.3.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:919a460de175d417e396996396313abe6319d03d649c84854ba98f82404a0d632494b481ddb4cec8961febf5a612dc3e313602b33e8cd0523a9678dfb25332a1#npm:3.3.0", {\
+        "packageLocation": "./.yarn/__virtual__/vite-plugin-wasm-virtual-d3e7131361/4/.yarn/berry/cache/vite-plugin-wasm-npm-3.3.0-e46ee06ea0-10c0.zip/node_modules/vite-plugin-wasm/",\
+        "packageDependencies": [\
+          ["vite-plugin-wasm", "virtual:919a460de175d417e396996396313abe6319d03d649c84854ba98f82404a0d632494b481ddb4cec8961febf5a612dc3e313602b33e8cd0523a9678dfb25332a1#npm:3.3.0"],\
           ["@types/vite", null],\
           ["vite", "virtual:919a460de175d417e396996396313abe6319d03d649c84854ba98f82404a0d632494b481ddb4cec8961febf5a612dc3e313602b33e8cd0523a9678dfb25332a1#npm:5.0.10"]\
         ],\

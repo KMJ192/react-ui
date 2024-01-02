@@ -1,6 +1,7 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
 import Badge, { type BadgeProps } from '@src/components/Badge/Badge';
+import { display, flexDirection } from './common';
 // import { Badge, type BadgeProps } from '@cdkit/react-ui';
 
 const meta: Meta<typeof Badge> = {
@@ -16,18 +17,8 @@ const meta: Meta<typeof Badge> = {
         type: 'select',
       },
     },
-    display: {
-      options: ['flex', 'grid'],
-      control: {
-        type: 'radio',
-      },
-    },
-    flexDirection: {
-      options: ['column', 'row', 'column-reverse', 'row-reverse'],
-      control: {
-        type: 'radio',
-      },
-    },
+    display,
+    flexDirection,
   },
 };
 
@@ -41,6 +32,8 @@ export const BadgeStory: StoryFn<BadgeProps> = Template.bind({});
 BadgeStory.args = {
   children: 'Badge',
   colorSchema: 'success',
+  centerVertical: false,
+  centerHorizontal: false,
 };
 
 export default meta;

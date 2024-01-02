@@ -20,10 +20,12 @@
 @mixin cb-mark {
   transition: all 0.1s cubic-bezier(0.4, 0, 1, 1) 0ms;
   opacity: 0;
+  visibility: hidden;
   width: inherit;
   height: inherit;
   &.checked {
     opacity: 1;
+    visibility: visible;
   }
 }
 

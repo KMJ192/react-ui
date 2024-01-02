@@ -1,6 +1,12 @@
 import React from 'react';
 
-import type { OVER_RIDABLE_PROPS } from '@src/types/types';
+import type {
+  CSS_DISPLAY,
+  CSS_DISPLAY_FLEX_DIRECTION,
+  OVER_RIDABLE_PROPS,
+} from '@src/types/types';
+
+import type { PopupAnimation } from './types';
 
 import classNames from 'classnames/bind';
 import style from '@css/components/Popup/style.module.scss';
@@ -8,8 +14,12 @@ const cx = classNames.bind(style);
 
 type BaseProps = {
   children?: React.ReactNode;
-  animation?: 'fade' | 'none';
+  animation?: PopupAnimation;
   visible?: boolean;
+  display?: CSS_DISPLAY;
+  flexDirection?: CSS_DISPLAY_FLEX_DIRECTION;
+  centerVertical?: boolean;
+  centerHorizontal?: boolean;
 };
 
 const DEFAULT_ELEMENT = 'div';
@@ -20,8 +30,12 @@ function Popup<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   {
     as,
     children,
-    animation = 'fade',
+    animation = 'none',
     visible = false,
+    display = 'flex',
+    flexDirection,
+    centerVertical,
+    centerHorizontal,
     className,
     ...props
   }: Props<T>,
@@ -33,7 +47,16 @@ function Popup<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     <ELEMENT
       {...props}
       ref={ref}
-      className={cx('popup', animation, { visible }, className)}
+      className={cx(
+        'popup',
+        animation,
+        { visible },
+        display,
+        flexDirection,
+        centerVertical && 'center-vertical',
+        centerHorizontal && 'center-horizontal',
+        className,
+      )}
     >
       {children}
     </ELEMENT>

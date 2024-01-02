@@ -70,7 +70,7 @@ Primary.args = {
   disabled: false,
   centerVertical: true,
   centerHorizontal: true,
-  clickAnimation: true,
+  clickEffect: true,
 };
 
 export const Loading: StoryFn = Template.bind({});
@@ -81,7 +81,7 @@ Loading.args = {
   disabled: true,
   centerVertical: true,
   centerHorizontal: true,
-  clickAnimation: true,
+  clickEffect: true,
   loading: true,
 };
 
@@ -105,7 +105,7 @@ LeftIcon.args = {
   ),
   centerVertical: true,
   centerHorizontal: true,
-  clickAnimation: true,
+  clickEffect: true,
 };
 
 export const RightIcon: StoryFn<ButtonProps & { rightIcon: any }> =
@@ -127,7 +127,7 @@ RightIcon.args = {
   ),
   centerVertical: true,
   centerHorizontal: true,
-  clickAnimation: true,
+  clickEffect: true,
 };
 
 export default meta;

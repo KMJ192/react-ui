@@ -1,24 +1,60 @@
-@import './variable/color.module.scss';
+@import '../../styles/color/color.module.scss';
+@import '../../layout/display.scss';
 
 @mixin default {
   border-radius: 0.25rem;
-  visibility: hidden;
-  opacity: 0;
-  &.visible {
-    visibility: visible;
-    opacity: 1;
-  }
 }
 
 @mixin color-set {
-  box-shadow: $cdkit-color-popup-box-shadow;
-  background-color: $cdkit-color-popup-bg;
-  color: $cdkit-color-popup-text;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  background-color: $light-primary000;
+  color: $light-text;
 }
 
 @mixin animation {
+  opacity: 0;
+  visibility: hidden;
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
   &.fade {
     transition: visibility 0.2s ease-out, opacity 0.2s ease-out;
+  }
+
+  &.up,
+  &.down,
+  &.left,
+  &.right {
+    transition: visibility 0.2s ease-out, opacity 0.2s ease-out,
+      transform 0.2s ease-in-out;
+  }
+  &.up,
+  &.down {
+    transform: scaleY(0);
+    &.visible {
+      transform: scaleY(1);
+    }
+  }
+  &.left,
+  &.right {
+    transform: scaleX(0);
+    &.visible {
+      transform: scaleX(1);
+    }
+  }
+  &.up {
+    transform-origin: bottom;
+  }
+  &.down {
+    transform-origin: top;
+  }
+  &.left {
+    transform-origin: left;
+  }
+  &.right {
+    transform-origin: right;
   }
 }
 
@@ -26,4 +62,6 @@
   @include default;
   @include color-set;
   @include animation;
+  @include display;
+  @include position-center;
 }

@@ -15,3 +15,5 @@ storybook-static
 .vscode
 
 .DS_Store
+
+target

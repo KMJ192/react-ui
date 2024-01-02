@@ -6,8 +6,10 @@
   white-space: nowrap;
   padding: 0.5rem;
   border-radius: 1rem;
+  width: fit-content;
   min-height: 0.75rem;
   @include display;
+  @include position-center;
   &.custom {
     color: none;
     background: none;

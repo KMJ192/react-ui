@@ -1,6 +1,7 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
 import Popup, { type PopupProps } from '@src/components/Popup/Popup';
+import { display, flexDirection } from './common';
 // import { Popup, type PopupProps } from '@cdkit/react-ui';
 
 const meta: Meta<typeof Popup> = {
@@ -11,11 +12,13 @@ const meta: Meta<typeof Popup> = {
   },
   argTypes: {
     animation: {
-      options: ['fade', 'none'],
+      options: ['fade', 'up', 'down', 'left', 'right', 'none'],
       control: {
         type: 'radio',
       },
     },
+    display,
+    flexDirection,
   },
 };
 
@@ -33,6 +36,10 @@ PrimaryPopup.args = {
   style: {
     padding: '30px',
   },
+  display: 'flex',
+  flexDirection: 'row',
+  centerVertical: false,
+  centerHorizontal: false,
 };
 
 export default meta;

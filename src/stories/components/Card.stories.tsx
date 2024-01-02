@@ -1,6 +1,7 @@
 import type { StoryFn, Meta } from '@storybook/react';
 
 import Card, { type CardProps } from '@src/components/Card/Card';
+import { display, flexDirection } from './common';
 
 const meta: Meta<typeof Card> = {
   title: 'UI/Components/Card',
@@ -9,18 +10,8 @@ const meta: Meta<typeof Card> = {
     componentSubtitle: 'Card',
   },
   argTypes: {
-    display: {
-      options: ['flex', 'grid'],
-      control: {
-        type: 'radio',
-      },
-    },
-    flexDirection: {
-      options: ['column', 'row', 'column-reverse', 'row-reverse'],
-      control: {
-        type: 'radio',
-      },
-    },
+    display,
+    flexDirection,
   },
 };
 

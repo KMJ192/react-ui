@@ -21,6 +21,8 @@ type BaseProps = {
     | 'custom';
   display?: CSS_DISPLAY;
   flexDirection?: CSS_DISPLAY_FLEX_DIRECTION;
+  centerVertical?: boolean;
+  centerHorizontal?: boolean;
 };
 
 const DEFAULT_ELEMENT = 'span';
@@ -32,8 +34,10 @@ function Badge<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     as,
     children,
     colorSchema = 'primary',
-    display,
+    display = 'flex',
     flexDirection,
+    centerVertical,
+    centerHorizontal,
     className,
     ...props
   }: Props<T>,
@@ -45,7 +49,15 @@ function Badge<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     <ELEMENT
       {...props}
       ref={ref}
-      className={cx('badge', colorSchema, display, flexDirection, className)}
+      className={cx(
+        'badge',
+        colorSchema,
+        display,
+        flexDirection,
+        centerVertical && 'center-vertical',
+        centerHorizontal && 'center-horizontal',
+        className,
+      )}
     >
       {children}
     </ELEMENT>

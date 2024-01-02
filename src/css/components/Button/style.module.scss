@@ -25,6 +25,8 @@
   box-sizing: border-box;
   position: relative;
   cursor: pointer;
+  width: fit-content;
+  height: fit-content;
   &:disabled {
     cursor: not-allowed;
   }
@@ -34,8 +36,6 @@
   &.circle {
     border-radius: 50%;
     aspect-ratio: 1;
-    width: fit-content;
-    height: fit-content;
   }
   &.square {
     aspect-ratio: 1;

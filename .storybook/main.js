@@ -1,4 +1,5 @@
 const path = require('path');
+const wasm = require('vite-plugin-wasm');
 
 module.exports = {
   stories: ['../src/stories/**/*.stories.tsx'],
@@ -17,6 +18,8 @@ module.exports = {
       '@migration': path.resolve(__dirname, '../src/components/migration'),
       '@css': path.resolve(__dirname, '../src/css'),
     };
+
+    config.plugins.push(wasm());
 
     return config;
   },
