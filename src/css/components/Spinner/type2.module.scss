@@ -11,13 +11,15 @@
 
 @mixin type-2 {
   &.type-2 {
+    width: 1.5rem;
+    height: 1.5rem;
     border-radius: 50%;
     display: inline-block;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
-    border: $cdkit-size-border-width solid $cdkit-color-spinner-color1;
+    border: 0.25rem solid;
+
+    border-color: $cdkit-color-spinner-color1;
     border-bottom-color: $cdkit-color-spinner-color2;
-    width: $cdkit-size-spinner;
-    height: $cdkit-size-spinner;
   }
 }

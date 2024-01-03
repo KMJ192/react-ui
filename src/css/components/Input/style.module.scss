@@ -3,7 +3,7 @@
 
 @mixin color-set {
   border-color: $light-primary600;
-  background: $light-background;
+  background-color: $light-background;
   color: $light-text;
   &::placeholder {
     color: $light-gray100;
@@ -11,7 +11,7 @@
 
   &:disabled {
     border-color: $light-gray100;
-    background: $light-gray000;
+    background-color: $light-gray000;
     color: $light-gray200;
     &::placeholder {
       color: $light-gray100;

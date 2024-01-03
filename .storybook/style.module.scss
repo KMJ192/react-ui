@@ -3,11 +3,11 @@
 
 @mixin theme {
   &.light {
-    background: $light-background;
+    background-color: $light-background;
     color: $light-text;
   }
   &.dark {
-    background: $dark-background;
+    background-color: $dark-background;
     color: $dark-text;
   }
 }

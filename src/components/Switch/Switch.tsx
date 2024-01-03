@@ -2,6 +2,10 @@ import React from 'react';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
+import Context from './store/Context';
+
+import Bullet from './Bullet/Bullet';
+
 import classNames from 'classnames/bind';
 import style from '@css/components/Switch/style.module.scss';
 const cx = classNames.bind(style);
@@ -16,7 +20,7 @@ const DEFAULT_ELEMENT = 'div';
 
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function Switch<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
+function S<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   {
     as,
     children,
@@ -30,25 +34,26 @@ function Switch<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   const ELEMENT = as || DEFAULT_ELEMENT;
 
   return (
-    <ELEMENT
-      {...props}
-      ref={ref}
-      className={cx(
-        'switch',
-        { checked },
-        { disabled },
-        children !== undefined && 'is-children',
-        className,
-      )}
+    <Context.Provider
+      value={{
+        checked,
+        disabled,
+      }}
     >
-      <div className={cx('switch-body', { checked }, { disabled })}></div>
-      <div className={cx('switch-bullet', { checked }, { disabled })}></div>
-      <span className={cx('children', { checked }, { disabled })}>
+      <ELEMENT
+        {...props}
+        ref={ref}
+        className={cx('switch', { checked }, { disabled }, className)}
+      >
         {children}
-      </span>
-    </ELEMENT>
+      </ELEMENT>
+    </Context.Provider>
   );
 }
 
+const Switch = Object.assign(React.forwardRef(S) as typeof S, {
+  Bullet,
+});
+
 export type SwitchProps = Props<typeof DEFAULT_ELEMENT>;
-export default React.forwardRef(Switch) as typeof Switch;
+export default Switch;

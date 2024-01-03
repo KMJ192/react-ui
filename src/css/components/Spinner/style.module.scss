@@ -1,9 +1,7 @@
 @import './type1.module.scss';
 @import './type2.module.scss';
-@import './type3.module.scss';
 
 .spinner {
   @include type-1;
   @include type-2;
-  @include type-3;
 }

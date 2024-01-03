@@ -1,8 +1,0 @@
-@import '../../../styles/color/color.module.scss';
-
-$cdkit-color-footer-bg: var(
-  --cdkit-color-footer-bg,
-  linear-gradient(165deg, #{$light-primary200}, #{$light-background})
-);
-
-$cdkit-color-footer-text: var(--cdkit-color-footer-text, $light-text);

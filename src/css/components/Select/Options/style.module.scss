@@ -1,0 +1,30 @@
+@import '../../../layout/Flex/flex.scss';
+@import '../../../styles/color/color.module.scss';
+
+@mixin color-set {
+  background-color: $light-background;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+@mixin select-options {
+  @include flex;
+  @include flex-column;
+  position: absolute;
+  overflow: auto;
+  border-radius: 4px;
+  transform: scaleY(0);
+  transition: ease-in-out, transform 0.2s ease-in-out, padding 0.2s ease-in-out;
+  transform-origin: top;
+  z-index: 890;
+  &.up {
+    transform-origin: bottom;
+  }
+  &.open {
+    transform: scaleY(1);
+  }
+}
+
+.select-options {
+  @include select-options;
+  @include color-set;
+}

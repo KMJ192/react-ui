@@ -1,13 +1,26 @@
 import { createContext } from 'react';
 import cloneDeep from 'lodash/cloneDeep';
 
-import type { ContextState } from './types';
+type ContextState = {
+  open: boolean;
+  disabled: boolean;
+  error: boolean;
+  placeholder: string;
+  direction: 'up' | 'down';
+  selectBBox: {
+    width: number;
+    height: number;
+    top: number;
+    left: number;
+  };
+};
 
 const INIT_STATE: ContextState = {
   open: false,
   disabled: false,
   error: false,
-  isOption: false,
+  placeholder: '',
+  direction: 'up',
   selectBBox: {
     width: 0,
     height: 0,

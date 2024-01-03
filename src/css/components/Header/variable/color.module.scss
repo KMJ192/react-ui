@@ -1,8 +1,0 @@
-@import '../../../styles/color/color.module.scss';
-
-$cdkit-color-header-bg: var(
-  --cdkit-color-header-bg,
-  linear-gradient(165deg, #{$light-primary000}, #{$light-primary300})
-);
-
-$cdkit-color-header-text: var(--cdkit-color-header-text, $light-text);

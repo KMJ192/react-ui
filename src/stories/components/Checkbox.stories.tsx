@@ -29,9 +29,7 @@ const meta: Meta<typeof Checkbox> = {
 const Template = (args: CheckboxProps) => {
   return (
     <Checkbox className={style.checkbox} {...args}>
-      <Checkbox.MarkField>
-        <Checkbox.Mark></Checkbox.Mark>
-      </Checkbox.MarkField>
+      <Checkbox.Mark></Checkbox.Mark>
     </Checkbox>
   );
 };

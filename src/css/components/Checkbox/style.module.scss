@@ -1,3 +1,44 @@
+@import '../../styles/color/color.module.scss';
+@import '../../layout/display.scss';
+
+@mixin color-set {
+  border-color: $light-primary700;
+  &.disabled {
+    border-color: $light-gray200;
+    background-color: $light-gray100;
+  }
+  &.checked {
+    border-color: $light-blue400;
+  }
+  &.checked.disabled {
+    border-color: $light-gray300;
+  }
+
+  .cb-mark {
+    color: $light-primary000;
+    background-color: $light-blue400;
+    &.checked.disabled {
+      color: $light-gray100;
+      background-color: $light-gray300;
+    }
+    &.disabled:not(.checked) {
+      color: $light-gray100;
+      background-color: $light-gray100;
+      opacity: 1;
+    }
+  }
+
+  &:hover:not(.disabled) {
+    border-color: $light-blue300;
+    &.checked {
+      border-color: $light-blue500;
+    }
+    .cb-mark {
+      background-color: $light-blue500;
+    }
+  }
+}
+
 @mixin checkbox {
   cursor: pointer;
   width: fit-content;
@@ -7,5 +48,29 @@
 }
 
 .checkbox {
+  border-radius: 0.125rem;
+  width: 1rem;
+  height: 1rem;
+  aspect-ratio: 1;
+  border-width: 0.125rem;
+  border-style: solid;
+  transition: border-color 0.1s;
   @include checkbox;
+  @include color-set;
+}
+
+@mixin cb-mark {
+  transition: all 0.1s cubic-bezier(0.4, 0, 1, 1) 0ms;
+  opacity: 0;
+  visibility: hidden;
+  width: inherit;
+  height: inherit;
+  &.checked {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.cb-mark {
+  @include cb-mark;
 }

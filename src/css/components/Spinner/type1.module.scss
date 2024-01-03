@@ -1,5 +1,4 @@
 @import './variable/color.module.scss';
-@import './variable/size.module.scss';
 
 @keyframes rotation {
   0% {
@@ -12,13 +11,14 @@
 
 @mixin type-1 {
   &.type-1 {
-    width: $cdkit-size-spinner;
-    height: $cdkit-size-spinner;
-    border: $cdkit-size-border-width solid $cdkit-color-spinner-color1;
+    width: 1.5rem;
+    height: 1.5rem;
     border-radius: 50%;
     display: inline-block;
     box-sizing: border-box;
-    border-bottom-color: transparent;
     animation: rotation 1s linear infinite;
+    border: 0.25rem solid;
+    border-color: $cdkit-color-spinner-color1;
+    border-bottom-color: transparent;
   }
 }

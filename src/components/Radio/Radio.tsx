@@ -2,8 +2,11 @@ import React from 'react';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
+import Mark from './Mark/Mark';
+
 import classNames from 'classnames/bind';
 import style from '@css/components/Radio/style.module.scss';
+import Context from './store/Context';
 const cx = classNames.bind(style);
 
 type BaseProps = {
@@ -16,7 +19,7 @@ const DEFAULT_ELEMENT = 'div';
 
 type Props<T extends React.ElementType> = OVER_RIDABLE_PROPS<T, BaseProps>;
 
-function Radio<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
+function R<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   {
     as,
     children,
@@ -30,24 +33,35 @@ function Radio<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   const ELEMENT = as || DEFAULT_ELEMENT;
 
   return (
-    <ELEMENT
-      {...props}
-      ref={ref}
-      className={cx(
-        'radio',
-        { checked },
-        { disabled },
-        children !== undefined && 'is-children',
-        className,
-      )}
+    <Context.Provider
+      value={{
+        checked,
+        disabled,
+      }}
     >
-      <div className={cx('mark', { checked }, { disabled })}>
+      <ELEMENT
+        {...props}
+        ref={ref}
+        className={cx(
+          'radio',
+          { checked },
+          { disabled },
+          className,
+          // children !== undefined && 'is-children',
+        )}
+      >
+        {children}
+        {/* <div className={cx('mark', { checked }, { disabled })}>
         <div className={cx('pupil', { checked }, { disabled })} />
-      </div>
-      <span className={cx('children', { disabled })}>{children}</span>
-    </ELEMENT>
+      </div> */}
+      </ELEMENT>
+    </Context.Provider>
   );
 }
 
+const Radio = Object.assign(React.forwardRef(R) as typeof R, {
+  Mark,
+});
+
 export type RadioProps = Props<typeof DEFAULT_ELEMENT>;
-export default React.forwardRef(Radio) as typeof Radio;
+export default Radio;

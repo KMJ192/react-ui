@@ -4,8 +4,9 @@
 .card {
   padding: 1rem;
   border-radius: 6px;
-  border: 1px solid $light-gray400;
-  background: $light-background;
+  border: 1px solid;
+  border-color: $light-gray400;
+  background-color: $light-background;
   overflow: auto;
   box-sizing: border-box;
   @include display;

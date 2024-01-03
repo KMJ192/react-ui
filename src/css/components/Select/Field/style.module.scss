@@ -1,0 +1,53 @@
+@import '../../../layout/Flex/flex.scss';
+@import '../../../layout/Center/style.module.scss';
+@import '../../../styles/color/color.module.scss';
+
+@mixin color-set {
+  border-color: $light-primary600;
+  background-color: $light-background;
+  color: $light-text;
+  &.error {
+    border-color: $light-danger;
+  }
+  &.disabled {
+    border-color: $light-gray100;
+    background-color: $light-gray000;
+    color: $light-gray200;
+  }
+  &:focus:not(.disabled):not(.error),
+  &.open:not(.error) {
+    border-color: $light-blue500;
+  }
+  &:hover:not(.disabled) {
+    border-color: $light-blue300;
+  }
+
+  .placeholder {
+    color: $light-gray100;
+  }
+  &.disabled > .placeholder {
+    color: $light-gray100;
+  }
+}
+
+@mixin select-field {
+  position: relative;
+  padding: 0.625rem 2rem 0.625rem 0.625rem;
+  border-radius: 0.25rem;
+  border: 0.08rem solid;
+  box-sizing: border-box;
+  width: 100%;
+  height: 2.75rem;
+  cursor: default;
+  outline: none;
+  @include flex;
+  @include center-vertical;
+  &.disabled {
+    cursor: not-allowed;
+  }
+}
+
+.select-field {
+  @include select-field;
+  @include color-set;
+}

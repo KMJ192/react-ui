@@ -1,7 +1,9 @@
+@import '../../../styles/color/color.module.scss';
+
 @mixin color-set {
-  color: black;
+  color: $black;
   &.disabled {
-    color: white;
+    color: $white;
   }
 }
 

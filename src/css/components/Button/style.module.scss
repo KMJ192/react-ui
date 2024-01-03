@@ -43,36 +43,36 @@
 }
 
 @mixin color-set {
-  background: $light-primary000;
+  background-color: $light-primary000;
   color: $light-text;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   // active
   &:active:not(:disabled):not(.loading) {
-    background: $light-primary300;
+    background-color: $light-primary300;
     color: $black;
   }
   // hover
   &:hover:not(:disabled):not(.loading) {
-    background: $light-primary100;
+    background-color: $light-primary100;
     color: $light-text;
   }
   &:disabled {
-    background: $light-gray000;
+    background-color: $light-gray000;
     color: $light-gray200;
     &:active:not(.outlined):not(.clear),
     &:hover:not(.outlined):not(.clear) {
-      background: $light-gray000;
+      background-color: $light-gray000;
       color: $light-gray200;
     }
   }
 
   // outlined
   &.outlined {
-    background: none;
+    background-color: none;
     box-shadow: none;
     outline: 0.08rem solid $light-primary300;
     &:hover:not(:disabled):not(.loading) {
-      background: $light-primary100;
+      background-color: $light-primary100;
       color: $light-text;
     }
     &:disabled,
@@ -83,10 +83,10 @@
 
   // clear
   &.clear {
-    background: none;
+    background-color: none;
     box-shadow: none;
     &:hover:not(:disabled):not(.loading) {
-      background: $light-primary100;
+      background-color: $light-primary100;
       color: $light-text;
     }
   }
@@ -101,7 +101,7 @@
       left: 50%;
       width: 0.25rem;
       height: 0.25rem;
-      background: $light-primary200;
+      background-color: $light-primary200;
       opacity: 0;
       border-radius: 100%;
       transform: scale(1, 1) translate(-50%);
@@ -113,13 +113,6 @@
   }
 }
 
-@mixin spinner {
-  position: absolute;
-  width: 1.25rem;
-  height: 1.25rem;
-  font-size: 0.8rem;
-}
-
 .button {
   @include button;
   @include shape;
@@ -127,4 +120,15 @@
   @include display;
   @include position-center;
   @include ripple-animation;
+}
+
+@mixin btn-loading {
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 0.8rem;
+}
+
+.btn-loading {
+  @include btn-loading;
 }

@@ -1,0 +1,49 @@
+@import '../../../styles/color/color.module.scss';
+
+@keyframes progress {
+  0% {
+    left: -2.25rem;
+  }
+  100% {
+    left: calc(100% + 2.25rem);
+  }
+}
+
+@mixin color-set {
+  background-color: $light-blue600;
+  &.exit {
+    background-color: $light-gray300;
+  }
+  .mark {
+    background: linear-gradient(
+      0.25turn,
+      $light-blue600,
+      rgba(255, 255, 255, 0.7),
+      $light-blue600
+    );
+  }
+}
+
+@mixin pending-bar {
+  height: 100%;
+  border-radius: 0.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+@mixin mark {
+  position: absolute;
+  height: 100%;
+  width: 2.25rem;
+  top: 0;
+  left: -2.25rem;
+  animation: progress 1.3s infinite;
+}
+
+.pending-bar {
+  @include pending-bar;
+  @include color-set;
+  .mark {
+    @include mark;
+  }
+}

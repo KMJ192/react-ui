@@ -1,11 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
-import useTabState from '../store/hooks/useTabState';
+import Context from '../store/Context';
 
 import classNames from 'classnames/bind';
-import style from '@css/components/Tab/Options/style.module.scss';
+import style from '@css/components/Tab/style.module.scss';
 const cx = classNames.bind(style);
 
 type BaseProps = {
@@ -22,13 +22,13 @@ function Options<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
 ) {
   const optionRef = useRef<HTMLDivElement>(null);
   const ELEMENT = as || DEFAULT_ELEMENT;
-  const [tabState] = useTabState();
+  const { direction } = useContext(Context);
 
   return (
     <ELEMENT
       {...props}
       ref={ref ?? optionRef}
-      className={cx('tab-options', tabState.direction, className)}
+      className={cx('tab-options', direction, className)}
     >
       {children}
     </ELEMENT>

@@ -4,7 +4,7 @@ import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
 import type { TabDirection } from './types';
 
-import Provider from './store/Provider';
+import Context from './store/Context';
 import Mark from './Mark/Mark';
 import Options from './Options/Options';
 import Option from './Option/Option';
@@ -101,7 +101,7 @@ function T<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   }, [direction]);
 
   return (
-    <Provider
+    <Context.Provider
       value={{
         direction,
       }}
@@ -113,7 +113,7 @@ function T<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
       >
         {children}
       </ELEMENT>
-    </Provider>
+    </Context.Provider>
   );
 }
 

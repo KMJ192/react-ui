@@ -1,9 +1,0 @@
-@import '../../../styles/color/color.module.scss';
-
-$cdkit-color-progress-body: var(--cdkit-color-progress-body, $light-primary300);
-$cdkit-color-progress-bar: var(--cdkit-color-progress-bar, $light-blue600);
-$cdkit-color-progress-exit: var(--cdkit-color-progress-exit, $light-gray300);
-$cdkit-color-progress-pending: var(
-  --cdkit-color-progress-pending,
-  rgba(255, 255, 255, 0.7)
-);

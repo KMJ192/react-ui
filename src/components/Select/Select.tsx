@@ -3,10 +3,11 @@ import { useDebounce } from '@cdkit/react-modules';
 
 import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 
-import Provider from './store/Provider';
-import Box from './Box/Box';
-import InputBox from './InputBox/InputBox';
-import Dropbox from './Dropbox/Dropbox';
+import Context from './store/Context';
+
+import Field from './Field/Field';
+import InputField from './InputField/InputField';
+import Options from './Options/Options';
 import Option from './Option/Option';
 
 import classNames from 'classnames/bind';
@@ -17,8 +18,9 @@ type BaseProps = {
   open?: boolean;
   disabled?: boolean;
   error?: boolean;
-  isOption?: boolean;
+  placeholder?: string;
   children?: React.ReactNode;
+  direction?: 'up' | 'down';
 };
 
 const DEFAULT_ELEMENT = 'div';
@@ -32,7 +34,8 @@ function S<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     open = false,
     disabled = false,
     error = false,
-    isOption = true,
+    placeholder = '',
+    direction = 'down',
     className,
     ...props
   }: Props<T>,
@@ -48,22 +51,6 @@ function S<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     top: 0,
     left: 0,
   });
-
-  const setPosition = (container: HTMLDivElement) => {
-    const {
-      offsetWidth: width,
-      offsetHeight: height,
-      offsetTop: top,
-      offsetLeft: left,
-    } = container;
-
-    setSelectBBox({
-      width,
-      height,
-      top,
-      left,
-    });
-  };
 
   const resizePosition = useDebounce((container: HTMLDivElement) => {
     const {
@@ -94,7 +81,19 @@ function S<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
     }
     if (container === null) return () => {};
 
-    setPosition(container);
+    const {
+      offsetWidth: width,
+      offsetHeight: height,
+      offsetTop: top,
+      offsetLeft: left,
+    } = container;
+
+    setSelectBBox({
+      width,
+      height,
+      top,
+      left,
+    });
 
     const resizeObserver = new ResizeObserver(() => {
       if (mount.current) resizePosition(container as HTMLDivElement);
@@ -122,13 +121,14 @@ function S<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   }, []);
 
   return (
-    <Provider
+    <Context.Provider
       value={{
+        placeholder,
         open,
         disabled,
         error,
         selectBBox,
-        isOption,
+        direction,
       }}
     >
       <ELEMENT
@@ -138,15 +138,15 @@ function S<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
       >
         {children}
       </ELEMENT>
-    </Provider>
+    </Context.Provider>
   );
 }
 
 const Select = Object.assign(React.forwardRef(S) as typeof S, {
-  Box,
-  InputBox,
+  Field,
+  InputField,
   Option,
-  Dropbox,
+  Options,
 });
 
 export type SelectProps = Props<typeof DEFAULT_ELEMENT>;

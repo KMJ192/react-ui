@@ -1,24 +1,21 @@
 @import '../variable/color.module.scss';
 
 @mixin color-set {
-  background: $cdkit-color-select-option-bg;
-  color: $cdkit-color-select-option-text;
+  background-color: $light-background;
+  color: $light-text;
 
   &.disabled {
-    background: $cdkit-color-select-option-bg-disabled;
-    color: $cdkit-color-select-option-text-disabled;
+    background-color: $light-gray000;
+    color: $light-gray200;
   }
   &.selected:not(.disabled) {
-    background: $cdkit-color-select-option-bg-selected;
-    color: $cdkit-color-select-option-text-selected;
+    background-color: $light-primary100;
   }
   &.reserved:not(.disabled) {
-    background: $cdkit-color-select-option-bg-reserved;
-    color: $cdkit-color-select-option-text-reserved;
+    background-color: $light-primary200;
   }
   &:hover:not(.disabled) {
-    background: $cdkit-color-select-option-bg-hover;
-    color: $cdkit-color-select-option-text-hover;
+    background-color: $light-primary200;
   }
 }
 

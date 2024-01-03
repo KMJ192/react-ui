@@ -4,7 +4,7 @@
 
 @mixin color-set-dt-container {
   border: 0.14rem solid $light-primary600;
-  background: $light-background;
+  background-color: $light-background;
 }
 
 @mixin color-set-data-table {
@@ -15,21 +15,21 @@
     .th,
     .td {
       color: $light-text;
-      background: $light-primary200;
+      background-color: $light-primary200;
     }
   }
   .tbody {
     .tr {
       border-top: 0.08rem solid $light-primary500;
-      background: $light-background;
+      background-color: $light-background;
       color: $light-text;
       &.disabled {
         color: $light-gray200;
-        background: $light-gray000;
+        background-color: $light-gray000;
       }
       &:hover:not(.disabled) {
         color: $light-text;
-        background: $light-primary000;
+        background-color: $light-primary000;
       }
     }
   }
@@ -38,7 +38,7 @@
     .td,
     .th {
       color: $light-text;
-      background: $light-primary000;
+      background-color: $light-primary000;
     }
   }
 }
@@ -46,10 +46,10 @@
 @mixin color-set-pagination {
   & > .index-list > .index {
     color: $cdkit-color-dt-pagination-index-text;
-    background: $cdkit-color-dt-pagination-index-bg;
+    background-color: $cdkit-color-dt-pagination-index-bg;
     &.selected {
       color: $cdkit-color-dt-pagination-index-text-selected;
-      background: $cdkit-color-dt-pagination-index-bg-selected;
+      background-color: $cdkit-color-dt-pagination-index-bg-selected;
     }
     &.over {
       color: $cdkit-color-dt-pagination-index-text-disabled;
@@ -58,7 +58,7 @@
     }
     &:hover:not(.selected):not(.over) {
       color: $cdkit-color-dt-pagination-index-text-hover;
-      background: $cdkit-color-dt-pagination-index-bg-hover;
+      background-color: $cdkit-color-dt-pagination-index-bg-hover;
     }
   }
 

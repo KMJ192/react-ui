@@ -4,23 +4,23 @@
 @mixin color-schema {
   &.primary {
     color: $light-text;
-    background: $light-primary200;
+    background-color: $light-primary200;
   }
   &.success {
     color: $light-primary000;
-    background: $light-success;
+    background-color: $light-success;
   }
   &.info {
     color: $light-text;
-    background: $light-info;
+    background-color: $light-info;
   }
   &.warning {
     color: $light-text;
-    background: $light-warning;
+    background-color: $light-warning;
   }
   &.danger {
     color: $light-primary000;
-    background: $light-danger;
+    background-color: $light-danger;
   }
 }
 

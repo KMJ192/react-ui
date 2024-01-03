@@ -1,6 +1,7 @@
 @import '../../styles/color/color.module.scss';
-@import '../../layout/Flex/flex.scss';
-@import '../../layout/Center/style.module.scss';
+@import './Options/style.module.scss';
+@import './Option/style.module.scss';
+@import './Mark/style.module.scss';
 
 @mixin tab {
   position: relative;
@@ -8,7 +9,7 @@
   height: fit-content;
   border-radius: 0.25rem;
   align-items: center;
-  background: $light-primary000;
+  background-color: $light-primary000;
 }
 
 .tab {

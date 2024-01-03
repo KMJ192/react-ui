@@ -1,38 +1,32 @@
-@import './variable/color.module.scss';
+@import '../../styles/color/color.module.scss';
 
 @mixin color-set {
-  border-color: $cdkit-color-textarea-border;
-  background: $cdkit-color-textarea-bg;
-  color: $cdkit-color-textarea-text;
+  border-color: $light-primary600;
+  background-color: $light-background;
+  color: $light-text;
   &::placeholder {
-    color: $cdkit-color-textarea-placeholder;
+    color: $light-gray100;
   }
 
   &:disabled {
-    border-color: $cdkit-color-textarea-border-disabled;
-    background: $cdkit-color-textarea-bg-disabled;
-    color: $cdkit-color-textarea-text-disabled;
+    border-color: $light-gray100;
+    background-color: $light-gray000;
+    color: $light-gray200;
     &::placeholder {
-      color: $cdkit-color-textarea-placeholder-disabled;
+      color: $light-gray100;
     }
   }
 
   &.error {
-    border-color: $cdkit-color-textarea-border-error;
-    background: $cdkit-color-textarea-bg-error;
-    color: $cdkit-color-textarea-text-error;
+    border-color: $light-danger;
   }
 
   &:hover:not(:disabled):not(.error) {
-    border-color: $cdkit-color-textarea-border-hover;
-    background: $cdkit-color-textarea-bg-hover;
-    color: $cdkit-color-textarea-text-hover;
+    border-color: $light-blue300;
   }
 
   &:not(:disabled):not(.error):focus {
-    border-color: $cdkit-color-textarea-border-focus;
-    background: $cdkit-color-textarea-bg-focus;
-    color: $cdkit-color-textarea-text-focus;
+    border-color: $light-blue500;
   }
 }
 

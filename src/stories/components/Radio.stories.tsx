@@ -22,18 +22,15 @@ const meta: Meta<typeof Radio> = {
 };
 
 const Template = (args: RadioProps) => {
-  const { children, ...arg } = args;
-
   return (
-    <Radio {...arg} className={style.radio}>
-      {children}
+    <Radio {...args} className={style.radio}>
+      <Radio.Mark></Radio.Mark>
     </Radio>
   );
 };
 
 export const PrimaryRadio: StoryFn<RadioProps> = Template.bind({});
 PrimaryRadio.args = {
-  children: 'Radio',
   checked: false,
   disabled: false,
 };

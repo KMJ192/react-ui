@@ -17,7 +17,11 @@ const meta: Meta<typeof ProgressBar> = {
 };
 
 const Template = (args: ProgressBarProps) => {
-  return <ProgressBar className={style.progress} {...args}></ProgressBar>;
+  return (
+    <ProgressBar className={style.progress} {...args}>
+      <ProgressBar.Pending></ProgressBar.Pending>
+    </ProgressBar>
+  );
 };
 
 export const PrimaryProgressbar: StoryFn<ProgressBarProps> = Template.bind({});

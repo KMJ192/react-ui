@@ -15,18 +15,15 @@ const meta: Meta<typeof Switch> = {
 };
 
 const Template = (args: SwitchProps) => {
-  const { children, ...arg } = args;
-
   return (
-    <Switch {...arg} className={style.switch}>
-      {children}
+    <Switch {...args} className={style.switch}>
+      <Switch.Bullet></Switch.Bullet>
     </Switch>
   );
 };
 
 export const PrimarySwitch: StoryFn<SwitchProps> = Template.bind({});
 PrimarySwitch.args = {
-  children: 'Switch',
   checked: false,
   disabled: false,
 };

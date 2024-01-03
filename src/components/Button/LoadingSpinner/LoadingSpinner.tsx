@@ -4,7 +4,7 @@ import type { OVER_RIDABLE_PROPS } from '@src/types/types';
 import Spinner from '@src/components/Spinner/Spinner';
 
 import classNames from 'classnames/bind';
-import style from '@css/components/Button/LoadingSpinner/style.module.scss';
+import style from '@css/components/Button/style.module.scss';
 const cx = classNames.bind(style);
 
 type BaseProps = {

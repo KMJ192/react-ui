@@ -1,4 +1,6 @@
-@import '../style.module.scss';
+@import '../../../layout/Flex/flex.scss';
+@import '../../../layout/Center/style.module.scss';
+@import '../../../styles/color/color.module.scss';
 
 @mixin color-set {
   color: $light-text;
@@ -12,11 +14,11 @@
   }
   &:hover:not(.disabled) {
     color: $light-text;
-    background: $light-primary200;
+    background-color: $light-primary200;
   }
   &.disabled {
     color: $light-blue000;
-    background: $light-gray100;
+    background-color: $light-gray100;
   }
 }
 
