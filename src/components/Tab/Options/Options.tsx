@@ -35,5 +35,5 @@ function Options<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   );
 }
 
-export type OptionsProps = Props<typeof DEFAULT_ELEMENT>;
+export type TabOptionsProps = Props<typeof DEFAULT_ELEMENT>;
 export default React.forwardRef(Options) as typeof Options;

@@ -42,5 +42,5 @@ function Pending<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   );
 }
 
-export type PendingProps = Props<typeof DEFAULT_ELEMENT>;
+export type ProgressBarPendingProps = Props<typeof DEFAULT_ELEMENT>;
 export default React.forwardRef(Pending) as typeof Pending;

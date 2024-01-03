@@ -29,5 +29,5 @@ function Mark<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
   );
 }
 
-export type MarkProps = Props<typeof DEFAULT_ELEMENT>;
+export type TabMarkProps = Props<typeof DEFAULT_ELEMENT>;
 export default React.forwardRef(Mark) as typeof Mark;

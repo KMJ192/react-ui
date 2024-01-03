@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { deepClone } from '@src/utils/utils';
+import { deepClone } from '@cdkit/common';
 
 type ContextState = {
   checked: boolean;

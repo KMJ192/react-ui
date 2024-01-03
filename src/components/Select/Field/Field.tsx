@@ -42,18 +42,7 @@ function Field<T extends React.ElementType = typeof DEFAULT_ELEMENT>(
       )}
     >
       <When condition={children === undefined || children === ''}>
-        <When
-          condition={
-            typeof placeholder !== 'string' &&
-            placeholder !== null &&
-            placeholder !== undefined
-          }
-        >
-          {placeholder}
-        </When>
-        <When condition={typeof placeholder === 'string'}>
-          <span className={cx('placeholder')}>{placeholder}</span>
-        </When>
+        <span className={cx('placeholder')}>{placeholder}</span>
       </When>
       <When condition={children !== undefined}>{children}</When>
       <When condition={expandIcon !== null && expandIcon !== undefined}>

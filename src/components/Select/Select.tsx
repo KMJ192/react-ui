@@ -19,8 +19,8 @@ type BaseProps = {
   disabled?: boolean;
   error?: boolean;
   placeholder?: string;
-  children?: React.ReactNode;
   direction?: 'up' | 'down';
+  children?: React.ReactNode;
 };
 
 const DEFAULT_ELEMENT = 'div';
