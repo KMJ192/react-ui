@@ -17,6 +17,7 @@ module.exports = {
       '@icons': path.resolve(__dirname, '../src/static/icons'),
       '@migration': path.resolve(__dirname, '../src/components/migration'),
       '@css': path.resolve(__dirname, '../src/css'),
+      '@wasm': path.resolve(__dirname, '../wasm/pkg'),
     };
 
     config.plugins.push(wasm());
