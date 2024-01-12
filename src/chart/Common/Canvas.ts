@@ -1,5 +1,3 @@
-import { throttle } from '@cdkit/common';
-
 type Params = {
   canvas?: HTMLCanvasElement;
 };
@@ -9,6 +7,8 @@ class Canvas {
 
   public ctx: CanvasRenderingContext2D | null;
 
+  public draw: (() => void) | null;
+
   private dpr = 1;
 
   constructor(params?: Partial<Params>) {
@@ -17,11 +17,11 @@ class Canvas {
     this.ctx = this.canvas?.getContext('2d') ?? null;
 
     this.dpr = window.devicePixelRatio > 1 ? 2 : 1;
+
+    this.draw = null;
   }
 
-  static init = (params: Params) => new Canvas(params);
-
-  private load = throttle<any>(() => {
+  public reload = () => {
     if (!this.canvas || !this.ctx) return;
 
     const { dpr } = this;
@@ -29,30 +29,22 @@ class Canvas {
     this.canvas.style.width = '100%';
     this.canvas.style.height = '100%';
 
-    const { width, height } = this.canvas.getBoundingClientRect();
+    const width = this.canvas.clientWidth;
+    const height = this.canvas.clientHeight;
 
     this.canvas.width = width * dpr;
     this.canvas.height = height * dpr;
     this.ctx.scale(dpr, dpr);
+  };
 
-    this.ctx.fillRect(0, 0, 100, 100);
-    console.log('draw');
-  }, 800);
-
-  public init = ({ canvas }: Params) => {
-    if (!canvas) return () => {};
+  public load = ({ canvas }: Params) => {
+    if (!canvas) return;
 
     this.canvas = canvas;
 
     this.ctx = this.canvas.getContext('2d') ?? null;
 
-    this.load();
-
-    window.addEventListener('resize', this.load);
-
-    return () => {
-      window.removeEventListener('resize', this.load);
-    };
+    this.reload();
   };
 }
 

@@ -1,33 +1,11 @@
 class Vector {
-  private x: number;
+  public x: number;
 
-  private y: number;
+  public y: number;
 
   constructor(x?: number, y?: number) {
     this.x = x ?? 0;
     this.y = y ?? 0;
-  }
-
-  get getter() {
-    return {
-      x: this.x,
-      y: this.y,
-    };
-  }
-
-  public setX(x: number) {
-    this.x = x;
-  }
-
-  public setY(y: number) {
-    this.y = y;
-  }
-
-  public setter(x: number, y: number) {
-    this.x = x;
-    this.y = y;
-
-    return this;
   }
 
   static add(v1: Vector, v2: Vector) {
