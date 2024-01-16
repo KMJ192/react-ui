@@ -1,30 +1,35 @@
 import Canvas from '../Common/Canvas';
-import type { ChartStrategy } from '../Common/types';
-import type { PieChartLabelDataInfo } from './types';
+import Vector from '../Common/Vector';
+import type { ChartComponentStrategy } from '../Common/types';
+import type { PieChartRenderData } from './types';
 
 type PieChartLabelParams = {
   canvas: HTMLCanvasElement;
 };
 
-class Label implements ChartStrategy {
+class Label implements ChartComponentStrategy {
   public canvas: Canvas;
 
-  public dataInfo: Array<PieChartLabelDataInfo>;
+  private isRender: boolean;
+
+  private renderData: ReadonlyArray<PieChartRenderData>;
 
   private initRenderInterval: number;
 
   private radius: number;
 
-  public isRender: boolean;
+  private position: Vector;
 
   constructor() {
     this.canvas = new Canvas();
 
-    this.dataInfo = [];
+    this.renderData = [];
 
     this.initRenderInterval = 0;
 
     this.radius = 0;
+
+    this.position = new Vector(0, 0);
 
     this.isRender = false;
   }
@@ -33,7 +38,7 @@ class Label implements ChartStrategy {
     const { canvas, ctx } = this.canvas;
     if (!canvas || !ctx) return;
     const { clientWidth: width, clientHeight: height } = canvas;
-    const { dataInfo, radius, initRenderInterval: curInterval } = this;
+    const { renderData, radius, initRenderInterval: curInterval } = this;
 
     ctx.clearRect(0, 0, width, height);
 
@@ -41,17 +46,16 @@ class Label implements ChartStrategy {
       return ((degree - 90) / 180) * Math.PI;
     };
 
-    const len = dataInfo.length;
+    const len = renderData.length;
     for (let i = 0; i < len; i++) {
       const {
         label,
-        labelWidth,
-        labelHeight,
+        labelSize: { width: labelWidth, height: labelHeight },
         midDegree,
-        midDegreeX,
-        midDegreeY,
-        isHalf,
-      } = dataInfo[i];
+        midDegreeCoordinate: { x: midDegreeX, y: midDegreeY },
+      } = renderData[i];
+
+      const isHalf = this.position.x <= midDegreeX;
 
       if (label === '') continue;
 
@@ -72,7 +76,7 @@ class Label implements ChartStrategy {
           ptLen;
 
       ctx.save();
-      // ctx.strokeStyle = 'black';
+      ctx.strokeStyle = 'black';
       ctx.lineWidth = 0.8;
       ctx.beginPath();
       ctx.moveTo(midDegreeX, midDegreeY);
@@ -96,15 +100,8 @@ class Label implements ChartStrategy {
     }
   };
 
-  public update = ({
-    dataInfo,
-    radius,
-  }: {
-    dataInfo: Array<PieChartLabelDataInfo>;
-    radius: number;
-  }) => {
-    this.dataInfo = dataInfo;
-    this.radius = radius;
+  public update = (renderData: ReadonlyArray<PieChartRenderData>) => {
+    this.renderData = renderData;
   };
 
   public renderer = () => {
@@ -131,6 +128,22 @@ class Label implements ChartStrategy {
     };
     this.isRender = true;
     window.requestAnimationFrame(animation);
+  };
+
+  public reactiveStyleSetter = ({
+    position,
+    radius,
+    font,
+  }: {
+    position: Vector;
+    radius: number;
+    font: string;
+  }) => {
+    if (!this.canvas.ctx) return;
+
+    this.position = position;
+    this.radius = radius;
+    this.canvas.ctx.font = font;
   };
 
   public reload = () => {

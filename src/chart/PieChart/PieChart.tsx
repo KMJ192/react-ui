@@ -21,30 +21,31 @@ function PieChart<T extends React.ElementType = typeof LAYER>(
 ) {
   const layerRef = useRef(null);
 
-  const donutChart = useMemo(() => new Chart(), []);
+  const pieChart = useMemo(() => new Chart(), []);
 
   useEffect(() => {
     const layer =
       (ref as React.RefObject<React.ElementRef<typeof LAYER>>)?.current ??
       layerRef.current;
-
     if (!layer) return () => {};
-
-    const unmount = donutChart.load({
+    const unmount = pieChart.load({
       layer,
       data,
     });
-
     return () => {
       unmount();
     };
-  }, [donutChart, data]);
+  }, [pieChart, data]);
 
   return (
     <div {...props} ref={ref ?? layerRef}>
       <canvas></canvas>
       <canvas></canvas>
-      <canvas></canvas>
+      <canvas
+        style={{
+          position: 'absolute',
+        }}
+      ></canvas>
       <canvas></canvas>
     </div>
   );

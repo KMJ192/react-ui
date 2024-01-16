@@ -3,13 +3,17 @@ type Params = {
 };
 
 class Canvas {
+  private dpr: number;
+
   public canvas: HTMLCanvasElement | null;
 
   public ctx: CanvasRenderingContext2D | null;
 
-  public draw: (() => void) | null;
+  public width: number;
 
-  private dpr = 1;
+  public height: number;
+
+  public draw: (() => void) | null;
 
   constructor(params?: Partial<Params>) {
     this.canvas = params?.canvas ?? null;
@@ -18,6 +22,10 @@ class Canvas {
 
     this.dpr = window.devicePixelRatio > 1 ? 2 : 1;
 
+    this.width = 0;
+
+    this.height = 0;
+
     this.draw = null;
   }
 
@@ -25,15 +33,14 @@ class Canvas {
     if (!this.canvas || !this.ctx) return;
 
     const { dpr } = this;
-
     this.canvas.style.width = '100%';
     this.canvas.style.height = '100%';
 
-    const width = this.canvas.clientWidth;
-    const height = this.canvas.clientHeight;
+    this.width = this.canvas.clientWidth;
+    this.height = this.canvas.clientHeight;
 
-    this.canvas.width = width * dpr;
-    this.canvas.height = height * dpr;
+    this.canvas.width = this.width * dpr;
+    this.canvas.height = this.height * dpr;
     this.ctx.scale(dpr, dpr);
   };
 

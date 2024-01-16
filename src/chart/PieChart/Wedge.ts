@@ -1,145 +1,111 @@
 import Canvas from '../Common/Canvas';
-import type { ChartStrategy } from '../Common/types';
-import type { PieChartWedgeDataInfo } from './types';
+import Vector from '../Common/Vector';
+import type { ChartComponentStrategy } from '../Common/types';
+import type { PieChartRenderData } from './types';
 
 type PieChartWedgeParams = {
   canvas: HTMLCanvasElement;
-  divideColor: string;
 };
 
-class Wedge implements ChartStrategy {
+class Wedge implements ChartComponentStrategy {
   public canvas: Canvas;
-
-  public dataInfo: Array<PieChartWedgeDataInfo>;
 
   public hoverIdx: number;
 
-  public x: number;
-
-  public y: number;
-
-  public radius: number;
-
-  public width: number;
-
-  public height: number;
-
   public isRender: boolean;
 
-  private divideColor: string;
+  private renderData: ReadonlyArray<PieChartRenderData>;
+
+  private position: Vector;
+
+  private radius: number;
 
   private initRenderInterval: number;
 
   constructor() {
     this.canvas = new Canvas();
 
-    this.dataInfo = [];
+    this.renderData = [];
 
     this.hoverIdx = -1;
 
-    this.x = 0;
-
-    this.y = 0;
+    this.position = new Vector(0, 0);
 
     this.radius = 0;
 
-    this.width = 0;
-
-    this.height = 0;
-
     this.isRender = false;
-
-    this.divideColor = 'none';
 
     this.initRenderInterval = 0;
   }
 
+  private angle = (degree: number) => {
+    return ((degree * this.initRenderInterval - 90) / 180) * Math.PI;
+  };
+
+  private draw = (index: number) => {
+    const { canvas, ctx } = this.canvas;
+    if (!canvas || !ctx) return;
+    const {
+      renderData,
+      position: { x, y },
+    } = this;
+    const isHover = this.hoverIdx === index;
+    const radius = isHover ? this.radius * 1.085 : this.radius;
+
+    const { startDegree, endDegree, color } = renderData[index];
+
+    ctx.save();
+    if (isHover) {
+      ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+      ctx.shadowBlur = 8;
+      ctx.shadowOffsetX = 3;
+      ctx.shadowOffsetY = 3;
+    }
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.arc(
+      x,
+      y,
+      radius,
+      this.angle(startDegree),
+      this.angle(endDegree),
+      false,
+    );
+    ctx.closePath();
+    ctx.fillStyle = color;
+    ctx.fill();
+
+    ctx.restore();
+  };
+
   private render = () => {
     const { canvas, ctx } = this.canvas;
     if (!canvas || !ctx) return;
-    const { dataInfo, hoverIdx, width, height, x, y, radius } = this;
+    const { renderData, hoverIdx } = this;
+    const { width, height } = this.canvas;
 
     ctx.clearRect(0, 0, width, height);
 
-    const len = dataInfo.length;
-
-    const angle = (degree: number) => {
-      return ((degree * this.initRenderInterval - 90) / 180) * Math.PI;
-    };
-
-    const draw = (
-      x: number,
-      y: number,
-      radius: number,
-      start: number,
-      end: number,
-      color: string,
-      isHover: boolean,
-    ) => {
-      ctx.save();
-      if (isHover) {
-        ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
-        ctx.shadowBlur = 8;
-        ctx.shadowOffsetX = 3;
-        ctx.shadowOffsetY = 3;
-      }
-      ctx.beginPath();
-      ctx.moveTo(x, y);
-      ctx.arc(x, y, radius, angle(start), angle(end), false);
-      ctx.closePath();
-      ctx.fillStyle = color;
-      ctx.fill();
-      if (this.divideColor !== 'none') {
-        ctx.strokeStyle = this.divideColor;
-        ctx.stroke();
-      }
-      ctx.restore();
-    };
-
+    const len = renderData.length;
     for (let i = 0; i < len; i++) {
-      const { startDegree, endDegree, color, disabled } = dataInfo[i];
+      const { disabled } = renderData[i];
       const isHover = i === hoverIdx && !disabled;
       if (isHover) continue;
-
-      draw(x, y, radius, startDegree, endDegree, color, isHover);
+      this.draw(i);
     }
     if (hoverIdx > -1) {
-      const { startDegree, endDegree, color, disabled } = dataInfo[hoverIdx];
-      if (disabled) return;
-      draw(x, y, radius * 1.085, startDegree, endDegree, color, true);
+      if (renderData[hoverIdx].disabled) return;
+      this.draw(hoverIdx);
     }
   };
 
-  public update = ({
-    dataInfo,
-    x,
-    y,
-    radius,
-    width,
-    height,
-  }: {
-    dataInfo: Array<PieChartWedgeDataInfo>;
-    x: number;
-    y: number;
-    radius: number;
-    width: number;
-    height: number;
-  }) => {
-    this.x = x;
-
-    this.y = y;
-
-    this.radius = radius;
-
-    this.width = width;
-
-    this.height = height;
-
-    this.dataInfo = dataInfo;
+  public update = (renderData: ReadonlyArray<PieChartRenderData>) => {
+    this.renderData = renderData;
   };
 
   public isInsideWedge = (x: number, y: number) => {
-    const { width, height, radius } = this;
+    const { radius } = this;
+    const { width, height } = this.canvas;
 
     let isInside = false;
     let index = -1;
@@ -154,9 +120,9 @@ class Wedge implements ChartStrategy {
     if (degree < 0) degree += 360;
 
     if (isInside) {
-      const len = this.dataInfo.length;
+      const len = this.renderData.length;
       for (let i = 0; i < len; i++) {
-        const { startDegree, endDegree } = this.dataInfo[i];
+        const { startDegree, endDegree } = this.renderData[i];
         if (startDegree <= degree && degree <= endDegree) {
           index = i;
           break;
@@ -196,18 +162,32 @@ class Wedge implements ChartStrategy {
     window.requestAnimationFrame(animation);
   };
 
+  public reactiveStyleSetter = ({
+    position,
+    radius,
+    font,
+  }: {
+    position: Vector;
+    radius: number;
+    font: string;
+  }) => {
+    if (!this.canvas.ctx) return;
+
+    this.position = position;
+    this.radius = radius;
+    this.canvas.ctx.font = font;
+  };
+
   public reload = () => {
     this.canvas.reload();
   };
 
-  public load = ({ canvas, divideColor }: PieChartWedgeParams) => {
+  public load = ({ canvas }: PieChartWedgeParams) => {
     this.canvas.load({ canvas });
 
     if (!this.canvas.canvas) return;
 
     this.canvas.canvas.style.position = 'absolute';
-
-    this.divideColor = divideColor;
   };
 }
 

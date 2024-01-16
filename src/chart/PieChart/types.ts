@@ -1,3 +1,5 @@
+import { Coordinate, Size } from '../Common/types';
+
 type PieChartData = {
   total: number;
   name: Array<string>;
@@ -5,21 +7,18 @@ type PieChartData = {
   color: Array<string>;
 };
 
-type PieChartLabelDataInfo = {
-  label: string;
-  midDegree: number;
-  midDegreeX: number;
-  midDegreeY: number;
-  isHalf: boolean;
-  labelWidth: number;
-  labelHeight: number;
+type PieChartRenderData = {
+  readonly label: string;
+  readonly value: string;
+  readonly labelSize: Size;
+  readonly valueLabel: string;
+  readonly valueLabelSize: Size;
+  readonly startDegree: number;
+  readonly endDegree: number;
+  readonly midDegree: number;
+  readonly midDegreeCoordinate: Coordinate;
+  readonly color: string;
+  readonly disabled: boolean;
 };
 
-type PieChartWedgeDataInfo = {
-  startDegree: number;
-  endDegree: number;
-  color: string;
-  disabled: boolean;
-};
-
-export type { PieChartData, PieChartWedgeDataInfo, PieChartLabelDataInfo };
+export type { PieChartData, PieChartRenderData };

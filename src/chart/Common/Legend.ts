@@ -1,6 +1,6 @@
 import Canvas from './Canvas';
 import Vector from './Vector';
-import type { ChartStrategy } from './types';
+import type { ChartComponentStrategy } from './types';
 
 export type LegendDataInfo = {
   label: string;
@@ -13,7 +13,7 @@ type PieChartLegendParams = {
   canvas: HTMLCanvasElement;
 };
 
-class Legend implements ChartStrategy {
+class Legend implements ChartComponentStrategy {
   public canvas: Canvas;
 
   public dataInfo: Array<LegendDataInfo>;

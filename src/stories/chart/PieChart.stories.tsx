@@ -38,9 +38,8 @@ const Template = (args: PieChartProps) => {
         onClick={() => {
           setState((data) => {
             const newData = deepClone(data);
-            newData.total = 180;
-            newData.name.push('test');
-            newData.value.push(10);
+            newData.total += 10;
+            newData.value[0] += 10;
             return newData;
           });
         }}
@@ -54,10 +53,10 @@ const Template = (args: PieChartProps) => {
 export const PieChartStory: StoryFn<PieChartProps> = Template.bind({});
 PieChartStory.args = {
   data: {
-    total: 160,
-    name: ['first', 'second', 'third', 'fourth', 'last'],
-    value: [30, 30, 20, 32, 48],
-    color: ['green', 'red', 'blue', 'magenta', 'skyblue'],
+    total: 230,
+    name: ['first', 'second', 'third', 'fourth', 'last', 'test'],
+    value: [30, 30, 20, 32, 48, 70],
+    color: ['green', 'red', 'blue', 'magenta', 'skyblue', '#dac'],
   },
 };
 

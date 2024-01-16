@@ -1,6 +1,6 @@
 import Canvas from '../Common/Canvas';
 import Vector from '../Common/Vector';
-import { ChartStrategy } from '../Common/types';
+import { ChartComponentStrategy } from '../Common/types';
 
 export type TooltipDataInfo = {
   label: string;
@@ -13,7 +13,7 @@ type TooltipParams = {
   canvas: HTMLCanvasElement;
 };
 
-class Tooltip implements ChartStrategy {
+class Tooltip implements ChartComponentStrategy {
   public canvas: Canvas;
 
   public dataInfo: Array<TooltipDataInfo>;
