@@ -52,8 +52,9 @@ const Template = (args: PieChartProps) => {
 
 export const PieChartStory: StoryFn<PieChartProps> = Template.bind({});
 PieChartStory.args = {
+  title: 'Title',
   data: {
-    total: 230,
+    total: 250,
     name: ['first', 'second', 'third', 'fourth', 'last', 'test'],
     value: [30, 30, 20, 32, 48, 70],
     color: ['green', 'red', 'blue', 'magenta', 'skyblue', '#dac'],

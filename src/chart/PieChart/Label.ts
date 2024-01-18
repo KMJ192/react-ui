@@ -1,37 +1,43 @@
 import Canvas from '../Common/Canvas';
 import Vector from '../Common/Vector';
-import type { ChartComponentStrategy } from '../Common/types';
+import type { FontStyle } from '../Common/types';
+import { pieChartDefaultValues } from './defaultVales';
 import type { PieChartRenderData } from './types';
 
 type PieChartLabelParams = {
   canvas: HTMLCanvasElement;
+  fontStyle: FontStyle;
 };
 
-class Label implements ChartComponentStrategy {
+class Label {
   public canvas: Canvas;
 
   private isRender: boolean;
+
+  private position: Vector;
+
+  private radius: number;
 
   private renderData: ReadonlyArray<PieChartRenderData>;
 
   private initRenderInterval: number;
 
-  private radius: number;
-
-  private position: Vector;
+  private fontStyle: FontStyle;
 
   constructor() {
     this.canvas = new Canvas();
+
+    this.isRender = false;
+
+    this.position = new Vector(0, 0);
+
+    this.radius = 0;
 
     this.renderData = [];
 
     this.initRenderInterval = 0;
 
-    this.radius = 0;
-
-    this.position = new Vector(0, 0);
-
-    this.isRender = false;
+    this.fontStyle = pieChartDefaultValues.font;
   }
 
   private render = () => {
@@ -78,6 +84,7 @@ class Label implements ChartComponentStrategy {
       ctx.save();
       ctx.strokeStyle = 'black';
       ctx.lineWidth = 0.8;
+
       ctx.beginPath();
       ctx.moveTo(midDegreeX, midDegreeY);
       ctx.lineTo(labelPointX1, labelPointY);
@@ -130,7 +137,7 @@ class Label implements ChartComponentStrategy {
     window.requestAnimationFrame(animation);
   };
 
-  public reactiveStyleSetter = ({
+  public styleUpdate = ({
     position,
     radius,
     font,
@@ -150,9 +157,11 @@ class Label implements ChartComponentStrategy {
     this.canvas.reload();
   };
 
-  public load = ({ canvas }: PieChartLabelParams) => {
+  public load = ({ canvas, fontStyle }: PieChartLabelParams) => {
     this.canvas.load({ canvas });
     if (!this.canvas.canvas) return;
+
+    this.fontStyle = fontStyle;
 
     this.canvas.canvas.style.position = 'absolute';
   };

@@ -7,7 +7,7 @@ type PieChartData = {
   color: Array<string>;
 };
 
-type PieChartRenderData = {
+type PieChartRenderData = Readonly<{
   readonly label: string;
   readonly value: string;
   readonly labelSize: Size;
@@ -19,6 +19,6 @@ type PieChartRenderData = {
   readonly midDegreeCoordinate: Coordinate;
   readonly color: string;
   readonly disabled: boolean;
-};
+}>;
 
 export type { PieChartData, PieChartRenderData };

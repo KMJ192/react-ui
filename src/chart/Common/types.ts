@@ -1,8 +1,8 @@
 interface ChartComponentStrategy {
-  update: (args: any) => void;
   renderer: (args: any) => void;
   reload: (args: any) => void;
   load: (args: any) => void;
+  styleUpdate: (args: any) => void;
 }
 
 type ChartComponent = new () => ChartComponentStrategy;
@@ -21,10 +21,18 @@ type Coordinate = {
   y: number;
 };
 
+type FontStyle = Partial<{
+  fontSize: string;
+  fontWeight: string;
+  fontFamily: string;
+  fontColor: string;
+}>;
+
 export type {
   ChartComponent,
   ChartComponentStrategy,
   ChartStrategy,
   Size,
   Coordinate,
+  FontStyle,
 };

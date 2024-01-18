@@ -1,5 +1,5 @@
 import Canvas from './Canvas';
-import type { Coordinate } from './types';
+import type { ChartComponentStrategy, Coordinate } from './types';
 import { getTextSize } from './utils';
 
 export type TooltipRenderDataInfo = {
@@ -13,9 +13,6 @@ export type TooltipRenderDataInfo = {
 type TooltipStylePrams = {
   strokeColor: string;
   backgroundColor: string;
-};
-
-type TooltipReactiveStyleParams = {
   markSize: number;
   rowGap: number;
   columnGap: number;
@@ -34,10 +31,8 @@ type TooltipParams = {
   canvas: HTMLCanvasElement;
 };
 
-class Tooltip {
+class Tooltip implements ChartComponentStrategy {
   public canvas: Canvas;
-
-  public isVisible: boolean;
 
   public columnGap: number;
 
@@ -62,10 +57,10 @@ class Tooltip {
 
   public backgroundColor: string;
 
+  private isRender: boolean;
+
   constructor() {
     this.canvas = new Canvas();
-
-    this.isVisible = false;
 
     this.font = '1rem Arial';
 
@@ -89,16 +84,19 @@ class Tooltip {
     this.strokeColor = '#000';
 
     this.backgroundColor = '#fff';
+
+    this.isRender = false;
   }
 
   public clear = () => {
+    if (!this.isRender) return;
     const { ctx } = this.canvas;
     if (!ctx) return;
     const { width, height } = this.canvas;
     ctx.clearRect(0, 0, width, height);
   };
 
-  public render = ({
+  public renderer = ({
     coordinate: { x, y },
     title,
     names,
@@ -109,6 +107,7 @@ class Tooltip {
     if (!ctx) return;
 
     this.clear();
+    this.isRender = false;
 
     const {
       markSize,
@@ -176,22 +175,24 @@ class Tooltip {
     }
 
     ctx.save();
+    ctx.beginPath();
     ctx.fillStyle = this.backgroundColor;
-    ctx.roundRect(x, y, width, height, [4, 4, 4, 4]);
+    ctx.roundRect(x, y, width, height, 4);
     ctx.fill();
+    ctx.stroke();
     ctx.closePath();
     ctx.restore();
 
-    const titleCoordinate = {
-      x: x + padding.left,
-      y: y + titleHeight + padding.top,
-    };
-
-    ctx.save();
-    ctx.font = `bold ${this.font}`;
-    ctx.fillText(title, titleCoordinate.x, titleCoordinate.y);
-    ctx.stroke();
-    ctx.restore();
+    if (title.length > 0) {
+      const titleCoordinate = {
+        x: x + padding.left,
+        y: y + titleHeight + padding.top,
+      };
+      ctx.save();
+      ctx.font = `bold ${this.font}`;
+      ctx.fillText(title, titleCoordinate.x, titleCoordinate.y);
+      ctx.restore();
+    }
 
     for (let i = 0; i < len; i++) {
       const { mark, name, value } = renderData[i];
@@ -206,30 +207,28 @@ class Tooltip {
       };
 
       ctx.save();
-
       ctx.beginPath();
-
       ctx.fillText(name.label, nameCoordinate.x, nameCoordinate.y);
       ctx.fillText(value.label, valueCoordinate.x, valueCoordinate.y);
-      ctx.stroke();
-
       ctx.fillStyle = mark.color;
       ctx.roundRect(
         mark.coordinate.x,
         mark.coordinate.y,
         markSize,
         markSize,
-        [2, 2, 2, 2],
+        2,
       );
       ctx.fill();
-
       ctx.closePath();
-
       ctx.restore();
     }
+
+    this.isRender = true;
   };
 
-  public reactiveStyleSetter = ({
+  public styleUpdate = ({
+    strokeColor,
+    backgroundColor,
     markSize,
     rowGap,
     columnGap,
@@ -237,7 +236,9 @@ class Tooltip {
     padding,
     markLabelGap,
     titleContentsGap,
-  }: TooltipReactiveStyleParams) => {
+  }: TooltipStylePrams) => {
+    this.strokeColor = strokeColor;
+    this.backgroundColor = backgroundColor;
     this.markSize = markSize;
     this.rowGap = rowGap;
     this.columnGap = columnGap;
@@ -246,14 +247,6 @@ class Tooltip {
     this.titleContentsGap = titleContentsGap;
     this.font = font;
     if (this.canvas.ctx) this.canvas.ctx.font = this.font;
-  };
-
-  public styleSetter = ({
-    strokeColor,
-    backgroundColor,
-  }: TooltipStylePrams) => {
-    this.strokeColor = strokeColor;
-    this.backgroundColor = backgroundColor;
   };
 
   public reload = () => {

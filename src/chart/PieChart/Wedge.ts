@@ -12,7 +12,7 @@ class Wedge implements ChartComponentStrategy {
 
   public hoverIdx: number;
 
-  public isRender: boolean;
+  private isRender: boolean;
 
   private renderData: ReadonlyArray<PieChartRenderData>;
 
@@ -38,6 +38,10 @@ class Wedge implements ChartComponentStrategy {
     this.initRenderInterval = 0;
   }
 
+  get getIsRender() {
+    return this.isRender;
+  }
+
   private angle = (degree: number) => {
     return ((degree * this.initRenderInterval - 90) / 180) * Math.PI;
   };
@@ -49,10 +53,9 @@ class Wedge implements ChartComponentStrategy {
       renderData,
       position: { x, y },
     } = this;
-    const isHover = this.hoverIdx === index;
+    const { startDegree, endDegree, color, disabled } = renderData[index];
+    const isHover = this.hoverIdx === index && !disabled;
     const radius = isHover ? this.radius * 1.085 : this.radius;
-
-    const { startDegree, endDegree, color } = renderData[index];
 
     ctx.save();
     if (isHover) {
@@ -162,7 +165,7 @@ class Wedge implements ChartComponentStrategy {
     window.requestAnimationFrame(animation);
   };
 
-  public reactiveStyleSetter = ({
+  public styleUpdate = ({
     position,
     radius,
     font,

@@ -1,35 +1,52 @@
+import Vector from '../Common/Vector';
 import Layer from '../Common/Layer';
+import Title from '../Common/Title';
+import Legend from '../Common/Legend';
+import Tooltip from '../Common/Tooltip';
+import { getTextSize } from '../Common/utils';
+
 import Label from './Label';
 import Wedge from './Wedge';
-import Vector from '../Common/Vector';
-import { getTextSize } from '../Common/utils';
+
 import { pieChartDefaultValues } from './defaultVales';
 
-// import Legend, { type LegendDataInfo } from '../Common/Legend';
-import Tooltip from '../Common/Tooltip';
-
 import type { PieChartData, PieChartRenderData } from './types';
-import type { ChartComponent, ChartStrategy } from '../Common/types';
+import type { ChartStrategy, FontStyle } from '../Common/types';
 
-type PieChartParams = {
+export type PieChartParams = {
   layer: HTMLElement;
   data: PieChartData;
+  title: string;
+  style?: {
+    backgroundColor: string;
+    title?: FontStyle;
+    legend?: FontStyle;
+    tooltip?: FontStyle & {
+      backgroundColor?: string;
+      borderRadius?: number;
+      borderColor?: string;
+    };
+  };
 };
 
+const angle = (degree: number) => {
+  return ((degree - 90) / 180) * Math.PI;
+};
 class PieChart implements ChartStrategy {
   // main layer
-  public layer: Layer;
+  private layer: Layer;
 
-  public components: Array<ChartComponent>;
-
-  // wedge
+  // 데이터뷰
   private wedge: Wedge;
 
   // 레이블
   private label: Label;
 
-  // // 범례
-  // private legend: Legend;
+  // 타이틀
+  private title: Title;
+
+  // 범례
+  private legend: Legend;
 
   // 튤팁
   private tooltip: Tooltip;
@@ -52,15 +69,15 @@ class PieChart implements ChartStrategy {
   constructor() {
     this.layer = new Layer();
 
-    this.components = [];
+    this.legend = new Legend();
+
+    this.tooltip = new Tooltip();
+
+    this.title = new Title();
 
     this.wedge = new Wedge();
 
     this.label = new Label();
-
-    // this.legend = new Legend();
-
-    this.tooltip = new Tooltip();
 
     this.data = {
       total: 0,
@@ -78,10 +95,6 @@ class PieChart implements ChartStrategy {
     this.isLoad = false;
   }
 
-  public thisState = () => {
-    return { renderData: this.renderData };
-  };
-
   private resizeEvent = () => {
     if (this.isLoad) return;
     this.reload();
@@ -89,29 +102,31 @@ class PieChart implements ChartStrategy {
 
   private hoverEvent = (x: number, y: number) => {
     const { layer } = this.layer;
-    if (!layer) return;
-    if (this.wedge.isRender) return;
-    if (this.isLoad) return;
+    if (!layer || this.isLoad || this.wedge.getIsRender) return;
     const { renderData } = this;
 
     let hoverIdx = -1;
 
     const { isInside: isInsideWedge, index: hoveredWedgeIdx } =
       this.wedge.isInsideWedge(x, y);
-    // const { isInside: isInsideLegend, index: hoveredLegend } =
-    //   this.legend.isInsideLegend(x, y);
+    const { isInside: isInsideLegend, index: hoveredLegendIndex } =
+      this.legend.isInsideLegend(x, y);
 
     if (isInsideWedge && renderData[hoveredWedgeIdx].disabled) {
       layer.style.cursor = 'not-allowed';
     } else {
       layer.style.cursor = 'default';
     }
-
     if (isInsideWedge) {
       hoverIdx = hoveredWedgeIdx;
+    } else if (isInsideLegend) {
+      hoverIdx = hoveredLegendIndex;
+    }
+
+    if (hoverIdx !== -1 && !renderData[hoverIdx].disabled) {
       const { color, label, value } = renderData[hoverIdx];
-      this.tooltip.render({
-        coordinate: { x, y },
+      this.tooltip.renderer({
+        coordinate: { x: x + 10, y: 10 + y },
         title: '',
         markColor: [color],
         names: [label],
@@ -120,30 +135,76 @@ class PieChart implements ChartStrategy {
     } else {
       this.tooltip.clear();
     }
-    // if (isInsideLegend) {
-    //   hoverIdx = hoveredLegend;
-    // }
 
     this.wedge.hoverIdx = hoverIdx;
     this.wedge.renderer();
   };
 
-  private update = () => {
-    const { layer } = this.layer;
-    const { ctx } = this.wedge.canvas;
-    if (!layer || !ctx) return;
+  private styleUpdate = () => {
+    const { width, height } = this.layer;
 
-    const angle = (degree: number) => {
-      return ((degree - 90) / 180) * Math.PI;
-    };
+    this.position.x = width / 2;
+    this.position.y = height / 2;
+    this.radius = width < height ? width / 4 : height / 4;
+    let fontSize = width < height ? height * 0.01 : width * 0.01;
+    fontSize = fontSize <= 12 ? 12 : fontSize;
+    const font = `${fontSize}px Arial`;
+
+    this.title.styleUpdate({
+      font: `600 ${fontSize * 4}px Arial`,
+      coordinate: {
+        x: this.position.x,
+        y: 17,
+      },
+    });
+    this.wedge.styleUpdate({
+      position: this.position,
+      radius: this.radius,
+      font,
+    });
+    this.label.styleUpdate({
+      position: this.position,
+      radius: this.radius,
+      font,
+    });
+    this.legend.styleUpdate({
+      direction: 'v',
+      position: { x: 10, y: 10 },
+      columGap: 10,
+      rowGap: 8,
+      markTextGap: 5,
+      markSize: fontSize === 12 ? 8 : fontSize * 0.7,
+      markRound: fontSize === 12 ? 1 : 2,
+      font,
+    });
+    this.tooltip.styleUpdate({
+      strokeColor: '#000',
+      backgroundColor: '#fff',
+      markSize: fontSize === 12 ? 8 : fontSize * 0.7,
+      font,
+      rowGap: 4,
+      columnGap: 12,
+      markLabelGap: 4,
+      titleContentsGap: 0,
+      padding: {
+        top: 6,
+        bottom: 6,
+        left: 6,
+        right: 6,
+      },
+    });
+  };
+
+  private renderDataUpdate = () => {
+    const { ctx } = this.wedge.canvas;
+    if (!ctx) return;
 
     const { total, value, name, color } = this.data;
-
-    // const legendDataInfo: Array<LegendDataInfo> = [];
 
     let degreeUpdate = 0;
     let sub = 0;
     this.renderData = [];
+    this.legend.renderData = [];
 
     value.forEach((v, idx) => {
       const rate = v / total;
@@ -161,7 +222,7 @@ class PieChart implements ChartStrategy {
       const midDegreeY =
         Math.sin(angle(midDegree)) * this.radius + this.position.y;
 
-      this.renderData.push({
+      const data: PieChartRenderData = {
         label,
         value: String(v),
         labelSize: getTextSize(ctx, label),
@@ -176,14 +237,17 @@ class PieChart implements ChartStrategy {
         },
         color: c,
         disabled: false,
-      });
+      };
 
-      // legendDataInfo.push({
-      //   label,
-      //   color: c,
-      //   labelWidth,
-      //   labelHeight,
-      // });
+      this.renderData.push(data);
+
+      const { width: lw, height: lh } = getTextSize(ctx, label);
+      this.legend.renderData.push({
+        label,
+        color: c,
+        labelWidth: lw,
+        labelHeight: lh,
+      });
 
       sub += v;
       degreeUpdate += degree;
@@ -202,7 +266,7 @@ class PieChart implements ChartStrategy {
           ? color[value.length]
           : pieChartDefaultValues.disabledColor;
 
-      this.renderData.push({
+      const data = {
         label,
         value: '',
         labelSize: getTextSize(ctx, label),
@@ -217,94 +281,35 @@ class PieChart implements ChartStrategy {
         },
         color: c,
         disabled: true,
-      });
-    }
+      };
 
-    // this.legend.update({ dataInfo: legendDataInfo });
+      this.renderData.push(data);
+    }
 
     this.wedge.update(this.renderData);
     this.label.update(this.renderData);
   };
 
   private render = () => {
+    this.title.renderer();
     this.wedge.renderer();
     this.label.renderer();
-    // this.legend.renderer();
+    this.legend.renderer();
   };
 
   private reload = () => {
+    this.title.reload();
     this.wedge.reload();
     this.label.reload();
-    // this.legend.reload();
+    this.legend.reload();
     this.tooltip.reload();
 
-    // this.defaultStyleSetter();
-    this.reactiveStyleSetter();
-    this.update();
+    this.styleUpdate();
+    this.renderDataUpdate();
     this.render();
   };
 
-  private reactiveStyleSetter = () => {
-    const { layer, width, height } = this.layer;
-    if (!layer) return;
-
-    this.position.x = width / 2;
-    this.position.y = height / 2;
-    this.radius = width < height ? width / 4 : height / 4;
-    let fontSize = width < height ? height * 0.01 : width * 0.01;
-    fontSize = fontSize <= 12 ? 12 : fontSize;
-    const font = `${fontSize}px Arial`;
-
-    // if (this.label.canvas.ctx)
-    //   this.label.canvas.ctx.font = `${fontSize}px Arial`;
-
-    this.wedge.reactiveStyleSetter({
-      position: this.position,
-      radius: this.radius,
-      font,
-    });
-    this.label.reactiveStyleSetter({
-      position: this.position,
-      radius: this.radius,
-      font,
-    });
-    this.tooltip.reactiveStyleSetter({
-      markSize: fontSize === 12 ? 8 : fontSize * 0.7,
-      font,
-      rowGap: 4,
-      columnGap: 12,
-      markLabelGap: 4,
-      titleContentsGap: 0,
-      padding: {
-        top: 6,
-        bottom: 6,
-        left: 6,
-        right: 6,
-      },
-    });
-
-    // if (this.legend.canvas.ctx)
-    //   this.legend.canvas.ctx.font = `${fontSize}px Arial`;
-
-    // this.legend.markSize = fontSize === 12 ? 8 : fontSize * 0.7;
-    // this.legend.markRound = fontSize === 12 ? 1 : 2;
-  };
-
-  private styleSetter = () => {
-    // this.legend.defaultStyleSetter({
-    //   direction: 'v',
-    //   position: { x: 10, y: 10 },
-    //   columGap: 10,
-    //   rowGap: 8,
-    //   markTextGap: 5,
-    // });
-    this.tooltip.styleSetter({
-      strokeColor: '#000',
-      backgroundColor: '#fff',
-    });
-  };
-
-  public load = ({ layer, data }: PieChartParams) => {
+  public load = ({ layer, data, title }: PieChartParams) => {
     this.isLoad = true;
 
     const unmountLayer = this.layer.load({
@@ -318,22 +323,23 @@ class PieChart implements ChartStrategy {
 
     const labelCanvas = this.layer.layer.children[0] as HTMLCanvasElement;
     const wedgeCanvas = this.layer.layer.children[1] as HTMLCanvasElement;
-    // const legendCanvas = this.layer.layer.children[2] as HTMLCanvasElement;
-    const tooltipCanvas = this.layer.layer.children[3] as HTMLCanvasElement;
+    const titleCanvas = this.layer.layer.children[2] as HTMLCanvasElement;
+    const legendCanvas = this.layer.layer.children[3] as HTMLCanvasElement;
+    const tooltipCanvas = this.layer.layer.children[4] as HTMLCanvasElement;
 
     this.wedge.load({
       canvas: wedgeCanvas,
     });
     this.label.load({
       canvas: labelCanvas,
+      fontStyle: pieChartDefaultValues.font,
     });
-    // this.legend.load({ canvas: legendCanvas });
+    this.title.load({ canvas: titleCanvas, title });
+    this.legend.load({ canvas: legendCanvas });
     this.tooltip.load({ canvas: tooltipCanvas });
 
-    // this.defaultStyleSetter();
-    this.styleSetter();
-    this.reactiveStyleSetter();
-    this.update();
+    this.styleUpdate();
+    this.renderDataUpdate();
     this.render();
 
     this.isLoad = false;

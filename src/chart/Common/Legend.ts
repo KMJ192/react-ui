@@ -16,11 +16,7 @@ type PieChartLegendParams = {
 class Legend implements ChartComponentStrategy {
   public canvas: Canvas;
 
-  public dataInfo: Array<LegendDataInfo>;
-
-  public width: number;
-
-  public height: number;
+  public renderData: Array<LegendDataInfo>;
 
   public position: Vector;
 
@@ -39,11 +35,7 @@ class Legend implements ChartComponentStrategy {
   constructor() {
     this.canvas = new Canvas();
 
-    this.dataInfo = [];
-
-    this.width = 0;
-
-    this.height = 0;
+    this.renderData = [];
 
     this.position = new Vector(0, 0);
 
@@ -65,10 +57,10 @@ class Legend implements ChartComponentStrategy {
     let isInside = false;
     let index = -1;
 
-    const len = this.dataInfo.length;
+    const len = this.renderData.length;
     let next = 0;
     for (let i = 0; i < len; i++) {
-      const { labelWidth, labelHeight } = this.dataInfo[i];
+      const { labelWidth, labelHeight } = this.renderData[i];
       const { x, y } = this.position;
 
       if (this.direction === 'v') {
@@ -119,7 +111,7 @@ class Legend implements ChartComponentStrategy {
     const { canvas, ctx } = this.canvas;
     if (!canvas || !ctx) return;
     const {
-      dataInfo,
+      renderData,
       markSize,
       markRound,
       position,
@@ -128,12 +120,12 @@ class Legend implements ChartComponentStrategy {
       markTextGap,
       direction,
     } = this;
-    ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    const len = dataInfo.length;
+    const len = renderData.length;
     let next = 0;
     for (let i = 0; i < len; i++) {
-      const { label, color, labelWidth, labelHeight } = dataInfo[i];
+      const { label, color, labelWidth, labelHeight } = renderData[i];
 
       let textX = 0;
       let textY = 0;
@@ -175,10 +167,6 @@ class Legend implements ChartComponentStrategy {
     }
   };
 
-  public update = ({ dataInfo }: { dataInfo: Array<LegendDataInfo> }) => {
-    this.dataInfo = dataInfo;
-  };
-
   public renderer = () => {
     this.render();
   };
@@ -187,18 +175,24 @@ class Legend implements ChartComponentStrategy {
     this.canvas.reload();
   };
 
-  public defaultStyleSetter = ({
+  public styleUpdate = ({
     direction,
     position: { x, y },
     columGap,
     rowGap,
     markTextGap,
+    markSize,
+    markRound,
+    font,
   }: {
     direction: 'h' | 'v';
     position: { x: number; y: number };
     columGap: number;
     rowGap: number;
     markTextGap: number;
+    markSize: number;
+    markRound: number;
+    font: string;
   }) => {
     this.direction = direction;
     this.position.x = x;
@@ -206,6 +200,10 @@ class Legend implements ChartComponentStrategy {
     this.columnGap = columGap;
     this.rowGap = rowGap;
     this.markTextGap = markTextGap;
+    this.markSize = markSize;
+    this.markRound = markRound;
+
+    if (this.canvas.ctx) this.canvas.ctx.font = font;
   };
 
   public load = ({ canvas }: PieChartLegendParams) => {
