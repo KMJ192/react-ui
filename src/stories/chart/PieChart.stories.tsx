@@ -54,10 +54,34 @@ export const PieChartStory: StoryFn<PieChartProps> = Template.bind({});
 PieChartStory.args = {
   title: 'Title',
   data: {
-    total: 250,
-    name: ['first', 'second', 'third', 'fourth', 'last', 'test'],
-    value: [30, 30, 20, 32, 48, 70],
+    total: 400,
+    name: ['first', 'second', 'third', 'fourth', 'last', 'test', 'test'],
+    value: [30, 30, 20, 32, 48, 70, 89],
     color: ['green', 'red', 'blue', 'magenta', 'skyblue', '#dac'],
+  },
+  styles: {
+    backgroundColor: 'none',
+    fontColor: '#000',
+    fontWeight: '500',
+    fontFamily: 'Arial',
+    title: {
+      fontColor: '#000',
+      fontWeight: '500',
+      fontFamily: 'Arial',
+    },
+    legend: {
+      fontColor: '#000',
+      fontWeight: '500',
+      fontFamily: 'Arial',
+    },
+    tooltip: {
+      fontColor: '#000',
+      fontWeight: '500',
+      fontFamily: 'Arial',
+      backgroundColor: '#fff',
+      borderRadius: 4,
+      borderColor: '#000',
+    },
   },
 };
 

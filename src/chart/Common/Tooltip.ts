@@ -32,6 +32,8 @@ type TooltipParams = {
 };
 
 class Tooltip implements ChartComponentStrategy {
+  public name = 'tooltip';
+
   public canvas: Canvas;
 
   public columnGap: number;

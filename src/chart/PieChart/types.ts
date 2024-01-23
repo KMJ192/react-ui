@@ -1,10 +1,21 @@
-import { Coordinate, Size } from '../Common/types';
+import type { Coordinate, FontStyle, Size } from '../Common/types';
 
 type PieChartData = {
   total: number;
   name: Array<string>;
   value: Array<number>;
   color: Array<string>;
+};
+
+type PieChartStyles = Omit<FontStyle, 'fontSize'> & {
+  backgroundColor: string;
+  title: Omit<FontStyle, 'fontSize'>;
+  legend: Omit<FontStyle, 'fontSize'>;
+  tooltip: Omit<FontStyle, 'fontSize'> & {
+    backgroundColor: string;
+    borderRadius: number;
+    borderColor: string;
+  };
 };
 
 type PieChartRenderData = Readonly<{
@@ -19,6 +30,7 @@ type PieChartRenderData = Readonly<{
   readonly midDegreeCoordinate: Coordinate;
   readonly color: string;
   readonly disabled: boolean;
+  readonly remainder: boolean;
 }>;
 
-export type { PieChartData, PieChartRenderData };
+export type { PieChartData, PieChartRenderData, PieChartStyles };

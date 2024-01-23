@@ -1,12 +1,11 @@
 import Canvas from '../Common/Canvas';
 import Vector from '../Common/Vector';
-import type { FontStyle } from '../Common/types';
+import { FontStyle } from '../Common/types';
 import { pieChartDefaultValues } from './defaultVales';
 import type { PieChartRenderData } from './types';
 
 type PieChartLabelParams = {
   canvas: HTMLCanvasElement;
-  fontStyle: FontStyle;
 };
 
 class Label {
@@ -22,7 +21,7 @@ class Label {
 
   private initRenderInterval: number;
 
-  private fontStyle: FontStyle;
+  private style: FontStyle;
 
   constructor() {
     this.canvas = new Canvas();
@@ -37,16 +36,23 @@ class Label {
 
     this.initRenderInterval = 0;
 
-    this.fontStyle = pieChartDefaultValues.font;
+    this.style = {
+      fontSize: 16,
+      fontColor: pieChartDefaultValues.fontColor,
+      fontFamily: pieChartDefaultValues.fontFamily,
+      fontWeight: pieChartDefaultValues.fontWeight,
+    };
   }
 
   private render = () => {
     const { canvas, ctx } = this.canvas;
     if (!canvas || !ctx) return;
     const { clientWidth: width, clientHeight: height } = canvas;
-    const { renderData, radius, initRenderInterval: curInterval } = this;
+    const { renderData, radius, initRenderInterval, style } = this;
 
     ctx.clearRect(0, 0, width, height);
+
+    ctx.font = `${style.fontWeight} ${style.fontSize}px ${style.fontFamily}`;
 
     const angle = (degree: number) => {
       return ((degree - 90) / 180) * Math.PI;
@@ -68,21 +74,22 @@ class Label {
       const ptLen = radius * 0.12;
 
       const labelPointX1 =
-        Math.cos(angle(midDegree)) * (ptLen * curInterval) + midDegreeX;
+        Math.cos(angle(midDegree)) * (ptLen * initRenderInterval) + midDegreeX;
       const labelPointX1Dist = Math.cos(angle(midDegree)) * ptLen + midDegreeX;
       const labelPointY =
-        Math.sin(angle(midDegree)) * (ptLen * curInterval) + midDegreeY;
+        Math.sin(angle(midDegree)) * (ptLen * initRenderInterval) + midDegreeY;
       const labelPointYDist = Math.sin(angle(midDegree)) * ptLen + midDegreeY;
       const labelPointX2 = isHalf
-        ? Math.cos(angle(midDegree)) * (ptLen * curInterval) +
+        ? Math.cos(angle(midDegree)) * (ptLen * initRenderInterval) +
           midDegreeX +
           ptLen
-        : Math.cos(angle(midDegree)) * (ptLen * curInterval) +
+        : Math.cos(angle(midDegree)) * (ptLen * initRenderInterval) +
           midDegreeX -
           ptLen;
 
       ctx.save();
-      ctx.strokeStyle = 'black';
+
+      ctx.strokeStyle = style.fontColor;
       ctx.lineWidth = 0.8;
 
       ctx.beginPath();
@@ -100,8 +107,8 @@ class Label {
       const labelY = labelPointYDist + labelHeight / 2;
 
       ctx.save();
-      ctx.globalAlpha = curInterval;
-
+      ctx.globalAlpha = initRenderInterval;
+      ctx.fillStyle = style.fontColor;
       ctx.fillText(label, labelX, labelY);
       ctx.restore();
     }
@@ -140,28 +147,24 @@ class Label {
   public styleUpdate = ({
     position,
     radius,
-    font,
+    style,
   }: {
     position: Vector;
     radius: number;
-    font: string;
+    style: FontStyle;
   }) => {
-    if (!this.canvas.ctx) return;
-
     this.position = position;
     this.radius = radius;
-    this.canvas.ctx.font = font;
+    this.style = style;
   };
 
   public reload = () => {
     this.canvas.reload();
   };
 
-  public load = ({ canvas, fontStyle }: PieChartLabelParams) => {
+  public load = ({ canvas }: PieChartLabelParams) => {
     this.canvas.load({ canvas });
     if (!this.canvas.canvas) return;
-
-    this.fontStyle = fontStyle;
 
     this.canvas.canvas.style.position = 'absolute';
   };

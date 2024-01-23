@@ -1,6 +1,7 @@
 import Canvas from './Canvas';
 import Vector from './Vector';
 import type { ChartComponentStrategy } from './types';
+import { getTextSize } from './utils';
 
 export type LegendDataInfo = {
   label: string;
@@ -14,6 +15,8 @@ type PieChartLegendParams = {
 };
 
 class Legend implements ChartComponentStrategy {
+  public name = 'legend';
+
   public canvas: Canvas;
 
   public renderData: Array<LegendDataInfo>;
@@ -144,7 +147,7 @@ class Legend implements ChartComponentStrategy {
         const { x, y } = position;
 
         markX = x + next;
-        markY = y + labelHeight * 0.13;
+        markY = y + labelHeight - markSize;
         textX = markX + markSize + markTextGap;
         textY = y + labelHeight;
 
@@ -165,6 +168,15 @@ class Legend implements ChartComponentStrategy {
       ctx.closePath();
       ctx.restore();
     }
+  };
+
+  public getTextSize = (text: string) => {
+    if (!this.canvas.ctx)
+      return {
+        width: 0,
+        height: 0,
+      };
+    return getTextSize(this.canvas.ctx, text);
   };
 
   public renderer = () => {

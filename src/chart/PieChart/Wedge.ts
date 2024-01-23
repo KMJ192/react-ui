@@ -168,17 +168,14 @@ class Wedge implements ChartComponentStrategy {
   public styleUpdate = ({
     position,
     radius,
-    font,
   }: {
     position: Vector;
     radius: number;
-    font: string;
   }) => {
     if (!this.canvas.ctx) return;
 
     this.position = position;
     this.radius = radius;
-    this.canvas.ctx.font = font;
   };
 
   public reload = () => {
