@@ -14,8 +14,6 @@ type TitleParams = {
 };
 
 class Title implements ChartComponentStrategy {
-  public name = 'title';
-
   public canvas: Canvas;
 
   public title: string;

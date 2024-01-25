@@ -1,5 +1,4 @@
 interface ChartComponentStrategy {
-  readonly name: string;
   styleUpdate: (args: any) => void;
   renderer: () => void;
   reload: () => void;
