@@ -1,4 +1,4 @@
-import { debounce } from '@src/utils/utils';
+import { debounce } from '@cdkit/common';
 
 type Params = {
   layer: HTMLElement;
@@ -8,7 +8,7 @@ type Params = {
 };
 
 class Layer {
-  public layer: HTMLElement | null;
+  public element: HTMLElement | null;
 
   public width: number;
 
@@ -27,7 +27,7 @@ class Layer {
   private clickEvents: Array<(x: number, y: number) => void>;
 
   constructor() {
-    this.layer = null;
+    this.element = null;
 
     this.width = 0;
 
@@ -47,12 +47,18 @@ class Layer {
   }
 
   private resize = () => {
-    const { layer } = this;
+    const { element: layer } = this;
     if (!layer) return () => {};
 
     const run: () => void = debounce(() => {
-      if (this.layer) {
-        const { width, height } = this.layer.getBoundingClientRect();
+      if (this.element) {
+        if (this.element.clientHeight === 0) {
+          this.element.style.height = '400px';
+        }
+        if (this.element.clientWidth === 0) {
+          this.element.style.width = '400px';
+        }
+        const { width, height } = this.element.getBoundingClientRect();
         this.width = width;
         this.height = height;
       }
@@ -72,7 +78,7 @@ class Layer {
   };
 
   private hover = () => {
-    const { layer } = this;
+    const { element: layer } = this;
     if (!layer) return () => {};
 
     const run = (e: MouseEvent) => {
@@ -95,7 +101,7 @@ class Layer {
   };
 
   private click = () => {
-    const { layer } = this;
+    const { element: layer } = this;
     if (!layer) return () => {};
 
     const run = (e: MouseEvent) => {
@@ -122,11 +128,11 @@ class Layer {
     hoverEvents = [],
     clickEvents = [],
   }: Params) => {
-    this.layer = layer;
-    this.layer.style.position = 'relative';
-    this.layer.style.width = '100%';
-    this.layer.style.height = '100%';
-    const { width, height } = this.layer.getBoundingClientRect();
+    this.element = layer;
+    this.element.style.position = 'relative';
+    this.element.style.width = '100%';
+    this.element.style.height = '100%';
+    const { width, height } = this.element.getBoundingClientRect();
     this.width = width;
     this.height = height;
 

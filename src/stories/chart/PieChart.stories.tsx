@@ -21,7 +21,8 @@ const Template = (args: PieChartProps) => {
       style={{
         // width: '70%',
         width: '100%',
-        height: 'calc(100% - 60px)',
+        // height: '0px',
+        // height: 'calc(100% - 60px)',
         // width: '200px',
         // height: '300px',
       }}
@@ -39,7 +40,7 @@ const Template = (args: PieChartProps) => {
           },
         }}
       ></PieChart>
-      <button
+      {/* <button
         onClick={() => {
           setState((data) => {
             const newData = deepClone(data);
@@ -50,7 +51,7 @@ const Template = (args: PieChartProps) => {
         }}
       >
         test
-      </button>
+      </button> */}
     </div>
   );
 };

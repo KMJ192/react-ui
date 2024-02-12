@@ -112,7 +112,7 @@ class PieChart implements ChartStrategy {
   };
 
   private hoverEvent = (x: number, y: number) => {
-    const { layer } = this.layer;
+    const { element: layer } = this.layer;
     if (!layer || this.isLoad || this.wedge.getIsRender) return;
     const { renderData } = this;
 
@@ -275,12 +275,12 @@ class PieChart implements ChartStrategy {
       hoverEvents: [this.hoverEvent],
       resizeEvents: [this.resizeEvent],
     });
-    if (!this.layer.layer) return () => {};
+    if (!this.layer.element) return () => {};
 
     this.data = data;
 
-    const labelCanvas = this.layer.layer.children[0] as HTMLCanvasElement;
-    const wedgeCanvas = this.layer.layer.children[1] as HTMLCanvasElement;
+    const labelCanvas = this.layer.element.children[0] as HTMLCanvasElement;
+    const wedgeCanvas = this.layer.element.children[1] as HTMLCanvasElement;
 
     this.wedge.load({
       canvas: wedgeCanvas,

@@ -1,4 +1,3 @@
-import { COLOR } from '@src/styles/color/color';
 import { defaultValues } from '../Common/defaultValues';
 import type { FontStyle } from '../Common/types';
 
@@ -17,8 +16,8 @@ export const pieChartDefaultValues: FontStyle & {
   };
 } = {
   backgroundColor: 'none',
-  wedgeColor: COLOR.LIGHT.primary['700'],
-  disabledColor: COLOR.LIGHT.gray['600'],
+  wedgeColor: '#99daf5',
+  disabledColor: '#a5a5a5',
   fontColor: defaultValues.fontStyle.fontColor,
   fontFamily: defaultValues.fontStyle.fontFamily,
   fontWeight: '500',
