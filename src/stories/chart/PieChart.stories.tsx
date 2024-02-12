@@ -33,6 +33,11 @@ const Template = (args: PieChartProps) => {
           border: '1px solid black',
           // borderRadius: '8px',
         }}
+        styles={{
+          tooltip: {
+            borderRadius: 4,
+          },
+        }}
       ></PieChart>
       <button
         onClick={() => {

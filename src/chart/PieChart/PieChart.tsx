@@ -87,32 +87,52 @@ function PieChart<T extends React.ElementType = typeof LAYER>(
       let fontSize = width < height ? height * 0.01 : width * 0.01;
       fontSize = fontSize <= 12 ? 12 : fontSize;
       const markSize = fontSize === 12 ? 8 : fontSize * 0.7;
-      const font = `${fontSize}px Arial`;
 
       const x = width / 2;
 
+      // title styles
+      const titleFont = `${styles?.title?.fontWeight ?? '600'} ${
+        fontSize * 4
+      }px ${styles?.title?.fontFamily ?? 'Arial'}`;
+      const titleFontColor = styles?.title?.fontColor ?? '#000';
+
+      // legend styles
+      const legendDirection = styles?.legend?.direction ?? 'v';
+      const legendFont = `${fontSize}px ${
+        styles?.legend?.fontFamily ?? 'Arial'
+      }`;
+      const legendFontColor = styles?.legend?.fontColor ?? '#000';
+
+      // tooltip styles
+      const tooltipFont = `${fontSize}px ${
+        styles?.tooltip?.fontFamily ?? 'Arial'
+      }`;
+      const tooltipFontColor = styles?.tooltip?.fontColor ?? '#000';
+      const tooltipStrokeColor = styles?.tooltip?.borderColor ?? '#000';
+      const tooltipBackgroundColor = styles?.tooltip?.backgroundColor ?? '#fff';
+      const tooltipBorderRadius = styles?.tooltip?.borderRadius ?? 4;
+
       chartTitle.styleUpdate({
-        font: `600 ${fontSize * 4}px Arial`,
+        font: titleFont,
+        fontColor: titleFontColor,
         coordinate: {
           x,
           y: 17,
         },
       });
       chartLegend.styleUpdate({
-        direction: 'v',
         position: { x: 10, y: 10 },
         columGap: 10,
         rowGap: 8,
         markTextGap: 5,
         markSize,
         markRound: fontSize === 12 ? 1 : 2,
-        font,
+        direction: legendDirection,
+        font: legendFont,
+        fontColor: legendFontColor,
       });
       chartTooltip.styleUpdate({
-        strokeColor: '#000',
-        backgroundColor: '#fff',
         markSize,
-        font,
         rowGap: 4,
         columnGap: 12,
         markLabelGap: 4,
@@ -123,6 +143,11 @@ function PieChart<T extends React.ElementType = typeof LAYER>(
           left: 6,
           right: 6,
         },
+        strokeColor: tooltipStrokeColor,
+        backgroundColor: tooltipBackgroundColor,
+        font: tooltipFont,
+        fontColor: tooltipFontColor,
+        borderRadius: tooltipBorderRadius,
       });
     };
 
@@ -148,7 +173,7 @@ function PieChart<T extends React.ElementType = typeof LAYER>(
       chartTitle.renderer();
       chartLegend.renderer();
     };
-  }, [chartLegend, chartTitle, chartTooltip, pieChart]);
+  }, [chartLegend, chartTitle, chartTooltip, pieChart, styles]);
 
   // Chart 구성요소 로드
   useEffect(() => {
@@ -175,16 +200,8 @@ function PieChart<T extends React.ElementType = typeof LAYER>(
     return () => {
       unmount();
     };
-  }, [
-    pieChart,
-    data,
-    title,
-    styles,
-    ref,
-    chartTitle,
-    chartLegend,
-    chartTooltip,
-  ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pieChart, data, title, chartTitle, chartLegend, chartTooltip]);
 
   return (
     <div {...props} ref={ref ?? layerRef}>

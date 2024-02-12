@@ -7,7 +7,9 @@ export const pieChartDefaultValues: FontStyle & {
   wedgeColor: string;
   disabledColor: string;
   title: FontStyle;
-  legend: FontStyle;
+  legend: FontStyle & {
+    direction: 'v' | 'h';
+  };
   tooltip: FontStyle & {
     backgroundColor: string;
     borderRadius: number;
@@ -22,7 +24,10 @@ export const pieChartDefaultValues: FontStyle & {
   fontWeight: '500',
   fontSize: 16,
   title: defaultValues.fontStyle,
-  legend: defaultValues.fontStyle,
+  legend: {
+    ...defaultValues.fontStyle,
+    direction: 'v',
+  },
   tooltip: {
     ...defaultValues.fontStyle,
     backgroundColor: '#fff',

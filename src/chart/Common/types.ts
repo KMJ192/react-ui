@@ -1,6 +1,6 @@
 interface ChartComponentStrategy {
   styleUpdate: (args: any) => void;
-  renderer: () => void;
+  renderer: (args: any) => void;
   reload: () => void;
 }
 

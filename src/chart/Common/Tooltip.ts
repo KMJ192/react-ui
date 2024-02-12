@@ -19,12 +19,14 @@ type TooltipStylePrams = {
   markLabelGap: number;
   titleContentsGap: number;
   font: string;
+  fontColor: string;
   padding: {
     top: number;
     bottom: number;
     left: number;
     right: number;
   };
+  borderRadius: number;
 };
 
 type TooltipParams = {
@@ -55,9 +57,13 @@ class Tooltip implements ChartComponentStrategy {
 
   public font: string;
 
+  public fontColor: string;
+
   public strokeColor: string;
 
   public backgroundColor: string;
+
+  public borderRadius: number;
 
   private isRender: boolean;
 
@@ -65,6 +71,8 @@ class Tooltip implements ChartComponentStrategy {
     this.canvas = new Canvas();
 
     this.font = '1rem Arial';
+
+    this.fontColor = '#000';
 
     this.columnGap = 12;
 
@@ -86,6 +94,8 @@ class Tooltip implements ChartComponentStrategy {
     this.strokeColor = '#000';
 
     this.backgroundColor = '#fff';
+
+    this.borderRadius = 4;
 
     this.isRender = false;
   }
@@ -118,6 +128,7 @@ class Tooltip implements ChartComponentStrategy {
       rowGap,
       markLabelGap,
       titleContentsGap,
+      fontColor,
     } = this;
 
     const renderData = [];
@@ -179,7 +190,7 @@ class Tooltip implements ChartComponentStrategy {
     ctx.save();
     ctx.beginPath();
     ctx.fillStyle = this.backgroundColor;
-    ctx.roundRect(x, y, width, height, 4);
+    ctx.roundRect(x, y, width, height, this.borderRadius);
     ctx.fill();
     ctx.stroke();
     ctx.closePath();
@@ -210,6 +221,7 @@ class Tooltip implements ChartComponentStrategy {
 
       ctx.save();
       ctx.beginPath();
+      ctx.fillStyle = fontColor;
       ctx.fillText(name.label, nameCoordinate.x, nameCoordinate.y);
       ctx.fillText(value.label, valueCoordinate.x, valueCoordinate.y);
       ctx.fillStyle = mark.color;
@@ -235,9 +247,11 @@ class Tooltip implements ChartComponentStrategy {
     rowGap,
     columnGap,
     font,
+    fontColor,
     padding,
     markLabelGap,
     titleContentsGap,
+    borderRadius,
   }: TooltipStylePrams) => {
     this.strokeColor = strokeColor;
     this.backgroundColor = backgroundColor;
@@ -248,7 +262,11 @@ class Tooltip implements ChartComponentStrategy {
     this.markLabelGap = markLabelGap;
     this.titleContentsGap = titleContentsGap;
     this.font = font;
-    if (this.canvas.ctx) this.canvas.ctx.font = this.font;
+    this.fontColor = fontColor;
+    this.borderRadius = borderRadius;
+    if (this.canvas.ctx) {
+      this.canvas.ctx.font = this.font;
+    }
   };
 
   public reload = () => {

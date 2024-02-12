@@ -10,7 +10,9 @@ type PieChartData = {
 type PieChartStyles = Omit<FontStyle, 'fontSize'> & {
   backgroundColor: string;
   title: Omit<FontStyle, 'fontSize'>;
-  legend: Omit<FontStyle, 'fontSize'>;
+  legend: Omit<FontStyle, 'fontSize'> & {
+    direction: 'v' | 'h';
+  };
   tooltip: Omit<FontStyle, 'fontSize'> & {
     backgroundColor: string;
     borderRadius: number;

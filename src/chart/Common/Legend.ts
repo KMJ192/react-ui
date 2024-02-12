@@ -196,6 +196,7 @@ class Legend implements ChartComponentStrategy {
     markSize,
     markRound,
     font,
+    fontColor,
   }: {
     direction: 'h' | 'v';
     position: { x: number; y: number };
@@ -205,6 +206,7 @@ class Legend implements ChartComponentStrategy {
     markSize: number;
     markRound: number;
     font: string;
+    fontColor: string;
   }) => {
     this.direction = direction;
     this.position.x = x;
@@ -215,7 +217,10 @@ class Legend implements ChartComponentStrategy {
     this.markSize = markSize;
     this.markRound = markRound;
 
-    if (this.canvas.ctx) this.canvas.ctx.font = font;
+    if (this.canvas.ctx) {
+      this.canvas.ctx.font = font;
+      this.canvas.ctx.fillStyle = fontColor;
+    }
   };
 
   public load = ({ canvas }: PieChartLegendParams) => {

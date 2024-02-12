@@ -5,6 +5,7 @@ import { getTextSize } from './utils';
 
 type TitleStyleParams = {
   font: string;
+  fontColor: string;
   coordinate: Coordinate;
 };
 
@@ -20,12 +21,16 @@ class Title implements ChartComponentStrategy {
 
   private position: Vector;
 
+  private fontColor: string;
+
   constructor() {
     this.canvas = new Canvas();
 
     this.title = '';
 
     this.position = new Vector(0, 0);
+
+    this.fontColor = '#000';
   }
 
   public renderer = () => {
@@ -35,16 +40,17 @@ class Title implements ChartComponentStrategy {
 
     const { width, height } = getTextSize(ctx, this.title);
 
+    ctx.fillStyle = this.fontColor;
     ctx.fillText(this.title, x - width / 2, y + height);
-    ctx.stroke();
   };
 
-  public styleUpdate = ({ font, coordinate }: TitleStyleParams) => {
+  public styleUpdate = ({ font, coordinate, fontColor }: TitleStyleParams) => {
     if (this.title === '') return;
     const { ctx } = this.canvas;
     if (!ctx) return;
 
     ctx.font = font;
+    this.fontColor = fontColor;
     this.position.x = coordinate.x;
     this.position.y = coordinate.y;
   };
